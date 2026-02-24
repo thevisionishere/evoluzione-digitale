@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termini di Servizio — Evoluzione Digitale</title>
+    <meta name="description" content="Termini e condizioni di servizio di Evoluzione Digitale. Leggi i termini che regolano l'utilizzo dei nostri servizi di web design per aziende italiane.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="assets/evoluzione_digitale_favicon1.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: #444;
+        }
+
+        /* ── HEADER ── */
+        .site-header {
+            padding: 32px 24px;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site-header a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .site-header img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+
+        /* ── MAIN CONTENT ── */
+        .page-wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 64px 24px 96px;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0a0a0a;
+            margin-bottom: 8px;
+        }
+
+        .page-meta {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 56px;
+            font-weight: 400;
+        }
+
+        /* ── SECTIONS ── */
+        .toc {
+            background: #f7f7f7;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 56px;
+        }
+
+        .toc-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+        }
+
+        .toc li {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .toc a {
+            color: #444;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            color: #0a0a0a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .section {
+            margin-bottom: 52px;
+            scroll-margin-top: 32px;
+        }
+
+        .section-number {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #bbb;
+            margin-bottom: 8px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin-bottom: 16px;
+            letter-spacing: -0.2px;
+        }
+
+        .section p {
+            font-size: 15px;
+            color: #3a3a3a;
+            margin-bottom: 14px;
+            line-height: 1.75;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ul,
+        .section ol {
+            padding-left: 22px;
+            margin-bottom: 14px;
+        }
+
+        .section li {
+            font-size: 15px;
+            color: #3a3a3a;
+            line-height: 1.75;
+            margin-bottom: 6px;
+        }
+
+        .section li:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: #f7f7f7;
+            border-left: 3px solid #0a0a0a;
+            border-radius: 0 8px 8px 0;
+            padding: 18px 22px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        /* ── DIVIDER ── */
+        .divider {
+            border: none;
+            border-top: 1px solid #e8e8e8;
+            margin: 56px 0;
+        }
+
+        /* ── FOOTER ── */
+        .site-footer {
+            border-top: 1px solid #e8e8e8;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .site-footer p {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .site-footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .site-footer a {
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            color: #0a0a0a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-sep {
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 26px;
+            }
+
+            .page-wrapper {
+                padding: 48px 20px 80px;
+            }
+
+            .toc {
+                padding: 22px 20px;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" aria-label="Torna alla home di Evoluzione Digitale">
+            <img src="assets/evoluzione_digitale_logo_nero.svg" alt="Evoluzione Digitale">
+        </a>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-wrapper">
+
+        <h1 class="page-title">Termini di Servizio</h1>
+        <p class="page-meta">Ultimo aggiornamento: 24 febbraio 2026</p>
+
+        <!-- TABLE OF CONTENTS -->
+        <nav class="toc" aria-label="Indice dei contenuti">
+            <p class="toc-title">Indice</p>
+            <ol>
+                <li><a href="#section-1">Definizioni e ambito di applicazione</a></li>
+                <li><a href="#section-2">Descrizione del servizio</a></li>
+                <li><a href="#section-3">Modello "Vedi prima, paga dopo"</a></li>
+                <li><a href="#section-4">Prezzi e condizioni di pagamento</a></li>
+                <li><a href="#section-5">Tempi di consegna</a></li>
+                <li><a href="#section-6">Hosting e dominio</a></li>
+                <li><a href="#section-7">Personalizzazione dei contenuti</a></li>
+                <li><a href="#section-8">Proprietà intellettuale</a></li>
+                <li><a href="#section-9">Politica di rimborso</a></li>
+                <li><a href="#section-10">Obblighi del cliente</a></li>
+                <li><a href="#section-11">Limitazione di responsabilità</a></li>
+                <li><a href="#section-12">Protezione dei dati personali</a></li>
+                <li><a href="#section-13">Legge applicabile e risoluzione delle controversie</a></li>
+                <li><a href="#section-14">Modifica dei termini</a></li>
+                <li><a href="#section-15">Recesso e risoluzione</a></li>
+                <li><a href="#section-16">Contatti</a></li>
+            </ol>
+        </nav>
+
+        <!-- SECTION 1 -->
+        <section class="section" id="section-1">
+            <p class="section-number">Articolo 01</p>
+            <h2>Definizioni e ambito di applicazione</h2>
+            <p>I presenti Termini di Servizio (di seguito "Termini") regolano il rapporto contrattuale tra <strong>Evoluzione Digitale</strong> (di seguito "noi", "il Fornitore") e qualsiasi persona fisica o giuridica (di seguito "Cliente") che acquisti o utilizzi i servizi di web design offerti tramite il sito web <strong>evoluzionedigitale.com</strong> e tramite comunicazioni dirette (e-mail, telefono, messaggistica).</p>
+            <p>Ai fini dei presenti Termini si intende per:</p>
+            <ul>
+                <li><strong>"Servizio"</strong>: la progettazione, lo sviluppo e la consegna di un sito web professionale come descritto all'Articolo 2.</li>
+                <li><strong>"Anteprima"</strong>: la versione preliminare del sito web realizzata dal Fornitore e mostrata al Cliente prima di qualsiasi pagamento.</li>
+                <li><strong>"Contenuti del Cliente"</strong>: testi, immagini, loghi, video, dati e qualsiasi altro materiale fornito dal Cliente al Fornitore.</li>
+                <li><strong>"Sito Web Finale"</strong>: il sito web consegnato al Cliente dopo il pagamento, comprensivo di eventuali personalizzazioni concordate.</li>
+            </ul>
+            <p>L'utilizzo dei servizi implica l'accettazione integrale e incondizionata dei presenti Termini. Qualora il Cliente non accetti uno o più articoli, è tenuto ad astenersi dall'utilizzare i servizi del Fornitore.</p>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="section" id="section-2">
+            <p class="section-number">Articolo 02</p>
+            <h2>Descrizione del servizio</h2>
+            <p>Evoluzione Digitale progetta e sviluppa siti web professionali destinati ad aziende, artigiani, liberi professionisti e attività commerciali con sede o operatività principale in Italia.</p>
+            <p>Il servizio standard comprende:</p>
+            <ul>
+                <li>Progettazione grafica personalizzata del sito web (design, layout, colori, tipografia).</li>
+                <li>Sviluppo tecnico del sito in HTML, CSS e JavaScript, ottimizzato per la visualizzazione su dispositivi mobili, tablet e desktop.</li>
+                <li>Ottimizzazione di base per i motori di ricerca (SEO on-page): struttura semantica del codice, meta tag, tempi di caricamento.</li>
+                <li>Integrazione dei Contenuti del Cliente (testi, immagini, loghi) una volta forniti dal Cliente stesso dopo il pagamento.</li>
+                <li>Hosting del sito web per un periodo di <strong>12 (dodici) mesi</strong> a partire dalla data di consegna, incluso nel prezzo.</li>
+                <li>Consegna del sito entro 2 (due) giorni lavorativi dall'avvio del progetto o dal ricevimento del pagamento, secondo il modello applicabile.</li>
+            </ul>
+            <p>Eventuali servizi aggiuntivi non inclusi nel pacchetto standard (es. e-commerce avanzato, sistemi di prenotazione, integrazioni con software gestionali, sessioni fotografiche, copywriting professionale) dovranno essere concordati separatamente e potrebbero comportare costi aggiuntivi.</p>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="section" id="section-3">
+            <p class="section-number">Articolo 03</p>
+            <h2>Modello "Vedi prima, paga dopo"</h2>
+            <div class="highlight-box">
+                <p>Il Fornitore offre un modello unico di acquisto: il Cliente vede il proprio sito web completato prima di effettuare qualsiasi pagamento. Nessun anticipo, nessun deposito.</p>
+            </div>
+            <p>Il funzionamento del modello è il seguente:</p>
+            <ol>
+                <li><strong>Raccolta informazioni:</strong> Il Cliente fornisce al Fornitore le informazioni di base sulla propria attività (nome, settore, riferimenti stilistici, obiettivi). Questa fase non comporta alcun obbligo di acquisto.</li>
+                <li><strong>Sviluppo dell'anteprima:</strong> Il Fornitore progetta e sviluppa una versione preliminare del sito web sulla base delle informazioni ricevute. L'anteprima viene realizzata con contenuti di esempio o segnaposto in attesa dei contenuti definitivi del Cliente.</li>
+                <li><strong>Presentazione dell'anteprima:</strong> Il Fornitore mostra l'anteprima al Cliente tramite link di previsualizzazione, video, screenshot o call. In questa fase il Cliente non ha ancora alcun obbligo di pagamento.</li>
+                <li><strong>Decisione del Cliente:</strong> Il Cliente ha piena facoltà di accettare o rifiutare il progetto. In caso di rifiuto, il Cliente non deve nulla al Fornitore e il rapporto si conclude senza alcuna pendenza economica (vedi anche Articolo 9).</li>
+                <li><strong>Pagamento e personalizzazione:</strong> Solo in caso di accettazione, il Cliente procede al pagamento dell'importo concordato. Successivamente al pagamento, il Fornitore integra i contenuti definitivi forniti dal Cliente e consegna il Sito Web Finale.</li>
+            </ol>
+            <p>Il Fornitore si riserva il diritto di non avviare o di interrompere lo sviluppo dell'anteprima qualora ritenga, a propria insindacabile discrezione, che il progetto non rientri nelle proprie competenze o politiche commerciali.</p>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="section" id="section-4">
+            <p class="section-number">Articolo 04</p>
+            <h2>Prezzi e condizioni di pagamento</h2>
+            <p>Il prezzo del servizio standard di web design è di <strong>€ 497,00 (quattrocentonovantasette euro) una tantum</strong>, salvo diverso accordo scritto tra le parti.</p>
+            <p>Il prezzo è comprensivo di:</p>
+            <ul>
+                <li>Progettazione e sviluppo del sito web.</li>
+                <li>Integrazione dei contenuti forniti dal Cliente.</li>
+                <li>Hosting del sito per 12 mesi dalla consegna.</li>
+                <li>Supporto tecnico per i 30 (trenta) giorni successivi alla consegna per eventuali correzioni minori.</li>
+            </ul>
+            <p>Il pagamento deve essere effettuato <strong>integralmente e in un'unica soluzione</strong> prima che il Fornitore proceda con la personalizzazione dei contenuti definitivi e la consegna del Sito Web Finale.</p>
+            <p>Le modalità di pagamento accettate sono: bonifico bancario, PayPal, Stripe (carta di credito/debito) o altre modalità concordate di volta in volta per iscritto. Il pagamento si intende ricevuto alla data di effettivo accredito o conferma da parte del servizio di pagamento.</p>
+            <p>I prezzi sono indicati in euro (EUR) e si intendono IVA esclusa ove applicabile. Qualora il Cliente sia soggetto all'applicazione dell'IVA italiana o di altra imposta analoga, questa verrà indicata separatamente in sede di emissione della fattura o documento fiscale equivalente.</p>
+            <p>Il Fornitore si riserva di modificare i propri listini prezzi in qualsiasi momento. Le variazioni non avranno effetto retroattivo sui progetti già concordati per iscritto.</p>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="section" id="section-5">
+            <p class="section-number">Articolo 05</p>
+            <h2>Tempi di consegna</h2>
+            <p>Il Fornitore si impegna a consegnare l'anteprima iniziale del sito web entro <strong>2 (due) giorni lavorativi</strong> dall'avvio del progetto, intendendo per avvio la ricezione di tutte le informazioni necessarie da parte del Cliente.</p>
+            <p>Dopo l'accettazione da parte del Cliente e il ricevimento del pagamento, il Fornitore procederà all'integrazione dei contenuti definitivi. I tempi per questa fase dipendono dalla tempestività con cui il Cliente fornisce i propri materiali (testi, immagini, loghi, ecc.) e possono variare da 1 a 5 giorni lavorativi.</p>
+            <p>I termini di consegna si intendono indicativi e non essenziali ai sensi di legge, salvo diverso accordo scritto tra le parti. Ritardi imputabili a cause di forza maggiore, indisponibilità di servizi di terzi, o mancata collaborazione del Cliente non comportano responsabilità del Fornitore.</p>
+            <p>Si considera "giorno lavorativo" qualsiasi giorno dal lunedì al venerdì, esclusi i festivi secondo il calendario degli Stati Uniti del New Mexico.</p>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="section" id="section-6">
+            <p class="section-number">Articolo 06</p>
+            <h2>Hosting e dominio</h2>
+            <p>Il Fornitore include nel prezzo del servizio l'hosting del Sito Web Finale su propri server o su infrastrutture di provider terzi di fiducia (es. Cloudflare, Netlify, Vercel o equivalenti) per un periodo di <strong>12 (dodici) mesi</strong> a decorrere dalla data di consegna del Sito Web Finale.</p>
+            <p>Alla scadenza dei 12 mesi, il Cliente potrà:</p>
+            <ul>
+                <li>Rinnovare il servizio di hosting con il Fornitore, alle condizioni economiche in vigore al momento del rinnovo.</li>
+                <li>Richiedere il trasferimento dei file del sito web su un servizio di hosting di propria scelta, senza costi aggiuntivi per il trasferimento.</li>
+                <li>Interrompere il servizio senza ulteriori obblighi economici verso il Fornitore.</li>
+            </ul>
+            <p>La <strong>registrazione del dominio</strong> (es. nomesocietà.it, nomesocietà.com) non è inclusa nel prezzo standard, salvo diversa indicazione scritta. Il Cliente può collegare un dominio già in suo possesso al sito realizzato dal Fornitore senza costi aggiuntivi. Qualora il Cliente necessiti di assistenza per la registrazione di un nuovo dominio, il Fornitore potrà fornire supporto addebitando esclusivamente il costo effettivo del dominio presso il registrar scelto.</p>
+            <p>Il Fornitore non garantisce una disponibilità del servizio di hosting del 100% e non è responsabile per interruzioni derivanti da cause di forza maggiore, guasti hardware, attacchi informatici o malfunzionamenti imputabili a provider terzi.</p>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="section" id="section-7">
+            <p class="section-number">Articolo 07</p>
+            <h2>Personalizzazione dei contenuti</h2>
+            <p>Successivamente al pagamento, il Cliente potrà fornire al Fornitore i propri contenuti definitivi per sostituire i testi e le immagini di esempio presenti nell'anteprima. La personalizzazione comprende:</p>
+            <ul>
+                <li>Sostituzione di tutti i testi segnaposto con i testi definitivi del Cliente.</li>
+                <li>Inserimento del logo aziendale del Cliente.</li>
+                <li>Sostituzione delle immagini di esempio con le fotografie o immagini fornite dal Cliente.</li>
+                <li>Aggiornamento di recapiti, indirizzi, orari, prezzi e qualsiasi altra informazione specifica.</li>
+                <li>Eventuali modifiche di colori o stile concordate nella fase di accettazione.</li>
+            </ul>
+            <p>Il Cliente è responsabile della correttezza, completezza e liceità di tutti i contenuti forniti. Il Fornitore inserirà i contenuti così come forniti dal Cliente senza apportare revisioni editoriali o verifiche legali.</p>
+            <p>Il Fornitore si riserva il diritto di rifiutare l'inserimento di contenuti che risultino palesemente illegali, diffamatori, osceni, discriminatori o lesivi di diritti di terzi, senza che ciò comporti un diritto al rimborso da parte del Cliente.</p>
+            <p>Modifiche sostanziali al design o alla struttura del sito richieste dal Cliente dopo la consegna del Sito Web Finale potranno essere soggette a un costo aggiuntivo da concordare separatamente.</p>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="section" id="section-8">
+            <p class="section-number">Articolo 08</p>
+            <h2>Proprietà intellettuale</h2>
+            <p>Alla ricezione del pagamento integrale del corrispettivo, il Fornitore cede al Cliente tutti i diritti patrimoniali relativi al <strong>design grafico</strong> e al <strong>codice sorgente</strong> del Sito Web Finale, nella misura necessaria per il suo utilizzo, modifica e distribuzione da parte del Cliente.</p>
+            <p>Il Cliente mantiene la piena proprietà di tutti i Contenuti del Cliente (testi, immagini, loghi, marchi) forniti al Fornitore per la realizzazione del sito. Il Cliente garantisce di detenere i diritti necessari su tutti i materiali forniti e manleva il Fornitore da qualsiasi pretesa di terzi.</p>
+            <p>Il Fornitore si riserva il diritto di:</p>
+            <ul>
+                <li>Includere il Sito Web Finale nel proprio portfolio professionale, salvo esplicita richiesta scritta del Cliente di non divulgare il progetto.</li>
+                <li>Inserire un breve riferimento testuale ("Realizzato da Evoluzione Digitale") nel codice sorgente del sito o nel footer, salvo diverso accordo scritto.</li>
+            </ul>
+            <p>Eventuali librerie, framework o componenti di terze parti (es. Google Fonts, librerie open source) incorporati nel sito web rimangono soggetti alle rispettive licenze d'uso, che il Cliente accetta implicitamente ricevendo il Sito Web Finale.</p>
+            <p>Prima del pagamento, l'anteprima e tutto il materiale creativo sviluppato dal Fornitore rimangono di esclusiva proprietà intellettuale del Fornitore. Il Cliente non è autorizzato a copiare, distribuire, scaricare o utilizzare l'anteprima senza aver completato il pagamento.</p>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="section" id="section-9">
+            <p class="section-number">Articolo 09</p>
+            <h2>Politica di rimborso</h2>
+            <div class="highlight-box">
+                <p>Se il Cliente non è soddisfatto dell'anteprima e decide di non procedere con l'acquisto, non deve nulla al Fornitore. Nessun costo, nessun addebito.</p>
+            </div>
+            <p>La politica di rimborso si articola come segue:</p>
+            <ul>
+                <li><strong>Prima del pagamento:</strong> il Cliente che rifiuta l'anteprima non ha alcun obbligo economico nei confronti del Fornitore. Il rapporto si conclude senza conseguenze per entrambe le parti.</li>
+                <li><strong>Dopo il pagamento, prima della consegna dei contenuti definitivi:</strong> qualora il Cliente decidesse di annullare l'ordine dopo aver effettuato il pagamento ma prima di aver fornito i propri contenuti e prima che il Fornitore abbia avviato la fase di personalizzazione, il Cliente potrà richiedere un rimborso totale entro 7 (sette) giorni dal pagamento.</li>
+                <li><strong>Dopo la consegna del Sito Web Finale:</strong> una volta che il Fornitore ha integrato i contenuti definitivi del Cliente e il Sito Web Finale è stato consegnato, non è previsto alcun rimborso, salvo vizi gravi e documentati imputabili esclusivamente al Fornitore che rendano il sito non funzionante nei browser moderni (Chrome, Safari, Firefox, Edge nelle versioni aggiornate).</li>
+            </ul>
+            <p>Le richieste di rimborso devono essere presentate per iscritto all'indirizzo <a href="mailto:siti.evoluzionedigitale@gmail.com">siti.evoluzionedigitale@gmail.com</a>, con indicazione del motivo e della data del pagamento. Il Fornitore risponderà entro 5 (cinque) giorni lavorativi. I rimborsi approvati saranno effettuati entro 14 (quattordici) giorni lavorativi tramite lo stesso metodo di pagamento utilizzato dal Cliente.</p>
+        </section>
+
+        <!-- SECTION 10 -->
+        <section class="section" id="section-10">
+            <p class="section-number">Articolo 10</p>
+            <h2>Obblighi del cliente</h2>
+            <p>Il Cliente si impegna a:</p>
+            <ul>
+                <li>Fornire informazioni accurate, veritiere e complete sulla propria attività nella fase di raccolta informazioni.</li>
+                <li>Rispondere tempestivamente alle richieste del Fornitore di materiali, approvazioni o chiarimenti, consapevole che i ritardi nella collaborazione possono incidere sui tempi di consegna.</li>
+                <li>Fornire contenuti (testi, immagini, loghi) di cui detiene legittimamente i diritti di utilizzo, liberi da vincoli di terzi.</li>
+                <li>Non utilizzare il sito web realizzato dal Fornitore per attività illecite, fraudolente, diffamatorie o in violazione di norme di legge applicabili.</li>
+                <li>Non tentare di accedere in modo non autorizzato ai server, ai sistemi o agli account del Fornitore.</li>
+                <li>Mantenere riservate le credenziali di accesso eventualmente fornite dal Fornitore (pannello di controllo, FTP, ecc.).</li>
+                <li>Notificare tempestivamente al Fornitore qualsiasi anomalia tecnica o malfunzionamento riscontrato sul sito.</li>
+            </ul>
+            <p>Il mancato rispetto degli obblighi sopra indicati può comportare la sospensione del servizio da parte del Fornitore, senza diritto a rimborso da parte del Cliente.</p>
+        </section>
+
+        <!-- SECTION 11 -->
+        <section class="section" id="section-11">
+            <p class="section-number">Articolo 11</p>
+            <h2>Limitazione di responsabilità</h2>
+            <p>Il Fornitore non sarà responsabile per danni indiretti, consequenziali, speciali, punitivi o incidentali derivanti dall'utilizzo o dall'impossibilità di utilizzo del Sito Web Finale, inclusi a titolo esemplificativo: perdita di ricavi, perdita di clienti, perdita di dati, danni reputazionali.</p>
+            <p>In ogni caso, la responsabilità massima del Fornitore nei confronti del Cliente per qualsiasi causa è limitata all'importo effettivamente pagato dal Cliente per il servizio oggetto della controversia.</p>
+            <p>Il Fornitore non garantisce:</p>
+            <ul>
+                <li>Che il sito web generi un determinato volume di visite, contatti o conversioni commerciali.</li>
+                <li>Che il sito raggiunga posizionamenti specifici nei motori di ricerca.</li>
+                <li>L'assenza di interruzioni del servizio di hosting dovute a cause di forza maggiore o a malfunzionamenti di provider terzi.</li>
+                <li>La compatibilità del sito con browser obsoleti (versioni rilasciate prima del 2022).</li>
+            </ul>
+            <p>Il Cliente riconosce che i risultati commerciali derivanti dalla presenza online dipendono da molteplici fattori (qualità dei contenuti, settore merceologico, concorrenza, strategie di marketing) che esulano dal controllo del Fornitore.</p>
+        </section>
+
+        <!-- SECTION 12 -->
+        <section class="section" id="section-12">
+            <p class="section-number">Articolo 12</p>
+            <h2>Protezione dei dati personali</h2>
+            <p>Il trattamento dei dati personali del Cliente e degli utenti del sito web è disciplinato dall'<a href="privacy.html">Informativa sulla Privacy</a> di Evoluzione Digitale, disponibile alla pagina dedicata del nostro sito.</p>
+            <p>Il Cliente, nella qualità di titolare del trattamento dei dati personali dei propri utenti, è responsabile di dotare il proprio sito web delle informative sulla privacy e cookie policy richieste dalla normativa applicabile (incluso il Regolamento Europeo 2016/679 — GDPR — ove applicabile). Il Fornitore potrà fornire supporto consulenziale in materia, ma non assume responsabilità per l'adempimento degli obblighi normativi spettanti al Cliente.</p>
+        </section>
+
+        <!-- SECTION 13 -->
+        <section class="section" id="section-13">
+            <p class="section-number">Articolo 13</p>
+            <h2>Legge applicabile e risoluzione delle controversie</h2>
+            <p>I presenti Termini sono regolati e interpretati esclusivamente in conformità alle leggi dello <strong>Stato del New Mexico, Stati Uniti d'America</strong>, senza riguardo ai principi in materia di conflitto di leggi.</p>
+            <p>Per qualsiasi controversia derivante dai presenti Termini o relativa al servizio, le parti si impegnano preliminarmente a tentare una soluzione amichevole mediante comunicazione scritta all'indirizzo <a href="mailto:siti.evoluzionedigitale@gmail.com">siti.evoluzionedigitale@gmail.com</a>. Il Fornitore risponderà entro 10 (dieci) giorni lavorativi dal ricevimento della comunicazione.</p>
+            <p>Qualora la controversia non venga risolta in via amichevole entro 30 (trenta) giorni dalla prima comunicazione, le parti accettano che la stessa sia sottoposta alla giurisdizione esclusiva dei tribunali competenti nello Stato del New Mexico, USA.</p>
+            <p>I Clienti residenti nell'Unione Europea conservano i diritti loro riconosciuti dalla normativa comunitaria in materia di tutela dei consumatori, nella misura in cui tali diritti non possano essere derogati contrattualmente. La Commissione Europea mette a disposizione una piattaforma per la risoluzione online delle controversie (ODR) accessibile all'indirizzo <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>.</p>
+        </section>
+
+        <!-- SECTION 14 -->
+        <section class="section" id="section-14">
+            <p class="section-number">Articolo 14</p>
+            <h2>Modifica dei termini</h2>
+            <p>Il Fornitore si riserva il diritto di modificare i presenti Termini in qualsiasi momento, pubblicando la versione aggiornata sul sito web con l'indicazione della data di ultimo aggiornamento.</p>
+            <p>Le modifiche entreranno in vigore dalla data di pubblicazione. I Clienti che abbiano già concluso un contratto con il Fornitore prima della modifica continueranno a essere regolati dai Termini vigenti al momento della conclusione del contratto, salvo diverso accordo scritto.</p>
+            <p>L'utilizzo continuato dei servizi del Fornitore da parte del Cliente dopo la pubblicazione delle modifiche costituisce accettazione delle stesse. Si consiglia pertanto di consultare periodicamente questa pagina.</p>
+        </section>
+
+        <!-- SECTION 15 -->
+        <section class="section" id="section-15">
+            <p class="section-number">Articolo 15</p>
+            <h2>Recesso e risoluzione</h2>
+            <p><strong>Recesso del Cliente:</strong> il Cliente può recedere dal contratto in qualsiasi momento inviando comunicazione scritta all'indirizzo e-mail del Fornitore. Il recesso non comporta il diritto a rimborso per i servizi già erogati. Per i termini specifici di rimborso si rimanda all'Articolo 9.</p>
+            <p><strong>Risoluzione da parte del Fornitore:</strong> il Fornitore si riserva il diritto di risolvere il contratto con effetto immediato, senza obbligo di preavviso né di rimborso, qualora il Cliente:</p>
+            <ul>
+                <li>Violi uno o più obblighi previsti dai presenti Termini in modo grave o ripetuto.</li>
+                <li>Utilizzi o intenda utilizzare il sito web per finalità illecite o comunque contrarie all'ordine pubblico.</li>
+                <li>Fornisca informazioni false o fuorvianti al Fornitore.</li>
+                <li>Eserciti comportamenti abusivi, minacciosi o discriminatori nei confronti del Fornitore o dei suoi collaboratori.</li>
+            </ul>
+            <p>In caso di risoluzione per inadempimento del Cliente, il Fornitore non è tenuto a procedere con la consegna del Sito Web Finale né a restituire eventuali somme già incassate.</p>
+            <p>Alla risoluzione del contratto per qualsiasi causa, il Fornitore può rimuovere il sito web dai propri server, salvo diverso accordo scritto.</p>
+        </section>
+
+        <!-- SECTION 16 -->
+        <section class="section" id="section-16">
+            <p class="section-number">Articolo 16</p>
+            <h2>Contatti</h2>
+            <p>Per qualsiasi domanda, richiesta di chiarimento o comunicazione relativa ai presenti Termini di Servizio, è possibile contattare Evoluzione Digitale ai seguenti recapiti:</p>
+            <ul>
+                <li><strong>E-mail:</strong> <a href="mailto:siti.evoluzionedigitale@gmail.com">siti.evoluzionedigitale@gmail.com</a></li>
+                <li><strong>Ragione sociale:</strong> Evoluzione Digitale</li>
+                <li><strong>Sede operativa:</strong> Stato del New Mexico, Stati Uniti d'America</li>
+            </ul>
+            <p>Il Fornitore si impegna a rispondere a tutte le comunicazioni entro 3 (tre) giorni lavorativi.</p>
+        </section>
+
+        <hr class="divider">
+
+        <p style="font-size: 14px; color: #999; text-align: center;">Utilizzando i servizi di Evoluzione Digitale, il Cliente dichiara di aver letto, compreso e accettato integralmente i presenti Termini di Servizio nella loro versione più recente.</p>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Evoluzione Digitale. Tutti i diritti riservati.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <span class="footer-sep">&middot;</span>
+            <a href="privacy.html">Informativa sulla Privacy</a>
+            <span class="footer-sep">&middot;</span>
+            <a href="mailto:siti.evoluzionedigitale@gmail.com">siti.evoluzionedigitale@gmail.com</a>
+        </div>
+    </footer>
+
+</body>
+</html>

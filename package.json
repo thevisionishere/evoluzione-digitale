@@ -1,0 +1,11 @@
+{
+  "name": "evoluzione-digitale",
+  "version": "1.0.0",
+  "description": "Evoluzione Digitale — Siti Web Professionali per Aziende Italiane",
+  "scripts": {
+    "start": "npx serve -s . -l ${PORT:-3000}"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
