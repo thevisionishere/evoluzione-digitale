@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Evoluzione Digitale — Siti Web Professionali per Aziende Italiane",
   "scripts": {
-    "start": "npx serve . -l ${PORT:-3000}"
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
   },
   "engines": {
     "node": ">=18"
