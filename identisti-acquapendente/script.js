@@ -1,251 +1,1117 @@
-/* ============================================
-   STUDIO IDENTISTI — Global Scripts
-   LUXE Framework
-   ============================================ */
+/* ── core ──────────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Core Engine
+ * Always-included foundation: scroll reveal, smooth scroll,
+ * active nav detection, copyright year, reduced motion & mobile flags.
+ */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const isMobile = !window.matchMedia('(hover: hover)').matches;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function () {
+  'use strict';
 
-  initPreloader();
-  initHeader();
-  initMobileMenu();
-  initScrollProgress();
-  initRevealAnimations();
-  initCounters();
-  initCustomCursor();
-  if (!isMobile) initParallax();
-  if (!isMobile) initMagneticButtons();
-  initSmoothScroll();
-  initActiveNav();
-  initForms();
-  initDynamicYear();
-  initFaqAccordion();
-  initServiceExplorer();
-  initWhatsAppPulse();
-
-  /* ============================================
-     PRELOADER — Variant E (Minimal Fade)
-     ============================================ */
-  function initPreloader() {
-    const preloader = document.querySelector('.preloader');
-    if (!preloader) return;
-
-    const isHome = document.body.classList.contains('page-home');
-    const visited = sessionStorage.getItem('luxe-visited');
-
-    if (!isHome || visited) {
-      preloader.remove();
-      revealHero();
-      return;
-    }
-
-    document.body.classList.add('preloader-active');
-
-    if (prefersReducedMotion) {
-      preloader.remove();
-      document.body.classList.remove('preloader-active');
-      sessionStorage.setItem('luxe-visited', 'true');
-      revealHero();
-      return;
-    }
-
-    const logo = preloader.querySelector('.preloader-logo');
-    setTimeout(() => { if (logo) logo.classList.add('visible'); }, 200);
-
-    setTimeout(() => {
-      preloader.classList.add('fade-out');
-      document.body.classList.remove('preloader-active');
-      sessionStorage.setItem('luxe-visited', 'true');
-
-      setTimeout(() => {
-        preloader.remove();
-        document.dispatchEvent(new CustomEvent('preloaderComplete'));
-        revealHero();
-      }, 800);
-    }, 2000);
+  /* ─── Reduced Motion Detection ──────────────────────────────────────── */
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function applyReducedMotion() {
+    document.documentElement.dataset.reducedMotion = reducedMotion.matches ? 'true' : 'false';
   }
+  applyReducedMotion();
+  reducedMotion.addEventListener('change', applyReducedMotion);
 
-  function revealHero() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-      setTimeout(() => hero.classList.add('hero-revealed'), 100);
-    }
+  /* ─── Mobile / Touch Detection ───────────────────────────────────────── */
+  function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   }
+  document.documentElement.dataset.mobile = isTouchDevice() ? 'true' : 'false';
 
-  /* ============================================
-     HEADER — Scroll behavior
-     ============================================ */
-  function initHeader() {
-    const header = document.querySelector('.header');
+  /* ─── Event Delegation Helper ────────────────────────────────────────── */
+  /**
+   * Attach a delegated event listener.
+   * @param {Element|Document} parent  - The element to attach the listener to
+   * @param {string}           event   - Event type (e.g. 'click')
+   * @param {string}           selector - CSS selector for target matching
+   * @param {Function}         handler  - Callback receives (event, matchedElement)
+   */
+  window.JW = window.JW || {};
+  window.JW.delegate = function (parent, event, selector, handler) {
+    parent.addEventListener(event, function (e) {
+      const target = e.target.closest(selector);
+      if (target && parent.contains(target)) {
+        handler(e, target);
+      }
+    });
+  };
+
+  /* ─── Expose reducedMotion flag helper ───────────────────────────────── */
+  window.JW.reducedMotion = function () {
+    return document.documentElement.dataset.reducedMotion === 'true';
+  };
+
+  window.JW.isMobile = function () {
+    return document.documentElement.dataset.mobile === 'true';
+  };
+
+  /* ─── DOMContentLoaded Wrapper ───────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function () {
+
+    /* ── Scroll Reveal System ─────────────────────────────────────────── */
+    const revealSelectors = '.reveal-up, .reveal-left, .reveal-right, .reveal-scale';
+    const revealElements = document.querySelectorAll(revealSelectors);
+
+    if (revealElements.length && !window.JW.reducedMotion()) {
+      const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+    } else if (revealElements.length) {
+      // Reduced motion: reveal immediately without animation
+      revealElements.forEach(function (el) {
+        el.classList.add('revealed');
+        el.style.transitionDuration = '0ms';
+      });
+    }
+
+    /* ── Smooth Scroll for Anchor Links ──────────────────────────────── */
+    const SCROLL_OFFSET = 80; // matches --header-height default
+
+    document.addEventListener('click', function (e) {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      if (href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const header = document.querySelector('header, .site-header, [data-header]');
+      const offset = header ? header.getBoundingClientRect().height : SCROLL_OFFSET;
+      const targetY = target.getBoundingClientRect().top + window.scrollY - offset;
+
+      if (window.JW.reducedMotion()) {
+        window.scrollTo({ top: targetY });
+      } else {
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
+    });
+
+    /* ── Active Nav Link Detection ───────────────────────────────────── */
+    // Highlights the nav link whose href matches the current page path
+    const navLinks = document.querySelectorAll('nav a, .nav a, [data-nav] a');
+    if (navLinks.length) {
+      const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+      navLinks.forEach(function (link) {
+        const linkPath = link.getAttribute('href') || '';
+        const normalised = linkPath.replace(/\/$/, '') || '/';
+
+        // Exact match or index page
+        if (normalised === currentPath || (currentPath === '/' && normalised === '/index.html')) {
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
+        }
+
+        // Partial match for section-based sub-pages (skip root href)
+        if (normalised !== '/' && normalised !== '' && currentPath.startsWith(normalised)) {
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+
+    /* ── Dynamic Copyright Year ──────────────────────────────────────── */
+    const yearEls = document.querySelectorAll('[data-year], .copyright-year');
+    const year = new Date().getFullYear();
+    yearEls.forEach(function (el) {
+      el.textContent = year;
+    });
+
+    /* ── Stagger Delay Support (via CSS classes) ─────────────────────── */
+    // Stagger classes are handled in CSS (.stagger-1 through .stagger-8).
+    // The JS layer ensures stagger delays are zeroed under reduced motion.
+    if (window.JW.reducedMotion()) {
+      const staggerEls = document.querySelectorAll('[class*="stagger-"]');
+      staggerEls.forEach(function (el) {
+        el.style.transitionDelay = '0ms';
+        el.style.animationDelay = '0ms';
+      });
+    }
+
+  }); // end DOMContentLoaded
+
+}());
+
+/* ── header ────────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Header Module
+ * Auto-hide on scroll down, show on scroll up.
+ * Adds .header--scrolled class after 50px scroll.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header, .site-header, [data-header]');
     if (!header) return;
 
-    let lastScrollY = 0;
-    let scrollThreshold = 5;
-    let menuOpen = false;
+    let lastScrollY = window.scrollY;
     let ticking = false;
+    const SHRINK_THRESHOLD = 50;
 
-    window.addEventListener('scroll', () => {
+    function updateHeader() {
+      const currentScrollY = window.scrollY;
+
+      // Scrolled state (shrink)
+      if (currentScrollY > SHRINK_THRESHOLD) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+        header.classList.remove('header--hidden');
+        lastScrollY = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      // Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > SHRINK_THRESHOLD) {
+        // Scrolling down
+        header.classList.add('header--hidden');
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        header.classList.remove('header--hidden');
+      }
+
+      // Update CSS variable so other modules can reference actual header height
+      const headerHeight = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--header-height-actual', headerHeight + 'px');
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
       if (!ticking) {
-        requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-
-          if (currentScrollY > 50) {
-            header.classList.add('header-scrolled');
-          } else {
-            header.classList.remove('header-scrolled');
-          }
-
-          if (!menuOpen) {
-            if (currentScrollY > lastScrollY + scrollThreshold && currentScrollY > 100) {
-              header.classList.add('header-hidden');
-            } else if (currentScrollY < lastScrollY - scrollThreshold) {
-              header.classList.remove('header-hidden');
-            }
-          }
-
-          lastScrollY = currentScrollY;
-          ticking = false;
-        });
+        requestAnimationFrame(updateHeader);
         ticking = true;
       }
     }, { passive: true });
 
-    window.headerSetMenuOpen = (isOpen) => { menuOpen = isOpen; };
-  }
+    // Set initial header height variable
+    const initialHeight = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--header-height-actual', initialHeight + 'px');
+  });
 
-  /* ============================================
-     MOBILE MENU — Fullscreen Overlay
-     ============================================ */
-  function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.mobile-menu');
-    if (!hamburger || !menu) return;
+}());
 
-    const links = menu.querySelectorAll('a');
-    let previousFocus = null;
+/* ── mobile-menu ───────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Mobile Menu Module
+ * Toggles mobile menu with hamburger button, handles close states,
+ * body scroll lock, focus trap, and full accessibility.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.mobile-menu, .nav-mobile, [data-mobile-menu]');
+    if (!toggle || !menu) return;
+
+    let isOpen = false;
+    let focusableEls = [];
+    let firstFocusable = null;
+    let lastFocusable = null;
+
+    const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    function updateFocusables() {
+      focusableEls = Array.from(menu.querySelectorAll(FOCUSABLE));
+      firstFocusable = focusableEls[0] || null;
+      lastFocusable = focusableEls[focusableEls.length - 1] || null;
+    }
 
     function openMenu() {
-      previousFocus = document.activeElement;
-      hamburger.classList.add('active');
-      menu.classList.add('open');
-      hamburger.setAttribute('aria-expanded', 'true');
+      isOpen = true;
       document.body.classList.add('menu-open');
-      if (window.headerSetMenuOpen) window.headerSetMenuOpen(true);
-      const header = document.querySelector('.header');
-      if (header) header.classList.remove('header-hidden');
-      if (links.length > 0) links[0].focus();
+      menu.classList.add('is-open');
+      toggle.classList.add('is-active');
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-hidden', 'false');
+
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+
+      updateFocusables();
+      if (firstFocusable) firstFocusable.focus();
     }
 
     function closeMenu() {
-      hamburger.classList.remove('active');
-      menu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+      isOpen = false;
       document.body.classList.remove('menu-open');
-      if (window.headerSetMenuOpen) window.headerSetMenuOpen(false);
-      if (previousFocus) previousFocus.focus();
+      menu.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+
+      // Restore body scroll
+      document.body.style.overflow = '';
+
+      toggle.focus();
     }
 
-    hamburger.addEventListener('click', () => {
-      if (menu.classList.contains('open')) {
+    // Set initial ARIA state
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', menu.id || 'mobile-menu');
+    if (!menu.id) menu.id = 'mobile-menu';
+    menu.setAttribute('aria-hidden', 'true');
+
+    // Toggle on button click
+    toggle.addEventListener('click', function () {
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Close on nav link click
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
         closeMenu();
-      } else {
-        openMenu();
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menu.classList.contains('open')) {
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
         closeMenu();
+        return;
       }
 
-      if (e.key === 'Tab' && menu.classList.contains('open')) {
-        const focusable = [hamburger, ...links];
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
+      // Focus trap within menu
+      if (e.key === 'Tab') {
+        if (!focusableEls.length) { e.preventDefault(); return; }
 
         if (e.shiftKey) {
-          if (document.activeElement === first) {
+          if (document.activeElement === firstFocusable) {
             e.preventDefault();
-            last.focus();
+            lastFocusable.focus();
           }
         } else {
-          if (document.activeElement === last) {
+          if (document.activeElement === lastFocusable) {
             e.preventDefault();
-            first.focus();
+            firstFocusable.focus();
           }
         }
       }
     });
 
-    links.forEach(link => {
-      link.addEventListener('click', () => closeMenu());
+    // Close on outside click (not on toggle or menu itself)
+    document.addEventListener('click', function (e) {
+      if (!isOpen) return;
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
     });
+  });
+
+}());
+
+/* ── preloader ─────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Preloader Module
+ * Fades out .preloader after window load with a minimum display time.
+ * Removes element from DOM after transition and sets body.loaded class.
+ */
+
+(function () {
+  'use strict';
+
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_DISPLAY_MS = 500;
+  const startTime = Date.now();
+
+  function hidePreloader() {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
+
+    setTimeout(function () {
+      preloader.style.transition = 'opacity 0.5s ease';
+      preloader.style.opacity = '0';
+
+      document.body.classList.add('loaded');
+
+      preloader.addEventListener('transitionend', function onEnd() {
+        preloader.removeEventListener('transitionend', onEnd);
+        if (preloader.parentNode) {
+          preloader.parentNode.removeChild(preloader);
+        }
+      }, { once: true });
+
+      // Fallback removal in case transitionend doesn't fire
+      setTimeout(function () {
+        if (preloader.parentNode) {
+          preloader.parentNode.removeChild(preloader);
+        }
+      }, 700);
+    }, remaining);
   }
 
-  /* ============================================
-     SCROLL PROGRESS BAR
-     ============================================ */
-  function initScrollProgress() {
-    const bar = document.querySelector('.scroll-progress-bar');
-    if (!bar) return;
+  if (document.readyState === 'complete') {
+    hidePreloader();
+  } else {
+    window.addEventListener('load', hidePreloader, { once: true });
+  }
 
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = docHeight > 0 ? window.scrollY / docHeight : 0;
-          bar.style.transform = `scaleX(${progress})`;
-          ticking = false;
+}());
+
+/* ── form-validation ───────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Form Validation Module
+ * Real-time blur validation for .form-input and .form-textarea with [required].
+ * Supports: required, email, phone, min length, custom via data-validate.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const forms = document.querySelectorAll('form[data-validate-form], .form--validated');
+    if (!forms.length) return;
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const PHONE_RE = /^[+]?[\d\s\-().]{7,20}$/;
+
+    function getError(input) {
+      const value = input.value.trim();
+      const rules = (input.dataset.validate || '').split('|').filter(Boolean);
+
+      if (input.required && !value) {
+        return input.dataset.errorRequired || 'This field is required.';
+      }
+
+      for (const rule of rules) {
+        if (rule === 'email' && value && !EMAIL_RE.test(value)) {
+          return input.dataset.errorEmail || 'Please enter a valid email address.';
+        }
+        if (rule === 'phone' && value && !PHONE_RE.test(value)) {
+          return input.dataset.errorPhone || 'Please enter a valid phone number.';
+        }
+        if (rule.startsWith('min:')) {
+          const min = parseInt(rule.split(':')[1], 10);
+          if (value && value.length < min) {
+            return input.dataset.errorMin || 'Please enter at least ' + min + ' characters.';
+          }
+        }
+      }
+
+      return null;
+    }
+
+    function showError(input, message) {
+      input.classList.add('error');
+      input.setAttribute('aria-invalid', 'true');
+
+      let errorEl = document.getElementById(input.id + '-error');
+      if (!errorEl) {
+        errorEl = document.createElement('span');
+        errorEl.className = 'form-error';
+        errorEl.setAttribute('role', 'alert');
+        if (input.id) {
+          errorEl.id = input.id + '-error';
+          input.setAttribute('aria-describedby', errorEl.id);
+        }
+        input.parentNode.appendChild(errorEl);
+      }
+
+      errorEl.textContent = message;
+      errorEl.classList.add('visible');
+    }
+
+    function clearError(input) {
+      input.classList.remove('error');
+      input.setAttribute('aria-invalid', 'false');
+
+      const errorEl = document.getElementById(input.id + '-error');
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.classList.remove('visible');
+      }
+    }
+
+    forms.forEach(function (form) {
+      const inputs = form.querySelectorAll('.form-input[required], .form-textarea[required], .form-input[data-validate], .form-textarea[data-validate]');
+
+      // Real-time validation on blur
+      inputs.forEach(function (input) {
+        input.addEventListener('blur', function () {
+          const error = getError(input);
+          error ? showError(input, error) : clearError(input);
         });
+
+        // Clear error on input
+        input.addEventListener('input', function () {
+          if (input.classList.contains('error')) {
+            const error = getError(input);
+            if (!error) clearError(input);
+          }
+        });
+      });
+
+      // Submit handler
+      form.addEventListener('submit', function (e) {
+        let hasErrors = false;
+        let firstErrorInput = null;
+
+        inputs.forEach(function (input) {
+          const error = getError(input);
+          if (error) {
+            showError(input, error);
+            hasErrors = true;
+            if (!firstErrorInput) firstErrorInput = input;
+          } else {
+            clearError(input);
+          }
+        });
+
+        if (hasErrors) {
+          e.preventDefault();
+          if (firstErrorInput) firstErrorInput.focus();
+          return;
+        }
+
+        // Optional: show success message if data-success-message is set
+        const successMsg = form.dataset.successMessage;
+        if (successMsg) {
+          e.preventDefault();
+          let successEl = form.querySelector('.form-success');
+          if (!successEl) {
+            successEl = document.createElement('div');
+            successEl.className = 'form-success';
+            successEl.setAttribute('role', 'status');
+            form.appendChild(successEl);
+          }
+          successEl.textContent = successMsg;
+          successEl.style.display = 'block';
+          form.reset();
+        }
+      });
+    });
+  });
+
+}());
+
+/* ── cookie-banner ─────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Cookie Banner Module
+ * Shows .cookie-banner if no consent stored. Slides up from bottom.
+ * Accept/reject stored in localStorage. Focus trap when visible.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.querySelector('.cookie-banner');
+    if (!banner) return;
+
+    const STORAGE_KEY = 'jw_cookie_consent';
+
+    // Already decided — do nothing
+    if (localStorage.getItem(STORAGE_KEY)) return;
+
+    const acceptBtn = banner.querySelector('.cookie-accept, [data-cookie-accept]');
+    const rejectBtn = banner.querySelector('.cookie-reject, [data-cookie-reject]');
+
+    const FOCUSABLE = 'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])';
+    let focusableEls = [];
+    let firstFocusable = null;
+    let lastFocusable = null;
+
+    function showBanner() {
+      banner.removeAttribute('hidden');
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-modal', 'true');
+      banner.setAttribute('aria-label', 'Cookie consent');
+
+      // Animate in
+      requestAnimationFrame(function () {
+        banner.classList.add('is-visible');
+      });
+
+      focusableEls = Array.from(banner.querySelectorAll(FOCUSABLE));
+      firstFocusable = focusableEls[0] || null;
+      lastFocusable = focusableEls[focusableEls.length - 1] || null;
+
+      if (firstFocusable) setTimeout(function () { firstFocusable.focus(); }, 100);
+
+      // Focus trap
+      document.addEventListener('keydown', trapFocus);
+    }
+
+    function hideBanner() {
+      banner.classList.remove('is-visible');
+      document.removeEventListener('keydown', trapFocus);
+
+      banner.addEventListener('transitionend', function onEnd() {
+        banner.removeEventListener('transitionend', onEnd);
+        banner.setAttribute('hidden', '');
+      }, { once: true });
+    }
+
+    function trapFocus(e) {
+      if (e.key !== 'Tab' || !focusableEls.length) return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function () {
+        localStorage.setItem(STORAGE_KEY, 'accepted');
+        banner.dispatchEvent(new CustomEvent('cookie:accepted', { bubbles: true }));
+        hideBanner();
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function () {
+        localStorage.setItem(STORAGE_KEY, 'rejected');
+        banner.dispatchEvent(new CustomEvent('cookie:rejected', { bubbles: true }));
+        hideBanner();
+      });
+    }
+
+    // Show after short delay
+    setTimeout(showBanner, 800);
+  });
+
+}());
+
+/* ── whatsapp-widget ───────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — WhatsApp Widget Module
+ * Floating button (.whatsapp-float) visible after 300px scroll.
+ * Reads data-phone and data-message attributes for the wa.me link.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const widget = document.querySelector('.whatsapp-float');
+    if (!widget) return;
+
+    const phone = widget.dataset.phone || '';
+    const message = widget.dataset.message || '';
+    const SHOW_THRESHOLD = 300;
+    let hasAppeared = false;
+    let ticking = false;
+
+    // Build wa.me URL
+    const waUrl = 'https://wa.me/' + phone.replace(/\D/g, '') +
+      (message ? '?text=' + encodeURIComponent(message) : '');
+
+    // If widget is a link, set href; otherwise wrap or handle click
+    if (widget.tagName === 'A') {
+      widget.href = waUrl;
+      widget.setAttribute('target', '_blank');
+      widget.setAttribute('rel', 'noopener noreferrer');
+    } else {
+      widget.setAttribute('role', 'link');
+      widget.setAttribute('tabindex', '0');
+      widget.addEventListener('click', function () { window.open(waUrl, '_blank', 'noopener'); });
+      widget.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.open(waUrl, '_blank', 'noopener');
+        }
+      });
+    }
+
+    widget.setAttribute('aria-label', 'Chat with us on WhatsApp');
+
+    function updateVisibility() {
+      if (window.scrollY > SHOW_THRESHOLD) {
+        widget.classList.add('is-visible');
+
+        if (!hasAppeared) {
+          hasAppeared = true;
+          widget.classList.add('pulse-once');
+          widget.addEventListener('animationend', function () {
+            widget.classList.remove('pulse-once');
+          }, { once: true });
+        }
+      } else {
+        widget.classList.remove('is-visible');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(updateVisibility);
         ticking = true;
       }
     }, { passive: true });
-  }
 
-  /* ============================================
-     REVEAL ON SCROLL
-     ============================================ */
-  function initRevealAnimations() {
-    const elements = document.querySelectorAll('.reveal-up');
-    if (elements.length === 0) return;
+    // Run once on load
+    updateVisibility();
+  });
 
-    if (prefersReducedMotion) {
-      elements.forEach(el => el.classList.add('revealed'));
-      return;
+}());
+
+/* ── back-to-top ───────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Back to Top Module
+ * Shows .back-to-top button after 500px scroll.
+ * Smooth scroll to top on click. Accessible.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.back-to-top');
+    if (!btn) return;
+
+    const SHOW_THRESHOLD = 500;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let ticking = false;
+
+    btn.setAttribute('aria-label', 'Back to top');
+
+    function updateVisibility() {
+      if (window.scrollY > SHOW_THRESHOLD) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+      ticking = false;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
+    btn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? 'auto' : 'smooth'
+      });
+    });
+
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(updateVisibility);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial state
+    updateVisibility();
+  });
+
+}());
+
+/* ── marquee ───────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Marquee Module
+ * Infinite scrolling text for .marquee elements.
+ * Clones content for seamless loop. Pauses on hover.
+ * Supports data-speed and data-direction="left|right".
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const marquees = document.querySelectorAll('.marquee');
+    if (!marquees.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    marquees.forEach(function (marquee) {
+      const inner = marquee.querySelector('.marquee__inner');
+      if (!inner) return;
+
+      const speed = marquee.dataset.speed || '30s';
+      const direction = marquee.dataset.direction === 'right' ? 'reverse' : 'normal';
+
+      // Clone inner content for seamless loop
+      const clone = inner.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      marquee.appendChild(clone);
+
+      // Apply animation
+      const animDuration = reducedMotion ? '0.01ms' : speed;
+
+      [inner, clone].forEach(function (el) {
+        el.style.animation = 'marquee-scroll ' + animDuration + ' linear infinite';
+        el.style.animationDirection = direction;
+        el.style.willChange = 'transform';
+      });
+
+      // Pause on hover (desktop)
+      marquee.addEventListener('mouseenter', function () {
+        inner.style.animationPlayState = 'paused';
+        clone.style.animationPlayState = 'paused';
+      });
+
+      marquee.addEventListener('mouseleave', function () {
+        inner.style.animationPlayState = 'running';
+        clone.style.animationPlayState = 'running';
+      });
+
+      // Pause when not in viewport (performance)
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          const state = entry.isIntersecting ? 'running' : 'paused';
+          inner.style.animationPlayState = state;
+          clone.style.animationPlayState = state;
+        });
+      }, { threshold: 0 });
+
+      observer.observe(marquee);
+    });
+
+    // Inject keyframes if not already present
+    if (!document.getElementById('jw-marquee-keyframes')) {
+      const style = document.createElement('style');
+      style.id = 'jw-marquee-keyframes';
+      style.textContent = '@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }';
+      document.head.appendChild(style);
+    }
+  });
+
+}());
+
+/* ── carousel ──────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Carousel Module
+ * Generic carousel with dots, arrows, touch/swipe, autoplay, and infinite loop.
+ * Supports multiple instances via .carousel class.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousels = document.querySelectorAll('.carousel');
+    if (!carousels.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    carousels.forEach(function (carousel) {
+      const track = carousel.querySelector('.carousel__track');
+      if (!track) return;
+
+      const slides = Array.from(track.querySelectorAll('.carousel__slide'));
+      if (!slides.length) return;
+
+      const dotsContainer = carousel.querySelector('.carousel__dots');
+      const prevBtn = carousel.querySelector('.carousel__prev');
+      const nextBtn = carousel.querySelector('.carousel__next');
+      const autoplayMs = parseInt(carousel.dataset.autoplay, 10) || 0;
+      const total = slides.length;
+
+      let current = 0;
+      let autoplayTimer = null;
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let isDragging = false;
+
+      // Set transition speed
+      track.style.transition = reducedMotion
+        ? 'none'
+        : 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+
+      // Build dot indicators
+      let dots = [];
+      if (dotsContainer) {
+        slides.forEach(function (_, i) {
+          const dot = document.createElement('button');
+          dot.className = 'carousel__dot';
+          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          dot.addEventListener('click', function () { goTo(i); });
+          dotsContainer.appendChild(dot);
+          dots.push(dot);
+        });
+      }
+
+      function updateDots() {
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('is-active', i === current);
+          dot.setAttribute('aria-pressed', String(i === current));
+        });
+      }
+
+      function updateAriaSlides() {
+        slides.forEach(function (slide, i) {
+          slide.setAttribute('aria-hidden', String(i !== current));
+        });
+      }
+
+      function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        updateDots();
+        updateAriaSlides();
+      }
+
+      function goNext() { goTo(current + 1); }
+      function goPrev() { goTo(current - 1); }
+
+      // Arrow buttons
+      if (prevBtn) prevBtn.addEventListener('click', function () { goPrev(); resetAutoplay(); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { goNext(); resetAutoplay(); });
+
+      // Keyboard navigation
+      carousel.setAttribute('tabindex', '0');
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { goPrev(); resetAutoplay(); }
+        if (e.key === 'ArrowRight') { goNext(); resetAutoplay(); }
+      });
+
+      // Touch / swipe support
+      track.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        isDragging = true;
+      }, { passive: true });
+
+      track.addEventListener('touchmove', function (e) {
+        if (!isDragging) return;
+        touchEndX = e.touches[0].clientX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', function () {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          diff > 0 ? goNext() : goPrev();
+          resetAutoplay();
         }
       });
-    }, { threshold: 0.15 });
 
-    elements.forEach(el => observer.observe(el));
-  }
+      // Autoplay
+      function startAutoplay() {
+        if (!autoplayMs) return;
+        autoplayTimer = setInterval(goNext, autoplayMs);
+      }
 
-  /* ============================================
-     COUNTER ANIMATION
-     ============================================ */
-  function initCounters() {
-    const counters = document.querySelectorAll('[data-count]');
-    if (counters.length === 0) return;
+      function stopAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
 
-    if (prefersReducedMotion) {
-      counters.forEach(el => {
-        const target = parseInt(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        el.textContent = target + suffix;
+      function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      if (autoplayMs && !reducedMotion) {
+        startAutoplay();
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+        carousel.addEventListener('focusin', stopAutoplay);
+        carousel.addEventListener('focusout', startAutoplay);
+      }
+
+      // Initial state
+      goTo(0);
+    });
+  });
+
+}());
+
+/* ── accordion ─────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Accordion Module
+ * Expand/collapse with smooth max-height animation.
+ * Optional data-single="true" to allow only one open item per group.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion');
+    if (!accordions.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    accordions.forEach(function (accordion) {
+      const isSingle = accordion.dataset.single === 'true';
+      const items = Array.from(accordion.querySelectorAll('.accordion__item'));
+
+      items.forEach(function (item, i) {
+        const trigger = item.querySelector('.accordion__trigger');
+        const content = item.querySelector('.accordion__content');
+        if (!trigger || !content) return;
+
+        const contentId = 'accordion-content-' + i + '-' + Date.now();
+        const triggerId = 'accordion-trigger-' + i + '-' + Date.now();
+
+        trigger.setAttribute('id', triggerId);
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-controls', contentId);
+
+        content.setAttribute('id', contentId);
+        content.setAttribute('role', 'region');
+        content.setAttribute('aria-labelledby', triggerId);
+
+        if (!reducedMotion) {
+          content.style.maxHeight = '0';
+          content.style.overflow = 'hidden';
+          content.style.transition = 'max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+
+        function open() {
+          trigger.setAttribute('aria-expanded', 'true');
+          trigger.classList.add('is-open');
+          item.classList.add('is-open');
+
+          if (reducedMotion) {
+            content.removeAttribute('hidden');
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        }
+
+        function close() {
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.classList.remove('is-open');
+          item.classList.remove('is-open');
+
+          if (reducedMotion) {
+            content.setAttribute('hidden', '');
+          } else {
+            content.style.maxHeight = '0';
+          }
+        }
+
+        trigger.addEventListener('click', function () {
+          const isCurrentlyOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          if (isSingle && !isCurrentlyOpen) {
+            // Close all others in this accordion
+            items.forEach(function (otherItem) {
+              const otherTrigger = otherItem.querySelector('.accordion__trigger');
+              const otherContent = otherItem.querySelector('.accordion__content');
+              if (otherTrigger && otherContent && otherTrigger !== trigger) {
+                otherTrigger.setAttribute('aria-expanded', 'false');
+                otherTrigger.classList.remove('is-open');
+                otherItem.classList.remove('is-open');
+                if (!reducedMotion) otherContent.style.maxHeight = '0';
+                else otherContent.setAttribute('hidden', '');
+              }
+            });
+          }
+
+          isCurrentlyOpen ? close() : open();
+        });
+
+        // Keyboard support
+        trigger.addEventListener('keydown', function (e) {
+          const idx = items.indexOf(item);
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = items[idx + 1];
+            if (next) next.querySelector('.accordion__trigger')?.focus();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = items[idx - 1];
+            if (prev) prev.querySelector('.accordion__trigger')?.focus();
+          }
+        });
       });
-      return;
+    });
+  });
+
+}());
+
+/* ── counter ───────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Counter Module
+ * Animates numbers from 0 to [data-count] target on scroll into view.
+ * Supports prefix/suffix, easeOutCubic easing, ~2s duration. Fires once.
+ */
+
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DURATION = 2000; // ms
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.count) || 0;
+      const prefix = el.dataset.countPrefix || '';
+      const suffix = el.dataset.countSuffix || '';
+      const isFloat = String(target).includes('.');
+      const decimals = isFloat ? (String(target).split('.')[1] || '').length : 0;
+
+      // Reduced motion: just set final value
+      if (reducedMotion) {
+        el.textContent = prefix + target.toFixed(decimals) + suffix;
+        return;
+      }
+
+      const startTime = performance.now();
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / DURATION, 1);
+        const eased = easeOutCubic(progress);
+        const current = target * eased;
+
+        el.textContent = prefix + current.toFixed(decimals) + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = prefix + target.toFixed(decimals) + suffix;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           animateCounter(entry.target);
           observer.unobserve(entry.target);
@@ -253,356 +1119,70 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.3 });
 
-    counters.forEach(el => observer.observe(el));
-
-    function animateCounter(element) {
-      const target = parseInt(element.dataset.count);
-      const suffix = element.dataset.suffix || '';
-      const duration = 2000;
-      const start = performance.now();
-
-      function update(currentTime) {
-        const elapsed = currentTime - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        element.textContent = Math.floor(eased * target) + suffix;
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    }
-  }
-
-  /* ============================================
-     CUSTOM CURSOR (Desktop pointer devices only)
-     ============================================ */
-  function initCustomCursor() {
-    if (prefersReducedMotion) return;
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-
-    const dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    const follower = document.createElement('div');
-    follower.className = 'cursor-follower';
-    document.body.appendChild(dot);
-    document.body.appendChild(follower);
-
-    let mouseX = -40, mouseY = -40;
-    let followerX = -40, followerY = -40;
-    let running = false;
-
-    function tick() {
-      followerX += (mouseX - followerX) * 0.15;
-      followerY += (mouseY - followerY) * 0.15;
-      follower.style.transform =
-        'translate(' + (followerX - 16) + 'px,' + (followerY - 16) + 'px)';
-      requestAnimationFrame(tick);
-    }
-
-    document.addEventListener('mousemove', function (e) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.transform =
-        'translate(' + (mouseX - 4) + 'px,' + (mouseY - 4) + 'px)';
-
-      if (!running) {
-        running = true;
-        followerX = mouseX;
-        followerY = mouseY;
-        follower.style.transform =
-          'translate(' + (mouseX - 16) + 'px,' + (mouseY - 16) + 'px)';
-        document.body.classList.add('custom-cursor');
-        requestAnimationFrame(tick);
-      }
+    counters.forEach(function (el) {
+      // Set initial display to 0
+      const prefix = el.dataset.countPrefix || '';
+      const suffix = el.dataset.countSuffix || '';
+      el.textContent = prefix + '0' + suffix;
+      observer.observe(el);
     });
+  });
 
-    // Hover effect on interactive elements
-    function bindHover() {
-      document.querySelectorAll('a, button, [role="button"], label').forEach(function (el) {
-        if (el.dataset.cursorBound) return;
-        el.dataset.cursorBound = '1';
-        el.addEventListener('mouseenter', function () { follower.classList.add('hover'); });
-        el.addEventListener('mouseleave', function () { follower.classList.remove('hover'); });
-      });
-    }
+}());
 
-    bindHover();
-    new MutationObserver(bindHover).observe(document.body, { childList: true, subtree: true });
-  }
+/* ── parallax ──────────────────────────────────────────────────────────── */
+/**
+ * JARVISWEBSITES — Parallax Module
+ * Applies GPU-accelerated parallax to [data-parallax] elements.
+ * Desktop only — skipped on touch devices and reduced motion.
+ */
 
-  /* ============================================
-     PARALLAX (Desktop only)
-     ============================================ */
-  function initParallax() {
-    if (prefersReducedMotion) return;
+(function () {
+  'use strict';
 
-    const heroImage = document.querySelector('.hero-image img');
-    if (!heroImage) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    // Skip on touch devices or reduced motion
+    if ((window.JW && window.JW.isMobile()) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+    const elements = document.querySelectorAll('[data-parallax]');
+    if (!elements.length) return;
 
     let ticking = false;
-    window.addEventListener('scroll', () => {
+
+    // Pre-parse speed values
+    const items = Array.from(elements).map(function (el) {
+      return {
+        el: el,
+        speed: parseFloat(el.dataset.parallax) || 0.3
+      };
+    });
+
+    function applyParallax() {
+      const scrollY = window.scrollY;
+
+      items.forEach(function (item) {
+        const rect = item.el.getBoundingClientRect();
+        const centerY = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        const offset = (centerY - viewportCenter) * item.speed;
+
+        item.el.style.transform = 'translateY(' + offset.toFixed(2) + 'px)';
+        item.el.style.willChange = 'transform';
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
       if (!ticking) {
-        requestAnimationFrame(() => {
-          const hero = heroImage.closest('.hero');
-          if (hero) {
-            const rect = hero.getBoundingClientRect();
-            if (rect.bottom > 0 && rect.top < window.innerHeight) {
-              heroImage.style.transform = `translateY(${window.scrollY * 0.15}px) scale(1.1)`;
-            }
-          }
-          ticking = false;
-        });
+        requestAnimationFrame(applyParallax);
         ticking = true;
       }
     }, { passive: true });
 
-    heroImage.style.transform = 'scale(1.1)';
-  }
+    // Run once on init
+    applyParallax();
+  });
 
-  /* ============================================
-     MAGNETIC BUTTONS (Desktop only)
-     ============================================ */
-  function initMagneticButtons() {
-    if (prefersReducedMotion) return;
-
-    const buttons = document.querySelectorAll('.magnetic-btn');
-    buttons.forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
-        const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
-        btn.style.transform = `translate(${x}px, ${y}px)`;
-      });
-
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translate(0, 0)';
-      });
-    });
-  }
-
-  /* ============================================
-     SMOOTH SCROLL
-     ============================================ */
-  function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-          const offset = headerHeight + 20;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({
-            top,
-            behavior: prefersReducedMotion ? 'instant' : 'smooth'
-          });
-        }
-      });
-    });
-  }
-
-  /* ============================================
-     ACTIVE NAV LINK (multi-page)
-     ============================================ */
-  function initActiveNav() {
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.header-nav a, .mobile-menu-nav a');
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (!href) return;
-
-      const linkPath = new URL(href, window.location.origin).pathname;
-
-      if (currentPath === linkPath) {
-        link.classList.add('active');
-      } else if (currentPath.includes('/servizi/') && href.includes('servizi.html')) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  /* ============================================
-     FORM VALIDATION
-     ============================================ */
-  function initForms() {
-    const forms = document.querySelectorAll('form[data-validate]');
-    forms.forEach(form => {
-      const fields = form.querySelectorAll('[required]');
-      const successEl = form.parentElement?.querySelector('.form-success');
-
-      fields.forEach(field => {
-        field.addEventListener('blur', () => validateField(field));
-        field.addEventListener('input', () => {
-          const group = field.closest('.form-group');
-          if (group && group.classList.contains('error')) {
-            validateField(field);
-          }
-        });
-      });
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let valid = true;
-
-        fields.forEach(field => {
-          if (!validateField(field)) valid = false;
-        });
-
-        const checkbox = form.querySelector('input[type="checkbox"][required]');
-        if (checkbox && !checkbox.checked) {
-          valid = false;
-        }
-
-        if (valid) {
-          form.style.display = 'none';
-          if (successEl) successEl.classList.add('visible');
-        } else {
-          const firstError = form.querySelector('.form-group.error');
-          if (firstError) {
-            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            const input = firstError.querySelector('input, textarea, select');
-            if (input) input.focus();
-          }
-        }
-      });
-    });
-
-    function validateField(field) {
-      const group = field.closest('.form-group');
-      if (!group) return true;
-
-      const errorMsg = group.querySelector('.form-error-message');
-      let valid = true;
-
-      if (field.hasAttribute('required') && !field.value.trim()) {
-        valid = false;
-        if (errorMsg) errorMsg.textContent = 'Questo campo è obbligatorio';
-      } else if (field.type === 'email' && field.value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(field.value)) {
-          valid = false;
-          if (errorMsg) errorMsg.textContent = 'Inserisci un indirizzo email valido';
-        }
-      } else if (field.type === 'tel' && field.value) {
-        const telRegex = /^[\d\s\+\-\.()]{6,}$/;
-        if (!telRegex.test(field.value)) {
-          valid = false;
-          if (errorMsg) errorMsg.textContent = 'Inserisci un numero di telefono valido';
-        }
-      }
-
-      if (valid) {
-        group.classList.remove('error');
-        group.classList.add('valid');
-      } else {
-        group.classList.add('error');
-        group.classList.remove('valid');
-      }
-
-      return valid;
-    }
-  }
-
-  /* ============================================
-     DYNAMIC YEAR
-     ============================================ */
-  function initDynamicYear() {
-    document.querySelectorAll('[data-year]').forEach(el => {
-      el.textContent = new Date().getFullYear();
-    });
-  }
-
-  /* ============================================
-     FAQ ACCORDION
-     ============================================ */
-  function initFaqAccordion() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    if (faqItems.length === 0) return;
-
-    faqItems.forEach(item => {
-      const trigger = item.querySelector('.faq-trigger');
-      const answer = item.querySelector('.faq-answer');
-      if (!trigger || !answer) return;
-
-      trigger.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-
-        faqItems.forEach(other => {
-          if (other !== item) {
-            other.classList.remove('active');
-            const otherAnswer = other.querySelector('.faq-answer');
-            if (otherAnswer) otherAnswer.style.maxHeight = '0';
-            const otherTrigger = other.querySelector('.faq-trigger');
-            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-          }
-        });
-
-        if (isActive) {
-          item.classList.remove('active');
-          answer.style.maxHeight = '0';
-          trigger.setAttribute('aria-expanded', 'false');
-        } else {
-          item.classList.add('active');
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  }
-
-  /* ============================================
-     SERVICE EXPLORER (Home)
-     ============================================ */
-  function initServiceExplorer() {
-    const explorerItems = document.querySelectorAll('.explorer-item');
-    if (explorerItems.length === 0) return;
-
-    if (explorerItems.length > 0) {
-      const first = explorerItems[0];
-      first.classList.add('active');
-      const firstContent = first.querySelector('.explorer-content');
-      if (firstContent) {
-        firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
-      }
-    }
-
-    explorerItems.forEach(item => {
-      const trigger = item.querySelector('.explorer-trigger');
-      const content = item.querySelector('.explorer-content');
-      if (!trigger || !content) return;
-
-      trigger.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-
-        explorerItems.forEach(other => {
-          if (other !== item) {
-            other.classList.remove('active');
-            const otherContent = other.querySelector('.explorer-content');
-            if (otherContent) otherContent.style.maxHeight = '0';
-          }
-        });
-
-        if (isActive) {
-          item.classList.remove('active');
-          content.style.maxHeight = '0';
-        } else {
-          item.classList.add('active');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        }
-      });
-    });
-  }
-
-  /* ============================================
-     WHATSAPP PULSE
-     ============================================ */
-  function initWhatsAppPulse() {
-    const waBtn = document.querySelector('.whatsapp-btn');
-    if (!waBtn || prefersReducedMotion) return;
-
-    setTimeout(() => waBtn.classList.add('pulse'), 3000);
-    waBtn.addEventListener('animationend', () => waBtn.classList.remove('pulse'));
-  }
-});
+}());
