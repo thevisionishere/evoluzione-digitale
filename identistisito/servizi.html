@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>I Nostri Servizi | Studio IDentisti</title>
+  <meta name="description" content="Scopri tutti i servizi odontoiatrici di Studio IDentisti: implantologia, allineatori invisibili, sbiancamento, chirurgia orale, endodonzia e protesi dentarie.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="I Nostri Servizi | Studio IDentisti">
+  <meta property="og:description" content="Scopri tutti i servizi odontoiatrici di Studio IDentisti: implantologia, allineatori invisibili, sbiancamento, chirurgia orale, endodonzia e protesi dentarie.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader-logo" id="preloader-logo" data-preloader aria-live="polite" aria-label="Caricamento in corso" role="status">
+    <div class="preloader-logo__content">
+      <div class="preloader-logo__mark" aria-hidden="true">
+        <span class="preloader-logo__mark-ring"></span>
+        <span class="preloader-logo__mark-dot"></span>
+      </div>
+      <div class="preloader-logo__wordmark" aria-hidden="true">
+        <span class="preloader-logo__name">I<span class="preloader-logo__name-accent">Dentisti</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
+    <div class="header-classic__inner container">
+
+      <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+        <img src="images/logo.png" alt="Studio IDentisti" style="height: 40px;">
+        <!-- Replace: logo dello studio IDentisti su sfondo trasparente -->
+      </a>
+
+      <nav class="header-classic__nav" aria-label="Navigazione principale">
+        <ul class="header-classic__nav-list" role="list">
+          <li class="header-classic__nav-item">
+            <a href="index.html" class="header-classic__nav-link">Home</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="servizi.html" class="header-classic__nav-link header-classic__nav-link--active" aria-current="page">Servizi</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="chi-siamo.html" class="header-classic__nav-link">Chi Siamo</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-classic__actions">
+        <a href="tel:0763796929" class="btn btn--primary header-classic__cta">0763-796929</a>
+        <button class="header-classic__hamburger" data-mobile-toggle aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav aria-label="Menu mobile">
+        <ul class="header-classic__mobile-nav" role="list">
+          <li><a href="index.html" class="header-classic__mobile-link">Home</a></li>
+          <li><a href="servizi.html" class="header-classic__mobile-link">Servizi</a></li>
+          <li><a href="chi-siamo.html" class="header-classic__mobile-link">Chi Siamo</a></li>
+          <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+        </ul>
+        <a href="tel:0763796929" class="btn btn--primary header-classic__mobile-cta">0763-796929</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Minimal -->
+    <section class="hero-minimal" aria-label="Intestazione principale">
+
+      <div class="hero-minimal__dot-grid" aria-hidden="true">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false">
+          <pattern id="hero-min-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="var(--color-accent)" opacity="0.35"/>
+          </pattern>
+          <rect width="120" height="120" fill="url(#hero-min-dots)"/>
+        </svg>
+      </div>
+
+      <div class="hero-minimal__bracket" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <path d="M62 62 L2 62 L2 2" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="hero-minimal__inner">
+
+          <div class="hero-minimal__eyebrow-wrap reveal-up stagger-1">
+            <span class="hero-minimal__eyebrow section-label">
+              Studio Dentistico · Acquapendente e Grotte di Castro
+            </span>
+          </div>
+
+          <h1 class="hero-minimal__headline reveal-up stagger-2">
+            I Nostri<br>
+            <span class="hero-minimal__headline-outline">Servizi</span><br>
+            Dentali
+          </h1>
+
+          <div class="hero-minimal__separator reveal-up stagger-3" aria-hidden="true">
+            <span class="hero-minimal__separator-line"></span>
+            <span class="hero-minimal__separator-diamond" aria-hidden="true"></span>
+            <span class="hero-minimal__separator-line"></span>
+          </div>
+
+          <div class="hero-minimal__body reveal-up stagger-4">
+            <p class="hero-minimal__desc">
+              Dall'implantologia agli allineatori invisibili, dalla chirurgia orale alla radiologia Cone Beam:
+              offriamo una gamma completa di cure odontoiatriche sotto lo stesso tetto,
+              con tecnologie di ultima generazione e un approccio personalizzato per ogni paziente.
+            </p>
+
+            <ul class="hero-minimal__disciplines" aria-label="Specializzazioni">
+              <li>Implantologia</li>
+              <li>Ortodonzia</li>
+              <li>Chirurgia Orale</li>
+              <li>Radiologia 3D</li>
+            </ul>
+          </div>
+
+          <div class="hero-minimal__actions reveal-up stagger-5">
+            <a href="contatti.html" class="btn btn--primary btn--lg">
+              Prenota una Visita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="tel:0763796929" class="btn btn--secondary btn--lg">
+              Chiama ora
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Services Alternating -->
+    <section class="services-alt section-padding" aria-labelledby="services-alt-title">
+      <div class="container">
+
+        <header class="services-alt__header reveal-up">
+          <span class="services-alt__eyebrow section-label">I Nostri Trattamenti</span>
+          <h2 class="services-alt__title section-title" id="services-alt-title">
+            Cure Complete per<br>
+            <em>Il Tuo Sorriso</em>
+          </h2>
+        </header>
+
+        <!-- Service 1: Implantologia — Image Left -->
+        <article class="services-alt__item services-alt__item--image-left reveal-up" id="implantologia" aria-label="Servizio: Implantologia Dentale">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-implantologia-detail.jpg"
+                alt="Dentista che illustra la procedura di implantologia dentale con modello anatomico"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto del dentista che mostra un impianto o lavora su un paziente, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">01</span>
+              <h3 class="services-alt__service-title">Implantologia Dentale</h3>
+              <p class="services-alt__service-desc">
+                L'implantologia è la soluzione definitiva per sostituire uno o più denti mancanti.
+                Utilizziamo impianti in titanio di ultima generazione che si integrano perfettamente
+                con l'osso mascellare, garantendo stabilità, funzionalità e un aspetto del tutto naturale.
+              </p>
+              <p class="services-alt__service-desc">
+                La pianificazione avviene con la nostra radiologia Cone Beam 3D per una precisione
+                assoluta. Gli interventi sono minimamente invasivi, con tempi di recupero brevi
+                e sedazione cosciente disponibile per i pazienti più ansiosi.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una visita per Implantologia">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 2: Allineatori — Image Right -->
+        <article class="services-alt__item services-alt__item--image-right reveal-up" id="allineatori" aria-label="Servizio: Allineatori Invisibili">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-allineatori-detail.jpg"
+                alt="Paziente che indossa allineatori invisibili trasparenti con sorriso naturale"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: paziente con allineatori invisibili o foto ravvicinata degli allineatori, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">02</span>
+              <h3 class="services-alt__service-title">Allineatori Invisibili</h3>
+              <p class="services-alt__service-desc">
+                Gli allineatori invisibili sono mascherine trasparenti su misura che correggono
+                l'allineamento dei denti in modo discreto ed efficace. Removibili e quasi invisibili,
+                non interferiscono con la tua alimentazione né con la tua vita sociale.
+              </p>
+              <p class="services-alt__service-desc">
+                La Dottoressa Faggiani progetta ogni piano di trattamento con software 3D avanzati
+                per mostrarti il risultato finale prima ancora di iniziare. Trattamenti per adulti
+                e adolescenti, con durata media di 12-18 mesi.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una visita per Allineatori Invisibili">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 3: Sbiancamento — Image Left -->
+        <article class="services-alt__item services-alt__item--image-left reveal-up" id="sbiancamento" aria-label="Servizio: Sbiancamento Dentale">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-sbiancamento-detail.jpg"
+                alt="Trattamento di sbiancamento dentale professionale con luce LED attivante"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto sbiancamento con luce LED o comparazione prima/dopo, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">03</span>
+              <h3 class="services-alt__service-title">Sbiancamento Dentale</h3>
+              <p class="services-alt__service-desc">
+                Il nostro trattamento di sbiancamento professionale utilizza gel a base di perossido
+                di idrogeno attivato da luce LED per risultati immediati e duraturi. In una singola
+                seduta di circa un'ora, i denti possono schiarirsi fino a 8 tonalità.
+              </p>
+              <p class="services-alt__service-desc">
+                Offriamo anche kit personalizzati per il mantenimento a domicilio con mascherine
+                su misura. Il trattamento è sicuro, privo di sensibilità dolorosa e adatto
+                anche a chi ha denti sensibili grazie ai prodotti desensibilizzanti che utilizziamo.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una visita per Sbiancamento Dentale">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 4: Chirurgia Orale — Image Right -->
+        <article class="services-alt__item services-alt__item--image-right reveal-up" id="chirurgia" aria-label="Servizio: Chirurgia Orale">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-chirurgia-detail.jpg"
+                alt="Sala operatoria moderna attrezzata per interventi di chirurgia orale di precisione"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto sala operatoria o strumentazione chirurgica odontoiatrica, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">04</span>
+              <h3 class="services-alt__service-title">Chirurgia Orale</h3>
+              <p class="services-alt__service-desc">
+                La chirurgia orale comprende estrazioni semplici e complesse, rimozione dei denti
+                del giudizio inclusi o semi-inclusi, frenulectomie e piccoli interventi di chirurgia
+                minore. Ogni procedura viene eseguita in massima sicurezza con anestesia locale.
+              </p>
+              <p class="services-alt__service-desc">
+                Per i pazienti particolarmente ansiosi è disponibile la sedazione cosciente,
+                che permette di affrontare l'intervento in uno stato di rilassamento profondo
+                mantenendo la collaborazione. Il post-operatorio è gestito con attenzione
+                e siamo sempre disponibili per qualsiasi domanda.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una visita per Chirurgia Orale">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 5: Endodonzia — Image Left -->
+        <article class="services-alt__item services-alt__item--image-left reveal-up" id="endodonzia" aria-label="Servizio: Endodonzia">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-endodonzia-detail.jpg"
+                alt="Strumentazione rotante per terapia canalare endodontica di precisione"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto strumentazione endodontica o microscopio operatore, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">05</span>
+              <h3 class="services-alt__service-title">Endodonzia</h3>
+              <p class="services-alt__service-desc">
+                La terapia canalare, comunemente chiamata "devitalizzazione", consente di salvare
+                un dente gravemente compromesso da carie profonde o infezioni batteriche.
+                Utilizziamo strumentazione rotante di ultima generazione per un trattamento
+                preciso, rapido e privo di dolore.
+              </p>
+              <p class="services-alt__service-desc">
+                Grazie alla radiologia digitale ad alta risoluzione, possiamo visualizzare
+                con precisione la morfologia dei canali radicolari e trattare anche i casi
+                più complessi. L'obiettivo è sempre preservare il tuo dente naturale,
+                la soluzione migliore per la salute della tua bocca nel lungo periodo.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una visita per Endodonzia">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 6: Protesi — Image Right -->
+        <article class="services-alt__item services-alt__item--image-right reveal-up" id="protesi" aria-label="Servizio: Protesi Dentarie">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-protesi-detail.jpg"
+                alt="Corona dentaria in ceramica di alta qualità realizzata su misura in laboratorio"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto di corona in ceramica o modello protesico, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">06</span>
+              <h3 class="services-alt__service-title">Protesi Dentarie</h3>
+              <p class="services-alt__service-desc">
+                Le protesi dentarie ripristinano la funzionalità masticatoria e l'estetica
+                del sorriso quando uno o più denti sono irrecuperabili. Realizziamo corone,
+                ponti fissi e protesi removibili in ceramica di alta qualità, prodotte
+                da laboratori odontotecnici di eccellenza.
+              </p>
+              <p class="services-alt__service-desc">
+                Ogni protesi è personalizzata per colore, forma e dimensione, per integrarsi
+                perfettamente con i denti naturali rimanenti. Le protesi fisse su impianti
+                offrono il massimo comfort e naturalezza, senza la necessità di rimuoverle.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una visita per Protesi Dentarie">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 7: Igiene — Image Left -->
+        <article class="services-alt__item services-alt__item--image-left reveal-up" id="igiene" aria-label="Servizio: Igiene Orale Professionale">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-igiene-detail.jpg"
+                alt="Igienista dentale che esegue pulizia professionale con strumentazione ultrasonora"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto igienista al lavoro su paziente con strumenti ultrasonori, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">07</span>
+              <h3 class="services-alt__service-title">Igiene Orale Professionale</h3>
+              <p class="services-alt__service-desc">
+                La pulizia professionale è il fondamento della salute orale. Con strumentazione
+                ultrasonica e la tecnica Air-Flow, rimuoviamo il tartaro e le macchie anche
+                nelle zone più difficili da raggiungere, prevenendo carie e malattie gengivali.
+              </p>
+              <p class="services-alt__service-desc">
+                La seduta include sempre una valutazione dello stato delle gengive e un'istruzione
+                personalizzata all'igiene orale domiciliare. Si consiglia una pulizia professionale
+                ogni 6 mesi, o più frequentemente in caso di parodontite o predisposizione
+                al tartaro. La prevenzione è il miglior investimento per la tua salute.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una seduta di Igiene Orale">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="services-alt__divider" aria-hidden="true"></div>
+        </article>
+
+        <!-- Service 8: Radiologia — Image Right -->
+        <article class="services-alt__item services-alt__item--image-right reveal-up" id="radiologia" aria-label="Servizio: Radiologia Digitale Cone Beam">
+          <div class="services-alt__image-col">
+            <div class="services-alt__image-wrap">
+              <img
+                src="images/servizio-radiologia-detail.jpg"
+                alt="Apparecchiatura Cone Beam per radiologia digitale 3D ad alta precisione"
+                class="services-alt__image"
+                width="720"
+                height="540"
+                loading="lazy"
+              />
+              <!-- Replace: foto dell'apparecchio Cone Beam o immagine 3D su schermo, 720x540 -->
+              <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+              <div class="services-alt__image-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="services-alt__content-col">
+            <div class="services-alt__content-inner">
+              <span class="services-alt__number" aria-hidden="true">08</span>
+              <h3 class="services-alt__service-title">Radiologia Digitale Cone Beam</h3>
+              <p class="services-alt__service-desc">
+                La Radiologia Digitale con Cone Beam (CBCT) rappresenta l'evoluzione più avanzata
+                della diagnostica per immagini in odontoiatria. Produce una ricostruzione 3D
+                completa del cavo orale, dell'osso mascellare e di tutte le strutture circostanti,
+                con risoluzione millimetrica.
+              </p>
+              <p class="services-alt__service-desc">
+                Indispensabile per la pianificazione degli impianti, la valutazione delle radici
+                dentali, la diagnosi di patologie ossee e la programmazione di interventi chirurgici
+                complessi. La dose di radiazioni è notevolmente ridotta rispetto alla TAC
+                tradizionale, garantendo la massima sicurezza per il paziente.
+              </p>
+              <a href="contatti.html" class="services-alt__link" aria-label="Prenota una radiografia Cone Beam">
+                Prenota una Consulenza
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA Split -->
+    <section class="cta-split" aria-label="Prenota una visita" id="cta">
+
+      <div class="cta-split__inner">
+
+        <figure class="cta-split__media" aria-label="Studio IDentisti">
+          <img
+            src="images/cta-studio.jpg"
+            alt="Sala d'attesa moderna e accogliente di Studio IDentisti"
+            class="cta-split__img"
+            width="800"
+            height="900"
+            loading="lazy"
+          >
+          <!-- Replace: foto della sala d'attesa o reception dello studio, formato verticale 800x900 -->
+          <div class="cta-split__media-badge" aria-label="Tecnologia avanzata">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span>Tecnologia all'avanguardia</span>
+          </div>
+        </figure>
+
+        <div class="cta-split__content">
+          <div class="cta-split__content-inner">
+
+            <span class="cta-split__eyebrow section-label reveal-right">
+              Prenota ora
+            </span>
+
+            <h2 class="cta-split__title reveal-right stagger-1">
+              La visita giusta<br>
+              è <em>quella di oggi</em>
+            </h2>
+
+            <p class="cta-split__desc reveal-right stagger-2">
+              Non aspettare che il dolore ti costringa a venire. Prenota una visita di controllo,
+              una consulenza per l'implantologia o una semplice igiene professionale.
+              Il tuo sorriso ti ringrazierà.
+            </p>
+
+            <ul class="cta-split__benefits reveal-right stagger-3" aria-label="Vantaggi">
+              <li class="cta-split__benefit">
+                <span class="cta-split__benefit-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                Prima visita di consulenza disponibile
+              </li>
+              <li class="cta-split__benefit">
+                <span class="cta-split__benefit-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                Preventivo trasparente senza sorprese
+              </li>
+              <li class="cta-split__benefit">
+                <span class="cta-split__benefit-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                Due sedi per la tua comodità
+              </li>
+            </ul>
+
+            <div class="cta-split__actions reveal-right stagger-4">
+              <a href="contatti.html" class="btn btn--primary btn--lg cta-split__btn">
+                Prenota una Visita
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-full section--dark">
+    <div class="footer-full__inner container">
+      <div class="footer-full__grid">
+        <div class="footer-full__col footer-full__col--about">
+          <a href="index.html" class="footer-full__logo" aria-label="Homepage Studio IDentisti">
+            <img src="images/logo.png" alt="Studio IDentisti" style="height: 36px;">
+            <!-- Replace: logo bianco/chiaro, 36px altezza -->
+          </a>
+          <p class="footer-full__about-text">
+            Studio dentistico con sedi ad Acquapendente e Grotte di Castro. Il tuo sorriso è la nostra missione.
+          </p>
+          <div class="footer-full__social" aria-label="Social network">
+            <a href="#" class="footer-full__social-link" aria-label="Facebook di Studio IDentisti">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/></svg>
+            </a>
+            <a href="#" class="footer-full__social-link" aria-label="Instagram di Studio IDentisti">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="13.5" cy="4.5" r="1" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Link Rapidi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="index.html" class="footer-full__link">Home</a></li>
+            <li><a href="servizi.html" class="footer-full__link">Servizi</a></li>
+            <li><a href="chi-siamo.html" class="footer-full__link">Chi Siamo</a></li>
+            <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Servizi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="servizi.html#implantologia" class="footer-full__link">Implantologia Dentale</a></li>
+            <li><a href="servizi.html#allineatori" class="footer-full__link">Allineatori Invisibili</a></li>
+            <li><a href="servizi.html#sbiancamento" class="footer-full__link">Sbiancamento Dentale</a></li>
+            <li><a href="servizi.html#chirurgia" class="footer-full__link">Chirurgia Orale</a></li>
+            <li><a href="servizi.html#endodonzia" class="footer-full__link">Endodonzia</a></li>
+            <li><a href="servizi.html#protesi" class="footer-full__link">Protesi Dentarie</a></li>
+            <li><a href="servizi.html#igiene" class="footer-full__link">Igiene Orale</a></li>
+            <li><a href="servizi.html#radiologia" class="footer-full__link">Radiologia Cone Beam</a></li>
+          </ul>
+        </div>
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Contatti</h3>
+          <ul class="footer-full__contact-list" role="list">
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+              <span>Via Igino Gini 2/B, Acquapendente (VT)</span>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <a href="tel:0763796929" class="footer-full__contact-link">0763-796929</a>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <a href="mailto:identistisrl@gmail.com" class="footer-full__contact-link">identistisrl@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-full__divider" aria-hidden="true">
+      <div class="footer-full__bottom">
+        <p class="footer-full__copyright">&copy; <span id="footer-year-full" data-year></span> Studio IDentisti SRL. Tutti i diritti riservati.</p>
+        <nav class="footer-full__bottom-nav" aria-label="Link legali">
+          <a href="#" class="footer-full__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-full__bottom-link">Cookie Policy</a>
+          <a href="#" class="footer-full__bottom-link">Note Legali</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Consenso cookie" aria-describedby="cookie-banner-text" aria-hidden="true">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/><circle cx="17" cy="8" r="1" fill="currentColor"/><circle cx="9" cy="17" r="1" fill="currentColor"/><circle cx="16" cy="18" r="2" fill="currentColor"/><circle cx="20" cy="14" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <div class="cookie-banner__content">
+        <p class="cookie-banner__text" id="cookie-banner-text">Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. Leggi la nostra <a href="/privacy-policy" class="cookie-banner__policy-link">Privacy Policy</a> e la <a href="/cookie-policy" class="cookie-banner__policy-link">Cookie Policy</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--reject" id="cookie-reject" data-cookie-reject aria-label="Rifiuta cookie non essenziali">Solo essenziali</button>
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept" data-cookie-accept aria-label="Accetta tutti i cookie">Accetta tutti</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Widget -->
+  <div class="whatsapp-widget" id="whatsapp-widget" data-whatsapp data-phone="390763796929" data-message="Salve, vorrei prenotare una visita presso Studio IDentisti." aria-hidden="true">
+    <a href="#" class="whatsapp-widget__btn" id="whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp" role="button">
+      <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/></svg>
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+    </a>
+    <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" data-back-to-top aria-label="Torna in cima alla pagina" aria-hidden="true" type="button">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

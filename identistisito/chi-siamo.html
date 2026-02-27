@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chi Siamo | Studio IDentisti</title>
+  <meta name="description" content="Conosci il team di Studio IDentisti. Due sedi, due direttori sanitari, un unico obiettivo: il tuo sorriso perfetto ad Acquapendente e Grotte di Castro.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chi Siamo | Studio IDentisti">
+  <meta property="og:description" content="Conosci il team di Studio IDentisti. Due sedi, due direttori sanitari, un unico obiettivo: il tuo sorriso perfetto ad Acquapendente e Grotte di Castro.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader-logo" id="preloader-logo" data-preloader aria-live="polite" aria-label="Caricamento in corso" role="status">
+    <div class="preloader-logo__content">
+      <div class="preloader-logo__mark" aria-hidden="true">
+        <span class="preloader-logo__mark-ring"></span>
+        <span class="preloader-logo__mark-dot"></span>
+      </div>
+      <div class="preloader-logo__wordmark" aria-hidden="true">
+        <span class="preloader-logo__name">I<span class="preloader-logo__name-accent">Dentisti</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
+    <div class="header-classic__inner container">
+
+      <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+        <img src="images/logo.png" alt="Studio IDentisti" style="height: 40px;">
+        <!-- Replace: logo dello studio IDentisti su sfondo trasparente -->
+      </a>
+
+      <nav class="header-classic__nav" aria-label="Navigazione principale">
+        <ul class="header-classic__nav-list" role="list">
+          <li class="header-classic__nav-item">
+            <a href="index.html" class="header-classic__nav-link">Home</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="servizi.html" class="header-classic__nav-link">Servizi</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="chi-siamo.html" class="header-classic__nav-link header-classic__nav-link--active" aria-current="page">Chi Siamo</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-classic__actions">
+        <a href="tel:0763796929" class="btn btn--primary header-classic__cta">0763-796929</a>
+        <button class="header-classic__hamburger" data-mobile-toggle aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav aria-label="Menu mobile">
+        <ul class="header-classic__mobile-nav" role="list">
+          <li><a href="index.html" class="header-classic__mobile-link">Home</a></li>
+          <li><a href="servizi.html" class="header-classic__mobile-link">Servizi</a></li>
+          <li><a href="chi-siamo.html" class="header-classic__mobile-link">Chi Siamo</a></li>
+          <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+        </ul>
+        <a href="tel:0763796929" class="btn btn--primary header-classic__mobile-cta">0763-796929</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Minimal -->
+    <section class="hero-minimal" aria-label="Intestazione principale">
+
+      <div class="hero-minimal__dot-grid" aria-hidden="true">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false">
+          <pattern id="hero-min-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="var(--color-accent)" opacity="0.35"/>
+          </pattern>
+          <rect width="120" height="120" fill="url(#hero-min-dots)"/>
+        </svg>
+      </div>
+
+      <div class="hero-minimal__bracket" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <path d="M62 62 L2 62 L2 2" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="hero-minimal__inner">
+
+          <div class="hero-minimal__eyebrow-wrap reveal-up stagger-1">
+            <span class="hero-minimal__eyebrow section-label">
+              Il nostro studio · La nostra storia
+            </span>
+          </div>
+
+          <h1 class="hero-minimal__headline reveal-up stagger-2">
+            Chi<br>
+            <span class="hero-minimal__headline-outline">Siamo</span>
+          </h1>
+
+          <div class="hero-minimal__separator reveal-up stagger-3" aria-hidden="true">
+            <span class="hero-minimal__separator-line"></span>
+            <span class="hero-minimal__separator-diamond" aria-hidden="true"></span>
+            <span class="hero-minimal__separator-line"></span>
+          </div>
+
+          <div class="hero-minimal__body reveal-up stagger-4">
+            <p class="hero-minimal__desc">
+              Studio IDentisti nasce dalla passione per la salute orale e dalla volontà di offrire
+              cure dentali di alta qualità in un contesto accogliente e tecnologicamente avanzato.
+              Due sedi, due direttori sanitari, un solo obiettivo: il tuo sorriso.
+            </p>
+
+            <ul class="hero-minimal__disciplines" aria-label="I nostri valori">
+              <li>Professionalità</li>
+              <li>Tecnologia</li>
+              <li>Empatia</li>
+              <li>Aggiornamento Continuo</li>
+            </ul>
+          </div>
+
+          <div class="hero-minimal__actions reveal-up stagger-5">
+            <a href="#team" class="btn btn--primary btn--lg">
+              Conosci il Team
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="contatti.html" class="btn btn--secondary btn--lg">
+              Prenota una Visita
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About Story -->
+    <section class="about-story section-padding" aria-labelledby="about-story-heading">
+      <div class="container">
+        <div class="about-story__inner">
+
+          <div class="about-story__content">
+
+            <span class="section-label section-label--line reveal-up stagger-1">La Nostra Storia</span>
+
+            <h2 class="section-title about-story__heading reveal-up stagger-2" id="about-story-heading">
+              Anni di passione<br>
+              per <em>la salute orale</em>
+            </h2>
+
+            <p class="about-story__lead reveal-up stagger-3">
+              Studio IDentisti SRL è nato con la missione di portare cure odontoiatriche
+              di alto livello nel territorio della Tuscia viterbese, rendendole accessibili
+              e di qualità per le famiglie di Acquapendente, Grotte di Castro e dei paesi circostanti.
+            </p>
+
+            <blockquote class="about-story__quote reveal-up stagger-4" aria-label="Filosofia dello studio">
+              <span class="about-story__quote-mark" aria-hidden="true">&ldquo;</span>
+              <p class="about-story__quote-text">
+                Ogni paziente merita il meglio della medicina dentale,
+                indipendentemente dalla complessità del caso.
+                Questo è il principio che guida ogni nostra scelta.
+              </p>
+              <footer class="about-story__quote-author">
+                <strong>Dr. Attilio Proietti</strong>
+                <span>Direttore Sanitario — Sede di Acquapendente</span>
+              </footer>
+            </blockquote>
+
+            <p class="about-story__body reveal-up stagger-5">
+              Nel corso degli anni abbiamo investito costantemente in tecnologia e formazione,
+              dotando entrambe le sedi di attrezzature all'avanguardia come la radiologia digitale
+              Cone Beam 3D e sistemi di sterilizzazione certificati. Il nostro approccio è sempre
+              stato centrato sul paziente: ascolto, diagnosi accurata, piano di cura personalizzato
+              e follow-up attento.
+            </p>
+
+            <div class="about-story__stats reveal-up stagger-6" aria-label="Dati principali">
+              <div class="about-story__stat">
+                <span class="about-story__stat-number">15+</span>
+                <span class="about-story__stat-label">Anni di Attività</span>
+              </div>
+              <div class="about-story__stat-divider" aria-hidden="true"></div>
+              <div class="about-story__stat">
+                <span class="about-story__stat-number">10.000+</span>
+                <span class="about-story__stat-label">Pazienti Seguiti</span>
+              </div>
+              <div class="about-story__stat-divider" aria-hidden="true"></div>
+              <div class="about-story__stat">
+                <span class="about-story__stat-number">2</span>
+                <span class="about-story__stat-label">Sedi Operative</span>
+              </div>
+            </div>
+
+            <div class="about-story__actions reveal-up stagger-7">
+              <a href="#team" class="btn btn--primary">
+                Conosci il Team
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#valori" class="btn btn--secondary">I Nostri Valori</a>
+            </div>
+
+          </div>
+
+          <figure class="about-story__media reveal-scale stagger-2" aria-label="Immagine dello studio">
+            <div class="about-story__media-frame" aria-hidden="true"></div>
+            <div class="about-story__media-clip">
+              <img
+                src="images/studio-interno.jpg"
+                alt="Interno moderno e accogliente di Studio IDentisti con attrezzatura di ultima generazione"
+                class="about-story__img"
+                width="720"
+                height="900"
+                loading="lazy"
+              >
+              <!-- Replace: foto dell'interno dello studio con poltrona e attrezzatura, formato verticale 720x900 -->
+            </div>
+            <div class="about-story__badge" aria-label="Fondazione studio">
+              <span class="about-story__badge-year">VT</span>
+              <span class="about-story__badge-label">Provincia di Viterbo</span>
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) { el.classList.add('revealed'); });
+        return;
+      }
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.about-story .reveal-up, .about-story .reveal-scale').forEach(function (el) { revealObserver.observe(el); });
+    })();
+    </script>
+
+    <!-- Team Grid -->
+    <section class="team-grid section-padding" aria-labelledby="team-grid-heading" id="team">
+      <div class="container">
+
+        <div class="team-grid__header text-center reveal-up">
+          <span class="section-label section-label--line">Il Nostro Team</span>
+          <h2 class="section-title team-grid__title" id="team-grid-heading">
+            I professionisti del <em>tuo sorriso</em>
+          </h2>
+          <p class="section-desc section-desc--centered">
+            Direttori sanitari di comprovata esperienza, costantemente aggiornati sulle
+            tecniche e le tecnologie più avanzate della medicina dentale.
+          </p>
+        </div>
+
+        <div class="team-grid__grid" role="list">
+
+          <!-- Dr. Attilio Proietti -->
+          <article class="team-grid__card reveal-up stagger-1" role="listitem">
+            <div class="team-grid__image-wrap">
+              <img
+                class="team-grid__image"
+                src="images/team-proietti.jpg"
+                alt="Ritratto del Dr. Attilio Proietti, Direttore Sanitario sede Acquapendente"
+                width="400"
+                height="400"
+                loading="lazy"
+              >
+              <!-- Replace: foto professionale del Dr. Attilio Proietti, formato quadrato 400x400 -->
+              <div class="team-grid__overlay" aria-hidden="true">
+                <div class="team-grid__overlay-inner">
+                  <p class="team-grid__overlay-bio">Medico Chirurgo specializzato in Odontoiatria con esperienza pluriennale in implantologia, chirurgia orale ed endodonzia. Direttore Sanitario della sede di Acquapendente, guida il team con rigore scientifico e attenzione al paziente.</p>
+                  <div class="team-grid__social">
+                    <a href="mailto:identistisrl@gmail.com" class="team-grid__social-link" aria-label="Email del Dr. Proietti">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-grid__info">
+              <h3 class="team-grid__name">Dr. Attilio Proietti</h3>
+              <p class="team-grid__role">Direttore Sanitario — Acquapendente</p>
+              <p class="team-grid__bio">Specializzato in implantologia, chirurgia orale ed endodonzia con esperienza pluriennale.</p>
+            </div>
+          </article>
+
+          <!-- Dr.ssa Sara Faggiani -->
+          <article class="team-grid__card reveal-up stagger-2" role="listitem">
+            <div class="team-grid__image-wrap">
+              <img
+                class="team-grid__image"
+                src="images/team-faggiani.jpg"
+                alt="Ritratto della Dr.ssa Sara Faggiani, Direttore Sanitario sede Grotte di Castro"
+                width="400"
+                height="400"
+                loading="lazy"
+              >
+              <!-- Replace: foto professionale della Dr.ssa Sara Faggiani, formato quadrato 400x400 -->
+              <div class="team-grid__overlay" aria-hidden="true">
+                <div class="team-grid__overlay-inner">
+                  <p class="team-grid__overlay-bio">Medico Chirurgo specializzata in Odontoiatria con competenze specifiche in ortodonzia, allineatori invisibili e protesi dentarie. Direttore Sanitario della sede di Grotte di Castro, è riconosciuta per la sua empatia e precisione clinica.</p>
+                  <div class="team-grid__social">
+                    <a href="mailto:identistisrl@gmail.com" class="team-grid__social-link" aria-label="Email della Dr.ssa Faggiani">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-grid__info">
+              <h3 class="team-grid__name">Dr.ssa Sara Faggiani</h3>
+              <p class="team-grid__role">Direttore Sanitario — Grotte di Castro</p>
+              <p class="team-grid__bio">Specializzata in ortodonzia con allineatori invisibili, protesi dentarie e cure estetiche.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+    (function () {
+      'use strict';
+      var section = document.querySelector('.team-grid');
+      if (!section) return;
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        section.querySelectorAll('.reveal-up').forEach(function (el) { obs.observe(el); });
+      } else {
+        section.querySelectorAll('.reveal-up').forEach(function (el) { el.classList.add('revealed'); });
+      }
+    })();
+    </script>
+
+    <!-- About Values -->
+    <section class="about-values section-padding section--alt" aria-labelledby="about-values-heading" id="valori">
+      <div class="container">
+
+        <header class="about-values__header reveal-up">
+          <span class="section-label section-label--line">I Nostri Principi</span>
+          <h2 class="section-title about-values__title" id="about-values-heading">
+            Guidati da valori<br>che <em>non scendono a compromessi</em>
+          </h2>
+          <p class="section-desc">
+            Ogni scelta clinica, ogni investimento in tecnologia, ogni interazione
+            con il paziente è guidata da quattro valori fondamentali che definiscono
+            la nostra identità professionale.
+          </p>
+        </header>
+
+        <div class="about-values__grid" role="list">
+
+          <!-- Professionalità -->
+          <article class="about-values__card reveal-up stagger-2" role="listitem" aria-labelledby="values-prof-title">
+            <div class="about-values__card-icon" aria-hidden="true">
+              <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+                <circle cx="32" cy="32" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="32" y1="4" x2="32" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="32" y1="50" x2="32" y2="60" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="4" y1="32" x2="14" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="50" y1="32" x2="60" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="3" fill="currentColor"/>
+              </svg>
+              <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+            </div>
+            <div class="about-values__card-tag">01</div>
+            <h3 class="about-values__card-title" id="values-prof-title">Professionalità</h3>
+            <p class="about-values__card-desc">
+              Ogni trattamento è eseguito secondo i più alti standard clinici.
+              I nostri medici si aggiornano costantemente attraverso corsi di formazione
+              avanzati, congressi scientifici e collaborazioni con centri di eccellenza.
+              La qualità non è un'opzione: è il punto di partenza.
+            </p>
+            <div class="about-values__card-accent" aria-hidden="true"></div>
+          </article>
+
+          <!-- Tecnologia Avanzata -->
+          <article class="about-values__card about-values__card--featured reveal-up stagger-3" role="listitem" aria-labelledby="values-tech-title">
+            <div class="about-values__card-icon" aria-hidden="true">
+              <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M4 32C4 32 14 14 32 14C50 14 60 32 60 32C60 32 50 50 32 50C14 50 4 32 4 32Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="4" fill="currentColor"/>
+                <line x1="32" y1="8" x2="32" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="32" y1="50" x2="32" y2="56" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+            </div>
+            <div class="about-values__card-tag">02</div>
+            <h3 class="about-values__card-title" id="values-tech-title">Tecnologia Avanzata</h3>
+            <p class="about-values__card-desc">
+              Investiamo in attrezzature di ultima generazione perché la tecnologia
+              fa la differenza nella diagnosi e nel trattamento. Dalla radiologia
+              Cone Beam 3D agli allineatori progettati con software 3D avanzati:
+              ogni innovazione è adottata al servizio del paziente.
+            </p>
+            <div class="about-values__card-accent" aria-hidden="true"></div>
+          </article>
+
+          <!-- Comfort del Paziente -->
+          <article class="about-values__card reveal-up stagger-4" role="listitem" aria-labelledby="values-comfort-title">
+            <div class="about-values__card-icon" aria-hidden="true">
+              <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M32 8L56 28L32 56L8 28L32 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M8 28L20 18M56 28L44 18M20 18H44M8 28H56M20 18L32 28L44 18M8 28L32 56M56 28L32 56" stroke="currentColor" stroke-width="1" stroke-linejoin="round" opacity="0.4"/>
+              </svg>
+              <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+            </div>
+            <div class="about-values__card-tag">03</div>
+            <h3 class="about-values__card-title" id="values-comfort-title">Comfort del Paziente</h3>
+            <p class="about-values__card-desc">
+              Sappiamo che molte persone provano ansia alla sola idea di venire dal dentista.
+              Per questo abbiamo creato ambienti accoglienti, adottiamo un approccio
+              comunicativo chiaro e rassicurante, e offriamo la sedazione cosciente
+              per gli interventi più complessi.
+            </p>
+            <div class="about-values__card-accent" aria-hidden="true"></div>
+          </article>
+
+          <!-- Approccio Personalizzato -->
+          <article class="about-values__card reveal-up stagger-5" role="listitem" aria-labelledby="values-personal-title">
+            <div class="about-values__card-icon" aria-hidden="true">
+              <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <circle cx="32" cy="20" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 56c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M24 30l8 8 8-8" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+            </div>
+            <div class="about-values__card-tag">04</div>
+            <h3 class="about-values__card-title" id="values-personal-title">Approccio Personalizzato</h3>
+            <p class="about-values__card-desc">
+              Non esiste un piano di cura uguale per tutti. Ascoltiamo le esigenze
+              di ogni singolo paziente — aspettative estetiche, storia clinica, disponibilità
+              economica — e costruiamo un percorso terapeutico su misura che rispetti
+              la persona nella sua unicità.
+            </p>
+            <div class="about-values__card-accent" aria-hidden="true"></div>
+          </article>
+
+        </div>
+
+        <div class="about-values__footer reveal-up stagger-6">
+          <p class="about-values__footer-text">
+            Vuoi scoprire come questi valori si traducono nella tua cura?
+          </p>
+          <a href="contatti.html" class="btn btn--primary">
+            Prenota una Visita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.about-values .reveal-up').forEach(function (el) { el.classList.add('revealed'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.about-values .reveal-up').forEach(function (el) { obs.observe(el); });
+    })();
+    </script>
+
+    <!-- CTA Gradient -->
+    <section class="cta-gradient section-padding" aria-label="Chiamata all'azione" id="cta-gradient">
+
+      <div class="cta-gradient__bg" aria-hidden="true">
+        <div class="cta-gradient__gradient"></div>
+        <div class="cta-gradient__shape cta-gradient__shape--1"></div>
+        <div class="cta-gradient__shape cta-gradient__shape--2"></div>
+        <div class="cta-gradient__shape cta-gradient__shape--3"></div>
+        <div class="cta-gradient__shape cta-gradient__shape--4"></div>
+      </div>
+
+      <div class="container">
+
+        <div class="cta-gradient__content text-center">
+
+          <span class="cta-gradient__eyebrow section-label reveal-up">
+            Il tuo sorriso ci aspetta
+          </span>
+
+          <h2 class="cta-gradient__title reveal-up stagger-1">
+            Inizia il tuo percorso<br>
+            verso un sorriso <em>perfetto</em>
+          </h2>
+
+          <p class="cta-gradient__desc reveal-up stagger-2">
+            Che si tratti di una visita di controllo, di una consulenza per l'implantologia
+            o di un trattamento estetico, siamo qui per prenderci cura di te.
+            Prenota la tua visita oggi stesso.
+          </p>
+
+          <div class="cta-gradient__actions reveal-up stagger-3">
+            <a href="contatti.html" class="btn btn--primary btn--lg cta-gradient__btn-primary">
+              Prenota una Visita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="servizi.html" class="btn btn--outline-light btn--lg">
+              Scopri i nostri servizi
+            </a>
+          </div>
+
+          <div class="cta-gradient__trust reveal-up stagger-4" aria-label="Garanzie">
+            <span class="cta-gradient__trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg>
+              Due sedi disponibili
+            </span>
+            <span class="cta-gradient__trust-dot" aria-hidden="true"></span>
+            <span class="cta-gradient__trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg>
+              Preventivo trasparente
+            </span>
+            <span class="cta-gradient__trust-dot" aria-hidden="true"></span>
+            <span class="cta-gradient__trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg>
+              Team esperto
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-full section--dark">
+    <div class="footer-full__inner container">
+      <div class="footer-full__grid">
+        <div class="footer-full__col footer-full__col--about">
+          <a href="index.html" class="footer-full__logo" aria-label="Homepage Studio IDentisti">
+            <img src="images/logo.png" alt="Studio IDentisti" style="height: 36px;">
+            <!-- Replace: logo bianco/chiaro, 36px altezza -->
+          </a>
+          <p class="footer-full__about-text">
+            Studio dentistico con sedi ad Acquapendente e Grotte di Castro. Il tuo sorriso è la nostra missione.
+          </p>
+          <div class="footer-full__social" aria-label="Social network">
+            <a href="#" class="footer-full__social-link" aria-label="Facebook di Studio IDentisti">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/></svg>
+            </a>
+            <a href="#" class="footer-full__social-link" aria-label="Instagram di Studio IDentisti">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="13.5" cy="4.5" r="1" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Link Rapidi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="index.html" class="footer-full__link">Home</a></li>
+            <li><a href="servizi.html" class="footer-full__link">Servizi</a></li>
+            <li><a href="chi-siamo.html" class="footer-full__link">Chi Siamo</a></li>
+            <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Servizi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="servizi.html#implantologia" class="footer-full__link">Implantologia Dentale</a></li>
+            <li><a href="servizi.html#allineatori" class="footer-full__link">Allineatori Invisibili</a></li>
+            <li><a href="servizi.html#sbiancamento" class="footer-full__link">Sbiancamento Dentale</a></li>
+            <li><a href="servizi.html#chirurgia" class="footer-full__link">Chirurgia Orale</a></li>
+            <li><a href="servizi.html#endodonzia" class="footer-full__link">Endodonzia</a></li>
+            <li><a href="servizi.html#protesi" class="footer-full__link">Protesi Dentarie</a></li>
+            <li><a href="servizi.html#igiene" class="footer-full__link">Igiene Orale</a></li>
+            <li><a href="servizi.html#radiologia" class="footer-full__link">Radiologia Cone Beam</a></li>
+          </ul>
+        </div>
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Contatti</h3>
+          <ul class="footer-full__contact-list" role="list">
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+              <span>Via Igino Gini 2/B, Acquapendente (VT)</span>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+              <span>Via Vittorio Veneto 120, Grotte di Castro (VT)</span>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <a href="tel:0763796929" class="footer-full__contact-link">0763-796929</a>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <a href="mailto:identistisrl@gmail.com" class="footer-full__contact-link">identistisrl@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-full__divider" aria-hidden="true">
+      <div class="footer-full__bottom">
+        <p class="footer-full__copyright">&copy; <span id="footer-year-full" data-year></span> Studio IDentisti SRL. Tutti i diritti riservati.</p>
+        <nav class="footer-full__bottom-nav" aria-label="Link legali">
+          <a href="#" class="footer-full__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-full__bottom-link">Cookie Policy</a>
+          <a href="#" class="footer-full__bottom-link">Note Legali</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Consenso cookie" aria-describedby="cookie-banner-text" aria-hidden="true">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/><circle cx="17" cy="8" r="1" fill="currentColor"/><circle cx="9" cy="17" r="1" fill="currentColor"/><circle cx="16" cy="18" r="2" fill="currentColor"/><circle cx="20" cy="14" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <div class="cookie-banner__content">
+        <p class="cookie-banner__text" id="cookie-banner-text">Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. Leggi la nostra <a href="/privacy-policy" class="cookie-banner__policy-link">Privacy Policy</a> e la <a href="/cookie-policy" class="cookie-banner__policy-link">Cookie Policy</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--reject" id="cookie-reject" data-cookie-reject aria-label="Rifiuta cookie non essenziali">Solo essenziali</button>
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept" data-cookie-accept aria-label="Accetta tutti i cookie">Accetta tutti</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Widget -->
+  <div class="whatsapp-widget" id="whatsapp-widget" data-whatsapp data-phone="390763796929" data-message="Salve, vorrei prenotare una visita presso Studio IDentisti." aria-hidden="true">
+    <a href="#" class="whatsapp-widget__btn" id="whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp" role="button">
+      <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/></svg>
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+    </a>
+    <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" data-back-to-top aria-label="Torna in cima alla pagina" aria-hidden="true" type="button">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
