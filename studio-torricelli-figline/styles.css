@@ -2580,10 +2580,21 @@ main {
   margin-top: var(--space-7);
 }
 
+.hero__ctas .btn--secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero__ctas .btn--secondary:hover,
+.hero__ctas .btn--secondary:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 .hero__stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-5);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
   margin-top: var(--space-8);
   padding-top: var(--space-6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -2612,9 +2623,7 @@ main {
 }
 
 .hero__stat-divider {
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
-  align-self: stretch;
+  display: none;
 }
 
 .hero__image {
