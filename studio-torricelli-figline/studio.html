@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lo Studio | Studio Dentistico Torricelli - Figline Valdarno</title>
+  <meta name="description" content="Scopri lo Studio Dentistico Torricelli a Figline Valdarno. Un team di professionisti con esperienza pluridecennale al servizio del tuo sorriso." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/homepage/cropped-icon06-free-img-270x270.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&family=Lora:ital@1&display=swap" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Progresso pagina"></div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       ============================================================ -->
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navigazione principale">
+
+        <!-- Logo -->
+        <a href="index.html" class="nav__logo" aria-label="Studio Dentistico Torricelli — Home">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="180" height="60" loading="eager" />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="studio.html" class="nav-link nav-link--active" aria-current="page">Studio Dentistico</a></li>
+
+          <!-- Servizi Dropdown -->
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Servizi — apri menu">
+              Servizi
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="nav__dropdown-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="nav__dropdown-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="nav__dropdown-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="nav__dropdown-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="nav__dropdown-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="nav__dropdown-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="nav__dropdown-link">Radiologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="igiene-prevenzione.html" class="nav-link">Igiene e Prevenzione</a></li>
+
+          <!-- Bambini Dropdown -->
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Bambini — apri menu">
+              Bambini
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="nav__dropdown-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="nav__dropdown-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="qualita.html" class="nav-link">Qualit&agrave;</a></li>
+
+          <!-- Collaborazioni Dropdown -->
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Collaborazioni — apri menu">
+              Collaborazioni
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="nav__dropdown-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="nav__dropdown-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="nav__dropdown-link">Posturologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contatti.html" class="nav-link nav-link--cta">Contatti</a></li>
+        </ul>
+
+        <!-- Hamburger Button -->
+        <button id="hamburger" class="hamburger" data-hamburger aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU — Slide panel from right
+       ============================================================ -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <div class="mobile-menu__inner">
+
+      <!-- Mobile Menu Header -->
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo" tabindex="-1">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="140" height="48" />
+        </a>
+        <button class="mobile-menu__close" aria-label="Chiudi menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+        <ul class="mobile-nav" role="list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="studio.html" class="mobile-nav-link" aria-current="page">Studio Dentistico</a></li>
+
+          <!-- Servizi Accordion -->
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-servizi">
+              Servizi
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-servizi" class="mobile-submenu" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="mobile-submenu-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="mobile-submenu-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="mobile-submenu-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="mobile-submenu-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="mobile-submenu-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="mobile-submenu-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="mobile-submenu-link">Radiologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="igiene-prevenzione.html" class="mobile-nav-link">Igiene e Prevenzione</a></li>
+
+          <!-- Bambini Accordion -->
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-bambini">
+              Bambini
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-bambini" class="mobile-submenu" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="mobile-submenu-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="mobile-submenu-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="qualita.html" class="mobile-nav-link">Qualit&agrave;</a></li>
+
+          <!-- Collaborazioni Accordion -->
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-collab">
+              Collaborazioni
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-collab" class="mobile-submenu" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="mobile-submenu-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="mobile-submenu-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="mobile-submenu-link">Posturologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contatti.html" class="mobile-nav-link mobile-nav-link--cta">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Contact Info -->
+      <div class="mobile-menu__contact">
+        <a href="tel:055952421" class="mobile-menu__phone" aria-label="Chiama lo studio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          055 952421
+        </a>
+        <address class="mobile-menu__address" aria-label="Indirizzo dello studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+          </svg>
+          Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+        </address>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- ============================================================
+         1. INTERNAL HERO
+         ============================================================ -->
+    <section class="internal-hero" aria-label="Lo Studio Dentistico Torricelli">
+      <div class="internal-hero__bg" aria-hidden="true"></div>
+      <div class="internal-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="internal-hero__content">
+          <nav class="breadcrumb" aria-label="Percorso di navigazione">
+            <span class="breadcrumb__item">
+              <a href="index.html">Home</a>
+            </span>
+            <span class="breadcrumb__sep" aria-hidden="true">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="breadcrumb__item active" aria-current="page">Studio Dentistico</span>
+          </nav>
+          <h1 class="internal-hero__title reveal-up" data-delay="0">Il Nostro <em>Studio</em></h1>
+          <p class="internal-hero__subtitle reveal-up" data-delay="120">Esperienza, passione e tecnologia al servizio del tuo sorriso</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. ABOUT — 2-Col Layout
+         ============================================================ -->
+    <section class="about-section section--padded" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- Image Column -->
+          <div class="about__media reveal-up" data-delay="0">
+            <div class="about__image-wrap">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/sala_1.jpg"
+                alt="Sala principale dello Studio Dentistico Torricelli a Figline Valdarno"
+                width="600"
+                height="700"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div class="about__content">
+            <span class="label reveal-up" data-delay="80">La Nostra Storia</span>
+            <h2 id="about-title" class="section-title reveal-up" data-delay="160">Un'Esperienza <em>Pluridecennale</em></h2>
+
+            <p class="reveal-up" data-delay="220">
+              Lo Studio Dentistico Torricelli nasce dalla passione per l'odontoiatria e da una visione chiara: offrire cure dentali di alta qualit&agrave; in un ambiente accogliente, dove ogni paziente si senta a proprio agio. Fondato dal Dott. Stefano Torricelli, lo studio ha cresciuto nel tempo un team di professionisti altamente qualificati, uniti dalla stessa dedizione verso il benessere del paziente.
+            </p>
+
+            <p class="reveal-up" data-delay="280">
+              La nostra filosofia &egrave; semplice ma profonda: il paziente &egrave; al centro di tutto. Ogni decisione clinica, ogni piano di trattamento e ogni interazione quotidiana &egrave; guidata da questo principio fondamentale. Ascoltiamo, spieghiamo e condividiamo ogni passo del percorso di cura con trasparenza e rispetto.
+            </p>
+
+            <p class="reveal-up" data-delay="340">
+              Grazie a un approccio multidisciplinare, lo studio &egrave; in grado di offrire una copertura completa di tutte le branche dell'odontoiatria: dall'implantologia all'ortodonzia, dall'endodonzia ai trattamenti estetici. Un unico punto di riferimento per tutta la famiglia, dalla prima infanzia all'et&agrave; adulta.
+            </p>
+
+            <ul class="comfort__list reveal-up" data-delay="400" role="list" aria-label="I valori del nostro studio">
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Oltre 30 anni di esperienza clinica</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Team multidisciplinare di specialisti</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Tecnologie diagnostiche all'avanguardia</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Approccio paziente-centrico in ogni trattamento</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. TEAM GRID
+         ============================================================ -->
+    <section class="team-section section--padded section--alt" aria-labelledby="team-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">Il Nostro Team</span>
+          <h2 id="team-title" class="section-title">I Professionisti <em>dello Studio</em></h2>
+          <p class="section-subtitle">Un team di specialisti uniti dalla passione per la salute orale e dalla dedizione verso ogni paziente.</p>
+        </header>
+
+        <div class="team-grid">
+
+          <!-- Dott. Stefano Torricelli -->
+          <article class="team-card reveal-up" data-delay="0" aria-label="Dott. Stefano Torricelli — Direttore Sanitario">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/stefano_torricelli.jpg"
+                alt="Dott. Stefano Torricelli, Direttore Sanitario dello Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott. Stefano Torricelli</h3>
+            <p class="team-card__role">Direttore Sanitario</p>
+          </article>
+
+          <!-- Dott. Claudio Pandimiglio -->
+          <article class="team-card reveal-up" data-delay="60" aria-label="Dott. Claudio Pandimiglio — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/claudio-pandimiglio.jpg"
+                alt="Dott. Claudio Pandimiglio, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott. Claudio Pandimiglio</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott. Andrea Bucciolini -->
+          <article class="team-card reveal-up" data-delay="120" aria-label="Dott. Andrea Bucciolini — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/andrea_bucciolini.jpg"
+                alt="Dott. Andrea Bucciolini, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott. Andrea Bucciolini</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott. Paolo Rotella -->
+          <article class="team-card reveal-up" data-delay="0" aria-label="Dott. Paolo Rotella — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/paolo_rotella.jpg"
+                alt="Dott. Paolo Rotella, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott. Paolo Rotella</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott. Michele David Donati -->
+          <article class="team-card reveal-up" data-delay="60" aria-label="Dott. Michele David Donati — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/michele_david_donati.jpg"
+                alt="Dott. Michele David Donati, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott. Michele David Donati</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott.ssa Chiara Borghi -->
+          <article class="team-card reveal-up" data-delay="120" aria-label="Dott.ssa Chiara Borghi — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/chiara_borghi.jpg"
+                alt="Dott.ssa Chiara Borghi, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Chiara Borghi</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott.ssa Claudia Fasano -->
+          <article class="team-card reveal-up" data-delay="0" aria-label="Dott.ssa Claudia Fasano — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/claudia_fasano.jpg"
+                alt="Dott.ssa Claudia Fasano, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Claudia Fasano</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott.ssa Beatrice Boddi -->
+          <article class="team-card reveal-up" data-delay="60" aria-label="Dott.ssa Beatrice Boddi — Odontoiatra">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/beatrice_boddi.jpg"
+                alt="Dott.ssa Beatrice Boddi, Odontoiatra presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Beatrice Boddi</h3>
+            <p class="team-card__role">Odontoiatra</p>
+          </article>
+
+          <!-- Dott.ssa Chiara Galletti -->
+          <article class="team-card reveal-up" data-delay="120" aria-label="Dott.ssa Chiara Galletti — Igienista Dentale">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/chiara_galletti.jpg"
+                alt="Dott.ssa Chiara Galletti, Igienista Dentale presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Chiara Galletti</h3>
+            <p class="team-card__role">Igienista Dentale</p>
+          </article>
+
+          <!-- Dott.ssa Silvia Giusti -->
+          <article class="team-card reveal-up" data-delay="0" aria-label="Dott.ssa Silvia Giusti — Igienista Dentale">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/silvia_giusti.jpg"
+                alt="Dott.ssa Silvia Giusti, Igienista Dentale presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Silvia Giusti</h3>
+            <p class="team-card__role">Igienista Dentale</p>
+          </article>
+
+          <!-- Dott.ssa Elisa Valdambrini -->
+          <article class="team-card reveal-up" data-delay="60" aria-label="Dott.ssa Elisa Valdambrini — Igienista Dentale">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/elisa_valdambrini.jpg"
+                alt="Dott.ssa Elisa Valdambrini, Igienista Dentale presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Elisa Valdambrini</h3>
+            <p class="team-card__role">Igienista Dentale</p>
+          </article>
+
+          <!-- Dott.ssa Francesca Secci -->
+          <article class="team-card reveal-up" data-delay="120" aria-label="Dott.ssa Francesca Secci — Igienista Dentale">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/francesca_secci.jpg"
+                alt="Dott.ssa Francesca Secci, Igienista Dentale presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Francesca Secci</h3>
+            <p class="team-card__role">Igienista Dentale</p>
+          </article>
+
+          <!-- Dott.ssa Teresa Berti -->
+          <article class="team-card reveal-up" data-delay="0" aria-label="Dott.ssa Teresa Berti — Assistente">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/teresa_berti.jpg"
+                alt="Dott.ssa Teresa Berti, Assistente presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Dott.ssa Teresa Berti</h3>
+            <p class="team-card__role">Assistente</p>
+          </article>
+
+          <!-- Gianna Palma -->
+          <article class="team-card reveal-up" data-delay="60" aria-label="Gianna Palma — Assistente">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/gianna_palma.jpg"
+                alt="Gianna Palma, Assistente presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Gianna Palma</h3>
+            <p class="team-card__role">Assistente</p>
+          </article>
+
+          <!-- Caterina Gren -->
+          <article class="team-card reveal-up" data-delay="120" aria-label="Caterina Gren — Assistente">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/caterina_gren.jpg"
+                alt="Caterina Gren, Assistente presso lo Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Caterina Gren</h3>
+            <p class="team-card__role">Assistente</p>
+          </article>
+
+          <!-- Lorella Lunardi -->
+          <article class="team-card reveal-up" data-delay="0" aria-label="Lorella Lunardi — Segreteria">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/lorella_lunardi.jpg"
+                alt="Lorella Lunardi, Segreteria dello Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Lorella Lunardi</h3>
+            <p class="team-card__role">Segreteria</p>
+          </article>
+
+          <!-- Michele Mealli -->
+          <article class="team-card reveal-up" data-delay="60" aria-label="Michele Mealli — Laboratorio">
+            <div class="team-card__image">
+              <img
+                src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/laboratorio_michele_mealli.jpg"
+                alt="Michele Mealli, Responsabile Laboratorio dello Studio Dentistico Torricelli"
+                width="300"
+                height="360"
+                loading="lazy"
+              />
+              <div class="team-card__overlay" aria-hidden="true"></div>
+            </div>
+            <h3 class="team-card__name">Michele Mealli</h3>
+            <p class="team-card__role">Laboratorio</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. GALLERY GRID
+         ============================================================ -->
+    <section class="studio-gallery section--padded" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">I Nostri Ambienti</span>
+          <h2 id="gallery-title" class="section-title">Spazi <em>Moderni e Accoglienti</em></h2>
+        </header>
+
+        <div class="gallery-grid reveal-up" data-delay="100">
+
+          <figure class="gallery-grid__item gallery-grid__item--large">
+            <img
+              src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/sala_1.jpg"
+              alt="Sala principale dello Studio Dentistico Torricelli — ambiente moderno e accogliente"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <figcaption class="gallery-grid__caption">Sala Principale</figcaption>
+          </figure>
+
+          <figure class="gallery-grid__item">
+            <img
+              src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/sala_2.jpg"
+              alt="Seconda sala operatoria dello Studio Dentistico Torricelli"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+            <figcaption class="gallery-grid__caption">Sala Operatoria</figcaption>
+          </figure>
+
+          <figure class="gallery-grid__item">
+            <img
+              src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/sala_3.jpg"
+              alt="Terza sala dello Studio Dentistico Torricelli"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+            <figcaption class="gallery-grid__caption">Terza Sala</figcaption>
+          </figure>
+
+          <figure class="gallery-grid__item gallery-grid__item--wide">
+            <img
+              src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/radiologia.jpg"
+              alt="Sala radiologia dello Studio Dentistico Torricelli con TAC Cone Beam 3D"
+              width="800"
+              height="400"
+              loading="lazy"
+            />
+            <figcaption class="gallery-grid__caption">Sala Radiologia</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. CTA BANNER
+         ============================================================ -->
+    <section class="cta-banner section--dark" aria-labelledby="studio-cta-title">
+      <div class="cta-banner__grid">
+
+        <!-- Left: decorative image -->
+        <div class="cta-banner__image" aria-hidden="true" role="presentation">
+          <img
+            src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/sala_2.jpg"
+            alt="Sala dello Studio Dentistico Torricelli"
+            width="640"
+            height="500"
+            loading="lazy"
+          />
+          <div class="cta-banner__image-overlay"></div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="cta-banner__content">
+          <span class="label reveal-up" data-delay="0">Vieni a Trovarci</span>
+          <h2 id="studio-cta-title" class="section-title section-title--light reveal-up" data-delay="100">Vieni a <em>Trovarci</em></h2>
+          <address class="cta-banner__address reveal-up" data-delay="180">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+            </svg>
+            Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+          </address>
+          <a href="contatti.html" class="btn btn--primary btn--large reveal-up magnetic-btn" data-delay="260" aria-label="Vai alla pagina contatti">
+            Prenota una Visita
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+
+          <!-- Column 1: Brand -->
+          <div class="footer__col footer__col--brand">
+            <a href="index.html" class="footer__logo" aria-label="Studio Dentistico Torricelli — Home">
+              <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="160" height="54" loading="lazy" />
+            </a>
+            <p class="footer__tagline">La tua salute orale, la nostra passione.</p>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Link di Navigazione</h4>
+            <nav aria-label="Navigazione footer">
+              <ul class="footer__links" role="list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="studio.html" class="footer__link">Studio</a></li>
+                <li><a href="servizi.html" class="footer__link">Servizi</a></li>
+                <li><a href="igiene-prevenzione.html" class="footer__link">Igiene e Prevenzione</a></li>
+                <li><a href="ortodonzia-infantile.html" class="footer__link">Bambini</a></li>
+                <li><a href="qualita.html" class="footer__link">Qualit&agrave;</a></li>
+                <li><a href="osteopatia.html" class="footer__link">Collaborazioni</a></li>
+                <li><a href="contatti.html" class="footer__link">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contatti</h4>
+            <ul class="footer__links" role="list">
+              <li>
+                <a href="tel:055952421" class="footer__link footer__link--icon" aria-label="Chiama il 055 952421">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  055 952421
+                </a>
+              </li>
+              <li>
+                <address class="footer__address">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                  Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)
+                </address>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Hours -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Orari</h4>
+            <ul class="footer__hours" role="list">
+              <li class="footer__hours-item">
+                <span class="footer__hours-day">Lun&ndash;Ven:</span>
+                <span class="footer__hours-time">9:00&ndash;19:00</span>
+              </li>
+              <li class="footer__hours-item">
+                <span class="footer__hours-day">Sabato:</span>
+                <span class="footer__hours-time">Su appuntamento</span>
+              </li>
+              <li class="footer__hours-item footer__hours-note">
+                Chiusi la domenica e nei giorni festivi
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Bar -->
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__legal">
+          <p class="footer__copyright">
+            &copy; <span data-year></span> Studio Dentistico Torricelli. Tutti i diritti riservati.
+          </p>
+          <nav class="footer__legal-links" aria-label="Link legali">
+            <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+       ============================================================ -->
+  <a
+    href="https://wa.me/39055952421"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/>
+    </svg>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

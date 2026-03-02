@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posturologia | Studio Dentistico Torricelli</title>
+  <meta name="description" content="Posturologia in collaborazione con lo Studio Dentistico Torricelli a Figline Valdarno." />
+
+  <link rel="icon" type="image/png" href="images/homepage/cropped-icon06-free-img-270x270.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&family=Lora:ital@1&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Progresso pagina"></div>
+
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html" class="nav__logo" aria-label="Studio Dentistico Torricelli — Home">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="180" height="60" loading="eager" />
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="studio.html" class="nav-link">Studio Dentistico</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Servizi — apri menu">
+              Servizi
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="nav__dropdown-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="nav__dropdown-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="nav__dropdown-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="nav__dropdown-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="nav__dropdown-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="nav__dropdown-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="nav__dropdown-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="nav-link">Igiene e Prevenzione</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Bambini — apri menu">
+              Bambini
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="nav__dropdown-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="nav__dropdown-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="nav-link">Qualit&agrave;</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown nav-link--active" aria-haspopup="true" aria-expanded="false" aria-label="Collaborazioni — apri menu" aria-current="page">
+              Collaborazioni
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="nav__dropdown-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="nav__dropdown-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="nav__dropdown-link nav__dropdown-link--active" aria-current="page">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="nav-link nav-link--cta">Contatti</a></li>
+        </ul>
+        <button id="hamburger" class="hamburger" data-hamburger aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo" tabindex="-1">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="140" height="48" />
+        </a>
+        <button class="mobile-menu__close" aria-label="Chiudi menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+        <ul class="mobile-nav" role="list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="studio.html" class="mobile-nav-link">Studio Dentistico</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-servizi">
+              Servizi
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-servizi" class="mobile-submenu" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="mobile-submenu-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="mobile-submenu-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="mobile-submenu-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="mobile-submenu-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="mobile-submenu-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="mobile-submenu-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="mobile-submenu-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="mobile-nav-link">Igiene e Prevenzione</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-bambini">
+              Bambini
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-bambini" class="mobile-submenu" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="mobile-submenu-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="mobile-submenu-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="mobile-nav-link">Qualit&agrave;</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-collab">
+              Collaborazioni
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-collab" class="mobile-submenu" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="mobile-submenu-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="mobile-submenu-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="mobile-submenu-link" aria-current="page">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="mobile-nav-link mobile-nav-link--cta">Contatti</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__contact">
+        <a href="tel:055952421" class="mobile-menu__phone" aria-label="Chiama lo studio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          055 952421
+        </a>
+        <address class="mobile-menu__address" aria-label="Indirizzo dello studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+          Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" role="main">
+
+    <!-- 1. INTERNAL HERO -->
+    <section class="internal-hero" aria-label="Posturologia">
+      <div class="internal-hero__bg">
+        <img src="images/servizi-in-collaborazione/mirko_pasquini.jpg" alt="Valutazione posturale — Studio Dentistico Torricelli" loading="eager" />
+      </div>
+      <div class="internal-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="internal-hero__content">
+          <nav class="breadcrumb" aria-label="Percorso di navigazione">
+            <span class="breadcrumb__item"><a href="index.html">Home</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="breadcrumb__item"><a href="collaborazioni.html">Collaborazioni</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="breadcrumb__item active" aria-current="page">Posturologia</span>
+          </nav>
+          <h1 class="internal-hero__title reveal-up" data-delay="0"><em>Posturologia</em></h1>
+          <p class="internal-hero__subtitle reveal-up" data-delay="100">Postura e salute orale: un legame fondamentale</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERVICE DETAIL -->
+    <section class="service-detail section--padded" aria-labelledby="post-title">
+      <div class="container">
+        <div class="service-detail__grid">
+          <div class="service-detail__image reveal-up" data-delay="0">
+            <img
+              src="images/servizi-in-collaborazione/mirko_pasquini.jpg"
+              alt="Valutazione posturale in collaborazione con lo Studio Torricelli"
+              width="600"
+              height="480"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-detail__content reveal-up" data-delay="100">
+            <header>
+              <span class="label">In Collaborazione con lo Studio</span>
+              <h2 id="post-title" class="section-title">Postura, Denti e Benessere</h2>
+            </header>
+            <p>
+              La posturologia studia il modo in cui il corpo mantiene la propria posizione nello spazio e le relazioni tra i diversi sistemi che controllano l&rsquo;equilibrio posturale. Pochi sanno che la bocca &mdash; e in particolare l&rsquo;occlusione dentale &mdash; &egrave; uno dei principali recettori posturali del corpo umano.
+            </p>
+            <p>
+              Malocclusioni, perdita di denti, trattamenti ortodontici e protesici possono alterare l&rsquo;equilibrio muscolare della testa e del collo, con ripercussioni a cascata su tutta la colonna vertebrale. Allo stesso modo, squilibri posturali di origine diversa possono manifestarsi con dolori all&rsquo;articolazione temporo-mandibolare, bruxismo, cefalee e dolori facciali.
+            </p>
+            <ul class="service-detail__list" role="list" aria-label="Punti chiave della posturologia">
+              <li class="service-detail__list-item">Analisi posturale completa con strumenti specifici</li>
+              <li class="service-detail__list-item">Correzione degli squilibri muscolari e posturali</li>
+              <li class="service-detail__list-item">Trattamento del legame tra malocclusione e postura</li>
+              <li class="service-detail__list-item">Approccio integrato con il percorso odontoiatrico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROFESSIONAL INFO CARD -->
+    <section class="professional-card-section" style="background-color: var(--color-light-alt);" aria-labelledby="post-prof-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">Il Professionista</span>
+          <h2 id="post-prof-title" class="section-title">Specialista in Posturologia</h2>
+        </header>
+        <div class="professional-card reveal-up" data-delay="100">
+          <div class="professional-card__top">
+            <div class="professional-card__avatar">
+              <img
+                src="images/servizi-in-collaborazione/mirko_pasquini.jpg"
+                alt="Specialista in posturologia in collaborazione con lo Studio Torricelli"
+                width="120"
+                height="120"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="professional-card__name">Specialista in Posturologia</h3>
+            <p class="professional-card__title">Posturologia Clinica</p>
+          </div>
+          <div class="professional-card__body">
+            <p class="professional-card__bio">
+              Il nostro collaboratore in posturologia lavora in stretta sinergia con il team dello Studio Dentistico Torricelli per garantire un approccio integrato al paziente che presenta problematiche posturali correlate all&rsquo;occlusione dentale. La collaborazione permette di trattare simultaneamente le cause orali e posturali di dolori cervicali, cefalee e disfunzioni temporo-mandibolari.
+            </p>
+            <div class="professional-card__contacts" role="list" aria-label="Contatti dello specialista in posturologia">
+              <div class="professional-card__contact-item" role="listitem">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <a href="tel:+393283067181" aria-label="Chiama lo specialista in posturologia">+39 328 306 7181</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FAQ -->
+    <section class="faq-section section--padded" aria-labelledby="faq-post-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">Domande Frequenti</span>
+          <h2 id="faq-post-title" class="section-title">Postura e Salute Orale</h2>
+        </header>
+        <div class="faq-list reveal-up" data-delay="100" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Cos&rsquo;&egrave; la posturologia?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                La posturologia &egrave; la scienza che studia il sistema posturale fine dell&rsquo;essere umano: come il corpo mantiene e regola la propria posizione nello spazio in relazione all&rsquo;ambiente. Analizza le interazioni tra diversi recettori posturali (occhi, piede, pelle, bocca, sistema vestibolare) e le strutture muscolo-scheletriche per individuare squilibri e compensazioni che possono causare dolori e disfunzioni.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Qual &egrave; il legame tra postura e denti?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Il sistema stomatognatico &egrave; uno dei principali recettori posturali del corpo. L&rsquo;occlusione dentale (il modo in cui i denti si incontrano) influenza direttamente la posizione della mandibola, la tensione dei muscoli masseteri e temporali, e l&rsquo;equilibrio di testa e collo. Uno squilibrio occlusale pu&ograve; propagarsi verso il basso attraverso catene muscolari, causando dolori cervicali, lombalgie e problemi alle ginocchia. E viceversa, squilibri posturali di origine periferica possono riverberarsi sull&rsquo;articolazione temporo-mandibolare.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Il bruxismo &egrave; legato alla postura?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Il bruxismo (digrignamento e serramento dei denti) ha cause multifattoriali che includono stress, componente genetica e &mdash; spesso &mdash; squilibri occlusali e posturali. In molti pazienti, il trattamento integrato odontoiatrico-posturologico, che pu&ograve; includere bite personalizzato e rieducazione posturale, produce risultati significativamente migliori rispetto al solo trattamento dentistico. La valutazione posturologica &egrave; quindi parte integrante del percorso diagnostico del bruxismo nel nostro studio.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Come si svolge una visita posturologica?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                La visita posturologica prevede un&rsquo;anamnesi completa, una valutazione visiva e strumentale della postura statica e dinamica, test specifici per valutare i recettori posturali e la loro influenza sull&rsquo;equilibrio. Il posurologo identifica poi le cause degli squilibri e pianifica un percorso terapeutico personalizzato che pu&ograve; includere esercizi posturali, ortesi plantari, lenti prismatiche e coordinamento con il dentista per eventuali interventi occlusali.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="cta-banner" aria-labelledby="cta-post-title">
+      <div class="container">
+        <div class="cta-banner__grid">
+          <div class="cta-banner__image" aria-hidden="true" role="presentation">
+            <img src="images/servizi-in-collaborazione/mirko_pasquini.jpg" alt="Valutazione posturale" width="640" height="400" loading="lazy" />
+            <div class="cta-banner__image-overlay"></div>
+          </div>
+          <div class="cta-banner__content">
+            <span class="label reveal-up" data-delay="0">Prenota Ora</span>
+            <h2 id="cta-post-title" class="cta-banner__title reveal-up" data-delay="80">Prenota una Valutazione Posturale</h2>
+            <p class="cta-banner__body reveal-up" data-delay="160">
+              Dolori cervicali, cefalee ricorrenti o bruxismo? Potrebbe esserci una correlazione posturale. Contatta lo studio per una valutazione integrata.
+            </p>
+            <div class="cta-banner__actions reveal-up" data-delay="240">
+              <a href="tel:+393283067181" class="btn btn--primary magnetic-btn" aria-label="Chiama lo specialista in posturologia">Specialista: +39&nbsp;328&nbsp;306&nbsp;7181</a>
+              <a href="tel:055952421" class="btn btn--secondary" aria-label="Chiama lo studio al 055 952421">Studio: 055&nbsp;952421</a>
+            </div>
+            <div style="margin-top: var(--space-5); display: flex; gap: var(--space-4); flex-wrap: wrap;" class="reveal-up" data-delay="320">
+              <a href="osteopatia.html" style="color: rgba(240,244,247,0.6); font-size: var(--text-sm); text-decoration: underline;">Scopri l&rsquo;Osteopatia &rarr;</a>
+              <a href="dietologia.html" style="color: rgba(240,244,247,0.6); font-size: var(--text-sm); text-decoration: underline;">Scopri la Dietologia &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--brand">
+            <a href="index.html" class="footer__logo" aria-label="Studio Dentistico Torricelli — Home">
+              <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="160" height="54" loading="lazy" />
+            </a>
+            <p class="footer__tagline">La tua salute orale, la nostra passione.</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Link di Navigazione</h4>
+            <nav aria-label="Navigazione footer">
+              <ul class="footer__links" role="list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="studio.html" class="footer__link">Studio</a></li>
+                <li><a href="servizi.html" class="footer__link">Servizi</a></li>
+                <li><a href="igiene-prevenzione.html" class="footer__link">Igiene e Prevenzione</a></li>
+                <li><a href="ortodonzia-infantile.html" class="footer__link">Bambini</a></li>
+                <li><a href="qualita.html" class="footer__link">Qualit&agrave;</a></li>
+                <li><a href="osteopatia.html" class="footer__link">Collaborazioni</a></li>
+                <li><a href="contatti.html" class="footer__link">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contatti</h4>
+            <ul class="footer__links" role="list">
+              <li>
+                <a href="tel:055952421" class="footer__link footer__link--icon" aria-label="Chiama il 055 952421">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  055 952421
+                </a>
+              </li>
+              <li>
+                <address class="footer__address">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+                  Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)
+                </address>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Orari</h4>
+            <ul class="footer__hours" role="list">
+              <li class="footer__hours-item"><span class="footer__hours-day">Lun&ndash;Ven:</span><span class="footer__hours-time">9:00&ndash;19:00</span></li>
+              <li class="footer__hours-item"><span class="footer__hours-day">Sabato:</span><span class="footer__hours-time">Su appuntamento</span></li>
+              <li class="footer__hours-item footer__hours-note">Chiusi la domenica e nei giorni festivi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__legal">
+          <p class="footer__copyright">&copy; <span data-year></span> Studio Dentistico Torricelli. Tutti i diritti riservati.</p>
+          <nav class="footer__legal-links" aria-label="Link legali"><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/39055952421" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

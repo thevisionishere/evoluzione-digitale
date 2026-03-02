@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odontoiatria per Bambini | Studio Dentistico Torricelli</title>
+  <meta name="description" content="Cure dentistiche per bambini a Figline Valdarno. Ortodonzia infantile e pedodonzia." />
+
+  <link rel="icon" type="image/png" href="images/homepage/cropped-icon06-free-img-270x270.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&family=Lora:ital@1&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Progresso pagina"></div>
+
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html" class="nav__logo" aria-label="Studio Dentistico Torricelli — Home">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="180" height="60" loading="eager" />
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="studio.html" class="nav-link">Studio Dentistico</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Servizi — apri menu">
+              Servizi
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="nav__dropdown-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="nav__dropdown-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="nav__dropdown-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="nav__dropdown-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="nav__dropdown-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="nav__dropdown-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="nav__dropdown-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="nav-link">Igiene e Prevenzione</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown nav-link--active" aria-haspopup="true" aria-expanded="false" aria-label="Bambini — apri menu" aria-current="page">
+              Bambini
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="nav__dropdown-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="nav__dropdown-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="nav-link">Qualit&agrave;</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Collaborazioni — apri menu">
+              Collaborazioni
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="nav__dropdown-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="nav__dropdown-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="nav__dropdown-link">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="nav-link nav-link--cta">Contatti</a></li>
+        </ul>
+        <button id="hamburger" class="hamburger" data-hamburger aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo" tabindex="-1">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="140" height="48" />
+        </a>
+        <button class="mobile-menu__close" aria-label="Chiudi menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+        <ul class="mobile-nav" role="list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="studio.html" class="mobile-nav-link">Studio Dentistico</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-servizi">
+              Servizi
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-servizi" class="mobile-submenu" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="mobile-submenu-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="mobile-submenu-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="mobile-submenu-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="mobile-submenu-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="mobile-submenu-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="mobile-submenu-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="mobile-submenu-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="mobile-nav-link">Igiene e Prevenzione</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-bambini">
+              Bambini
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-bambini" class="mobile-submenu" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="mobile-submenu-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="mobile-submenu-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="mobile-nav-link">Qualit&agrave;</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-collab">
+              Collaborazioni
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-collab" class="mobile-submenu" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="mobile-submenu-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="mobile-submenu-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="mobile-submenu-link">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="mobile-nav-link mobile-nav-link--cta">Contatti</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__contact">
+        <a href="tel:055952421" class="mobile-menu__phone" aria-label="Chiama lo studio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          055 952421
+        </a>
+        <address class="mobile-menu__address" aria-label="Indirizzo dello studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+          Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" role="main">
+
+    <!-- 1. INTERNAL HERO -->
+    <section class="internal-hero" aria-label="Odontoiatria per Bambini">
+      <div class="internal-hero__bg">
+        <img src="images/homepage/piccoli_pazienti_crescono.jpg" alt="Bambini sorridenti — Studio Dentistico Torricelli" loading="eager" />
+      </div>
+      <div class="internal-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="internal-hero__content">
+          <nav class="breadcrumb" aria-label="Percorso di navigazione">
+            <span class="breadcrumb__item"><a href="index.html">Home</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="breadcrumb__item active" aria-current="page">Bambini</span>
+          </nav>
+          <h1 class="internal-hero__title reveal-up" data-delay="0">Odontoiatria<br>per <em>Bambini</em></h1>
+          <p class="internal-hero__subtitle reveal-up" data-delay="100">Un sorriso sano fin da piccoli</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTRO -->
+    <section class="section--padded" aria-labelledby="bambini-intro-title">
+      <div class="container">
+        <div style="max-width: 760px; margin-inline: auto; text-align: center;">
+          <header class="reveal-up" data-delay="0">
+            <span class="label">La Nostra Filosofia</span>
+            <h2 id="bambini-intro-title" class="section-title">I Sorrisi pi&ugrave; Importanti</h2>
+          </header>
+          <p class="section-subtitle reveal-up" data-delay="100" style="margin-top: var(--space-5);">
+            La salute dentale dei bambini &egrave; una priorit&agrave; che inizia ben prima della comparsa dei denti definitivi. Un corretto approccio all&rsquo;odontoiatria infantile, con visite precoci e un ambiente sereno, getta le basi per una vita di benessere orale. Il nostro studio &egrave; un luogo in cui i piccoli pazienti si sentono accolti, ascoltati e mai spaventati.
+          </p>
+          <p class="section-subtitle reveal-up" data-delay="160" style="margin-top: var(--space-4);">
+            Offriamo percorsi specializzati per ogni fase dello sviluppo: dalla cura dei denti da latte con la pedodonzia, alla correzione precoce dell&rsquo;allineamento dentale con l&rsquo;ortodonzia infantile. Il nostro obiettivo &egrave; costruire con ogni bambino un rapporto di fiducia che duri nel tempo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES CARDS -->
+    <section class="section--padded" style="background-color: var(--color-light-alt);" aria-labelledby="bambini-servizi-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">I Nostri Servizi per i Pi&ugrave; Piccoli</span>
+          <h2 id="bambini-servizi-title" class="section-title">Percorsi Specializzati</h2>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);" role="list">
+
+          <article class="reveal-up" data-delay="0" role="listitem" style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border-light); background: var(--color-light); box-shadow: var(--shadow-md); transition: var(--transition-normal);">
+            <div style="aspect-ratio: 16/9; overflow: hidden;">
+              <img
+                src="images/ortodonzia-infantile/ortodonzia-infantile-pagina_1.jpg"
+                alt="Ortodonzia infantile — Studio Dentistico Torricelli"
+                width="600"
+                height="338"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--duration-slow) var(--ease-out);"
+              />
+            </div>
+            <div style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
+              <span class="label">Servizio</span>
+              <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--color-text-dark);">Ortodonzia Infantile</h3>
+              <p style="color: var(--color-text-muted); line-height: var(--leading-relaxed);">
+                Diagnosi precoce e trattamenti personalizzati per guidare la corretta crescita della dentatura nei bambini. Un check-up ortodontico in et&agrave; scolare pu&ograve; prevenire problemi pi&ugrave; complessi in futuro.
+              </p>
+              <a href="ortodonzia-infantile.html" class="btn btn--primary" style="align-self: flex-start;" aria-label="Scopri di più sull'Ortodonzia Infantile">
+                Scopri di pi&ugrave; &rarr;
+              </a>
+            </div>
+          </article>
+
+          <article class="reveal-up" data-delay="100" role="listitem" style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border-light); background: var(--color-light); box-shadow: var(--shadow-md); transition: var(--transition-normal);">
+            <div style="aspect-ratio: 16/9; overflow: hidden;">
+              <img
+                src="images/homepage/piccoli_pazienti_crescono.jpg"
+                alt="Pedodonzia — cure per i denti da latte"
+                width="600"
+                height="338"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: right center; transition: transform var(--duration-slow) var(--ease-out);"
+              />
+            </div>
+            <div style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
+              <span class="label">Servizio</span>
+              <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--color-text-dark);">Pedodonzia</h3>
+              <p style="color: var(--color-text-muted); line-height: var(--leading-relaxed);">
+                La cura specializzata dei denti da latte e della prima dentizione permanente. Sigillature preventive, fluoroprofilassi ed educazione all&rsquo;igiene per proteggere i denti del tuo bambino fin dall&rsquo;inizio.
+              </p>
+              <a href="pedodonzia.html" class="btn btn--primary" style="align-self: flex-start;" aria-label="Scopri di più sulla Pedodonzia">
+                Scopri di pi&ugrave; &rarr;
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COMFORT SECTION -->
+    <section class="comfort section--padded" aria-labelledby="bambini-comfort-title">
+      <div class="container">
+        <div class="comfort__grid">
+          <div class="comfort__content">
+            <header class="reveal-up" data-delay="0">
+              <span class="label">Il Nostro Ambiente</span>
+              <h2 id="bambini-comfort-title" class="section-title">Un Ambiente Pensato per Loro</h2>
+            </header>
+            <p class="reveal-up" data-delay="80">
+              Sappiamo che portare un bambino dal dentista pu&ograve; essere fonte di ansia, sia per i piccoli che per i genitori. Per questo abbiamo creato un ambiente accogliente e rassicurante, dove ogni bambino viene accolto con calma e gentilezza.
+            </p>
+            <ul class="comfort__list reveal-up" data-delay="160" role="list" aria-label="Caratteristiche del nostro approccio per i bambini">
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span>Ambiente accogliente e a misura di bambino</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span>Team specializzato e paziente nell&rsquo;approccio con i pi&ugrave; piccoli</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span>Approccio graduale rispettoso dei tempi di ogni bambino</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span>Pieno coinvolgimento e informazione ai genitori in ogni fase</span>
+              </li>
+            </ul>
+          </div>
+          <div class="comfort__media reveal-up" data-delay="80">
+            <div class="comfort__image-wrap">
+              <img
+                src="images/homepage/piccoli_pazienti_crescono.jpg"
+                alt="Piccolo paziente sorridente allo Studio Dentistico Torricelli"
+                width="560"
+                height="600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="cta-banner" aria-labelledby="cta-bambini-title">
+      <div class="container">
+        <div class="cta-banner__grid">
+          <div class="cta-banner__image" aria-hidden="true" role="presentation">
+            <img src="images/homepage/piccoli_pazienti_crescono.jpg" alt="Bambini sorridenti" width="640" height="400" loading="lazy" />
+            <div class="cta-banner__image-overlay"></div>
+          </div>
+          <div class="cta-banner__content">
+            <span class="label reveal-up" data-delay="0">Prenota Ora</span>
+            <h2 id="cta-bambini-title" class="cta-banner__title reveal-up" data-delay="80">Prenota per il Tuo Bambino</h2>
+            <p class="cta-banner__body reveal-up" data-delay="160">
+              La prima visita &egrave; il passo pi&ugrave; importante. Contattaci per fissare un appuntamento in un&rsquo;atmosfera serena e senza fretta.
+            </p>
+            <div class="cta-banner__actions reveal-up" data-delay="240">
+              <a href="tel:055952421" class="btn btn--primary magnetic-btn" aria-label="Chiama lo studio al 055 952421">Chiamaci: 055&nbsp;952421</a>
+              <a href="contatti.html" class="btn btn--secondary">Contattaci</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--brand">
+            <a href="index.html" class="footer__logo" aria-label="Studio Dentistico Torricelli — Home">
+              <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="160" height="54" loading="lazy" />
+            </a>
+            <p class="footer__tagline">La tua salute orale, la nostra passione.</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Link di Navigazione</h4>
+            <nav aria-label="Navigazione footer">
+              <ul class="footer__links" role="list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="studio.html" class="footer__link">Studio</a></li>
+                <li><a href="servizi.html" class="footer__link">Servizi</a></li>
+                <li><a href="igiene-prevenzione.html" class="footer__link">Igiene e Prevenzione</a></li>
+                <li><a href="ortodonzia-infantile.html" class="footer__link">Bambini</a></li>
+                <li><a href="qualita.html" class="footer__link">Qualit&agrave;</a></li>
+                <li><a href="osteopatia.html" class="footer__link">Collaborazioni</a></li>
+                <li><a href="contatti.html" class="footer__link">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contatti</h4>
+            <ul class="footer__links" role="list">
+              <li>
+                <a href="tel:055952421" class="footer__link footer__link--icon" aria-label="Chiama il 055 952421">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  055 952421
+                </a>
+              </li>
+              <li>
+                <address class="footer__address">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+                  Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)
+                </address>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Orari</h4>
+            <ul class="footer__hours" role="list">
+              <li class="footer__hours-item"><span class="footer__hours-day">Lun&ndash;Ven:</span><span class="footer__hours-time">9:00&ndash;19:00</span></li>
+              <li class="footer__hours-item"><span class="footer__hours-day">Sabato:</span><span class="footer__hours-time">Su appuntamento</span></li>
+              <li class="footer__hours-item footer__hours-note">Chiusi la domenica e nei giorni festivi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__legal">
+          <p class="footer__copyright">&copy; <span data-year></span> Studio Dentistico Torricelli. Tutti i diritti riservati.</p>
+          <nav class="footer__legal-links" aria-label="Link legali"><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/39055952421" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

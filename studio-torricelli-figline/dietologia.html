@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dietologia | Studio Dentistico Torricelli</title>
+  <meta name="description" content="Dietologia in collaborazione con lo Studio Dentistico Torricelli a Figline Valdarno." />
+
+  <link rel="icon" type="image/png" href="images/homepage/cropped-icon06-free-img-270x270.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&family=Lora:ital@1&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Progresso pagina"></div>
+
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html" class="nav__logo" aria-label="Studio Dentistico Torricelli — Home">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="180" height="60" loading="eager" />
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="studio.html" class="nav-link">Studio Dentistico</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Servizi — apri menu">
+              Servizi
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="nav__dropdown-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="nav__dropdown-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="nav__dropdown-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="nav__dropdown-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="nav__dropdown-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="nav__dropdown-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="nav__dropdown-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="nav-link">Igiene e Prevenzione</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Bambini — apri menu">
+              Bambini
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="nav__dropdown-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="nav__dropdown-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="nav-link">Qualit&agrave;</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown nav-link--active" aria-haspopup="true" aria-expanded="false" aria-label="Collaborazioni — apri menu" aria-current="page">
+              Collaborazioni
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="nav__dropdown-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="nav__dropdown-link nav__dropdown-link--active" aria-current="page">Dietologia</a></li>
+              <li><a href="posturologia.html" class="nav__dropdown-link">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="nav-link nav-link--cta">Contatti</a></li>
+        </ul>
+        <button id="hamburger" class="hamburger" data-hamburger aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo" tabindex="-1">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="140" height="48" />
+        </a>
+        <button class="mobile-menu__close" aria-label="Chiudi menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+        <ul class="mobile-nav" role="list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="studio.html" class="mobile-nav-link">Studio Dentistico</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-servizi">
+              Servizi
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-servizi" class="mobile-submenu" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="mobile-submenu-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="mobile-submenu-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="mobile-submenu-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="mobile-submenu-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="mobile-submenu-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="mobile-submenu-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="mobile-submenu-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="mobile-nav-link">Igiene e Prevenzione</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-bambini">
+              Bambini
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-bambini" class="mobile-submenu" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="mobile-submenu-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="mobile-submenu-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="mobile-nav-link">Qualit&agrave;</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-collab">
+              Collaborazioni
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul id="mobile-sub-collab" class="mobile-submenu" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="mobile-submenu-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="mobile-submenu-link" aria-current="page">Dietologia</a></li>
+              <li><a href="posturologia.html" class="mobile-submenu-link">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="mobile-nav-link mobile-nav-link--cta">Contatti</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__contact">
+        <a href="tel:055952421" class="mobile-menu__phone" aria-label="Chiama lo studio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          055 952421
+        </a>
+        <address class="mobile-menu__address" aria-label="Indirizzo dello studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+          Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" role="main">
+
+    <!-- 1. INTERNAL HERO -->
+    <section class="internal-hero" aria-label="Dietologia">
+      <div class="internal-hero__bg">
+        <img src="images/servizi-in-collaborazione/dietologia.jpg" alt="Consulenza dietologica — Studio Dentistico Torricelli" loading="eager" />
+      </div>
+      <div class="internal-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="internal-hero__content">
+          <nav class="breadcrumb" aria-label="Percorso di navigazione">
+            <span class="breadcrumb__item"><a href="index.html">Home</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="breadcrumb__item"><a href="collaborazioni.html">Collaborazioni</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="breadcrumb__item active" aria-current="page">Dietologia</span>
+          </nav>
+          <h1 class="internal-hero__title reveal-up" data-delay="0"><em>Dietologia</em></h1>
+          <p class="internal-hero__subtitle reveal-up" data-delay="100">Alimentazione e stile di vita come fondamento del benessere</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERVICE DETAIL -->
+    <section class="service-detail section--padded" aria-labelledby="diet-title">
+      <div class="container">
+        <div class="service-detail__grid">
+          <div class="service-detail__image reveal-up" data-delay="0">
+            <img
+              src="images/servizi-in-collaborazione/dietologia.jpg"
+              alt="Consulenza nutrizionale e dietologica"
+              width="600"
+              height="480"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-detail__content reveal-up" data-delay="100">
+            <header>
+              <span class="label">In Collaborazione con lo Studio</span>
+              <h2 id="diet-title" class="section-title">Nutrizione e Salute Orale</h2>
+            </header>
+            <p>
+              La dieta intesa come &ldquo;stile di vita&rdquo; &egrave; il primo passo per ritrovare il benessere psicofisico. Ci&ograve; che mangiamo ogni giorno ha un impatto diretto e profondo sulla salute della nostra bocca: denti, gengive e mucose risentono delle abitudini alimentari tanto quanto qualsiasi altro organo del corpo.
+            </p>
+            <p>
+              La consulenza dietologica in collaborazione con lo Studio Dentistico Torricelli permette di individuare le abitudini alimentari che possono favorire carie, erosioni dentali, problemi gengivali e alitosi, e di costruire un piano nutrizionale personalizzato che supporti sia la salute generale che quella orale.
+            </p>
+            <ul class="service-detail__list" role="list" aria-label="Punti chiave della dietologia">
+              <li class="service-detail__list-item">Stile di vita sano come base del benessere</li>
+              <li class="service-detail__list-item">Benessere psicofisico attraverso un&rsquo;alimentazione equilibrata</li>
+              <li class="service-detail__list-item">Prevenzione delle patologie correlate alla dieta</li>
+              <li class="service-detail__list-item">Connessione diretta tra alimentazione e salute orale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CONNECTION CARDS -->
+    <section class="section--padded" style="background-color: var(--color-light-alt);" aria-labelledby="diet-connect-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">Il Legame</span>
+          <h2 id="diet-connect-title" class="section-title">Perch&eacute; la Dietologia nello Studio Dentistico</h2>
+          <p class="section-subtitle">L&rsquo;alimentazione influenza la salute orale in modi che spesso non si conoscono.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); margin-top: var(--space-8);" role="list">
+
+          <article class="reveal-up" data-delay="0" role="listitem" style="padding: var(--space-6); border-radius: var(--radius-xl); border: 1px solid var(--color-border-light); background: var(--color-light); display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: rgba(41,216,219,0.08); display: flex; align-items: center; justify-content: center; color: var(--color-accent);" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/></svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-text-dark);">Zuccheri e Carie</h3>
+            <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed);">I batteri della placca si nutrono di zuccheri producendo acidi che demineralizzano lo smalto. Ridurre la frequenza e la quantit&agrave; di zuccheri &egrave; la misura preventiva pi&ugrave; efficace contro la carie.</p>
+          </article>
+
+          <article class="reveal-up" data-delay="80" role="listitem" style="padding: var(--space-6); border-radius: var(--radius-xl); border: 1px solid var(--color-border-light); background: var(--color-light); display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: rgba(41,216,219,0.08); display: flex; align-items: center; justify-content: center; color: var(--color-accent);" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-text-dark);">Carenze Nutrizionali e Gengive</h3>
+            <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed);">La carenza di vitamina C, vitamina D, calcio e altri micronutrienti indebolisce le difese immunitarie e la salute dei tessuti gengivali, favorendo parodontiti e processi infiammatori cronici.</p>
+          </article>
+
+          <article class="reveal-up" data-delay="160" role="listitem" style="padding: var(--space-6); border-radius: var(--radius-xl); border: 1px solid var(--color-border-light); background: var(--color-light); display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: rgba(41,216,219,0.08); display: flex; align-items: center; justify-content: center; color: var(--color-accent);" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-text-dark);">Reflusso ed Erosione Dentale</h3>
+            <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed);">Il reflusso gastroesofageo e una dieta ricca di alimenti acidi (agrumi, bevande gassate, aceto) causano l&rsquo;erosione dello smalto, rendendo i denti pi&ugrave; sensibili e vulnerabili alla carie.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FAQ -->
+    <section class="faq-section section--padded" aria-labelledby="faq-diet-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">Domande Frequenti</span>
+          <h2 id="faq-diet-title" class="section-title">Alimentazione e Salute Dentale</h2>
+        </header>
+        <div class="faq-list reveal-up" data-delay="100" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Qual &egrave; il rapporto tra alimentazione e salute dei denti?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                L&rsquo;alimentazione influenza la salute orale a ogni livello: gli zuccheri alimentano i batteri responsabili della carie, le sostanze acide erodono lo smalto, le carenze nutrizionali indeboliscono gengive e tessuti di supporto, e alcune condizioni come il reflusso possono causare danni significativi alla dentatura. Un regime alimentare equilibrato &egrave; quindi parte integrante di una strategia di prevenzione odontoiatrica efficace.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Quali sono i cibi pi&ugrave; dannosi per i denti?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                I pi&ugrave; pericolosi sono gli zuccheri raffinati e gli alimenti acidi consumati frequentemente. Caramelle, bibite gassate, succhi di frutta, alimenti appiccicosi (barrette di cereali, uvetta) e il vino favoriscono la carie e l&rsquo;erosione. Anche il limone, l&rsquo;aceto e altri condimenti acidi possono erodere lo smalto se consumati in grandi quantit&agrave;. Il consiglio dietologico mira a ridurre questi rischi senza rinunciare al piacere alimentare.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">La dieta pu&ograve; migliorare la salute delle gengive?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                S&igrave;, in modo significativo. Un&rsquo;alimentazione ricca di vitamina C (agrumi, kiwi, peperoni), vitamina D (pesce grasso, uova, esposizione solare), calcio (latticini, legumi, verdure a foglia verde) e antiossidanti rafforza il sistema immunitario e supporta la salute dei tessuti gengivali. Ridurre gli zuccheri e i carboidrati raffinati diminuisce anche l&rsquo;infiammazione sistemica che aggrava la parodontite.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Come si svolge una consulenza dietologica?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                La prima visita prevede un colloquio approfondito sulle abitudini alimentari, lo stile di vita, la storia clinica e gli obiettivi del paziente. Il nutrizionista elabora poi un piano alimentare personalizzato, pratico e sostenibile nel tempo. I follow-up periodici permettono di monitorare i progressi e adattare il piano in base all&rsquo;evoluzione della situazione.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="cta-banner" aria-labelledby="cta-diet-title">
+      <div class="container">
+        <div class="cta-banner__grid">
+          <div class="cta-banner__image" aria-hidden="true" role="presentation">
+            <img src="images/servizi-in-collaborazione/dietologia.jpg" alt="Consulenza nutrizionale" width="640" height="400" loading="lazy" />
+            <div class="cta-banner__image-overlay"></div>
+          </div>
+          <div class="cta-banner__content">
+            <span class="label reveal-up" data-delay="0">Prenota Ora</span>
+            <h2 id="cta-diet-title" class="cta-banner__title reveal-up" data-delay="80">Prenota una Consulenza Nutrizionale</h2>
+            <p class="cta-banner__body reveal-up" data-delay="160">
+              Inizia il tuo percorso verso un benessere integrato. Contatta lo studio per fissare una consulenza dietologica personalizzata.
+            </p>
+            <div class="cta-banner__actions reveal-up" data-delay="240">
+              <a href="tel:055952421" class="btn btn--primary magnetic-btn" aria-label="Chiama lo studio al 055 952421">Chiamaci: 055&nbsp;952421</a>
+              <a href="contatti.html" class="btn btn--secondary">Contattaci</a>
+            </div>
+            <div style="margin-top: var(--space-5); display: flex; gap: var(--space-4); flex-wrap: wrap;" class="reveal-up" data-delay="320">
+              <a href="osteopatia.html" style="color: rgba(240,244,247,0.6); font-size: var(--text-sm); text-decoration: underline;">Scopri l&rsquo;Osteopatia &rarr;</a>
+              <a href="posturologia.html" style="color: rgba(240,244,247,0.6); font-size: var(--text-sm); text-decoration: underline;">Scopri la Posturologia &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--brand">
+            <a href="index.html" class="footer__logo" aria-label="Studio Dentistico Torricelli — Home">
+              <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="160" height="54" loading="lazy" />
+            </a>
+            <p class="footer__tagline">La tua salute orale, la nostra passione.</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Link di Navigazione</h4>
+            <nav aria-label="Navigazione footer">
+              <ul class="footer__links" role="list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="studio.html" class="footer__link">Studio</a></li>
+                <li><a href="servizi.html" class="footer__link">Servizi</a></li>
+                <li><a href="igiene-prevenzione.html" class="footer__link">Igiene e Prevenzione</a></li>
+                <li><a href="ortodonzia-infantile.html" class="footer__link">Bambini</a></li>
+                <li><a href="qualita.html" class="footer__link">Qualit&agrave;</a></li>
+                <li><a href="osteopatia.html" class="footer__link">Collaborazioni</a></li>
+                <li><a href="contatti.html" class="footer__link">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contatti</h4>
+            <ul class="footer__links" role="list">
+              <li>
+                <a href="tel:055952421" class="footer__link footer__link--icon" aria-label="Chiama il 055 952421">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  055 952421
+                </a>
+              </li>
+              <li>
+                <address class="footer__address">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+                  Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)
+                </address>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Orari</h4>
+            <ul class="footer__hours" role="list">
+              <li class="footer__hours-item"><span class="footer__hours-day">Lun&ndash;Ven:</span><span class="footer__hours-time">9:00&ndash;19:00</span></li>
+              <li class="footer__hours-item"><span class="footer__hours-day">Sabato:</span><span class="footer__hours-time">Su appuntamento</span></li>
+              <li class="footer__hours-item footer__hours-note">Chiusi la domenica e nei giorni festivi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__legal">
+          <p class="footer__copyright">&copy; <span data-year></span> Studio Dentistico Torricelli. Tutti i diritti riservati.</p>
+          <nav class="footer__legal-links" aria-label="Link legali"><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/39055952421" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

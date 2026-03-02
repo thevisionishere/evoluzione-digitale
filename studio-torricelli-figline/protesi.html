@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protesi | Studio Dentistico Torricelli - Figline Valdarno</title>
+  <meta name="description" content="Protesi dentarie con passione e precisione. Le più moderne apparecchiature a Figline Valdarno." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/homepage/cropped-icon06-free-img-270x270.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&family=Lora:ital@1&display=swap" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Progresso pagina"></div>
+
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html" class="nav__logo" aria-label="Studio Dentistico Torricelli — Home">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="180" height="60" loading="eager" />
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="studio.html" class="nav-link">Studio Dentistico</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown nav-link--active" aria-haspopup="true" aria-expanded="false" aria-label="Servizi — apri menu">
+              Servizi
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="nav__dropdown-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="nav__dropdown-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="nav__dropdown-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="nav__dropdown-link nav__dropdown-link--active" aria-current="page">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="nav__dropdown-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="nav__dropdown-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="nav__dropdown-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="nav-link">Igiene e Prevenzione</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Bambini — apri menu">
+              Bambini
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="nav__dropdown-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="nav__dropdown-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="nav-link">Qualità</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Collaborazioni — apri menu">
+              Collaborazioni
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="nav__dropdown-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="nav__dropdown-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="nav__dropdown-link">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="nav-link nav-link--cta">Contatti</a></li>
+        </ul>
+        <button id="hamburger" class="hamburger" data-hamburger aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo" tabindex="-1">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="140" height="48" />
+        </a>
+        <button class="mobile-menu__close" aria-label="Chiudi menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+        <ul class="mobile-nav" role="list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="studio.html" class="mobile-nav-link">Studio Dentistico</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-servizi">
+              Servizi
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-servizi" class="mobile-submenu" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="mobile-submenu-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="mobile-submenu-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="mobile-submenu-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="mobile-submenu-link" aria-current="page">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="mobile-submenu-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="mobile-submenu-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="mobile-submenu-link">Radiologia</a></li>
+            </ul>
+          </li>
+          <li><a href="igiene-prevenzione.html" class="mobile-nav-link">Igiene e Prevenzione</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-bambini">
+              Bambini
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-bambini" class="mobile-submenu" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="mobile-submenu-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="mobile-submenu-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+          <li><a href="qualita.html" class="mobile-nav-link">Qualità</a></li>
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-collab">
+              Collaborazioni
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-collab" class="mobile-submenu" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="mobile-submenu-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="mobile-submenu-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="mobile-submenu-link">Posturologia</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="mobile-nav-link mobile-nav-link--cta">Contatti</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__contact">
+        <a href="tel:055952421" class="mobile-menu__phone" aria-label="Chiama lo studio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          055 952421
+        </a>
+        <address class="mobile-menu__address" aria-label="Indirizzo dello studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+          </svg>
+          Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" role="main">
+
+    <!-- 1. INTERNAL HERO -->
+    <section class="internal-hero" aria-label="Protesi — Passione e Precisione">
+      <div class="internal-hero__bg">
+        <img
+          src="images/protesi/protesi.jpg"
+          alt="Protesi dentaria presso Studio Dentistico Torricelli"
+          width="1600"
+          height="900"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="internal-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="internal-hero__content">
+          <nav class="breadcrumb" aria-label="Percorso di navigazione">
+            <span class="breadcrumb__item"><a href="index.html">Home</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="breadcrumb__item"><a href="servizi.html">Servizi</a></span>
+            <span class="breadcrumb__sep" aria-hidden="true">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="breadcrumb__item active" aria-current="page">Protesi</span>
+          </nav>
+          <h1 class="internal-hero__title reveal-up" data-delay="1">Protesi</h1>
+          <p class="internal-hero__subtitle reveal-up" data-delay="2">
+            Recupera il tuo sorriso con protesi realizzate con passione, precisione e tecnologie di ultima generazione.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERVICE DETAIL -->
+    <section class="service-detail" aria-label="Dettaglio servizio Protesi">
+      <div class="container">
+        <div class="service-detail__grid">
+          <div class="service-detail__content">
+            <span class="label reveal-up" data-delay="1">Riabilitazione Protesica</span>
+            <h2 class="reveal-up" data-delay="2">Passione e Precisione</h2>
+            <p class="reveal-up" data-delay="3">
+              La protesi dentaria è la soluzione per riabilitare la funzione masticatoria e l'estetica del sorriso quando uno o più denti sono stati persi o irrecuperabilmente compromessi. Con passione per il dettaglio e apparecchiature all'avanguardia, realizziamo protesi che replicano fedelmente l'aspetto del dente naturale.
+            </p>
+            <p class="reveal-up" data-delay="4">
+              Le soluzioni protesiche che offriamo includono corone e ponti fissi, protesi mobili totali o parziali e protesi su impianti — la soluzione più stabile e confortevole. Ogni dispositivo viene progettato e realizzato su misura, con materiali di alta qualità selezionati per durabilità ed estetica.
+            </p>
+            <ul class="service-detail__list reveal-up" data-delay="5" aria-label="Punti chiave del servizio">
+              <li class="service-detail__list-item">Protesi fisse e mobili</li>
+              <li class="service-detail__list-item">Protesi su impianti</li>
+              <li class="service-detail__list-item">Apparecchiature di ultima generazione</li>
+              <li class="service-detail__list-item">Risultati estetici naturali</li>
+            </ul>
+          </div>
+          <div class="service-detail__image reveal-up" data-delay="3">
+            <img
+              src="images/protesi/protesi.jpg"
+              alt="Protesi dentaria — Studio Dentistico Torricelli"
+              width="720"
+              height="540"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROCESS STEPS -->
+    <section class="process-section section--light-alt" aria-label="Come funziona il trattamento protesico">
+      <div class="container">
+        <div class="section-header reveal-up" data-delay="1">
+          <span class="label">Il Percorso</span>
+          <h2>Come Avviene il Trattamento</h2>
+          <p class="section-header__sub">Dalla valutazione alla protesi definitiva: ogni passaggio è curato con precisione.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal-up" data-delay="2">
+            <div class="process-step__number" aria-hidden="true">1</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Visita e Valutazione</h3>
+              <p class="process-step__body">Analisi della situazione clinica per definire il tipo di protesi più adatto alle esigenze funzionali ed estetiche del paziente.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-up" data-delay="3">
+            <div class="process-step__number" aria-hidden="true">2</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Impronta e Progettazione</h3>
+              <p class="process-step__body">Rilevazione delle impronte o scansione digitale per la progettazione precisa della protesi, con scelta del colore e della forma più adatti.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-up" data-delay="4">
+            <div class="process-step__number" aria-hidden="true">3</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Realizzazione Protesi</h3>
+              <p class="process-step__body">La protesi viene realizzata in laboratorio con materiali certificati di alta qualità, seguendo le specifiche del progetto personalizzato.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-up" data-delay="5">
+            <div class="process-step__number" aria-hidden="true">4</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Applicazione e Adattamento</h3>
+              <p class="process-step__body">Posizionamento della protesi con verifica dell'occlusione e dell'estetica, seguito da controlli periodici per garantire comfort e durata nel tempo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FAQ ACCORDION -->
+    <section class="faq-section" aria-label="Domande frequenti sulla protesi">
+      <div class="container">
+        <div class="section-header reveal-up" data-delay="1">
+          <span class="label">FAQ</span>
+          <h2>Domande Frequenti</h2>
+          <p class="section-header__sub">Tutto quello che devi sapere sulle protesi dentarie, spiegato con chiarezza.</p>
+        </div>
+        <div class="faq-list" role="list">
+
+          <div class="faq-item reveal-up" data-delay="2" role="listitem">
+            <button class="faq-trigger faq-question" aria-expanded="false">
+              <span class="faq-question-text">Che differenza c'è tra protesi fissa e mobile?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body faq-answer" aria-hidden="true">
+              <div class="faq-body-inner">
+                La protesi fissa — corona, ponte o protesi su impianti — è cementata o avvitata e non si rimuove, offrendo massima stabilità e sensazione simile al dente naturale. La protesi mobile — totale o parziale — viene invece rimossa per la pulizia e il riposo notturno. La scelta dipende dalla situazione clinica e dalle preferenze del paziente.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal-up" data-delay="3" role="listitem">
+            <button class="faq-trigger faq-question" aria-expanded="false">
+              <span class="faq-question-text">Quanto dura una protesi dentaria?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body faq-answer" aria-hidden="true">
+              <div class="faq-body-inner">
+                Con una corretta manutenzione, le protesi fisse possono durare 10–20 anni o più. Le protesi mobili generalmente richiedono una sostituzione o ribasatura ogni 5–8 anni a causa dei cambiamenti fisiologici dell'osso mascellare. I controlli periodici sono fondamentali per prolungarne la vita utile.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal-up" data-delay="4" role="listitem">
+            <button class="faq-trigger faq-question" aria-expanded="false">
+              <span class="faq-question-text">La protesi è visibile esteticamente?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body faq-answer" aria-hidden="true">
+              <div class="faq-body-inner">
+                Le protesi moderne sono realizzate con materiali ceramici e compositi di altissima qualità che replicano fedelmente il colore, la translucenza e la forma dei denti naturali. Un occhio non esperto non è in grado di distinguerle dai denti naturali. L'obiettivo estetico è sempre parte integrante del piano di trattamento.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal-up" data-delay="5" role="listitem">
+            <button class="faq-trigger faq-question" aria-expanded="false">
+              <span class="faq-question-text">Come si mantiene una protesi?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-body faq-answer" aria-hidden="true">
+              <div class="faq-body-inner">
+                Le protesi fisse si puliscono come i denti naturali — spazzolino, dentifricio e filo interdentale o scovolino. Le protesi mobili vanno rimosse e pulite quotidianamente con apposito spazzolino e soluzione detergente, quindi conservate in acqua durante la notte. I controlli periodici dal dentista sono essenziali per verificarne l'adattamento.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA BANNER -->
+    <section class="cta-banner" aria-label="Prenota una visita per Protesi">
+      <div class="container">
+        <div class="cta-banner__grid reveal-up" data-delay="1">
+          <div class="cta-banner__image">
+            <img
+              src="images/protesi/protesi.jpg"
+              alt="Studio Dentistico Torricelli — prenota una consulenza protesica"
+              width="720"
+              height="480"
+              loading="lazy"
+            />
+          </div>
+          <div class="cta-banner__content">
+            <h2 class="cta-banner__title">Prenota per <em>Protesi</em></h2>
+            <p class="cta-banner__body">
+              Hai bisogno di una protesi o vuoi rinnovare quella che hai? Contattaci per una valutazione: troveremo insieme la soluzione più adatta.
+            </p>
+            <div class="cta-banner__actions">
+              <a href="tel:055952421" class="btn btn--primary magnetic-btn" aria-label="Prenota chiamando il 055 952421">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                055 952421
+              </a>
+            </div>
+            <div class="cta-banner__also" aria-label="Scopri anche">
+              <span class="label">Scopri anche:</span>
+              <div class="cta-banner__also-links">
+                <a href="implantologia.html" class="btn btn--ghost btn--sm">Implantologia</a>
+                <a href="odontoiatria-conservativa.html" class="btn btn--ghost btn--sm">Odontoiatria Conservativa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--brand">
+            <a href="index.html" class="footer__logo" aria-label="Studio Dentistico Torricelli — Home">
+              <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="160" height="54" loading="lazy" />
+            </a>
+            <p class="footer__tagline">La tua salute orale, la nostra passione.</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Link di Navigazione</h4>
+            <nav aria-label="Navigazione footer">
+              <ul class="footer__links" role="list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="studio.html" class="footer__link">Studio</a></li>
+                <li><a href="servizi.html" class="footer__link">Servizi</a></li>
+                <li><a href="igiene-prevenzione.html" class="footer__link">Igiene e Prevenzione</a></li>
+                <li><a href="ortodonzia-infantile.html" class="footer__link">Bambini</a></li>
+                <li><a href="qualita.html" class="footer__link">Qualit&agrave;</a></li>
+                <li><a href="osteopatia.html" class="footer__link">Collaborazioni</a></li>
+                <li><a href="contatti.html" class="footer__link">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contatti</h4>
+            <ul class="footer__links" role="list">
+              <li>
+                <a href="tel:055952421" class="footer__link footer__link--icon" aria-label="Chiama il 055 952421">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  055 952421
+                </a>
+              </li>
+              <li>
+                <address class="footer__address">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                  Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)
+                </address>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Orari</h4>
+            <ul class="footer__hours" role="list">
+              <li class="footer__hours-item">
+                <span class="footer__hours-day">Lun–Ven:</span>
+                <span class="footer__hours-time">9:00–19:00</span>
+              </li>
+              <li class="footer__hours-item">
+                <span class="footer__hours-day">Sabato:</span>
+                <span class="footer__hours-time">Su appuntamento</span>
+              </li>
+              <li class="footer__hours-item footer__hours-note">Chiusi la domenica e nei giorni festivi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__legal">
+          <p class="footer__copyright">&copy; <span data-year></span> Studio Dentistico Torricelli. Tutti i diritti riservati.</p>
+          <nav class="footer__legal-links" aria-label="Link legali">
+            <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/39055952421" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

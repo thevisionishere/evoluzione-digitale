@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Dentistico Torricelli | Dentista a Figline Valdarno</title>
+  <meta name="description" content="Studio Dentistico Torricelli a Figline Valdarno. Esperienza pluridecennale in odontoiatria: implantologia, ortodonzia, protesi, endodonzia. Prenota ora: 055 952421." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/homepage/cropped-icon06-free-img-270x270.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&family=Lora:ital@1&display=swap" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-home">
+
+  <!-- ============================================================
+       1. PRELOADER — Variant E: Minimal Fade
+       ============================================================ -->
+  <div id="preloader" class="preloader" aria-hidden="true" role="presentation">
+    <div class="preloader__inner">
+      <span class="preloader__logo">Studio Dentistico Torricelli</span>
+      <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Progresso pagina"></div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       ============================================================ -->
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Navigazione principale">
+
+        <!-- Logo -->
+        <a href="index.html" class="nav__logo" aria-label="Studio Dentistico Torricelli — Home">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="180" height="60" loading="eager" />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav-link nav-link--active" aria-current="page">Home</a></li>
+          <li><a href="studio.html" class="nav-link">Studio Dentistico</a></li>
+
+          <!-- Servizi Dropdown -->
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Servizi — apri menu">
+              Servizi
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="nav__dropdown-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="nav__dropdown-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="nav__dropdown-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="nav__dropdown-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="nav__dropdown-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="nav__dropdown-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="nav__dropdown-link">Radiologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="igiene-prevenzione.html" class="nav-link">Igiene e Prevenzione</a></li>
+
+          <!-- Bambini Dropdown -->
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Bambini — apri menu">
+              Bambini
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="nav__dropdown-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="nav__dropdown-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="qualita.html" class="nav-link">Qualità</a></li>
+
+          <!-- Collaborazioni Dropdown -->
+          <li class="nav__item nav__item--dropdown">
+            <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Collaborazioni — apri menu">
+              Collaborazioni
+              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="nav__dropdown" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="nav__dropdown-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="nav__dropdown-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="nav__dropdown-link">Posturologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contatti.html" class="nav-link nav-link--cta">Contatti</a></li>
+        </ul>
+
+        <!-- Hamburger Button -->
+        <button id="hamburger" class="hamburger" data-hamburger aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU — Slide panel from right
+       ============================================================ -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <div class="mobile-menu__inner">
+
+      <!-- Mobile Menu Header -->
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo" tabindex="-1">
+          <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="140" height="48" />
+        </a>
+        <button class="mobile-menu__close" aria-label="Chiudi menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <nav class="mobile-menu__nav" aria-label="Navigazione mobile">
+        <ul class="mobile-nav" role="list">
+          <li><a href="index.html" class="mobile-nav-link" aria-current="page">Home</a></li>
+          <li><a href="studio.html" class="mobile-nav-link">Studio Dentistico</a></li>
+
+          <!-- Servizi Accordion -->
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-servizi">
+              Servizi
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-servizi" class="mobile-submenu" role="list" aria-label="Servizi">
+              <li><a href="endodonzia.html" class="mobile-submenu-link">Endodonzia</a></li>
+              <li><a href="ortodonzia.html" class="mobile-submenu-link">Ortodonzia</a></li>
+              <li><a href="implantologia.html" class="mobile-submenu-link">Implantologia</a></li>
+              <li><a href="protesi.html" class="mobile-submenu-link">Protesi</a></li>
+              <li><a href="trattamenti-estetici.html" class="mobile-submenu-link">Trattamenti Estetici</a></li>
+              <li><a href="odontoiatria-conservativa.html" class="mobile-submenu-link">Odontoiatria Conservativa</a></li>
+              <li><a href="radiologia.html" class="mobile-submenu-link">Radiologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="igiene-prevenzione.html" class="mobile-nav-link">Igiene e Prevenzione</a></li>
+
+          <!-- Bambini Accordion -->
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-bambini">
+              Bambini
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-bambini" class="mobile-submenu" role="list" aria-label="Bambini">
+              <li><a href="ortodonzia-infantile.html" class="mobile-submenu-link">Ortodonzia Infantile</a></li>
+              <li><a href="pedodonzia.html" class="mobile-submenu-link">Pedodonzia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="qualita.html" class="mobile-nav-link">Qualità</a></li>
+
+          <!-- Collaborazioni Accordion -->
+          <li class="mobile-nav__item mobile-nav__item--accordion">
+            <button class="mobile-nav-link mobile-nav-link--accordion" aria-expanded="false" aria-controls="mobile-sub-collab">
+              Collaborazioni
+              <svg class="mobile-nav__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul id="mobile-sub-collab" class="mobile-submenu" role="list" aria-label="Collaborazioni">
+              <li><a href="osteopatia.html" class="mobile-submenu-link">Osteopatia</a></li>
+              <li><a href="dietologia.html" class="mobile-submenu-link">Dietologia</a></li>
+              <li><a href="posturologia.html" class="mobile-submenu-link">Posturologia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contatti.html" class="mobile-nav-link mobile-nav-link--cta">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Contact Info -->
+      <div class="mobile-menu__contact">
+        <a href="tel:055952421" class="mobile-menu__phone" aria-label="Chiama lo studio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          055 952421
+        </a>
+        <address class="mobile-menu__address" aria-label="Indirizzo dello studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+          </svg>
+          Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+        </address>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- ============================================================
+         3. HERO — Variant B: Split Layout
+         ============================================================ -->
+    <section id="hero" class="hero" aria-label="Benvenuti nello Studio Dentistico Torricelli">
+      <div class="hero__inner">
+
+        <!-- Left: Content -->
+        <div class="hero__content">
+          <span class="label" data-hero-reveal data-delay="0">Studio Dentistico a Figline Valdarno</span>
+          <h1 data-hero-reveal data-delay="100">
+            La Tua Salute Orale,<br>la Nostra <em>Passione</em>
+          </h1>
+          <p data-hero-reveal data-delay="200">
+            Con un'esperienza pluridecennale, ci prendiamo cura del tuo sorriso con tecnologie all'avanguardia e un approccio che mette il paziente al centro di tutto.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero__ctas" data-hero-reveal data-delay="300">
+            <a href="tel:055952421" class="btn btn--primary magnetic-btn" aria-label="Prenota una visita chiamando il 055 952421">
+              Prenota una Visita
+            </a>
+            <a href="servizi.html" class="btn btn--secondary magnetic-btn">
+              Scopri i Servizi
+            </a>
+          </div>
+
+          <!-- Stats Bar -->
+          <div class="hero__stats" data-hero-reveal data-delay="400" aria-label="Statistiche dello studio">
+            <div class="hero__stat">
+              <span class="hero__stat-number" aria-hidden="true">30+</span>
+              <span class="hero__stat-label">Anni di Esperienza</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <span class="hero__stat-number" aria-hidden="true">15+</span>
+              <span class="hero__stat-label">Servizi Specialistici</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <span class="hero__stat-number" aria-hidden="true">&#8734;</span>
+              <span class="hero__stat-label">Dedizione al Paziente</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="hero__image" data-hero-reveal data-delay="150">
+          <div class="hero__image-wrap">
+            <img
+              src="images/homepage/studio_dentistico_torricelli.jpg"
+              alt="Studio Dentistico Torricelli - Ambiente moderno e accogliente"
+              width="640"
+              height="800"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="hero__image-accent" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scorri</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. MARQUEE — Services Ticker
+         ============================================================ -->
+    <div class="marquee section--dark" aria-hidden="true" role="presentation">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          Endodonzia <span class="marquee__sep">&bull;</span>
+          Ortodonzia <span class="marquee__sep">&bull;</span>
+          Implantologia <span class="marquee__sep">&bull;</span>
+          Protesi <span class="marquee__sep">&bull;</span>
+          Trattamenti Estetici <span class="marquee__sep">&bull;</span>
+          Odontoiatria Conservativa <span class="marquee__sep">&bull;</span>
+          Radiologia <span class="marquee__sep">&bull;</span>
+          Igiene e Prevenzione <span class="marquee__sep">&bull;</span>
+          Pedodonzia <span class="marquee__sep">&bull;</span>
+          Ortodonzia Infantile <span class="marquee__sep">&bull;</span>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee__content" aria-hidden="true">
+          Endodonzia <span class="marquee__sep">&bull;</span>
+          Ortodonzia <span class="marquee__sep">&bull;</span>
+          Implantologia <span class="marquee__sep">&bull;</span>
+          Protesi <span class="marquee__sep">&bull;</span>
+          Trattamenti Estetici <span class="marquee__sep">&bull;</span>
+          Odontoiatria Conservativa <span class="marquee__sep">&bull;</span>
+          Radiologia <span class="marquee__sep">&bull;</span>
+          Igiene e Prevenzione <span class="marquee__sep">&bull;</span>
+          Pedodonzia <span class="marquee__sep">&bull;</span>
+          Ortodonzia Infantile <span class="marquee__sep">&bull;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         6. SERVICES CARD GRID
+         ============================================================ -->
+    <section id="servizi" class="services-grid section--padded" aria-labelledby="servizi-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">I Nostri Servizi</span>
+          <h2 id="servizi-title" class="section-title">Eccellenza in Ogni Trattamento</h2>
+        </header>
+
+        <div class="services-grid__grid" role="list">
+
+          <!-- Card 01: Endodonzia -->
+          <article class="service-card reveal-up" data-delay="0" role="listitem">
+            <span class="service-card__number" aria-hidden="true">01</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M20 4C14 4 10 9 10 14c0 3 1 6 2 9l2 10h2l2-8 2 8h2l2-10c1-3 2-6 2-9 0-5-4-10-10-10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 14c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="endodonzia.html">Endodonzia</a>
+            </h3>
+            <p class="service-card__desc">Cura dei canali radicolari con precisione e tecnologia avanzata per salvaguardare la tua salute dentale.</p>
+            <a href="endodonzia.html" class="service-card__cta" aria-label="Scopri di più sull'Endodonzia">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+          <!-- Card 02: Ortodonzia -->
+          <article class="service-card reveal-up" data-delay="80" role="listitem">
+            <span class="service-card__number" aria-hidden="true">02</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="8" y="10" width="7" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="17" y="8" width="7" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="26" y="10" width="7" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 20h25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="ortodonzia.html">Ortodonzia</a>
+            </h3>
+            <p class="service-card__desc">Diagnosi e trattamenti personalizzati per un sorriso allineato e una funzione masticatoria ottimale.</p>
+            <a href="ortodonzia.html" class="service-card__cta" aria-label="Scopri di più sull'Ortodonzia">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+          <!-- Card 03: Implantologia -->
+          <article class="service-card reveal-up" data-delay="160" role="listitem">
+            <span class="service-card__number" aria-hidden="true">03</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M20 6v28M14 12h12M15 18h10M16 24h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="20" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="implantologia.html">Implantologia</a>
+            </h3>
+            <p class="service-card__desc">Soluzioni implantari con diagnostica 3D all'avanguardia per un risultato naturale e duraturo.</p>
+            <a href="implantologia.html" class="service-card__cta" aria-label="Scopri di più sull'Implantologia">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+          <!-- Card 04: Protesi -->
+          <article class="service-card reveal-up" data-delay="240" role="listitem">
+            <span class="service-card__number" aria-hidden="true">04</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M8 28C8 22 11 16 20 16s12 6 12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M12 20c0-4 3-8 8-8s8 4 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M8 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="protesi.html">Protesi</a>
+            </h3>
+            <p class="service-card__desc">Passione e precisione con le più moderne apparecchiature per protesi fisse, mobili e su impianti.</p>
+            <a href="protesi.html" class="service-card__cta" aria-label="Scopri di più sulla Protesi">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+          <!-- Card 05: Trattamenti Estetici -->
+          <article class="service-card reveal-up" data-delay="320" role="listitem">
+            <span class="service-card__number" aria-hidden="true">05</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M12 20c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M20 14v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M8 20h4M28 20h4M20 8v4M20 28v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="trattamenti-estetici.html">Trattamenti Estetici</a>
+            </h3>
+            <p class="service-card__desc">Sbiancamento con sostanze sicure e scientificamente testate per un sorriso luminoso e naturale.</p>
+            <a href="trattamenti-estetici.html" class="service-card__cta" aria-label="Scopri di più sui Trattamenti Estetici">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+          <!-- Card 06: Odontoiatria Conservativa -->
+          <article class="service-card reveal-up" data-delay="400" role="listitem">
+            <span class="service-card__number" aria-hidden="true">06</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M20 5C13.4 5 9 10.5 9 16c0 4 1.5 7.5 3 10.5L14 33h3l3-9 3 9h3l2-6.5C29.5 23.5 31 20 31 16c0-5.5-4.4-11-11-11z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="odontoiatria-conservativa.html">Odontoiatria Conservativa</a>
+            </h3>
+            <p class="service-card__desc">Cura e restauro dei denti colpiti da processi cariosi preservando il più possibile la struttura dentale originale.</p>
+            <a href="odontoiatria-conservativa.html" class="service-card__cta" aria-label="Scopri di più sull'Odontoiatria Conservativa">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+          <!-- Card 07: Radiologia -->
+          <article class="service-card reveal-up" data-delay="480" role="listitem">
+            <span class="service-card__number" aria-hidden="true">07</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="6" y="6" width="28" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M20 14v4M20 22v4M14 20h4M22 20h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">
+              <a href="radiologia.html">Radiologia</a>
+            </h3>
+            <p class="service-card__desc">Radiografia digitale e TAC Cone Beam 3D per diagnosi accurate con la minima esposizione ai raggi X.</p>
+            <a href="radiologia.html" class="service-card__cta" aria-label="Scopri di più sulla Radiologia">Scopri di pi&ugrave; &rarr;</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. ABOUT / STORY — Image Overlap
+         ============================================================ -->
+    <section id="chi-siamo" class="about section--padded" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- Image Column -->
+          <div class="about__media reveal-up" data-delay="0">
+            <div class="about__image-wrap">
+              <img
+                src="images/homepage/studio_torricelli_3.jpg"
+                alt="Interno dello Studio Dentistico Torricelli — ambiente moderno e accogliente"
+                width="560"
+                height="680"
+                loading="lazy"
+              />
+              <div class="about__image-accent" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="about__content">
+            <header class="reveal-up" data-delay="100">
+              <span class="label">Chi Siamo</span>
+              <h2 id="about-title" class="section-title">Esperienza Pluridecennale al Servizio del Tuo Sorriso</h2>
+            </header>
+
+            <p class="reveal-up" data-delay="180">
+              Lo Studio Dentistico Torricelli nasce dalla passione per l'odontoiatria e dalla profonda convinzione che ogni paziente meriti cure personalizzate, attente e rispettose. Con oltre trent'anni di attività a Figline Valdarno, abbiamo accompagnato intere famiglie nel percorso verso una salute orale eccellente.
+            </p>
+            <p class="reveal-up" data-delay="240">
+              Il nostro approccio è profondamente umano: ascoltiamo le esigenze di ogni paziente, spieghiamo con chiarezza le opzioni disponibili e costruiamo insieme il percorso di cura più adatto. Le tecnologie avanzate di cui siamo dotati sono strumenti al servizio di questo approccio, non il contrario.
+            </p>
+            <p class="reveal-up" data-delay="300">
+              La multidisciplinarietà è il nostro punto di forza: collaboriamo con specialisti in osteopatia, dietologia e posturologia per offrire una visione completa della salute del paziente, andando oltre il semplice trattamento dentale.
+            </p>
+
+            <!-- Value Cards -->
+            <div class="about__values reveal-up" data-delay="360">
+              <div class="about__value">
+                <div class="about__value-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 3l2.5 5.5L22 9.5l-4 4 1 5.5L14 16.5 9 19l1-5.5-4-4 5.5-1L14 3z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="about__value-title">Esperienza</h3>
+                  <p class="about__value-text">Oltre 30 anni di pratica clinica e aggiornamento continuo</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <div class="about__value-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect x="4" y="6" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M9 11h10M9 15h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                    <circle cx="21" cy="21" r="4" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="0"/>
+                    <path d="M19.5 21l1 1 2-2" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="about__value-title">Tecnologia</h3>
+                  <p class="about__value-text">TAC Cone Beam 3D, radiografia digitale e strumentazione di ultima generazione</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <div class="about__value-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 5C9 5 5 9 5 14s4 9 9 9 9-4 9-9-4-9-9-9z" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M10 14c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" stroke="currentColor" stroke-width="1.3"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="about__value-title">Cura del Paziente</h3>
+                  <p class="about__value-text">Ogni trattamento è pensato intorno alle esigenze uniche di ogni persona</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="studio.html" class="btn btn--outline reveal-up" data-delay="420" aria-label="Scopri di più sullo Studio Dentistico Torricelli">
+              Scopri lo Studio &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. TREATMENT EXPLORER — Signature Moment #2
+         ============================================================ -->
+    <section id="trattamenti" class="treatment-explorer section--padded" aria-labelledby="explorer-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label">Esplora i Nostri Servizi</span>
+          <h2 id="explorer-title" class="section-title">Un Approccio Completo alla Tua Salute</h2>
+        </header>
+
+        <div class="explorer__layout reveal-up" data-delay="120">
+
+          <!-- Accordion Panel -->
+          <div class="explorer__accordion" role="list" aria-label="Categorie di servizi">
+
+            <!-- Item 1: Servizi Odontoiatrici (expanded by default) -->
+            <div class="explorer__item is-active" role="listitem">
+              <button
+                class="explorer__header"
+                aria-expanded="true"
+                aria-controls="explorer-content-1"
+                data-explorer-trigger
+              >
+                <span class="explorer__num" aria-hidden="true">01</span>
+                <span class="explorer__title">Servizi Odontoiatrici</span>
+                <span class="explorer__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div id="explorer-content-1" class="explorer__content">
+                <ul class="explorer__service-list" role="list">
+                  <li><a href="endodonzia.html" class="explorer__service-link">Endodonzia</a></li>
+                  <li><a href="ortodonzia.html" class="explorer__service-link">Ortodonzia</a></li>
+                  <li><a href="implantologia.html" class="explorer__service-link">Implantologia</a></li>
+                  <li><a href="protesi.html" class="explorer__service-link">Protesi</a></li>
+                  <li><a href="trattamenti-estetici.html" class="explorer__service-link">Trattamenti Estetici</a></li>
+                  <li><a href="odontoiatria-conservativa.html" class="explorer__service-link">Odontoiatria Conservativa</a></li>
+                  <li><a href="radiologia.html" class="explorer__service-link">Radiologia</a></li>
+                </ul>
+              </div>
+              <div class="explorer__image explorer__image--mobile" aria-hidden="true">
+                <img src="images/homepage/studio_torricelli_1.jpg" alt="Sala operatoria dello Studio Dentistico Torricelli" width="560" height="400" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- Item 2: Odontoiatria Pediatrica -->
+            <div class="explorer__item" role="listitem">
+              <button
+                class="explorer__header"
+                aria-expanded="false"
+                aria-controls="explorer-content-2"
+                data-explorer-trigger
+              >
+                <span class="explorer__num" aria-hidden="true">02</span>
+                <span class="explorer__title">Odontoiatria Pediatrica</span>
+                <span class="explorer__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div id="explorer-content-2" class="explorer__content" hidden>
+                <ul class="explorer__service-list" role="list">
+                  <li><a href="ortodonzia-infantile.html" class="explorer__service-link">Ortodonzia Infantile</a></li>
+                  <li><a href="pedodonzia.html" class="explorer__service-link">Pedodonzia</a></li>
+                </ul>
+              </div>
+              <div class="explorer__image explorer__image--mobile" aria-hidden="true" style="display:none;">
+                <img src="images/homepage/piccoli_pazienti_crescono.jpg" alt="Trattamenti odontoiatrici per i piccoli pazienti" width="560" height="400" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- Item 3: Collaborazioni Specialistiche -->
+            <div class="explorer__item" role="listitem">
+              <button
+                class="explorer__header"
+                aria-expanded="false"
+                aria-controls="explorer-content-3"
+                data-explorer-trigger
+              >
+                <span class="explorer__num" aria-hidden="true">03</span>
+                <span class="explorer__title">Collaborazioni Specialistiche</span>
+                <span class="explorer__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div id="explorer-content-3" class="explorer__content" hidden>
+                <ul class="explorer__service-list" role="list">
+                  <li><a href="osteopatia.html" class="explorer__service-link">Osteopatia — Dott. Matteo Balocco</a></li>
+                  <li><a href="dietologia.html" class="explorer__service-link">Dietologia</a></li>
+                  <li><a href="posturologia.html" class="explorer__service-link">Posturologia</a></li>
+                </ul>
+              </div>
+              <div class="explorer__image explorer__image--mobile" aria-hidden="true" style="display:none;">
+                <img src="images/osteopatia/matteo-balocco.jpg" alt="Dott. Matteo Balocco — Osteopata collaboratore dello Studio Torricelli" width="560" height="400" loading="lazy" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Image Panel (desktop only) -->
+          <div class="explorer__visual" aria-hidden="true" role="presentation">
+            <div class="explorer__visual-wrap">
+              <img
+                id="explorer-img"
+                src="images/homepage/studio_torricelli_1.jpg"
+                alt="Sala operatoria dello Studio Dentistico Torricelli"
+                width="560"
+                height="640"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. TECHNOLOGY SHOWCASE
+         ============================================================ -->
+    <section id="tecnologie" class="technology section--dark section--padded" aria-labelledby="tech-title">
+      <div class="container">
+        <header class="section__header reveal-up" data-delay="0">
+          <span class="label label--dark" style="color: var(--color-accent);">Le Nostre Tecnologie</span>
+          <h2 id="tech-title" class="section-title section-title--light">Strumenti di Avanguardia per la Tua Cura</h2>
+        </header>
+
+        <div class="tech-grid">
+
+          <!-- TAC Cone Beam -->
+          <article class="tech-card reveal-up" data-delay="0">
+            <div class="tech-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 4v8M24 36v8M4 24h8M36 24h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10.1 10.1l5.7 5.7M32.2 32.2l5.7 5.7M37.9 10.1l-5.7 5.7M15.8 32.2l-5.7 5.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="tech-card__title">TAC Cone Beam 3D</h3>
+            <p class="tech-card__desc">Imaging tridimensionale di altissima precisione per diagnosi accurate in implantologia, ortodonzia e pianificazione chirurgica avanzata.</p>
+          </article>
+
+          <!-- Radiografia Digitale -->
+          <article class="tech-card reveal-up" data-delay="120">
+            <div class="tech-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 18h16M16 26h12M16 34h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M28 6v10l6-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="tech-card__title">Radiografia Digitale</h3>
+            <p class="tech-card__desc">Immagini immediate con esposizione ridotta ai raggi X. Qualità diagnostica superiore per endodonzia, carie e valutazione parodontale.</p>
+          </article>
+
+          <!-- Strumentazione Moderna -->
+          <article class="tech-card reveal-up" data-delay="240">
+            <div class="tech-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path d="M32 8l8 8-20 20-8-2-2-8L32 8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M26 14l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 38l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="tech-card__title">Strumentazione Moderna</h3>
+            <p class="tech-card__desc">Attrezzature all'avanguardia per ogni tipo di trattamento: dalla sterilizzazione certificata ai sistemi di precisione per chirurgia implantare.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. COMFORT PLEDGE
+         ============================================================ -->
+    <section id="approccio" class="comfort section--padded" aria-labelledby="comfort-title">
+      <div class="container">
+        <div class="comfort__grid">
+
+          <!-- Text Column -->
+          <div class="comfort__content">
+            <header class="reveal-up" data-delay="0">
+              <span class="label">Il Nostro Approccio</span>
+              <h2 id="comfort-title" class="section-title">Nessuna Paura del Dentista</h2>
+            </header>
+
+            <p class="reveal-up" data-delay="100">
+              Con un approccio tranquillo e rassicurante riusciamo a trattare la quasi totalità dei nostri pazienti. Per chi conserva un po' di ansia, abbiamo soluzioni dedicate per rendere l'esperienza il più confortevole possibile.
+            </p>
+
+            <ul class="comfort__list reveal-up" data-delay="180" role="list" aria-label="Caratteristiche del nostro approccio">
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Ambiente rilassante e accogliente</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Approccio graduale e rispettoso dei tempi del paziente</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Comunicazione trasparente su procedure e costi</span>
+              </li>
+              <li class="comfort__list-item">
+                <span class="comfort__list-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Sedazione cosciente disponibile se necessario</span>
+              </li>
+            </ul>
+
+            <a href="contatti.html" class="btn btn--primary reveal-up" data-delay="260" aria-label="Prenota una visita di conoscenza">
+              Prenota una Visita
+            </a>
+          </div>
+
+          <!-- Image Column -->
+          <div class="comfort__media reveal-up" data-delay="80">
+            <div class="comfort__image-wrap">
+              <img
+                src="images/homepage/studio_torricelli_1.jpg"
+                alt="Sala dello Studio Dentistico Torricelli — ambiente tranquillo e accogliente"
+                width="560"
+                height="600"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11. TESTIMONIAL IMMERSION — Signature Moment #3
+         ============================================================ -->
+    <section id="testimonianza" class="testimonial section--dark section--padded" aria-label="Testimonianza di una paziente">
+      <div class="container-narrow">
+        <div class="testimonial__inner reveal-up" data-delay="0">
+          <div class="testimonial__quote-mark" aria-hidden="true">&ldquo;</div>
+          <blockquote class="testimonial__text">
+            Avevo una grande paura del dentista, ma qui mi sono sentita subito a mio agio. Professionalità, competenza e gentilezza: lo Studio Torricelli è diventato il mio punto di riferimento per tutta la famiglia.
+          </blockquote>
+          <footer class="testimonial__author">
+            <cite class="testimonial__name">Maria R.</cite>
+            <span class="testimonial__role">Paziente da oltre 10 anni</span>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12. STATS / COUNTERS
+         ============================================================ -->
+    <section id="numeri" class="stats section--padded" aria-label="I numeri dello Studio Dentistico Torricelli">
+      <div class="container">
+        <div class="stats__grid">
+
+          <div class="stats__item reveal-up" data-delay="0">
+            <span class="stats__number" data-count="30" data-suffix="+" aria-label="30 e più">0</span>
+            <span class="stats__label">Anni di Esperienza</span>
+          </div>
+
+          <div class="stats__item reveal-up" data-delay="100">
+            <span class="stats__number" data-count="1000" data-suffix="+" aria-label="Oltre 1000">0</span>
+            <span class="stats__label">Pazienti Soddisfatti</span>
+          </div>
+
+          <div class="stats__item reveal-up" data-delay="200">
+            <span class="stats__number" data-count="15" data-suffix="+" aria-label="15 e più">0</span>
+            <span class="stats__label">Servizi Specialistici</span>
+          </div>
+
+          <div class="stats__item reveal-up" data-delay="300">
+            <span class="stats__number" data-count="3" data-suffix="" aria-label="3">0</span>
+            <span class="stats__label">Collaborazioni Multidisciplinari</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         13. CTA BANNER — Split
+         ============================================================ -->
+    <section id="prenota" class="cta-banner section--dark" aria-labelledby="cta-title">
+      <div class="cta-banner__grid">
+
+        <!-- Left: Image -->
+        <div class="cta-banner__image" aria-hidden="true" role="presentation">
+          <img
+            src="images/studio-dentistico-torricelli-odontoiatra-figline-valdarno/sala_2.jpg"
+            alt="Sala operatoria dello Studio Dentistico Torricelli"
+            width="640"
+            height="500"
+            loading="lazy"
+          />
+          <div class="cta-banner__image-overlay"></div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="cta-banner__content">
+          <span class="label reveal-up" data-delay="0">Prenota Ora</span>
+          <h2 id="cta-title" class="section-title section-title--light reveal-up" data-delay="100">La Tua Prima Visita Inizia Qui</h2>
+          <p class="section-subtitle section-subtitle--light reveal-up" data-delay="180">
+            Contattaci per fissare un appuntamento. Il nostro team è pronto ad accoglierti e rispondere a tutte le tue domande.
+          </p>
+          <a href="tel:055952421" class="btn btn--primary btn--large reveal-up magnetic-btn" data-delay="260" aria-label="Chiama lo studio al 055 952421">
+            Chiamaci: 055&nbsp;952421
+          </a>
+          <address class="cta-banner__address reveal-up" data-delay="320">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+            </svg>
+            Via della Vetreria 73, Figline e Incisa Valdarno (FI)
+          </address>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         14. MAP + CONTACT PREVIEW
+         ============================================================ -->
+    <section id="mappa" class="map-contact" aria-label="Dove siamo — Mappa e contatti">
+      <div class="map-contact__map-wrap">
+        <iframe
+          title="Mappa Studio Dentistico Torricelli — Via della Vetreria 73, Figline e Incisa Valdarno"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.0!2d11.464!3d43.626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132ba6b!2sVia+della+Vetreria+73%2C+Figline+e+Incisa+Valdarno!5e0!3m2!1sit!2sit!4v1"
+          width="100%"
+          height="480"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Mappa di Google che mostra la posizione dello Studio Dentistico Torricelli"
+        ></iframe>
+      </div>
+
+      <!-- Info Card overlapping the map -->
+      <div class="map-contact__card reveal-up" data-delay="0">
+        <h3 class="map-contact__card-title">Dove Siamo</h3>
+
+        <a href="tel:055952421" class="map-contact__info-item map-contact__phone" aria-label="Chiama il 055 952421">
+          <span class="map-contact__info-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>055 952421</span>
+        </a>
+
+        <div class="map-contact__info-item">
+          <span class="map-contact__info-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+            </svg>
+          </span>
+          <address>Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)</address>
+        </div>
+
+        <a href="contatti.html" class="map-contact__all-contacts" aria-label="Visualizza tutti i contatti dello studio">
+          Tutti i Contatti &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       15. FOOTER
+       ============================================================ -->
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+
+          <!-- Column 1: Brand -->
+          <div class="footer__col footer__col--brand">
+            <a href="index.html" class="footer__logo" aria-label="Studio Dentistico Torricelli — Home">
+              <img src="images/homepage/logo.png" alt="Logo Studio Dentistico Torricelli" width="160" height="54" loading="lazy" />
+            </a>
+            <p class="footer__tagline">La tua salute orale, la nostra passione.</p>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Link di Navigazione</h4>
+            <nav aria-label="Navigazione footer">
+              <ul class="footer__links" role="list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="studio.html" class="footer__link">Studio</a></li>
+                <li><a href="servizi.html" class="footer__link">Servizi</a></li>
+                <li><a href="igiene-prevenzione.html" class="footer__link">Igiene e Prevenzione</a></li>
+                <li><a href="ortodonzia-infantile.html" class="footer__link">Bambini</a></li>
+                <li><a href="qualita.html" class="footer__link">Qualit&agrave;</a></li>
+                <li><a href="osteopatia.html" class="footer__link">Collaborazioni</a></li>
+                <li><a href="contatti.html" class="footer__link">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contatti</h4>
+            <ul class="footer__links" role="list">
+              <li>
+                <a href="tel:055952421" class="footer__link footer__link--icon" aria-label="Chiama il 055 952421">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  055 952421
+                </a>
+              </li>
+              <li>
+                <address class="footer__address">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                  Via della Vetreria 73,<br>Figline e Incisa Valdarno (FI)
+                </address>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Hours -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Orari</h4>
+            <ul class="footer__hours" role="list">
+              <li class="footer__hours-item">
+                <span class="footer__hours-day">Lun–Ven:</span>
+                <span class="footer__hours-time">9:00–19:00</span>
+              </li>
+              <li class="footer__hours-item">
+                <span class="footer__hours-day">Sabato:</span>
+                <span class="footer__hours-time">Su appuntamento</span>
+              </li>
+              <li class="footer__hours-item footer__hours-note">
+                Chiusi la domenica e nei giorni festivi
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Bar -->
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__legal">
+          <p class="footer__copyright">
+            &copy; <span data-year></span> Studio Dentistico Torricelli. Tutti i diritti riservati.
+          </p>
+          <nav class="footer__legal-links" aria-label="Link legali">
+            <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       16. WHATSAPP FLOATING BUTTON
+       ============================================================ -->
+  <a
+    href="https://wa.me/39055952421"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/>
+    </svg>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
