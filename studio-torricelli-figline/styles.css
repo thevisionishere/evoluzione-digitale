@@ -732,15 +732,18 @@ main {
     opacity var(--duration-fast) var(--ease-out);
 }
 
-.hamburger.active .hamburger__line:nth-child(1) {
+.hamburger.active .hamburger__line:nth-child(1),
+.hamburger.is-active .hamburger__line:nth-child(1) {
   transform: rotate(45deg) translateY(7px);
 }
 
-.hamburger.active .hamburger__line:nth-child(2) {
+.hamburger.active .hamburger__line:nth-child(2),
+.hamburger.is-active .hamburger__line:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.active .hamburger__line:nth-child(3) {
+.hamburger.active .hamburger__line:nth-child(3),
+.hamburger.is-active .hamburger__line:nth-child(3) {
   transform: rotate(-45deg) translateY(-7px);
 }
 
@@ -760,7 +763,8 @@ main {
     visibility var(--duration-normal) var(--ease-out);
 }
 
-.mobile-menu-backdrop.active {
+.mobile-menu-backdrop.active,
+body.mobile-menu-open .mobile-menu-backdrop {
   opacity: 1;
   visibility: visible;
 }
@@ -780,7 +784,8 @@ main {
   overflow-y: auto;
 }
 
-.mobile-menu.active {
+.mobile-menu.active,
+.mobile-menu.is-open {
   transform: translateX(0);
 }
 
