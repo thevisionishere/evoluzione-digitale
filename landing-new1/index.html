@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evoluzione Digitale — Sito Web Professionale per la Tua Attività | Paghi Solo Se Ti Piace</title>
+<meta name="description" content="Creiamo il tuo sito web professionale in 2 giorni. Paghi solo se ti piace. Zero rischio, zero anticipo. 150+ siti consegnati per PMI italiane. Scopri di più.">
+<meta property="og:title" content="Evoluzione Digitale — Sito Web Professionale | Paghi Solo Se Ti Piace">
+<meta property="og:description" content="Il tuo nuovo sito web pronto in 2 giorni. Lo vedi finito, poi decidi se pagarlo. Zero rischio.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.ev-digitale.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul,ol{list-style:none}
+
+/* ===== TRICOLORE TOP BAR ===== */
+.tricolore{height:4px;display:flex;position:fixed;top:0;left:0;right:0;z-index:1001}
+.tricolore span{flex:1}
+.tricolore .verde{background:#009246}
+.tricolore .bianco{background:#f0f0f0}
+.tricolore .rosso{background:#CE2B37}
+
+/* ===== CONTAINER ===== */
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* ===== SECTION BASE ===== */
+section{padding:80px 0}
+@media(max-width:768px){section{padding:56px 0}}
+.section-alt{background:#f7f7f7}
+.section-title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;text-align:center;margin-bottom:16px;line-height:1.2;color:#1a1a1a}
+.section-subtitle{font-size:clamp(1rem,2.5vw,1.15rem);text-align:center;color:#555;max-width:680px;margin:0 auto 48px;line-height:1.7}
+
+/* ===== CTA BUTTON ===== */
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:#009246;color:#fff;font-size:18px;font-weight:700;padding:18px 36px;border-radius:14px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,146,70,.3)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,146,70,.4)}
+.cta-btn svg{width:24px;height:24px;flex-shrink:0}
+.cta-micro{display:block;text-align:center;margin-top:12px;font-size:14px;color:#777;line-height:1.5}
+.cta-wrap{text-align:center;margin-top:40px}
+
+/* ===== HERO ===== */
+.hero{padding:120px 0 80px;text-align:center;position:relative}
+@media(max-width:768px){.hero{padding:90px 0 60px}}
+.hero-badges{display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600}
+.hero-badge.green{background:rgba(0,146,70,.08);color:#009246;border:1px solid rgba(0,146,70,.2)}
+.hero-badge.red{background:rgba(206,43,55,.07);color:#CE2B37;border:1px solid rgba(206,43,55,.18)}
+.hero h1{font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.15;max-width:800px;margin:0 auto 20px;color:#1a1a1a}
+.hero .hero-sub{font-size:clamp(1rem,2.5vw,1.2rem);color:#555;max-width:640px;margin:0 auto 40px;line-height:1.7}
+
+/* ===== PROBLEMA ===== */
+.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+@media(max-width:768px){.problem-grid{grid-template-columns:1fr;gap:16px}}
+.problem-card{background:#fff;border-radius:16px;padding:28px;border-left:4px solid #CE2B37;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.problem-card .pc-icon{width:44px;height:44px;border-radius:12px;background:rgba(206,43,55,.07);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.problem-card .pc-icon svg{width:22px;height:22px;color:#CE2B37}
+.problem-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#1a1a1a}
+.problem-card p{font-size:.95rem;color:#555;line-height:1.65}
+
+/* ===== COSTO INAZIONE ===== */
+.cost-box{background:rgba(206,43,55,.04);border:2px solid rgba(206,43,55,.15);border-radius:20px;padding:40px;margin-top:40px;text-align:center}
+.cost-box .big-stat{font-size:clamp(2.5rem,6vw,3.8rem);font-weight:800;color:#CE2B37;line-height:1}
+.cost-box .big-label{font-size:1.05rem;color:#555;margin-top:8px;font-weight:500}
+.cost-text{max-width:700px;margin:32px auto 0;font-size:1.02rem;color:#444;line-height:1.75;text-align:center}
+.cost-text strong{color:#1a1a1a}
+.cost-close{max-width:700px;margin:24px auto 0;font-size:1.05rem;font-weight:600;color:#CE2B37;text-align:center;font-style:italic}
+
+/* ===== COME FUNZIONA ===== */
+.section-green{background:linear-gradient(180deg,rgba(0,146,70,.03) 0%,rgba(0,146,70,.06) 100%)}
+.steps{display:flex;gap:32px;margin-top:48px;position:relative;align-items:flex-start}
+@media(max-width:768px){.steps{flex-direction:column;gap:40px}}
+.step{flex:1;text-align:center;position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;background:#009246;color:#fff;font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:2}
+.step h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;color:#1a1a1a}
+.step p{font-size:.95rem;color:#555;line-height:1.65;max-width:320px;margin:0 auto}
+/* Connector line desktop */
+.steps::after{content:'';position:absolute;top:28px;left:calc(16.66% + 28px);right:calc(16.66% + 28px);height:2px;background:rgba(0,146,70,.2);z-index:1}
+@media(max-width:768px){.steps::after{display:none}}
+
+/* ===== VALUE STACK ===== */
+.value-list{max-width:640px;margin:40px auto 0}
+.value-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #eee}
+.value-item:last-child{border-bottom:none}
+.value-check{width:28px;height:28px;border-radius:50%;background:rgba(0,146,70,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.value-check svg{width:16px;height:16px;color:#009246}
+.value-item h4{font-size:1rem;font-weight:700;color:#1a1a1a;margin-bottom:2px}
+.value-item p{font-size:.9rem;color:#666;line-height:1.55}
+.price-box{text-align:center;margin-top:48px;padding:40px;background:linear-gradient(135deg,rgba(0,146,70,.04),rgba(0,146,70,.08));border-radius:20px;border:2px solid rgba(0,146,70,.12)}
+.price-old{font-size:1.3rem;color:#999;text-decoration:line-through;font-weight:500}
+.price-new{font-size:clamp(2.8rem,7vw,4rem);font-weight:800;color:#009246;line-height:1;margin:8px 0}
+.price-note{font-size:1rem;color:#555;font-weight:500}
+
+/* ===== SOCIAL PROOF ===== */
+.counters{display:flex;justify-content:center;gap:48px;margin-bottom:56px;flex-wrap:wrap}
+.counter-item{text-align:center}
+.counter-num{font-size:clamp(2.2rem,5vw,3rem);font-weight:800;color:#009246;line-height:1}
+.counter-label{font-size:.9rem;color:#555;margin-top:6px;font-weight:500}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.testimonials{grid-template-columns:1fr;gap:20px}}
+.testimonial{background:#fff;border-radius:20px;padding:32px;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+.t-stars{display:flex;gap:2px;margin-bottom:16px}
+.t-stars svg{width:18px;height:18px;color:#f5a623}
+.t-quote{font-size:.95rem;color:#444;line-height:1.7;margin-bottom:20px;font-style:italic}
+.t-author{display:flex;align-items:center;gap:12px}
+.t-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#009246,#00b356);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem;flex-shrink:0}
+.t-info h4{font-size:.9rem;font-weight:700;color:#1a1a1a}
+.t-info p{font-size:.82rem;color:#009246;font-weight:600}
+
+/* ===== CONFRONTO ===== */
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:40px;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+.compare-table th,.compare-table td{padding:16px 20px;text-align:left;font-size:.92rem}
+.compare-table thead th{background:#1a1a1a;color:#fff;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+.compare-table thead th:first-child{background:#1a1a1a}
+.compare-table thead th.col-ed{background:#009246}
+.compare-table tbody tr{background:#fff}
+.compare-table tbody tr:nth-child(even){background:#f9f9f9}
+.compare-table tbody td:first-child{font-weight:600;color:#1a1a1a}
+.compare-table tbody td.col-ed{background:rgba(0,146,70,.04);font-weight:600;color:#009246}
+.compare-table .icon-check{color:#009246;font-weight:800}
+.compare-table .icon-x{color:#CE2B37;font-weight:700}
+.compare-table .icon-maybe{color:#999}
+@media(max-width:768px){
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:40px;border-radius:16px}
+.compare-table{min-width:580px}
+}
+
+/* ===== GARANZIA ===== */
+.guarantee-box{text-align:center;max-width:780px;margin:0 auto}
+.guarantee-shield{width:80px;height:80px;margin:0 auto 28px;background:rgba(0,146,70,.1);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.guarantee-shield svg{width:40px;height:40px;color:#009246}
+.guarantee-box h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;margin-bottom:24px;line-height:1.2;color:#1a1a1a}
+.guarantee-text{font-size:1.02rem;color:#444;line-height:1.8;text-align:left;margin-bottom:32px}
+.guarantee-bullets{text-align:left;margin-bottom:40px}
+.guarantee-bullets li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;font-size:1rem;color:#333}
+.guarantee-bullets li svg{width:22px;height:22px;color:#009246;flex-shrink:0;margin-top:3px}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:740px;margin:0 auto}
+.faq-item{border-bottom:1px solid #e8e8e8}
+.faq-item:first-child{border-top:1px solid #e8e8e8}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+.faq-q h3{font-size:1.05rem;font-weight:600;color:#1a1a1a;flex:1;padding-right:16px}
+.faq-icon{width:32px;height:32px;border-radius:50%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-icon svg{width:16px;height:16px;color:#555;transition:transform .3s}
+.faq-item.active .faq-icon{background:rgba(0,146,70,.1)}
+.faq-item.active .faq-icon svg{transform:rotate(45deg);color:#009246}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a-inner{padding:0 0 22px;font-size:.95rem;color:#555;line-height:1.7}
+
+/* ===== CTA FINALE ===== */
+.final-cta{background:#1a1a1a;color:#fff;text-align:center}
+.final-cta h2{font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;color:#fff}
+.final-cta .recap{font-size:1.05rem;color:rgba(255,255,255,.7);margin-bottom:40px;font-weight:500}
+.final-cta .recap strong{color:#fff}
+.final-cta .cta-micro{color:rgba(255,255,255,.5)}
+.final-cta .ps{margin-top:40px;font-size:.9rem;color:rgba(255,255,255,.45);font-style:italic;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* ===== FOOTER ===== */
+footer{background:#111;padding:28px 0;text-align:center}
+footer p{font-size:.82rem;color:#666}
+footer a{color:#888;text-decoration:underline}
+footer a:hover{color:#bbb}
+
+/* ===== STICKY MOBILE CTA ===== */
+.sticky-mobile{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:12px 16px;box-shadow:0 -4px 20px rgba(0,0,0,.1);z-index:1000;display:none;align-items:center;gap:12px;transform:translateY(100%);transition:transform .3s ease}
+.sticky-mobile.visible{transform:translateY(0)}
+.sticky-mobile .cta-btn{width:100%;justify-content:center;padding:16px;font-size:16px;border-radius:12px}
+@media(max-width:768px){.sticky-mobile{display:flex}}
+
+/* ===== FLOATING WHATSAPP DESKTOP ===== */
+.wa-float{position:fixed;bottom:28px;right:28px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;cursor:pointer;transition:transform .2s;animation:waPulse 2s infinite}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:32px;height:32px;color:#fff}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.6)}}
+@media(max-width:768px){.wa-float{display:none}}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+.reveal{opacity:1;transform:none;transition:none}
+.wa-float{animation:none}
+.sticky-mobile{transition:none}
+.faq-a{transition:none}
+.cta-btn{transition:none}
+.faq-icon,.faq-icon svg{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TRICOLORE -->
+<div class="tricolore"><span class="verde"></span><span class="bianco"></span><span class="rosso"></span></div>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero" id="hero">
+<div class="container">
+  <div class="hero-badges reveal">
+    <span class="hero-badge green">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+      150+ siti consegnati
+    </span>
+    <span class="hero-badge red">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+      Paghi solo se ti piace
+    </span>
+  </div>
+  <h1 class="reveal">Il tuo nuovo sito web è pronto in 2 giorni.<br>Paghi solo se ti piace.</h1>
+  <p class="hero-sub reveal">Creiamo il sito completo per la tua attività, te lo mostriamo finito — e solo se sei soddisfatto al 100% decidi di pagarlo. Nessun anticipo. Nessun rischio.</p>
+  <div class="cta-wrap reveal">
+    <a href="https://wa.me/393895117409?text=Ciao!%20Vorrei%20informazioni%20sul%20sito%20web%20per%20la%20mia%20attivit%C3%A0." class="cta-btn" aria-label="Contattaci su WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Scrivici su WhatsApp — è gratis
+    </a>
+    <span class="cta-micro">Nessun impegno. Nessun anticipo. Vedi il risultato prima di decidere.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 2. PROBLEMA ===== -->
+<section class="section-alt" id="problema">
+<div class="container">
+  <h2 class="section-title reveal">Il tuo sito attuale ti sta facendo perdere clienti.<br>Anche adesso.</h2>
+  <div class="problem-grid">
+    <div class="problem-card reveal">
+      <div class="pc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+      <h3>Nessuno lo vede su Google</h3>
+      <p>Se cerchi la tua attività su Google e non la trovi nelle prime pagine, i tuoi potenziali clienti stanno andando direttamente dalla concorrenza. Un sito invisibile vale quanto non averlo.</p>
+    </div>
+    <div class="problem-card reveal">
+      <div class="pc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <h3>Su smartphone sembra un disastro</h3>
+      <p>Oltre il 70% delle ricerche locali avviene da cellulare. Se il tuo sito si vede male sul telefono — testi piccoli, bottoni che non si cliccano — stai perdendo quei visitatori in meno di 5 secondi.</p>
+    </div>
+    <div class="problem-card reveal">
+      <div class="pc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <h3>Il design è fermo agli anni 2000</h3>
+      <p>Un sito vecchio non è solo brutto: comunica che la tua attività è ferma. Il potenziale cliente che vede un design datato pensa subito: "Sarà affidabile?" — e chiude la scheda.</p>
+    </div>
+    <div class="problem-card reveal">
+      <div class="pc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="14" y1="4" x2="18" y2="4"/></svg></div>
+      <h3>Hai visitatori, ma non ti chiama nessuno</h3>
+      <p>Il sito ha qualche visita, ma il telefono non squilla. Un sito senza una struttura pensata per convertire i visitatori in clienti è solo un costo, non un investimento.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 3. COSTO DELL'INAZIONE ===== -->
+<section id="costo">
+<div class="container">
+  <h2 class="section-title reveal">Quanti clienti ti sta costando ogni mese<br>un sito che non funziona?</h2>
+  <div class="cost-box reveal">
+    <div class="big-stat"><span class="counter" data-target="71">0</span>%</div>
+    <div class="big-label">dei consumatori cerca online prima di acquistare o scegliere un professionista locale</div>
+  </div>
+  <p class="cost-text reveal">Pensa alla tua attività: se ogni mese <strong>200 persone</strong> cercano la tua categoria nella tua zona e il tuo sito fa scappare anche solo il 10% di chi ci arriva, stai perdendo <strong>20 potenziali clienti al mese</strong>. A un valore medio di €80 a cliente, parliamo di <strong>€1.600 al mese</strong> che non entrano in cassa. <strong>€19.200 l'anno.</strong></p>
+  <p class="cost-close reveal">Il problema non è che non hai clienti. È che ce li hai — e il tuo sito li sta respingendo prima ancora che possano sceglierti.</p>
+</div>
+</section>
+
+<!-- ===== 4. COME FUNZIONA ===== -->
+<section class="section-green" id="come-funziona">
+<div class="container">
+  <h2 class="section-title reveal">Come funziona: semplice, veloce, senza rischi</h2>
+  <p class="section-subtitle reveal">Tre passi e hai il tuo sito professionale. Zero complicazioni.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <h3>Ci scrivi su WhatsApp</h3>
+      <p>Mandaci un messaggio e raccontaci in due parole la tua attività. Nessun form complicato, nessuna chiamata obbligatoria. Inizia tutto con un messaggio.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <h3>Creiamo il tuo sito in 2 giorni</h3>
+      <p>Il nostro team realizza il sito completo: design personalizzato, testi professionali, struttura ottimizzata per mobile e Google. Tu non devi fare nulla.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <h3>Vedi il risultato. Poi decidi.</h3>
+      <p>Ti mostriamo il sito finito. Ti piace? Paghi €497 e lo pubblichiamo. Non ti piace? Non paghi nulla e ci salutiamo. Zero rischio, zero impegno.</p>
+    </div>
+  </div>
+  <div class="cta-wrap reveal">
+    <a href="https://wa.me/393895117409?text=Ciao!%20Vorrei%20informazioni%20sul%20sito%20web%20per%20la%20mia%20attivit%C3%A0." class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Inizia adesso — scrivici su WhatsApp
+    </a>
+    <span class="cta-micro">In meno di 2 minuti ci dai le info base. Pensiamo a tutto noi.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 5. VALUE STACK ===== -->
+<section id="cosa-ottieni">
+<div class="container">
+  <h2 class="section-title reveal">Tutto quello che include il tuo sito a €497</h2>
+  <p class="section-subtitle reveal">Nessun costo nascosto. Nessuna sorpresa. Tutto incluso.</p>
+  <div class="value-list">
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>Sito fino a 5 pagine</h4><p>Home, chi siamo, servizi, contatti e una pagina a tua scelta — tutto costruito intorno alla tua attività.</p></div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>Design personalizzato</h4><p>Nessun template generico. Il design viene creato su misura per il tuo settore, il tuo brand e i tuoi colori.</p></div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>Copywriting professionale incluso</h4><p>I testi li scriviamo noi. Parole pensate per convincere, non per riempire spazio. Nessun foglio Word da preparare.</p></div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>Ottimizzazione mobile (responsive)</h4><p>Il sito si vede perfettamente su smartphone, tablet e computer. Su ogni schermo, sempre.</p></div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>SEO base ottimizzato</h4><p>Struttura ottimizzata per essere trovato su Google nella tua zona: titoli, meta descrizioni, velocità, Google Maps.</p></div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>Hosting + certificato SSL per 1 anno</h4><p>Il sito va online subito, è sicuro (lucchetto verde) e rimane attivo per 12 mesi senza costi aggiuntivi.</p></div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+      <div><h4>Consegna in 2 giorni lavorativi</h4><p>Non aspetti settimane. In 48 ore hai il sito pronto da vedere — e da pubblicare.</p></div>
+    </div>
+  </div>
+  <div class="price-box reveal">
+    <div class="price-old">Valore di mercato: €2.500+</div>
+    <div class="price-new">€497</div>
+    <div class="price-note">E lo paghi solo dopo averlo visto e approvato.</div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 6. SOCIAL PROOF ===== -->
+<section class="section-alt" id="risultati">
+<div class="container">
+  <h2 class="section-title reveal">150 attività italiane hanno già scelto Evoluzione Digitale</h2>
+  <p class="section-subtitle reveal">Ecco cosa dicono i nostri clienti e i numeri che parlano da soli.</p>
+  <div class="counters reveal">
+    <div class="counter-item">
+      <div class="counter-num"><span class="counter" data-target="150">0</span>+</div>
+      <div class="counter-label">Siti web consegnati</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num"><span class="counter" data-target="98">0</span>%</div>
+      <div class="counter-label">Clienti soddisfatti</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num">2 giorni</div>
+      <div class="counter-label">Tempo medio consegna</div>
+    </div>
+  </div>
+  <div class="testimonials">
+    <div class="testimonial reveal">
+      <div class="t-stars"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+      <p class="t-quote">"Avevo un sito fatto dal cugino di mia moglie sei anni fa — sembrava uscito dal 2009. Non mi aveva mai portato un cliente. Con Evoluzione Digitale ho visto il nuovo sito in due giorni e ho pagato solo quando ero sicuro al 100%. Adesso ricevo 3-4 richieste di tavolo a settimana dal sito."</p>
+      <div class="t-author">
+        <div class="t-avatar">MF</div>
+        <div class="t-info"><h4>Marco Ferretti</h4><p>+3-4 prenotazioni/settimana</p></div>
+      </div>
+    </div>
+    <div class="testimonial reveal">
+      <div class="t-stars"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+      <p class="t-quote">"Ero scettica perché avevo già speso €1.800 con un'agenzia e il sito non aveva mai funzionato. Quando mi hanno detto 'vedi il risultato prima di pagare' pensavo fosse un trucco. Invece mi hanno consegnato un sito bellissimo in 48 ore. Ora le mie clienti mi trovano su Google. Il telefono ha ricominciato a suonare."</p>
+      <div class="t-author">
+        <div class="t-avatar">LB</div>
+        <div class="t-info"><h4>Laura Bianchi</h4><p>Nuove clienti da Google locale</p></div>
+      </div>
+    </div>
+    <div class="testimonial reveal">
+      <div class="t-stars"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+      <p class="t-quote">"Come studio dentistico avevamo bisogno di qualcosa che trasmettesse professionalità. Ho visto il sito finito prima di firmare qualsiasi cosa — fondamentale per me. In tre settimane dalla pubblicazione abbiamo ricevuto 11 richieste di primo appuntamento tramite il modulo contatti."</p>
+      <div class="t-author">
+        <div class="t-avatar">AC</div>
+        <div class="t-info"><h4>Dott. Alessio Conti</h4><p>11 nuovi pazienti in 3 settimane</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 7. CONFRONTO ===== -->
+<section id="confronto">
+<div class="container">
+  <h2 class="section-title reveal">Perché scegliere Evoluzione Digitale</h2>
+  <p class="section-subtitle reveal">Confronta le alternative e giudica tu.</p>
+  <div class="compare-wrap">
+  <table class="compare-table reveal">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="col-ed">Evoluzione Digitale</th>
+        <th>Agenzia Tradizionale</th>
+        <th>Fai-da-te (Wix/etc)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Prezzo</td><td class="col-ed">€497</td><td>€2.000 – €8.000</td><td>€0-200 + ore tue</td></tr>
+      <tr><td>Tempo consegna</td><td class="col-ed">2 giorni</td><td>4-12 settimane</td><td>Settimane (se ce la fai)</td></tr>
+      <tr><td>Design personalizzato</td><td class="col-ed"><span class="icon-check">&#10003;</span> Su misura</td><td><span class="icon-maybe">Dipende</span></td><td><span class="icon-x">&#10007;</span> Template</td></tr>
+      <tr><td>Copywriting incluso</td><td class="col-ed"><span class="icon-check">&#10003;</span> Scritto per te</td><td><span class="icon-x">&#10007;</span> Lo fornisci tu</td><td><span class="icon-x">&#10007;</span> Lo scrivi tu</td></tr>
+      <tr><td>Mobile-first</td><td class="col-ed"><span class="icon-check">&#10003;</span> Garantito</td><td><span class="icon-maybe">Dipende</span></td><td><span class="icon-maybe">Parziale</span></td></tr>
+      <tr><td>Garanzia</td><td class="col-ed"><span class="icon-check">&#10003;</span> Paghi solo se ti piace</td><td><span class="icon-x">&#10007;</span> Nessuna</td><td><span class="icon-x">&#10007;</span> Nessuna</td></tr>
+      <tr><td>Rischio per te</td><td class="col-ed"><strong>Zero</strong></td><td>Alto (paghi prima)</td><td>Alto (tempo sprecato)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 8. GARANZIA ===== -->
+<section class="section-green" id="garanzia">
+<div class="container">
+  <div class="guarantee-box reveal">
+    <div class="guarantee-shield">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </div>
+    <h2>Se non ti piace, non paghi. Punto.</h2>
+    <div class="guarantee-text">
+      <p>Sappiamo cosa significa affidarsi a qualcuno per il proprio sito web e restare delusi. Sappiamo quante agenzie chiedono migliaia di euro in anticipo e consegnano qualcosa di mediocre settimane dopo. Sappiamo che la parola "fiducia" è difficile da guadagnare quando hai già vissuto quel tipo di delusione.</p>
+      <br>
+      <p>Per questo abbiamo costruito il nostro servizio attorno a un principio semplice: <strong>il rischio è nostro, non tuo.</strong> Lavoriamo per 2 giorni, creiamo il tuo sito completo con design personalizzato e testi professionali, te lo mostriamo finito nei minimi dettagli — e solo in quel momento ti chiediamo cosa ne pensi.</p>
+      <br>
+      <p>Se il sito ti piace e sei soddisfatto al 100%, paghi €497 e lo pubblichiamo subito. Se per qualsiasi motivo non ti convince — semplicemente ci dici "no, grazie" e ci salutiamo. Non è un trucco. Non ci sono clausole nascoste.</p>
+    </div>
+    <ul class="guarantee-bullets">
+      <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><strong>Nessun pagamento anticipato</strong> — non ti chiediamo un euro finché non hai visto il sito finito</li>
+      <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><strong>Nessun vincolo o contratto</strong> — sei libero di dire no in qualsiasi momento</li>
+      <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><strong>Nessun rischio per te</strong> — se non ti piace, non paghi. Fine. Senza polemiche.</li>
+    </ul>
+    <a href="https://wa.me/393895117409?text=Ciao!%20Vorrei%20informazioni%20sul%20sito%20web%20per%20la%20mia%20attivit%C3%A0." class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Scrivici ora — non hai nulla da perdere
+    </a>
+    <span class="cta-micro">Ci vogliono meno di 2 minuti. Il sito lo vedi in 2 giorni. Poi decidi tu.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 9. FAQ ===== -->
+<section class="section-alt" id="faq">
+<div class="container">
+  <h2 class="section-title reveal">Le domande che probabilmente ti stai facendo</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Quanto costa esattamente?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">€497 tutto incluso — design, testi, fino a 5 pagine, hosting e SSL per un anno. Nessun costo nascosto, nessuna sorpresa. E li paghi solo dopo aver visto il sito finito e aver detto "sì, mi piace". Prima di quel momento non spendi un centesimo.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Quanto tempo ci vuole davvero?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">2 giorni lavorativi dal momento in cui ci dai le informazioni base sulla tua attività. Non settimane, non mesi. In 48 ore ti mostriamo il sito completo, pronto per essere approvato e pubblicato.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Cosa succede se il sito non mi piace?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Non paghi, e non devi spiegare nulla. Ci scrivi "non fa per me" e ci salutiamo. Nessuna pressione, nessuna fattura, nessun malinteso. Il rischio è interamente nostro.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Il mio sito attuale viene cancellato?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">No. Il tuo sito attuale resta intatto finché non approvi il nuovo. Solo dopo il tuo via libera sostituiamo quello vecchio con quello nuovo. Non perdi nulla nel processo.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Devo fornirvi testi, foto o contenuti?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">No. Il copywriting è incluso — scriviamo noi i testi ottimizzati per la tua attività. Se hai foto tue, ottimo. Se non ne hai, utilizziamo immagini professionali adatte al tuo settore senza costi aggiuntivi.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Cosa succede dopo la consegna?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Il sito include hosting e SSL per 12 mesi senza costi aggiuntivi. Per il secondo anno, concordiamo insieme le condizioni — senza obblighi e senza contratti a lungo termine.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Perché €497 è così poco rispetto alle agenzie?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Le agenzie tradizionali hanno strutture costose, account manager, riunioni infinite e margini altissimi. Noi lavoriamo in modo snello, senza sprechi, e consegniamo in 2 giorni invece che in 2 mesi. Il risparmio lo giriamo a te.</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q"><h3>Come faccio a fidarmi di voi?</h3><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Non ti chiediamo di farlo prima di vedere nulla. Ti chiediamo solo 2 minuti per scriverci su WhatsApp. Poi in 2 giorni hai il sito davanti agli occhi e decidi tu. Se non ti fidi del risultato, non paghi. La fiducia te la guadagniamo con i fatti, non con le promesse.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 10. CTA FINALE ===== -->
+<section class="final-cta" id="inizia">
+<div class="container">
+  <h2 class="reveal">Non hai nulla da perdere.<br>Vedi il tuo nuovo sito in 2 giorni — poi decidi se pagarlo.</h2>
+  <p class="recap reveal"><strong>€497</strong> &nbsp;|&nbsp; Consegna in <strong>2 giorni</strong> &nbsp;|&nbsp; <strong>Paghi solo se ti piace</strong></p>
+  <div class="cta-wrap reveal">
+    <a href="https://wa.me/393895117409?text=Ciao!%20Vorrei%20informazioni%20sul%20sito%20web%20per%20la%20mia%20attivit%C3%A0." class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Scrivici su WhatsApp adesso
+    </a>
+    <span class="cta-micro">Nessun anticipo. Nessun contratto. Solo: ci scrivi, vedi il risultato, decidi tu.</span>
+  </div>
+  <p class="ps reveal">P.S. — Ogni settimana prendiamo un numero limitato di nuovi progetti per garantire la consegna in 2 giorni. Se stai leggendo questo adesso, c'è ancora posto. Ma non possiamo garantirlo domani.</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Evoluzione Digitale &nbsp;|&nbsp; <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-mobile" id="stickyMobile">
+  <a href="https://wa.me/393895117409?text=Ciao!%20Vorrei%20informazioni%20sul%20sito%20web%20per%20la%20mia%20attivit%C3%A0." class="cta-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Scrivici — è gratis
+  </a>
+</div>
+
+<!-- FLOATING WHATSAPP DESKTOP -->
+<a href="https://wa.me/393895117409?text=Ciao!%20Vorrei%20informazioni%20sul%20sito%20web%20per%20la%20mia%20attivit%C3%A0." class="wa-float" aria-label="Contattaci su WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ===== SCROLL REVEAL ===== */
+(function(){
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(prefersReduced) {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')});
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
+    });
+  },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+})();
+
+/* ===== COUNTER ANIMATION ===== */
+(function(){
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counters = document.querySelectorAll('.counter');
+  if(prefersReduced){
+    counters.forEach(function(c){c.textContent=c.getAttribute('data-target')});
+    return;
+  }
+  var observed = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el=entry.target;var target=parseInt(el.getAttribute('data-target'));
+        var duration=1500;var start=0;var startTime=null;
+        function animate(ts){
+          if(!startTime)startTime=ts;
+          var progress=Math.min((ts-startTime)/duration,1);
+          var eased=1-Math.pow(1-progress,3);
+          el.textContent=Math.floor(eased*target);
+          if(progress<1)requestAnimationFrame(animate);else el.textContent=target;
+        }
+        requestAnimationFrame(animate);
+        observed.unobserve(el);
+      }
+    });
+  },{threshold:0.5});
+  counters.forEach(function(c){observed.observe(c)});
+})();
+
+/* ===== FAQ ACCORDION ===== */
+(function(){
+  var items=document.querySelectorAll('.faq-item');
+  items.forEach(function(item){
+    var q=item.querySelector('.faq-q');
+    var a=item.querySelector('.faq-a');
+    q.addEventListener('click',function(){
+      var isActive=item.classList.contains('active');
+      items.forEach(function(i){
+        i.classList.remove('active');
+        i.querySelector('.faq-a').style.maxHeight=null;
+      });
+      if(!isActive){
+        item.classList.add('active');
+        a.style.maxHeight=a.scrollHeight+'px';
+      }
+    });
+  });
+})();
+
+/* ===== STICKY MOBILE CTA ===== */
+(function(){
+  var sticky=document.getElementById('stickyMobile');
+  if(!sticky)return;
+  var shown=false;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>500&&!shown){sticky.classList.add('visible');shown=true}
+    else if(window.scrollY<=500&&shown){sticky.classList.remove('visible');shown=false}
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
