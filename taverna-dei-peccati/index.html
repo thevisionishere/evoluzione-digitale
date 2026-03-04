@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taverna dei Peccati — Ristorante nel centro di Bologna. Cucina tipica emiliana, pasta fresca fatta a mano, sala privata per eventi. Prenota il tuo tavolo.">
+  <meta name="keywords" content="ristorante Bologna, trattoria Bologna, cucina emiliana, pasta fresca, osteria Bologna centro">
+  <meta property="og:title" content="Taverna dei Peccati — Ristorante a Bologna">
+  <meta property="og:description" content="Dove la tradizione emiliana incontra il piacere della buona tavola. Scopri un luogo accogliente nel cuore di Bologna.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tavernadeipeccati.it/">
+  <title>Taverna dei Peccati — Ristorante a Bologna | Cucina Tipica Emiliana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-logo">
+      <span class="preloader-logo-text">Taverna dei <em>Peccati</em></span>
+    </div>
+    <div class="preloader-line-wrap"><div class="preloader-line"></div></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">Taverna dei <em>Peccati</em></a>
+      <nav class="header-nav" aria-label="Navigazione principale">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="chi-siamo.html" class="nav-link">Chi Siamo</a>
+        <a href="menu.html" class="nav-link">Menù</a>
+        <a href="eventi.html" class="nav-link">Eventi</a>
+        <a href="contatti.html" class="nav-link">Contatti</a>
+        <a href="tel:+393493247596" class="nav-cta magnetic-btn">Chiama Ora</a>
+      </nav>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link active">Home</a>
+      <a href="chi-siamo.html" class="mobile-menu-link">Chi Siamo</a>
+      <a href="menu.html" class="mobile-menu-link">Menù</a>
+      <a href="eventi.html" class="mobile-menu-link">Eventi</a>
+      <a href="contatti.html" class="mobile-menu-link">Contatti</a>
+      <a href="tel:+393493247596" class="mobile-menu-cta">Chiama Ora</a>
+    </nav>
+    <div class="mobile-menu-info">
+      <p>Via De' Carbonesi, 16, 40123 Bologna</p>
+      <p>+39 349 324 7596</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 1: HERO — Centered Fullscreen -->
+  <!-- ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/parallax-bar.jpg" alt="Area bar della Taverna dei Peccati con insegna Smile e atmosfera calda" width="1920" height="1080" fetchpriority="high">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-label">Ristorante nel centro di Bologna</span>
+      <h1 class="hero-title">La Taverna dei <em class="accent">Peccati</em></h1>
+      <p class="hero-description">Dove la tradizione emiliana incontra il piacere della buona tavola. Scopri un luogo accogliente, nel cuore della città, dove ogni piatto racconta una storia di gusto, semplicità e convivialità.</p>
+      <div class="hero-ctas">
+        <a href="contatti.html" class="hero-cta-primary magnetic-btn">Prenota il Tuo Tavolo</a>
+        <a href="menu.html" class="hero-cta-secondary magnetic-btn">Scopri il Menù</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-label">Cucina Emiliana</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Pasta Fatta a Mano</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Centro Storico Bologna</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <span>Scorri</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 2: MARQUEE -->
+  <!-- ============================================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Tortellini</span><span class="marquee-dot">✦</span>
+        <span>Lasagne</span><span class="marquee-dot">✦</span>
+        <span>Tagliatelle al Ragù</span><span class="marquee-dot">✦</span>
+        <span>Fiocchetti al Tartufo</span><span class="marquee-dot">✦</span>
+        <span>Gnocchetti del Peccato</span><span class="marquee-dot">✦</span>
+        <span>Cotoletta alla Bolognese</span><span class="marquee-dot">✦</span>
+        <span>Pasta Fresca</span><span class="marquee-dot">✦</span>
+        <span>Vini del Territorio</span><span class="marquee-dot">✦</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>Tortellini</span><span class="marquee-dot">✦</span>
+        <span>Lasagne</span><span class="marquee-dot">✦</span>
+        <span>Tagliatelle al Ragù</span><span class="marquee-dot">✦</span>
+        <span>Fiocchetti al Tartufo</span><span class="marquee-dot">✦</span>
+        <span>Gnocchetti del Peccato</span><span class="marquee-dot">✦</span>
+        <span>Cotoletta alla Bolognese</span><span class="marquee-dot">✦</span>
+        <span>Pasta Fresca</span><span class="marquee-dot">✦</span>
+        <span>Vini del Territorio</span><span class="marquee-dot">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 3: REVIEWS SLIDER -->
+  <!-- ============================================ -->
+  <section class="reviews section-light" id="recensioni">
+    <div class="container">
+      <span class="section-label reveal-up">Dicono di noi</span>
+      <h2 class="section-title reveal-up" data-delay="100">Le voci dei nostri <em class="accent">ospiti</em></h2>
+      <div class="reviews-slider reveal-up" data-delay="200">
+        <div class="reviews-track">
+          <div class="review-card">
+            <div class="review-stars" aria-label="Valutazione: 5 su 5">★★★★★</div>
+            <blockquote class="review-text">"Personale gentilissimo e accogliente per non parlare del cibo strepitoso… Luca il proprietario è un qualcosa di eccezionale."</blockquote>
+            <div class="review-author">
+              <span class="review-name">Fiorenzo Abete</span>
+              <span class="review-source">Google Reviews</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars" aria-label="Valutazione: 5 su 5">★★★★★</div>
+            <blockquote class="review-text">"Ho preso una cotoletta alla bolognese davvero buonissima: abbondante, ben cotta e con ingredienti di qualità. Il titolare, Luca, è simpaticissimo e ti fa sentire subito a casa."</blockquote>
+            <div class="review-author">
+              <span class="review-name">Antonio Cangemi</span>
+              <span class="review-source">Google Reviews</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars" aria-label="Valutazione: 5 su 5">★★★★★</div>
+            <blockquote class="review-text">"I fiocchetti al tartufo sono eccezionali e tra i migliori che abbia mai assaggiato. La combinazione di sapori delicati e ricchi del tartufo con la pasta fresca è semplicemente divina."</blockquote>
+            <div class="review-author">
+              <span class="review-name">Manuel Cinti</span>
+              <span class="review-source">Google Reviews</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars" aria-label="Valutazione: 5 su 5">★★★★★</div>
+            <blockquote class="review-text">"Absolutely awesome place. The food is just sooooo good. Cotoletta alla bolognese, porcini risotto, tartare di chianina — absolutely best was fiocchetti and panna cotta."</blockquote>
+            <div class="review-author">
+              <span class="review-name">Rita</span>
+              <span class="review-source">Google Reviews</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars" aria-label="Valutazione: 5 su 5">★★★★★</div>
+            <blockquote class="review-text">"Personale molto cordiale e accogliente. Il cibo era anche molto buono! Prezzi ragionevoli e locale piacevole."</blockquote>
+            <div class="review-author">
+              <span class="review-name">Ida Susanne</span>
+              <span class="review-source">Google Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 4: ABOUT PREVIEW -->
+  <!-- ============================================ -->
+  <section class="about section-light-alt" id="chi-siamo">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal-up">
+          <img src="images/about.jpg" alt="Staff della Taverna dei Peccati al lavoro tra menu e calici" width="800" height="1000" loading="lazy">
+        </div>
+        <div class="about-content">
+          <span class="section-label reveal-up">Chi Siamo</span>
+          <h2 class="section-title reveal-up" data-delay="100">Una trattoria nel cuore di <em class="accent">Bologna</em></h2>
+          <p class="about-text reveal-up" data-delay="200">Nel cuore di Bologna, la nostra trattoria accoglie chi ama la cucina semplice e sincera. Qui la passione per la tradizione si unisce al calore di un ambiente familiare. Da anni la Taverna dei Peccati è un punto di riferimento per chi cerca i sapori autentici di una volta.</p>
+          <blockquote class="about-quote reveal-up" data-delay="300">
+            <em>"La semplicità non è solo una scelta, ma uno stile."</em>
+          </blockquote>
+          <a href="chi-siamo.html" class="btn-link reveal-up" data-delay="400">Scopri la nostra storia →</a>
+        </div>
+      </div>
+      <div class="about-values">
+        <div class="value-card reveal-up">
+          <h3 class="value-title">I nostri tavoli</h3>
+          <p class="value-text">Spazi intimi e curati, ideali per una serata tranquilla tra amici o in coppia.</p>
+        </div>
+        <div class="value-card reveal-up" data-delay="100">
+          <h3 class="value-title">I nostri piatti</h3>
+          <p class="value-text">Dalla pasta fresca ai secondi di carne, ogni ricetta nasce dal rispetto per la tradizione locale.</p>
+        </div>
+        <div class="value-card reveal-up" data-delay="200">
+          <h3 class="value-title">La nostra accoglienza</h3>
+          <p class="value-text">Ogni ospite è accolto con il calore e la semplicità di un pranzo in famiglia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 5: DAL MERCATO ALLA TAVOLA — Staggered Grid -->
+  <!-- ============================================ -->
+  <section class="kitchen-journey section-dark" id="dal-mercato">
+    <div class="container">
+      <div class="kitchen-journey-header">
+        <span class="section-label reveal-up">La Nostra Cucina</span>
+        <h2 class="section-title reveal-up" data-delay="100">Dal Mercato alla <em class="accent">Tavola</em></h2>
+        <p class="section-subtitle reveal-up" data-delay="200">Un viaggio nei sapori autentici di una volta</p>
+      </div>
+      <div class="kitchen-grid">
+        <div class="kitchen-card kitchen-card--tall reveal-up" data-delay="0">
+          <div class="kitchen-card-img">
+            <img src="images/cinematic-01.jpg" alt="Burrata con verdure fresche — ingredienti del territorio" width="600" height="800" loading="lazy">
+          </div>
+          <div class="kitchen-card-content">
+            <span class="kitchen-card-step">01</span>
+            <h3 class="kitchen-card-title">Ingredienti Freschi</h3>
+            <p class="kitchen-card-desc">Selezioniamo ogni giorno materie prime di qualità, dal mercato alla nostra cucina.</p>
+          </div>
+        </div>
+        <div class="kitchen-card reveal-up" data-delay="150">
+          <div class="kitchen-card-img">
+            <img src="images/cinematic-02.jpg" alt="Tortelloni burro e salvia — pasta fresca fatta a mano" width="600" height="500" loading="lazy">
+          </div>
+          <div class="kitchen-card-content">
+            <span class="kitchen-card-step">02</span>
+            <h3 class="kitchen-card-title">Pasta Fatta a Mano</h3>
+            <p class="kitchen-card-desc">La sfoglia tirata al mattarello, come la tradizione bolognese insegna.</p>
+          </div>
+        </div>
+        <div class="kitchen-card reveal-up" data-delay="300">
+          <div class="kitchen-card-img">
+            <img src="images/cinematic-03.jpg" alt="Tagliatelle al ragù su forchetta — piatti della tradizione" width="600" height="500" loading="lazy">
+          </div>
+          <div class="kitchen-card-content">
+            <span class="kitchen-card-step">03</span>
+            <h3 class="kitchen-card-title">Piatti della Tradizione</h3>
+            <p class="kitchen-card-desc">Ricette tramandate di generazione in generazione, con il gusto di una volta.</p>
+          </div>
+        </div>
+        <div class="kitchen-card kitchen-card--wide reveal-up" data-delay="200">
+          <div class="kitchen-card-img">
+            <img src="images/cinematic-04.webp" alt="Tortellini in brodo — il piacere della tavola bolognese" width="1200" height="500" loading="lazy">
+          </div>
+          <div class="kitchen-card-content">
+            <span class="kitchen-card-step">04</span>
+            <h3 class="kitchen-card-title">Il Piacere della Tavola</h3>
+            <p class="kitchen-card-desc">Il momento in cui tutto prende senso: il profumo, il sapore, la convivialità.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 6: SIGNATURE — Tabbed Menu Experience -->
+  <!-- ============================================ -->
+  <section class="menu-preview section-light" id="menu">
+    <div class="container">
+      <span class="section-label reveal-up">Il Nostro Menù</span>
+      <h2 class="section-title reveal-up" data-delay="100">I sapori della tradizione <em class="accent">bolognese</em></h2>
+
+      <div class="menu-tabs reveal-up" data-delay="200">
+        <div class="tabs-bar" role="tablist">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-antipasti" data-tab="antipasti">Antipasti</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-primi" data-tab="primi">Primi</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-secondi" data-tab="secondi">Secondi</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-dolci" data-tab="dolci">Dolci</button>
+          <div class="tab-indicator"></div>
+        </div>
+
+        <div class="tabs-content">
+          <div class="tab-panel active" id="tab-antipasti" role="tabpanel">
+            <div class="tab-panel-inner">
+              <div class="tab-image">
+                <img src="images/menu-antipasti.webp" alt="Carpaccio di manzo — antipasti della tradizione" width="600" height="500" loading="lazy">
+              </div>
+              <div class="tab-menu-items">
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Sformatino di verdure</h4>
+                    <p class="menu-item-desc">Con crema di parmigiano</p>
+                  </div>
+                  <span class="menu-item-price">€6</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Parmigiana di melanzane</h4>
+                    <p class="menu-item-desc">Con coulis di pomodori e basilico</p>
+                  </div>
+                  <span class="menu-item-price">€7</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Tagliere di formaggi misti</h4>
+                    <p class="menu-item-desc">Con confetture artigianali</p>
+                  </div>
+                  <span class="menu-item-price">€10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-primi" role="tabpanel">
+            <div class="tab-panel-inner">
+              <div class="tab-image">
+                <img src="images/menu-primi.jpg" alt="Tortellini su piatto in ceramica — primi piatti" width="600" height="500" loading="lazy">
+              </div>
+              <div class="tab-menu-items">
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Gnocchetti del Peccato</h4>
+                    <p class="menu-item-desc">La nostra specialità della casa</p>
+                  </div>
+                  <span class="menu-item-price">€10</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Cappellacci di zucca</h4>
+                    <p class="menu-item-desc">Al ragù bolognese</p>
+                  </div>
+                  <span class="menu-item-price">€11</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Fiocchetti al tartufo</h4>
+                    <p class="menu-item-desc">Pasta fresca ripiena con tartufo nero</p>
+                  </div>
+                  <span class="menu-item-price">€13</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Tagliatelle al ragù</h4>
+                    <p class="menu-item-desc">La ricetta tradizionale bolognese</p>
+                  </div>
+                  <span class="menu-item-price">€10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-secondi" role="tabpanel">
+            <div class="tab-panel-inner">
+              <div class="tab-image">
+                <img src="images/menu-secondi.jpg" alt="Bistecca alla griglia — secondi piatti di carne" width="600" height="500" loading="lazy">
+              </div>
+              <div class="tab-menu-items">
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Filetto di manzo ai porcini</h4>
+                    <p class="menu-item-desc">Con scaglie di grana padano</p>
+                  </div>
+                  <span class="menu-item-price">€19</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Cotoletta alla bolognese</h4>
+                    <p class="menu-item-desc">Impanata e cotta al forno con prosciutto e parmigiano</p>
+                  </div>
+                  <span class="menu-item-price">€15</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Tartare di chianina</h4>
+                    <p class="menu-item-desc">Carne selezionata battuta al coltello</p>
+                  </div>
+                  <span class="menu-item-price">€16</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-dolci" role="tabpanel">
+            <div class="tab-panel-inner">
+              <div class="tab-image">
+                <img src="images/menu-dolci.webp" alt="Dessert creativo con zucchero filato — dolci artigianali" width="600" height="500" loading="lazy">
+              </div>
+              <div class="tab-menu-items">
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Tiramisù</h4>
+                    <p class="menu-item-desc">Il classico dessert italiano</p>
+                  </div>
+                  <span class="menu-item-price">€5</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Crostata del Peccato</h4>
+                    <p class="menu-item-desc">La nostra crostata speciale</p>
+                  </div>
+                  <span class="menu-item-price">€5</span>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-info">
+                    <h4 class="menu-item-name">Mousse allo yogurt</h4>
+                    <p class="menu-item-desc">Con frutti di bosco freschi</p>
+                  </div>
+                  <span class="menu-item-price">€5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-cta reveal-up">
+        <a href="menu.html" class="btn-primary magnetic-btn">Scopri il menù completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 7: NUMBERS / STATISTICS -->
+  <!-- ============================================ -->
+  <section class="numbers section-dark" id="numeri">
+    <div class="container">
+      <div class="numbers-grid">
+        <div class="number-card reveal-up">
+          <span class="number-value" data-count="20" data-suffix="+">0</span>
+          <span class="number-label">Piatti della Tradizione</span>
+        </div>
+        <div class="number-card reveal-up" data-delay="100">
+          <span class="number-value" data-count="5.0">0</span>
+          <span class="number-label">Stelle su Google</span>
+        </div>
+        <div class="number-card reveal-up" data-delay="200">
+          <span class="number-value" data-count="20" data-suffix="">0</span>
+          <span class="number-label">Posti Sala Privata</span>
+        </div>
+        <div class="number-card reveal-up" data-delay="300">
+          <span class="number-value" data-count="1" data-suffix="">0</span>
+          <span class="number-label">Passione: La Cucina Bolognese</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 8: EVENTS TEASER -->
+  <!-- ============================================ -->
+  <section class="events section-light" id="eventi">
+    <div class="container">
+      <span class="section-label reveal-up">Eventi</span>
+      <h2 class="section-title reveal-up" data-delay="100">Festeggia i tuoi momenti <em class="accent">speciali</em></h2>
+      <p class="section-subtitle reveal-up" data-delay="200">Disponiamo di una saletta riservata per 20 persone, perfetta per ogni occasione speciale.</p>
+
+      <div class="events-grid">
+        <div class="event-card reveal-up" data-delay="100">
+          <div class="event-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342"/></svg>
+          </div>
+          <h3 class="event-title">Lauree e Feste</h3>
+          <p class="event-text">Celebra i tuoi traguardi in un ambiente accogliente e autentico.</p>
+        </div>
+        <div class="event-card reveal-up" data-delay="200">
+          <div class="event-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
+          </div>
+          <h3 class="event-title">Eventi Aziendali</h3>
+          <p class="event-text">Rendi speciale un pranzo o una cena di lavoro con la nostra cucina tipica.</p>
+        </div>
+        <div class="event-card reveal-up" data-delay="300">
+          <div class="event-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
+          </div>
+          <h3 class="event-title">Compleanni e Ricorrenze</h3>
+          <p class="event-text">Ogni occasione diventa indimenticabile alla Taverna dei Peccati.</p>
+        </div>
+      </div>
+
+      <div class="events-cta reveal-up">
+        <a href="eventi.html" class="btn-link">Scopri la sala privata →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 9: GALLERY GRID -->
+  <!-- ============================================ -->
+  <section class="gallery section-dark" id="galleria">
+    <div class="container">
+      <span class="section-label reveal-up">Galleria</span>
+      <h2 class="section-title reveal-up" data-delay="100">Immagini dalla nostra <em class="accent">taverna</em></h2>
+    </div>
+    <div class="gallery-grid reveal-up" data-delay="200">
+      <div class="gallery-item gallery-item-lg">
+        <img src="images/gallery-pasta.jpg" alt="Pasta fresca della Taverna dei Peccati" width="800" height="600" loading="lazy">
+        <div class="gallery-overlay"><span>Pasta Fresca</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-vini.jpg" alt="Selezione di vini della Taverna dei Peccati" width="600" height="600" loading="lazy">
+        <div class="gallery-overlay"><span>I Nostri Vini</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-atmosfera.jpg" alt="Atmosfera calda e accogliente della Taverna" width="600" height="600" loading="lazy">
+        <div class="gallery-overlay"><span>L'Atmosfera</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-antipasti.webp" alt="Antipasti della tradizione bolognese" width="600" height="600" loading="lazy">
+        <div class="gallery-overlay"><span>Antipasti</span></div>
+      </div>
+      <div class="gallery-item gallery-item-lg">
+        <img src="images/gallery-tavola.jpg" alt="Tavola apparecchiata alla Taverna dei Peccati" width="800" height="600" loading="lazy">
+        <div class="gallery-overlay"><span>La Tavola</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-dolci.jpg" alt="Dolci artigianali della Taverna" width="600" height="600" loading="lazy">
+        <div class="gallery-overlay"><span>Dolci</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 10: SIGNATURE — Photo + Quote Parallax -->
+  <!-- ============================================ -->
+  <section class="quote-parallax" id="promessa">
+    <div class="quote-parallax-bg">
+      <img src="images/parallax-bar.jpg" alt="Area bar della Taverna dei Peccati" width="1920" height="1080" loading="lazy">
+    </div>
+    <div class="quote-parallax-overlay"></div>
+    <div class="quote-parallax-content">
+      <div class="quote-marks" aria-hidden="true">"</div>
+      <blockquote class="quote-text reveal-up">Ogni giorno cuciniamo come faremmo per la nostra famiglia: con amore, rispetto per la tradizione e cura per i dettagli.</blockquote>
+      <cite class="quote-author reveal-up" data-delay="100">— Luca, Proprietario</cite>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECTION 11: CTA BANNER -->
+  <!-- ============================================ -->
+  <section class="cta-banner" id="prenota">
+    <div class="cta-banner-bg">
+      <img src="images/cta-banner.jpg" alt="Cameriere con valigia vintage alla Taverna dei Peccati" width="1920" height="600" loading="lazy">
+    </div>
+    <div class="cta-banner-overlay"></div>
+    <div class="cta-banner-content">
+      <h2 class="cta-banner-title reveal-up">Prenota il Tuo <em class="accent">Tavolo</em></h2>
+      <p class="cta-banner-subtitle reveal-up" data-delay="100">Scopri il gusto autentico della cucina bolognese. Chiama ora o contattaci per prenotare.</p>
+      <div class="cta-banner-actions reveal-up" data-delay="200">
+        <a href="contatti.html" class="btn-primary magnetic-btn">Contattaci</a>
+        <a href="tel:+393493247596" class="btn-phone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          +39 349 324 7596
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Taverna dei <em>Peccati</em></a>
+          <p class="footer-tagline">Ristorante nel centro di Bologna che propone cucina tipica emiliana e italiana. Ambiente accogliente con saletta privata per eventi, piatti tradizionali fatti in casa e vini selezionati.</p>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Link Utili</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="menu.html">Menù</a>
+            <a href="eventi.html">Eventi</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-heading">Contatti</h4>
+          <div class="footer-contact-list">
+            <a href="tel:+393493247596" class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              +39 349 324 7596
+            </a>
+            <a href="tel:+390510390749" class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              +39 051 039 0749
+            </a>
+            <a href="https://maps.google.com/?q=Via+De+Carbonesi+16+Bologna" target="_blank" rel="noopener" class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+              Via De' Carbonesi, 16, 40123 Bologna
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Taverna dei Peccati | P.IVA 03468041201 | Tutti i diritti riservati</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/393493247596" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Contattaci su WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
