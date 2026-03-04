@@ -2286,9 +2286,15 @@ a:focus-visible {
 
 .about-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
+}
+
+@media (min-width: 768px) {
+  .about-image img {
+    aspect-ratio: 4 / 5;
+  }
 }
 
 .about-image-caption {
