@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chi Siamo — Acquarossa | La Nostra Storia dal 1970 a Viterbo</title>
-  <meta name="description" content="La storia del Ristorante Acquarossa: oltre 50 anni di tradizione, accoglienza e passione nel cuore della Tuscia. Scopri il nostro parco e i nostri valori.">
-
-  <!-- Google Fonts -->
+  <title>Cosa Visitare — Acquarossa | Attrazioni Turistiche vicino Viterbo</title>
+  <meta name="description" content="Cosa visitare vicino al Ristorante Acquarossa: Viterbo, Ferento, Civita di Bagnoregio, Lago di Bolsena, Terme. Guida turistica della Tuscia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-chi-siamo">
+<body class="page-itinerari">
 
   <!-- ============================================
        SCROLL PROGRESS BAR
@@ -45,7 +41,7 @@
               <a href="eventi.html">Eventi</a>
             </div>
           </li>
-          <li><a href="itinerari.html" class="header-nav-link">Cosa Visitare</a></li>
+          <li><a href="itinerari.html" class="header-nav-link active">Cosa Visitare</a></li>
           <li><a href="chi-siamo.html" class="header-nav-link">Chi Siamo</a></li>
           <li><a href="contatti.html" class="header-nav-link">Contatti</a></li>
         </ul>
@@ -67,7 +63,6 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
     <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
       <a href="index.html" class="mobile-menu-link">Home</a>
-
       <div class="mobile-menu-group">
         <button class="mobile-menu-group-toggle" aria-expanded="false">
           Il Ristorante
@@ -78,9 +73,7 @@
           <a href="menu.html" class="mobile-menu-sublink">Menu &amp; Offerte</a>
         </div>
       </div>
-
       <a href="parco.html" class="mobile-menu-link">Il Parco</a>
-
       <div class="mobile-menu-group">
         <button class="mobile-menu-group-toggle" aria-expanded="false">
           Cerimonie
@@ -91,8 +84,7 @@
           <a href="eventi.html" class="mobile-menu-sublink">Eventi</a>
         </div>
       </div>
-
-      <a href="itinerari.html" class="mobile-menu-link">Cosa Visitare</a>
+      <a href="itinerari.html" class="mobile-menu-link active">Cosa Visitare</a>
       <a href="chi-siamo.html" class="mobile-menu-link">Chi Siamo</a>
       <a href="contatti.html" class="mobile-menu-link">Contatti</a>
     </nav>
@@ -110,11 +102,11 @@
     <!-- ==========================================
          HERO INTERNO — 50vh
          ========================================== -->
-    <section class="hero-internal" aria-label="Chi Siamo — La Nostra Storia">
+    <section class="hero-internal" aria-label="Cosa Visitare — Attrazioni turistiche della Tuscia">
       <div class="hero-bg">
         <img
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=1080&fit=crop&q=80"
-          alt="Vista panoramica della campagna viterbese"
+          src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=1920&h=1080&fit=crop&q=80"
+          alt="Borgo medievale arroccato su collina in Italia"
           fetchpriority="high"
         >
       </div>
@@ -122,151 +114,157 @@
 
       <div class="hero-content">
         <p class="hero-label">Acquarossa</p>
-        <h1 class="hero-title">La Nostra Storia</h1>
-        <p class="hero-description">Oltre cinquant'anni di tradizione, accoglienza e passione nel cuore della Tuscia</p>
+        <h1 class="hero-title">Cosa Visitare</h1>
+        <p class="hero-description">Le meraviglie della Tuscia a portata di mano</p>
       </div>
     </section>
 
     <!-- ==========================================
-         TIMELINE — Mezzo Secolo di Sapori
+         ABOUT SECTION — Nel Cuore della Tuscia
          ========================================== -->
-    <section class="timeline-section" aria-label="La storia completa del Ristorante Acquarossa">
+    <section class="about-section" aria-label="Acquarossa nel cuore della Tuscia">
       <div class="container">
-        <div class="timeline-section-header reveal-up">
-          <h2>Mezzo Secolo di Sapori</h2>
-          <p>Un viaggio attraverso le tappe più importanti della nostra storia</p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-line" aria-hidden="true">
-            <div class="timeline-line-progress"></div>
+        <div class="about-grid">
+          <div class="about-image reveal-up">
+            <img
+              src="https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=800&h=600&fit=crop&q=80"
+              alt="Paesaggio italiano con borgo medievale sulla collina"
+              loading="lazy"
+            >
           </div>
-
-          <div class="timeline-item reveal-up" data-delay="1">
-            <div class="timeline-node" aria-hidden="true"></div>
-            <div class="timeline-year">~1970</div>
-            <div class="timeline-title">Le Origini</div>
-            <p class="timeline-text">Nasce il Ristorante Acquarossa su Strada Teverina, alle porte di Viterbo. Un piccolo locale familiare con una grande passione per la cucina del territorio e l'accoglienza genuina.</p>
-          </div>
-
-          <div class="timeline-item reveal-up" data-delay="2">
-            <div class="timeline-node" aria-hidden="true"></div>
-            <div class="timeline-year">~1985</div>
-            <div class="timeline-title">Le Prime Cerimonie</div>
-            <p class="timeline-text">Il ristorante diventa punto di riferimento per battesimi, comunioni e matrimoni. Le sale si ampliano per accogliere i primi grandi eventi. La reputazione cresce nel territorio viterbese.</p>
-          </div>
-
-          <div class="timeline-item reveal-up" data-delay="3">
-            <div class="timeline-node" aria-hidden="true"></div>
-            <div class="timeline-year">~2000</div>
-            <div class="timeline-title">Il Parco Verde</div>
-            <p class="timeline-text">Viene curato e ampliato il parco che oggi è il nostro fiore all'occhiello. 5.000 metri quadrati di verde dove celebrare all'aperto, circondati dalla natura della Tuscia.</p>
-          </div>
-
-          <div class="timeline-item reveal-up" data-delay="4">
-            <div class="timeline-node" aria-hidden="true"></div>
-            <div class="timeline-year">~2010</div>
-            <div class="timeline-title">Innovazione in Cucina</div>
-            <p class="timeline-text">Nuove proposte gastronomiche si affiancano alla tradizione: show cooking, menu degustazione, buffet tematici. La cucina si rinnova senza perdere le sue radici.</p>
-          </div>
-
-          <div class="timeline-item reveal-up" data-delay="5">
-            <div class="timeline-node" aria-hidden="true"></div>
-            <div class="timeline-year">Oggi</div>
-            <div class="timeline-title">Oltre 50 Anni</div>
-            <p class="timeline-text">Un'istituzione viterbese che continua a crescere. Oltre 1.000 cerimonie celebrate, migliaia di clienti soddisfatti, la stessa passione del primo giorno. Il futuro è ancora da scrivere.</p>
+          <div class="about-content reveal-up" data-delay="1">
+            <h2>Nel Cuore della Tuscia</h2>
+            <p>Acquarossa sorge nel cuore della Tuscia, uno dei territori più ricchi di storia, natura e cultura d'Italia. A pochi chilometri dal ristorante, borghi medievali, rovine romane, laghi vulcanici e terme millenarie aspettano di essere scoperti.</p>
+            <p>Organizza una giornata alla scoperta della Tuscia e fermati da noi per un pranzo o una cena. Il modo migliore per concludere una giornata di esplorazione.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         FULLWIDTH SECTION — Il Parco e la Location
+         ATTRACTIONS SECTION — Da Scoprire nei Dintorni
          ========================================== -->
-    <section class="fullwidth-section" aria-label="Il parco e la location di Acquarossa">
+    <section class="attractions-section" aria-label="Attrazioni turistiche nei dintorni di Acquarossa">
       <div class="container">
-        <h2 class="reveal-up">Il Parco e la Location</h2>
 
-        <div class="fullwidth-image reveal-up">
-          <img
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&h=600&fit=crop&q=80"
-            alt="Il parco verde del Ristorante Acquarossa"
-            loading="lazy"
-          >
+        <div class="attractions-header reveal-up">
+          <h2>Da Scoprire nei Dintorni</h2>
+          <p>Luoghi imperdibili a pochi minuti da Acquarossa</p>
         </div>
 
-        <div class="fullwidth-text reveal-up">
-          <p>Il parco è l'anima di Acquarossa. Oltre 5.000 metri quadrati di verde curato, con alberi secolari e angoli suggestivi, creano un'atmosfera unica, lontana dal caos cittadino.</p>
-          <p>Le nostre sale interne uniscono eleganza e calore. Ampi spazi luminosi, arredati con gusto, capaci di accogliere dai piccoli gruppi alle grandi celebrazioni.</p>
-          <p>Qui non sei in un ristorante: sei in un mondo a parte.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         VALUES — Card Grid (3 cards, bg-alt)
-         ========================================== -->
-    <section class="card-grid-section bg-alt" aria-label="I valori del Ristorante Acquarossa">
-      <div class="container">
-        <div class="card-grid-header reveal-up">
-          <h2>I Nostri Valori</h2>
-          <p>Ciò che ci guida da oltre cinquant'anni</p>
-        </div>
-
-        <div class="card-grid cols-3">
-
-          <!-- Card 1: Tradizione -->
-          <article class="card reveal-up" data-delay="1">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
-              </svg>
+        <!-- Card 1: Viterbo -->
+        <div class="attraction-card reveal-up">
+          <div class="attraction-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1555992643-a0c7303e68d8?w=800&h=500&fit=crop&q=80"
+              alt="Centro storico medievale di Viterbo"
+              loading="lazy"
+            >
+          </div>
+          <div class="attraction-card-content">
+            <div class="attraction-card-distance">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              3 km da Acquarossa
             </div>
-            <h3>Tradizione</h3>
-            <p>Ricette tramandate, sapori autentici, rispetto per le radici della cucina viterbese. La tradizione è il nostro patrimonio più prezioso.</p>
-          </article>
-
-          <!-- Card 2: Qualità -->
-          <article class="card reveal-up" data-delay="2">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3H5L2 9l10 13L22 9l-3-6zM9.62 8l1.5-3h1.76l1.5 3H9.62zM11 10v6.68L5.44 10H11zm2 0h5.56L13 16.68V10zm6.26-2h-3.38l-1.5-3h2.38l2.5 3zM7.12 5h2.38l-1.5 3H4.62l2.5-3z"/>
-              </svg>
-            </div>
-            <h3>Qualità</h3>
-            <p>Ingredienti selezionati, preparazioni curate, un servizio che non lascia nulla al caso. La qualità è in ogni dettaglio.</p>
-          </article>
-
-          <!-- Card 3: Accoglienza -->
-          <article class="card reveal-up" data-delay="3">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-              </svg>
-            </div>
-            <h3>Accoglienza</h3>
-            <p>Ogni ospite è di casa. Dal pranzo veloce alla cerimonia più importante, ti facciamo sentire speciale.</p>
-          </article>
-
+            <h3>Viterbo</h3>
+            <p>La Città dei Papi, una delle città medievali meglio conservate d'Italia. Il quartiere San Pellegrino, il Palazzo dei Priori, la Cattedrale e il Palazzo Papale raccontano secoli di storia. Una passeggiata tra le fontane monumentali e le vie acciottolate è un tuffo nel Medioevo.</p>
+          </div>
         </div>
+
+        <!-- Card 2: Ferento -->
+        <div class="attraction-card reveal-up" data-delay="1">
+          <div class="attraction-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1560278525-5a07e7c98aba?w=800&h=500&fit=crop&q=80"
+              alt="Rovine del teatro romano di Ferento"
+              loading="lazy"
+            >
+          </div>
+          <div class="attraction-card-content">
+            <div class="attraction-card-distance">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              6 km da Acquarossa
+            </div>
+            <h3>Ferento</h3>
+            <p>L'antica città romana con il suo magnifico teatro, ancora oggi utilizzato per spettacoli estivi. Fondata dagli abitanti della distrutta città etrusca Acquarossa — da cui il nostro ristorante prende il nome — conserva 27 arcate del palcoscenico e i resti di un complesso termale.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Civita di Bagnoregio -->
+        <div class="attraction-card reveal-up">
+          <div class="attraction-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1592482873480-6f22ab4c1e58?w=800&h=500&fit=crop&q=80"
+              alt="Civita di Bagnoregio, la città che muore"
+              loading="lazy"
+            >
+          </div>
+          <div class="attraction-card-content">
+            <div class="attraction-card-distance">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              28 km da Acquarossa
+            </div>
+            <h3>Civita di Bagnoregio</h3>
+            <p>"La Città che Muore" — uno dei borghi più iconici d'Italia, raggiungibile solo attraverso un ponte pedonale. Arroccata su un altopiano di tufo, offre viste mozzafiato sulla valle dei calanchi. Un luogo fuori dal tempo, con poche famiglie residenti e un'atmosfera magica.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Lago di Bolsena -->
+        <div class="attraction-card reveal-up" data-delay="1">
+          <div class="attraction-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=500&fit=crop&q=80"
+              alt="Vista panoramica del Lago di Bolsena"
+              loading="lazy"
+            >
+          </div>
+          <div class="attraction-card-content">
+            <div class="attraction-card-distance">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              35 km da Acquarossa
+            </div>
+            <h3>Lago di Bolsena</h3>
+            <p>Il più grande lago vulcanico d'Europa, con acque cristalline e due isole misteriose: l'Isola Bisentina con le sue sette cappelle rinascimentali e l'Isola Martana, dove fu imprigionata la regina gotica Amalasunta. Spiagge, sentieri e borghi medievali lungo le rive.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Le Terme -->
+        <div class="attraction-card reveal-up">
+          <div class="attraction-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&h=500&fit=crop&q=80"
+              alt="Terme naturali vicino Viterbo"
+              loading="lazy"
+            >
+          </div>
+          <div class="attraction-card-content">
+            <div class="attraction-card-distance">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              5–15 km da Acquarossa
+            </div>
+            <h3>Le Terme</h3>
+            <p>Viterbo è famosa per le sue sorgenti termali sulfuree, tra le più abbondanti d'Italia. Le Terme dei Papi offrono piscine con acqua a 40°C, mentre il Bullicame — citato da Dante nella Divina Commedia — è una sorgente naturale libera. Già i papi medievali venivano qui per le cure.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ==========================================
          CTA BANNER — Style B (Split)
          ========================================== -->
-    <section class="cta-banner" aria-label="Vieni a trovarci al Ristorante Acquarossa">
+    <section class="cta-banner" aria-label="Fermati da Acquarossa dopo una giornata in Tuscia">
       <div class="cta-banner-image">
         <img
           src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop&q=80"
-          alt="Sala pronta per un evento"
+          alt="Tavola imbandita al Ristorante Acquarossa"
           loading="lazy"
         >
       </div>
       <div class="cta-banner-content">
-        <h2>Vieni a Trovarci</h2>
-        <p>Siamo su Strada Teverina 86, a Viterbo. Prenota un tavolo o vieni a visitare i nostri spazi.</p>
-        <a href="contatti.html" class="btn btn-primary magnetic-btn">Contattaci</a>
+        <h2>Fermati da Noi</h2>
+        <p>Dopo una giornata di esplorazione, fermati da Acquarossa per un pranzo o una cena all'insegna della tradizione viterbese.</p>
+        <a href="contatti.html" class="btn btn-primary magnetic-btn">Prenota un Tavolo</a>
       </div>
     </section>
 
@@ -278,6 +276,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
+
         <!-- Column 1: Brand -->
         <div class="footer-brand">
           <a href="index.html" class="footer-logo">Acquarossa</a>
@@ -314,35 +313,24 @@
         <div class="footer-contacts">
           <h3 class="footer-heading">Contatti</h3>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
             <span>Strada Teverina 86, 01100 Viterbo (VT)</span>
           </div>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             <a href="tel:+390761251152">+39 0761-251152</a>
           </div>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             <a href="tel:+393397653237">+39 339-7653237</a>
           </div>
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             <a href="mailto:info@acquarossa.it">info@acquarossa.it</a>
           </div>
-
           <div class="footer-social">
             <a href="#" aria-label="Seguici su Facebook" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
             <a href="#" aria-label="Seguici su Instagram" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -353,6 +341,7 @@
             </a>
           </div>
         </div>
+
       </div>
 
       <div class="footer-bottom">
@@ -371,7 +360,6 @@
     </svg>
   </a>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

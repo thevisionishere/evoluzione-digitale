@@ -31,10 +31,23 @@
       <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
         <ul class="header-nav-list">
           <li><a href="index.html" class="header-nav-link">Home</a></li>
-          <li><a href="ristorante.html" class="header-nav-link">Ristorante</a></li>
-          <li><a href="eventi.html" class="header-nav-link">Eventi &amp; Cerimonie</a></li>
+          <li class="nav-has-dropdown">
+            <a href="ristorante.html" class="header-nav-link">Il Ristorante</a>
+            <div class="header-nav-dropdown">
+              <a href="menu.html">Menu &amp; Offerte</a>
+            </div>
+          </li>
+          <li><a href="parco.html" class="header-nav-link">Il Parco</a></li>
+          <li class="nav-has-dropdown">
+            <a href="eventi.html" class="header-nav-link">Cerimonie</a>
+            <div class="header-nav-dropdown">
+              <a href="sposi.html">Sposi &amp; Matrimoni</a>
+              <a href="eventi.html">Eventi</a>
+            </div>
+          </li>
+          <li><a href="itinerari.html" class="header-nav-link">Cosa Visitare</a></li>
           <li><a href="chi-siamo.html" class="header-nav-link">Chi Siamo</a></li>
-          <li><a href="contatti.html" class="header-nav-link active">Contatti</a></li>
+          <li><a href="contatti.html" class="header-nav-link">Contatti</a></li>
         </ul>
       </nav>
 
@@ -54,10 +67,34 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
     <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
       <a href="index.html" class="mobile-menu-link">Home</a>
-      <a href="ristorante.html" class="mobile-menu-link">Ristorante</a>
-      <a href="eventi.html" class="mobile-menu-link">Eventi &amp; Cerimonie</a>
+
+      <div class="mobile-menu-group">
+        <button class="mobile-menu-group-toggle" aria-expanded="false">
+          Il Ristorante
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="mobile-menu-sublinks">
+          <a href="ristorante.html" class="mobile-menu-sublink">Il Ristorante</a>
+          <a href="menu.html" class="mobile-menu-sublink">Menu &amp; Offerte</a>
+        </div>
+      </div>
+
+      <a href="parco.html" class="mobile-menu-link">Il Parco</a>
+
+      <div class="mobile-menu-group">
+        <button class="mobile-menu-group-toggle" aria-expanded="false">
+          Cerimonie
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="mobile-menu-sublinks">
+          <a href="sposi.html" class="mobile-menu-sublink">Sposi &amp; Matrimoni</a>
+          <a href="eventi.html" class="mobile-menu-sublink">Eventi</a>
+        </div>
+      </div>
+
+      <a href="itinerari.html" class="mobile-menu-link">Cosa Visitare</a>
       <a href="chi-siamo.html" class="mobile-menu-link">Chi Siamo</a>
-      <a href="contatti.html" class="mobile-menu-link active">Contatti</a>
+      <a href="contatti.html" class="mobile-menu-link">Contatti</a>
     </nav>
     <div class="mobile-menu-contact">
       <a href="tel:+390761251152">+39 0761-251152</a>
@@ -321,8 +358,12 @@
           <h3 class="footer-heading">Navigazione</h3>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="ristorante.html">Ristorante</a></li>
-            <li><a href="eventi.html">Eventi &amp; Cerimonie</a></li>
+            <li><a href="ristorante.html">Il Ristorante</a></li>
+            <li><a href="menu.html">Menu &amp; Offerte</a></li>
+            <li><a href="parco.html">Il Parco</a></li>
+            <li><a href="sposi.html">Sposi &amp; Matrimoni</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="itinerari.html">Cosa Visitare</a></li>
             <li><a href="chi-siamo.html">Chi Siamo</a></li>
             <li><a href="contatti.html">Contatti</a></li>
           </ul>

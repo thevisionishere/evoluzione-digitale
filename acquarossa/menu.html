@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu &amp; Offerte — Acquarossa | Menu Completo del Ristorante a Viterbo</title>
+  <meta name="description" content="Menu del Ristorante Acquarossa: pranzo da €9, buffet sabato €20, giro pizza €22. Antipasti, primi, secondi, pizza, dessert. Cucina tradizionale viterbese.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-menu">
+
+  <!-- ============================================
+       SCROLL PROGRESS BAR
+       ============================================ -->
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Ristorante Acquarossa — Home">Acquarossa</a>
+
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <ul class="header-nav-list">
+          <li><a href="index.html" class="header-nav-link">Home</a></li>
+          <li class="nav-has-dropdown">
+            <a href="ristorante.html" class="header-nav-link active">Il Ristorante</a>
+            <div class="header-nav-dropdown">
+              <a href="menu.html" class="active">Menu &amp; Offerte</a>
+            </div>
+          </li>
+          <li><a href="parco.html" class="header-nav-link">Il Parco</a></li>
+          <li class="nav-has-dropdown">
+            <a href="eventi.html" class="header-nav-link">Cerimonie</a>
+            <div class="header-nav-dropdown">
+              <a href="sposi.html">Sposi &amp; Matrimoni</a>
+              <a href="eventi.html">Eventi</a>
+            </div>
+          </li>
+          <li><a href="itinerari.html" class="header-nav-link">Cosa Visitare</a></li>
+          <li><a href="chi-siamo.html" class="header-nav-link">Chi Siamo</a></li>
+          <li><a href="contatti.html" class="header-nav-link">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <a href="contatti.html" class="btn btn-primary header-cta magnetic-btn">Prenota</a>
+
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MOBILE MENU — Fullscreen Overlay
+       ============================================ -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <div class="mobile-menu-group">
+        <button class="mobile-menu-group-toggle active" aria-expanded="false">
+          Il Ristorante
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="mobile-menu-sublinks">
+          <a href="ristorante.html" class="mobile-menu-sublink">Il Ristorante</a>
+          <a href="menu.html" class="mobile-menu-sublink active">Menu &amp; Offerte</a>
+        </div>
+      </div>
+      <a href="parco.html" class="mobile-menu-link">Il Parco</a>
+      <div class="mobile-menu-group">
+        <button class="mobile-menu-group-toggle" aria-expanded="false">
+          Cerimonie
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="mobile-menu-sublinks">
+          <a href="sposi.html" class="mobile-menu-sublink">Sposi &amp; Matrimoni</a>
+          <a href="eventi.html" class="mobile-menu-sublink">Eventi</a>
+        </div>
+      </div>
+      <a href="itinerari.html" class="mobile-menu-link">Cosa Visitare</a>
+      <a href="chi-siamo.html" class="mobile-menu-link">Chi Siamo</a>
+      <a href="contatti.html" class="mobile-menu-link">Contatti</a>
+    </nav>
+    <div class="mobile-menu-contact">
+      <a href="tel:+390761251152">+39 0761-251152</a>
+      <a href="mailto:info@acquarossa.it">info@acquarossa.it</a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         HERO INTERNO (50vh)
+         ========================================== -->
+    <section class="hero-internal" aria-label="Menu e Offerte del Ristorante Acquarossa">
+      <div class="hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=1080&fit=crop&q=80"
+          alt="Piatto di cucina fine dining"
+          fetchpriority="high"
+        >
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-label">Acquarossa</p>
+        <h1 class="hero-title">Menu &amp; Offerte</h1>
+        <p class="hero-description">I sapori della Tuscia, dal pranzo alla cena</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES LIST (zig-zag con prezzi)
+         ========================================== -->
+    <section class="services-list" aria-label="Le nostre offerte speciali">
+      <div class="container">
+
+        <div class="services-list-header reveal-up">
+          <h2>Le Nostre Offerte</h2>
+          <p>Per ogni occasione, un'esperienza di gusto</p>
+        </div>
+
+        <!-- Row 1: Menu Pranzo Settimanale -->
+        <div class="service-row reveal-up">
+          <div class="service-row-image">
+            <img
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop&q=80"
+              alt="Piatto del pranzo settimanale"
+              loading="lazy"
+            >
+          </div>
+          <div class="service-row-content">
+            <h3>Menu Pranzo Settimanale</h3>
+            <div class="service-row-price">€9,00</div>
+            <p>Primo, secondo e contorno a scelta. Dal lunedì al venerdì, 12:30–15:30. Festivi e prefestivi esclusi.</p>
+          </div>
+        </div>
+
+        <!-- Row 2: Buffet del Sabato Sera -->
+        <div class="service-row reveal-up">
+          <div class="service-row-image">
+            <img
+              src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop&q=80"
+              alt="Buffet con varietà di piatti"
+              loading="lazy"
+            >
+          </div>
+          <div class="service-row-content">
+            <h3>Buffet del Sabato Sera</h3>
+            <div class="service-row-price">€20,00</div>
+            <p>Antipasti, fritti, show cooking di primi, secondi, carne alla brace con cottura espressa, pizza e contorni. Dolci e bevande esclusi. Sabato 19:00–22:00.</p>
+          </div>
+        </div>
+
+        <!-- Row 3: Giro Pizza -->
+        <div class="service-row reveal-up">
+          <div class="service-row-image">
+            <img
+              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop&q=80"
+              alt="Pizza dal forno a legna"
+              loading="lazy"
+            >
+          </div>
+          <div class="service-row-content">
+            <h3>Giro Pizza</h3>
+            <div class="service-row-price">€22,00</div>
+            <p>Antipasto con fritti, crostini e salumi. Pizza a volontà, dolce e bevande incluse.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MENU COMPLETO
+         ========================================== -->
+    <section class="menu-section" aria-label="Il menu completo del ristorante">
+      <div class="container">
+
+        <div class="services-list-header reveal-up">
+          <h2>Il Menu Completo</h2>
+          <p>Cucina tradizionale con prodotti freschi di stagione</p>
+        </div>
+
+        <!-- Pranzo Veloce -->
+        <div class="menu-category reveal-up">
+          <h3 class="menu-category-title">Pranzo Veloce</h3>
+          <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin-block-end: var(--space-4);">Primo, secondo e contorno a scelta. Dal lunedì al venerdì, 12:30–15:30 — tutto a €10,00.</p>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Tagliolini al cinghiale</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Agnolotti all'etrusca</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Porchetta di maiale</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Fettine ai ferri</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Insalata / Patate al forno / Zucchine grigliate</div>
+            </div>
+            <div class="menu-item-price">€10,00</div>
+          </div>
+        </div>
+
+        <!-- Antipasti -->
+        <div class="menu-category reveal-up" data-delay="1">
+          <h3 class="menu-category-title">Antipasti</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Bruschette miste</div>
+            </div>
+            <div class="menu-item-price">€6,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Tagliere di salumi e formaggi</div>
+            </div>
+            <div class="menu-item-price">€12,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Crostini alla toscana</div>
+            </div>
+            <div class="menu-item-price">€7,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Antipasto della casa</div>
+            </div>
+            <div class="menu-item-price">€10,00</div>
+          </div>
+        </div>
+
+        <!-- Primi Piatti -->
+        <div class="menu-category reveal-up">
+          <h3 class="menu-category-title">Primi Piatti</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Agnolotti all'Etrusca</div>
+            </div>
+            <div class="menu-item-price">€10,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Lombrichelli al ragù</div>
+            </div>
+            <div class="menu-item-price">€9,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Pappardelle al cinghiale</div>
+            </div>
+            <div class="menu-item-price">€10,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Penne all'arrabbiata</div>
+            </div>
+            <div class="menu-item-price">€8,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Fettuccine ai funghi porcini</div>
+            </div>
+            <div class="menu-item-price">€12,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Risotto alla zucca</div>
+            </div>
+            <div class="menu-item-price">€10,00</div>
+          </div>
+        </div>
+
+        <!-- Secondi Piatti -->
+        <div class="menu-category reveal-up" data-delay="1">
+          <h3 class="menu-category-title">Secondi Piatti</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Tagliata alla brace</div>
+            </div>
+            <div class="menu-item-price">€16,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Filetto di maiale</div>
+            </div>
+            <div class="menu-item-price">€14,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Pollo alla cacciatora</div>
+            </div>
+            <div class="menu-item-price">€12,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Abbacchio a scottadito</div>
+            </div>
+            <div class="menu-item-price">€15,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Grigliata mista</div>
+            </div>
+            <div class="menu-item-price">€18,00</div>
+          </div>
+        </div>
+
+        <!-- Contorni -->
+        <div class="menu-category reveal-up">
+          <h3 class="menu-category-title">Contorni</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Patate al forno</div>
+            </div>
+            <div class="menu-item-price">€4,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Verdure grigliate</div>
+            </div>
+            <div class="menu-item-price">€5,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Insalata mista</div>
+            </div>
+            <div class="menu-item-price">€4,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Cicoria ripassata</div>
+            </div>
+            <div class="menu-item-price">€5,00</div>
+          </div>
+        </div>
+
+        <!-- Pizzeria -->
+        <div class="menu-category reveal-up" data-delay="1">
+          <h3 class="menu-category-title">Pizzeria</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Margherita</div>
+            </div>
+            <div class="menu-item-price">€6,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Marinara</div>
+            </div>
+            <div class="menu-item-price">€5,50</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Diavola</div>
+            </div>
+            <div class="menu-item-price">€8,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Capricciosa</div>
+            </div>
+            <div class="menu-item-price">€8,50</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Quattro Stagioni</div>
+            </div>
+            <div class="menu-item-price">€9,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Pizza Acquarossa</div>
+            </div>
+            <div class="menu-item-price">€10,00</div>
+          </div>
+        </div>
+
+        <!-- Dessert -->
+        <div class="menu-category reveal-up">
+          <h3 class="menu-category-title">Dessert</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Tiramisù</div>
+            </div>
+            <div class="menu-item-price">€5,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Panna cotta</div>
+            </div>
+            <div class="menu-item-price">€5,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Crostata della casa</div>
+            </div>
+            <div class="menu-item-price">€4,50</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Semifreddo al torrone</div>
+            </div>
+            <div class="menu-item-price">€5,00</div>
+          </div>
+        </div>
+
+        <!-- Bevande -->
+        <div class="menu-category reveal-up" data-delay="1">
+          <h3 class="menu-category-title">Bevande</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Acqua minerale (1L)</div>
+            </div>
+            <div class="menu-item-price">€2,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Bibita in lattina</div>
+            </div>
+            <div class="menu-item-price">€3,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Birra alla spina (media)</div>
+            </div>
+            <div class="menu-item-price">€4,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Birra alla spina (grande)</div>
+            </div>
+            <div class="menu-item-price">€6,00</div>
+          </div>
+        </div>
+
+        <!-- Caffetteria -->
+        <div class="menu-category reveal-up">
+          <h3 class="menu-category-title">Caffetteria</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Espresso</div>
+            </div>
+            <div class="menu-item-price">€1,20</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Cappuccino</div>
+            </div>
+            <div class="menu-item-price">€1,50</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Caffè corretto</div>
+            </div>
+            <div class="menu-item-price">€1,50</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Amaro</div>
+            </div>
+            <div class="menu-item-price">€3,00</div>
+          </div>
+        </div>
+
+        <!-- Vini -->
+        <div class="menu-category reveal-up" data-delay="1">
+          <h3 class="menu-category-title">Vini</h3>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Vino della casa (1/4L)</div>
+            </div>
+            <div class="menu-item-price">€3,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Vino della casa (1/2L)</div>
+            </div>
+            <div class="menu-item-price">€5,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Vino della casa (1L)</div>
+            </div>
+            <div class="menu-item-price">€9,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Est! Est!! Est!!! di Montefiascone</div>
+            </div>
+            <div class="menu-item-price">€12,00</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <div class="menu-item-name">Montepulciano d'Abruzzo</div>
+            </div>
+            <div class="menu-item-price">€14,00</div>
+          </div>
+        </div>
+
+        <!-- Allergen Note -->
+        <div class="menu-allergen-note reveal-up">
+          Per informazioni su allergeni e intolleranze alimentari (Reg. UE 1169/2011), rivolgersi al personale di sala. I prezzi sono comprensivi di IVA.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA BANNER — Style B (Split)
+         ========================================== -->
+    <section class="cta-banner" aria-label="Prenota il tuo tavolo">
+      <div class="cta-banner-image">
+        <img
+          src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&h=600&fit=crop&q=80"
+          alt="Atmosfera del ristorante Acquarossa"
+          loading="lazy"
+        >
+      </div>
+      <div class="cta-banner-content">
+        <h2>Prenota il Tuo Tavolo</h2>
+        <p>Vuoi assicurarti un posto? Chiamaci o scrivici per prenotare.</p>
+        <a href="contatti.html" class="btn btn-primary magnetic-btn">Prenota Ora</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Acquarossa</a>
+          <p>Tradizione, eleganza e sapori autentici dal 1970 nel cuore della Tuscia.</p>
+        </div>
+        <div class="footer-nav">
+          <h3 class="footer-heading">Navigazione</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ristorante.html">Il Ristorante</a></li>
+            <li><a href="menu.html">Menu &amp; Offerte</a></li>
+            <li><a href="parco.html">Il Parco</a></li>
+            <li><a href="sposi.html">Sposi &amp; Matrimoni</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="itinerari.html">Cosa Visitare</a></li>
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="footer-hours">
+          <h3 class="footer-heading">Orari</h3>
+          <ul class="footer-links">
+            <li>Lun–Mar: 12:30–15:30 / 19:30–22:00</li>
+            <li>Mer: <strong class="footer-closed">Chiuso</strong></li>
+            <li>Gio–Dom: 12:30–15:30 / 19:30–22:00</li>
+          </ul>
+        </div>
+        <div class="footer-contacts">
+          <h3 class="footer-heading">Contatti</h3>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Strada Teverina 86, 01100 Viterbo (VT)</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <a href="tel:+390761251152">+39 0761-251152</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <a href="tel:+393397653237">+39 339-7653237</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:info@acquarossa.it">info@acquarossa.it</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Seguici su Facebook" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Seguici su Instagram" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Ristorante Acquarossa &mdash; P.IVA 01990200568</p>
+        <p>Strada Teverina 86, Viterbo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       WHATSAPP BUTTON
+       ============================================ -->
+  <a href="https://wa.me/393397653237" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

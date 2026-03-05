@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!isMobile) initMagneticButtons();
   initSmoothScroll();
   initActiveNav();
+  initMobileDropdowns();
   initForms();
   initDynamicYear();
   initMarquee();
@@ -416,7 +417,12 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================== */
   function initActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.header-nav-link, .mobile-menu-link');
+    const navLinks = document.querySelectorAll('.header-nav-link, .mobile-menu-link, .mobile-menu-sublink, .header-nav-dropdown a');
+
+    const parentMap = {
+      'menu.html': 'ristorante.html',
+      'sposi.html': 'eventi.html'
+    };
 
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
@@ -428,6 +434,59 @@ document.addEventListener('DOMContentLoaded', () => {
           (currentPage === 'index.html' && linkPage === 'index.html')) {
         link.classList.add('active');
       }
+
+      if (parentMap[currentPage] && linkPage === parentMap[currentPage]) {
+        link.classList.add('active');
+      }
+    });
+
+    if (parentMap[currentPage]) {
+      document.querySelectorAll('.mobile-menu-group').forEach(group => {
+        const sublinks = group.querySelectorAll('.mobile-menu-sublink');
+        sublinks.forEach(sl => {
+          if (sl.getAttribute('href')?.split('/').pop() === currentPage) {
+            const toggle = group.querySelector('.mobile-menu-group-toggle');
+            if (toggle) toggle.classList.add('active');
+          }
+        });
+      });
+    }
+  }
+
+  /* ==========================================
+     MOBILE DROPDOWN GROUPS
+     ========================================== */
+  function initMobileDropdowns() {
+    const groups = document.querySelectorAll('.mobile-menu-group');
+    groups.forEach(group => {
+      const toggle = group.querySelector('.mobile-menu-group-toggle');
+      if (!toggle) return;
+
+      toggle.addEventListener('click', () => {
+        const isOpen = group.classList.contains('open');
+        groups.forEach(g => {
+          g.classList.remove('open');
+          const t = g.querySelector('.mobile-menu-group-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          group.classList.add('open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.querySelectorAll('.mobile-menu-sublink').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.querySelector('.mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+        if (menu) menu.classList.remove('open');
+        if (hamburger) {
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+        document.body.classList.remove('no-scroll');
+      });
     });
   }
 

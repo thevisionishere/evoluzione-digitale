@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Il Ristorante — Acquarossa | Menu e Cucina Tradizionale a Viterbo</title>
-  <meta name="description" content="Menu e offerte del Ristorante Acquarossa: pranzo da €9, buffet sabato €20, giro pizza, degustazione mare. Cucina tradizionale e innovazione a Viterbo.">
+  <title>Il Parco — Acquarossa | 5.000 mq di Verde nel Cuore della Tuscia</title>
+  <meta name="description" content="Il parco del Ristorante Acquarossa: 5.000 mq di giardini, cascate, ruscello, laghetto, gazebo e sentieri. La location perfetta per cerimonie ed eventi a Viterbo.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-ristorante">
+<body class="page-parco">
 
   <!-- ============================================
        SCROLL PROGRESS BAR
@@ -37,7 +37,7 @@
               <a href="menu.html">Menu &amp; Offerte</a>
             </div>
           </li>
-          <li><a href="parco.html" class="header-nav-link">Il Parco</a></li>
+          <li><a href="parco.html" class="header-nav-link active">Il Parco</a></li>
           <li class="nav-has-dropdown">
             <a href="eventi.html" class="header-nav-link">Cerimonie</a>
             <div class="header-nav-dropdown">
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <a href="parco.html" class="mobile-menu-link">Il Parco</a>
+      <a href="parco.html" class="mobile-menu-link active">Il Parco</a>
 
       <div class="mobile-menu-group">
         <button class="mobile-menu-group-toggle" aria-expanded="false">
@@ -108,284 +108,209 @@
   <main id="main-content">
 
     <!-- ==========================================
-         HERO INTERNO (50vh)
+         HERO INTERNO — 50vh
          ========================================== -->
-    <section class="hero-internal" aria-label="Il Ristorante Acquarossa">
+    <section class="hero-internal" aria-label="Il Parco — 5.000 mq di Verde nel Cuore della Tuscia">
       <div class="hero-bg">
         <img
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=1080&fit=crop&q=80"
-          alt="Piatti della cucina tradizionale"
+          src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1920&h=1080&fit=crop&q=80"
+          alt="Vialetto tra giardini lussureggianti"
           fetchpriority="high"
         >
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
+
       <div class="hero-content">
         <p class="hero-label">Acquarossa</p>
-        <h1 class="hero-title">Il Ristorante</h1>
-        <p class="hero-description">Cucina tradizionale e innovazione, dal forno a legna alla brace</p>
+        <h1 class="hero-title">Il Parco</h1>
+        <p class="hero-description">5.000 mq di giardini, cascate e natura nel cuore della Tuscia</p>
       </div>
     </section>
 
     <!-- ==========================================
-         ABOUT SECTION (2-column: image + text)
+         ABOUT SECTION — Un Giardino Incantato
          ========================================== -->
-    <section class="about-section" aria-label="La nostra cucina">
+    <section class="about-section" aria-label="Il parco di Acquarossa: un giardino incantato">
       <div class="container">
         <div class="about-grid">
           <div class="about-image reveal-up">
             <img
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop&q=80"
-              alt="Cucina del ristorante"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop&q=80"
+              alt="Fontana e giochi d'acqua nel giardino del parco"
               loading="lazy"
             >
           </div>
           <div class="about-content reveal-up" data-delay="1">
-            <h2>La Nostra Cucina</h2>
-            <p>Da oltre cinquant'anni portiamo in tavola i sapori autentici della Tuscia. La nostra cucina unisce tradizione e innovazione: dalla pizza al forno a legna alle specialità alla brace, dai primi piatti della tradizione viterbese al menu degustazione di mare.</p>
-            <p>Ogni piatto racconta il territorio, ogni ingrediente è scelto con cura. Che sia un pranzo di lavoro veloce o una cena con amici, qui trovi qualità e accoglienza.</p>
+            <h2>Un Giardino Incantato</h2>
+            <p>Oltre 5.000 metri quadrati di giardini curati, giochi d'acqua, vialetti, cascatelle, il torrente, il laghetto e le zone attrezzate con gazebo e coperture. Il parco è l'anima di Acquarossa.</p>
+            <p>Nella bella stagione, il parco diventa il complemento ideale per cerimonie e banchetti: aperitivi tra il verde, buffet all'aperto, e un punto di relax unico per i vostri ospiti.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         LE NOSTRE SPECIALITÀ
+         CARD GRID — Gli Elementi del Parco (6 cards, cols-3)
          ========================================== -->
-    <section class="card-grid-section bg-alt" aria-label="Le nostre specialità">
+    <section class="card-grid-section bg-alt" aria-label="Gli elementi del parco di Acquarossa">
       <div class="container">
         <div class="card-grid-header reveal-up">
-          <h2>Le Nostre Specialità</h2>
-          <p>I piatti che ci rendono unici</p>
+          <h2>Gli Elementi del Parco</h2>
+          <p>Un mondo di natura e bellezza</p>
         </div>
 
         <div class="card-grid cols-3">
-          <article class="card reveal-up" data-delay="1">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
-              </svg>
-            </div>
-            <h3>Agnolotti all'Etrusca</h3>
-            <p>Pasta fresca ripiena, ricetta tramandata dalla tradizione viterbese. Il nostro piatto simbolo da oltre 50 anni.</p>
-          </article>
 
-          <article class="card reveal-up" data-delay="2">
+          <!-- Card 1: I Giardini -->
+          <article class="card reveal-up" data-delay="1">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
               </svg>
             </div>
-            <h3>Lombrichelli</h3>
-            <p>Pasta fatta a mano tipica della Tuscia, servita con sughi tradizionali e ingredienti del territorio.</p>
+            <h3>I Giardini</h3>
+            <p>Vialetti curati, aiuole fiorite e alberi secolari creano angoli suggestivi perfetti per passeggiate e fotografie.</p>
           </article>
 
+          <!-- Card 2: Le Cascate d'Acqua -->
+          <article class="card reveal-up" data-delay="2">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
+              </svg>
+            </div>
+            <h3>Le Cascate d'Acqua</h3>
+            <p>Giochi d'acqua e cascatelle accompagnano il percorso nel verde, regalando un'atmosfera rilassante.</p>
+          </article>
+
+          <!-- Card 3: Il Ruscello e il Laghetto -->
           <article class="card reveal-up" data-delay="3">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13.12 2.06L7.58 7.6c-.37.37-.58.88-.58 1.41V19c0 1.1.9 2 2 2h9c.8 0 1.52-.48 1.84-1.21l3.26-7.61C23.94 10.2 22.49 8 20.34 8h-5.65l.95-4.58c.1-.5-.05-1.01-.41-1.37-.59-.58-1.53-.58-2.11.01zM3 21c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2s-2 .9-2 2v8c0 1.1.9 2 2 2z"/>
+                <path d="M12 2L7 9h2l-3 5h3l-4 7h7v-4h2v4h7l-4-7h3l-3-5h2z"/>
               </svg>
             </div>
-            <h3>Carne alla Brace</h3>
-            <p>Tagli selezionati cotti alla brace con la maestria di oltre mezzo secolo di esperienza. Dal filetto alla tagliata.</p>
+            <h3>Il Ruscello e il Laghetto</h3>
+            <p>Un ruscello naturale e un laghetto arricchiscono il parco con scorci di natura incontaminata.</p>
           </article>
+
+          <!-- Card 4: I Gazebo -->
+          <article class="card reveal-up" data-delay="1">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3L2 9h2v11h7v-4h2v4h7V9h2L12 3zm0 2.5L20 10H4l8-4.5zm-1 6.5h2v2h-2v-2z"/>
+              </svg>
+            </div>
+            <h3>I Gazebo</h3>
+            <p>Zone attrezzate con gazebo e coperture per celebrare cerimonie e ricevimenti all'aperto.</p>
+          </article>
+
+          <!-- Card 5: I Sentieri Illuminati -->
+          <article class="card reveal-up" data-delay="2">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/>
+              </svg>
+            </div>
+            <h3>I Sentieri Illuminati</h3>
+            <p>Percorsi illuminati che rendono il parco magico anche nelle serate estive.</p>
+          </article>
+
+          <!-- Card 6: La Cascata del Bacio -->
+          <article class="card reveal-up" data-delay="3">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h3>La Cascata del Bacio</h3>
+            <p>Il nostro angolo più romantico: una cascata naturale perfetta per il vostro momento speciale.</p>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         SERVICES LIST (zig-zag con prezzi)
+         GALLERY — Scorci del Parco (6 immagini)
          ========================================== -->
-    <section class="services-list" aria-label="Menu e offerte del ristorante">
+    <section class="gallery" aria-label="Galleria fotografica del parco di Acquarossa">
       <div class="container">
-        <div class="services-list-header reveal-up">
-          <h2>Menu e Offerte</h2>
-          <p>Per ogni occasione, un'esperienza di gusto</p>
+        <div class="gallery-header reveal-up">
+          <h2>Scorci del Parco</h2>
         </div>
+        <div class="gallery-grid">
 
-        <!-- Row 1: Menu Pranzo Settimanale -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+          <!-- Item 1 -->
+          <div class="gallery-item reveal-up">
             <img
-              src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=500&fit=crop&q=80"
-              alt="Piatto pranzo"
+              src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=900&h=600&fit=crop&q=80"
+              alt="Giardini del parco con alberi secolari"
               loading="lazy"
             >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <span class="gallery-item-label">I Giardini</span>
+            </div>
           </div>
-          <div class="service-row-content">
-            <h3>Menu Pranzo Settimanale</h3>
-            <div class="service-row-price">€9,00</div>
-            <p>Primo, secondo e contorno. Dal lunedì al venerdì, 12:30–15:30. Il pranzo perfetto per chi lavora in zona.</p>
-          </div>
-        </div>
 
-        <!-- Row 2: Buffet del Sabato Sera -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+          <!-- Item 2 -->
+          <div class="gallery-item reveal-up" data-delay="1">
             <img
-              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=500&fit=crop&q=80"
-              alt="Buffet ricco"
+              src="https://images.unsplash.com/photo-1520697830682-bbb6e85e2b0b?w=600&h=600&fit=crop&q=80"
+              alt="Cascata d'acqua nel verde"
               loading="lazy"
             >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <span class="gallery-item-label">Le Cascate</span>
+            </div>
           </div>
-          <div class="service-row-content">
-            <h3>Buffet del Sabato Sera</h3>
-            <div class="service-row-price">€20,00</div>
-            <p>Antipasti, fritti, primi in show cooking, secondi, carne alla brace, pizza e contorni. Esclusi dolci e bevande. Dalle 19:00 alle 22:00.</p>
-          </div>
-        </div>
 
-        <!-- Row 3: Giro Pizza -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+          <!-- Item 3 -->
+          <div class="gallery-item reveal-up" data-delay="2">
             <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=500&fit=crop&q=80"
-              alt="Pizza al forno a legna"
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&h=600&fit=crop&q=80"
+              alt="Vialetto illuminato tra gli alberi"
               loading="lazy"
             >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <span class="gallery-item-label">I Sentieri</span>
+            </div>
           </div>
-          <div class="service-row-content">
-            <h3>Giro Pizza</h3>
-            <div class="service-row-price">€22,00</div>
-            <p>Antipasto con fritti, crostini e salumi, pizza a volontà, dolce e bevande incluse. Per una serata con amici all'insegna del gusto.</p>
-          </div>
-        </div>
 
-        <!-- Row 4: Giro Pizza Bambini -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+          <!-- Item 4 -->
+          <div class="gallery-item reveal-up" data-delay="1">
             <img
-              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=500&fit=crop&q=80"
-              alt="Pizza per bambini"
+              src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=600&h=800&fit=crop&q=80"
+              alt="Laghetto circondato dal verde"
               loading="lazy"
             >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <span class="gallery-item-label">Il Laghetto</span>
+            </div>
           </div>
-          <div class="service-row-content">
-            <h3>Giro Pizza Bambini</h3>
-            <div class="service-row-price">€15,00</div>
-            <p>Pizza a volontà per i più piccoli, con dolce e bevande. Perché anche i bambini meritano una serata speciale.</p>
-          </div>
-        </div>
 
-        <!-- Row 5: Menu Degustazione Mare -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+          <!-- Item 5 -->
+          <div class="gallery-item reveal-up" data-delay="2">
             <img
-              src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800&h=500&fit=crop&q=80"
-              alt="Piatto di pesce"
+              src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=600&h=600&fit=crop&q=80"
+              alt="Gazebo allestito per cerimonia"
               loading="lazy"
             >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <span class="gallery-item-label">I Gazebo</span>
+            </div>
           </div>
-          <div class="service-row-content">
-            <h3>Menu Degustazione Mare</h3>
-            <div class="service-row-price">€40,00</div>
-            <p>Un viaggio nei sapori del mare. Portate a sorpresa dallo chef, per gli amanti del pesce fresco.</p>
-          </div>
-        </div>
 
-        <!-- Row 6: Menu à la Carte -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+          <!-- Item 6 -->
+          <div class="gallery-item reveal-up" data-delay="3">
             <img
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=500&fit=crop&q=80"
-              alt="Menu alla carta"
+              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=600&fit=crop&q=80"
+              alt="Fiori e sentieri nel parco"
               loading="lazy"
             >
-          </div>
-          <div class="service-row-content">
-            <h3>Menu à la Carte</h3>
-            <p>Carne, pesce, pizza al forno a legna, specialità alla brace e cucina espressa. Per ogni gusto e occasione, il meglio della tradizione viterbese.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================
-         CAROUSEL SECTION (galleria cibo/location)
-         ========================================== -->
-    <section class="carousel-section" aria-label="Galleria fotografica del ristorante">
-      <div class="container">
-        <div class="carousel-header reveal-up">
-          <h2>Galleria</h2>
-        </div>
-        <div class="carousel-track" role="list">
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&h=600&fit=crop&q=80"
-              alt="Piatto di pasta fresca"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=900&h=600&fit=crop&q=80"
-              alt="Carne alla brace"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&h=600&fit=crop&q=80"
-              alt="Pizza dal forno a legna"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=900&h=600&fit=crop&q=80"
-              alt="Atmosfera calda del ristorante"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&h=600&fit=crop&q=80"
-              alt="Tavoli nel giardino"
-              loading="lazy"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         INFO CARD (orari e prenotazioni)
-         ========================================== -->
-    <section class="info-card-section" aria-label="Orari e prenotazioni">
-      <div class="container">
-        <div class="info-card reveal-up">
-          <h3>Orari e Prenotazioni</h3>
-
-          <div class="info-card-item">
-            <!-- Clock icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
-            </svg>
-            <span>Pranzo: 12:30–15:30 &nbsp;|&nbsp; Cena: 19:30–22:00</span>
-          </div>
-
-          <div class="info-card-item">
-            <!-- X-circle / closed icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
-            </svg>
-            <span>Chiuso il Mercoledì</span>
-          </div>
-
-          <div class="info-card-item">
-            <!-- Phone icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <a href="tel:+390761251152">+39 0761-251152</a>
-          </div>
-
-          <div class="info-card-item">
-            <!-- Phone icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <a href="tel:+393397653237">+39 339-7653237</a>
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <span class="gallery-item-label">I Fiori</span>
+            </div>
           </div>
 
         </div>
@@ -395,17 +320,17 @@
     <!-- ==========================================
          CTA BANNER — Style B (Split)
          ========================================== -->
-    <section class="cta-banner" aria-label="Prenota il tuo tavolo">
+    <section class="cta-banner" aria-label="Celebra il tuo evento nel parco di Acquarossa">
       <div class="cta-banner-image">
         <img
-          src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&h=600&fit=crop&q=80"
-          alt="Cena al ristorante con atmosfera intima"
+          src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop&q=80"
+          alt="Allestimento per cerimonia nel verde"
           loading="lazy"
         >
       </div>
       <div class="cta-banner-content">
-        <h2>Prenota il Tuo Tavolo</h2>
-        <p>Per prenotazioni e informazioni, contattaci telefonicamente o compila il form.</p>
+        <h2>Celebra nel Verde</h2>
+        <p>Il parco è la cornice perfetta per il tuo evento. Contattaci per organizzare la tua cerimonia all'aperto.</p>
         <a href="contatti.html" class="btn btn-primary magnetic-btn">Contattaci</a>
       </div>
     </section>
@@ -418,6 +343,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
+
         <!-- Column 1: Brand -->
         <div class="footer-brand">
           <a href="index.html" class="footer-logo">Acquarossa</a>
@@ -493,6 +419,7 @@
             </a>
           </div>
         </div>
+
       </div>
 
       <div class="footer-bottom">
@@ -511,7 +438,6 @@
     </svg>
   </a>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -463,6 +463,89 @@ p:last-child {
   color: var(--color-accent-light);
 }
 
+/* ============================================
+   DROPDOWN NAVIGATION
+   ============================================ */
+.header-nav-list > li {
+  position: relative;
+}
+
+.header-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 200px;
+  background-color: var(--color-dark);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: var(--space-3) 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-fast) var(--ease-out),
+              visibility var(--duration-fast),
+              transform var(--duration-fast) var(--ease-out);
+  z-index: 100;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+.header-nav-list > li:hover .header-nav-dropdown,
+.header-nav-list > li:focus-within .header-nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.nav-has-dropdown > .header-nav-link {
+  padding-bottom: 14px;
+  margin-bottom: -14px;
+}
+
+.header-nav-dropdown a {
+  display: block;
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.header-nav-dropdown a:hover,
+.header-nav-dropdown a.active {
+  color: var(--color-light);
+  background-color: rgba(139, 58, 42, 0.2);
+}
+
+.nav-has-dropdown > .header-nav-link::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid currentColor;
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform var(--duration-fast) var(--ease-out);
+  position: static;
+  background: none;
+}
+
+.nav-has-dropdown > .header-nav-link:hover::after,
+.nav-has-dropdown > .header-nav-link.active::after {
+  width: 0;
+  transform: rotate(0deg);
+}
+
+.nav-has-dropdown:hover > .header-nav-link::after {
+  transform: rotate(180deg);
+}
+
 .header-cta {
   display: none;
 }
@@ -557,11 +640,88 @@ p:last-child {
   color: var(--color-accent-light);
 }
 
-.mobile-menu-link:nth-child(1) { transition-delay: 100ms; }
-.mobile-menu-link:nth-child(2) { transition-delay: 150ms; }
-.mobile-menu-link:nth-child(3) { transition-delay: 200ms; }
-.mobile-menu-link:nth-child(4) { transition-delay: 250ms; }
-.mobile-menu-link:nth-child(5) { transition-delay: 300ms; }
+.mobile-menu-nav > *:nth-child(1) { transition-delay: 100ms; }
+.mobile-menu-nav > *:nth-child(2) { transition-delay: 130ms; }
+.mobile-menu-nav > *:nth-child(3) { transition-delay: 160ms; }
+.mobile-menu-nav > *:nth-child(4) { transition-delay: 190ms; }
+.mobile-menu-nav > *:nth-child(5) { transition-delay: 220ms; }
+.mobile-menu-nav > *:nth-child(6) { transition-delay: 250ms; }
+.mobile-menu-nav > *:nth-child(7) { transition-delay: 280ms; }
+.mobile-menu-nav > *:nth-child(8) { transition-delay: 310ms; }
+
+/* --- Mobile Menu Dropdown Groups --- */
+.mobile-menu-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.mobile-menu.open .mobile-menu-group {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-group-toggle {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.mobile-menu-group-toggle:hover,
+.mobile-menu-group-toggle.active {
+  color: var(--color-accent-light);
+}
+
+.mobile-menu-group-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.mobile-menu-group.open .mobile-menu-group-toggle svg {
+  transform: rotate(180deg);
+}
+
+.mobile-menu-sublinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-normal) var(--ease-out),
+              padding var(--duration-normal) var(--ease-out);
+}
+
+.mobile-menu-group.open .mobile-menu-sublinks {
+  max-height: 200px;
+  padding-top: var(--space-3);
+}
+
+.mobile-menu-sublink {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.mobile-menu-sublink:hover,
+.mobile-menu-sublink.active {
+  color: var(--color-accent-light);
+}
 
 .mobile-menu-contact {
   display: flex;
@@ -2525,4 +2685,144 @@ body.custom-cursor select {
   font-size: var(--text-lg);
   color: var(--color-text-muted);
   line-height: var(--leading-relaxed);
+}
+
+/* ============================================
+   MENU PAGE — Menu Table Styling
+   ============================================ */
+.menu-section {
+  padding: var(--section-padding) 0;
+}
+
+.menu-category {
+  margin-block-end: var(--space-8);
+}
+
+.menu-category:last-child {
+  margin-block-end: 0;
+}
+
+.menu-category-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-dark);
+  margin-block-end: var(--space-5);
+  padding-block-end: var(--space-3);
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid rgba(61, 42, 31, 0.1);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-info {
+  flex: 1;
+}
+
+.menu-item-name {
+  font-weight: var(--weight-medium);
+  font-size: var(--text-base);
+  color: var(--color-text-dark);
+}
+
+.menu-item-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.menu-item-price {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-left: var(--space-4);
+}
+
+.menu-allergen-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-8);
+  padding: var(--space-4);
+  border: 1px solid rgba(61, 42, 31, 0.15);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ============================================
+   ITINERARI — Attraction Cards
+   ============================================ */
+.attractions-section {
+  padding: var(--section-padding) 0;
+}
+
+.attraction-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-block-end: var(--space-9);
+  align-items: center;
+}
+
+.attraction-card:last-child {
+  margin-block-end: 0;
+}
+
+.attraction-card-image {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+}
+
+.attraction-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.attraction-card:hover .attraction-card-image img {
+  transform: scale(1.03);
+}
+
+.attraction-card-content h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-dark);
+  margin-block-end: var(--space-3);
+}
+
+.attraction-card-distance {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: var(--weight-medium);
+  margin-block-end: var(--space-3);
+}
+
+.attraction-card-content p {
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 768px) {
+  .attraction-card {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+  .attraction-card:nth-child(even) .attraction-card-image {
+    order: 2;
+  }
 }

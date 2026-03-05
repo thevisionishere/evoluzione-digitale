@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Il Ristorante — Acquarossa | Menu e Cucina Tradizionale a Viterbo</title>
-  <meta name="description" content="Menu e offerte del Ristorante Acquarossa: pranzo da €9, buffet sabato €20, giro pizza, degustazione mare. Cucina tradizionale e innovazione a Viterbo.">
-
-  <!-- Google Fonts -->
+  <title>Sposi &amp; Matrimoni — Acquarossa | Location Matrimoni e Rito Civile a Viterbo</title>
+  <meta name="description" content="Matrimoni al Ristorante Acquarossa: rito civile in giardino, la cascata del bacio, sale climatizzate, oltre 50 anni di esperienza. Location matrimoni Viterbo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-ristorante">
+<body class="page-sposi">
 
   <!-- ============================================
        SCROLL PROGRESS BAR
@@ -39,9 +35,9 @@
           </li>
           <li><a href="parco.html" class="header-nav-link">Il Parco</a></li>
           <li class="nav-has-dropdown">
-            <a href="eventi.html" class="header-nav-link">Cerimonie</a>
+            <a href="eventi.html" class="header-nav-link active">Cerimonie</a>
             <div class="header-nav-dropdown">
-              <a href="sposi.html">Sposi &amp; Matrimoni</a>
+              <a href="sposi.html" class="active">Sposi &amp; Matrimoni</a>
               <a href="eventi.html">Eventi</a>
             </div>
           </li>
@@ -67,7 +63,6 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
     <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
       <a href="index.html" class="mobile-menu-link">Home</a>
-
       <div class="mobile-menu-group">
         <button class="mobile-menu-group-toggle" aria-expanded="false">
           Il Ristorante
@@ -78,20 +73,17 @@
           <a href="menu.html" class="mobile-menu-sublink">Menu &amp; Offerte</a>
         </div>
       </div>
-
       <a href="parco.html" class="mobile-menu-link">Il Parco</a>
-
       <div class="mobile-menu-group">
-        <button class="mobile-menu-group-toggle" aria-expanded="false">
+        <button class="mobile-menu-group-toggle active" aria-expanded="false">
           Cerimonie
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
         </button>
         <div class="mobile-menu-sublinks">
-          <a href="sposi.html" class="mobile-menu-sublink">Sposi &amp; Matrimoni</a>
+          <a href="sposi.html" class="mobile-menu-sublink active">Sposi &amp; Matrimoni</a>
           <a href="eventi.html" class="mobile-menu-sublink">Eventi</a>
         </div>
       </div>
-
       <a href="itinerari.html" class="mobile-menu-link">Cosa Visitare</a>
       <a href="chi-siamo.html" class="mobile-menu-link">Chi Siamo</a>
       <a href="contatti.html" class="mobile-menu-link">Contatti</a>
@@ -108,304 +100,194 @@
   <main id="main-content">
 
     <!-- ==========================================
-         HERO INTERNO (50vh)
+         SECTION 1: HERO INTERNO (50vh)
          ========================================== -->
-    <section class="hero-internal" aria-label="Il Ristorante Acquarossa">
+    <section class="hero-internal" aria-label="Sposi e Matrimoni al Ristorante Acquarossa">
       <div class="hero-bg">
         <img
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=1080&fit=crop&q=80"
-          alt="Piatti della cucina tradizionale"
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=1080&fit=crop&q=80"
+          alt="Allestimento per cerimonia di matrimonio all'aperto"
           fetchpriority="high"
         >
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="hero-label">Acquarossa</p>
-        <h1 class="hero-title">Il Ristorante</h1>
-        <p class="hero-description">Cucina tradizionale e innovazione, dal forno a legna alla brace</p>
+        <h1 class="hero-title">Sposi &amp; Matrimoni</h1>
+        <p class="hero-description">La location da sogno per il vostro giorno più bello</p>
       </div>
     </section>
 
     <!-- ==========================================
-         ABOUT SECTION (2-column: image + text)
+         SECTION 2: ABOUT — Il Vostro Giorno Speciale
          ========================================== -->
-    <section class="about-section" aria-label="La nostra cucina">
+    <section class="about-section" aria-label="Il vostro giorno speciale ad Acquarossa">
       <div class="container">
         <div class="about-grid">
           <div class="about-image reveal-up">
             <img
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop&q=80"
-              alt="Cucina del ristorante"
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&h=600&fit=crop&q=80"
+              alt="Ricevimento di matrimonio elegante"
               loading="lazy"
             >
           </div>
           <div class="about-content reveal-up" data-delay="1">
-            <h2>La Nostra Cucina</h2>
-            <p>Da oltre cinquant'anni portiamo in tavola i sapori autentici della Tuscia. La nostra cucina unisce tradizione e innovazione: dalla pizza al forno a legna alle specialità alla brace, dai primi piatti della tradizione viterbese al menu degustazione di mare.</p>
-            <p>Ogni piatto racconta il territorio, ogni ingrediente è scelto con cura. Che sia un pranzo di lavoro veloce o una cena con amici, qui trovi qualità e accoglienza.</p>
+            <h2>Il Vostro Giorno Speciale</h2>
+            <p>Acquarossa è quanto di meglio possiamo mettere a disposizione del vostro giorno più importante. Un parco verde con giochi d'acqua che si sviluppa intorno al ristorante, un grande parcheggio, le ampie sale climatizzate, spaziose ed eleganti.</p>
+            <p>Con l'esperienza di oltre 50 anni nel settore della ristorazione e dell'accoglienza, il nostro staff personalizza ogni dettaglio dell'evento. Menu studiati su misura, allestimenti curati e un servizio professionale coordinato per rendere il vostro matrimonio indimenticabile.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         LE NOSTRE SPECIALITÀ
+         SECTION 3: CARD GRID — Perché Sceglierci
          ========================================== -->
-    <section class="card-grid-section bg-alt" aria-label="Le nostre specialità">
+    <section class="card-grid-section bg-alt" aria-label="Perché scegliere Acquarossa per il vostro matrimonio">
       <div class="container">
         <div class="card-grid-header reveal-up">
-          <h2>Le Nostre Specialità</h2>
-          <p>I piatti che ci rendono unici</p>
+          <h2>Perché Sceglierci</h2>
+          <p>Tutto ciò che serve per il giorno perfetto</p>
         </div>
+        <div class="card-grid cols-4">
 
-        <div class="card-grid cols-3">
+          <!-- Card 1: Parco con Giochi d'Acqua -->
           <article class="card reveal-up" data-delay="1">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                <path d="M17 8.5C17 5.46 14.54 3 11.5 3S6 5.46 6 8.5c0 1.57.65 2.98 1.68 4H5v2h14v-2h-2.68A6.483 6.483 0 0017 8.5zM8 8.5C8 6.57 9.57 5 11.5 5S15 6.57 15 8.5 13.43 12 11.5 12 8 10.43 8 8.5zm9.96 9.91A3.998 3.998 0 0114 16c-.34 0-.68.04-1 .1V14H5v2h6v.1A3.998 3.998 0 017.04 18.41l-1.89 1.01.9 1.69 1.88-1c.77.55 1.71.89 2.73.89s1.96-.34 2.73-.89l1.89 1.01.89-1.69-1.21-.52z"/>
               </svg>
             </div>
-            <h3>Agnolotti all'Etrusca</h3>
-            <p>Pasta fresca ripiena, ricetta tramandata dalla tradizione viterbese. Il nostro piatto simbolo da oltre 50 anni.</p>
+            <h3>Parco con Giochi d'Acqua</h3>
+            <p>5.000 mq di verde con cascate, ruscello, laghetto e gazebo per cerimonie all'aperto.</p>
           </article>
 
+          <!-- Card 2: Parcheggio Privato -->
           <article class="card reveal-up" data-delay="2">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
               </svg>
             </div>
-            <h3>Lombrichelli</h3>
-            <p>Pasta fatta a mano tipica della Tuscia, servita con sughi tradizionali e ingredienti del territorio.</p>
+            <h3>Parcheggio Privato</h3>
+            <p>Ampio parcheggio riservato per tutti i vostri ospiti, comodo e sicuro.</p>
           </article>
 
+          <!-- Card 3: Sale Climatizzate -->
           <article class="card reveal-up" data-delay="3">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13.12 2.06L7.58 7.6c-.37.37-.58.88-.58 1.41V19c0 1.1.9 2 2 2h9c.8 0 1.52-.48 1.84-1.21l3.26-7.61C23.94 10.2 22.49 8 20.34 8h-5.65l.95-4.58c.1-.5-.05-1.01-.41-1.37-.59-.58-1.53-.58-2.11.01zM3 21c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2s-2 .9-2 2v8c0 1.1.9 2 2 2z"/>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
               </svg>
             </div>
-            <h3>Carne alla Brace</h3>
-            <p>Tagli selezionati cotti alla brace con la maestria di oltre mezzo secolo di esperienza. Dal filetto alla tagliata.</p>
+            <h3>Sale Climatizzate</h3>
+            <p>Sale ampie, spaziose ed eleganti con clima controllato per ogni stagione.</p>
           </article>
+
+          <!-- Card 4: 50+ Anni di Esperienza -->
+          <article class="card reveal-up" data-delay="4">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+            </div>
+            <h3>50+ Anni di Esperienza</h3>
+            <p>Oltre mezzo secolo di cerimonie celebrate con passione e professionalità.</p>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         SERVICES LIST (zig-zag con prezzi)
+         SECTION 4: ABOUT REVERSED — La Cascata del Bacio
+         (Text first, then image — reversed layout)
          ========================================== -->
-    <section class="services-list" aria-label="Menu e offerte del ristorante">
+    <section class="about-section" aria-label="La cascata del bacio — location per rito civile">
       <div class="container">
-        <div class="services-list-header reveal-up">
-          <h2>Menu e Offerte</h2>
-          <p>Per ogni occasione, un'esperienza di gusto</p>
-        </div>
-
-        <!-- Row 1: Menu Pranzo Settimanale -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
+        <div class="about-grid">
+          <!-- Text column first in DOM = visually on the left on desktop -->
+          <div class="about-content reveal-up">
+            <h2>La Cascata del Bacio</h2>
+            <p>Romantica, accogliente e immersa nella natura: la nostra location per matrimoni e riti civili è unica. Un prato verde curato sotto grandi alberi, sedute in legno per gli ospiti e una passerella che conduce alla zona dedicata agli sposi.</p>
+            <p>Il momento più emozionante? La cascata del bacio — una cascata d'acqua naturale che crea uno sfondo incantevole per il vostro rito civile. Un angolo di paradiso dove scambiarsi le promesse circondati dalla bellezza della natura.</p>
+          </div>
+          <div class="about-image reveal-up" data-delay="1">
             <img
-              src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=500&fit=crop&q=80"
-              alt="Piatto pranzo"
+              src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=800&h=600&fit=crop&q=80"
+              alt="Cascata nel giardino per il rito civile"
               loading="lazy"
             >
           </div>
-          <div class="service-row-content">
-            <h3>Menu Pranzo Settimanale</h3>
-            <div class="service-row-price">€9,00</div>
-            <p>Primo, secondo e contorno. Dal lunedì al venerdì, 12:30–15:30. Il pranzo perfetto per chi lavora in zona.</p>
-          </div>
         </div>
-
-        <!-- Row 2: Buffet del Sabato Sera -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
-            <img
-              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=500&fit=crop&q=80"
-              alt="Buffet ricco"
-              loading="lazy"
-            >
-          </div>
-          <div class="service-row-content">
-            <h3>Buffet del Sabato Sera</h3>
-            <div class="service-row-price">€20,00</div>
-            <p>Antipasti, fritti, primi in show cooking, secondi, carne alla brace, pizza e contorni. Esclusi dolci e bevande. Dalle 19:00 alle 22:00.</p>
-          </div>
-        </div>
-
-        <!-- Row 3: Giro Pizza -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=500&fit=crop&q=80"
-              alt="Pizza al forno a legna"
-              loading="lazy"
-            >
-          </div>
-          <div class="service-row-content">
-            <h3>Giro Pizza</h3>
-            <div class="service-row-price">€22,00</div>
-            <p>Antipasto con fritti, crostini e salumi, pizza a volontà, dolce e bevande incluse. Per una serata con amici all'insegna del gusto.</p>
-          </div>
-        </div>
-
-        <!-- Row 4: Giro Pizza Bambini -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
-            <img
-              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=500&fit=crop&q=80"
-              alt="Pizza per bambini"
-              loading="lazy"
-            >
-          </div>
-          <div class="service-row-content">
-            <h3>Giro Pizza Bambini</h3>
-            <div class="service-row-price">€15,00</div>
-            <p>Pizza a volontà per i più piccoli, con dolce e bevande. Perché anche i bambini meritano una serata speciale.</p>
-          </div>
-        </div>
-
-        <!-- Row 5: Menu Degustazione Mare -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
-            <img
-              src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800&h=500&fit=crop&q=80"
-              alt="Piatto di pesce"
-              loading="lazy"
-            >
-          </div>
-          <div class="service-row-content">
-            <h3>Menu Degustazione Mare</h3>
-            <div class="service-row-price">€40,00</div>
-            <p>Un viaggio nei sapori del mare. Portate a sorpresa dallo chef, per gli amanti del pesce fresco.</p>
-          </div>
-        </div>
-
-        <!-- Row 6: Menu à la Carte -->
-        <div class="service-row reveal-up">
-          <div class="service-row-image">
-            <img
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=500&fit=crop&q=80"
-              alt="Menu alla carta"
-              loading="lazy"
-            >
-          </div>
-          <div class="service-row-content">
-            <h3>Menu à la Carte</h3>
-            <p>Carne, pesce, pizza al forno a legna, specialità alla brace e cucina espressa. Per ogni gusto e occasione, il meglio della tradizione viterbese.</p>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- ==========================================
-         CAROUSEL SECTION (galleria cibo/location)
+         SECTION 5: LOCATION SHOWCASE — Galleria
          ========================================== -->
-    <section class="carousel-section" aria-label="Galleria fotografica del ristorante">
+    <section class="location-showcase" aria-label="Gli spazi per il vostro matrimonio ad Acquarossa">
       <div class="container">
-        <div class="carousel-header reveal-up">
-          <h2>Galleria</h2>
+        <div class="location-showcase-gallery">
+
+          <!-- Image 1: spans 2 columns -->
+          <div class="gallery-item reveal-up">
+            <img
+              src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=900&h=500&fit=crop&q=80"
+              alt="Cerimonia all'aperto nel parco"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Image 2 -->
+          <div class="gallery-item reveal-up" data-delay="1">
+            <img
+              src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&h=450&fit=crop&q=80"
+              alt="Allestimento tavoli per il ricevimento"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Image 3 -->
+          <div class="gallery-item reveal-up" data-delay="2">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=450&fit=crop&q=80"
+              alt="Dettagli floreali per matrimonio"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Image 4 -->
+          <div class="gallery-item reveal-up" data-delay="3">
+            <img
+              src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&h=450&fit=crop&q=80"
+              alt="Sala elegante per il ricevimento"
+              loading="lazy"
+            >
+          </div>
+
         </div>
-        <div class="carousel-track" role="list">
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&h=600&fit=crop&q=80"
-              alt="Piatto di pasta fresca"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=900&h=600&fit=crop&q=80"
-              alt="Carne alla brace"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&h=600&fit=crop&q=80"
-              alt="Pizza dal forno a legna"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=900&h=600&fit=crop&q=80"
-              alt="Atmosfera calda del ristorante"
-              loading="lazy"
-            >
-          </div>
-          <div class="carousel-slide" role="listitem">
-            <img
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&h=600&fit=crop&q=80"
-              alt="Tavoli nel giardino"
-              loading="lazy"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ==========================================
-         INFO CARD (orari e prenotazioni)
-         ========================================== -->
-    <section class="info-card-section" aria-label="Orari e prenotazioni">
-      <div class="container">
-        <div class="info-card reveal-up">
-          <h3>Orari e Prenotazioni</h3>
-
-          <div class="info-card-item">
-            <!-- Clock icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
-            </svg>
-            <span>Pranzo: 12:30–15:30 &nbsp;|&nbsp; Cena: 19:30–22:00</span>
-          </div>
-
-          <div class="info-card-item">
-            <!-- X-circle / closed icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
-            </svg>
-            <span>Chiuso il Mercoledì</span>
-          </div>
-
-          <div class="info-card-item">
-            <!-- Phone icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <a href="tel:+390761251152">+39 0761-251152</a>
-          </div>
-
-          <div class="info-card-item">
-            <!-- Phone icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <a href="tel:+393397653237">+39 339-7653237</a>
-          </div>
-
+        <div class="location-showcase-text reveal-up">
+          <p>Ogni matrimonio è unico. Contattateci per un appuntamento e venite a scoprire di persona la magia di Acquarossa.</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         CTA BANNER — Style B (Split)
+         SECTION 6: CTA BANNER — Split Style
          ========================================== -->
-    <section class="cta-banner" aria-label="Prenota il tuo tavolo">
+    <section class="cta-banner" aria-label="Raccontaci il vostro matrimonio">
       <div class="cta-banner-image">
         <img
-          src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&h=600&fit=crop&q=80"
-          alt="Cena al ristorante con atmosfera intima"
+          src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&h=600&fit=crop&q=80"
+          alt="Coppia di sposi nel giorno del matrimonio"
           loading="lazy"
         >
       </div>
       <div class="cta-banner-content">
-        <h2>Prenota il Tuo Tavolo</h2>
-        <p>Per prenotazioni e informazioni, contattaci telefonicamente o compila il form.</p>
+        <h2>Raccontaci il Vostro Matrimonio</h2>
+        <p>Siamo pronti ad ascoltare i vostri desideri e trasformarli in realtà. Richiedete un preventivo personalizzato.</p>
         <a href="contatti.html" class="btn btn-primary magnetic-btn">Contattaci</a>
       </div>
     </section>
@@ -418,6 +300,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
+
         <!-- Column 1: Brand -->
         <div class="footer-brand">
           <a href="index.html" class="footer-logo">Acquarossa</a>
@@ -433,7 +316,7 @@
             <li><a href="menu.html">Menu &amp; Offerte</a></li>
             <li><a href="parco.html">Il Parco</a></li>
             <li><a href="sposi.html">Sposi &amp; Matrimoni</a></li>
-            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="eventi.html">Cerimonie ed Eventi</a></li>
             <li><a href="itinerari.html">Cosa Visitare</a></li>
             <li><a href="chi-siamo.html">Chi Siamo</a></li>
             <li><a href="contatti.html">Contatti</a></li>
@@ -493,6 +376,7 @@
             </a>
           </div>
         </div>
+
       </div>
 
       <div class="footer-bottom">
