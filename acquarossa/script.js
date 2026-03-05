@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      dot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
 
       if (!cursorActivated) {
         cursorActivated = true;
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateFollower() {
       followerX += (mouseX - followerX) * 0.15;
       followerY += (mouseY - followerY) * 0.15;
-      follower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+      follower.style.transform = `translate(calc(${followerX}px - 50%), calc(${followerY}px - 50%))`;
       requestAnimationFrame(updateFollower);
     }
     requestAnimationFrame(updateFollower);
