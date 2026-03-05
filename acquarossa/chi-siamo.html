@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo — Acquarossa | La Nostra Storia dal 1970 a Viterbo</title>
+  <meta name="description" content="La storia del Ristorante Acquarossa: oltre 50 anni di tradizione, accoglienza e passione nel cuore della Tuscia. Scopri il nostro parco e i nostri valori.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-chi-siamo">
+
+  <!-- ============================================
+       SCROLL PROGRESS BAR
+       ============================================ -->
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Ristorante Acquarossa — Home">Acquarossa</a>
+
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <ul class="header-nav-list">
+          <li><a href="index.html" class="header-nav-link">Home</a></li>
+          <li><a href="ristorante.html" class="header-nav-link">Ristorante</a></li>
+          <li><a href="eventi.html" class="header-nav-link">Eventi &amp; Cerimonie</a></li>
+          <li><a href="chi-siamo.html" class="header-nav-link active">Chi Siamo</a></li>
+          <li><a href="contatti.html" class="header-nav-link">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <a href="contatti.html" class="btn btn-primary header-cta magnetic-btn">Prenota</a>
+
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MOBILE MENU — Fullscreen Overlay
+       ============================================ -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="ristorante.html" class="mobile-menu-link">Ristorante</a>
+      <a href="eventi.html" class="mobile-menu-link">Eventi &amp; Cerimonie</a>
+      <a href="chi-siamo.html" class="mobile-menu-link active">Chi Siamo</a>
+      <a href="contatti.html" class="mobile-menu-link">Contatti</a>
+    </nav>
+    <div class="mobile-menu-contact">
+      <a href="tel:+390761251152">+39 0761-251152</a>
+      <a href="mailto:info@acquarossa.it">info@acquarossa.it</a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         HERO INTERNO — 50vh
+         ========================================== -->
+    <section class="hero-internal" aria-label="Chi Siamo — La Nostra Storia">
+      <div class="hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=1080&fit=crop&q=80"
+          alt="Vista panoramica della campagna viterbese"
+          fetchpriority="high"
+        >
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-label">Acquarossa</p>
+        <h1 class="hero-title">La Nostra Storia</h1>
+        <p class="hero-description">Oltre cinquant'anni di tradizione, accoglienza e passione nel cuore della Tuscia</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIMELINE — Mezzo Secolo di Sapori
+         ========================================== -->
+    <section class="timeline-section" aria-label="La storia completa del Ristorante Acquarossa">
+      <div class="container">
+        <div class="timeline-section-header reveal-up">
+          <h2>Mezzo Secolo di Sapori</h2>
+          <p>Un viaggio attraverso le tappe più importanti della nostra storia</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true">
+            <div class="timeline-line-progress"></div>
+          </div>
+
+          <div class="timeline-item reveal-up" data-delay="1">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-year">~1970</div>
+            <div class="timeline-title">Le Origini</div>
+            <p class="timeline-text">Nasce il Ristorante Acquarossa su Strada Teverina, alle porte di Viterbo. Un piccolo locale familiare con una grande passione per la cucina del territorio e l'accoglienza genuina.</p>
+          </div>
+
+          <div class="timeline-item reveal-up" data-delay="2">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-year">~1985</div>
+            <div class="timeline-title">Le Prime Cerimonie</div>
+            <p class="timeline-text">Il ristorante diventa punto di riferimento per battesimi, comunioni e matrimoni. Le sale si ampliano per accogliere i primi grandi eventi. La reputazione cresce nel territorio viterbese.</p>
+          </div>
+
+          <div class="timeline-item reveal-up" data-delay="3">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-year">~2000</div>
+            <div class="timeline-title">Il Parco Verde</div>
+            <p class="timeline-text">Viene curato e ampliato il parco che oggi è il nostro fiore all'occhiello. 5.000 metri quadrati di verde dove celebrare all'aperto, circondati dalla natura della Tuscia.</p>
+          </div>
+
+          <div class="timeline-item reveal-up" data-delay="4">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-year">~2010</div>
+            <div class="timeline-title">Innovazione in Cucina</div>
+            <p class="timeline-text">Nuove proposte gastronomiche si affiancano alla tradizione: show cooking, menu degustazione, buffet tematici. La cucina si rinnova senza perdere le sue radici.</p>
+          </div>
+
+          <div class="timeline-item reveal-up" data-delay="5">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-year">Oggi</div>
+            <div class="timeline-title">Oltre 50 Anni</div>
+            <p class="timeline-text">Un'istituzione viterbese che continua a crescere. Oltre 1.000 cerimonie celebrate, migliaia di clienti soddisfatti, la stessa passione del primo giorno. Il futuro è ancora da scrivere.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FULLWIDTH SECTION — Il Parco e la Location
+         ========================================== -->
+    <section class="fullwidth-section" aria-label="Il parco e la location di Acquarossa">
+      <div class="container">
+        <h2 class="reveal-up">Il Parco e la Location</h2>
+
+        <div class="fullwidth-image reveal-up">
+          <img
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&h=600&fit=crop&q=80"
+            alt="Il parco verde del Ristorante Acquarossa"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="fullwidth-text reveal-up">
+          <p>Il parco è l'anima di Acquarossa. Oltre 5.000 metri quadrati di verde curato, con alberi secolari e angoli suggestivi, creano un'atmosfera unica, lontana dal caos cittadino.</p>
+          <p>Le nostre sale interne uniscono eleganza e calore. Ampi spazi luminosi, arredati con gusto, capaci di accogliere dai piccoli gruppi alle grandi celebrazioni.</p>
+          <p>Qui non sei in un ristorante: sei in un mondo a parte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VALUES — Card Grid (3 cards, bg-alt)
+         ========================================== -->
+    <section class="card-grid-section bg-alt" aria-label="I valori del Ristorante Acquarossa">
+      <div class="container">
+        <div class="card-grid-header reveal-up">
+          <h2>I Nostri Valori</h2>
+          <p>Ciò che ci guida da oltre cinquant'anni</p>
+        </div>
+
+        <div class="card-grid cols-3">
+
+          <!-- Card 1: Tradizione -->
+          <article class="card reveal-up" data-delay="1">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+              </svg>
+            </div>
+            <h3>Tradizione</h3>
+            <p>Ricette tramandate, sapori autentici, rispetto per le radici della cucina viterbese. La tradizione è il nostro patrimonio più prezioso.</p>
+          </article>
+
+          <!-- Card 2: Qualità -->
+          <article class="card reveal-up" data-delay="2">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3H5L2 9l10 13L22 9l-3-6zM9.62 8l1.5-3h1.76l1.5 3H9.62zM11 10v6.68L5.44 10H11zm2 0h5.56L13 16.68V10zm6.26-2h-3.38l-1.5-3h2.38l2.5 3zM7.12 5h2.38l-1.5 3H4.62l2.5-3z"/>
+              </svg>
+            </div>
+            <h3>Qualità</h3>
+            <p>Ingredienti selezionati, preparazioni curate, un servizio che non lascia nulla al caso. La qualità è in ogni dettaglio.</p>
+          </article>
+
+          <!-- Card 3: Accoglienza -->
+          <article class="card reveal-up" data-delay="3">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+            </div>
+            <h3>Accoglienza</h3>
+            <p>Ogni ospite è di casa. Dal pranzo veloce alla cerimonia più importante, ti facciamo sentire speciale.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CTA BANNER — Style B (Split)
+         ========================================== -->
+    <section class="cta-banner" aria-label="Vieni a trovarci al Ristorante Acquarossa">
+      <div class="cta-banner-image">
+        <img
+          src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop&q=80"
+          alt="Sala pronta per un evento"
+          loading="lazy"
+        >
+      </div>
+      <div class="cta-banner-content">
+        <h2>Vieni a Trovarci</h2>
+        <p>Siamo su Strada Teverina 86, a Viterbo. Prenota un tavolo o vieni a visitare i nostri spazi.</p>
+        <a href="contatti.html" class="btn btn-primary magnetic-btn">Contattaci</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Acquarossa</a>
+          <p>Tradizione, eleganza e sapori autentici dal 1970 nel cuore della Tuscia.</p>
+        </div>
+
+        <!-- Column 2: Navigation -->
+        <div class="footer-nav">
+          <h3 class="footer-heading">Navigazione</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ristorante.html">Ristorante</a></li>
+            <li><a href="eventi.html">Eventi &amp; Cerimonie</a></li>
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Orari -->
+        <div class="footer-hours">
+          <h3 class="footer-heading">Orari</h3>
+          <ul class="footer-links">
+            <li>Lun–Mar: 12:30–15:30 / 19:30–22:00</li>
+            <li>Mer: <strong class="footer-closed">Chiuso</strong></li>
+            <li>Gio–Dom: 12:30–15:30 / 19:30–22:00</li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contatti -->
+        <div class="footer-contacts">
+          <h3 class="footer-heading">Contatti</h3>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Strada Teverina 86, 01100 Viterbo (VT)</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <a href="tel:+390761251152">+39 0761-251152</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <a href="tel:+393397653237">+39 339-7653237</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <a href="mailto:info@acquarossa.it">info@acquarossa.it</a>
+          </div>
+
+          <div class="footer-social">
+            <a href="#" aria-label="Seguici su Facebook" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Seguici su Instagram" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Ristorante Acquarossa &mdash; P.IVA 01990200568</p>
+        <p>Strada Teverina 86, Viterbo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       WHATSAPP BUTTON
+       ============================================ -->
+  <a href="https://wa.me/393397653237" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
