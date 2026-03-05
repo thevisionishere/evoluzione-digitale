@@ -931,61 +931,6 @@ p:last-child {
   fill: #fff;
 }
 
-/* ============================================
-   CUSTOM CURSOR (Desktop only)
-   ============================================ */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-accent);
-  border-radius: var(--radius-full);
-  pointer-events: none;
-  z-index: 10000;
-  transition: opacity var(--duration-fast) var(--ease-out);
-  will-change: transform;
-}
-
-.cursor-follower {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-full);
-  pointer-events: none;
-  z-index: 9999;
-  transition: width var(--duration-normal) var(--ease-out),
-              height var(--duration-normal) var(--ease-out),
-              background-color var(--duration-normal) var(--ease-out),
-              border-color var(--duration-normal) var(--ease-out),
-              opacity var(--duration-fast) var(--ease-out);
-  will-change: transform;
-}
-
-.cursor-follower.hover {
-  width: 48px;
-  height: 48px;
-  background-color: rgba(var(--color-accent-rgb), 0.1);
-  border-color: var(--color-accent-light);
-}
-
-.cursor-dot.hidden,
-.cursor-follower.hidden {
-  opacity: 0;
-}
-
-body.custom-cursor,
-body.custom-cursor a,
-body.custom-cursor button,
-body.custom-cursor input,
-body.custom-cursor textarea,
-body.custom-cursor select {
-  cursor: none;
-}
 
 /* ============================================
    HOME HERO — Variant D (Fullscreen Image)

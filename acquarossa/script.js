@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initRevealAnimations();
   initCounters();
-  if (!isMobile) initCustomCursor();
+  // Custom cursor removed
   if (!isMobile) initParallax();
   if (!isMobile) initMagneticButtons();
   initSmoothScroll();
@@ -278,63 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ==========================================
-     CUSTOM CURSOR (Desktop only)
-     ========================================== */
-  function initCustomCursor() {
-    if (prefersReducedMotion) return;
-
-    const dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    const follower = document.createElement('div');
-    follower.className = 'cursor-follower';
-
-    dot.style.left = '-100px';
-    dot.style.top = '-100px';
-    follower.style.left = '-100px';
-    follower.style.top = '-100px';
-
-    document.body.appendChild(dot);
-    document.body.appendChild(follower);
-
-    let mouseX = -100, mouseY = -100;
-    let followerX = -100, followerY = -100;
-    let cursorActivated = false;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
-
-      if (!cursorActivated) {
-        cursorActivated = true;
-        document.body.classList.add('custom-cursor');
-      }
-    });
-
-    function updateFollower() {
-      followerX += (mouseX - followerX) * 0.15;
-      followerY += (mouseY - followerY) * 0.15;
-      follower.style.transform = `translate(calc(${followerX}px - 50%), calc(${followerY}px - 50%))`;
-      requestAnimationFrame(updateFollower);
-    }
-    requestAnimationFrame(updateFollower);
-
-    const interactiveSelector = 'a, button, [role="button"], input, textarea, select, label';
-    document.querySelectorAll(interactiveSelector).forEach(el => {
-      el.addEventListener('mouseenter', () => follower.classList.add('hover'));
-      el.addEventListener('mouseleave', () => follower.classList.remove('hover'));
-    });
-
-    document.addEventListener('mouseleave', () => {
-      dot.classList.add('hidden');
-      follower.classList.add('hidden');
-    });
-    document.addEventListener('mouseenter', () => {
-      dot.classList.remove('hidden');
-      follower.classList.remove('hidden');
-    });
-  }
 
   /* ==========================================
      PARALLAX (Desktop only)
