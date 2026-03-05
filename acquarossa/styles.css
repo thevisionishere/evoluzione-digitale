@@ -1572,11 +1572,11 @@ body.custom-cursor select {
 }
 
 .journey-step:nth-child(odd) .journey-step-overlay {
-  background: linear-gradient(to right, rgba(44, 24, 16, 0.8) 0%, transparent 60%);
+  background: linear-gradient(to right, rgba(44, 24, 16, 0.9) 0%, rgba(44, 24, 16, 0.55) 55%, rgba(44, 24, 16, 0.3) 100%);
 }
 
 .journey-step:nth-child(even) .journey-step-overlay {
-  background: linear-gradient(to left, rgba(44, 24, 16, 0.8) 0%, transparent 60%);
+  background: linear-gradient(to left, rgba(44, 24, 16, 0.9) 0%, rgba(44, 24, 16, 0.55) 55%, rgba(44, 24, 16, 0.3) 100%);
 }
 
 .journey-step-content {
@@ -1624,7 +1624,7 @@ body.custom-cursor select {
     text-align: left;
   }
   .journey-step:nth-child(even) .journey-step-overlay {
-    background: linear-gradient(to right, rgba(44, 24, 16, 0.8) 0%, transparent 60%);
+    background: linear-gradient(to right, rgba(44, 24, 16, 0.9) 0%, rgba(44, 24, 16, 0.55) 55%, rgba(44, 24, 16, 0.3) 100%);
   }
 }
 
