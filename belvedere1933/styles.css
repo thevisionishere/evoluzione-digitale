@@ -1458,6 +1458,11 @@ body.custom-cursor * {
   align-items: center;
   flex-shrink: 0;
   min-width: 100%;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(247, 242, 236, 0.75);
 }
 
 .marquee-item {
