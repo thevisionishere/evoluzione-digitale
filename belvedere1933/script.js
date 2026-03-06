@@ -890,9 +890,10 @@ document.addEventListener('DOMContentLoaded', () => {
       items.forEach(item => itemObserver.observe(item));
     }
 
-    // ── Line drawing animation (desktop only, scroll-driven) ──
-    if (!isMobile && !prefersReducedMotion && line) {
+    // ── Line drawing animation (scroll-driven, all devices) ──
+    if (!prefersReducedMotion && line) {
       let ticking = false;
+      const txPrefix = isMobile ? '' : 'translateX(-50%) ';
 
       const updateLine = () => {
         const rect   = timeline.getBoundingClientRect();
@@ -903,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrolled     = triggerPoint - rect.top;
         const progress     = Math.max(0, Math.min(1, scrolled / totalH));
 
-        line.style.transform = `translateX(-50%) scaleY(${progress})`;
+        line.style.transform = `${txPrefix}scaleY(${progress})`;
         ticking = false;
       };
 
