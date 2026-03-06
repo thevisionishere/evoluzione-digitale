@@ -695,7 +695,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function initDynamicYear() {
     const year = new Date().getFullYear().toString();
-    document.querySelectorAll('[data-year]').forEach(el => {
+    document.querySelectorAll('[data-current-year]').forEach(el => {
       el.textContent = year;
     });
   }
