@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristorante Belvedere dal 1933 — Fine Dining a Frascati con Terrazza Panoramica</title>
+  <meta name="description" content="Dal 1933 sul colle di Frascati, il Ristorante Belvedere offre cucina mediterranea innovativa con ingredienti a km zero e una terrazza panoramica con vista su Roma e i Castelli Romani.">
+  <meta name="keywords" content="ristorante frascati, belvedere 1933, terrazza panoramica roma, cucina mediterranea, km zero, castelli romani">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ristorante Belvedere dal 1933 — Frascati">
+  <meta property="og:description" content="Cucina mediterranea innovativa con terrazza panoramica su Roma e i Castelli Romani. Dal 1933.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://belvedere1933.com">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Sans+3:wght@400;600&family=Cormorant:ital,wght@0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PRELOADER — Variant A: Logo + expanding gold line
+  ════════════════════════════════════════════════════════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader__logo preloader-logo">BELVEDERE</div>
+      <div class="preloader-subtitle">Storie in cucina</div>
+      <div class="preloader__line preloader-line"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ════════════════════════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Style C: Centered Logo, split nav
+  ════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <nav class="nav-left" aria-label="Navigazione principale sinistra">
+        <a href="#storia" data-nav-link>La Storia</a>
+        <a href="chef.html" data-nav-link>Chef</a>
+        <a href="#servizi" data-nav-link>Servizi</a>
+      </nav>
+
+      <a href="#" class="header-logo" aria-label="Ristorante Belvedere — torna all'inizio">BELVEDERE</a>
+
+      <nav class="nav-right" aria-label="Navigazione principale destra">
+        <a href="#galleria" data-nav-link>Galleria</a>
+        <a href="#recensioni" data-nav-link>Recensioni</a>
+        <a href="#contatti" class="nav-cta" data-nav-link>Prenota</a>
+      </nav>
+
+      <button class="hamburger" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MOBILE MENU — Style A: Fullscreen Overlay
+  ════════════════════════════════════════════════════════════ -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <div class="mobile-menu-content">
+      <nav class="mobile-nav" aria-label="Navigazione mobile">
+        <a href="#storia">La Storia</a>
+        <a href="chef.html">Chef</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#recensioni">Recensioni</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+
+      <div class="mobile-menu-info">
+        <a href="tel:+390694190004">(+39) 06 9419004</a>
+        <a href="mailto:a.rosica@icloud.com">a.rosica@icloud.com</a>
+        <p>Via Regina Margherita, 29, Frascati RM</p>
+      </div>
+
+      <div class="mobile-menu-social">
+        <a href="https://www.facebook.com/RistoranteBelvedereFrascati" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/belvedere1933" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 1: HERO — Centered Fullscreen
+    ──────────────────────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-label="Benvenuti al Ristorante Belvedere">
+      <div class="hero-bg" data-parallax="0.3">
+        <img
+          src="images/homepage/home4.jpg"
+          alt="Tortellini artigianali presentati davanti all'insegna storica del Ristorante Belvedere a Frascati"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        >
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-label hero-element reveal-up" data-delay="0">DAL 1933 &middot; FRASCATI</span>
+
+        <h1 class="hero-title hero-element reveal-up" data-delay="120">
+          Storie in <em>Cucina</em>
+        </h1>
+
+        <p class="hero-description hero-element reveal-up" data-delay="240">
+          Sito sul colle di Frascati, il Ristorante Belvedere vi accoglie con piatti mediterranei
+          innovativi e una vista mozzafiato su Roma e i Castelli Romani.
+        </p>
+
+        <div class="hero-actions hero-element reveal-up" data-delay="360">
+          <a href="tel:+390694190004" class="btn btn-primary magnetic-btn" aria-label="Chiama per prenotare un tavolo">
+            Prenota un Tavolo
+          </a>
+          <a href="#servizi" class="btn btn-secondary magnetic-btn">
+            Scopri il Menu
+          </a>
+        </div>
+
+        <div class="hero-stats hero-element reveal-up" data-delay="480">
+          <div class="hero-stat">
+            <span class="hero-stat-number">90+</span>
+            <span class="hero-stat-label">Anni di Storia</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">Km 0</span>
+            <span class="hero-stat-label">Ingredienti Locali</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" aria-label="Cinque stelle">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="hero-stat-label">Terrazza Panoramica</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator hero-element reveal-up" data-delay="600" aria-hidden="true">
+        <span class="hero-scroll-label">Scorri</span>
+        <div class="hero-scroll-arrow">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,7 10,13 16,7"></polyline>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 2: MARQUEE
+    ──────────────────────────────────────────────────────────── -->
+    <section class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-inner">
+          <span>Cucina Mediterranea</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Panorama su Roma</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Dal 1933</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Km Zero</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Chef Alain &amp; Nelson</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Attività Storica del Lazio</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Terrazza Panoramica</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Frascati</span>
+          <span class="marquee-separator" aria-hidden="true">&nbsp;&nbsp;&nbsp;</span>
+          <!-- Duplicate for seamless loop -->
+          <span>Cucina Mediterranea</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Panorama su Roma</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Dal 1933</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Km Zero</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Chef Alain &amp; Nelson</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Attività Storica del Lazio</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Terrazza Panoramica</span>
+          <span class="marquee-dot">&middot;</span>
+          <span>Frascati</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 3: CINEMATIC IMAGE SEQUENCE
+    ──────────────────────────────────────────────────────────── -->
+    <section class="cinematic-section" id="cinematic" aria-label="Galleria cinematografica del ristorante">
+
+      <div class="cinematic-track">
+
+        <div class="cinematic__img active" role="img" aria-label="Tortellini artigianali presentati davanti all'insegna Belvedere">
+          <img
+            src="images/homepage/home4.jpg"
+            alt="Tortellini artigianali presentati davanti all'insegna del Ristorante Belvedere"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="cinematic__img" role="img" aria-label="Vista panoramica dalla terrazza al tramonto">
+          <img
+            src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&h=1080&fit=crop&q=80"
+            alt="Vista panoramica dalla terrazza del ristorante al tramonto sui Castelli Romani"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="cinematic__img" role="img" aria-label="Chef al lavoro nella cucina del ristorante">
+          <img
+            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1920&h=1080&fit=crop&q=80"
+            alt="Lo chef al lavoro nella cucina del Ristorante Belvedere"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="cinematic__img" role="img" aria-label="Dessert eleganti con fragole e crema">
+          <img
+            src="images/homepage/home5.jpg"
+            alt="Dessert dello chef: composizione elegante con fragole fresche e crema pasticcera"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="cinematic-overlay-text" aria-hidden="true">L'Arte del Gusto</div>
+
+      </div>
+
+      <div class="cinematic__dots" role="tablist" aria-label="Seleziona immagine"></div>
+
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 4: ABOUT / TIMELINE
+    ──────────────────────────────────────────────────────────── -->
+    <section class="about-section" id="storia" aria-labelledby="storia-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">LA NOSTRA STORIA</span>
+          <h2 id="storia-heading" class="section-title">Dal 1933 ad Oggi</h2>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line" id="timelineLine" aria-hidden="true"></div>
+
+          <article class="timeline__item" data-year="1933">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">1933</span>
+              <h3>Nasce la Trattoria Belvedere</h3>
+              <p>Sul colle di Frascati nasce una piccola trattoria che deve il suo nome allo splendido panorama visibile dalla balconata. Diventa presto un punto di riferimento per la cucina semplice e genuina di tutta la provincia di Roma.</p>
+            </div>
+            <div class="timeline-image">
+              <img
+                src="images/homepage/Esterni_Belvedere-1933-300x200.jpg"
+                alt="La trattoria Belvedere originale sul colle di Frascati nel 1933"
+                loading="lazy"
+                width="300"
+                height="200"
+              >
+            </div>
+          </article>
+
+          <article class="timeline__item" data-year="1998">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">1998</span>
+              <h3>La Famiglia Rosica</h3>
+              <p>I fratelli Alain e Nelson Rosica rilevano l'attività, portando una visione nuova: trasformare la storica trattoria in un ristorante di riferimento per la cucina mediterranea, senza perdere l'anima del luogo.</p>
+            </div>
+            <div class="timeline-image">
+              <img
+                src="images/homepage/DSC_6737-200x300.jpg"
+                alt="I fratelli chef Alain e Nelson Rosica, proprietari del Ristorante Belvedere"
+                loading="lazy"
+                width="200"
+                height="300"
+              >
+            </div>
+          </article>
+
+          <article class="timeline__item" data-year="oggi">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Oggi</span>
+              <h3>Innovazione nella Tradizione</h3>
+              <p>Piatti innovativi e gustosi che preservano i sapori mediterranei, utilizzando prodotti genuini a chilometro zero per un'esperienza culinaria unica. Riconosciuti come Attività Storica del Lazio.</p>
+            </div>
+            <div class="timeline-image">
+              <img
+                src="images/homepage/attivita-storiche-300x247.jpg"
+                alt="Certificazione Attività Storica del Lazio assegnata al Ristorante Belvedere"
+                loading="lazy"
+                width="300"
+                height="247"
+              >
+            </div>
+          </article>
+
+        </div><!-- /.timeline -->
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 5: TEAM / CHEF
+    ──────────────────────────────────────────────────────────── -->
+    <section class="team-section" id="chef" aria-labelledby="chef-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">I NOSTRI CHEF</span>
+          <h2 id="chef-heading" class="section-title">Due Fratelli, Una Passione</h2>
+        </div>
+
+        <div class="team-grid">
+
+          <article class="team-card reveal-up" data-delay="0">
+            <div class="team-image">
+              <img
+                src="images/homepage/chefs-belvedere.jpg"
+                alt="Chef Alain Rosica, co-proprietario del Ristorante Belvedere di Frascati"
+                loading="lazy"
+                width="1024"
+                height="676"
+              >
+            </div>
+            <div class="team-info">
+              <h3>Alain Rosica</h3>
+              <span class="team-role">Chef</span>
+              <p class="team-quote">
+                <em>"La cucina è racconto. Ogni piatto porta con sé la storia del nostro territorio e la passione per le materie prime autentiche."</em>
+              </p>
+            </div>
+          </article>
+
+          <article class="team-card reveal-up" data-delay="150">
+            <div class="team-image">
+              <img
+                src="images/homepage/chefs-belvedere.jpg"
+                alt="Chef Nelson Rosica, co-proprietario del Ristorante Belvedere di Frascati"
+                loading="lazy"
+                width="1024"
+                height="676"
+              >
+            </div>
+            <div class="team-info">
+              <h3>Nelson Rosica</h3>
+              <span class="team-role">Chef</span>
+              <p class="team-quote">
+                <em>"Innovare rispettando la tradizione: è questa la sfida che affrontiamo ogni giorno, con prodotti locali e tecniche che guardano al futuro."</em>
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /.team-grid -->
+
+        <div class="team-cta reveal-up" style="text-align:center; margin-top:var(--space-7);">
+          <a href="chef.html" class="btn btn-secondary">Scopri di Più sui Nostri Chef &rarr;</a>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 6: CTA BANNER
+    ──────────────────────────────────────────────────────────── -->
+    <section class="cta-banner" id="cta-banner" aria-labelledby="cta-banner-heading">
+      <div class="cta-banner-bg" data-parallax="0.25">
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=1080&fit=crop&q=80"
+          alt="Terrazza di ristorante italiano al tramonto con tavoli eleganti apparecchiati"
+          loading="lazy"
+          width="1920"
+          height="1080"
+        >
+        <div class="cta-banner-overlay"></div>
+      </div>
+      <div class="cta-banner-content container">
+        <h2 id="cta-banner-heading" class="cta-banner-title reveal-up">
+          Vivi l'Esperienza Belvedere
+        </h2>
+        <p class="cta-banner-subtitle reveal-up" data-delay="100">
+          Una cena con vista su Roma e i Castelli Romani
+        </p>
+        <a
+          href="tel:+390694190004"
+          class="btn btn-primary magnetic-btn reveal-up"
+          data-delay="200"
+          aria-label="Chiama per prenotare ora al Ristorante Belvedere"
+        >
+          Prenota Ora
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 7: SERVICES
+    ──────────────────────────────────────────────────────────── -->
+    <section class="services-section" id="servizi" aria-labelledby="servizi-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">I NOSTRI SERVIZI</span>
+          <h2 id="servizi-heading" class="section-title">Cosa Offriamo</h2>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal-up" data-delay="0">
+            <div class="service-number" aria-hidden="true">01</div>
+            <h3 class="service-title">Ristorante</h3>
+            <p class="service-desc">
+              Fine dining mediterraneo con ingredienti a km zero e una terrazza panoramica unica nel suo genere.
+            </p>
+          </article>
+
+          <article class="service-card reveal-up" data-delay="100">
+            <div class="service-number" aria-hidden="true">02</div>
+            <h3 class="service-title">Catering</h3>
+            <p class="service-desc">
+              Portiamo l'esperienza Belvedere ovunque: eventi aziendali, cerimonie e ricorrenze speciali.
+            </p>
+          </article>
+
+          <article class="service-card reveal-up" data-delay="200">
+            <div class="service-number" aria-hidden="true">03</div>
+            <h3 class="service-title">Menu Digitale</h3>
+            <p class="service-desc">
+              Consulta il nostro menu aggiornato con le proposte stagionali dello chef.
+            </p>
+            <a
+              href="https://leggimenu.it"
+              class="service-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Consulta il menu digitale del Ristorante Belvedere (apre in nuova scheda)"
+            >
+              Consulta il Menu &rarr;
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" data-delay="300">
+            <div class="service-number" aria-hidden="true">04</div>
+            <h3 class="service-title">Eventi Privati</h3>
+            <p class="service-desc">
+              Cene private, compleanni e anniversari nella nostra sala riservata con vista panoramica.
+            </p>
+          </article>
+
+        </div><!-- /.services-grid -->
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 8: NUMBERS / STATS
+    ──────────────────────────────────────────────────────────── -->
+    <section class="numbers-section" id="numeri" aria-labelledby="numeri-heading">
+      <div class="container">
+
+        <h2 id="numeri-heading" class="visually-hidden">I nostri numeri</h2>
+
+        <div class="numbers-grid">
+
+          <div class="number-item reveal-up" data-delay="0">
+            <span class="number-value" data-count="1933" data-suffix="">1933</span>
+            <span class="number-label">Anno di Fondazione</span>
+          </div>
+
+          <div class="number-item reveal-up" data-delay="100">
+            <span class="number-value" data-count="90" data-suffix="+">90+</span>
+            <span class="number-label">Anni di Storia</span>
+          </div>
+
+          <div class="number-item reveal-up" data-delay="200">
+            <span class="number-value" data-count="2" data-suffix="">2</span>
+            <span class="number-label">Chef Fratelli</span>
+          </div>
+
+          <div class="number-item reveal-up" data-delay="300">
+            <span class="number-value" data-count="1000" data-suffix="+">1000+</span>
+            <span class="number-label">Storie a Tavola</span>
+          </div>
+
+        </div>
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 9: GALLERY
+    ──────────────────────────────────────────────────────────── -->
+    <section class="gallery-section" id="galleria" aria-labelledby="galleria-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">GALLERIA</span>
+          <h2 id="galleria-heading" class="section-title">Momenti dal Belvedere</h2>
+        </div>
+
+        <div class="gallery-grid" role="list">
+
+          <div class="gallery__item gallery-item--wide reveal-up" data-delay="0" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="images/homepage/home4.jpg"
+                alt="Tortellini artigianali dello chef in primo piano all'interno del Ristorante Belvedere"
+                loading="lazy"
+                width="900"
+                height="600"
+              >
+              <div class="gallery__overlay">
+                <span>Tortellini dello Chef</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item reveal-up" data-delay="80" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=600&fit=crop&q=80"
+                alt="Terrazza panoramica del Ristorante Belvedere con vista sui Castelli Romani"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+              <div class="gallery__overlay">
+                <span>Terrazza Panoramica</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item reveal-up" data-delay="160" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=800&fit=crop&q=80"
+                alt="Calici di vino locale dei Castelli Romani sul tavolo del ristorante"
+                loading="lazy"
+                width="600"
+                height="800"
+              >
+              <div class="gallery__overlay">
+                <span>Vini dei Castelli</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item gallery-item--wide reveal-up" data-delay="0" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="images/homepage/home5.jpg"
+                alt="Dessert dello chef: composizione raffinata con fragole fresche e crema"
+                loading="lazy"
+                width="900"
+                height="600"
+              >
+              <div class="gallery__overlay">
+                <span>Dessert dello Chef</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item reveal-up" data-delay="80" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80"
+                alt="Sala interna del ristorante con tavoli elegantemente apparecchiati"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+              <div class="gallery__overlay">
+                <span>La Nostra Sala</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item reveal-up" data-delay="160" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop&q=80"
+                alt="Piatto di pasta fresca con condimento mediterraneo a base di pomodoro e basilico"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+              <div class="gallery__overlay">
+                <span>Pasta Fresca</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item reveal-up" data-delay="240" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="images/homepage/9f0def2f-9bc8-40b7-abff-d097b5c27173-300x225.jpg"
+                alt="Il team del Ristorante Belvedere al completo in una foto di gruppo"
+                loading="lazy"
+                width="300"
+                height="225"
+              >
+              <div class="gallery__overlay">
+                <span>Il Nostro Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__item reveal-up" data-delay="320" role="listitem">
+            <div class="gallery__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=800&fit=crop&q=80"
+                alt="Ingredienti freschi a chilometro zero selezionati dai produttori locali dei Castelli Romani"
+                loading="lazy"
+                width="600"
+                height="800"
+              >
+              <div class="gallery__overlay">
+                <span>Ingredienti Km Zero</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.gallery-grid -->
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 10: REVIEWS / TESTIMONIALS
+    ──────────────────────────────────────────────────────────── -->
+    <section class="reviews-section" id="recensioni" aria-labelledby="recensioni-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">COSA DICONO DI NOI</span>
+          <h2 id="recensioni-heading" class="section-title">Le Voci dei Nostri Ospiti</h2>
+        </div>
+
+        <div class="reviews-wrapper" id="reviews-slider">
+
+          <div class="reviews__track" role="list">
+
+            <article class="review-card" role="listitem">
+              <div class="review-quote-mark" aria-hidden="true">&ldquo;</div>
+              <div class="review-stars" aria-label="Cinque stelle su cinque">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <blockquote class="review-text">
+                <p><em>"Una serata indimenticabile. La vista dalla terrazza al tramonto è qualcosa che non si può descrivere a parole. I tortellini dello chef Alain? Poesia."</em></p>
+              </blockquote>
+              <footer class="review-author">
+                <cite>Marco R.</cite>
+                <span class="review-location">Roma</span>
+              </footer>
+            </article>
+
+            <article class="review-card" role="listitem">
+              <div class="review-quote-mark" aria-hidden="true">&ldquo;</div>
+              <div class="review-stars" aria-label="Cinque stelle su cinque">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <blockquote class="review-text">
+                <p><em>"Festeggiato il nostro anniversario qui. Servizio impeccabile, piatti raffinati e un'atmosfera che ti fa sentire speciale. Il dolce era un'opera d'arte."</em></p>
+              </blockquote>
+              <footer class="review-author">
+                <cite>Giulia &amp; Luca M.</cite>
+                <span class="review-location">Roma</span>
+              </footer>
+            </article>
+
+            <article class="review-card" role="listitem">
+              <div class="review-quote-mark" aria-hidden="true">&ldquo;</div>
+              <div class="review-stars" aria-label="Cinque stelle su cinque">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <blockquote class="review-text">
+                <p><em>"Ci torno ogni volta che voglio impressionare qualcuno. La qualità è costante da anni, il panorama è il miglior aperitivo possibile."</em></p>
+              </blockquote>
+              <footer class="review-author">
+                <cite>Francesco D.</cite>
+                <span class="review-location">Frascati</span>
+              </footer>
+            </article>
+
+            <article class="review-card" role="listitem">
+              <div class="review-quote-mark" aria-hidden="true">&ldquo;</div>
+              <div class="review-stars" aria-label="Quattro stelle su cinque">
+                <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              </div>
+              <blockquote class="review-text">
+                <p><em>"Il miglior ristorante dei Castelli Romani. Punto. La cura nei dettagli si vede in ogni piatto e in ogni angolo del locale."</em></p>
+              </blockquote>
+              <footer class="review-author">
+                <cite>Alessandra P.</cite>
+                <span class="review-location">Castelli Romani</span>
+              </footer>
+            </article>
+
+          </div><!-- /.reviews__track -->
+
+          <div class="reviews-controls" aria-label="Navigazione recensioni">
+            <button class="reviews__prev" aria-label="Recensione precedente">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="13,4 7,10 13,16"></polyline>
+              </svg>
+            </button>
+            <div class="reviews__dots" role="tablist" aria-label="Seleziona recensione"></div>
+            <button class="reviews__next" aria-label="Recensione successiva">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="7,4 13,10 7,16"></polyline>
+              </svg>
+            </button>
+          </div>
+
+        </div><!-- /#reviews-slider -->
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 11: FAQ / ACCORDION
+    ──────────────────────────────────────────────────────────── -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">DOMANDE FREQUENTI</span>
+          <h2 id="faq-heading" class="section-title">Tutto Quello che Devi Sapere</h2>
+        </div>
+
+        <div class="faq-list reveal-up" data-delay="100">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq__item">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-answer-1"
+              id="faq-btn-1"
+              role="button"
+            >
+              <span>Quali sono gli orari di apertura?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="9" y1="4" x2="9" y2="14"></line>
+                  <line x1="4" y1="9" x2="14" y2="9" class="faq__icon-h"></line>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq__answer"
+              id="faq-answer-1"
+              role="region"
+              aria-labelledby="faq-btn-1"
+            >
+              <div class="faq__answer-inner">
+                <p>Lunedì, Martedì, Giovedì e Venerdì: <strong>19:00 – 23:00</strong>. Sabato e Domenica: <strong>12:30 – 15:00</strong> e <strong>19:00 – 23:00</strong>. Mercoledì chiuso (da Ottobre a Maggio). Dal 20 Luglio al 15 Settembre siamo aperti tutti i giorni solo a cena.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq__item">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-answer-2"
+              id="faq-btn-2"
+              role="button"
+            >
+              <span>Come posso prenotare un tavolo?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="9" y1="4" x2="9" y2="14"></line>
+                  <line x1="4" y1="9" x2="14" y2="9" class="faq__icon-h"></line>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq__answer"
+              id="faq-answer-2"
+              role="region"
+              aria-labelledby="faq-btn-2"
+            >
+              <div class="faq__answer-inner">
+                <p>Puoi prenotare telefonicamente al <a href="tel:+390694190004">(+39) 06 9419004</a>, via WhatsApp al <a href="https://wa.me/393517722207">(+39) 351 772 2207</a>, oppure compilando il modulo di contatto in fondo a questa pagina.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq__item">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-answer-3"
+              id="faq-btn-3"
+              role="button"
+            >
+              <span>C'è un parcheggio disponibile?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="9" y1="4" x2="9" y2="14"></line>
+                  <line x1="4" y1="9" x2="14" y2="9" class="faq__icon-h"></line>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq__answer"
+              id="faq-answer-3"
+              role="region"
+              aria-labelledby="faq-btn-3"
+            >
+              <div class="faq__answer-inner">
+                <p>Sì, è disponibile parcheggio nelle immediate vicinanze del ristorante in Via Regina Margherita e nelle strade limitrofe. Nei weekend consigliamo di arrivare con un po' di anticipo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq__item">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-answer-4"
+              id="faq-btn-4"
+              role="button"
+            >
+              <span>Avete opzioni per intolleranze alimentari?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="9" y1="4" x2="9" y2="14"></line>
+                  <line x1="4" y1="9" x2="14" y2="9" class="faq__icon-h"></line>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq__answer"
+              id="faq-answer-4"
+              role="region"
+              aria-labelledby="faq-btn-4"
+            >
+              <div class="faq__answer-inner">
+                <p>Assolutamente sì. I nostri chef sono preparati per gestire intolleranze e allergie alimentari. Vi preghiamo di comunicarle al momento della prenotazione per garantirvi la migliore esperienza possibile.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq__item">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-answer-5"
+              id="faq-btn-5"
+              role="button"
+            >
+              <span>Offrite servizio catering per eventi?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="9" y1="4" x2="9" y2="14"></line>
+                  <line x1="4" y1="9" x2="14" y2="9" class="faq__icon-h"></line>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq__answer"
+              id="faq-answer-5"
+              role="region"
+              aria-labelledby="faq-btn-5"
+            >
+              <div class="faq__answer-inner">
+                <p>Sì, il nostro servizio catering è gestito tramite Belvedere Catering. Per maggiori informazioni, visitate <a href="https://belvederecatering.it" target="_blank" rel="noopener noreferrer">belvederecatering.it</a> o contattateci direttamente.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq__item">
+            <button
+              class="faq__question"
+              aria-expanded="false"
+              aria-controls="faq-answer-6"
+              id="faq-btn-6"
+              role="button"
+            >
+              <span>Qual è il dress code?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="9" y1="4" x2="9" y2="14"></line>
+                  <line x1="4" y1="9" x2="14" y2="9" class="faq__icon-h"></line>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="faq__answer"
+              id="faq-answer-6"
+              role="region"
+              aria-labelledby="faq-btn-6"
+            >
+              <div class="faq__answer-inner">
+                <p>Smart casual. Vi chiediamo un abbigliamento elegante ma non formale, in linea con l'atmosfera raffinata del ristorante.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.faq-list -->
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 12: BRAND STORY STRIP
+    ──────────────────────────────────────────────────────────── -->
+    <section class="brand-story" id="brand-story" aria-label="Il Ristorante Belvedere, storie in cucina dal 1933">
+      <div class="brand-story-bg parallax-bg" data-parallax="0.2">
+        <img
+          src="https://images.unsplash.com/photo-1523464862212-d526026a31ae?w=1920&h=1080&fit=crop&q=80"
+          alt="Vista panoramica al tramonto della campagna italiana con colline dorate"
+          loading="lazy"
+          width="1920"
+          height="1080"
+        >
+        <div class="brand-story-overlay"></div>
+      </div>
+      <div class="brand-story-content container">
+        <h2 class="brand-story-title reveal-up">
+          <em>Storie</em> in cucina dal 1933
+        </h2>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────────────────────
+         SECTION 13: CONTACT
+    ──────────────────────────────────────────────────────────── -->
+    <section class="contact-section" id="contatti" aria-labelledby="contatti-heading">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-label">CONTATTACI</span>
+          <h2 id="contatti-heading" class="section-title">Prenota la Tua Esperienza</h2>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- LEFT: Contact Info -->
+          <div class="contact-info reveal-up">
+
+            <div class="contact-info-group">
+              <h3 class="contact-info-title">Recapiti</h3>
+
+              <ul class="contact-info-list">
+                <li>
+                  <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  <a href="tel:+390694190004">(+39) 06 9419004</a>
+                </li>
+                <li>
+                  <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  <a href="https://wa.me/393517722207" target="_blank" rel="noopener noreferrer">(+39) 351 772 2207</a>
+                </li>
+                <li>
+                  <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <a href="mailto:a.rosica@icloud.com">a.rosica@icloud.com</a>
+                </li>
+                <li>
+                  <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <a href="https://maps.google.com/?q=Via+Regina+Margherita+29+Frascati+RM" target="_blank" rel="noopener noreferrer">Via Regina Margherita, 29, Frascati RM</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-info-group">
+              <h3 class="contact-info-title">Orari</h3>
+              <dl class="contact-hours">
+                <dt>Lun, Mar, Gio, Ven</dt>
+                <dd>19:00 – 23:00</dd>
+                <dt>Sabato e Domenica</dt>
+                <dd>12:30 – 15:00 &nbsp;&amp;&nbsp; 19:00 – 23:00</dd>
+                <dt>Mercoledì</dt>
+                <dd>Chiuso (Ottobre – Maggio)</dd>
+                <dt>20 Lug – 15 Set</dt>
+                <dd>Aperto tutti i giorni, solo cena</dd>
+              </dl>
+            </div>
+
+          </div><!-- /.contact-info -->
+
+          <!-- RIGHT: Contact Form -->
+          <div class="contact-form-wrap reveal-up" data-delay="150">
+            <form
+              class="contact-form"
+              id="contact-form"
+              data-validate
+              novalidate
+              aria-label="Modulo di contatto e prenotazione"
+            >
+
+              <div class="form-group">
+                <label for="nome" class="form-label">Nome <span class="form-required" aria-label="obbligatorio">*</span></label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  class="form-input"
+                  placeholder="Il tuo nome"
+                  required
+                  autocomplete="given-name"
+                  aria-required="true"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email <span class="form-required" aria-label="obbligatorio">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="la.tua@email.it"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  class="form-input"
+                  placeholder="+39 06 ..."
+                  autocomplete="tel"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="oggetto" class="form-label">Oggetto <span class="form-required" aria-label="obbligatorio">*</span></label>
+                <select
+                  id="oggetto"
+                  name="oggetto"
+                  class="form-select"
+                  required
+                  aria-required="true"
+                >
+                  <option value="" disabled selected hidden>Seleziona un oggetto</option>
+                  <option value="prenotazione">Prenotazione Tavolo</option>
+                  <option value="informazioni">Informazioni Generali</option>
+                  <option value="evento-privato">Evento Privato</option>
+                  <option value="catering">Catering</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group--full">
+                <label for="messaggio" class="form-label">Messaggio <span class="form-required" aria-label="obbligatorio">*</span></label>
+                <textarea
+                  id="messaggio"
+                  name="messaggio"
+                  class="form-textarea"
+                  rows="5"
+                  placeholder="Scrivi il tuo messaggio..."
+                  required
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <div class="form-group form-group--full form-submit">
+                <button type="submit" class="btn btn-primary magnetic-btn">
+                  Invia Messaggio
+                </button>
+              </div>
+
+            </form>
+
+            <div class="form-success" style="display:none;" role="status" aria-live="polite">
+              <div class="form-success-inner">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="22"/><polyline points="14,24 20,30 34,18"/></svg>
+                <h3>Messaggio inviato!</h3>
+                <p>Grazie per averci contattato. Vi risponderemo entro 24 ore.</p>
+              </div>
+            </div>
+
+          </div><!-- /.contact-form-wrap -->
+
+        </div><!-- /.contact-grid -->
+
+        <!-- Google Maps -->
+        <div class="map-container reveal-up">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.123!2d12.6806!3d41.8089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVia+Regina+Margherita%2C+29%2C+Frascati+RM!5e0!3m2!1sit!2sit!4v1"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa Ristorante Belvedere — Via Regina Margherita 29, Frascati"
+          ></iframe>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" aria-label="Ristorante Belvedere — torna all'inizio">BELVEDERE</a>
+          <p class="footer-tagline">Storie in cucina dal 1933</p>
+          <p class="footer-description">Fine dining mediterraneo sul colle di Frascati, con terrazza panoramica su Roma e i Castelli Romani.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navigazione footer">
+          <h4>Navigazione</h4>
+          <a href="#storia">La Nostra Storia</a>
+          <a href="chef.html">I Nostri Chef</a>
+          <a href="#servizi">Servizi</a>
+          <a href="#galleria">Galleria</a>
+          <a href="#recensioni">Recensioni</a>
+          <a href="#contatti">Contatti</a>
+        </nav>
+
+        <div class="footer-contact">
+          <h4>Contatti</h4>
+          <a href="tel:+390694190004">(+39) 06 9419004</a>
+          <a href="https://wa.me/393517722207" target="_blank" rel="noopener noreferrer">WhatsApp: 351 772 2207</a>
+          <a href="mailto:a.rosica@icloud.com">a.rosica@icloud.com</a>
+        </div>
+
+        <div class="footer-location">
+          <h4>Dove Siamo</h4>
+          <p>Via Regina Margherita, 29<br>Frascati (RM)</p>
+          <div class="footer-hours">
+            <p>Lun-Mar, Gio-Ven: 19:00–23:00</p>
+            <p>Sab-Dom: 12:30–15:00, 19:00–23:00</p>
+            <p>Mercoledì: Chiuso (Ott–Mag)</p>
+          </div>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <div class="footer-bottom">
+
+        <div class="footer-social" aria-label="Seguici sui social">
+          <a href="https://www.facebook.com/RistoranteBelvedereFrascati" target="_blank" rel="noopener noreferrer" aria-label="Segui Ristorante Belvedere su Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/belvedere1933" target="_blank" rel="noopener noreferrer" aria-label="Segui Ristorante Belvedere su Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+
+        <p class="footer-legal">P.IVA 05817341005 &mdash; Attività Storica del Lazio</p>
+        <p class="footer-copyright">&copy; <span data-year></span> Ristorante Belvedere. Tutti i diritti riservati.</p>
+
+      </div><!-- /.footer-bottom -->
+    </div><!-- /.container -->
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       WHATSAPP FLOATING BUTTON
+  ════════════════════════════════════════════════════════════ -->
+  <a
+    href="https://wa.me/393517722207"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,3655 @@
+/* =============================================================================
+   RISTORANTE BELVEDERE DAL 1933 — FRASCATI
+   styles.css — Production CSS v1.0
+   Premium Restaurant Website | Evoluzione Digitale
+   =============================================================================
+   TABLE OF CONTENTS
+   01. CSS Reset / Normalize
+   02. Custom Properties (Design System Tokens)
+   03. Global Typography System
+   04. Utility Classes
+   05. Global Components
+       05a. Preloader (Variant A — Logo + Line)
+       05b. Header (Style C — Centered Logo)
+       05c. Mobile Menu (Style A — Fullscreen Overlay)
+       05d. Footer
+       05e. WhatsApp Floating Button
+       05f. Scroll Progress Bar
+       05g. Custom Cursor (Desktop)
+       05h. Custom Scrollbar
+   06. Section-Specific Styles
+       06a. Hero (Variant A — Centered Fullscreen)
+       06b. Marquee
+       06c. Cinematic Image Sequence (Signature Moment 1)
+       06d. About / Timeline (Signature Moment 2)
+       06e. Team
+       06f. CTA Banner (Style B — Image Background)
+       06g. Services Card Grid
+       06h. Numbers / Statistics
+       06i. Gallery Grid
+       06j. Reviews Slider
+       06k. FAQ Accordion
+       06l. Brand Story Strip (Signature Moment 3)
+       06m. Contact Section
+       06n. Map Embed
+   07. Responsive Breakpoints
+   08. Reduced Motion
+   09. Selection & Focus
+   ============================================================================= */
+
+
+/* =============================================================================
+   01. CSS RESET / NORMALIZE
+   ============================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 100%;
+  tab-size: 4;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid currentColor;
+}
+
+address {
+  font-style: normal;
+}
+
+dialog {
+  padding: 0;
+  border: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+/* =============================================================================
+   02. CUSTOM PROPERTIES (DESIGN SYSTEM TOKENS)
+   ============================================================================= */
+
+:root {
+
+  /* --- Primary Palette (Warm Earth - Belvedere) --- */
+  --color-dark:          #1a1410;
+  --color-dark-alt:      #2c2416;
+  --color-light:         #f7f2ec;
+  --color-light-alt:     #ede5d8;
+
+  /* --- Accent (Belvedere Gold) --- */
+  --color-accent:        #dc902e;
+  --color-accent-light:  #e8a84e;
+  --color-accent-dark:   #b87520;
+  --color-accent-rgb:    220, 144, 46;
+
+  /* --- Neutral --- */
+  --color-text-dark:     #2c2416;
+  --color-text-light:    #f7f2ec;
+  --color-text-muted:    #8a7a66;
+  --color-border:        rgba(220, 144, 46, 0.2);
+  --color-border-light:  rgba(44, 36, 22, 0.1);
+
+  /* --- Semantic --- */
+  --color-error:         #c0392b;
+  --color-success:       #dc902e;
+  --color-overlay:       rgba(26, 20, 16, 0.7);
+
+  /* --- Typography --- */
+  --font-display:    'Libre Baskerville', serif;
+  --font-body:       'Source Sans 3', sans-serif;
+  --font-accent:     'Cormorant', serif;
+
+  /* --- Font Sizes (mobile-first, fluid) --- */
+  --text-xs:    clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --text-sm:    clamp(0.8125rem, 0.76rem + 0.26vw, 0.875rem);
+  --text-base:  clamp(0.9375rem, 0.88rem + 0.29vw, 1.0625rem);
+  --text-lg:    clamp(1.0625rem, 0.97rem + 0.46vw, 1.25rem);
+  --text-xl:    clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl:   clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --text-3xl:   clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-4xl:   clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.3;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.05em;
+  --tracking-wider:  0.1em;
+  --tracking-widest: 0.2em;
+
+  /* --- Spacing --- */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-5:   1.5rem;
+  --space-6:   2rem;
+  --space-7:   3rem;
+  --space-8:   4rem;
+  --space-9:   6rem;
+  --space-10:  8rem;
+
+  --section-padding:   clamp(4rem, 8vw, 8rem);
+  --container-width:   min(90%, 1280px);
+  --container-narrow:  min(85%, 900px);
+
+  /* --- Border, Radius & Shadow --- */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg:   0 8px 30px rgba(0,0,0,0.12);
+  --shadow-xl:   0 20px 60px rgba(0,0,0,0.15);
+  --shadow-glow: 0 0 20px rgba(220, 144, 46, 0.3);
+
+  /* --- Animation --- */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:  cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --duration-fast:    200ms;
+  --duration-normal:  400ms;
+  --duration-slow:    600ms;
+  --duration-slower:  800ms;
+
+  --transition-fast:    all var(--duration-fast) var(--ease-out);
+  --transition-normal:  all var(--duration-normal) var(--ease-out);
+  --transition-slow:    all var(--duration-slow) var(--ease-out);
+
+  /* --- Z-Index Scale --- */
+  --z-base:       1;
+  --z-above:      10;
+  --z-dropdown:   100;
+  --z-sticky:     200;
+  --z-overlay:    500;
+  --z-modal:      800;
+  --z-menu:       999;
+  --z-header:     1000;
+  --z-progress:   1001;
+  --z-cursor:     9000;
+  --z-preloader:  9999;
+}
+
+
+/* =============================================================================
+   03. GLOBAL TYPOGRAPHY SYSTEM
+   ============================================================================= */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: inherit;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+}
+
+h6 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+}
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+p + p {
+  margin-top: var(--space-4);
+}
+
+strong {
+  font-weight: var(--weight-bold);
+}
+
+em {
+  font-style: italic;
+}
+
+/* Labels / Overlines */
+label,
+.label,
+.overline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+/* Accent text — Cormorant italic */
+.accent-text {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+}
+
+/* Section label — uppercase, tracking, gold color */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+
+/* =============================================================================
+   04. UTILITY CLASSES
+   ============================================================================= */
+
+/* --- Scroll Reveal --- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+[data-delay="1"] { transition-delay: 100ms; }
+[data-delay="2"] { transition-delay: 200ms; }
+[data-delay="3"] { transition-delay: 300ms; }
+[data-delay="4"] { transition-delay: 400ms; }
+
+/* --- Containers --- */
+.container {
+  width: var(--container-width);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.container-narrow {
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* --- Flex helpers --- */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Visually hidden (accessible) --- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Buttons base --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border: 2px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-light);
+  border: 2px solid rgba(var(--color-accent-rgb), 0.6);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(var(--color-accent-rgb), 0.08);
+  transform: translateY(-2px);
+}
+
+/* Magnetic button effect wrapper */
+.magnetic-btn {
+  display: inline-block;
+  will-change: transform;
+}
+
+
+/* =============================================================================
+   05a. PRELOADER — VARIANT A (Logo + Line)
+   ============================================================================= */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  background-color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  transition: transform var(--duration-slower) var(--ease-in-out);
+}
+
+/* HTML uses .preloader-content as inner wrapper */
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+/* JS adds class "exit" (not "preloader-exit") */
+.preloader.exit {
+  transform: translateY(-100%);
+}
+
+/* HTML uses both .preloader__logo and .preloader-logo — style both */
+.preloader__logo,
+.preloader-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  opacity: 0;
+  transform: translateY(16px);
+  animation: preloaderLogoIn var(--duration-slow) var(--ease-out) 0.2s forwards;
+}
+
+.preloader-subtitle {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wider);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: preloaderLogoIn var(--duration-slow) var(--ease-out) 0.4s forwards;
+}
+
+/* HTML uses .preloader__line (BEM). JS adds class "expanded" to it. */
+.preloader__line,
+.preloader-line {
+  width: 120px;
+  height: 2px;
+  background-color: rgba(var(--color-accent-rgb), 0.15);
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+/* The expanding fill is driven by JS class "expanded" via a pseudo-element */
+.preloader__line::after,
+.preloader-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width 1.4s var(--ease-in-out);
+}
+
+.preloader__line.expanded::after,
+.preloader-line.expanded::after {
+  width: 100%;
+}
+
+@keyframes preloaderLogoIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prevent scroll while preloader is active */
+body.preloader-active {
+  overflow: hidden;
+}
+
+
+/* =============================================================================
+   05b. HEADER — STYLE C (Centered Logo, Split Nav)
+   ============================================================================= */
+
+/* HTML uses class="header" (not .site-header) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  transition:
+    background-color var(--duration-normal) var(--ease-out),
+    backdrop-filter var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--container-width);
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-block: var(--space-5);
+}
+
+/* --- Nav halves (desktop) --- HTML uses .nav-left / .nav-right */
+.nav-left,
+.nav-right {
+  display: none;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+/* Nav links inside header navs — HTML links have no extra class */
+.nav-left a,
+.nav-right a {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-left a::after,
+.nav-right a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: var(--color-accent);
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+/* Active nav link state */
+.nav-left a.active,
+.nav-right a.active {
+  color: var(--color-accent);
+}
+
+/* CTA link in nav */
+.nav-cta {
+  background-color: var(--color-accent);
+  color: var(--color-dark) !important;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-semibold) !important;
+  transition: background-color var(--duration-fast) var(--ease-out) !important;
+}
+
+.nav-cta:hover {
+  background-color: var(--color-accent-dark) !important;
+  color: var(--color-light) !important;
+}
+
+/* --- Logo (centered on desktop) --- */
+.header-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  line-height: 1;
+  transition: color var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.header-logo:hover {
+  color: var(--color-accent);
+}
+
+/* --- Hamburger (mobile) — HTML uses class="hamburger" */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  border: none;
+  min-height: 44px;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  background-color: var(--color-text-light);
+  border-radius: var(--radius-full);
+  transition: var(--transition-normal);
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) { width: 28px; }
+.hamburger span:nth-child(2) { width: 22px; }
+.hamburger span:nth-child(3) { width: 16px; }
+
+.hamburger:hover span {
+  width: 28px;
+  background-color: var(--color-accent);
+}
+
+/* Hamburger active (menu open) state */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  width: 28px;
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  width: 28px;
+}
+
+/* Scrolled state — HTML class="header" */
+.header.header-scrolled {
+  background-color: rgba(26, 20, 16, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(var(--color-accent-rgb), 0.15);
+}
+
+.header.header-scrolled .header-inner {
+  padding-block: var(--space-4);
+}
+
+/* Hidden (scroll down) */
+.header.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Reserve space for fixed header */
+.header-spacer {
+  height: 80px;
+}
+
+
+/* =============================================================================
+   05c. MOBILE MENU — STYLE A (Fullscreen Overlay)
+   ============================================================================= */
+
+/* HTML uses class="mobile-menu" + opens with class="active" (JS) */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  background-color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--duration-normal) var(--ease-out),
+    visibility var(--duration-normal) var(--ease-out);
+  overflow-y: auto;
+}
+
+/* JS adds class "active" (not "is-open") */
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile menu inner content wrapper */
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: var(--space-8);
+}
+
+/* Nav links — HTML uses class="mobile-nav" */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+/* Individual links inside mobile-nav — no extra class in HTML */
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-light);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+  line-height: var(--leading-tight);
+}
+
+/* JS adds class "visible" to each link */
+.mobile-nav a.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Contact info at bottom — HTML uses class="mobile-menu-info" */
+.mobile-menu-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-6);
+  width: 100%;
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out) 450ms;
+}
+
+.mobile-menu.active .mobile-menu-info {
+  opacity: 1;
+}
+
+.mobile-menu-info a,
+.mobile-menu-info span,
+.mobile-menu-info p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-align: center;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.mobile-menu-info a:hover {
+  color: var(--color-accent);
+}
+
+/* Social icons row — HTML uses class="mobile-menu-social" */
+.mobile-menu-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out) 500ms;
+}
+
+.mobile-menu.active .mobile-menu-social {
+  opacity: 1;
+}
+
+.mobile-menu-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: var(--transition-normal);
+}
+
+.mobile-menu-social a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(var(--color-accent-rgb), 0.08);
+}
+
+
+/* =============================================================================
+   05d. FOOTER
+   ============================================================================= */
+
+/* HTML uses class="footer" (not .site-footer) */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-text-light);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--space-7);
+}
+
+/* 4-column grid (desktop) */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-6);
+}
+
+/* HTML uses .footer-brand */
+.footer-brand {}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.footer-tagline {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.footer-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Footer columns headings — HTML uses plain <h4> */
+.footer-nav h4,
+.footer-contact h4,
+.footer-location h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+/* Footer nav links — HTML uses plain <a> inside .footer-nav */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-nav a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--duration-fast) var(--ease-out);
+  letter-spacing: var(--tracking-wide);
+}
+
+.footer-nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Footer contact column */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-contact a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--duration-fast) var(--ease-out);
+  letter-spacing: var(--tracking-wide);
+}
+
+.footer-contact a:hover {
+  color: var(--color-accent);
+}
+
+/* Footer location column */
+.footer-location {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-location p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Opening hours block in footer */
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.footer-hours p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: var(--transition-normal);
+}
+
+.footer-social a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(var(--color-accent-rgb), 0.08);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Footer bottom row */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+/* HTML uses .footer-copyright and .footer-legal */
+.footer-copyright,
+.footer-legal {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+}
+
+
+/* =============================================================================
+   05e. WHATSAPP FLOATING BUTTON
+   ============================================================================= */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-overlay);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition:
+    transform var(--duration-fast) var(--ease-bounce),
+    box-shadow var(--duration-fast) var(--ease-out);
+  animation: whatsappPulse 2s var(--ease-out) 2s 1;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-btn:active {
+  transform: scale(1.05);
+}
+
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+  flex-shrink: 0;
+}
+
+@keyframes whatsappPulse {
+  0%   { transform: scale(1); box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  30%  { transform: scale(1.12); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6); }
+  60%  { transform: scale(1.04); box-shadow: 0 4px 22px rgba(37, 211, 102, 0.45); }
+  100% { transform: scale(1); box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+
+
+/* =============================================================================
+   05f. SCROLL PROGRESS BAR
+   ============================================================================= */
+
+/* HTML: <div class="scroll-progress" id="scroll-progress"></div>
+   JS targets id="scroll-progress" directly and sets scaleX transform on it.
+   So the single element IS the bar itself. */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-progress);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-dark),
+    var(--color-accent),
+    var(--color-accent-light)
+  );
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 60ms linear;
+  will-change: transform;
+  pointer-events: none;
+}
+
+
+/* =============================================================================
+   05g. CUSTOM CURSOR (Desktop only)
+   ============================================================================= */
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-bounce),
+    width var(--duration-normal) var(--ease-out),
+    height var(--duration-normal) var(--ease-out);
+  will-change: transform;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-accent);
+  background-color: transparent;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition:
+    opacity var(--duration-normal) var(--ease-out),
+    width var(--duration-normal) var(--ease-out),
+    height var(--duration-normal) var(--ease-out),
+    background-color var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out);
+  will-change: transform;
+}
+
+/* JS adds class "hovered" (not "hover") */
+.cursor-follower.hovered {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  border-color: var(--color-accent-light);
+}
+
+.cursor-dot.hidden,
+.cursor-follower.hidden {
+  opacity: 0;
+}
+
+body.custom-cursor,
+body.custom-cursor * {
+  cursor: none;
+}
+
+
+/* =============================================================================
+   05h. CUSTOM SCROLLBAR
+   ============================================================================= */
+
+/* Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent-dark);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-dark) var(--color-dark);
+}
+
+
+/* =============================================================================
+   06a. HERO — VARIANT A (Centered Fullscreen)
+   ============================================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--color-text-light);
+}
+
+/* Background image */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 20, 16, 0.35) 0%,
+    rgba(26, 20, 16, 0.55) 50%,
+    rgba(26, 20, 16, 0.80) 100%
+  );
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-inline: var(--space-5);
+  padding-top: 80px;
+  padding-bottom: var(--space-10);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+  /* Visibility controlled by .reveal-up / JS preloaderComplete event */
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
+
+/* Accent word within hero title — HTML uses <em> */
+.hero-accent,
+.hero-title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--color-accent-light);
+}
+
+.hero-description {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(247, 242, 236, 0.82);
+  max-width: 580px;
+  margin-inline: auto;
+  margin-bottom: var(--space-7);
+}
+
+/* CTA group — HTML uses class="hero-actions" */
+.hero-actions,
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+/* Stats bar — HTML places it inside .hero-content (inline, not absolute) */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  border-top: 1px solid rgba(var(--color-accent-rgb), 0.25);
+  padding-top: var(--space-7);
+  margin-top: var(--space-2);
+}
+
+.hero-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding-inline: var(--space-4);
+  text-align: center;
+}
+
+.hero-stat:not(:last-child) {
+  border-right: 1px solid rgba(var(--color-accent-rgb), 0.2);
+}
+
+/* HTML uses .hero-stat-divider between stats — hide it, using borders instead */
+.hero-stat-divider {
+  display: none;
+}
+
+.hero-stat-number {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(247, 242, 236, 0.65);
+}
+
+/* Scroll indicator — HTML places it inside .hero-content (not absolutely) */
+.hero-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  /* Visibility controlled by .reveal-up / JS */
+}
+
+/* HTML uses .hero-scroll-label (not .hero-scroll-indicator-label) */
+.hero-scroll-label,
+.hero-scroll-indicator-label {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: rgba(247, 242, 236, 0.5);
+}
+
+/* HTML uses .hero-scroll-arrow (SVG chevron, not a CSS box) */
+.hero-scroll-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(247, 242, 236, 0.5);
+  animation: heroBounce 2s var(--ease-in-out) infinite;
+}
+
+/* Keep old selector for any future template variants */
+.hero-scroll-chevron {
+  width: 20px;
+  height: 20px;
+  border-right: 1.5px solid rgba(247, 242, 236, 0.5);
+  border-bottom: 1.5px solid rgba(247, 242, 236, 0.5);
+  transform: rotate(45deg);
+  animation: heroBounce 2s var(--ease-in-out) infinite;
+}
+
+@keyframes heroBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+
+/* =============================================================================
+   06b. MARQUEE
+   ============================================================================= */
+
+.marquee-section {
+  background-color: var(--color-dark-alt);
+  padding-block: var(--space-6);
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* HTML uses .marquee-inner (not .marquee-content) */
+.marquee-inner,
+.marquee-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 100%;
+}
+
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-wider);
+  color: rgba(247, 242, 236, 0.75);
+  padding-inline: var(--space-6);
+  text-transform: uppercase;
+}
+
+.marquee-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  flex-shrink: 0;
+  margin-inline: var(--space-2);
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+/* =============================================================================
+   06c. CINEMATIC IMAGE SEQUENCE — SIGNATURE MOMENT 1
+   ============================================================================= */
+
+.cinematic-section {
+  position: relative;
+  width: 100%;
+  height: 60vw;
+  max-height: 80vh;
+  min-height: 320px;
+  background-color: var(--color-dark);
+  overflow: hidden;
+}
+
+/* HTML uses .cinematic-track as a wrapper */
+.cinematic-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* HTML uses .cinematic__img (BEM), JS targets .cinematic__img */
+.cinematic__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--duration-slower) var(--ease-in-out);
+}
+
+.cinematic__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* JS adds class "active" (not "is-active") */
+.cinematic__img.active {
+  opacity: 1;
+}
+
+/* Overlay text at bottom — HTML uses .cinematic-overlay-text */
+.cinematic-overlay-text {
+  position: absolute;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  z-index: 3;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: rgba(247, 242, 236, 0.75);
+  letter-spacing: var(--tracking-wide);
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 50%, rgba(26, 20, 16, 0.65) 100%);
+  /* Gradient provided by the section background bleed — keep text legible */
+  background: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Gradient overlay over cinematic images */
+.cinematic-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(26, 20, 16, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+/* Dot indicators — HTML uses .cinematic__dots, JS creates .cinematic__dot buttons */
+.cinematic__dots {
+  position: absolute;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cinematic__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: rgba(247, 242, 236, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  min-height: 0;
+  padding: 0;
+}
+
+/* JS toggles class "active" on dots */
+.cinematic__dot.active {
+  width: 20px;
+  background-color: var(--color-accent);
+}
+
+.cinematic__dot:hover {
+  background-color: rgba(247, 242, 236, 0.65);
+}
+
+
+/* =============================================================================
+   06d. ABOUT / TIMELINE — SIGNATURE MOMENT 2
+   ============================================================================= */
+
+/* HTML uses class="about-section" (not .timeline-section) */
+.about-section {
+  background-color: var(--color-light);
+  padding-block: var(--section-padding);
+}
+
+/* Section header — shared pattern */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.section-title {
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+}
+
+/* Timeline wrapper — HTML uses id="timeline" with class="timeline" */
+.timeline {
+  position: relative;
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* Center vertical line — HTML uses .timeline__line (BEM).
+   JS takes full control of the scaleY transform via inline style.
+   Initial state is scaleY(0) set by JS on scroll. */
+.timeline__line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-light));
+  height: 100%;
+  z-index: 1;
+}
+
+/* Timeline items — HTML uses .timeline__item (BEM), JS adds class "visible" */
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: var(--space-9);
+  align-items: start;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.timeline__item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Node on the line — HTML uses .timeline__node (BEM), JS adds class "visible" */
+.timeline__node {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-border);
+  z-index: 2;
+  transition: var(--transition-normal);
+}
+
+.timeline__node.visible {
+  border-color: var(--color-accent);
+}
+
+.timeline__item:hover .timeline__node {
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+  transform: translateX(-50%) scale(1.3);
+}
+
+/* Content blocks — HTML uses .timeline-content */
+.timeline-content {
+  background-color: var(--color-light-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  width: 100%;
+}
+
+.timeline-year {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-3);
+  opacity: 0.35;
+}
+
+/* Timeline heading h3 */
+.timeline-content h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+.timeline-content p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Image within timeline — HTML uses .timeline-image (not .timeline-img) */
+.timeline-image {
+  margin-top: var(--space-5);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--duration-slower) var(--ease-out);
+  display: block;
+}
+
+.timeline-image:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =============================================================================
+   06e. TEAM
+   ============================================================================= */
+
+.team-section {
+  background-color: var(--color-dark-alt);
+  padding-block: var(--section-padding);
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  color: var(--color-text-light);
+}
+
+.team-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.team-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* Already inside .container */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.team-card {
+  background-color: rgba(26, 20, 16, 0.5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.team-card:hover {
+  border-color: rgba(var(--color-accent-rgb), 0.5);
+  box-shadow: var(--shadow-glow), var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* HTML uses .team-image (not .team-card-image) */
+.team-image {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--duration-slower) var(--ease-out);
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.05);
+}
+
+/* HTML uses .team-info (not .team-card-body) */
+.team-info {
+  padding: var(--space-6);
+}
+
+/* h3 heading inside .team-info — no extra class in HTML */
+.team-info h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-snug);
+}
+
+/* HTML uses .team-role (not .team-card-role) */
+.team-role {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+/* HTML uses .team-quote (not .team-card-quote) */
+.team-quote {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-4);
+}
+
+
+/* =============================================================================
+   06f. CTA BANNER — STYLE B (Image Background)
+   ============================================================================= */
+
+.cta-banner {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 20, 16, 0.82) 0%,
+    rgba(44, 36, 22, 0.72) 100%
+  );
+}
+
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-8) var(--space-5);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.cta-banner-content h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-5);
+  color: var(--color-text-light);
+}
+
+.cta-banner-content p {
+  font-size: var(--text-lg);
+  color: rgba(247, 242, 236, 0.8);
+  margin-bottom: var(--space-7);
+  line-height: var(--leading-relaxed);
+}
+
+.cta-banner-btn {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-sm);
+}
+
+
+/* =============================================================================
+   06g. SERVICES CARD GRID
+   ============================================================================= */
+
+.services-section {
+  background-color: var(--color-light);
+  padding-block: var(--section-padding);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+  color: var(--color-text-dark);
+}
+
+.services-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.services-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* Already inside .container */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.service-card {
+  background-color: var(--color-light-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-7) var(--space-6);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent));
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--color-accent-rgb), 0.25);
+}
+
+.service-card:hover::before {
+  width: 100%;
+}
+
+.service-number {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: rgba(var(--color-accent-rgb), 0.12);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.service-card:hover .service-number {
+  color: rgba(var(--color-accent-rgb), 0.22);
+}
+
+.service-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-snug);
+}
+
+.service-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Service link (e.g. "Consulta il Menu") — HTML uses .service-link */
+.service-link {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-accent);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.service-link:hover {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+
+/* =============================================================================
+   06h. NUMBERS / STATISTICS
+   ============================================================================= */
+
+/* HTML uses .numbers-section (not .stats-section) */
+.numbers-section {
+  background-color: var(--color-dark);
+  padding-block: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold accent decorative element */
+.numbers-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(
+    ellipse,
+    rgba(var(--color-accent-rgb), 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* HTML uses .numbers-grid (not .stats-grid). Inside .container already. */
+.numbers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8) var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+/* HTML uses .number-item (not .stat-item) */
+.number-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* HTML uses .number-value (not .stat-number), JS targets [data-count] */
+.number-value {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* HTML uses .number-label (not .stat-label) */
+.number-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+/* =============================================================================
+   06i. GALLERY GRID
+   ============================================================================= */
+
+.gallery-section {
+  background-color: var(--color-light-alt);
+  padding-block: var(--section-padding);
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  color: var(--color-text-dark);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.gallery-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.gallery-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* Grid with varying sizes — already inside .container */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+/* Gallery item — HTML uses .gallery__item (BEM) */
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-dark);
+  cursor: pointer;
+}
+
+/* Image wrapper — HTML uses .gallery__img-wrap */
+.gallery__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slower) var(--ease-out);
+}
+
+.gallery__item:hover .gallery__img-wrap img {
+  transform: scale(1.05);
+}
+
+/* Hover overlay — HTML uses .gallery__overlay */
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(26, 20, 16, 0.8) 0%,
+    rgba(26, 20, 16, 0.2) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-5);
+}
+
+.gallery__item:hover .gallery__overlay,
+.gallery__item.overlay-visible .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__overlay span {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  transform: translateY(10px);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.gallery__item:hover .gallery__overlay span {
+  transform: translateY(0);
+}
+
+/* Specific card sizes — HTML uses .gallery-item--wide / .gallery-item--tall */
+.gallery-item--wide {
+  aspect-ratio: 2/1;
+}
+
+.gallery-item--tall {
+  aspect-ratio: 3/4;
+}
+
+.gallery-item--square {
+  aspect-ratio: 1/1;
+}
+
+
+/* =============================================================================
+   06j. REVIEWS SLIDER
+   ============================================================================= */
+
+.reviews-section {
+  background-color: var(--color-dark-alt);
+  padding-block: var(--section-padding);
+  overflow: hidden;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  color: var(--color-text-light);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.reviews-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.reviews-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* Scroll snap container — HTML uses .reviews-wrapper (outer) + .reviews__track (track).
+   Already inside .container — just needs overflow hidden. */
+.reviews-wrapper {
+  overflow: hidden;
+}
+
+/* HTML uses .reviews__track (BEM) — this IS the scrollable track */
+.reviews__track {
+  display: flex;
+  gap: var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-4);
+}
+
+.reviews__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Review card */
+.review-card {
+  flex: 0 0 min(100%, 480px);
+  scroll-snap-align: start;
+  background-color: rgba(26, 20, 16, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-7);
+  position: relative;
+}
+
+/* Decorative oversized quote mark — HTML uses .review-quote-mark div */
+.review-quote-mark {
+  font-family: var(--font-accent);
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(var(--color-accent-rgb), 0.2);
+  pointer-events: none;
+  user-select: none;
+  margin-bottom: calc(-1 * var(--space-4));
+}
+
+/* Stars — HTML uses .review-stars with a plain span of star chars */
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+  color: var(--color-accent);
+  font-size: var(--text-base);
+}
+
+/* Quote text — HTML uses .review-text (blockquote) */
+.review-text {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  border: none;
+}
+
+.review-text p {
+  margin: 0;
+}
+
+/* Author footer — HTML uses .review-author as a <footer> */
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* HTML uses <cite> for author name */
+.review-author cite {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  font-style: normal;
+  color: var(--color-text-light);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* HTML uses .review-location */
+.review-location {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border);
+}
+
+/* Navigation controls — HTML uses .reviews-controls */
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}
+
+/* HTML uses .reviews__prev / .reviews__next (BEM) */
+.reviews__prev,
+.reviews__next {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: var(--transition-fast);
+  min-height: 0;
+}
+
+.reviews__prev:hover,
+.reviews__next:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(var(--color-accent-rgb), 0.08);
+}
+
+/* HTML uses .reviews__dots container, JS builds .reviews__dot buttons */
+.reviews__dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.reviews__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: rgba(247, 242, 236, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  padding: 0;
+  min-height: 0;
+}
+
+/* JS adds class "active" on active dot */
+.reviews__dot.active {
+  width: 20px;
+  background-color: var(--color-accent);
+}
+
+
+/* =============================================================================
+   06k. FAQ ACCORDION
+   ============================================================================= */
+
+.faq-section {
+  background-color: var(--color-light);
+  padding-block: var(--section-padding);
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  color: var(--color-text-dark);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.faq-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.faq-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+.faq-list {
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HTML uses .faq__item (BEM), JS adds class "active" (not "is-open") */
+.faq__item {
+  border-bottom: 1px solid var(--color-border-light);
+  transition: var(--transition-fast);
+}
+
+.faq__item:first-child {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.faq__item.active {
+  border-bottom-color: var(--color-accent);
+}
+
+/* HTML uses .faq__question (BEM button) */
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  text-align: left;
+  padding: var(--space-5) 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.faq__item.active .faq__question {
+  color: var(--color-accent);
+}
+
+/* HTML uses .faq__icon (BEM) — contains an SVG plus sign */
+.faq__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  color: var(--color-text-muted);
+  transition: color var(--duration-fast) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+}
+
+.faq__item.active .faq__icon {
+  color: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+/* The horizontal line inside the SVG — HTML targets .faq__icon-h class on the line element */
+.faq__icon-h {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.faq__item.active .faq__icon-h {
+  transform: scaleX(0);
+}
+
+/* HTML uses .faq__answer (BEM) — JS sets maxHeight directly */
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-slow) var(--ease-in-out);
+}
+
+/* HTML uses .faq__answer-inner (BEM) */
+.faq__answer-inner {
+  padding-bottom: var(--space-5);
+  border-left: 2px solid var(--color-accent);
+  padding-left: var(--space-4);
+}
+
+.faq__answer-inner p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.faq__answer-inner a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+
+/* =============================================================================
+   06l. BRAND STORY STRIP — SIGNATURE MOMENT 3
+   ============================================================================= */
+
+.brand-story {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.brand-story-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.brand-story-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.brand-story-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(26, 20, 16, 0.78);
+}
+
+.brand-story-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-10) var(--space-5);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* HTML uses .brand-story-title (not .brand-story-headline) */
+.brand-story-title,
+.brand-story-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-light);
+}
+
+/* em inside brand story title gets italic accent styling */
+.brand-story-title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  color: var(--color-accent-light);
+}
+
+/* Accent word override inside brand story */
+.brand-story-headline .accent-word,
+.brand-story-title .accent-word {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  color: var(--color-accent-light);
+}
+
+.brand-story-sub {
+  margin-top: var(--space-5);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-xl);
+  color: rgba(247, 242, 236, 0.65);
+  letter-spacing: var(--tracking-wide);
+}
+
+.brand-story-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  margin: var(--space-6) auto;
+}
+
+
+/* =============================================================================
+   06m. CONTACT SECTION
+   ============================================================================= */
+
+.contact-section {
+  background-color: var(--color-dark);
+  padding-block: var(--section-padding);
+  color: var(--color-text-light);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  width: var(--container-narrow);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.contact-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.contact-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* HTML uses .contact-grid (not .contact-layout). Already inside .container. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-9);
+}
+
+/* --- Contact Info --- */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* HTML uses .contact-info-group */
+.contact-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* HTML uses .contact-info-title for h3 headings */
+.contact-info-title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-3);
+}
+
+/* HTML uses .contact-info-list (ul) */
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contact-info-list li:hover {
+  color: var(--color-accent);
+}
+
+/* HTML uses .contact-icon for SVG icons */
+.contact-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent);
+}
+
+.contact-info-list a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contact-info-list a:hover {
+  color: var(--color-accent);
+}
+
+/* Opening hours — HTML uses <dl> inside .contact-hours */
+.contact-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: rgba(var(--color-accent-rgb), 0.04);
+}
+
+.contact-hours dt {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+}
+
+.contact-hours dd {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  text-align: right;
+}
+
+/* Old .contact-item kept for potential future reuse */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contact-item:hover {
+  color: var(--color-accent);
+}
+
+.contact-item-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: var(--text-base);
+  transition: var(--transition-fast);
+}
+
+.contact-item:hover .contact-item-icon {
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  border-color: var(--color-accent);
+}
+
+.contact-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.contact-item-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.contact-item-value {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: var(--leading-snug);
+}
+
+.contact-item-value a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contact-item-value a:hover {
+  color: var(--color-accent);
+}
+
+/* Opening hours */
+.contact-hours {
+  margin-top: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: rgba(var(--color-accent-rgb), 0.04);
+}
+
+.contact-hours-title {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.contact-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--space-2);
+  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.08);
+}
+
+.contact-hours-row:last-child {
+  border-bottom: none;
+}
+
+.contact-hours-day {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.contact-hours-time {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  font-weight: var(--weight-medium);
+}
+
+/* Contact form wrap — HTML uses .contact-form-wrap as the outer div */
+.contact-form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* --- Contact Form --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-group {
+  position: relative;
+}
+
+/* Required field asterisk */
+.form-required {
+  color: var(--color-error);
+  margin-left: 2px;
+}
+
+/* Full-width form group modifier */
+.form-group--full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.form-group:focus-within .form-label {
+  color: var(--color-accent);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  background-color: rgba(247, 242, 236, 0.05);
+  border: 1px solid rgba(247, 242, 236, 0.12);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-5);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+  outline: none;
+  min-height: 44px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(138, 122, 102, 0.6);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--color-accent);
+  background-color: rgba(var(--color-accent-rgb), 0.05);
+  box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.12);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: var(--leading-normal);
+}
+
+/* Inline row for 2 fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* Error state — JS adds class "error" directly to the field */
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* Legacy has-error on group (kept for compatibility) */
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* JS dynamically creates .field-error span inside form-group */
+.field-error {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  letter-spacing: var(--tracking-wide);
+}
+
+.form-error-msg {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  letter-spacing: var(--tracking-wide);
+  display: none;
+}
+
+.form-group.has-error .form-error-msg {
+  display: block;
+}
+
+/* Success message — HTML uses .form-success (not .form-success-msg).
+   JS sets style.display = 'block' on it directly. */
+.form-success {
+  padding: var(--space-8) var(--space-5);
+  background-color: rgba(var(--color-accent-rgb), 0.08);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  color: var(--color-text-light);
+  text-align: center;
+  display: none;
+}
+
+.form-success-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.form-success-inner svg {
+  color: var(--color-accent);
+}
+
+.form-success-inner h3 {
+  font-size: var(--text-2xl);
+  color: var(--color-accent);
+}
+
+.form-success-inner p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+}
+
+/* Submit button row — HTML uses div.form-group.form-submit as a wrapper div,
+   and the actual button inside has class="btn btn-primary magnetic-btn".
+   Style the wrapper and the btn inside it. */
+.form-group.form-submit {
+  margin-top: var(--space-2);
+}
+
+.form-group.form-submit .btn {
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  min-height: 52px;
+}
+
+
+/* =============================================================================
+   06n. MAP EMBED
+   ============================================================================= */
+
+/* HTML uses .map-container (not .map-section) — placed inside .contact-section */
+.map-container {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+  margin-top: var(--space-9);
+  border-radius: var(--radius-md);
+}
+
+.map-container::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent), var(--color-accent-dark));
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: none;
+  filter: grayscale(20%) contrast(1.02) brightness(0.95);
+}
+
+
+/* =============================================================================
+   07. RESPONSIVE BREAKPOINTS — MOBILE FIRST
+   ============================================================================= */
+
+/* --- 480px — Large Phones --- */
+@media (min-width: 480px) {
+
+  /* Hero CTA row — HTML uses .hero-actions */
+  .hero-actions,
+  .hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Stats — HTML uses .numbers-grid */
+  .numbers-grid {
+    gap: var(--space-8);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Map */
+  .map-container iframe {
+    height: 350px;
+  }
+}
+
+/* --- 768px — Tablets --- */
+@media (min-width: 768px) {
+
+  /* Header spacer */
+  .header-spacer {
+    height: 88px;
+  }
+
+  /* Hero */
+  .hero-scroll-indicator {
+    display: flex;
+  }
+
+  /* Timeline content padding on tablet */
+  .timeline-content {
+    padding: var(--space-7);
+  }
+
+  /* Team */
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Gallery grid — tablet */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+
+  /* HTML uses .gallery-item--wide (not .gallery-card--wide) */
+  .gallery-item--wide {
+    grid-column: span 2;
+  }
+
+  /* Reviews — wider cards */
+  .review-card {
+    flex: 0 0 420px;
+  }
+
+  /* Footer — 2 col */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Footer bottom */
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  /* Contact — HTML uses .contact-grid */
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* Map */
+  .map-container iframe {
+    height: 400px;
+  }
+}
+
+/* --- 1024px — Desktop --- */
+@media (min-width: 1024px) {
+
+  /* Header — show split nav, center logo — HTML uses .header */
+  .header .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  /* HTML uses .nav-left and .nav-right (not .header-nav) */
+  .nav-left,
+  .nav-right {
+    display: flex;
+  }
+
+  /* Right nav right-aligned */
+  .nav-right {
+    justify-content: flex-end;
+  }
+
+  /* Hide hamburger on desktop — HTML uses .hamburger */
+  .hamburger {
+    display: none;
+  }
+
+  /* Hero scroll indicator */
+  .hero-scroll-indicator {
+    bottom: 100px;
+  }
+
+  /* Cinematic — taller on desktop */
+  .cinematic-section {
+    height: 80vh;
+  }
+
+  /* Timeline — alternating layout — updated to match HTML BEM classes */
+  .timeline__item {
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .timeline__node {
+    position: relative;
+    left: auto;
+    top: 24px;
+    transform: none;
+    margin-inline: auto;
+  }
+
+  .timeline__item:nth-child(odd) .timeline-content {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+    padding-right: var(--space-8);
+  }
+
+  .timeline__item:nth-child(odd) .timeline__node {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .timeline__item:nth-child(odd) .timeline-image {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+    padding-left: var(--space-8);
+  }
+
+  .timeline__item:nth-child(even) .timeline-content {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+    padding-left: var(--space-8);
+  }
+
+  .timeline__item:nth-child(even) .timeline__node {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* Services 2x2 */
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Stats 4-col — HTML uses .numbers-grid and .number-item */
+  .numbers-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Gallery — more complex grid — HTML uses .gallery__item */
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 260px;
+    gap: var(--space-4);
+  }
+
+  .gallery-item--wide {
+    grid-column: span 2;
+  }
+
+  .gallery-item--tall {
+    grid-row: span 2;
+  }
+
+  /* Reviews — show 2.5 cards */
+  .review-card {
+    flex: 0 0 480px;
+  }
+
+  /* Contact — HTML uses .contact-grid */
+  .contact-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-10);
+  }
+
+  /* Footer — 4 col */
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+
+  /* Brand story — larger */
+  .brand-story {
+    min-height: 70vh;
+  }
+}
+
+/* --- 1280px — Large Desktop --- */
+@media (min-width: 1280px) {
+
+  /* Cinematic */
+  .cinematic-section {
+    max-height: none;
+    height: 85vh;
+  }
+
+  /* Gallery — even more room */
+  .gallery-grid {
+    grid-auto-rows: 300px;
+  }
+
+  /* Review cards */
+  .review-card {
+    flex: 0 0 520px;
+  }
+
+  /* CTA banner taller */
+  .cta-banner {
+    min-height: 60vh;
+  }
+}
+
+
+/* =============================================================================
+   08. REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* HTML uses .hero-scroll-arrow (SVG) */
+  .hero-scroll-chevron,
+  .hero-scroll-arrow {
+    animation: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+
+  /* HTML uses .cinematic__img (BEM) */
+  .cinematic__img {
+    transition: none !important;
+  }
+
+  /* Preloader elements — HTML uses .preloader__logo and .preloader__line */
+  .preloader__logo,
+  .preloader-logo,
+  .preloader-subtitle,
+  .preloader__line,
+  .preloader-line {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .preloader__line::after,
+  .preloader-line::after {
+    width: 100%;
+  }
+
+  .reveal-up,
+  .timeline__item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .cursor-dot,
+  .cursor-follower {
+    display: none;
+  }
+
+  body.custom-cursor,
+  body.custom-cursor * {
+    cursor: auto;
+  }
+}
+
+
+/* =============================================================================
+   09. INTERNAL PAGES
+   ============================================================================= */
+
+/* Page Hero — internal pages (40-50vh, dark, breadcrumb + title) */
+.page-hero {
+  min-height: 45vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--section-padding) 0 var(--space-8);
+  background-color: var(--color-dark);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26,20,16,0.5), rgba(26,20,16,0.85));
+  z-index: 1;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent-light);
+}
+
+.breadcrumb span {
+  color: var(--color-text-muted);
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.page-hero h1 em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.page-hero-subtitle {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+}
+
+/* Chef Page — dedicated styles */
+.chef-intro {
+  background-color: var(--color-light);
+  padding: var(--section-padding) 0;
+}
+
+.chef-intro-content {
+  width: var(--container-narrow);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.chef-intro-content p {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-dark);
+}
+
+.chef-intro-content p em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Chef profile — full width alternating sections */
+.chef-profile {
+  padding: var(--section-padding) 0;
+}
+
+.chef-profile:nth-child(odd) {
+  background-color: var(--color-dark-alt);
+}
+
+.chef-profile:nth-child(even) {
+  background-color: var(--color-light);
+}
+
+.chef-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .chef-profile-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chef-profile--reverse .chef-profile-grid {
+    direction: rtl;
+  }
+
+  .chef-profile--reverse .chef-profile-grid > * {
+    direction: ltr;
+  }
+}
+
+.chef-profile-image {
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.chef-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slower) var(--ease-out);
+}
+
+.chef-profile:hover .chef-profile-image img {
+  transform: scale(1.03);
+}
+
+.chef-profile-body {
+  padding: var(--space-4) 0;
+}
+
+.chef-profile:nth-child(odd) .chef-profile-body {
+  color: var(--color-text-light);
+}
+
+.chef-profile:nth-child(even) .chef-profile-body {
+  color: var(--color-text-dark);
+}
+
+.chef-profile-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.chef-profile-body h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-5);
+}
+
+.chef-profile-body p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-4);
+}
+
+.chef-profile-quote {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  color: var(--color-accent);
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+/* Chef Philosophy section */
+.chef-philosophy {
+  background-color: var(--color-dark);
+  padding: var(--section-padding) 0;
+  text-align: center;
+}
+
+.chef-philosophy-content {
+  width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.chef-philosophy h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
+
+.chef-philosophy h2 em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.chef-philosophy-values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  margin-top: var(--space-8);
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .chef-philosophy-values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.chef-value {
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.chef-value:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.chef-value h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.chef-value p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+}
+
+/* Chef CTA */
+.chef-cta {
+  background-color: var(--color-light);
+  padding: var(--section-padding) 0;
+  text-align: center;
+}
+
+.chef-cta h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+}
+
+.chef-cta p {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+
+/* =============================================================================
+   10. SELECTION & FOCUS
+   ============================================================================= */
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
