@@ -1482,7 +1482,9 @@ body.custom-cursor * {
   border-radius: var(--radius-full);
   background-color: var(--color-accent);
   flex-shrink: 0;
-  margin-inline: var(--space-2);
+  margin-inline: var(--space-4);
+  font-size: 0;
+  line-height: 0;
 }
 
 @keyframes marqueeScroll {
