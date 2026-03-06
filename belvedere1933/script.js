@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReviewsSlider();
   initFAQ();
   initGallery();
+  if (!isMobile) initDesktopPhoneLinks();
 
 
   // ══════════════════════════════════════════════════════════════════════════════
@@ -1146,6 +1147,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) {
         closeLightbox();
+      }
+    });
+  }
+
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // 19. DESKTOP PHONE LINKS — redirect tel: CTA buttons to contacts section
+  // ══════════════════════════════════════════════════════════════════════════════
+
+  function initDesktopPhoneLinks() {
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="tel:"].btn');
+      if (!link) return;
+      e.preventDefault();
+      const contactSection = document.getElementById('contatti');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = 'index.html#contatti';
       }
     });
   }

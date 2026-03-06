@@ -1615,7 +1615,7 @@ body.custom-cursor * {
 /* Section header — shared pattern */
 .section-header {
   text-align: center;
-  margin-bottom: var(--space-9);
+  margin-bottom: var(--space-7);
   width: var(--container-narrow);
   max-width: 900px;
   margin-inline: auto;
@@ -1632,6 +1632,7 @@ body.custom-cursor * {
   width: var(--container-narrow);
   max-width: 900px;
   margin-inline: auto;
+  padding-left: 48px;
 }
 
 /* Center vertical line — HTML uses .timeline__line (BEM).
@@ -1640,8 +1641,8 @@ body.custom-cursor * {
 .timeline__line {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%) scaleY(0);
+  left: 20px;
+  transform: scaleY(1);
   transform-origin: top;
   width: 2px;
   background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-light));
@@ -1671,7 +1672,7 @@ body.custom-cursor * {
 /* Node on the line — HTML uses .timeline__node (BEM), JS adds class "visible" */
 .timeline__node {
   position: absolute;
-  left: 50%;
+  left: 21px;
   top: 8px;
   transform: translateX(-50%);
   width: 16px;
@@ -3161,6 +3162,16 @@ body.custom-cursor * {
   /* Cinematic — taller on desktop */
   .cinematic-section {
     height: 80vh;
+  }
+
+  /* Timeline — reset to center layout for desktop */
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline__line {
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
   }
 
   /* Timeline — alternating layout — updated to match HTML BEM classes */
