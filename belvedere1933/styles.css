@@ -3671,6 +3671,123 @@ body.custom-cursor * {
 
 
 /* =============================================================================
+   09b. MENU PAGE
+   ============================================================================= */
+
+.menu-page {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-dark);
+}
+
+.menu-category {
+  margin-bottom: var(--space-9);
+}
+
+.menu-category:last-child {
+  margin-bottom: 0;
+}
+
+.menu-category-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu-category-number {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-wider);
+}
+
+.menu-category-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-light);
+  letter-spacing: var(--tracking-tight);
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .menu-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--space-8);
+  }
+}
+
+.menu-item {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid rgba(220, 144, 46, 0.1);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .menu-item {
+    border-bottom: 1px solid rgba(220, 144, 46, 0.1);
+  }
+}
+
+.menu-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.menu-item-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-light);
+  line-height: var(--leading-snug);
+}
+
+.menu-item-price {
+  font-family: var(--font-accent);
+  font-size: var(--text-xl);
+  color: var(--color-accent);
+  flex-shrink: 0;
+  font-weight: var(--weight-semibold);
+}
+
+.menu-item-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+
+.menu-note {
+  background-color: var(--color-dark-alt);
+  padding: var(--space-7) 0;
+  text-align: center;
+}
+
+.menu-note p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+
+/* =============================================================================
    10. SELECTION & FOCUS
    ============================================================================= */
 
