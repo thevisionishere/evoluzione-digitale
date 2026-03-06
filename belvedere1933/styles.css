@@ -513,12 +513,9 @@ label,
 /* HTML uses both .preloader__logo and .preloader-logo — style both */
 .preloader__logo,
 .preloader-logo {
-  font-family: var(--font-display);
-  font-size: var(--text-3xl);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
-  color: var(--color-text-light);
+  height: 80px;
+  width: auto;
+  filter: invert(1);
   opacity: 0;
   transform: translateY(16px);
   animation: preloaderLogoIn var(--duration-slow) var(--ease-out) 0.2s forwards;
@@ -673,19 +670,20 @@ body.preloader-active {
 
 /* --- Logo (centered on desktop) --- */
 .header-logo {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--color-text-light);
   line-height: 1;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: opacity var(--duration-fast) var(--ease-out);
   flex-shrink: 0;
 }
 
+.header-logo img {
+  height: 40px;
+  width: auto;
+  filter: invert(1);
+  display: block;
+}
+
 .header-logo:hover {
-  color: var(--color-accent);
+  opacity: 0.8;
 }
 
 /* --- Hamburger (mobile) — HTML uses class="hamburger" */
@@ -923,14 +921,14 @@ body.preloader-active {
 .footer-brand {}
 
 .footer-logo {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--color-text-light);
   margin-bottom: var(--space-3);
   display: block;
+}
+
+.footer-logo img {
+  height: 45px;
+  width: auto;
+  filter: invert(1);
 }
 
 .footer-tagline {
