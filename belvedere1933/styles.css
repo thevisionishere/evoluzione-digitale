@@ -1444,7 +1444,13 @@ body.custom-cursor * {
   display: flex;
   white-space: nowrap;
   will-change: transform;
-  animation: marqueeScroll 35s linear infinite;
+  animation: marqueeScroll 15s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .marquee-track {
+    animation-duration: 35s;
+  }
 }
 
 .marquee-track:hover {
