@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RE-UP SRL — Investi nel mattone con il metodo dell'ingegnere. Operazioni immobiliari ad alto potenziale nella zona del Lago di Garda e Verona." />
+  <title>RE-UP SRL — Investi nel Mattone con il Metodo dell'Ingegnere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --teal: #009BA9;
+      --teal-light: #00b8c8;
+      --teal-dark: #007a85;
+      --orange: #F29000;
+      --orange-hover: #d97f00;
+      --bg-darkest: #ffffff;
+      --bg-dark: #f7f8fc;
+      --bg-medium: #eef0f6;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f8f9fc;
+      --bg-light: #f0f2f8;
+      --text-white: #111827;
+      --text-light: #1e293b;
+      --text-muted: #64748b;
+      --text-dark: #1a1f2e;
+      --text-dark-muted: #4a5568;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-teal: rgba(0, 155, 169, 0.3);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.08);
+      --shadow-lg: 0 24px 64px rgba(0,0,0,0.12);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --font-heading: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    .heading-xl {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .heading-lg {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .heading-md {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .heading-sm {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .teal { color: var(--teal); }
+    .orange { color: var(--orange); }
+
+    /* =============================================
+       LAYOUT UTILITIES
+    ============================================= */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-pad {
+      padding: 96px 0;
+    }
+
+    .section-pad-sm {
+      padding: 72px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-pad { padding: 64px 0; }
+      .section-pad-sm { padding: 48px 0; }
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(242, 144, 0, 0.35);
+    }
+
+    .btn-orange:hover {
+      background: var(--orange-hover);
+      box-shadow: 0 8px 32px rgba(242, 144, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-orange:active {
+      transform: translateY(0);
+    }
+
+    .btn-lg {
+      padding: 20px 48px;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        white-space: normal;
+        text-align: center;
+        padding: 16px 24px;
+        font-size: 0.88rem;
+      }
+
+      .btn-lg {
+        padding: 18px 28px;
+        font-size: 0.95rem;
+        width: 100%;
+      }
+    }
+
+    .btn-outline-teal {
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+    }
+
+    .btn-outline-teal:hover {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    /* =============================================
+       SECTION LABELS
+    ============================================= */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    /* =============================================
+       SECTION DIVIDERS
+    ============================================= */
+    .divider {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+      margin: 24px 0 0 0;
+    }
+
+    .divider-center {
+      margin: 24px auto 0;
+    }
+
+    /* =============================================
+       SCROLL REVEAL
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* =============================================
+       1. HERO
+    ============================================= */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/investimenti.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.12;
+      will-change: transform;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.93) 0%,
+        rgba(255, 255, 255, 0.85) 50%,
+        rgba(247, 248, 252, 0.95) 100%
+      );
+    }
+
+    .hero-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hero-nav {
+      position: relative;
+      z-index: 10;
+      padding: 28px 0;
+    }
+
+    .hero-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .hero-contact-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748b;
+      transition: color var(--transition);
+    }
+
+    .hero-contact-link:hover { color: var(--teal); }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 60px 0 80px;
+    }
+
+    .hero-inner {
+      max-width: 780px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 155, 169, 0.08);
+      border: 1px solid rgba(0, 155, 169, 0.2);
+      border-radius: 100px;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: #111827;
+    }
+
+    .hero-headline .accent {
+      color: var(--teal);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 400;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .hero-micro {
+      font-size: 0.82rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-micro svg {
+      flex-shrink: 0;
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trust-badge-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(0, 155, 169, 0.08);
+      border: 1px solid rgba(0, 155, 169, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .trust-badge-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--teal);
+    }
+
+    .trust-badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-badge-number {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1;
+    }
+
+    .trust-badge-label {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .hero-bg {
+        background-attachment: scroll;
+      }
+
+      .trust-badges {
+        gap: 16px;
+      }
+
+      .trust-badge-number {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* =============================================
+       2. PROBLEM / OPPORTUNITY
+    ============================================= */
+    #problem {
+      background: #f7f8fc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #problem::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,155,169,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 56px;
+    }
+
+    .problem-col {
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .problem-col.problems-side {
+      border-color: rgba(239, 68, 68, 0.12);
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.04), rgba(255, 255, 255, 0.9));
+    }
+
+    .problem-col.solutions-side {
+      border-color: rgba(0, 155, 169, 0.15);
+      background: linear-gradient(135deg, rgba(0, 155, 169, 0.04), rgba(255, 255, 255, 0.9));
+    }
+
+    .problem-col-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .problems-side .problem-col-title { color: #f87171; }
+    .solutions-side .problem-col-title { color: var(--teal); }
+
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .problem-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .problem-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .problem-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .problem-text {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .problems-side .problem-icon { color: #f87171; }
+    .solutions-side .problem-icon { color: var(--teal); }
+
+    @media (max-width: 768px) {
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .problem-col {
+        padding: 28px 24px;
+      }
+    }
+
+    /* =============================================
+       3. METHOD
+    ============================================= */
+    #method {
+      background: #eef0f6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #method::after {
+      content: '';
+      position: absolute;
+      bottom: -300px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,155,169,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .method-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 72px;
+    }
+
+    .method-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .method-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(10% + 20px);
+      right: calc(10% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal-dark), var(--teal), var(--teal-dark), transparent);
+      z-index: 0;
+    }
+
+    .method-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-number-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0, 155, 169, 0.3);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .step-number-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,155,169,0.25);
+    }
+
+    .step-num {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .step-icon {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      width: 24px;
+      height: 24px;
+      background: #eef0f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-teal);
+    }
+
+    .step-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--teal);
+    }
+
+    .step-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .method-cta {
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    @media (max-width: 1024px) {
+      .method-steps {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 40px;
+      }
+
+      .method-steps::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .method-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .method-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =============================================
+       4. PROJECTS PORTFOLIO
+    ============================================= */
+    #projects {
+      background: #f7f8fc;
+    }
+
+    #projects .heading-lg,
+    #projects .section-label,
+    #projects .section-subtitle {
+      color: var(--text-dark);
+    }
+
+    #projects .section-label {
+      color: var(--teal-dark);
+    }
+
+    #projects .section-label::before {
+      background: var(--teal-dark);
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-dark-muted);
+      margin-top: 12px;
+      max-width: 600px;
+    }
+
+    .projects-header {
+      margin-bottom: 56px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      transition: all var(--transition);
+      border: 1px solid #e2e8f0;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+    }
+
+    .project-img-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .project-status {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-concluso {
+      background: rgba(34, 197, 94, 0.9);
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    .status-in-corso {
+      background: rgba(0, 155, 169, 0.9);
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    .project-body {
+      padding: 24px;
+    }
+
+    .project-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .project-location {
+      font-size: 0.85rem;
+      color: var(--text-dark-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+
+    .project-location svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--teal-dark);
+      flex-shrink: 0;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .project-date {
+      font-size: 0.8rem;
+      color: var(--text-dark-muted);
+      font-weight: 500;
+    }
+
+    .project-area {
+      font-size: 0.8rem;
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =============================================
+       5. FOUNDER
+    ============================================= */
+    #founder {
+      background: #ffffff;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .founder-img-container {
+      position: relative;
+    }
+
+    .founder-img-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+
+    .founder-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .founder-img-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(241, 243, 250, 0.5) 100%
+      );
+    }
+
+    .founder-img-border {
+      position: absolute;
+      inset: -8px;
+      border-radius: 24px;
+      border: 1px solid var(--border-teal);
+      z-index: -1;
+    }
+
+    .founder-img-accent {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      border-radius: 50%;
+      opacity: 0.08;
+      z-index: -1;
+    }
+
+    .founder-accent-line {
+      width: 48px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+
+    .founder-name {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .founder-title {
+      font-size: 0.9rem;
+      color: var(--teal);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .founder-bio {
+      font-size: 1rem;
+      color: #64748b;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    .founder-bio strong {
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    .founder-credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .founder-cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      background: #f7f8fc;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .founder-cred-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(0,155,169,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .founder-cred-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--teal);
+    }
+
+    .founder-cred-text {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .founder-cred-text strong {
+      display: block;
+      color: #111827;
+      font-weight: 600;
+      margin-bottom: 2px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .founder-img-frame {
+        max-width: 380px;
+        margin: 0 auto;
+        aspect-ratio: 3/4;
+      }
+
+      .founder-credentials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =============================================
+       6. HOW IT WORKS
+    ============================================= */
+    #howitworks {
+      background: #f7f8fc;
+    }
+
+    .hiw-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .hiw-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      position: relative;
+      margin-bottom: 64px;
+    }
+
+    .hiw-steps::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: calc(16.67% + 24px);
+      right: calc(16.67% + 24px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), rgba(0,155,169,0.15));
+      z-index: 0;
+    }
+
+    .hiw-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hiw-num {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      background: #ffffff;
+      position: relative;
+      transition: all var(--transition);
+    }
+
+    .hiw-num::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(0,155,169,0.08), transparent);
+    }
+
+    .hiw-step:hover .hiw-num {
+      background: rgba(0,155,169,0.06);
+      box-shadow: 0 0 32px rgba(0,155,169,0.15);
+    }
+
+    .hiw-num-text {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1;
+      position: relative;
+    }
+
+    .hiw-step-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 14px;
+    }
+
+    .hiw-step-desc {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.75;
+    }
+
+    .hiw-cta {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hiw-steps {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hiw-steps::before {
+        display: none;
+      }
+
+      .hiw-num {
+        width: 80px;
+        height: 80px;
+      }
+
+      .hiw-num-text { font-size: 2rem; }
+    }
+
+    /* =============================================
+       7. FOR WHO
+    ============================================= */
+    #forwho {
+      background: #eef0f6;
+    }
+
+    .forwho-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .forwho-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .forwho-col {
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .forwho-col.yes-col {
+      background: linear-gradient(135deg, rgba(34,197,94,0.04), #ffffff);
+      border-color: rgba(34,197,94,0.15);
+    }
+
+    .forwho-col.no-col {
+      background: linear-gradient(135deg, rgba(239,68,68,0.04), #ffffff);
+      border-color: rgba(239,68,68,0.12);
+    }
+
+    .forwho-col-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .yes-col .forwho-col-title { color: var(--success); }
+    .no-col .forwho-col-title { color: var(--danger); }
+
+    .forwho-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .forwho-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .forwho-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .forwho-check {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .yes-col .forwho-check { color: var(--success); }
+    .no-col .forwho-check { color: var(--danger); }
+
+    .forwho-text {
+      font-size: 0.93rem;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .forwho-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .forwho-col {
+        padding: 28px 24px;
+      }
+    }
+
+    /* =============================================
+       8. LEAD MAGNET
+    ============================================= */
+    #leadmagnet {
+      background: #ffffff;
+    }
+
+    .leadmagnet-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 64px;
+      align-items: center;
+      background: #f7f8fc;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-teal);
+      padding: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .leadmagnet-inner::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0,155,169,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .leadmagnet-img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .leadmagnet-img img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      max-width: 280px;
+      margin: 0 auto;
+      transition: transform var(--transition);
+    }
+
+    .leadmagnet-img:hover img {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .leadmagnet-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .lm-tag {
+      display: inline-block;
+      background: rgba(0,155,169,0.08);
+      color: var(--teal);
+      border: 1px solid var(--border-teal);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .leadmagnet-content .heading-md {
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .leadmagnet-content .heading-md span {
+      color: var(--teal);
+    }
+
+    .lm-subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .lm-features {
+      list-style: none;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lm-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+
+    .lm-features li::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300b8c8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+      flex-shrink: 0;
+    }
+
+    .lm-form {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lm-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      background: #f7f8fc;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+
+    .lm-input:focus {
+      border-color: var(--teal);
+    }
+
+    .lm-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .lm-micro {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .leadmagnet-inner {
+        grid-template-columns: 1fr;
+        padding: 40px 32px;
+        gap: 40px;
+      }
+
+      .leadmagnet-img img {
+        max-width: 200px;
+      }
+    }
+
+    /* =============================================
+       9. FAQ
+    ============================================= */
+    #faq {
+      background: #f7f8fc;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color var(--transition);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .faq-item.active {
+      border-color: var(--border-teal);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      color: #111827;
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.5;
+      transition: color var(--transition);
+    }
+
+    .faq-item.active .faq-question {
+      color: var(--teal-dark);
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #eef0f6;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .faq-item.active .faq-icon {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .faq-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: #64748b;
+      transition: all var(--transition);
+    }
+
+    .faq-item.active .faq-icon svg {
+      stroke: #fff;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 22px;
+      font-size: 0.93rem;
+      color: #64748b;
+      line-height: 1.75;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding-top: 16px;
+    }
+
+    /* =============================================
+       10. FINAL CTA
+    ============================================= */
+    #finalcta {
+      position: relative;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .finalcta-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 155, 169, 0.06) 0%,
+        transparent 50%,
+        rgba(0, 155, 169, 0.03) 100%
+      );
+    }
+
+    .finalcta-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,155,169,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .finalcta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .finalcta-content .heading-lg {
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .finalcta-sub {
+      font-size: 1.05rem;
+      color: #475569;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .finalcta-micro {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    .finalcta-logo {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .finalcta-logo img {
+      height: 28px;
+      opacity: 0.6;
+      margin: 0 auto;
+    }
+
+    /* =============================================
+       11. FOOTER
+    ============================================= */
+    #footer {
+      background: #111827;
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .footer-logo img {
+      height: 30px;
+      opacity: 0.85;
+    }
+
+    .footer-piva {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .footer-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .footer-contacts a {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color var(--transition);
+    }
+
+    .footer-contacts a:hover { color: var(--teal); }
+
+    .footer-contacts a svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      flex-shrink: 0;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      margin: 4px 0;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: #3d4a5f;
+    }
+
+    .footer-privacy {
+      font-size: 0.78rem;
+      color: #3d4a5f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--transition);
+    }
+
+    .footer-privacy:hover { color: #94a3b8; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* =============================================
+       STICKY MOBILE BAR
+    ============================================= */
+    #sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 12px 20px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    #sticky-bar.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-text {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .sticky-text strong {
+      color: #111827;
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    #sticky-bar .btn {
+      padding: 12px 20px;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      #sticky-bar {
+        display: flex;
+      }
+
+      body {
+        padding-bottom: 70px;
+      }
+    }
+
+    /* =============================================
+       BACKGROUND SECTIONS
+    ============================================= */
+    .bg-darkest { background: #ffffff; }
+    .bg-dark { background: #f7f8fc; }
+    .bg-medium { background: #eef0f6; }
+    .bg-light { background: #f0f2f8; }
+
+    /* =============================================
+       MISC
+    ============================================= */
+    .text-center { text-align: center; }
+
+    .section-heading-group {
+      margin-bottom: 16px;
+    }
+
+    /* Teal underline on select headings */
+    .heading-underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .heading-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+    }
+
+    /* Counter number */
+    .counter-num {
+      display: inline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       STICKY MOBILE BAR
+  ============================================= -->
+  <div id="sticky-bar">
+    <div class="sticky-text">
+      <strong>RE-UP SRL</strong>
+      Investi nel mattone
+    </div>
+    <a href="#contatti" class="btn btn-orange">Diventa Investitore &rarr;</a>
+  </div>
+
+  <!-- =============================================
+       1. HERO
+  ============================================= -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-noise"></div>
+
+    <nav class="hero-nav">
+      <div class="container">
+        <a href="#">
+          <img src="assets/logo.png" alt="RE-UP SRL" class="hero-logo" />
+        </a>
+        <a href="tel:3465012577" class="hero-contact-link">346 501 2577</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-eyebrow reveal">
+            <span class="hero-eyebrow-dot"></span>
+            Zona Lago di Garda &amp; Verona
+          </div>
+
+          <h1 class="hero-headline reveal reveal-delay-1">
+            Investi nel Mattone<br />
+            con il Metodo<br />
+            <span class="accent">dell'Ingegnere</span>
+          </h1>
+
+          <p class="hero-sub reveal reveal-delay-2">
+            RE-UP acquisisce, riqualifica e rivende immobili ad alto potenziale &mdash; tu partecipi agli utili. <strong style="color:#1e293b;">6 operazioni completate o in corso</strong> nella zona del Lago di Garda. Approccio sistematico, analisi rigorosa, nessuna improvvisazione.
+          </p>
+
+          <div class="hero-cta-group reveal reveal-delay-3">
+            <a href="#contatti" class="btn btn-orange btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Scopri Come Investire
+            </a>
+            <p class="hero-micro">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Nessun impegno. Ti spieghiamo tutto in una chiamata.
+            </p>
+          </div>
+
+          <div class="trust-badges reveal reveal-delay-4">
+            <div class="trust-badge">
+              <div class="trust-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9h18M9 21V9"/>
+                </svg>
+              </div>
+              <div class="trust-badge-text">
+                <span class="trust-badge-number"><span class="counter-num" data-target="6">0</span> Operazioni</span>
+                <span class="trust-badge-label">Immobiliari</span>
+              </div>
+            </div>
+
+            <div class="trust-badge">
+              <div class="trust-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 8v4l3 3"/>
+                </svg>
+              </div>
+              <div class="trust-badge-text">
+                <span class="trust-badge-number">5+ Anni</span>
+                <span class="trust-badge-label">Esperienza</span>
+              </div>
+            </div>
+
+            <div class="trust-badge">
+              <div class="trust-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="trust-badge-text">
+                <span class="trust-badge-number">Lago di Garda</span>
+                <span class="trust-badge-label">e Verona</span>
+              </div>
+            </div>
+
+            <div class="trust-badge">
+              <div class="trust-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+                </svg>
+              </div>
+              <div class="trust-badge-text">
+                <span class="trust-badge-number">Metodo</span>
+                <span class="trust-badge-label">Ingegneristico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       2. PROBLEM / OPPORTUNITY
+  ============================================= -->
+  <section id="problem" class="section-pad">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Il Contesto</span>
+        <h2 class="heading-lg">Il Tuo Capitale Sta Fermo &mdash;<br />Il Mercato No</h2>
+        <div class="divider" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-col problems-side reveal reveal-delay-1">
+          <div class="problem-col-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            Gli investimenti tradizionali
+          </div>
+          <div class="problem-item">
+            <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <p class="problem-text">I conti deposito rendono lo 0,5% annuo &mdash; sotto il tasso d'inflazione. Il tuo capitale perde potere d'acquisto ogni anno.</p>
+          </div>
+          <div class="problem-item">
+            <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <p class="problem-text">Il mercato azionario richiede competenze specifiche, nervi saldi e tempo per monitorare le posizioni. La volatilità può azzzerare anni di guadagni in settimane.</p>
+          </div>
+          <div class="problem-item">
+            <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <p class="problem-text">L'immobiliare tradizionale richiede capitali enormi, gestione continua, burocrazia complessa e convivenza con il rischio-inquilini.</p>
+          </div>
+        </div>
+
+        <div class="problem-col solutions-side reveal reveal-delay-2">
+          <div class="problem-col-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Il modello RE-UP
+          </div>
+          <div class="problem-item">
+            <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <p class="problem-text">Partecipi a operazioni immobiliari concrete, con immobili reali nella zona del Lago di Garda e Verona. Investimenti tangibili, non prodotti finanziari astratti.</p>
+          </div>
+          <div class="problem-item">
+            <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18"/></svg>
+            <p class="problem-text">Ogni operazione è analizzata con rigore ingegneristico: analisi tecnico-economica completa prima di ogni euro investito. Zero improvvisazione.</p>
+          </div>
+          <div class="problem-item">
+            <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <p class="problem-text">Nessuna gestione, nessun inquilino, nessuna burocrazia. RE-UP gestisce tutto: dall'acquisizione alla ristrutturazione alla vendita. Tu partecipi agli utili.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       3. METHOD
+  ============================================= -->
+  <section id="method" class="section-pad">
+    <div class="container">
+      <div class="method-header reveal">
+        <span class="section-label">Il Nostro Approccio</span>
+        <h2 class="heading-lg">L'Ingegneria Applicata<br />all'Immobiliare</h2>
+        <div class="divider divider-center" style="margin:20px auto 0;"></div>
+        <p style="margin-top:24px; color:#64748b; font-size:1rem; line-height:1.7; max-width:580px; margin-left:auto; margin-right:auto;">
+          Un metodo in 5 fasi che riduce il rischio e massimizza il rendimento di ogni operazione. Niente è lasciato al caso.
+        </p>
+      </div>
+
+      <div class="method-steps">
+        <div class="method-step reveal reveal-delay-1">
+          <div class="step-number-wrap">
+            <span class="step-num">1</span>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="step-title">Mappatura</h3>
+          <p class="step-desc">Analizziamo il territorio con software specializzato e collaboriamo con agenzie locali per identificare le migliori opportunità di acquisto.</p>
+        </div>
+
+        <div class="method-step reveal reveal-delay-2">
+          <div class="step-number-wrap">
+            <span class="step-num">2</span>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="step-title">Acquisizione</h3>
+          <p class="step-desc">Acquistiamo immobili sotto prezzo di mercato tramite aste giudiziarie, mercato libero e NPL (non-performing loans).</p>
+        </div>
+
+        <div class="method-step reveal reveal-delay-3">
+          <div class="step-number-wrap">
+            <span class="step-num">3</span>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="step-title">Analisi</h3>
+          <p class="step-desc">Studio socio-demografico del mercato: domanda, redditi, servizi, dinamiche familiari. Dati, non intuizioni.</p>
+        </div>
+
+        <div class="method-step reveal reveal-delay-4">
+          <div class="step-number-wrap">
+            <span class="step-num">4</span>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="step-title">Sviluppo</h3>
+          <p class="step-desc">Progettiamo la ristrutturazione con i migliori professionisti: architetti, ingegneri, artigiani specializzati in efficienza energetica.</p>
+        </div>
+
+        <div class="method-step reveal reveal-delay-5">
+          <div class="step-number-wrap">
+            <span class="step-num">5</span>
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="step-title">Vendita</h3>
+          <p class="step-desc">Vendiamo con render fotorealistici e strategie di pre-vendita, ancora prima del completamento dei lavori.</p>
+        </div>
+      </div>
+
+      <div class="method-cta reveal">
+        <a href="#contatti" class="btn btn-orange btn-lg">
+          Scopri Come Partecipare
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       4. PROJECTS PORTFOLIO
+  ============================================= -->
+  <section id="projects" class="section-pad bg-light">
+    <div class="container">
+      <div class="projects-header reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="heading-lg" style="color:var(--text-dark);">I Nostri Progetti<br />Immobiliari</h2>
+        <p class="section-subtitle" style="color:var(--text-dark-muted);margin-top:12px;">3 operazioni concluse. 3 in corso. Zona Lago di Garda e Verona.</p>
+        <div class="divider" style="margin-top:16px;background:linear-gradient(90deg,var(--teal-dark),transparent);"></div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- In Corso -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img-wrap">
+            <img src="assets/kolbe-fronte.jpg" alt="Desenzano Via Kolbe" loading="lazy" />
+            <span class="project-status status-in-corso">In Corso</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Via Kolbe</h3>
+            <p class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Desenzano del Garda, BS
+            </p>
+            <div class="project-meta">
+              <span class="project-date">Completamento: Ago 2026</span>
+              <span class="project-area" style="font-size:0.75rem;">Riqualificazione</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img-wrap">
+            <img src="assets/verga-5.jpg" alt="Desenzano Via Verga 5" loading="lazy" />
+            <span class="project-status status-in-corso">In Corso</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Via Verga 5</h3>
+            <p class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Desenzano del Garda, BS
+            </p>
+            <div class="project-meta">
+              <span class="project-date">Completamento: Ott 2025</span>
+              <span class="project-area" style="font-size:0.75rem;">Riqualificazione</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-img-wrap">
+            <img src="assets/villa-le-coq.jpg" alt="Desenzano Via Gallica 12 — Villa Le Coq" loading="lazy" />
+            <span class="project-status status-in-corso">In Corso</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Villa Le Coq — Via Gallica 12</h3>
+            <p class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Desenzano del Garda, BS
+            </p>
+            <div class="project-meta">
+              <span class="project-date">Completamento: Giu 2025</span>
+              <span class="project-area" style="font-size:0.75rem;">Villa di Pregio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conclusi -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img-wrap">
+            <img src="assets/zevio-esterno.jpg" alt="Zevio Via Buonarroti" loading="lazy" />
+            <span class="project-status status-concluso">Concluso</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Via Buonarroti</h3>
+            <p class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Zevio, VR
+            </p>
+            <div class="project-meta">
+              <span class="project-date">Completato: Mag 2023</span>
+              <span class="project-area">4 unità &bull; 170m² cad.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img-wrap">
+            <img src="assets/oriani.jpg" alt="Verona Circondario Oriani" loading="lazy" />
+            <span class="project-status status-concluso">Concluso</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Circondario Oriani</h3>
+            <p class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Verona, VR
+            </p>
+            <div class="project-meta">
+              <span class="project-date">Completato: Ott 2022</span>
+              <span class="project-area">170m² &bull; €380K inv.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-img-wrap">
+            <img src="assets/lonato-piscina.jpg" alt="Lonato — Castel Venzago" loading="lazy" />
+            <span class="project-status status-concluso">Concluso</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Castel Venzago — Villa con Piscina</h3>
+            <p class="project-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lonato del Garda, BS
+            </p>
+            <div class="project-meta">
+              <span class="project-date">Completato</span>
+              <span class="project-area">Villa di Lusso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       5. FOUNDER
+  ============================================= -->
+  <section id="founder" class="section-pad">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-img-container reveal">
+          <div class="founder-img-frame">
+            <img src="assets/francesco-crivellente.jpg" alt="Francesco Crivellente — Fondatore RE-UP SRL" loading="lazy" />
+          </div>
+          <div class="founder-img-border"></div>
+          <div class="founder-img-accent"></div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <span class="section-label">Chi C'è Dietro RE-UP</span>
+          <div class="founder-accent-line" style="margin-top:20px;"></div>
+          <h2 class="founder-name" style="margin-top:8px;">Francesco Crivellente</h2>
+          <p class="founder-title">Fondatore di RE-UP SRL</p>
+
+          <p class="founder-bio">
+            Ingegnere meccanico con <strong>20 anni di esperienza nel settore siderurgico</strong>. Dopo aver gestito progetti industriali complessi e team di professionisti, ha affiancato per 5 anni l'attività ingegneristica con un lavoro parallelo nel settore immobiliare.<br /><br />
+            Ha fondato RE-UP con un obiettivo preciso: <strong>applicare il rigore dell'ingegneria al mondo degli investimenti immobiliari</strong>. Ogni operazione viene analizzata con la stessa precisione di un progetto industriale &mdash; perché quando si parla del tuo capitale, non c'è spazio per l'improvvisazione.
+          </p>
+
+          <div class="founder-credentials">
+            <div class="founder-cred-item">
+              <div class="founder-cred-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="founder-cred-text">
+                <strong>Ingegnere Meccanico</strong>
+                Laurea con specializzazione industriale
+              </div>
+            </div>
+
+            <div class="founder-cred-item">
+              <div class="founder-cred-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="founder-cred-text">
+                <strong>20 Anni di Carriera</strong>
+                Settore siderurgico — gestione progetti
+              </div>
+            </div>
+
+            <div class="founder-cred-item">
+              <div class="founder-cred-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+              </div>
+              <div class="founder-cred-text">
+                <strong>5+ Anni Immobiliare</strong>
+                Esperienza pratica sul campo pre-fondazione
+              </div>
+            </div>
+
+            <div class="founder-cred-item">
+              <div class="founder-cred-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="founder-cred-text">
+                <strong>6 Operazioni</strong>
+                Completate o in corso nella zona Garda-Verona
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       6. HOW IT WORKS
+  ============================================= -->
+  <section id="howitworks" class="section-pad">
+    <div class="container">
+      <div class="hiw-header reveal">
+        <span class="section-label">Il Processo</span>
+        <h2 class="heading-lg">Diventa Investitore<br />in 3 Passi</h2>
+        <div class="divider divider-center" style="margin:20px auto 0;"></div>
+      </div>
+
+      <div class="hiw-steps">
+        <div class="hiw-step reveal reveal-delay-1">
+          <div class="hiw-num">
+            <span class="hiw-num-text">1</span>
+          </div>
+          <h3 class="hiw-step-title">Ci Contatti</h3>
+          <p class="hiw-step-desc">Prenoti una chiamata conoscitiva gratuita. Ti spieghiamo nel dettaglio come funzionano le nostre operazioni e rispondiamo a ogni domanda &mdash; senza pressioni, senza obblighi.</p>
+        </div>
+
+        <div class="hiw-step reveal reveal-delay-2">
+          <div class="hiw-num">
+            <span class="hiw-num-text">2</span>
+          </div>
+          <h3 class="hiw-step-title">Scegli l'Operazione</h3>
+          <p class="hiw-step-desc">Ti presentiamo le operazioni in corso o in partenza. Ogni progetto ha un'analisi tecnico-economica completa e trasparente: mercato, margini, tempistiche, rischi.</p>
+        </div>
+
+        <div class="hiw-step reveal reveal-delay-3">
+          <div class="hiw-num">
+            <span class="hiw-num-text">3</span>
+          </div>
+          <h3 class="hiw-step-title">Partecipi agli Utili</h3>
+          <p class="hiw-step-desc">Investi nella quota che preferisci. A operazione conclusa, ricevi la tua parte del profitto. Semplice, chiaro, documentato. Nessuna gestione operativa da parte tua.</p>
+        </div>
+      </div>
+
+      <div class="hiw-cta reveal">
+        <a href="#contatti" class="btn btn-orange btn-lg">
+          Inizia con una Chiamata Gratuita
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p style="margin-top:12px; font-size:0.82rem; color:#64748b;">Senza impegno. Solo una conversazione per conoscerci.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       7. FOR WHO
+  ============================================= -->
+  <section id="forwho" class="section-pad">
+    <div class="container">
+      <div class="forwho-header reveal">
+        <span class="section-label">A Chi Si Rivolge</span>
+        <h2 class="heading-lg">Per Chi È RE-CLUB</h2>
+        <div class="divider divider-center" style="margin:20px auto 0;"></div>
+        <p style="margin-top:20px; color:#64748b; font-size:0.98rem; max-width:540px; margin-left:auto; margin-right:auto; line-height:1.7;">
+          RE-CLUB non è per tutti &mdash; ed è giusto così. Vogliamo lavorare con investitori che capiscono il valore di un approccio serio.
+        </p>
+      </div>
+
+      <div class="forwho-grid">
+        <div class="forwho-col yes-col reveal reveal-delay-1">
+          <div class="forwho-col-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Fa per te se&hellip;
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <p class="forwho-text">Hai capitale da investire e cerchi rendimenti superiori a quelli del mercato finanziario tradizionale</p>
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <p class="forwho-text">Vuoi investire nel mattone ma senza dover gestire cantieri, inquilini o burocrazia</p>
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <p class="forwho-text">Apprezzi un approccio analitico e trasparente, con numeri alla mano e documentazione completa</p>
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <p class="forwho-text">Cerchi operazioni concrete con immobili reali, non prodotti finanziari astratti o speculativi</p>
+          </div>
+        </div>
+
+        <div class="forwho-col no-col reveal reveal-delay-2">
+          <div class="forwho-col-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            NON fa per te se&hellip;
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <p class="forwho-text">Cerchi guadagni facili o rendimenti miracolosi promessi in pochi giorni</p>
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <p class="forwho-text">Non hai pazienza per operazioni che durano tra 8 e 18 mesi, come richiedono i processi immobiliari seri</p>
+          </div>
+          <div class="forwho-item">
+            <svg class="forwho-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <p class="forwho-text">Preferisci gestire tutto da solo senza affidarti a un team di professionisti specializzati</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       8. LEAD MAGNET
+  ============================================= -->
+  <section id="leadmagnet" class="section-pad">
+    <div class="container">
+      <div class="leadmagnet-inner">
+        <div class="leadmagnet-img reveal">
+          <img src="assets/lead-magnet.png" alt="Guida Gratuita — L'Ingegneria Applicata all'Immobiliare" loading="lazy" />
+        </div>
+
+        <div class="leadmagnet-content reveal reveal-delay-2">
+          <span class="lm-tag">Download Gratuito</span>
+          <h2 class="heading-md">
+            Scarica la Guida<br /><span>L'Ingegneria Applicata</span><br />all'Immobiliare
+          </h2>
+          <p class="lm-subtitle" style="margin-top:12px;">
+            Il metodo completo che Francesco Crivellente usa per ogni operazione RE-UP. Analisi, selezione, sviluppo e vendita &mdash; tutto spiegato nel dettaglio.
+          </p>
+
+          <ul class="lm-features">
+            <li>Come identificare immobili ad alto potenziale sotto prezzo</li>
+            <li>I 5 parametri dell'analisi tecnico-economica</li>
+            <li>Aste giudiziarie e NPL: come funzionano davvero</li>
+            <li>Il framework di valutazione del rischio di ogni operazione</li>
+          </ul>
+
+          <form class="lm-form" onsubmit="handleLeadForm(event)">
+            <input
+              type="email"
+              class="lm-input"
+              placeholder="La tua email"
+              required
+              autocomplete="email"
+            />
+            <button type="submit" class="btn btn-orange">
+              Scarica Gratis
+            </button>
+          </form>
+          <p class="lm-micro">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Zero spam. Solo contenuti di valore per investitori seri.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       9. FAQ
+  ============================================= -->
+  <section id="faq" class="section-pad">
+    <div class="container">
+      <div class="faq-header reveal">
+        <span class="section-label">Hai Domande?</span>
+        <h2 class="heading-lg">Domande Frequenti</h2>
+        <div class="divider divider-center" style="margin:20px auto 0;"></div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Quanto capitale serve per iniziare?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-inner">Il ticket minimo varia in base all'operazione e alla fase in cui ti unisci. Contattaci per scoprire le opportunità attualmente disponibili e le soglie di ingresso specifiche per ogni progetto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Quanto durano le operazioni?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-inner">Ogni operazione ha una durata stimata tra 8 e 18 mesi, dalla fase di acquisizione alla vendita dell'immobile riqualificato. I tempi esatti vengono comunicati in fase di presentazione del singolo progetto, con aggiornamenti regolari durante il percorso.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Come viene tutelato il mio investimento?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-inner">Ogni operazione è supportata da un'analisi tecnico-economica rigorosa effettuata prima dell'acquisizione. La trasparenza è il nostro primo valore: ricevi tutta la documentazione, dall'analisi di mercato al contratto di partecipazione. Non investiamo un euro senza aver validato i numeri da più angolazioni.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Devo occuparmi della gestione degli immobili?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-inner">Assolutamente no. RE-UP gestisce l'intera operazione: dall'acquisizione dell'immobile, alla progettazione e direzione della ristrutturazione, fino alla vendita. Tu partecipi agli utili senza alcun impegno operativo, senza gestire cantieri, senza interfacciarti con fornitori o acquirenti.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Chi è RE-UP e perché dovrei fidarmi?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-inner">RE-UP SRL è una società con sede a Verona (P.IVA 04873910238), fondata dall'Ing. Francesco Crivellente, ingegnere meccanico con 20 anni di carriera nel settore industriale. Abbiamo 3 operazioni completate con successo e 3 in corso nella zona del Lago di Garda. Ogni investitore ha accesso completo alla documentazione di ogni progetto, dalla due diligence iniziale agli aggiornamenti di cantiere.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Come funziona la distribuzione degli utili?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-inner">A operazione conclusa &mdash; ovvero quando l'immobile viene venduto &mdash; gli utili vengono distribuiti proporzionalmente alla quota di partecipazione di ciascun investitore, secondo quanto stabilito contrattualmente prima dell'avvio. Tutto è trasparente, documentato e comunicato con rendiconto dettagliato.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       10. FINAL CTA
+  ============================================= -->
+  <section id="finalcta" class="section-pad" style="padding:120px 0;">
+    <div class="finalcta-bg"></div>
+    <div class="finalcta-glow"></div>
+
+    <div class="container">
+      <div class="finalcta-content reveal">
+        <span class="section-label" style="justify-content:center;">Prossima Operazione</span>
+        <h2 class="heading-lg" style="margin-top:8px;">Il Prossimo Progetto<br />Immobiliare Sta Partendo</h2>
+        <div class="divider divider-center" style="margin:20px auto;"></div>
+        <p class="finalcta-sub">
+          Prenota una chiamata conoscitiva gratuita e scopri come partecipare alla prossima operazione RE-UP. Ti presentiamo i numeri, le tempistiche e la struttura del progetto.
+        </p>
+        <a href="#contatti" class="btn btn-orange btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.2 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.09v2.83z"/></svg>
+          Prenota la Chiamata Gratuita
+        </a>
+        <p class="finalcta-micro">Senza impegno. Ti spieghiamo tutto in 15 minuti.</p>
+
+        <div class="finalcta-logo">
+          <img src="assets/logo.png" alt="RE-UP SRL" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTATTI ANCHOR (placeholder)
+  ============================================= -->
+  <div id="contatti" style="position:relative; top:-80px;"></div>
+
+  <!-- =============================================
+       11. FOOTER
+  ============================================= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="assets/logo-footer.png" alt="RE-UP SRL" />
+        </div>
+
+        <p class="footer-piva">RE-UP SRL &mdash; P.IVA 04873910238 &mdash; Verona, Italia</p>
+
+        <div class="footer-contacts">
+          <a href="mailto:info@re-up.srl">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@re-up.srl
+          </a>
+          <a href="tel:3465012577">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.2 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.09v2.83z"/></svg>
+            346 501 2577
+          </a>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <span class="footer-copy">&copy; 2026 RE-UP SRL &mdash; Tutti i diritti riservati</span>
+          <a href="#" class="footer-privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================= -->
+  <script>
+    // ─── SCROLL REVEAL ────────────────────────────────────────────
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      reveals.forEach((el) => observer.observe(el));
+    })();
+
+    // ─── HERO PARALLAX ────────────────────────────────────────────
+    (function () {
+      const bg = document.getElementById('heroBg');
+      if (!bg) return;
+      let ticking = false;
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (isMobile) return;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const scrollY = window.pageYOffset;
+            bg.style.transform = 'translateY(' + scrollY * 0.25 + 'px)';
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    // ─── STICKY MOBILE BAR ────────────────────────────────────────
+    (function () {
+      const bar = document.getElementById('sticky-bar');
+      if (!bar) return;
+      const hero = document.getElementById('hero');
+
+      const toggle = () => {
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        if (window.pageYOffset > heroBottom - 100) {
+          bar.classList.add('visible');
+        } else {
+          bar.classList.remove('visible');
+        }
+      };
+
+      window.addEventListener('scroll', toggle, { passive: true });
+    })();
+
+    // ─── COUNTER ANIMATION ────────────────────────────────────────
+    (function () {
+      const counters = document.querySelectorAll('.counter-num[data-target]');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseInt(el.getAttribute('data-target'), 10);
+              let current = 0;
+              const duration = 1200;
+              const increment = target / (duration / 16);
+              const tick = () => {
+                current += increment;
+                if (current >= target) {
+                  el.textContent = target;
+                } else {
+                  el.textContent = Math.floor(current);
+                  requestAnimationFrame(tick);
+                }
+              };
+              requestAnimationFrame(tick);
+              observer.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      counters.forEach((el) => observer.observe(el));
+    })();
+
+    // ─── FAQ ACCORDION ────────────────────────────────────────────
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('active');
+
+      // Close all
+      document.querySelectorAll('.faq-item.active').forEach((openItem) => {
+        openItem.classList.remove('active');
+        openItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+
+    // ─── SMOOTH SCROLL ────────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ─── LEAD FORM (placeholder) ──────────────────────────────────
+    function handleLeadForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const input = e.target.querySelector('input');
+      btn.textContent = 'Inviato!';
+      btn.style.background = '#22c55e';
+      btn.disabled = true;
+      input.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Scarica Gratis';
+        btn.style.background = '';
+        btn.disabled = false;
+        input.disabled = false;
+        input.value = '';
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
