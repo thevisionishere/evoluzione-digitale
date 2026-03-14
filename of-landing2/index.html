@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AfterDark Capital — Private Payment Infrastructure for Adult Creators</title>
+  <meta name="description" content="AfterDark Capital provides private payment processing, accelerated payouts, and tax optimization for high-earning adult content creators making $20K+/month." />
+  <meta property="og:title" content="AfterDark Capital — Stop Gambling With Your Revenue" />
+  <meta property="og:description" content="Banks freeze adult revenue without warning. AfterDark Capital is built so that never happens to you. Private payment infrastructure for serious creators." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230a0a0a'/><circle cx='50' cy='50' r='30' fill='%23e63946'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #141414;
+      --accent: #e63946;
+      --accent-hover: #ff3344;
+      --accent-glow: rgba(230, 57, 70, 0.35);
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --text-muted: #666666;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(230, 57, 70, 0.5);
+      --font-body: 'Inter', sans-serif;
+      --font-head: 'Space Grotesk', sans-serif;
+      --wa-link: https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* SCROLL PROGRESS BAR */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+      z-index: 9999;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    /* PRELOADER */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .preloader-logo {
+      font-family: var(--font-head);
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .preloader-logo span {
+      color: var(--accent);
+    }
+
+    .preloader-bar {
+      width: 200px;
+      height: 2px;
+      background: var(--border);
+      margin-top: 24px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .preloader-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      animation: preloader-fill 1.2s ease forwards;
+    }
+
+    @keyframes preloader-fill {
+      to { width: 100%; }
+    }
+
+    /* GENERAL */
+    section {
+      padding: clamp(60px, 8vw, 120px) clamp(20px, 5vw, 80px);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-alt {
+      background-color: var(--bg-secondary);
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: clamp(1rem, 2vw, 1.4rem);
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      line-height: 1.7;
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      font-family: var(--font-head);
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 36px;
+      min-height: 56px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 24px rgba(230, 57, 70, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: scale(1.03);
+      box-shadow: 0 6px 36px rgba(230, 57, 70, 0.5);
+    }
+
+    .btn-primary.pulse {
+      animation: btn-pulse 2.5s infinite;
+    }
+
+    @keyframes btn-pulse {
+      0%, 100% { box-shadow: 0 4px 24px rgba(230, 57, 70, 0.3); }
+      50% { box-shadow: 0 4px 48px rgba(230, 57, 70, 0.65); }
+    }
+
+    .btn-large {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      padding: 22px 48px;
+      min-height: 64px;
+    }
+
+    .cta-micro {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ========================================
+       SECTION 1: HERO
+    ======================================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: clamp(100px, 12vw, 160px) clamp(20px, 5vw, 80px);
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(230, 57, 70, 0.18) 0%, transparent 70%), var(--bg-primary);
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(230, 57, 70, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-pre {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      display: inline-block;
+      border: 1px solid rgba(230, 57, 70, 0.3);
+      padding: 6px 16px;
+      border-radius: 2px;
+      background: rgba(230, 57, 70, 0.06);
+    }
+
+    #hero h1 {
+      margin-bottom: 28px;
+      background: linear-gradient(180deg, #ffffff 60%, #aaaaaa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin: 0 auto 44px;
+      line-height: 1.75;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ========================================
+       SECTION 2: PROBLEM AGITATION
+    ======================================== */
+    #problem {
+      background-color: var(--bg-secondary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 640px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      padding: 32px 28px;
+      border-radius: 4px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-left-color: var(--accent-hover);
+      box-shadow: 0 4px 24px rgba(230, 57, 70, 0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font-head);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .stat-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .stats-source {
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ========================================
+       SECTION 3: FEAR AMPLIFICATION
+    ======================================== */
+    #fear {
+      background-color: var(--bg-primary);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 56px;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .timeline {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .timeline-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 16px;
+    }
+
+    .timeline-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      background: rgba(230, 57, 70, 0.3);
+    }
+
+    @media (max-width: 767px) {
+      .timeline-step:not(:last-child)::after {
+        width: 2px;
+        height: 40px;
+        left: 50%;
+        bottom: -40px;
+        transform: translateX(-50%);
+      }
+      .timeline-step {
+        padding-bottom: 40px;
+      }
+      .timeline-step:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .timeline-step:not(:last-child)::after {
+        width: calc(100% - 80px);
+        height: 2px;
+        top: 32px;
+        left: calc(50% + 32px);
+      }
+    }
+
+    .timeline-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--bg-card);
+      border: 2px solid rgba(230, 57, 70, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .timeline-label {
+      font-family: var(--font-head);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .fear-statement {
+      margin-top: 56px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fear-highlight {
+      margin-top: 32px;
+      background: rgba(230, 57, 70, 0.08);
+      border: 1px solid rgba(230, 57, 70, 0.25);
+      border-left: 4px solid var(--accent);
+      padding: 24px 28px;
+      border-radius: 4px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       SECTION 4: SOLUTION
+    ======================================== */
+    #solution {
+      background-color: var(--bg-secondary);
+    }
+
+    .solution-desc {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .differentiators {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .differentiators {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .diff-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 32px 24px;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+    }
+
+    .diff-card:hover {
+      border-color: rgba(230, 57, 70, 0.3);
+    }
+
+    .diff-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(230, 57, 70, 0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .diff-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .diff-title {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .diff-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       SECTION 5: SERVICES
+    ======================================== */
+    #services {
+      background-color: var(--bg-primary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      padding: 36px 28px;
+      border-radius: 4px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 40px rgba(230, 57, 70, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(230, 57, 70, 0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       SECTION 6: SOCIAL PROOF
+    ======================================== */
+    #proof {
+      background-color: var(--bg-secondary);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 32px 24px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 4px;
+    }
+
+    .star {
+      width: 14px;
+      height: 14px;
+      fill: #f4c430;
+    }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .author-name {
+      font-family: var(--font-head);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .author-meta {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .proof-disclaimer {
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+    }
+
+    .counter-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+      background: var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .counter-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .counter-item {
+      background: var(--bg-card);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .counter-value {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .counter-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ========================================
+       SECTION 7: QUALIFICATIONS
+    ======================================== */
+    #qualifications {
+      background-color: var(--bg-primary);
+    }
+
+    .qual-desc {
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .qual-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .qual-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .qual-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .qual-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .qual-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .qual-icon.yes {
+      background: rgba(34, 197, 94, 0.15);
+    }
+
+    .qual-icon.no {
+      background: rgba(230, 57, 70, 0.15);
+    }
+
+    .qual-col-title {
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .qual-col-title.green { color: #22c55e; }
+    .qual-col-title.red { color: var(--accent); }
+
+    /* ========================================
+       SECTION 8: HOW IT WORKS
+    ======================================== */
+    #howitworks {
+      background-color: var(--bg-secondary);
+    }
+
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 56px;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .steps-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .step-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(90deg, rgba(230,57,70,0.4), rgba(230,57,70,0.1));
+    }
+
+    @media (max-width: 767px) {
+      .step-item:not(:last-child)::after {
+        width: 2px;
+        height: 48px;
+        left: 50%;
+        bottom: -48px;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, rgba(230,57,70,0.4), rgba(230,57,70,0.1));
+      }
+      .step-item {
+        padding-bottom: 48px;
+      }
+      .step-item:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .step-item:not(:last-child)::after {
+        width: calc(100% - 80px);
+        height: 2px;
+        top: 36px;
+        left: calc(50% + 36px);
+      }
+    }
+
+    .step-number {
+      width: 72px;
+      height: 72px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 24px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      background: var(--bg-secondary);
+    }
+
+    .step-title {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       SECTION 9: FAQ
+    ======================================== */
+    #faq {
+      background-color: var(--bg-primary);
+    }
+
+    .faq-list {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      cursor: pointer;
+      font-family: var(--font-head);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: background 0.2s ease;
+      user-select: none;
+      gap: 16px;
+    }
+
+    .faq-question:hover {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      border-color: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 28px 24px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    /* ========================================
+       SECTION 10: URGENCY
+    ======================================== */
+    #urgency {
+      background-color: var(--bg-secondary);
+      text-align: center;
+    }
+
+    .urgency-body {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+    }
+
+    .spots-label {
+      font-family: var(--font-head);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .progress-bar-wrap {
+      max-width: 440px;
+      margin: 0 auto 40px;
+    }
+
+    .progress-bar-bg {
+      background: var(--border);
+      height: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(230,57,70,0.5);
+      transition: width 1.2s ease;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       SECTION 11: FINAL CTA
+    ======================================== */
+    #final-cta {
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(230,57,70,0.12) 0%, transparent 70%), var(--bg-primary);
+      text-align: center;
+    }
+
+    .final-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    .wa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .wa-badge svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    footer {
+      background: #080808;
+      border-top: 1px solid var(--border);
+      padding: 24px clamp(20px, 5vw, 80px);
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       STICKY CTA BAR
+    ======================================== */
+    #sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(230,57,70,0.3);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 1000;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #sticky-bar.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-text {
+      font-family: var(--font-head);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: none;
+    }
+
+    @media (min-width: 480px) {
+      .sticky-text {
+        display: block;
+      }
+    }
+
+    .btn-sticky {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 3px;
+      transition: background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-sticky:hover {
+      background: var(--accent-hover);
+    }
+
+    /* ========================================
+       FLOATING WHATSAPP BUTTON
+    ======================================== */
+    #float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      animation: wa-pulse 2.5s infinite;
+      transition: transform 0.2s ease;
+    }
+
+    #float-wa:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 4px 36px rgba(37, 211, 102, 0.7); }
+    }
+
+    #float-wa svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
+
+    /* Hide float button when sticky bar visible on mobile */
+    @media (max-width: 767px) {
+      #float-wa.bar-visible {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    /* ========================================
+       EXIT INTENT POPUP
+    ======================================== */
+    #exit-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 100000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    #exit-popup.active {
+      display: flex;
+    }
+
+    .popup-inner {
+      background: var(--bg-secondary);
+      border: 1px solid rgba(230,57,70,0.3);
+      border-top: 4px solid var(--accent);
+      max-width: 520px;
+      width: 100%;
+      padding: 48px 40px;
+      border-radius: 6px;
+      text-align: center;
+      position: relative;
+      animation: popup-in 0.3s ease;
+    }
+
+    @keyframes popup-in {
+      from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .popup-close:hover {
+      color: var(--text-primary);
+    }
+
+    .popup-pre {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .popup-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .popup-body {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       UTILITIES & MISC
+    ======================================== */
+    .text-accent { color: var(--accent); }
+    .text-center { text-align: center; }
+    .mt-8 { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .counter-bar {
+        grid-template-columns: repeat(2,1fr);
+      }
+      .popup-inner {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-logo">After<span>Dark</span> Capital</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="float-wa" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- STICKY CTA BAR -->
+  <div id="sticky-bar">
+    <span class="sticky-text">Your revenue isn't protected yet.</span>
+    <a class="btn-sticky" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+      Protect Your Revenue &rarr;
+    </a>
+  </div>
+
+  <!-- EXIT INTENT POPUP -->
+  <div id="exit-popup" role="dialog" aria-modal="true">
+    <div class="popup-inner">
+      <button class="popup-close" id="popup-close-btn" aria-label="Close">&times;</button>
+      <div class="popup-pre">Wait — before you leave</div>
+      <div class="popup-title">Your next payout isn't guaranteed.</div>
+      <p class="popup-body">Banks don't warn you. Processors don't explain. One compliance flag and your month disappears. Spend 5 minutes talking to us before it happens to you.</p>
+      <a class="btn-primary btn-large" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Talk to Us on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 1: HERO
+  =========================================== -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-pre reveal">Private Payment Infrastructure for Adult Creators</span>
+      <h1 class="reveal reveal-delay-1">Your next payout<br>could be your last.</h1>
+      <p class="hero-sub reveal reveal-delay-2">Banks freeze adult revenue without warning. Payment processors flag your transactions daily. One compliance review — and your entire month's income disappears. AfterDark Capital exists so that never happens to you.</p>
+      <div class="hero-cta-wrap reveal reveal-delay-3">
+        <a class="btn-primary btn-large pulse" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Get Private Access via WhatsApp
+        </a>
+        <span class="cta-micro">Reply within 15 minutes. Limited to 20 new clients/month.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2: PROBLEM AGITATION
+  =========================================== -->
+  <section id="problem" class="section-alt">
+    <div class="container">
+      <span class="section-label">The Data</span>
+      <h2 class="reveal">The Reality No One<br>Talks About</h2>
+      <div class="divider"></div>
+      <div class="stats-grid">
+        <div class="stat-card reveal reveal-delay-1">
+          <span class="stat-number" data-target="73" data-suffix="%">0%</span>
+          <p class="stat-desc">of adult content creators have experienced at least one frozen payout or account restriction in the last 12 months</p>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <span class="stat-number" data-target-text="$4.2B">$0B</span>
+          <p class="stat-desc">in creator revenue was delayed, frozen, or seized by payment processors in 2025 alone</p>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <span class="stat-number" data-target="14" data-suffix=" Days">0 Days</span>
+          <p class="stat-desc">average time to recover frozen funds — if you get them back at all</p>
+        </div>
+        <div class="stat-card reveal reveal-delay-4">
+          <span class="stat-number" data-target-text="1 in 3">0 in 3</span>
+          <p class="stat-desc">creator accounts permanently closed by traditional banks after discovering the revenue source</p>
+        </div>
+      </div>
+      <p class="stats-source reveal">Sources: Creator Economy Report 2025, Payment Processing Industry Data</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3: FEAR AMPLIFICATION
+  =========================================== -->
+  <section id="fear">
+    <div class="container">
+      <span class="section-label">How It Happens</span>
+      <h2 class="reveal">One Compliance Flag.<br>That's All It Takes.</h2>
+      <div class="divider"></div>
+      <div class="timeline">
+        <div class="timeline-step reveal reveal-delay-1">
+          <div class="timeline-icon">
+            <!-- Warning Triangle -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div class="timeline-label">Step 1</div>
+          <div class="step-title" style="font-family:var(--font-head);font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-primary);margin-bottom:8px;">Platform Flags Your Transaction</div>
+          <div class="timeline-desc">An automated system triggers on your revenue pattern</div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-2">
+          <div class="timeline-icon">
+            <!-- Magnifying Glass -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <div class="timeline-label">Step 2</div>
+          <div class="step-title" style="font-family:var(--font-head);font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-primary);margin-bottom:8px;">Bank Initiates Compliance Review</div>
+          <div class="timeline-desc">No timeline given. No explanation provided.</div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-3">
+          <div class="timeline-icon">
+            <!-- Lock -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+          </div>
+          <div class="timeline-label">Step 3</div>
+          <div class="step-title" style="font-family:var(--font-head);font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-primary);margin-bottom:8px;">Funds Frozen. No Timeline Given.</div>
+          <div class="timeline-desc">Days turn into weeks. Weeks into months.</div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-4">
+          <div class="timeline-icon">
+            <!-- X Mark -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <div class="timeline-label">Step 4</div>
+          <div class="step-title" style="font-family:var(--font-head);font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-primary);margin-bottom:8px;">Account Closed. Revenue Gone.</div>
+          <div class="timeline-desc">No appeal. No recourse. Just silence.</div>
+        </div>
+      </div>
+      <p class="fear-statement reveal">This isn't hypothetical. This is happening to creators making $50K, $100K, even $500K per month. Right now. Today.</p>
+      <div class="fear-highlight reveal">
+        And when it happens, your platform won't save you. Your bank won't explain. Your accountant won't know what to do. You'll spend weeks chasing customer support emails while your bills don't pause. This is the system working exactly as designed — against you.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 4: SOLUTION
+  =========================================== -->
+  <section id="solution" class="section-alt">
+    <div class="container">
+      <span class="section-label">The Fix</span>
+      <h2 class="reveal">Built For Revenue That<br>Banks Don't Want to Touch.</h2>
+      <div class="divider"></div>
+      <p class="solution-desc reveal">AfterDark Capital is private financial infrastructure engineered specifically for high-earning adult content creators. Not a workaround. Not a loophole. A fully structured, compliant payment ecosystem designed for your exact revenue profile.</p>
+      <div class="differentiators">
+        <div class="diff-card reveal reveal-delay-1">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="diff-title">Purpose-Built</div>
+          <p class="diff-desc">Designed from day one for adult content revenue. Not adapted. Not retrofitted. Built specifically for creators like you — with all the complexity that comes with your business model.</p>
+        </div>
+        <div class="diff-card reveal reveal-delay-2">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="diff-title">Compliance-First</div>
+          <p class="diff-desc">Every structure is built to withstand regulatory scrutiny. We don't hide your revenue — we legitimize your infrastructure so no compliance flag can touch it.</p>
+        </div>
+        <div class="diff-card reveal reveal-delay-3">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+          </div>
+          <div class="diff-title">Private &amp; Exclusive</div>
+          <p class="diff-desc">Maximum 20 new clients per month. Each gets dedicated infrastructure, not a shared dashboard. Your setup is built around you — not templated for thousands.</p>
+        </div>
+      </div>
+      <div class="text-center reveal">
+        <a class="btn-primary" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+          Talk to Us on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5: SERVICES
+  =========================================== -->
+  <section id="services">
+    <div class="container">
+      <span class="section-label">What You Get</span>
+      <h2 class="reveal">The Infrastructure</h2>
+      <div class="divider"></div>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <!-- Lightning / speed -->
+            <svg viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="service-title">Accelerated Payouts</div>
+          <p class="service-desc">Stop waiting 7-14 days for your money. Our payment rails are built for speed — same-day processing for qualified creators. Your revenue, when you need it. Not when a legacy bank decides to release it.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <!-- Shield -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="service-title">Privacy Architecture</div>
+          <p class="service-desc">Your financial activity is structured through privacy-optimized entities and accounts. No personal banking exposure. No paper trail that leads back to your content. Your business stays yours.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <!-- Globe -->
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <div class="service-title">Cross-Border Processing</div>
+          <p class="service-desc">Earn in USD, EUR, GBP, and 40+ currencies. Receive in whichever jurisdiction works for you. No punishing conversion fees eating your margins every single month.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon">
+            <!-- Building / Tax -->
+            <svg viewBox="0 0 24 24">
+              <line x1="3" y1="22" x2="21" y2="22"/>
+              <line x1="6" y1="18" x2="6" y2="11"/>
+              <line x1="10" y1="18" x2="10" y2="11"/>
+              <line x1="14" y1="18" x2="14" y2="11"/>
+              <line x1="18" y1="18" x2="18" y2="11"/>
+              <polygon points="12 2 20 7 4 7 12 2"/>
+            </svg>
+          </div>
+          <div class="service-title">Tax Optimization</div>
+          <p class="service-desc">Legal tax structures designed for digital creators with international revenue. Stop overpaying because your accountant doesn't understand your business model. Keep more of what you earn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 6: SOCIAL PROOF
+  =========================================== -->
+  <section id="proof" class="section-alt">
+    <div class="container">
+      <span class="section-label">Social Proof</span>
+      <h2 class="reveal">From Creators Who Made<br>The Switch</h2>
+      <div class="divider"></div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"I had $87K frozen for 23 days by my bank. No explanation. No timeline. When I finally got it back, I moved everything to AfterDark. That was 9 months ago — zero issues since."</p>
+          <div class="testimonial-author">
+            <div class="author-name">J.M.</div>
+            <div class="author-meta">Top 0.1% Creator &mdash; $180K/month</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"My accountant told me to just 'use a different bank.' That's not a solution. AfterDark actually built infrastructure around my revenue type. Night and day difference."</p>
+          <div class="testimonial-author">
+            <div class="author-name">S.K.</div>
+            <div class="author-meta">Multi-Platform Creator &mdash; $62K/month</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">"I was paying 34% in taxes because nobody understood creator revenue structures. AfterDark's team restructured everything legally — I saved $127K in the first year."</p>
+          <div class="testimonial-author">
+            <div class="author-name">R.T.</div>
+            <div class="author-meta">Agency Owner &mdash; 12 Creators Managed</div>
+          </div>
+        </div>
+      </div>
+      <p class="proof-disclaimer reveal">Names abbreviated for privacy. Results vary based on individual circumstances.</p>
+      <div class="counter-bar reveal mt-48">
+        <div class="counter-item">
+          <span class="counter-value" data-target-text="$340M+">$0</span>
+          <span class="counter-label">Creator Revenue Protected</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" data-target="200" data-suffix="+">0</span>
+          <span class="counter-label">Active Clients</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" data-target-text="99.8%">0%</span>
+          <span class="counter-label">Payout Success Rate</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" data-target="0">0</span>
+          <span class="counter-label">Accounts Frozen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 7: QUALIFICATIONS
+  =========================================== -->
+  <section id="qualifications">
+    <div class="container">
+      <span class="section-label">Who Qualifies</span>
+      <h2 class="reveal">Not Everyone Gets In.</h2>
+      <div class="divider"></div>
+      <p class="qual-desc reveal">AfterDark Capital is not for everyone. We work with serious operators who need serious infrastructure. Before you apply, make sure you fit.</p>
+      <div class="qual-cols">
+        <div>
+          <div class="qual-col-title green reveal">You're a fit if...</div>
+          <ul class="qual-list">
+            <li class="qual-item reveal reveal-delay-1">
+              <div class="qual-icon yes">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              You earn $20,000+/month consistently from adult content platforms
+            </li>
+            <li class="qual-item reveal reveal-delay-2">
+              <div class="qual-icon yes">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              You operate on OnlyFans, Fansly, or similar subscription ecosystems
+            </li>
+            <li class="qual-item reveal reveal-delay-3">
+              <div class="qual-icon yes">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              You receive revenue from international audiences
+            </li>
+            <li class="qual-item reveal reveal-delay-4">
+              <div class="qual-icon yes">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              You're tired of banks and processors treating you like a liability
+            </li>
+            <li class="qual-item reveal">
+              <div class="qual-icon yes">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              You want privacy, speed, and tax optimization — not another generic bank account
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="qual-col-title red reveal">Not for you if...</div>
+          <ul class="qual-list">
+            <li class="qual-item reveal reveal-delay-1">
+              <div class="qual-icon no">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              Creators earning under $10K/month (we have minimum thresholds)
+            </li>
+            <li class="qual-item reveal reveal-delay-2">
+              <div class="qual-icon no">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              Anyone looking for illegal tax evasion schemes
+            </li>
+            <li class="qual-item reveal reveal-delay-3">
+              <div class="qual-icon no">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </div>
+              People who want a free consultation with no intent to act
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center reveal">
+        <a class="btn-primary btn-large" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+          Apply via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 8: HOW IT WORKS
+  =========================================== -->
+  <section id="howitworks" class="section-alt">
+    <div class="container">
+      <span class="section-label">Process</span>
+      <h2 class="reveal text-center">3 Steps. That's It.</h2>
+      <div class="divider" style="margin: 0 auto 28px;"></div>
+      <div class="steps-container">
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <div class="step-title">Message Us</div>
+          <p class="step-desc">Reach out on WhatsApp. Tell us your monthly revenue, platforms, and what you need. We respond within 15 minutes during business hours.</p>
+        </div>
+        <div class="step-item reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <div class="step-title">Private Assessment</div>
+          <p class="step-desc">We analyze your revenue profile, tax situation, and banking needs. You get a custom infrastructure proposal within 48 hours. No generic templates.</p>
+        </div>
+        <div class="step-item reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <div class="step-title">Infrastructure Goes Live</div>
+          <p class="step-desc">Once approved, your payment rails, entities, and accounts are set up within 5-10 business days. Fully operational. Fully protected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 9: FAQ
+  =========================================== -->
+  <section id="faq">
+    <div class="container">
+      <span class="section-label">FAQ</span>
+      <h2 class="reveal">Questions We Get Asked</h2>
+      <div class="divider"></div>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            Is this legal?
+            <div class="faq-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">100%. Every structure we build is designed for full regulatory compliance. We work with international tax attorneys and compliance officers. This isn't about hiding revenue — it's about structuring it properly so no bank or processor can flag it.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            Why WhatsApp and not a form?
+            <div class="faq-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Privacy. We don't store your information on a server before we've even spoken. WhatsApp is encrypted, immediate, and personal. This is how private financial services work — not through a database form that gets scraped.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            What's the minimum revenue requirement?
+            <div class="faq-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">$20,000/month consistent revenue from adult content platforms. If you're below this threshold, we're not the right fit yet — but keep growing and come back when you hit that number.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            How much does it cost?
+            <div class="faq-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Pricing is custom based on your revenue volume, number of platforms, and jurisdictions involved. We'll give you a clear quote within 48 hours of your assessment. No hidden fees. Ever. What we quote is what you pay.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            What if my account has already been frozen?
+            <div class="faq-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We specialize in recovery and restructuring. If you're currently dealing with frozen funds, reach out immediately — time is critical. The longer you wait, the harder recovery becomes. Message us today.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            Do you work with agencies managing multiple creators?
+            <div class="faq-toggle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. We have dedicated infrastructure for agencies managing 5+ creators. Consolidated reporting, separate entity structures per creator, and agency-level tax optimization. Reach out for agency-specific solutions.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 10: URGENCY
+  =========================================== -->
+  <section id="urgency" class="section-alt">
+    <div class="container">
+      <span class="section-label">Limited Access</span>
+      <h2 class="reveal">Every Day Without Protection<br>Is a Gamble.</h2>
+      <div class="divider" style="margin: 0 auto 32px;"></div>
+      <p class="urgency-body reveal">You built a six-figure business in one of the hardest industries on the internet. But without the right financial infrastructure, you're one compliance flag away from watching it all freeze. The creators who protect themselves now will still be earning next year. Will you?</p>
+      <div class="reveal">
+        <p class="spots-label">This month's onboarding: 7 of 20 spots remaining</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-label">
+            <span>0 spots</span>
+            <span style="color:var(--accent);font-weight:600;">13 taken</span>
+            <span>20 spots</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <a class="btn-primary btn-large pulse" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+          Secure Your Spot Now
+        </a>
+        <span class="cta-micro">Applications reviewed within 2 hours.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 11: FINAL CTA
+  =========================================== -->
+  <section id="final-cta">
+    <div class="container text-center">
+      <span class="section-label reveal">Final Call</span>
+      <h2 class="reveal" style="font-size: clamp(2rem, 5vw, 4rem);">Stop Gambling With<br>Your Revenue.</h2>
+      <div class="divider reveal" style="margin: 0 auto 28px;"></div>
+      <p class="final-sub reveal">One conversation. That's all it takes to start protecting your income. We're available now.</p>
+      <div class="reveal">
+        <a class="btn-primary btn-large pulse" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message Us on WhatsApp Now
+        </a>
+        <div class="wa-badge reveal">
+          <svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Encrypted. Private. Immediate response.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Altroverra LLC. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+
+      // ── PRELOADER ──
+      var preloader = document.getElementById('preloader');
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          preloader.classList.add('hidden');
+        }, 1200);
+      });
+
+      // ── SCROLL PROGRESS BAR ──
+      var progressBar = document.getElementById('scroll-progress');
+      function updateProgress() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = pct + '%';
+      }
+
+      // ── STICKY BAR ──
+      var stickyBar = document.getElementById('sticky-bar');
+      var floatWa = document.getElementById('float-wa');
+      var heroSection = document.getElementById('hero');
+      var heroBottom = 0;
+
+      function updateStickyBar() {
+        heroBottom = heroSection.getBoundingClientRect().bottom;
+        if (heroBottom < 0) {
+          stickyBar.classList.add('visible');
+          floatWa.classList.add('bar-visible');
+        } else {
+          stickyBar.classList.remove('visible');
+          floatWa.classList.remove('bar-visible');
+        }
+      }
+
+      // ── SCROLL REVEAL ──
+      var revealElements = document.querySelectorAll('.reveal');
+      var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      revealElements.forEach(function(el) {
+        revealObserver.observe(el);
+      });
+
+      // ── COUNTER ANIMATION ──
+      function animateCounter(el) {
+        var targetText = el.getAttribute('data-target-text');
+        var targetNum = parseInt(el.getAttribute('data-target'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+
+        if (targetText) {
+          var start = 0;
+          var duration = 1400;
+          var startTime = null;
+          function animate(ts) {
+            if (!startTime) startTime = ts;
+            var progress = Math.min((ts - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            if (progress < 0.95) {
+              el.textContent = '...';
+            } else {
+              el.textContent = targetText;
+            }
+            if (progress < 1) requestAnimationFrame(animate);
+          }
+          requestAnimationFrame(animate);
+        } else if (!isNaN(targetNum)) {
+          var startNum = 0;
+          var dur = 1600;
+          var startTs = null;
+          function animNum(ts) {
+            if (!startTs) startTs = ts;
+            var prog = Math.min((ts - startTs) / dur, 1);
+            var eased = 1 - Math.pow(1 - prog, 3);
+            var current = Math.round(startNum + (targetNum - startNum) * eased);
+            el.textContent = current + suffix;
+            if (prog < 1) requestAnimationFrame(animNum);
+          }
+          requestAnimationFrame(animNum);
+        }
+      }
+
+      var counterEls = document.querySelectorAll('[data-target], [data-target-text]');
+      var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      counterEls.forEach(function(el) {
+        counterObserver.observe(el);
+      });
+
+      // ── PROGRESS BAR (urgency section) ──
+      var progressFill = document.getElementById('progress-fill');
+      var progressObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            setTimeout(function() {
+              progressFill.style.width = '65%';
+            }, 300);
+            progressObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      if (progressFill) progressObserver.observe(progressFill);
+
+      // ── FAQ ACCORDION ──
+      var faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function(item) {
+        var question = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+
+        function toggle() {
+          var isOpen = item.classList.contains('open');
+          faqItems.forEach(function(i) {
+            i.classList.remove('open');
+            i.querySelector('.faq-answer').style.maxHeight = '0';
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            question.setAttribute('aria-expanded', 'true');
+          }
+        }
+
+        question.addEventListener('click', toggle);
+        question.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+
+      // ── EXIT INTENT POPUP ──
+      var exitPopup = document.getElementById('exit-popup');
+      var popupCloseBtn = document.getElementById('popup-close-btn');
+      var popupShown = false;
+
+      function showPopup() {
+        if (!popupShown && !sessionStorage.getItem('adc_popup_shown')) {
+          popupShown = true;
+          sessionStorage.setItem('adc_popup_shown', '1');
+          exitPopup.classList.add('active');
+        }
+      }
+
+      if (popupCloseBtn) {
+        popupCloseBtn.addEventListener('click', function() {
+          exitPopup.classList.remove('active');
+        });
+      }
+
+      exitPopup.addEventListener('click', function(e) {
+        if (e.target === exitPopup) {
+          exitPopup.classList.remove('active');
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          exitPopup.classList.remove('active');
+        }
+      });
+
+      // Desktop exit intent: mouse leaves viewport from top
+      var isMobile = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+      if (!isMobile) {
+        document.addEventListener('mouseleave', function(e) {
+          if (e.clientY <= 0) {
+            showPopup();
+          }
+        });
+      }
+
+      // ── SCROLL EVENT (throttled) ──
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            updateProgress();
+            updateStickyBar();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Initial calls
+      updateProgress();
+      updateStickyBar();
+
+    })();
+  </script>
+
+</body>
+</html>

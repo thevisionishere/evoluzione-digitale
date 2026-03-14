@@ -1,0 +1,2404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AfterDark Capital — Private Payment Infrastructure for Adult Creators</title>
+  <meta name="description" content="AfterDark Capital provides private payment processing, accelerated payouts, and tax optimization for high-earning adult content creators making $20K+/month." />
+  <meta property="og:title" content="AfterDark Capital — Stop Gambling With Your Revenue" />
+  <meta property="og:description" content="Banks freeze adult revenue without warning. AfterDark Capital is built so that never happens to you. Private payment infrastructure for serious creators." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230a0a0a'/><circle cx='50' cy='50' r='30' fill='%23e63946'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-2: #0f0f0f;
+      --bg-3: #111111;
+      --bg-card: #141414;
+      --accent: #e63946;
+      --accent-hover: #ff3344;
+      --accent-dark: #c1202f;
+      --accent-glow: rgba(230,57,70,0.25);
+      --accent-tint: rgba(230,57,70,0.03);
+      --text: #ffffff;
+      --text-2: #a0a0a0;
+      --text-muted: #555555;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(230,57,70,0.4);
+      --font-body: 'Inter', sans-serif;
+      --font-head: 'Space Grotesk', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      cursor: none;
+    }
+
+    @media (max-width: 768px) {
+      body { cursor: auto; font-size: 16px; }
+    }
+
+    /* ─── GRAIN OVERLAY ─── */
+    .grain {
+      position: fixed;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      opacity: 0.12;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      animation: grainShift 6s steps(4) infinite;
+    }
+
+    @keyframes grainShift {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(-2%, -3%); }
+      50%  { transform: translate(3%, 1%); }
+      75%  { transform: translate(-1%, 2%); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* ─── CUSTOM CURSOR ─── */
+    #cursor {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+      opacity: 0;
+    }
+
+    #cursor.active { opacity: 1; }
+
+    @media (max-width: 768px) { #cursor { display: none; } }
+
+    /* ─── SCROLL PROGRESS ─── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-hover));
+      z-index: 9600;
+      transition: width 0.1s linear;
+    }
+
+    /* ─── BRAND HEADER ─── */
+    .brand-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9500;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .brand-header.scrolled {
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-mark-inner {
+      width: 14px;
+      height: 14px;
+      background: var(--bg);
+      border-radius: 50%;
+    }
+
+    .brand-name {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .brand-name span { color: var(--text-muted); font-weight: 400; }
+
+    .brand-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .brand-cta:hover { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .brand-header { padding: 16px 24px; }
+      .brand-name { font-size: 13px; }
+      .brand-cta { font-size: 12px; padding: 6px 14px; }
+    }
+
+    /* ─── CONTAINER ─── */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .display {
+      font-family: var(--font-head);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .display em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      padding: 16px 32px;
+      border: none;
+      cursor: none;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    }
+
+    @media (max-width: 768px) { .btn { cursor: pointer; } }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 4px 24px rgba(230,57,70,0.3), 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255,255,255,0.18) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 40px rgba(230,57,70,0.45), 0 2px 8px rgba(0,0,0,0.5);
+      background: var(--accent-hover);
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: scale(0.98); box-shadow: 0 2px 12px rgba(230,57,70,0.3); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .micro-copy {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* ─── SCROLL REVEAL STATES ─── */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .reveal-up.revealed { opacity: 1; transform: translateY(0); }
+
+    .reveal-slide {
+      opacity: 0;
+      transform: translateX(30px);
+      filter: blur(4px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.7s ease;
+    }
+
+    .reveal-slide.revealed { opacity: 1; transform: translateX(0); filter: blur(0); }
+
+    .reveal-tilt {
+      opacity: 0;
+      transform: translateX(-40px) rotate(-2deg);
+      transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .reveal-tilt.revealed { opacity: 1; transform: translateX(0) rotate(0); }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92) translateY(12px);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .reveal-scale.revealed { opacity: 1; transform: scale(1) translateY(0); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      padding: 200px 0 100px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 800px 600px at 20% -30%, rgba(230,57,70,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 400px at 80% 110%, rgba(230,57,70,0.04) 0%, transparent 60%),
+        var(--bg);
+    }
+
+    .hero-bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    .hero-bg-shape-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(230,57,70,0.06) 0%, transparent 70%);
+      top: -100px;
+      left: -150px;
+      animation: drift1 12s ease-in-out infinite;
+    }
+
+    .hero-bg-shape-2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(230,57,70,0.04) 0%, transparent 70%);
+      bottom: 10%;
+      right: 10%;
+      animation: drift2 15s ease-in-out infinite;
+    }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, 20px) scale(1.05); }
+      66% { transform: translate(-20px, 35px) scale(0.97); }
+    }
+
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-25px, -15px); }
+    }
+
+    #hero .container {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid var(--border-accent);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 32px;
+      background: rgba(230,57,70,0.05);
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-h1 {
+      font-size: clamp(42px, 6vw, 80px);
+      margin-bottom: 32px;
+      max-width: 800px;
+    }
+
+    .hero-body {
+      max-width: 620px;
+      color: var(--text-2);
+      margin-bottom: 48px;
+    }
+
+    .hero-body p { margin-bottom: 18px; }
+    .hero-body p:last-child { margin-bottom: 0; }
+
+    .hero-body em {
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .hero-frozen {
+      display: inline-block;
+      background: rgba(230,57,70,0.12);
+      border: 1px solid rgba(230,57,70,0.3);
+      border-radius: 3px;
+      padding: 2px 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 768px) {
+      #hero { padding: 140px 0 80px; min-height: auto; }
+      .hero-h1 { margin-bottom: 28px; }
+      .hero-body { margin-bottom: 36px; }
+      .hero-badge { margin-bottom: 28px; }
+    }
+
+    /* ─── PROBLEM SECTION ─── */
+    #problem {
+      padding: 120px 0;
+      background:
+        radial-gradient(ellipse 700px 500px at 90% 50%, rgba(230,57,70,0.03) 0%, transparent 60%),
+        var(--bg-2);
+      position: relative;
+    }
+
+    .problem-title {
+      font-size: clamp(32px, 4vw, 52px);
+      max-width: 640px;
+      margin-bottom: 32px;
+    }
+
+    .problem-intro {
+      color: var(--text-2);
+      max-width: 640px;
+      margin-bottom: 64px;
+    }
+
+    .problem-intro p { margin-bottom: 16px; }
+
+    /* Editorial stat callouts — NOT cards */
+    .stat-callouts { display: flex; flex-direction: column; gap: 0; }
+
+    .stat-callout {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      align-items: start;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .stat-callout:first-child { border-top: 1px solid var(--border); }
+
+    .stat-number {
+      font-family: var(--font-head);
+      font-size: clamp(40px, 4.5vw, 64px);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .stat-text {
+      color: var(--text-2);
+      padding-top: 8px;
+    }
+
+    .stat-text strong { color: var(--text); font-weight: 600; }
+    .stat-text em { color: var(--accent); font-style: italic; }
+
+    .problem-close {
+      margin-top: 48px;
+      max-width: 580px;
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 15px;
+      padding-left: 20px;
+      border-left: 2px solid var(--border);
+    }
+
+    @media (max-width: 900px) {
+      .stat-callout { grid-template-columns: 140px 1fr; gap: 24px; }
+      .stat-number { font-size: clamp(36px, 4vw, 48px); }
+    }
+
+    @media (max-width: 640px) {
+      .stat-callout { grid-template-columns: 1fr; gap: 8px; }
+    }
+
+    /* ─── FEAR SECTION ─── */
+    #fear {
+      padding: 120px 0;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .fear-inner {
+      max-width: 680px;
+    }
+
+    .fear-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 40px;
+    }
+
+    .fear-body { color: var(--text-2); }
+    .fear-body p { margin-bottom: 24px; }
+    .fear-body p:last-child { margin-bottom: 0; }
+
+    .fear-highlight {
+      margin: 48px 0;
+      padding: 28px 36px;
+      background: rgba(230,57,70,0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .fear-cta-wrap {
+      margin-top: 48px;
+    }
+
+    /* ─── SOLUTION ─── */
+    #solution {
+      padding: 120px 0;
+      background:
+        radial-gradient(ellipse 900px 600px at -10% 60%, rgba(230,57,70,0.05) 0%, transparent 60%),
+        var(--bg-2);
+    }
+
+    .solution-title {
+      font-size: clamp(30px, 4vw, 52px);
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .solution-body {
+      color: var(--text-2);
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    .solution-body p { margin-bottom: 20px; }
+    .solution-body strong { color: var(--text); }
+
+    /* ─── SERVICES ─── */
+    #services {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+
+    .services-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 16px;
+    }
+
+    .services-subtitle {
+      color: var(--text-2);
+      max-width: 560px;
+      margin-bottom: 64px;
+      font-size: 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2px;
+    }
+
+    .service-card {
+      background: var(--bg-2);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .service-card:hover::after { width: 100%; }
+    .service-card:hover { background: #141414; }
+
+    .service-card-large {
+      grid-column: span 1;
+    }
+
+    .service-card:first-child { border-radius: 6px 0 0 0; }
+    .service-card:nth-child(2) { border-radius: 0 6px 0 0; }
+    .service-card:nth-child(3) { border-radius: 0 0 0 6px; }
+    .service-card:nth-child(4) { border-radius: 0 0 6px 0; }
+
+    @media (max-width: 768px) {
+      .service-card:first-child { border-radius: 6px 6px 0 0; }
+      .service-card:nth-child(2),
+      .service-card:nth-child(3) { border-radius: 0; }
+      .service-card:nth-child(4) { border-radius: 0 0 6px 6px; }
+    }
+
+    .service-card-small {
+      padding: 36px 40px;
+    }
+
+    .service-num {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      position: relative;
+    }
+
+    .service-title::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .service-card:hover .service-title::after { width: 40px; }
+
+    .service-body {
+      color: var(--text-2);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 36px 28px; }
+    }
+
+    /* ─── GUARANTEE ─── */
+    #guarantee {
+      padding: 100px 0;
+      background: rgba(230,57,70,0.03);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .guarantee-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .guarantee-shield {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 32px;
+      color: var(--accent);
+    }
+
+    .guarantee-title {
+      font-size: clamp(28px, 3.5vw, 44px);
+      margin-bottom: 24px;
+    }
+
+    .guarantee-body {
+      color: var(--text-2);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ─── SOCIAL PROOF ─── */
+    #proof {
+      padding: 120px 0;
+      background: var(--bg-2);
+      overflow: hidden;
+    }
+
+    .proof-header {
+      margin-bottom: 72px;
+    }
+
+    .proof-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 12px;
+    }
+
+    .proof-subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .testimonials-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 800px;
+    }
+
+    .testimonial {
+      background: var(--bg-card);
+      padding: 40px 48px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial:nth-child(1) {
+      border-radius: 8px 0 8px 8px;
+      margin-left: 0;
+    }
+
+    .testimonial:nth-child(2) {
+      border-radius: 0 8px 8px 8px;
+      margin-left: 48px;
+      margin-top: 8px;
+    }
+
+    .testimonial:nth-child(3) {
+      border-radius: 8px 8px 0 8px;
+      margin-left: 24px;
+      margin-top: 4px;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px var(--border-accent);
+    }
+
+    .testimonial-quote {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-2);
+      margin-bottom: 28px;
+    }
+
+    .testimonial-quote p { margin-bottom: 14px; }
+    .testimonial-quote p:last-child { margin-bottom: 0; }
+
+    .testimonial-author {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .testimonial-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 60px;
+      background: linear-gradient(180deg, var(--accent), transparent);
+      border-radius: 0 0 0 0;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial:nth-child(2),
+      .testimonial:nth-child(3) {
+        margin-left: 0;
+      }
+      .testimonial { padding: 28px 24px; }
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      margin-top: 80px;
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 0 32px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-item-num {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .stat-item-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .stat-item-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .stats-bar { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .stat-item { border-right: none; padding: 0; }
+    }
+
+    /* ─── DAY IN LIFE ─── */
+    #daylife {
+      padding: 120px 0;
+      background:
+        radial-gradient(ellipse 700px 400px at 50% 50%, rgba(230,57,70,0.04) 0%, transparent 70%),
+        var(--bg);
+    }
+
+    .daylife-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .daylife-story {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-style: italic;
+      color: var(--text-2);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .daylife-payoff {
+      font-family: var(--font-head);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .daylife-payoff em { color: var(--accent); font-style: normal; }
+
+    /* ─── QUALIFICATIONS ─── */
+    #qualifications {
+      padding: 120px 0;
+      background: var(--bg-2);
+    }
+
+    .qual-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 16px;
+      max-width: 600px;
+    }
+
+    .qual-subtitle {
+      color: var(--text-2);
+      max-width: 480px;
+      margin-bottom: 64px;
+      font-size: 16px;
+    }
+
+    .qual-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .qual-col {
+      background: var(--bg-card);
+      padding: 48px;
+    }
+
+    .qual-col-title {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .qual-col--yes .qual-col-title { color: #4ade80; }
+    .qual-col--no { background: var(--bg-3); }
+    .qual-col--no .qual-col-title { color: var(--text-muted); }
+
+    .qual-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+
+    .qual-item {
+      display: flex;
+      gap: 16px;
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    .qual-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+    }
+
+    .qual-col--yes .qual-icon { color: #4ade80; }
+    .qual-col--no .qual-icon { color: var(--text-muted); }
+
+    @media (max-width: 768px) {
+      .qual-cols { grid-template-columns: 1fr; }
+      .qual-col { padding: 32px 24px; }
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #howitworks {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+
+    .hiw-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 16px;
+    }
+
+    .hiw-subtitle {
+      color: var(--text-2);
+      max-width: 520px;
+      margin-bottom: 72px;
+    }
+
+    .hiw-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 760px;
+      position: relative;
+    }
+
+    .hiw-steps::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--border) 60%, transparent 100%);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .hiw-steps.line-drawn::before {
+      transform: scaleY(1);
+    }
+
+    .hiw-step.revealed .step-num {
+      transform: scale(1);
+    }
+
+    .hiw-step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 32px;
+      padding-bottom: 56px;
+      position: relative;
+    }
+
+    .hiw-step:last-child { padding-bottom: 0; }
+
+    .step-num-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+      transform: scale(0);
+      transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .step-content { padding-top: 8px; }
+
+    .step-title {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .step-body { color: var(--text-2); font-size: 15px; line-height: 1.8; }
+
+    /* ─── STOP WORRYING ─── */
+    #stopworrying {
+      padding: 120px 0;
+      background: var(--bg-2);
+    }
+
+    .sw-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 16px;
+    }
+
+    .sw-subtitle {
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 15px;
+      margin-bottom: 56px;
+    }
+
+    .sw-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 680px;
+    }
+
+    .sw-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.7;
+      transition: color 0.2s ease;
+    }
+
+    .sw-item:first-child { border-top: 1px solid var(--border); }
+    .sw-item:last-child { font-weight: 600; color: var(--text); font-size: 18px; }
+    .sw-item:hover { color: var(--text); }
+
+    .sw-check {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* ─── FAQ ─── */
+    #faq {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+
+    .faq-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      margin-bottom: 64px;
+    }
+
+    .faq-list {
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s ease;
+    }
+
+    @media (max-width: 768px) { .faq-question { cursor: pointer; } }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), color 0.2s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1), padding 0.35s ease;
+    }
+
+    /* max-height set dynamically via JS */
+
+    .faq-answer-inner {
+      padding: 0 0 28px;
+      color: var(--text-2);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* ─── URGENCY ─── */
+    #urgency {
+      padding: 100px 0;
+      background:
+        radial-gradient(ellipse 800px 500px at 50% 50%, rgba(230,57,70,0.06) 0%, transparent 70%),
+        var(--bg-2);
+      text-align: center;
+    }
+
+    .urgency-title {
+      font-size: clamp(32px, 4vw, 56px);
+      margin-bottom: 32px;
+    }
+
+    .urgency-body {
+      color: var(--text-2);
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+
+    .urgency-body p { margin-bottom: 16px; }
+    .urgency-body strong { color: var(--text); }
+
+    .progress-wrap {
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .progress-bar-bg {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-hover));
+      border-radius: 100px;
+      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ─── FINAL CTA ─── */
+    #finalcta {
+      padding: 160px 0;
+      background:
+        radial-gradient(ellipse 1000px 600px at 50% 100%, rgba(230,57,70,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 400px at 10% 20%, rgba(230,57,70,0.04) 0%, transparent 60%),
+        var(--bg);
+      text-align: center;
+    }
+
+    .finalcta-title {
+      font-size: clamp(34px, 5vw, 68px);
+      max-width: 820px;
+      margin: 0 auto 32px;
+    }
+
+    .finalcta-body {
+      max-width: 560px;
+      margin: 0 auto 56px;
+      color: var(--text-2);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .finalcta-body p { margin-bottom: 16px; }
+    .finalcta-body strong { color: var(--text); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-link {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover { color: var(--text); }
+
+    /* ─── STICKY BAR ─── */
+    #sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9000;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+      background: #0d0d0d;
+      border-top: 1px solid var(--border-accent);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    #sticky-bar.visible { transform: translateY(0); }
+
+    .sticky-text {
+      font-size: 14px;
+      color: var(--text-2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sticky-dot {
+      width: 6px;
+      height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .sticky-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s ease;
+    }
+
+    .sticky-btn:hover { background: var(--accent-hover); }
+
+    @media (max-width: 640px) {
+      .sticky-text { font-size: 13px; }
+    }
+
+    /* ─── FLOATING WA ─── */
+    #floating-wa {
+      position: fixed;
+      bottom: 88px;
+      right: 28px;
+      z-index: 8999;
+      width: 52px;
+      height: 52px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      text-decoration: none;
+      animation: wa-pulse 3s ease-in-out infinite;
+      transition: transform 0.2s ease;
+    }
+
+    #floating-wa:hover {
+      transform: scale(1.1);
+      animation: none;
+    }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7), 0 0 0 8px rgba(37,211,102,0.1); }
+    }
+
+    #floating-wa svg { width: 26px; height: 26px; }
+
+    /* hide floating WA on mobile when sticky bar visible */
+    @media (max-width: 768px) {
+      #floating-wa { display: none; }
+    }
+
+    /* ─── EXIT POPUP ─── */
+    #exit-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    #exit-popup.active { display: flex; }
+
+    .exit-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+    }
+
+    .exit-modal {
+      position: relative;
+      background: #141414;
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 56px 48px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .exit-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: none;
+      font-size: 20px;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    @media (max-width: 768px) { .exit-close { cursor: pointer; } }
+    .exit-close:hover { color: var(--text); }
+
+    .exit-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .exit-title {
+      font-size: 26px;
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    .exit-body {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 540px) {
+      .exit-modal { padding: 40px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Brand Header -->
+<header class="brand-header" id="brand-header">
+  <a href="#hero" class="brand-logo">
+    <div class="brand-mark"><div class="brand-mark-inner"></div></div>
+    <div class="brand-name">AfterDark <span>Capital</span></div>
+  </a>
+  <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="brand-cta" target="_blank" rel="noopener">Get Protected</a>
+</header>
+
+<!-- Grain -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Custom cursor -->
+<div id="cursor" aria-hidden="true"></div>
+
+<!-- Scroll progress -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg-shape hero-bg-shape-1" aria-hidden="true"></div>
+  <div class="hero-bg-shape hero-bg-shape-2" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="hero-badge reveal-up">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      The banks have a word for what you do. It ends with 'high-risk.'
+    </div>
+
+    <h1 class="display hero-h1 reveal-up" style="transition-delay: 0.1s;">
+      Your payout is sitting in a bank that's <em>deciding whether to give it back.</em>
+    </h1>
+
+    <div class="hero-body reveal-up" style="transition-delay: 0.28s;">
+      <p>It doesn't start with a letter. There's no phone call. No warning.</p>
+      <p>You open your dashboard at 7am and the number is there — $47,000, $90,000, whatever you made last month. Then you open your bank app.</p>
+      <p>And the balance says something that makes your stomach drop.</p>
+      <p><span class="hero-frozen">Payments in review. Funds unavailable.</span></p>
+      <p>This happened to 73% of creators in your revenue range last year. AfterDark Capital was built so this never touches you.</p>
+    </div>
+
+    <div class="reveal-scale" style="transition-delay: 0.42s;">
+      <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Get Protected — Message Us on WhatsApp
+      </a>
+      <span class="micro-copy">Real person. Not a bot. First response within the hour.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROBLEM
+═══════════════════════════════════════ -->
+<section id="problem" aria-label="The numbers">
+  <div class="container">
+
+    <span class="section-label reveal-up">The Numbers</span>
+
+    <h2 class="display problem-title reveal-up" style="transition-delay: 0.1s;">
+      Nobody tells you this part when you hit $20K/month.
+    </h2>
+
+    <div class="problem-intro reveal-up" style="transition-delay: 0.15s;">
+      <p>They congratulate you on the milestone. Your agency celebrates. Your fans hit a new record.</p>
+      <p>And somewhere in a data center, an algorithm just put a flag on your account.</p>
+      <p>Here's what the last twelve months looked like for creators in your bracket:</p>
+    </div>
+
+    <div class="stat-callouts">
+
+      <div class="stat-callout reveal-tilt" style="transition-delay: 0s;">
+        <div class="stat-number" data-target="1in3" aria-label="1 in 3">1 in 3</div>
+        <div class="stat-text">
+          <strong>creators who get flagged have their account permanently closed.</strong> Not suspended. Closed. No appeal. No explanation beyond an automated email that arrives three days after the decision was already made.
+        </div>
+      </div>
+
+      <div class="stat-callout reveal-tilt" style="transition-delay: 0.15s;">
+        <div class="stat-number counter" data-target="73" data-suffix="%" aria-label="73%">0%</div>
+        <div class="stat-text">
+          of creators in your revenue range experienced at least one frozen payout or account restriction last year. Not 7%. <em>Nearly three out of four.</em>
+        </div>
+      </div>
+
+      <div class="stat-callout reveal-tilt" style="transition-delay: 0.28s;">
+        <div class="stat-number" aria-label="$4.2B">$4.2B</div>
+        <div class="stat-text">
+          in creator revenue was delayed, frozen, or seized in 2025. Not "at risk." <strong>Gone.</strong> Fought over in ticket systems that respond in six to eight business days.
+        </div>
+      </div>
+
+      <div class="stat-callout reveal-tilt" style="transition-delay: 0.42s;">
+        <div class="stat-number counter" data-target="14" aria-label="14 days">0</div>
+        <div class="stat-text">
+          <strong>days.</strong> Average recovery time — if the funds come back at all. Do you have 14 days of operating costs in reserve? Most people making $80K/month don't.
+        </div>
+      </div>
+
+    </div>
+
+    <p class="problem-close reveal-up" style="transition-delay: 0.1s;">
+      They don't tell you when you open the account. They tell you on the day they've already made the decision. Via automated email.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FEAR
+═══════════════════════════════════════ -->
+<section id="fear" aria-label="How it happens">
+  <div class="container">
+    <div class="fear-inner">
+
+      <h2 class="display fear-title reveal-up">
+        I'm going to walk you through exactly how this goes.
+      </h2>
+
+      <div class="fear-body reveal-up" style="transition-delay: 0.15s;">
+        <p>It's a Tuesday. A compliance system at your processor runs a routine sweep. Your account gets flagged — not because you did anything wrong, but because the volume looks unusual, or the category matches a risk pattern, or someone filed a chargeback.</p>
+
+        <p>The flag doesn't go to a person immediately. It goes into a queue.</p>
+
+        <p>Between 24 and 72 hours later, a compliance analyst — who knows nothing about your business, your five years of building — opens your file. They look at your revenue source. They close the file and click <em>"suspend pending review."</em></p>
+
+        <p>You wake up and your payout isn't there.</p>
+
+        <p>You email support. Automated response with a ticket number. You call. On hold for 45 minutes. The representative reads from a script.</p>
+
+        <p>That's when it hits you.</p>
+
+        <p>You don't have a relationship with this bank. You have an account number. And account numbers don't get callbacks.</p>
+
+        <p>Meanwhile: your team needs to be paid. Your rent is due. The equipment lease — that made total sense when the money was flowing — is coming out of the account that's frozen.</p>
+      </div>
+
+      <div class="fear-highlight reveal-up" style="transition-delay: 0.28s;">
+        This isn't worst-case. This is Tuesday. And the algorithm doesn't know the difference between you and a fraud case.
+      </div>
+
+      <div class="fear-cta-wrap reveal-scale" style="transition-delay: 0.42s;">
+        <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Before It Happens to Me — Talk to Someone Now
+        </a>
+        <span class="micro-copy">6 spots remaining. When they're gone, intake closes until next month.</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SOLUTION
+═══════════════════════════════════════ -->
+<section id="solution" aria-label="What we do">
+  <div class="container">
+
+    <span class="section-label reveal-up">The Solution</span>
+
+    <h2 class="display solution-title reveal-up" style="transition-delay: 0.1s;">
+      We built something that doesn't let that happen.
+    </h2>
+
+    <div class="solution-body reveal-up" style="transition-delay: 0.2s;">
+      <p>Not a workaround. Not "optimized routing" or any other euphemism.</p>
+      <p>A completely separate financial system — built specifically for revenue that traditional banks don't know what to do with.</p>
+      <p>Your payouts move through payment channels designed for this category. The compliance triggers that flag a standard bank account don't apply. When you're set up with AfterDark Capital, your payout arrives when it's supposed to. In the amount it's supposed to be.</p>
+      <p><strong>You just get paid.</strong></p>
+      <p>We don't replace your bank. We replace your exposure.</p>
+    </div>
+
+    <div class="reveal-scale" style="transition-delay: 0.32s;">
+      <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Set This Up for My Account
+      </a>
+      <span class="micro-copy">20-minute conversation. 48-72 hours to go live. No forms, no applications.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════ -->
+<section id="services" aria-label="What's included">
+  <div class="container">
+
+    <h2 class="display services-title reveal-up">
+      What's actually included when you come on board.
+    </h2>
+    <p class="services-subtitle reveal-up" style="transition-delay: 0.1s;">Four things. Each one would be worth it on its own.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card service-card-large reveal-up" style="transition-delay: 0s;">
+        <div class="service-num">01</div>
+        <h3 class="service-title">You get paid fast. Every time.</h3>
+        <p class="service-body">Most creators wait 7-14 days while their money sits in a processor's account earning interest for someone else. Our average payout: 48-72 hours. For some configurations, same-day. No holds. No "pending reviews." If your payout doesn't arrive, you have a direct line to a human being — not a ticket system.</p>
+      </div>
+
+      <div class="service-card service-card-large reveal-up" style="transition-delay: 0.15s;">
+        <div class="service-num">02</div>
+        <h3 class="service-title">Your financial identity stays private.</h3>
+        <p class="service-body">Every transaction leaves a record. Processors, banks, payment gateways — they all maintain logs. Some get sold. Some get subpoenaed. Some get breached. When your revenue flows through our infrastructure, the record doesn't connect back to your content, your platform, or your personal identity. Your subscribers don't know where their payment goes. Your bank doesn't know where your income comes from. The gap between those two facts is where your security lives.</p>
+      </div>
+
+      <div class="service-card service-card-small reveal-up" style="transition-delay: 0.28s;">
+        <div class="service-num">03</div>
+        <h3 class="service-title">International revenue without the disappearing 20%.</h3>
+        <p class="service-body">If you have subscribers in the UK, EU, Australia, Canada, Japan — you're losing 15-25% of that revenue to conversion fees and unfavorable FX rates. We route international revenue through structures designed for this. The difference shows up in your bank account every month.</p>
+      </div>
+
+      <div class="service-card service-card-small reveal-up" style="transition-delay: 0.42s;">
+        <div class="service-num">04</div>
+        <h3 class="service-title">You stop overpaying taxes.</h3>
+        <p class="service-body">The average creator making $20K/month is overpaying $3,000-$5,000 per month. At $100K, that's $15,000+ every month. That's not a marginal improvement. That's a second income — one you've been sending to the government because nobody showed you the legal structures that exist to prevent it.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     GUARANTEE
+═══════════════════════════════════════ -->
+<section id="guarantee" aria-label="Guarantee">
+  <div class="container">
+    <div class="guarantee-inner">
+
+      <svg class="guarantee-shield reveal-scale" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M28 4L8 12v16c0 12.5 8.3 24.2 20 28 11.7-3.8 20-15.5 20-28V12L28 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M20 28l5.5 5.5L36 23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <h2 class="display guarantee-title reveal-up" style="transition-delay: 0.1s;">
+        30-Day Confidence Guarantee
+      </h2>
+
+      <p class="guarantee-body reveal-up" style="transition-delay: 0.2s;">
+        If within the first 30 days you're not completely confident in your payout security, we refund your setup fee and help you transition back to your previous setup. No friction. No questions. Because if this doesn't work for you, we don't deserve your money.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SOCIAL PROOF
+═══════════════════════════════════════ -->
+<section id="proof" aria-label="Testimonials">
+  <div class="container">
+
+    <div class="proof-header">
+      <h2 class="display proof-title reveal-up">
+        They asked us not to use their names. Here's what they said.
+      </h2>
+      <p class="proof-subtitle reveal-up" style="transition-delay: 0.1s;">Everyone in this industry is private. We get it. The details are real, the names aren't.</p>
+    </div>
+
+    <div class="testimonials-wrap">
+
+      <div class="testimonial reveal-slide" style="transition-delay: 0s;">
+        <div class="testimonial-accent" aria-hidden="true"></div>
+        <div class="testimonial-quote">
+          <p>Okay so I want to be honest because I almost didn't do this.</p>
+          <p>I had $87K sitting in a frozen account for eleven days. I had a team of three people I couldn't pay. I'd already borrowed money from my sister — which, that conversation was its own nightmare — and my lawyer was giving me vague answers at $350 per email.</p>
+          <p>Someone in a private Discord mentioned AfterDark. I messaged them at midnight on a Wednesday. They responded in under 20 minutes.</p>
+          <p>I don't fully understand everything they set up. I just know it's been nine months and I haven't had a single payout problem. My new accountant says I'm saving about $4,000 a month in taxes.</p>
+          <p>I kind of want to go back and count up all the money I lost before I found them.</p>
+        </div>
+        <div class="testimonial-author">Creator, $95K/month, 3 years on OnlyFans, U.S.</div>
+      </div>
+
+      <div class="testimonial reveal-slide" style="transition-delay: 0.15s;">
+        <div class="testimonial-accent" aria-hidden="true"></div>
+        <div class="testimonial-quote">
+          <p>My accountant was a good accountant. He did great work for my husband's construction business. But when my account got flagged, I called him and he was quiet for a second and said <em>"I've never dealt with this before."</em></p>
+          <p>That's what AfterDark is. The piece your accountant doesn't know exists.</p>
+          <p>Eight months. Zero issues. The international payout thing alone — I was losing $2,200 a month on UK conversions and didn't even know.</p>
+        </div>
+        <div class="testimonial-author">Creator, $62K/month, UK + U.S. subscribers, Fansly + OnlyFans</div>
+      </div>
+
+      <div class="testimonial reveal-slide" style="transition-delay: 0.28s;">
+        <div class="testimonial-accent" aria-hidden="true"></div>
+        <div class="testimonial-quote">
+          <p>I was skeptical. I'd heard about "high-risk payment solutions" before — most of them were guys charging 8% to run your money through a slightly different processor.</p>
+          <p>What these people actually do is different. They restructured how my business receives income. My new accountant found deductions I had no idea existed. I saved $127,000 last year. Not a projection — what I actually paid vs. what I would have.</p>
+          <p>I don't think about my payments anymore. I used to check every morning with this knot in my stomach. I don't do that anymore.</p>
+        </div>
+        <div class="testimonial-author">Creator, $140K/month average, 4-year career, international revenue</div>
+      </div>
+
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item reveal-scale" style="transition-delay: 0s;">
+        <div class="stat-item-num">$340M+</div>
+        <div class="stat-item-label">Total paid out to active clients</div>
+      </div>
+      <div class="stat-item reveal-scale" style="transition-delay: 0.15s;">
+        <div class="stat-item-num">0</div>
+        <div class="stat-item-label">Account freezes under AfterDark infrastructure</div>
+      </div>
+      <div class="stat-item reveal-scale" style="transition-delay: 0.28s;">
+        <div class="stat-item-num">99.8%</div>
+        <div class="stat-item-label">Payout success rate</div>
+        <div class="stat-item-note">The 0.2% was a banking holiday. Resolved in 6 hours.</div>
+      </div>
+      <div class="stat-item reveal-scale" style="transition-delay: 0.42s;">
+        <div class="stat-item-num">200+</div>
+        <div class="stat-item-label">Active clients across 30+ countries</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     DAY IN THE LIFE
+═══════════════════════════════════════ -->
+<section id="daylife" aria-label="Day in the life">
+  <div class="container">
+    <div class="daylife-inner">
+
+      <p class="daylife-story reveal-up">
+        "It's Tuesday. You woke up, opened your bank app like you always do. The number was there. All of it. Same as yesterday. You closed the app and made coffee. You didn't think about it again until you read this sentence."
+      </p>
+
+      <div class="daylife-payoff reveal-up" style="transition-delay: 0.2s;">
+        That's what <em>'protected'</em> feels like.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     QUALIFICATIONS
+═══════════════════════════════════════ -->
+<section id="qualifications" aria-label="Who this is for">
+  <div class="container">
+
+    <h2 class="display qual-title reveal-up">
+      We built this for a specific type of creator.
+    </h2>
+    <p class="qual-subtitle reveal-up" style="transition-delay: 0.1s;">
+      Not everyone is the right fit. Here's how to know.
+    </p>
+
+    <div class="qual-cols">
+
+      <div class="qual-col qual-col--yes reveal-up" style="transition-delay: 0.15s;">
+        <div class="qual-col-title">You're a fit if</div>
+        <ul class="qual-list">
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            You're generating $20,000+ per month, consistently. Not peak months — average. If you're at $15K and growing fast, let's talk anyway.
+          </li>
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            Your primary revenue comes from OnlyFans, Fansly, or adult content platforms.
+          </li>
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            You're receiving international payments and there's almost certainly money being lost in ways you haven't mapped.
+          </li>
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            You've had at least one uncomfortable moment — a delayed payout, a flagged transaction, a bank asking questions you didn't want to answer.
+          </li>
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            You're serious about the long-term. This isn't a fix for this month. It's permanent infrastructure.
+          </li>
+        </ul>
+      </div>
+
+      <div class="qual-col qual-col--no reveal-up" style="transition-delay: 0.28s;">
+        <div class="qual-col-title">Not yet if</div>
+        <ul class="qual-list">
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="15" y2="15"/><line x1="15" y1="5" x2="5" y2="15"/></svg>
+            You're brand new and under $10K/month. Build your base first, come back at $20K.
+          </li>
+          <li class="qual-item">
+            <svg class="qual-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="15" y2="15"/><line x1="15" y1="5" x2="5" y2="15"/></svg>
+            You're looking for something that bends the rules. Everything we do is legal and documented.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════ -->
+<section id="howitworks" aria-label="How it works">
+  <div class="container">
+
+    <span class="section-label reveal-up">The First 72 Hours</span>
+
+    <h2 class="display hiw-title reveal-up" style="transition-delay: 0.1s;">
+      What actually happens when you message us.
+    </h2>
+    <p class="hiw-subtitle reveal-up" style="transition-delay: 0.2s;">Three steps. No forms, no applications, no waiting room.</p>
+
+    <div class="hiw-steps">
+
+      <div class="hiw-step reveal-up" style="transition-delay: 0.2s;">
+        <div class="step-num-wrap">
+          <div class="step-num">1</div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">You send us a message.</h3>
+          <p class="step-body">On WhatsApp. Tell us who you are, roughly what you're making, and what's going on. "I'm interested, is this right for me?" works fine. We answer within the hour during business hours. Sometimes — if you message at midnight because your account just got flagged — we answer then too.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step reveal-up" style="transition-delay: 0.4s;">
+        <div class="step-num-wrap">
+          <div class="step-num">2</div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">A 20-minute conversation.</h3>
+          <p class="step-body">Not a sales pitch. An assessment. We need to understand your specific situation. Based on that, we tell you exactly what we'd build and whether it makes financial sense. If we're not the right fit, we'll tell you. We don't take on clients who won't see a clear benefit.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step reveal-up" style="transition-delay: 0.6s;">
+        <div class="step-num-wrap">
+          <div class="step-num">3</div>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Your infrastructure goes live.</h3>
+          <p class="step-body">48-72 hours after deciding to move forward. We handle the technical setup, the integration with your platforms. You change where your payouts go. Then you stop thinking about it.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     STOP WORRYING
+═══════════════════════════════════════ -->
+<section id="stopworrying" aria-label="What leaves your life">
+  <div class="container">
+
+    <h2 class="display sw-title reveal-up">
+      What leaves your life.
+    </h2>
+    <p class="sw-subtitle reveal-up" style="transition-delay: 0.1s;">This is the list nobody else is selling you.</p>
+
+    <ul class="sw-list">
+      <li class="sw-item reveal-up" style="transition-delay: 0s;">
+        <svg class="sw-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+        You stop checking your account every morning with a knot in your stomach.
+      </li>
+      <li class="sw-item reveal-up" style="transition-delay: 0.1s;">
+        <svg class="sw-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+        You stop explaining your income source to accountants who've never dealt with it.
+      </li>
+      <li class="sw-item reveal-up" style="transition-delay: 0.18s;">
+        <svg class="sw-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+        You stop watching your team's pay date approach while your payout is in review.
+      </li>
+      <li class="sw-item reveal-up" style="transition-delay: 0.26s;">
+        <svg class="sw-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+        You stop Googling "how to get frozen funds back" at 1am.
+      </li>
+      <li class="sw-item reveal-up" style="transition-delay: 0.34s;">
+        <svg class="sw-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+        You stop wondering if today is the day the algorithm gets to you.
+      </li>
+      <li class="sw-item reveal-up" style="transition-delay: 0.42s;">
+        <svg class="sw-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+        You stop worrying. That's the product.
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ
+═══════════════════════════════════════ -->
+<section id="faq" aria-label="Frequently asked questions">
+  <div class="container">
+
+    <h2 class="display faq-title reveal-up">
+      The real questions.
+    </h2>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Is any of this legal?
+          <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <div class="faq-answer-inner">Completely. We're not exploiting loopholes or moving money through offshore shells. What we do is structure your business correctly — the way any high-earning professional business is structured. The tax savings come from deductions and entity structures that exist in the tax code specifically for businesses like yours. If you asked a tax attorney about any of it, they'd say "standard business practice." The reason most creators don't do it is that nobody showed them it existed.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Why WhatsApp? That seems... informal.
+          <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <div class="faq-answer-inner">Because we're a boutique operation and we move fast. You message us, a real person answers — usually within the hour. No ticket system, no "your request has been received," no waiting three days for a callback. WhatsApp is how we keep the line direct and the response time short. Our clients have our number. When something comes up, they text us like they'd text their lawyer. That's the relationship. We're not a corporation with a support department — we're a small, focused team that handles every client personally. WhatsApp matches how we actually work.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What's the minimum to qualify?
+          <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <div class="faq-answer-inner">$20,000 per month in consistent revenue. Not your best month. Your average. If you're at $15K and growing steadily, reach out anyway — we'll tell you whether it makes sense now or in 60 days.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What does this cost?
+          <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <div class="faq-answer-inner">We don't charge a flat percentage like a processor. Our fee is based on services used and complexity. For most clients, the cost is a fraction of what they save. The creator who saved $127K in our testimonials pays us a fee. It's not $127,000. Not close. The right question isn't "what does this cost?" — it's "what is it costing me not to have this?"</div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          My account is already frozen. Can you help?
+          <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <div class="faq-answer-inner">Sometimes yes, sometimes no — depends on where the freeze is and how long. Message us immediately. There are things that can be done in the first 48-72 hours that are much harder a week in. Even if we can't unlock the frozen account, we can set up infrastructure so it never happens again. Don't wait on this one.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with agencies?
+          <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <div class="faq-answer-inner">Yes. We have specific structures for agencies managing 3+ creators. Reach out separately and describe your setup — the structure looks different but the outcome is the same.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     URGENCY
+═══════════════════════════════════════ -->
+<section id="urgency" aria-label="Limited availability">
+  <div class="container">
+
+    <h2 class="display urgency-title reveal-up">
+      There are 6 spots left this month.
+    </h2>
+
+    <div class="urgency-body reveal-up" style="transition-delay: 0.15s;">
+      <p>We have a team of financial analysts. Each handles a defined number of accounts — because above that number, things get missed. We don't let things get missed.</p>
+      <p>Right now: capacity for <strong>6 new clients</strong>.</p>
+      <p>Not "6 spots in a marketing funnel." Six actual clients whose infrastructure we'll build and monitor.</p>
+      <p>When they're filled, intake closes for the month.</p>
+    </div>
+
+    <div class="progress-wrap reveal-up" style="transition-delay: 0.28s;">
+      <div class="progress-label">
+        <span>14 of 20 spots taken</span>
+        <span style="color: var(--accent); font-weight: 600;">6 remaining</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="urgency-bar" style="width: 0%;" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <div class="reveal-scale" style="transition-delay: 0.42s;">
+      <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        I'm In. Let's Talk.
+      </a>
+      <span class="micro-copy">6 spots left. Real person. Decision stays with you.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════ -->
+<section id="finalcta" aria-label="Final call to action">
+  <div class="container">
+
+    <h2 class="display finalcta-title reveal-up">
+      Your next payout is either protected or it isn't.
+    </h2>
+
+    <div class="finalcta-body reveal-up" style="transition-delay: 0.15s;">
+      <p>You've read enough. You know the problem. You know what we do about it.</p>
+      <p>The algorithm doesn't know who you are. It doesn't know you've been building for three years. It just knows your revenue profile. And it has a flag ready.</p>
+      <p><strong>One message fixes that.</strong></p>
+    </div>
+
+    <div class="reveal-scale" style="transition-delay: 0.28s;">
+      <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="btn btn-primary" style="font-size: 17px; padding: 20px 40px;" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Protect My Payouts — I'm Ready
+      </a>
+      <span class="micro-copy">6 spots left this month. Real person, real answer, real solution.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Altroverra LLC. All rights reserved.</span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════
+     STICKY BAR
+═══════════════════════════════════════ -->
+<div id="sticky-bar" role="complementary" aria-label="Sticky call to action">
+  <span class="sticky-text">
+    <span class="sticky-dot" aria-hidden="true"></span>
+    6 spots remaining this month
+  </span>
+  <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="sticky-btn" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Protect Your Revenue
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     FLOATING WA
+═══════════════════════════════════════ -->
+<a id="floating-wa" href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- ═══════════════════════════════════════
+     EXIT POPUP
+═══════════════════════════════════════ -->
+<div id="exit-popup" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+  <div class="exit-overlay" id="exit-overlay"></div>
+  <div class="exit-modal">
+    <button class="exit-close" id="exit-close" aria-label="Close">&times;</button>
+    <div class="exit-label">Wait</div>
+    <h3 class="display exit-title" id="exit-title">Your next payout isn't guaranteed.</h3>
+    <p class="exit-body">73% of creators at your revenue level experienced a frozen payout last year. Before you go — one message is all it takes to make sure you're protected.</p>
+    <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%27m%20interested%20in%20AfterDark%20Capital%20payment%20solutions" class="btn btn-primary" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Message Us on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  // ─── CUSTOM CURSOR ───
+  var cursor = document.getElementById('cursor');
+  var cursorX = -100, cursorY = -100;
+  var targetX = -100, targetY = -100;
+  var cursorActivated = false;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  document.addEventListener('mousemove', function(e) {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    if (!cursorActivated && cursor) {
+      cursorActivated = true;
+      cursorX = e.clientX;
+      cursorY = e.clientY;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      cursor.classList.add('active');
+    }
+  }, { passive: true });
+
+  function animateCursor() {
+    cursorX = lerp(cursorX, targetX, 0.16);
+    cursorY = lerp(cursorY, targetY, 0.16);
+    if (cursor) {
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+    }
+    requestAnimationFrame(animateCursor);
+  }
+
+  if (window.innerWidth > 768) {
+    animateCursor();
+  }
+
+  // ─── SCROLL PROGRESS ───
+  var progressBar = document.getElementById('scroll-progress');
+
+  function updateProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // ─── STICKY BAR ───
+  var stickyBar = document.getElementById('sticky-bar');
+  var heroSection = document.getElementById('hero');
+
+  function updateStickyBar() {
+    if (!heroSection || !stickyBar) return;
+    var heroBottom = heroSection.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', updateStickyBar, { passive: true });
+
+  // ─── SCROLL REVEAL ───
+  var revealElements = document.querySelectorAll('.reveal-up, .reveal-up, .reveal-slide, .reveal-tilt, .reveal-scale');
+
+  // Immediately reveal elements already in viewport (above-fold)
+  function isInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  requestAnimationFrame(function() {
+    revealElements.forEach(function(el) {
+      if (isInViewport(el)) {
+        el.classList.add('revealed');
+      }
+    });
+  });
+
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+  revealElements.forEach(function(el) {
+    if (!el.classList.contains('revealed')) {
+      revealObserver.observe(el);
+    }
+  });
+
+  // ─── TIMELINE LINE DRAW ───
+  var hiwSteps = document.querySelector('.hiw-steps');
+  if (hiwSteps) {
+    var lineObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          hiwSteps.classList.add('line-drawn');
+          lineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    lineObserver.observe(hiwSteps);
+  }
+
+  // ─── COUNTER ANIMATION ───
+  var counters = document.querySelectorAll('.counter');
+
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1200;
+    var start = performance.now();
+
+    function step(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(function(el) {
+    counterObserver.observe(el);
+  });
+
+  // ─── URGENCY BAR ───
+  var urgencyBar = document.getElementById('urgency-bar');
+
+  var urgencyObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && urgencyBar) {
+        setTimeout(function() {
+          urgencyBar.style.width = '70%';
+        }, 300);
+        urgencyObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (urgencyBar) urgencyObserver.observe(urgencyBar);
+
+  // ─── BRAND HEADER SCROLL ───
+  var brandHeader = document.getElementById('brand-header');
+
+  function updateBrandHeader() {
+    if (!brandHeader) return;
+    if ((window.scrollY || document.documentElement.scrollTop) > 60) {
+      brandHeader.classList.add('scrolled');
+    } else {
+      brandHeader.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateBrandHeader, { passive: true });
+  updateBrandHeader();
+
+  // ─── FAQ ACCORDION ───
+  var faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    if (!btn || !answer) return;
+
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+
+      // close all
+      faqItems.forEach(function(other) {
+        var otherAns = other.querySelector('.faq-answer');
+        var otherBtn = other.querySelector('.faq-question');
+        other.classList.remove('open');
+        if (otherAns) otherAns.style.maxHeight = '0';
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        if (otherAns) otherAns.setAttribute('aria-hidden', 'true');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+        answer.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // ─── EXIT INTENT ───
+  var exitPopup = document.getElementById('exit-popup');
+  var exitClose = document.getElementById('exit-close');
+  var exitOverlay = document.getElementById('exit-overlay');
+  var exitShown = false;
+
+  function showExitPopup() {
+    if (exitShown) return;
+    if (sessionStorage.getItem('adcExitShown')) return;
+    exitShown = true;
+    sessionStorage.setItem('adcExitShown', '1');
+    if (exitPopup) exitPopup.classList.add('active');
+  }
+
+  function closeExitPopup() {
+    if (exitPopup) exitPopup.classList.remove('active');
+  }
+
+  if (exitClose) exitClose.addEventListener('click', closeExitPopup);
+  if (exitOverlay) exitOverlay.addEventListener('click', closeExitPopup);
+
+  if (window.innerWidth > 768) {
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0) showExitPopup();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeExitPopup();
+  });
+
+  // ─── BUTTON RADIAL GLOW ───
+  var primaryBtns = document.querySelectorAll('.btn-primary');
+
+  primaryBtns.forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var pctX = (x / rect.width) * 100;
+      var pctY = (y / rect.height) * 100;
+      btn.style.setProperty('--glow-x', pctX + '%');
+      btn.style.setProperty('--glow-y', pctY + '%');
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
