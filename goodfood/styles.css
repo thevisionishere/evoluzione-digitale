@@ -2014,8 +2014,10 @@ body.cursor-text .cursor-follower {
   border-bottom: 1px solid var(--color-border);
   margin-bottom: var(--space-9);
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  flex-wrap: nowrap;
 }
 
 .menu-tabs-nav::-webkit-scrollbar {
@@ -2031,6 +2033,8 @@ body.cursor-text .cursor-follower {
   text-transform: uppercase;
   color: var(--color-text-muted);
   background: none;
+  white-space: nowrap;
+  flex-shrink: 0;
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
