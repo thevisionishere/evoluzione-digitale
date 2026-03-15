@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Good Food | Grill House Grottaminarda</title>
+  <meta name="description" content="Il menu di Good Food: burger d'autore, American BBQ con pulled pork e ribs, sfiziosità e birre artigianali alla spina. Menu gluten free disponibile.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Menu — Good Food | Grill House Grottaminarda">
+  <meta property="og:description" content="Il menu di Good Food: burger d'autore, American BBQ con pulled pork e ribs, sfiziosità e birre artigianali alla spina. Menu gluten free disponibile.">
+  <meta property="og:image" content="https://goodfoodgrottaminarda.it/images/burger-oklahoma.jpg">
+  <meta property="og:url" content="https://goodfoodgrottaminarda.it/menu.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menu — Good Food | Grill House Grottaminarda">
+  <meta name="twitter:description" content="Il menu di Good Food: burger d'autore, American BBQ con pulled pork e ribs, sfiziosità e birre artigianali alla spina.">
+  <meta name="twitter:image" content="https://goodfoodgrottaminarda.it/images/burger-oklahoma.jpg">
+  <link rel="canonical" href="https://goodfoodgrottaminarda.it/menu.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="menu">
+
+  <!-- ─── SCROLL PROGRESS ─── -->
+  <div class="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- ─── HEADER — Style A (Transparent) ─── -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo" aria-label="Good Food — torna alla homepage">
+        <img src="images/logo-goodfood.png" alt="Good Food" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="Navigazione principale">
+        <a href="menu.html" class="header-nav-link nav__link active">Menu</a>
+        <a href="foodtruck.html" class="header-nav-link nav__link">Food Truck</a>
+        <a href="index.html#recensioni" class="header-nav-link nav__link">Recensioni</a>
+        <a href="contatti.html" class="header-nav-link nav__link">Contatti</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+393408492774" class="btn btn-primary magnetic-btn" aria-label="Prenota un tavolo — chiama">
+          Prenota
+        </a>
+        <button
+          class="hamburger"
+          aria-label="Apri menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ─── MOBILE MENU — Style A (Fullscreen Overlay) ─── -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+
+    <button class="mobile-menu__close" aria-label="Chiudi menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html" class="mobile-menu-link mobile-menu__link">Home</a>
+      <a href="menu.html" class="mobile-menu-link mobile-menu__link active">Menu</a>
+      <a href="foodtruck.html" class="mobile-menu-link mobile-menu__link">Food Truck</a>
+      <a href="index.html#recensioni" class="mobile-menu-link mobile-menu__link">Recensioni</a>
+      <a href="contatti.html" class="mobile-menu-link mobile-menu__link">Contatti</a>
+    </nav>
+
+    <div class="mobile-menu-footer">
+      <a href="tel:+393408492774" class="btn btn-primary mobile-menu-cta" style="width:100%;max-width:280px;text-align:center;">
+        +39 340 849 2774
+      </a>
+      <div class="mobile-menu-divider"></div>
+      <p class="mobile-menu-info">Via Valle 40 — Grottaminarda (AV)</p>
+      <div style="display:flex;gap:1rem;justify-content:center;margin-top:0.5rem;">
+        <a
+          href="https://www.instagram.com/goodfood_grottaminarda/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Seguici su Instagram"
+          style="color:var(--color-text-muted);transition:var(--transition-fast);"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a
+          href="https://www.tripadvisor.it/Restaurant_Review-g2294511-d3589902-Reviews-Good_Food-Grottaminarda_Province_of_Avellino_Campania.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Leggi le recensioni su TripAdvisor"
+          style="color:var(--color-text-muted);transition:var(--transition-fast);"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 1: HERO INTERNO
+    ═══════════════════════════════════════════════════ -->
+    <section class="hero-internal section-dark" aria-label="Menu — Good Food Grill House">
+
+      <div class="hero-internal-bg">
+        <img
+          src="images/ribs.jpg"
+          alt="Baby Back Ribs — Good Food Grottaminarda"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        >
+      </div>
+      <div class="hero-internal-overlay" aria-hidden="true"></div>
+
+      <div class="hero-internal-content">
+        <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="hero-breadcrumb-sep" aria-hidden="true">&#9656;</span>
+          <span aria-current="page">Menu</span>
+        </nav>
+        <h1 class="hero-internal-title reveal-up">Il Nostro Menu</h1>
+        <p class="hero-internal-subtitle reveal-up" style="transition-delay:100ms;">Specialità Americane Homemade — Ogni Sera Fresche</p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 2: MENU TABS — Signature Moment #2
+    ═══════════════════════════════════════════════════ -->
+    <section class="menu-tabs-section section-light" id="menu" aria-labelledby="menu-heading">
+      <div class="container">
+
+        <div style="text-align:center;margin-bottom:var(--space-9);">
+          <span class="section-label reveal-up">Le Nostre Specialità</span>
+          <h2 id="menu-heading" class="reveal-up" style="transition-delay:100ms;">Scegli la Tua <em>Avventura</em></h2>
+        </div>
+
+        <!-- Tab navigation -->
+        <div class="menu-tabs" aria-label="Categorie del menu">
+          <div class="menu-tabs-nav" role="tablist" aria-label="Categorie menu">
+
+            <button
+              class="menu-tab-btn"
+              role="tab"
+              id="tab-burger"
+              aria-controls="panel-burger"
+              aria-selected="true"
+              tabindex="0"
+              data-image="images/burger-oklahoma.jpg"
+            >
+              Burger d'Autore
+            </button>
+
+            <button
+              class="menu-tab-btn"
+              role="tab"
+              id="tab-bbq"
+              aria-controls="panel-bbq"
+              aria-selected="false"
+              tabindex="-1"
+              data-image="images/tagliata.jpg"
+            >
+              BBQ &amp; Grill
+            </button>
+
+            <button
+              class="menu-tab-btn"
+              role="tab"
+              id="tab-sfizi"
+              aria-controls="panel-sfizi"
+              aria-selected="false"
+              tabindex="-1"
+              data-image="images/nachos.jpg"
+            >
+              Sfiziosità &amp; Contorni
+            </button>
+
+            <button
+              class="menu-tab-btn"
+              role="tab"
+              id="tab-beverage"
+              aria-controls="panel-beverage"
+              aria-selected="false"
+              tabindex="-1"
+              data-image="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=800&h=600&fit=crop&q=80"
+            >
+              Beverage
+            </button>
+
+          </div><!-- /.menu-tabs-nav -->
+
+          <!-- ── Tab Panel 1: Burger d'Autore ── -->
+          <div
+            id="panel-burger"
+            class="menu-tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-burger"
+          >
+            <div class="menu-tab-content">
+
+              <!-- Image column -->
+              <figure>
+                <img
+                  class="menu-tab-image menu-category-image"
+                  src="images/burger-oklahoma.jpg"
+                  alt="Oklahoma Burger — doppio smash patty, cipolla caramellata, cheddar fuso"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                >
+              </figure>
+
+              <!-- Info column -->
+              <div class="menu-tab-info">
+                <div>
+                  <h3 class="menu-tab-title reveal-up">Burger d'Autore</h3>
+                  <p class="menu-tab-description reveal-up" style="transition-delay:100ms;">
+                    Carni fresche tritate ogni sera, pane artigianale e condimenti fatti in casa.
+                    I nostri burger sono un viaggio nel gusto autentico americano.
+                  </p>
+                </div>
+
+                <ul class="menu-items-list" aria-label="Piatti della categoria Burger d'Autore">
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Oklahoma Burger</span>
+                    </div>
+                    <p class="menu-item-desc">Doppio smash patty, cipolla caramellata, cheddar fuso, salsa BBQ house</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Wagyu Burger</span>
+                    </div>
+                    <p class="menu-item-desc">Carne Wagyu, chips di patata, friarielli, pomodoro secco</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Gouda Burger</span>
+                    </div>
+                    <p class="menu-item-desc">Patty 200g, gouda affumicato, bacon croccante, salsa speciale</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Classic Cheeseburger</span>
+                    </div>
+                    <p class="menu-item-desc">Il grande classico americano con cheddar, lattuga, pomodoro, pickles</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Good Food Special</span>
+                    </div>
+                    <p class="menu-item-desc">La nostra creazione signature — chiedi al banco!</p>
+                  </li>
+
+                </ul>
+              </div><!-- /.menu-tab-info -->
+
+            </div><!-- /.menu-tab-content -->
+          </div><!-- /#panel-burger -->
+
+          <!-- ── Tab Panel 2: BBQ & Grill ── -->
+          <div
+            id="panel-bbq"
+            class="menu-tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-bbq"
+            hidden
+          >
+            <div class="menu-tab-content">
+
+              <figure>
+                <img
+                  class="menu-tab-image"
+                  src="images/tagliata.jpg"
+                  alt="Tagliata di manzo alla griglia — Good Food"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                >
+              </figure>
+
+              <div class="menu-tab-info">
+                <div>
+                  <h3 class="menu-tab-title reveal-up">BBQ &amp; Grill</h3>
+                  <p class="menu-tab-description reveal-up" style="transition-delay:100ms;">
+                    Il cuore della cucina americana. Cotture lente, affumicatura vera, salse fatte in casa.
+                    Ogni morso racconta ore di lavoro e passione.
+                  </p>
+                </div>
+
+                <ul class="menu-items-list" aria-label="Piatti della categoria BBQ e Grill">
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Pulled Pork</span>
+                    </div>
+                    <p class="menu-item-desc">10 ore di cottura lenta nel nostro smoker, poi affumicato. Servito con coleslaw</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Baby Back Ribs</span>
+                    </div>
+                    <p class="menu-item-desc">Costine glassate con salsa BBQ fatta in casa, mais alla griglia</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Steak / Tagliata</span>
+                    </div>
+                    <p class="menu-item-desc">Tagli selezionati dalla nostra cella di frollatura, cotti alla griglia</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Chicken Wings</span>
+                    </div>
+                    <p class="menu-item-desc">Alette croccanti con salsa a scelta: BBQ, Buffalo, Honey Mustard</p>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+          </div><!-- /#panel-bbq -->
+
+          <!-- ── Tab Panel 3: Sfiziosità & Contorni ── -->
+          <div
+            id="panel-sfizi"
+            class="menu-tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-sfizi"
+            hidden
+          >
+            <div class="menu-tab-content">
+
+              <figure>
+                <img
+                  class="menu-tab-image"
+                  src="images/nachos.jpg"
+                  alt="Nachos Supreme con guacamole e cheddar fuso"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                >
+              </figure>
+
+              <div class="menu-tab-info">
+                <div>
+                  <h3 class="menu-tab-title reveal-up">Sfiziosità &amp; Contorni</h3>
+                  <p class="menu-tab-description reveal-up" style="transition-delay:100ms;">
+                    Per iniziare, per accompagnare, per chiudere in bellezza.
+                    Ogni sfizio è preparato con la stessa cura dei piatti principali.
+                  </p>
+                </div>
+
+                <ul class="menu-items-list" aria-label="Piatti della categoria Sfiziosità e Contorni">
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Nachos Supreme</span>
+                    </div>
+                    <p class="menu-item-desc">Tortilla chips, carne, cheddar fuso, jalapeño, guacamole, panna acida</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Cheese Fries</span>
+                    </div>
+                    <p class="menu-item-desc">French fries con cheddar fuso e bacon croccante</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">French Fries</span>
+                    </div>
+                    <p class="menu-item-desc">Patatine fritte classiche, croccanti fuori e morbide dentro</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Churros</span>
+                    </div>
+                    <p class="menu-item-desc">Dolce fritto con zucchero e cannella, servito con cioccolato fuso</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Donuts</span>
+                    </div>
+                    <p class="menu-item-desc">Ciambelle artigianali farcite</p>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+          </div><!-- /#panel-sfizi -->
+
+          <!-- ── Tab Panel 4: Beverage ── -->
+          <div
+            id="panel-beverage"
+            class="menu-tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-beverage"
+            hidden
+          >
+            <div class="menu-tab-content">
+
+              <figure>
+                <img
+                  class="menu-tab-image"
+                  src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=800&h=600&fit=crop&q=80"
+                  alt="Birre artigianali alla spina — Good Food Grottaminarda"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                >
+              </figure>
+
+              <div class="menu-tab-info">
+                <div>
+                  <h3 class="menu-tab-title reveal-up">Beverage</h3>
+                  <p class="menu-tab-description reveal-up" style="transition-delay:100ms;">
+                    Una selezione curata per accompagnare ogni piatto.
+                    Birre artigianali alla spina, cocktail classici e molto altro per completare la tua esperienza.
+                  </p>
+                </div>
+
+                <ul class="menu-items-list" aria-label="Piatti della categoria Beverage">
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Birre Artigianali alla Spina</span>
+                    </div>
+                    <p class="menu-item-desc">Selezione rotante di craft beer da birrifici italiani e internazionali</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Birre in Bottiglia</span>
+                    </div>
+                    <p class="menu-item-desc">Ampia scelta di birre artigianali e classiche</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Cocktail</span>
+                    </div>
+                    <p class="menu-item-desc">Classici americani e twist originali</p>
+                  </li>
+
+                  <li>
+                    <div class="menu-item">
+                      <span class="menu-item-name">Soft Drink &amp; Altro</span>
+                    </div>
+                    <p class="menu-item-desc">Bibite, succhi, acqua</p>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+          </div><!-- /#panel-beverage -->
+
+        </div><!-- /.menu-tabs -->
+
+        <!-- Gluten Free Badge -->
+        <div class="reveal-up" style="text-align:center;margin-top:var(--space-9);transition-delay:200ms;">
+          <span style="display:inline-flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);font-weight:var(--weight-bold);color:var(--color-text-muted);padding:var(--space-3) var(--space-6);border:1px solid var(--color-border-light);border-radius:var(--radius-full);letter-spacing:var(--tracking-wide);">
+            &#127806; Menu Gluten Free Disponibile — Chiedici!
+          </span>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 3: FOOD GALLERY — Grid
+    ═══════════════════════════════════════════════════ -->
+    <section class="gallery-section section-dark" aria-labelledby="gallery-heading">
+      <div class="container">
+
+        <div style="text-align:center;margin-bottom:var(--space-9);">
+          <span class="section-label reveal-up">La Nostra Cucina</span>
+          <h2 id="gallery-heading" class="reveal-up" style="transition-delay:100ms;">Ogni Piatto, una <em>Storia</em></h2>
+        </div>
+
+        <div class="gallery-grid reveal-up" style="transition-delay:200ms;">
+
+          <figure class="gallery-item">
+            <img
+              src="images/burger-wagyu.jpg"
+              alt="Burger Wagyu gourmet"
+              width="600"
+              height="750"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Wagyu Burger</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/ribs.jpg"
+              alt="Baby Back Ribs sulla griglia"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Baby Back Ribs</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/burger-gouda.jpg"
+              alt="Gouda Burger"
+              width="600"
+              height="500"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Gouda Burger</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/nachos.jpg"
+              alt="Nachos Supreme"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Nachos Supreme</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/tagliata.jpg"
+              alt="Tagliata di manzo"
+              width="600"
+              height="450"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Tagliata di Manzo</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/cheese-fries.jpg"
+              alt="Cheese Fries"
+              width="600"
+              height="700"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Cheese Fries</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/churros.jpg"
+              alt="Churros con cannella"
+              width="600"
+              height="500"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">Churros</span>
+            </div>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/burger-top5.jpg"
+              alt="Top 5 Burgers"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
+            <div class="gallery-item-overlay" aria-hidden="true">
+              <div class="gallery-item-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <span class="gallery-item-label">I Nostri Burger</span>
+            </div>
+          </figure>
+
+        </div><!-- /.gallery-grid -->
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 4: CTA BANNER — Style B (Image Background)
+    ═══════════════════════════════════════════════════ -->
+    <section class="cta-banner section-dark" aria-label="Prenota un tavolo">
+
+      <div class="cta-banner-bg" aria-hidden="true">
+        <img
+          src="images/bar-bancone.jpg"
+          alt=""
+          width="1920"
+          height="1080"
+          loading="lazy"
+        >
+      </div>
+      <div class="cta-banner-overlay" aria-hidden="true"></div>
+
+      <div class="cta-banner-content">
+        <h2 class="cta-banner-title reveal-up">Vieni a Provare di <em>Persona</em></h2>
+        <p class="cta-banner-subtitle reveal-up" style="transition-delay:100ms;">
+          Il menu è solo un assaggio. L'esperienza vera inizia quando varchi la porta.
+        </p>
+        <div class="cta-banner-actions reveal-up" style="transition-delay:200ms;">
+          <a
+            href="tel:+393408492774"
+            class="btn btn-primary magnetic-btn"
+            aria-label="Prenota un tavolo — chiama ora"
+          >
+            Prenota un Tavolo
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 5: LOCATION COMPACT
+    ═══════════════════════════════════════════════════ -->
+    <section class="location-compact section-dark" aria-label="Come raggiungerci">
+      <div class="container">
+
+        <div class="location-compact-card reveal-up">
+
+          <div class="location-compact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+
+          <p class="location-compact-address">
+            Via Valle 40<br>83035 Grottaminarda (AV)
+          </p>
+
+          <div class="location-compact-details">
+
+            <div class="location-compact-detail">
+              <span class="location-compact-detail-label">Telefono</span>
+              <span class="location-compact-detail-value">
+                <a href="tel:+393408492774" style="color:var(--color-light);">+39 340 849 2774</a>
+              </span>
+            </div>
+
+            <div class="location-compact-detail">
+              <span class="location-compact-detail-label">Autostrada</span>
+              <span class="location-compact-detail-value">A 750m dall'A16</span>
+            </div>
+
+          </div>
+
+          <div style="text-align:center;margin-top:var(--space-7);">
+            <a href="contatti.html" class="btn btn-primary magnetic-btn" aria-label="Scopri come raggiungerci">
+              Come Raggiungerci &rarr;
+            </a>
+          </div>
+
+        </div><!-- /.location-compact-card -->
+
+      </div><!-- /.container -->
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo-goodfood.png" alt="Good Food" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">
+            Grill House — Est. 2009. Il gusto autentico dell'America nel cuore dell'Irpinia. Burger d'autore, American BBQ, birre artigianali.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a
+              href="https://www.instagram.com/goodfood_grottaminarda/"
+              class="footer-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguici su Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a
+              href="https://www.tripadvisor.it/Restaurant_Review-g2294511-d3589902-Reviews-Good_Food-Grottaminarda_Province_of_Avellino_Campania.html"
+              class="footer-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Leggi le recensioni su TripAdvisor"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 2c2.395 0 4.6.844 6.33 2.24l-1.04 1.04A7.975 7.975 0 0 0 12 4a7.975 7.975 0 0 0-5.29 2.28L5.67 5.24A8.978 8.978 0 0 1 12 3zm0 16a9 9 0 0 1-9-9 9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9zm-1-7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm2 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h3 class="footer-col-title">Navigazione</h3>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="index.html" class="footer-nav-link">Home</a></li>
+            <li><a href="menu.html" class="footer-nav-link">Il Menu</a></li>
+            <li><a href="foodtruck.html" class="footer-nav-link">Food Truck</a></li>
+            <li><a href="contatti.html" class="footer-nav-link">Contatti</a></li>
+            <li><a href="index.html#recensioni" class="footer-nav-link">Recensioni</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contacts -->
+        <div>
+          <h3 class="footer-col-title">Contatti</h3>
+          <address style="font-style:normal;">
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </span>
+              <p class="footer-contact-text">
+                Via Valle 40<br>
+                83035 Grottaminarda (AV)
+              </p>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </span>
+              <p class="footer-contact-text">
+                <a href="tel:+393408492774">+39 340 849 2774</a>
+              </p>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.86L.057 23.625c-.078.312.204.593.516.515l5.84-1.47C8.055 23.481 10 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.906 0-3.712-.498-5.29-1.37l-.38-.216-3.908.984.996-3.826-.239-.392A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+              </span>
+              <p class="footer-contact-text">
+                <a href="https://wa.me/393408492774" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </p>
+            </div>
+          </address>
+        </div>
+
+        <!-- Col 4: Social / Follow -->
+        <div>
+          <h3 class="footer-col-title">Seguici</h3>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-4);line-height:var(--leading-relaxed);">
+            Resta aggiornato sui nostri eventi, le nuove birre e le specialità stagionali.
+          </p>
+          <div class="footer-social" aria-label="Social media links">
+            <a
+              href="https://www.instagram.com/goodfood_grottaminarda/"
+              class="footer-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguici su Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a
+              href="https://www.tripadvisor.it/Restaurant_Review-g2294511-d3589902-Reviews-Good_Food-Grottaminarda_Province_of_Avellino_Campania.html"
+              class="footer-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Leggi le recensioni su TripAdvisor"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 2c2.395 0 4.6.844 6.33 2.24l-1.04 1.04A7.975 7.975 0 0 0 12 4a7.975 7.975 0 0 0-5.29 2.28L5.67 5.24A8.978 8.978 0 0 1 12 3zm0 16a9 9 0 0 1-9-9 9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9zm-1-7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm2 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span data-year></span> Good Food di Antonio Borrazzo &mdash; P.IVA 02602060648
+        </p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+        </div>
+        <p class="footer-credits">Sviluppato da <a href="https://evoluzionedigitale.it" target="_blank" rel="noopener noreferrer" style="color:inherit;">Evoluzione Digitale</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ─── WHATSAPP FLOATING BUTTON ─── -->
+  <a
+    href="https://wa.me/393408492774"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Scrivici su WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.86L.057 23.625c-.078.312.204.593.516.515l5.84-1.47C8.055 23.481 10 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.906 0-3.712-.498-5.29-1.37l-.38-.216-3.908.984.996-3.826-.239-.392A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script src="script.js"></script>
+
+</body>
+</html>
