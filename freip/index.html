@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>FREIP — Custom T-Shirt & Felpe Personalizzate | Design Unico</title>
+  <meta name="description" content="FREIP crea t-shirt e felpe personalizzate con design su misura: street art, anime, frasi uniche. Ogni pezzo nasce da una conversazione. Scopri la tua custom." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://freip.it/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://freip.it/" />
+  <meta property="og:title" content="FREIP — Indossa la Tua Unicità" />
+  <meta property="og:description" content="Design personalizzati che raccontano chi sei. T-shirt e felpe custom create su misura per te." />
+  <meta property="og:image" content="00 disegni vari/0 logo Freip.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FREIP — Custom T-Shirt & Felpe Personalizzate" />
+  <meta name="twitter:description" content="Design personalizzati che raccontano chi sei." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Bridge: align JS-added classes to CSS visual classes -->
+  <style>
+    /* Header: JS adds .header-scrolled / .header-hidden to .header;
+       CSS defines .site-header.is-scrolled / .site-header.is-hidden */
+    .header.header-scrolled {
+      padding: var(--space-3) 0;
+      background-color: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(92, 179, 56, 0.15);
+    }
+    .header.header-hidden {
+      transform: translateY(-100%);
+    }
+
+    /* Mobile menu: JS adds .active, CSS uses .is-open */
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity var(--duration-normal) var(--ease-out), visibility 0s 0s;
+    }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 80ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 140ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 260ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 380ms; }
+    .mobile-menu.active .mobile-menu__footer { opacity: 1; transform: translateY(0); }
+
+    /* Hero gallery: JS adds .active, CSS uses .is-active */
+    .hero-gallery__slide.active { opacity: 1; }
+
+    /* Reveal: JS adds .revealed, CSS uses .is-visible */
+    .reveal-up.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Process steps: JS adds .visible, CSS uses .is-visible */
+    .process-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .process-step.visible .process-step__node {
+      border-color: var(--color-accent);
+      background: rgba(92, 179, 56, 0.12);
+      box-shadow: 0 0 20px rgba(92, 179, 56, 0.3);
+    }
+
+    /* Horizontal scroll: JS uses .horizontal-scroll-section / .horizontal-scroll__track
+       which don't exist in our HTML (we use .hscroll-section / .hscroll-track).
+       The horizontal scroll JS won't find its target and will gracefully skip —
+       the CSS-only scroll-snap experience handles mobile natively. */
+
+    /* Nav active link: JS adds .active, CSS uses .is-active */
+    .site-header__nav-link.active {
+      color: var(--color-accent);
+    }
+    .site-header__nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Reviews slider dots: make active state visible */
+    .reviews-slider__dot.active {
+      background: var(--color-accent) !important;
+    }
+
+    /* Scroll progress: JS uses transform scaleX, CSS uses width.
+       Override to use transform approach. */
+    .scroll-progress {
+      width: 100% !important;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.1s linear !important;
+    }
+
+    /* Preloader: JS adds .preloader--done, CSS uses .is-done */
+    .preloader.preloader--done {
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.4s ease, visibility 0s 0.4s;
+    }
+
+    /* Mobile menu links: JS calls links.forEach(link => link.classList.add('visible'))
+       on the <a> tags directly inside mobile-menu__nav. No specific CSS needed. */
+
+    /* Hamburger open state: JS adds .active to .hamburger */
+    .hamburger.active .site-header__hamburger-line:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+      width: 24px;
+    }
+    .hamburger.active .site-header__hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .hamburger.active .site-header__hamburger-line:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+      width: 24px;
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+  ============================================================ -->
+  <div class="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       1. PRELOADER — Curtain Split Variant B
+  ============================================================ -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__panel preloader__panel--left preloader__curtain--left"></div>
+    <div class="preloader__panel preloader__panel--right preloader__curtain--right"></div>
+    <p class="preloader__logo preloader__text"
+       style="opacity:0;transform:translateY(20px);">
+      FR<span>E</span>IP
+    </p>
+  </div>
+
+  <!-- ============================================================
+       2. HEADER — Transparent / Fixed Style B
+  ============================================================ -->
+  <header class="site-header header" role="banner">
+    <div class="site-header__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="site-header__logo" aria-label="FREIP — Torna alla home">
+        <img src="00 disegni vari/0 logo Freip2.png"
+             alt="FREIP logo"
+             width="120" height="40"
+             style="height:36px;width:auto;object-fit:contain;" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="site-header__nav header__nav" aria-label="Navigazione principale">
+        <ul class="site-header__nav-list" role="list">
+          <li><a href="index.html"        class="site-header__nav-link is-active">Home</a></li>
+          <li><a href="chi-siamo.html"    class="site-header__nav-link">Chi Siamo</a></li>
+          <li><a href="servizi.html"      class="site-header__nav-link">Servizi</a></li>
+          <li><a href="galleria.html"     class="site-header__nav-link">Galleria</a></li>
+          <li><a href="recensioni.html"   class="site-header__nav-link">Recensioni</a></li>
+          <li><a href="contatti.html"     class="site-header__nav-link">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="contatti.html" class="btn btn-primary site-header__cta magnetic-btn">
+        Crea il Tuo Design
+      </a>
+
+      <!-- Hamburger -->
+      <button class="site-header__hamburger hamburger"
+              aria-label="Apri menu di navigazione"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span class="site-header__hamburger-line"></span>
+        <span class="site-header__hamburger-line"></span>
+        <span class="site-header__hamburger-line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU — Fullscreen Overlay Style A
+  ============================================================ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu di navigazione">
+    <span class="mobile-menu__bg-text" aria-hidden="true">FREIP</span>
+
+    <button class="mobile-menu__close" aria-label="Chiudi menu" style="position:absolute;top:var(--space-6);right:var(--space-6);width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--color-text-light);font-size:1.5rem;z-index:2;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Menu mobile">
+      <div class="mobile-menu__nav-item">
+        <a href="index.html"      class="mobile-menu__nav-link">Home</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="chi-siamo.html"  class="mobile-menu__nav-link">Chi Siamo</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="servizi.html"    class="mobile-menu__nav-link">Servizi</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="galleria.html"   class="mobile-menu__nav-link">Galleria</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="recensioni.html" class="mobile-menu__nav-link">Recensioni</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="contatti.html"   class="mobile-menu__nav-link">Contatti</a>
+      </div>
+    </nav>
+
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__footer-text">
+        <span style="display:block;">3491708065</span>
+        <span style="display:block;margin-top:4px;">tshirtme79@gmail.com</span>
+      </div>
+      <div class="mobile-menu__footer-social">
+        <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer" aria-label="Instagram di FREIP">IG</a>
+        <a href="https://tiktok.com/@freipcustom"  target="_blank" rel="noopener noreferrer" aria-label="TikTok di FREIP">TT</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         3. HERO — Gallery Hero Variant C
+    ============================================================ -->
+    <section class="hero" aria-label="Hero — Indossa la Tua Unicità">
+
+      <!-- Background gallery -->
+      <div class="hero__gallery hero-gallery">
+        <div class="hero__gallery-track">
+
+          <div class="hero__gallery-slide hero-gallery__slide">
+            <img src="00 disegni vari/dark king.png"
+                 alt="Design FREIP — Dark King, street art su t-shirt"
+                 width="1920" height="1080" />
+          </div>
+
+          <div class="hero__gallery-slide hero-gallery__slide">
+            <img src="00 disegni vari/spray2.png"
+                 alt="Design FREIP — Spray Can, arte urbana su t-shirt"
+                 width="1920" height="1080" />
+          </div>
+
+          <div class="hero__gallery-slide hero-gallery__slide">
+            <img src="00 disegni vari/y one piece.png"
+                 alt="Design FREIP — One Piece, custom anime"
+                 width="1920" height="1080" />
+          </div>
+
+          <div class="hero__gallery-slide hero-gallery__slide">
+            <img src="00 disegni vari/y naruto.png"
+                 alt="Design FREIP — Naruto, custom anime su t-shirt"
+                 width="1920" height="1080" />
+          </div>
+
+          <div class="hero__gallery-slide hero-gallery__slide">
+            <img src="00 disegni vari/neon.png"
+                 alt="Design FREIP — Neon Skull, grafica custom"
+                 width="1920" height="1080" />
+          </div>
+
+          <div class="hero__gallery-slide hero-gallery__slide">
+            <img src="00 disegni vari/16 girl.png"
+                 alt="Design FREIP — Girl, illustrazione custom su t-shirt"
+                 width="1920" height="1080" />
+          </div>
+
+        </div>
+
+        <!-- Overlay gradient -->
+        <div class="hero__gallery-overlay" aria-hidden="true"></div>
+
+        <!-- Side dots -->
+        <div class="hero__gallery-dots" aria-hidden="true">
+          <button class="hero__gallery-dot is-active" aria-label="Slide 1"></button>
+          <button class="hero__gallery-dot" aria-label="Slide 2"></button>
+          <button class="hero__gallery-dot" aria-label="Slide 3"></button>
+          <button class="hero__gallery-dot" aria-label="Slide 4"></button>
+          <button class="hero__gallery-dot" aria-label="Slide 5"></button>
+          <button class="hero__gallery-dot" aria-label="Slide 6"></button>
+        </div>
+      </div>
+
+      <!-- Bottom content bar -->
+      <div class="hero__bottom">
+        <div class="hero__bottom-inner">
+
+          <!-- Left: title block -->
+          <div class="hero__left">
+            <p class="overline" style="color:rgba(255,255,255,0.45);margin-bottom:var(--space-3);">
+              Custom T-Shirt &amp; Felpe
+            </p>
+            <h1 class="hero__title">
+              Indossa<br />
+              <span class="hero__title-accent">la Tua</span><br />
+              Unicità
+            </h1>
+          </div>
+
+          <!-- Right: subtitle + CTA -->
+          <div class="hero__right">
+            <p class="hero__subtitle">
+              Design personalizzati che raccontano chi sei
+            </p>
+            <div class="hero__cta-group">
+              <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+                 class="btn btn-primary magnetic-btn"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Crea la tua custom su WhatsApp">
+                Crea il Tuo Design
+              </a>
+              <a href="#gallery-showcase" class="btn btn-ghost">
+                Scopri i Design
+              </a>
+            </div>
+            <div class="hero__scroll-hint" aria-hidden="true">
+              <span class="hero__scroll-line"></span>
+              Scroll
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         4. MARQUEE
+    ============================================================ -->
+    <div class="marquee-section marquee" aria-hidden="true">
+      <div class="marquee-track marquee__track">
+        <!-- Set 1 -->
+        <div class="marquee-item">
+          <span class="marquee-text">Custom T-Shirt</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Felpe Personalizzate</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Street Art</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Anime &amp; Manga</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Frasi Uniche</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">La Tua Personalità</span>
+          <span class="marquee-separator"></span>
+        </div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="marquee-item">
+          <span class="marquee-text">Custom T-Shirt</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Felpe Personalizzate</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Street Art</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Anime &amp; Manga</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">Frasi Uniche</span>
+          <span class="marquee-separator"></span>
+          <span class="marquee-text">La Tua Personalità</span>
+          <span class="marquee-separator"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         5. HORIZONTAL SCROLL GALLERY — Signature Moment 1
+    ============================================================ -->
+    <section class="hscroll-section horizontal-scroll-section section" id="gallery-showcase" aria-labelledby="gallery-section-title">
+
+      <div class="section-header">
+        <p class="label reveal-up" data-delay="0">Le Nostre Creazioni</p>
+        <h2 id="gallery-section-title" class="reveal-up" data-delay="1">Design Che Parlano Di Te</h2>
+      </div>
+
+      <div class="hscroll-wrapper">
+        <div class="hscroll-sticky">
+          <div class="hscroll-track horizontal-scroll__track">
+
+            <!-- Card 1 -->
+            <article class="hscroll-card reveal-up" data-delay="1">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/dark king.png"
+                     alt="Design Dark King — street art FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Street Art</span>
+                <h3 class="hscroll-card__title">Dark King</h3>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="hscroll-card reveal-up" data-delay="2">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/spray2.png"
+                     alt="Design Spray Can — street art FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Street Art</span>
+                <h3 class="hscroll-card__title">Spray Can</h3>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="hscroll-card reveal-up" data-delay="3">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/skull.png"
+                     alt="Design Skull — grafica custom FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Street Art</span>
+                <h3 class="hscroll-card__title">Skull</h3>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="hscroll-card reveal-up" data-delay="4">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/heart2.png"
+                     alt="Design Heart — custom FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Custom</span>
+                <h3 class="hscroll-card__title">Heart</h3>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="hscroll-card reveal-up" data-delay="5">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/y one piece.png"
+                     alt="Design One Piece — custom anime FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Anime</span>
+                <h3 class="hscroll-card__title">One Piece</h3>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="hscroll-card reveal-up" data-delay="6">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/zy dragon ball1.png"
+                     alt="Design Dragon Ball — custom anime FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Anime</span>
+                <h3 class="hscroll-card__title">Dragon Ball</h3>
+              </div>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="hscroll-card reveal-up" data-delay="7">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/y naruto.png"
+                     alt="Design Naruto — custom anime FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Anime</span>
+                <h3 class="hscroll-card__title">Naruto</h3>
+              </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="hscroll-card reveal-up" data-delay="8">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/my style.png"
+                     alt="Design My Style — frase custom FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Frasi</span>
+                <h3 class="hscroll-card__title">My Style</h3>
+              </div>
+            </article>
+
+            <!-- Card 9 -->
+            <article class="hscroll-card reveal-up" data-delay="9">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/sprayman.png"
+                     alt="Design Spray Man — street art FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Street Art</span>
+                <h3 class="hscroll-card__title">Spray Man</h3>
+              </div>
+            </article>
+
+            <!-- Card 10 -->
+            <article class="hscroll-card reveal-up" data-delay="10">
+              <div class="hscroll-card__image">
+                <img src="00 disegni vari/neon.png"
+                     alt="Design Neon Skull — custom FREIP"
+                     width="440" height="586"
+                     loading="lazy" />
+              </div>
+              <div class="hscroll-card__body">
+                <span class="hscroll-card__category">Custom</span>
+                <h3 class="hscroll-card__title">Neon Skull</h3>
+              </div>
+            </article>
+
+          </div><!-- /.hscroll-track -->
+        </div><!-- /.hscroll-sticky -->
+      </div><!-- /.hscroll-wrapper -->
+
+      <!-- CTA link -->
+      <div style="width:var(--container-width);margin-inline:auto;padding-block:var(--space-7) var(--space-9);text-align:center;">
+        <a href="galleria.html" class="btn btn-outline reveal-up" data-delay="2">
+          Vedi Tutta la Galleria
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         6. ABOUT COLLAGE — Layout D
+    ============================================================ -->
+    <section class="about-collage section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-collage__inner">
+
+          <!-- Asymmetric image collage -->
+          <div class="about-collage__images reveal-up" data-delay="1">
+
+            <div class="about-collage__img about-collage__img--1">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&q=80"
+                   alt="Il fondatore di FREIP al lavoro"
+                   width="600" height="800"
+                   loading="lazy" />
+            </div>
+
+            <div class="about-collage__img about-collage__img--2">
+              <img src="00 disegni vari/spray2.png"
+                   alt="Design spray art FREIP — dettaglio"
+                   width="300" height="300"
+                   loading="lazy" />
+            </div>
+
+            <div class="about-collage__img about-collage__img--3">
+              <img src="00 disegni vari/skull.png"
+                   alt="Design skull FREIP — dettaglio"
+                   width="380" height="285"
+                   loading="lazy" />
+            </div>
+
+            <div class="about-collage__img about-collage__img--4">
+              <img src="00 disegni vari/heart2.png"
+                   alt="Design heart FREIP — dettaglio"
+                   width="220" height="330"
+                   loading="lazy" />
+            </div>
+
+            <div class="about-collage__badge">
+              <span class="about-collage__badge-number">150+</span>
+              <span class="about-collage__badge-label">Design Creati</span>
+            </div>
+
+          </div>
+
+          <!-- Text content -->
+          <div class="about-collage__content">
+
+            <p class="overline reveal-up" data-delay="1">L'Artista</p>
+
+            <h2 id="about-title" class="reveal-up" data-delay="2">
+              Design Creato Con Passione
+            </h2>
+
+            <p class="reveal-up" data-delay="3">
+              Sono nato con la matita in mano. Dopo la scuola d'arte, ho cercato di trasformare la mia passione in lavoro. Due anni fa ho ripreso in mano i miei sogni e ho creato FREIP: un progetto dove ogni design nasce da una conversazione, dove cerco di capire la tua unicità — che siano pregi o difetti — per trasformarla in arte che puoi indossare.
+            </p>
+
+            <div class="about-collage__tags reveal-up" data-delay="4">
+              <span class="about-collage__tag">Ogni Design è Unico</span>
+              <span class="about-collage__tag">Approccio Personale</span>
+              <span class="about-collage__tag">Qualità Premium</span>
+            </div>
+
+            <!-- Values list -->
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);margin-bottom:var(--space-6);">
+
+              <div class="reveal-up" data-delay="4" style="display:flex;align-items:flex-start;gap:var(--space-4);">
+                <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(var(--color-accent-rgb),0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M10 2l1.8 5.5H17l-4.6 3.3 1.7 5.3L10 13l-4.1 3.1 1.7-5.3L3 7.5h5.2L10 2z" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p style="font-family:var(--font-display);font-weight:700;color:var(--color-text-dark);margin-bottom:4px;">Ogni Design è Unico</p>
+                  <p class="body-small text-muted">Creato su misura per te, nessun template prefabbricato.</p>
+                </div>
+              </div>
+
+              <div class="reveal-up" data-delay="5" style="display:flex;align-items:flex-start;gap:var(--space-4);">
+                <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(var(--color-accent-rgb),0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M3 10a7 7 0 1 0 14 0A7 7 0 0 0 3 10z" stroke="var(--color-accent)" stroke-width="1.4"/>
+                    <path d="M10 7v3l2 2" stroke="var(--color-accent)" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p style="font-family:var(--font-display);font-weight:700;color:var(--color-text-dark);margin-bottom:4px;">Approccio Personale</p>
+                  <p class="body-small text-muted">Parliamo prima di disegnare. La tua storia è il punto di partenza.</p>
+                </div>
+              </div>
+
+              <div class="reveal-up" data-delay="6" style="display:flex;align-items:flex-start;gap:var(--space-4);">
+                <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(var(--color-accent-rgb),0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 10l4 4 8-8" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p style="font-family:var(--font-display);font-weight:700;color:var(--color-text-dark);margin-bottom:4px;">Qualità Premium</p>
+                  <p class="body-small text-muted">Stampa e materiali di alta qualità, duratura nel tempo.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="chi-siamo.html" class="btn btn-outline reveal-up" data-delay="7"
+               style="border-color:var(--color-text-dark);color:var(--color-text-dark);">
+              Scopri la Nostra Storia
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+          </div><!-- /.about-collage__content -->
+
+        </div><!-- /.about-collage__inner -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. PROCESS INTERACTIVE PATH — Signature Moment 2
+    ============================================================ -->
+    <section class="process-path section" aria-labelledby="process-title">
+
+      <div class="process-path__title-wrap">
+        <p class="label reveal-up" data-delay="0">Come Funziona</p>
+        <h2 id="process-title" class="reveal-up" data-delay="1">Come Nasce la Tua Custom</h2>
+      </div>
+
+      <div class="process-path__inner">
+
+        <!-- SVG connecting path (desktop) -->
+        <svg class="process-path__svg" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+          <path class="process-path__svg-line process-path__line"
+                d="M 150,100 C 300,20 400,180 550,100 C 700,20 800,180 950,100 C 1050,40 1100,80 1150,100"
+                fill="none" />
+        </svg>
+
+        <!-- 4 steps -->
+        <div class="process-steps">
+
+          <div class="process-step">
+            <div class="process-step__node">
+              <svg class="process-step__node-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M4 6h20M4 10h20M4 20h10M18 17l6 6M18 23l6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="process-step__number">01</p>
+            <h3 class="process-step__title">Parlami di Te</h3>
+            <p class="process-step__desc">Condividi la tua idea, il tuo stile, la tua personalità. Ogni custom nasce da una conversazione.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__node">
+              <svg class="process-step__node-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M4 22l4-1 13-13-3-3L5 18 4 22z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M18 6l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="process-step__number">02</p>
+            <h3 class="process-step__title">Il Bozzetto</h3>
+            <p class="process-step__desc">Creo il design su misura basato sulla tua unicità. Nessun template, solo arte originale.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__node">
+              <svg class="process-step__node-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <ellipse cx="14" cy="14" rx="10" ry="6" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="14" cy="14" r="3" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <p class="process-step__number">03</p>
+            <h3 class="process-step__title">Revisione Insieme</h3>
+            <p class="process-step__desc">Vediamo insieme il risultato e perfezioniamo ogni dettaglio fino a quando è perfetto.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__node">
+              <svg class="process-step__node-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <rect x="5" y="10" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M9 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="process-step__number">04</p>
+            <h3 class="process-step__title">La Tua Custom è Pronta</h3>
+            <p class="process-step__desc">Stampa premium su cotone di qualità. La tua unicità, consegnata a casa tua.</p>
+          </div>
+
+        </div><!-- /.process-steps -->
+
+      </div><!-- /.process-path__inner -->
+
+    </section>
+
+    <!-- ============================================================
+         8. SERVICES CARD GRID
+    ============================================================ -->
+    <section class="services-grid section" aria-labelledby="services-title">
+      <div class="container">
+
+        <div class="section-header--centered">
+          <p class="label reveal-up" data-delay="0">Servizi</p>
+          <h2 id="services-title" class="reveal-up" data-delay="1">Cosa Possiamo Creare</h2>
+        </div>
+
+        <div class="services-grid__grid">
+
+          <!-- Card 1: T-Shirt Custom -->
+          <article class="service-card reveal-up" data-delay="2">
+            <div class="service-card__preview">
+              <img src="00 disegni vari/dark king.png"
+                   alt="T-shirt custom Dark King FREIP"
+                   width="600" height="375"
+                   loading="lazy" />
+              <div class="service-card__preview-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 6l3-3h3l3 3 3-3h3l3 3v4l-3 1v10H6V11L3 10V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:rgba(var(--color-accent-rgb),0.15);line-height:1;display:block;margin-bottom:calc(var(--space-2)*-1);">01</span>
+              <h3 class="service-card__title">T-Shirt Custom</h3>
+              <p class="service-card__desc">Il tuo design su cotone premium. Dal tuo cartone preferito alla frase che ti rappresenta, ogni t-shirt è un pezzo unico.</p>
+              <a href="servizi.html" class="service-card__link">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Felpe Custom -->
+          <article class="service-card reveal-up" data-delay="3">
+            <div class="service-card__preview">
+              <img src="00 disegni vari/zy dragon ball1.png"
+                   alt="Felpa custom Dragon Ball FREIP"
+                   width="600" height="375"
+                   loading="lazy" />
+              <div class="service-card__preview-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 6l2-3h4l2 3 2-3h4l2 3v4l-2 1v10H6V11L4 10V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M8 9v1M16 9v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:rgba(var(--color-accent-rgb),0.15);line-height:1;display:block;margin-bottom:calc(var(--space-2)*-1);">02</span>
+              <h3 class="service-card__title">Felpe Custom</h3>
+              <p class="service-card__desc">La tua personalità anche quando fa freddo. Stesse grafiche uniche, stesso approccio personale, massimo comfort.</p>
+              <a href="servizi.html" class="service-card__link">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Design Su Misura -->
+          <article class="service-card reveal-up" data-delay="4">
+            <div class="service-card__preview">
+              <img src="00 disegni vari/my style.png"
+                   alt="Design su misura — frase custom FREIP"
+                   width="600" height="375"
+                   loading="lazy" />
+              <div class="service-card__preview-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l2 7h7l-5.7 4.1 2.2 6.9L12 16l-5.5 4 2.2-6.9L3 9h7L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:rgba(var(--color-accent-rgb),0.15);line-height:1;display:block;margin-bottom:calc(var(--space-2)*-1);">03</span>
+              <h3 class="service-card__title">Design Su Misura</h3>
+              <p class="service-card__desc">Hai un'idea ma non sai come realizzarla? Parliamone. Dal tuo concetto al design finito, senza limiti creativi.</p>
+              <a href="servizi.html" class="service-card__link">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.services-grid__grid -->
+
+        <div style="text-align:center;margin-top:var(--space-8);" class="reveal-up" data-delay="5">
+          <a href="servizi.html" class="btn btn-primary magnetic-btn">
+            Vedi tutti i servizi
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. CTA BANNER — Style B Bold/Dynamic
+    ============================================================ -->
+    <section class="cta-banner section" aria-labelledby="cta-title">
+      <div class="cta-banner__bg-accent" aria-hidden="true"></div>
+
+      <div class="cta-banner__inner">
+
+        <div class="cta-banner__content">
+          <p class="cta-banner__overline reveal-up" data-delay="0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink:0;">
+              <path d="M8 1l1.5 4.5H14L10.5 8l1.5 4.5L8 10l-4 2.5L5.5 8 2 5.5h4.5L8 1z" fill="currentColor"/>
+            </svg>
+            Il Tuo Design Ti Aspetta
+          </p>
+
+          <h2 id="cta-title" class="cta-banner__title reveal-up" data-delay="1">
+            Pronto a Indossare la <em>Tua Unicità</em>?
+          </h2>
+
+          <p class="cta-banner__subtitle reveal-up" data-delay="2">
+            Ogni design è unico, proprio come te. Contattaci per il tuo preventivo gratuito.
+          </p>
+        </div>
+
+        <div class="cta-banner__actions reveal-up" data-delay="3">
+          <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+             class="btn btn-primary magnetic-btn"
+             target="_blank" rel="noopener noreferrer">
+            Crea il Tuo Design
+          </a>
+          <a href="contatti.html" class="btn btn-ghost">
+            Oppure scrivici
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. REVIEWS SLIDER
+    ============================================================ -->
+    <section class="reviews-slider section" aria-labelledby="reviews-title">
+      <div class="container">
+
+        <div class="section-header--centered">
+          <p class="label reveal-up" data-delay="0">Dicono di Noi</p>
+          <h2 id="reviews-title" class="reveal-up" data-delay="1">I Nostri Clienti</h2>
+        </div>
+
+        <!-- Slider track -->
+        <div class="reviews-slider__track">
+
+          <!-- Review 1 -->
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stelle su 5">
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+            </div>
+            <blockquote class="review-card__quote">
+              Design pazzesco, esattamente come lo volevo! Ha capito subito la mia idea e l'ha resa ancora meglio di come la immaginavo.
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true"
+                   style="background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:var(--color-dark);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);">M</div>
+              <div>
+                <p class="review-card__name">Marco</p>
+                <p class="review-card__meta">24 anni — T-Shirt Custom</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stelle su 5">
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+            </div>
+            <blockquote class="review-card__quote">
+              La mia felpa con la frase personalizzata è unica nel suo genere. Tutti me la chiedono dove l'ho presa!
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true"
+                   style="background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:var(--color-dark);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);">S</div>
+              <div>
+                <p class="review-card__name">Sara</p>
+                <p class="review-card__meta">19 anni — Felpa Personalizzata</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stelle su 5">
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+            </div>
+            <blockquote class="review-card__quote">
+              Qualità della stampa eccezionale. Il design skull che mi ha fatto è una bomba, lo indosso praticamente ogni giorno.
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true"
+                   style="background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:var(--color-dark);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);">L</div>
+              <div>
+                <p class="review-card__name">Luca</p>
+                <p class="review-card__meta">28 anni — T-Shirt Skull</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 4 -->
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stelle su 5">
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+            </div>
+            <blockquote class="review-card__quote">
+              Super disponibile e professionale. Ha capito al volo cosa volevo per il mio design anime custom.
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true"
+                   style="background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:var(--color-dark);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);">G</div>
+              <div>
+                <p class="review-card__name">Giulia</p>
+                <p class="review-card__meta">22 anni — Design Anime Custom</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 5 -->
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 stelle su 5">
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+              <span class="review-card__star" aria-hidden="true">&#9733;</span>
+            </div>
+            <blockquote class="review-card__quote">
+              Un artista vero, non il solito servizio di print-on-demand. Si vede che c'è passione dietro ogni design.
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true"
+                   style="background:var(--color-accent);display:flex;align-items:center;justify-content:center;color:var(--color-dark);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);">V</div>
+              <div>
+                <p class="review-card__name">Valentina</p>
+                <p class="review-card__meta">26 anni — Design Custom</p>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.reviews-slider__track -->
+
+        <!-- Navigation dots (generated dynamically by JS) -->
+        <div class="reviews-slider__nav" role="tablist" aria-label="Seleziona recensione">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11. NUMBERS / STATISTICS
+    ============================================================ -->
+    <section class="stats-section section" aria-labelledby="stats-title">
+      <div class="container">
+
+        <div class="section-header--centered" style="color:var(--color-text-light);">
+          <p class="label reveal-up" data-delay="0">I Numeri</p>
+          <h2 id="stats-title" class="reveal-up" data-delay="1">FREIP in Cifre</h2>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card reveal-up" data-delay="2">
+            <span class="stat-card__number">
+              <span data-count="150" data-suffix="+">150+</span>
+            </span>
+            <p class="stat-card__label">Design Creati</p>
+          </div>
+
+          <div class="stat-card reveal-up" data-delay="3">
+            <span class="stat-card__number">
+              <span data-count="98" data-suffix="%">98%</span>
+            </span>
+            <p class="stat-card__label">Clienti Soddisfatti</p>
+          </div>
+
+          <div class="stat-card reveal-up" data-delay="4">
+            <span class="stat-card__number">
+              <span data-count="5" data-suffix="+">5+</span>
+            </span>
+            <p class="stat-card__label">Stili Disponibili</p>
+          </div>
+
+          <div class="stat-card reveal-up" data-delay="5">
+            <span class="stat-card__number" aria-label="Infinito">&#8734;</span>
+            <p class="stat-card__label">Possibilità Creative</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12. BRAND STORY STRIP — Signature Moment 3
+    ============================================================ -->
+    <section class="brand-story" aria-labelledby="brand-story-title">
+
+      <!-- Parallax background -->
+      <div class="brand-story__bg parallax-bg" aria-hidden="true">
+        <img src="00 disegni vari/dark king.png"
+             alt=""
+             width="1920" height="1080"
+             loading="lazy"
+             style="opacity:0.25;" />
+      </div>
+
+      <div class="brand-story__overlay" aria-hidden="true"></div>
+
+      <div class="brand-story__inner">
+
+        <p class="brand-story__eyebrow reveal-up" data-delay="0">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M7 1l1.3 4H13L9.5 7.7l1.3 4.3L7 9.5l-3.8 2.5 1.3-4.3L1 5h4.7L7 1z" fill="currentColor"/>
+          </svg>
+          Il Nostro Manifesto
+        </p>
+
+        <div class="brand-story__text">
+          <span class="line">
+            <span class="line-inner" id="brand-story-title">Ogni t-shirt racconta</span>
+          </span>
+          <span class="line">
+            <span class="line-inner">la <em>tua storia.</em></span>
+          </span>
+          <span class="line" style="font-size:clamp(1.2rem,3vw,3rem);font-style:italic;opacity:0.6;">
+            <span class="line-inner">Noi la disegniamo.</span>
+          </span>
+        </div>
+
+        <!-- Founder quote -->
+        <blockquote style="margin-top:var(--space-10);max-width:560px;border-left:2px solid var(--color-accent);padding-left:var(--space-5);" class="reveal-up" data-delay="4">
+          <p style="font-size:var(--text-base);color:rgba(255,255,255,0.55);line-height:var(--leading-relaxed);font-style:italic;">
+            "Ho ripreso in mano la mia passione perché credo che ognuno meriti di indossare qualcosa che lo rappresenti davvero."
+          </p>
+          <footer style="margin-top:var(--space-3);font-family:var(--font-accent);font-size:var(--text-xs);letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-accent);">
+            — Fondatore, FREIP
+          </footer>
+        </blockquote>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         13. INSTAGRAM FEED
+    ============================================================ -->
+    <section class="instagram-feed section" aria-labelledby="instagram-title">
+      <div class="container">
+
+        <div class="section-header--centered">
+          <p class="label reveal-up" data-delay="0">Seguici</p>
+          <h2 id="instagram-title" class="reveal-up" data-delay="1">@tshirtme79</h2>
+        </div>
+
+        <div class="instagram-feed__grid">
+
+          <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer"
+             class="instagram-feed__item reveal-up" data-delay="1"
+             aria-label="Visualizza design Heart su Instagram">
+            <img src="00 disegni vari/heart.png"
+                 alt="Design Heart — FREIP su Instagram"
+                 width="400" height="400"
+                 loading="lazy" />
+            <div class="instagram-feed__item-overlay" aria-hidden="true">
+              <svg class="instagram-feed__item-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="3" width="30" height="30" rx="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="27" cy="9" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer"
+             class="instagram-feed__item reveal-up" data-delay="2"
+             aria-label="Visualizza design Alfabeto su Instagram">
+            <img src="00 disegni vari/alfabeto1.png"
+                 alt="Design Alfabeto — FREIP su Instagram"
+                 width="400" height="400"
+                 loading="lazy" />
+            <div class="instagram-feed__item-overlay" aria-hidden="true">
+              <svg class="instagram-feed__item-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="3" width="30" height="30" rx="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="27" cy="9" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer"
+             class="instagram-feed__item reveal-up" data-delay="3"
+             aria-label="Visualizza design Lettere Vibe su Instagram">
+            <img src="00 disegni vari/lettere vibe.png"
+                 alt="Design Lettere Vibe — FREIP su Instagram"
+                 width="400" height="400"
+                 loading="lazy" />
+            <div class="instagram-feed__item-overlay" aria-hidden="true">
+              <svg class="instagram-feed__item-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="3" width="30" height="30" rx="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="27" cy="9" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer"
+             class="instagram-feed__item reveal-up" data-delay="4"
+             aria-label="Visualizza design XOXO su Instagram">
+            <img src="00 disegni vari/xoxo.png"
+                 alt="Design XOXO — FREIP su Instagram"
+                 width="400" height="400"
+                 loading="lazy" />
+            <div class="instagram-feed__item-overlay" aria-hidden="true">
+              <svg class="instagram-feed__item-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="3" width="30" height="30" rx="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="27" cy="9" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer"
+             class="instagram-feed__item reveal-up" data-delay="5"
+             aria-label="Visualizza design Tartarughe Ninja su Instagram">
+            <img src="00 disegni vari/b tartarughe ninja.png"
+                 alt="Design Tartarughe Ninja — FREIP su Instagram"
+                 width="400" height="400"
+                 loading="lazy" />
+            <div class="instagram-feed__item-overlay" aria-hidden="true">
+              <svg class="instagram-feed__item-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="3" width="30" height="30" rx="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="27" cy="9" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer"
+             class="instagram-feed__item reveal-up" data-delay="6"
+             aria-label="Visualizza design Colante su Instagram">
+            <img src="00 disegni vari/colante.png"
+                 alt="Design Colante — FREIP su Instagram"
+                 width="400" height="400"
+                 loading="lazy" />
+            <div class="instagram-feed__item-overlay" aria-hidden="true">
+              <svg class="instagram-feed__item-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="3" width="30" height="30" rx="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="27" cy="9" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="instagram-feed__cta reveal-up" data-delay="7">
+          <a href="https://instagram.com/tshirtme79"
+             class="btn btn-outline magnetic-btn"
+             target="_blank" rel="noopener noreferrer"
+             style="border-color:var(--color-text-dark);color:var(--color-text-dark);">
+            Seguici su Instagram
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         14. CONTACT COMPACT
+    ============================================================ -->
+    <section class="contact-compact section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-compact__card">
+
+          <h2 id="contact-title" class="contact-compact__title reveal-up" data-delay="0">
+            Iniziamo?
+          </h2>
+
+          <p class="contact-compact__subtitle reveal-up" data-delay="1">
+            Contattaci per creare qualcosa di unico
+          </p>
+
+          <div class="contact-compact__methods reveal-up" data-delay="2">
+
+            <!-- Telefono -->
+            <a href="tel:+393491708065" class="contact-method" aria-label="Chiama FREIP al 3491708065">
+              <div class="contact-method__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 2h4l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L13.5 10 18 11.5v4c0 1.1-.9 1.5-2 1.5C7 17 3 10 3 4c0-1.1.9-2 1-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-method__label">Telefono</span>
+                <span class="contact-method__value">3491708065</span>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:tshirtme79@gmail.com" class="contact-method" aria-label="Scrivi a tshirtme79@gmail.com">
+              <div class="contact-method__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-method__label">Email</span>
+                <span class="contact-method__value">tshirtme79@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+               class="contact-method"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Scrivici su WhatsApp">
+              <div class="contact-method__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2a8 8 0 1 0 5.66 13.66L18 17l-1.34-2.34A8 8 0 0 0 10 2z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M7 9c.3 2.5 1.5 3.7 4 4l.3-.8c-.7-.2-1.2-.6-1.4-1.2L9 11a4.3 4.3 0 0 1-.6-2H7z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-method__label">WhatsApp</span>
+                <span class="contact-method__value">Scrivici ora</span>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="reveal-up" data-delay="3">
+            <a href="contatti.html" class="btn btn-primary magnetic-btn" style="font-size:var(--text-base);padding:var(--space-4) var(--space-6);white-space:normal;text-align:center;max-width:100%;">
+              Chiedi un Preventivo
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       15. FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__main">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" class="site-footer__brand-logo" aria-label="FREIP — Home">
+          <img src="00 disegni vari/0 logo Freip2.png"
+               alt="FREIP logo"
+               width="100" height="32"
+               loading="lazy"
+               style="height:32px;width:auto;object-fit:contain;margin-bottom:var(--space-3);" />
+        </a>
+        <p class="site-footer__brand-desc">
+          Design custom che raccontano chi sei. T-shirt e felpe personalizzate create su misura, con passione.
+        </p>
+        <div class="site-footer__social">
+          <a href="https://instagram.com/tshirtme79"
+             class="site-footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram di FREIP">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="13" cy="5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@freipcustom"
+             class="site-footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok di FREIP">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M13 1a4 4 0 0 0 4 4M9 6v7a3 3 0 1 1-2-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Pagine -->
+      <div>
+        <p class="site-footer__col-title">Pagine</p>
+        <ul class="site-footer__nav-list" role="list">
+          <li><a href="index.html"       class="site-footer__nav-link">Home</a></li>
+          <li><a href="chi-siamo.html"   class="site-footer__nav-link">Chi Siamo</a></li>
+          <li><a href="servizi.html"     class="site-footer__nav-link">Servizi</a></li>
+          <li><a href="galleria.html"    class="site-footer__nav-link">Galleria</a></li>
+          <li><a href="recensioni.html"  class="site-footer__nav-link">Recensioni</a></li>
+          <li><a href="contatti.html"    class="site-footer__nav-link">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contatti -->
+      <div>
+        <p class="site-footer__col-title">Contatti</p>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 1.5h3.2l1.2 3.2-1.6 1.2c.8 1.6 2 2.8 3.6 3.6l1.2-1.6 3.2 1.2V12a1 1 0 0 1-1 1C5.8 13 3 7.2 3 2.5a1 1 0 0 1 0-.5V1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            <a href="tel:+393491708065">3491708065</a>
+          </div>
+        </div>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M1.5 5.5l6.5 4 6.5-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            <a href="mailto:tshirtme79@gmail.com">tshirtme79@gmail.com</a>
+          </div>
+        </div>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            Lun – Sab: 9:00 – 20:00
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Social -->
+      <div>
+        <p class="site-footer__col-title">Seguici</p>
+        <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.4);margin-bottom:var(--space-5);line-height:var(--leading-relaxed);">
+          Scopri i nostri design e rimani aggiornato sulle nuove creazioni.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+          <a href="https://instagram.com/tshirtme79"
+             class="site-footer__nav-link"
+             target="_blank" rel="noopener noreferrer"
+             style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:var(--color-accent);flex-shrink:0;">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="13" cy="5" r="1" fill="currentColor"/>
+            </svg>
+            Instagram @tshirtme79
+          </a>
+          <a href="https://tiktok.com/@freipcustom"
+             class="site-footer__nav-link"
+             target="_blank" rel="noopener noreferrer"
+             style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:var(--color-accent);flex-shrink:0;">
+              <path d="M13 1a4 4 0 0 0 4 4M9 6v7a3 3 0 1 1-2-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            TikTok @freipcustom
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.site-footer__main -->
+
+    <!-- Bottom bar -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">
+        &copy; <span data-year></span> FREIP. Tutti i diritti riservati.
+      </p>
+      <div class="site-footer__legal">
+        <a href="https://www.ev-digitale.com" target="_blank" rel="noopener noreferrer">
+          Sito web by Evoluzione Digitale
+        </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+  ============================================================ -->
+  <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+     class="whatsapp-fab"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contattaci su WhatsApp">
+    <span class="whatsapp-fab__pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.113.551 4.098 1.516 5.82L.057 23.57a.5.5 0 0 0 .612.612l5.75-1.459A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.016-1.374l-.36-.213-3.73.946.963-3.632-.234-.373A9.818 9.818 0 1 1 12 21.818z"/>
+    </svg>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+
+  <!-- Brand story intersection observer (inline — no external dep) -->
+  <script>
+    (function() {
+      var inner = document.querySelector('.brand-story__inner');
+      if (!inner) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      obs.observe(inner);
+    })();
+  </script>
+
+</body>
+</html>

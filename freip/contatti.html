@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>Contatti | FREIP — Richiedi un Preventivo</title>
+  <meta name="description" content="Contatta FREIP per un preventivo gratuito. Telefono, email, WhatsApp — siamo sempre disponibili per trasformare la tua idea in un design unico." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://freip.it/contatti.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://freip.it/contatti.html" />
+  <meta property="og:title" content="Contatti | FREIP — Richiedi un Preventivo" />
+  <meta property="og:description" content="Contatta FREIP per un preventivo gratuito. Trasformiamo la tua idea in un design unico." />
+  <meta property="og:image" content="00 disegni vari/0 logo Freip.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contatti | FREIP — Richiedi un Preventivo" />
+  <meta name="twitter:description" content="Contatta FREIP per un preventivo gratuito." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Bridge: align JS-added classes to CSS visual classes -->
+  <style>
+    /* Header: JS adds .header-scrolled / .header-hidden to .header;
+       CSS defines .site-header.is-scrolled / .site-header.is-hidden */
+    .header.header-scrolled {
+      padding: var(--space-3) 0;
+      background-color: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(92, 179, 56, 0.15);
+    }
+    .header.header-hidden {
+      transform: translateY(-100%);
+    }
+
+    /* Mobile menu: JS adds .active, CSS uses .is-open */
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity var(--duration-normal) var(--ease-out), visibility 0s 0s;
+    }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 80ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 140ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 260ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 380ms; }
+    .mobile-menu.active .mobile-menu__footer { opacity: 1; transform: translateY(0); }
+
+    /* Reveal: JS adds .revealed, CSS uses .is-visible */
+    .reveal-up.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Nav active link: JS adds .active, CSS uses .is-active */
+    .site-header__nav-link.active {
+      color: var(--color-accent);
+    }
+    .site-header__nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Scroll progress: JS uses transform scaleX */
+    .scroll-progress {
+      width: 100% !important;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.1s linear !important;
+    }
+
+    /* Hamburger open state: JS adds .active to .hamburger */
+    .hamburger.active .site-header__hamburger-line:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+      width: 24px;
+    }
+    .hamburger.active .site-header__hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .hamburger.active .site-header__hamburger-line:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+      width: 24px;
+      margin-left: 0;
+    }
+
+    /* Page hero: ensure header space */
+    .page-hero {
+      padding-top: clamp(70px, 10vh, 100px);
+    }
+
+    /* Social cards page section */
+    .social-cards-section {
+      background-color: var(--color-light-alt);
+    }
+
+    .social-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 640px) {
+      .social-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .social-card-large {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: var(--space-4);
+      padding: clamp(2rem, 5vw, 3.5rem) var(--space-6);
+      background: var(--color-light);
+      border: 1.5px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      transition: var(--transition-normal);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .social-card-large:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12), var(--shadow-glow);
+      transform: translateY(-6px);
+    }
+
+    .social-card-large__icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(var(--color-accent-rgb), 0.1);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      transition: background var(--duration-fast) var(--ease-out);
+    }
+
+    .social-card-large:hover .social-card-large__icon {
+      background: rgba(var(--color-accent-rgb), 0.2);
+    }
+
+    .social-card-large__handle {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-text-dark);
+    }
+
+    .social-card-large__cta {
+      font-family: var(--font-accent);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .social-card-large__cta svg {
+      transition: transform var(--duration-fast) var(--ease-out);
+    }
+
+    .social-card-large:hover .social-card-large__cta svg {
+      transform: translateX(4px);
+    }
+
+    /* Contact info social row */
+    .contact-info__social {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      padding-top: var(--space-2);
+    }
+
+    .contact-info__social-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      background: var(--color-light);
+      transition: var(--transition-fast);
+      color: var(--color-text-dark);
+    }
+
+    .contact-info__social-link:hover {
+      border-color: var(--color-accent);
+      background: rgba(var(--color-accent-rgb), 0.04);
+      transform: translateX(4px);
+    }
+
+    .contact-info__social-link svg {
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .contact-info__social-handle {
+      font-family: var(--font-display);
+      font-weight: var(--weight-semibold);
+      font-size: var(--text-sm);
+      color: var(--color-text-dark);
+    }
+
+    .contact-info__social-platform {
+      font-family: var(--font-accent);
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 2px;
+    }
+
+    /* Select field floating label fix */
+    .form-field__select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right var(--space-4) center;
+      padding-right: var(--space-8);
+      cursor: pointer;
+      padding-top: var(--space-3);
+    }
+
+    .form-field__select:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(92, 179, 56, 0.12);
+      background-color: var(--color-light);
+    }
+
+    /* Privacy note */
+    .form-privacy {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+      margin-top: var(--space-3);
+      text-align: center;
+    }
+
+    /* Section header on dark bg */
+    .faq-section .section-header--centered h2 {
+      color: var(--color-text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+  ============================================================ -->
+  <div class="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER — Transparent / Fixed Style B
+  ============================================================ -->
+  <header class="site-header header" role="banner">
+    <div class="site-header__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="site-header__logo" aria-label="FREIP — Torna alla home">
+        <img src="00 disegni vari/0 logo Freip2.png"
+             alt="FREIP logo"
+             width="120" height="40"
+             style="height:36px;width:auto;object-fit:contain;" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="site-header__nav header__nav" aria-label="Navigazione principale">
+        <ul class="site-header__nav-list" role="list">
+          <li><a href="index.html"        class="site-header__nav-link">Home</a></li>
+          <li><a href="chi-siamo.html"    class="site-header__nav-link">Chi Siamo</a></li>
+          <li><a href="servizi.html"      class="site-header__nav-link">Servizi</a></li>
+          <li><a href="galleria.html"     class="site-header__nav-link">Galleria</a></li>
+          <li><a href="recensioni.html"   class="site-header__nav-link">Recensioni</a></li>
+          <li><a href="contatti.html"     class="site-header__nav-link is-active">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="contatti.html" class="btn btn-primary site-header__cta magnetic-btn">
+        Crea il Tuo Design
+      </a>
+
+      <!-- Hamburger -->
+      <button class="site-header__hamburger hamburger"
+              aria-label="Apri menu di navigazione"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span class="site-header__hamburger-line"></span>
+        <span class="site-header__hamburger-line"></span>
+        <span class="site-header__hamburger-line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU — Fullscreen Overlay Style A
+  ============================================================ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu di navigazione">
+    <span class="mobile-menu__bg-text" aria-hidden="true">FREIP</span>
+
+    <button class="mobile-menu__close" aria-label="Chiudi menu" style="position:absolute;top:var(--space-6);right:var(--space-6);width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--color-text-light);font-size:1.5rem;z-index:2;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Menu mobile">
+      <div class="mobile-menu__nav-item">
+        <a href="index.html"      class="mobile-menu__nav-link">Home</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="chi-siamo.html"  class="mobile-menu__nav-link">Chi Siamo</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="servizi.html"    class="mobile-menu__nav-link">Servizi</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="galleria.html"   class="mobile-menu__nav-link">Galleria</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="recensioni.html" class="mobile-menu__nav-link">Recensioni</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="contatti.html"   class="mobile-menu__nav-link">Contatti</a>
+      </div>
+    </nav>
+
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__footer-text">
+        <span style="display:block;">3491708065</span>
+        <span style="display:block;margin-top:4px;">tshirtme79@gmail.com</span>
+      </div>
+      <div class="mobile-menu__footer-social">
+        <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer" aria-label="Instagram di FREIP">IG</a>
+        <a href="https://tiktok.com/@freipcustom"  target="_blank" rel="noopener noreferrer" aria-label="TikTok di FREIP">TT</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. INTERNAL PAGE HERO
+    ============================================================ -->
+    <section class="page-hero" aria-labelledby="page-hero-title">
+
+      <!-- Background image -->
+      <div class="page-hero__bg" aria-hidden="true">
+        <img src="00 disegni vari/sprayman.png"
+             alt=""
+             width="1920" height="1080" />
+      </div>
+
+      <!-- Heavy dark overlay -->
+      <div class="page-hero__overlay" style="background:linear-gradient(to bottom,rgba(10,10,10,0.65) 0%,rgba(10,10,10,0.88) 65%,var(--color-dark) 100%);" aria-hidden="true"></div>
+
+      <div class="page-hero__inner">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" class="breadcrumb__item">Home</a>
+          <span class="breadcrumb__separator" aria-hidden="true">/</span>
+          <span class="breadcrumb__item breadcrumb__item--active" aria-current="page">Contatti</span>
+        </nav>
+
+        <h1 id="page-hero-title" class="page-hero__title reveal-up">
+          Contattaci
+        </h1>
+        <p class="page-hero__subtitle reveal-up" style="transition-delay:80ms;">
+          Raccontaci la tua idea, la realizziamo insieme
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. CONTACT FULL — 2 Columns
+    ============================================================ -->
+    <section class="contact-full section" id="contatto" aria-labelledby="contact-full-title">
+      <div class="container" style="max-width:800px;">
+
+        <div class="section-header--centered reveal-up" style="margin-bottom:clamp(2.5rem,5vw,4rem);">
+          <p class="label">SCRIVICI</p>
+          <h2 id="contact-full-title">Iniziamo a Creare</h2>
+        </div>
+
+        <!-- Contact methods — 3 cards -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-5);margin-bottom:var(--space-9);">
+
+          <!-- Phone -->
+          <a href="tel:+393491708065" class="reveal-up" data-delay="1"
+             style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:var(--space-7) var(--space-5);background:#fff;border:1px solid var(--color-border-light);border-radius:var(--radius-xl);box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:border-color 0.3s ease,transform 0.3s ease;text-decoration:none;"
+             onmouseover="this.style.borderColor='var(--color-accent)';this.style.transform='translateY(-4px)'"
+             onmouseout="this.style.borderColor='var(--color-border-light)';this.style.transform='translateY(0)'">
+            <div style="width:56px;height:56px;border-radius:var(--radius-full);background:rgba(92,179,56,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-accent);">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
+                <path d="M4.5 2.5h4.2l1.6 4.2-2.1 1.6c1 2.1 2.6 3.7 4.7 4.7l1.6-2.1 4.2 1.6v4.2c0 1.1-.9 1.5-2 1.3C7.5 16.8 5.2 9 5.2 4.5c-.1-1.1.3-2 1.3-2h-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p style="font-family:var(--font-accent);font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-2);">Chiamaci</p>
+            <p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-dark);">349 170 8065</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2);">Sempre disponibile</p>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:tshirtme79@gmail.com" class="reveal-up" data-delay="2"
+             style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:var(--space-7) var(--space-5);background:#fff;border:1px solid var(--color-border-light);border-radius:var(--radius-xl);box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:border-color 0.3s ease,transform 0.3s ease;text-decoration:none;"
+             onmouseover="this.style.borderColor='var(--color-accent)';this.style.transform='translateY(-4px)'"
+             onmouseout="this.style.borderColor='var(--color-border-light)';this.style.transform='translateY(0)'">
+            <div style="width:56px;height:56px;border-radius:var(--radius-full);background:rgba(92,179,56,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-accent);">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="4.5" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 8l9 5.5 9-5.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p style="font-family:var(--font-accent);font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-2);">Email</p>
+            <p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-dark);">tshirtme79@gmail.com</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2);">Risposta entro 24h</p>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+             target="_blank" rel="noopener noreferrer" class="reveal-up" data-delay="3"
+             style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:var(--space-7) var(--space-5);background:rgba(92,179,56,0.08);border:1px solid rgba(92,179,56,0.25);border-radius:var(--radius-xl);transition:border-color 0.3s ease,transform 0.3s ease;text-decoration:none;"
+             onmouseover="this.style.borderColor='var(--color-accent)';this.style.transform='translateY(-4px)'"
+             onmouseout="this.style.borderColor='rgba(92,179,56,0.25)';this.style.transform='translateY(0)'">
+            <div style="width:56px;height:56px;border-radius:var(--radius-full);background:rgba(92,179,56,0.18);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);color:var(--color-accent);">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
+                <path d="M11 2a9 9 0 1 0 6.36 15.36L20 19l-1.64-2.64A9 9 0 0 0 11 2z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 10.5c.3 2.8 1.7 4.2 4.5 4.5l.3-.9c-.8-.2-1.3-.7-1.6-1.4L10.5 12.5A4.8 4.8 0 0 1 9.8 10H8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <p style="font-family:var(--font-accent);font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-2);">WhatsApp</p>
+            <p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-dark);">Scrivici ora</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2);">Il modo più veloce</p>
+          </a>
+
+        </div>
+
+        <!-- Social links -->
+        <div class="reveal-up" data-delay="4" style="text-align:center;">
+          <p class="label" style="margin-bottom:var(--space-5);">Seguici</p>
+          <div style="display:flex;justify-content:center;gap:var(--space-4);">
+            <a href="https://instagram.com/tshirtme79"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram @tshirtme79"
+               style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-5);background:#fff;border:1px solid var(--color-border-light);border-radius:var(--radius-full);color:var(--color-text-dark);font-size:var(--text-sm);font-weight:500;transition:border-color 0.3s ease;"
+               onmouseover="this.style.borderColor='var(--color-accent)'"
+               onmouseout="this.style.borderColor='var(--color-border-light)'">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="2" width="16" height="16" rx="4.5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="14.5" cy="5.5" r="1" fill="currentColor"/>
+              </svg>
+              @tshirtme79
+            </a>
+            <a href="https://www.tiktok.com/@freipcustom"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="TikTok @freipcustom"
+               style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-5);background:#fff;border:1px solid var(--color-border-light);border-radius:var(--radius-full);color:var(--color-text-dark);font-size:var(--text-sm);font-weight:500;transition:border-color 0.3s ease;"
+               onmouseover="this.style.borderColor='var(--color-accent)'"
+               onmouseout="this.style.borderColor='var(--color-border-light)'">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M14.5 2a4.5 4.5 0 0 0 4.5 4.5M10 7v8a3.5 3.5 0 1 1-2.5-3.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              @freipcustom
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. FAQ COMPACT
+    ============================================================ -->
+    <section class="faq-section section" aria-labelledby="faq-title">
+      <div class="container-narrow">
+
+        <div class="section-header--centered" style="color:var(--color-text-light);">
+          <p class="label reveal-up" data-delay="0">DOMANDE FREQUENTI</p>
+          <h2 id="faq-title" class="reveal-up" data-delay="1">Domande Rapide</h2>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <!-- FAQ 1 -->
+          <div class="faq-item reveal-up" data-delay="2" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Quanto costa una custom?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__answer">
+                Ogni progetto è diverso perché ogni design è unico. Il prezzo dipende dalla complessità del design, dal tipo di capo e dalla tecnica di stampa. Contattaci per un preventivo gratuito e senza impegno!
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item reveal-up" data-delay="3" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Quanto tempo ci vuole?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__answer">
+                Di solito servono 5-7 giorni lavorativi dal momento in cui il design viene approvato. Per richieste urgenti, contattaci e vediamo cosa possiamo fare!
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item reveal-up" data-delay="4" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Che materiali usate?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__answer">
+                Utilizziamo t-shirt e felpe in cotone premium di alta qualità. La stampa viene realizzata con tecniche professionali per garantire colori vivaci e resistenti ai lavaggi.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item reveal-up" data-delay="5" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Posso chiedere qualsiasi design?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__answer">
+                Assolutamente! Il limite è solo la tua immaginazione. Anime, manga, street art, frasi, personaggi, loghi, illustrazioni... se puoi pensarlo, possiamo disegnarlo.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item reveal-up" data-delay="6" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Come funziona la spedizione?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__answer">
+                Spediamo in tutta Italia con corriere tracciato. Riceverai il tracking non appena il pacco parte. I tempi di consegna sono di 2-4 giorni lavorativi dalla spedizione.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item reveal-up" data-delay="7" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Posso fare modifiche al design?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__answer">
+                Certo! Il processo è completamente collaborativo. Ti invierò il bozzetto e potrai chiedere tutte le modifiche necessarie fino a quando non sarai soddisfatto al 100%.
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /.faq-list -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. SOCIAL SECTION
+    ============================================================ -->
+    <section class="social-cards-section section" aria-labelledby="social-title">
+      <div class="container">
+
+        <div class="section-header--centered reveal-up" style="margin-bottom:clamp(2.5rem,5vw,4rem);">
+          <h2 id="social-title">Seguici sui Social</h2>
+          <p style="color:var(--color-text-muted);font-size:var(--text-lg);line-height:var(--leading-relaxed);margin-top:var(--space-4);">
+            Scopri le ultime creazioni e resta aggiornato
+          </p>
+        </div>
+
+        <div class="social-cards-grid">
+
+          <!-- Instagram card -->
+          <a href="https://instagram.com/tshirtme79"
+             class="social-card-large reveal-up stagger-1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Seguici su Instagram @tshirtme79">
+            <div class="social-card-large__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="26" height="26" rx="7" stroke="currentColor" stroke-width="2"/>
+                <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+                <circle cx="23.5" cy="8.5" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="social-card-large__handle">@tshirtme79</p>
+            <span class="social-card-large__cta">
+              Seguici su Instagram
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <!-- TikTok card -->
+          <a href="https://www.tiktok.com/@freipcustom"
+             class="social-card-large reveal-up stagger-2"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Seguici su TikTok @freipcustom">
+            <div class="social-card-large__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M22 4a7 7 0 0 0 7 7M14 11v14a5 5 0 1 1-4-4.9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="social-card-large__handle">@freipcustom</p>
+            <span class="social-card-large__cta">
+              Seguici su TikTok
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+        </div><!-- /.social-cards-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__main">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" class="site-footer__brand-logo" aria-label="FREIP — Home">
+          <img src="00 disegni vari/0 logo Freip2.png"
+               alt="FREIP logo"
+               width="100" height="32"
+               loading="lazy"
+               style="height:32px;width:auto;object-fit:contain;margin-bottom:var(--space-3);" />
+        </a>
+        <p class="site-footer__brand-desc">
+          Design custom che raccontano chi sei. T-shirt e felpe personalizzate create su misura, con passione.
+        </p>
+        <div class="site-footer__social">
+          <a href="https://instagram.com/tshirtme79"
+             class="site-footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram di FREIP">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="13" cy="5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@freipcustom"
+             class="site-footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok di FREIP">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M13 1a4 4 0 0 0 4 4M9 6v7a3 3 0 1 1-2-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Pagine -->
+      <div>
+        <p class="site-footer__col-title">Pagine</p>
+        <ul class="site-footer__nav-list" role="list">
+          <li><a href="index.html"       class="site-footer__nav-link">Home</a></li>
+          <li><a href="chi-siamo.html"   class="site-footer__nav-link">Chi Siamo</a></li>
+          <li><a href="servizi.html"     class="site-footer__nav-link">Servizi</a></li>
+          <li><a href="galleria.html"    class="site-footer__nav-link">Galleria</a></li>
+          <li><a href="recensioni.html"  class="site-footer__nav-link">Recensioni</a></li>
+          <li><a href="contatti.html"    class="site-footer__nav-link">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contatti -->
+      <div>
+        <p class="site-footer__col-title">Contatti</p>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 1.5h3.2l1.2 3.2-1.6 1.2c.8 1.6 2 2.8 3.6 3.6l1.2-1.6 3.2 1.2V12a1 1 0 0 1-1 1C5.8 13 3 7.2 3 2.5a1 1 0 0 1 0-.5V1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            <a href="tel:+393491708065">3491708065</a>
+          </div>
+        </div>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M1.5 5.5l6.5 4 6.5-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            <a href="mailto:tshirtme79@gmail.com">tshirtme79@gmail.com</a>
+          </div>
+        </div>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            Lun – Sab: 9:00 – 20:00
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Social -->
+      <div>
+        <p class="site-footer__col-title">Seguici</p>
+        <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.4);margin-bottom:var(--space-5);line-height:var(--leading-relaxed);">
+          Scopri i nostri design e rimani aggiornato sulle nuove creazioni.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+          <a href="https://instagram.com/tshirtme79"
+             class="site-footer__nav-link"
+             target="_blank" rel="noopener noreferrer"
+             style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:var(--color-accent);flex-shrink:0;">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="13" cy="5" r="1" fill="currentColor"/>
+            </svg>
+            Instagram @tshirtme79
+          </a>
+          <a href="https://tiktok.com/@freipcustom"
+             class="site-footer__nav-link"
+             target="_blank" rel="noopener noreferrer"
+             style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:var(--color-accent);flex-shrink:0;">
+              <path d="M13 1a4 4 0 0 0 4 4M9 6v7a3 3 0 1 1-2-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            TikTok @freipcustom
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.site-footer__main -->
+
+    <!-- Bottom bar -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">
+        &copy; <span data-year></span> FREIP. Tutti i diritti riservati.
+      </p>
+      <div class="site-footer__legal">
+        <a href="https://www.ev-digitale.com" target="_blank" rel="noopener noreferrer">
+          Sito web by Evoluzione Digitale
+        </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+  ============================================================ -->
+  <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+     class="whatsapp-fab"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contattaci su WhatsApp">
+    <span class="whatsapp-fab__pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.113.551 4.098 1.516 5.82L.057 23.57a.5.5 0 0 0 .612.612l5.75-1.459A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.016-1.374l-.36-.213-3.73.946.963-3.632-.234-.373A9.818 9.818 0 1 1 12 21.818z"/>
+    </svg>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+
+
+</body>
+</html>

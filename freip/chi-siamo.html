@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>Chi Siamo | FREIP — Custom T-Shirt &amp; Felpe</title>
+  <meta name="description" content="La storia di FREIP: dalla passione per il disegno alla personalizzazione di t-shirt e felpe uniche. Scopri l'artista dietro ogni design." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://freip.it/chi-siamo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://freip.it/chi-siamo.html" />
+  <meta property="og:title" content="Chi Siamo | FREIP — La Nostra Storia" />
+  <meta property="og:description" content="La storia di FREIP: dalla passione per il disegno alla personalizzazione di t-shirt e felpe uniche. Scopri l'artista dietro ogni design." />
+  <meta property="og:image" content="00 disegni vari/0 logo Freip.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chi Siamo | FREIP — Custom T-Shirt &amp; Felpe" />
+  <meta name="twitter:description" content="La storia di FREIP: dalla passione per il disegno alla personalizzazione di t-shirt e felpe uniche." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Bridge: align JS-added classes to CSS visual classes -->
+  <style>
+    /* Header: JS adds .header-scrolled / .header-hidden to .header;
+       CSS defines .site-header.is-scrolled / .site-header.is-hidden */
+    .header.header-scrolled {
+      padding: var(--space-3) 0;
+      background-color: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(92, 179, 56, 0.15);
+    }
+    .header.header-hidden {
+      transform: translateY(-100%);
+    }
+
+    /* Mobile menu: JS adds .active, CSS uses .is-open */
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity var(--duration-normal) var(--ease-out), visibility 0s 0s;
+    }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 80ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 140ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 260ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
+    .mobile-menu.active .mobile-menu__nav-item:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 380ms; }
+    .mobile-menu.active .mobile-menu__footer { opacity: 1; transform: translateY(0); }
+
+    /* Reveal: JS adds .revealed, CSS uses .is-visible */
+    .reveal-up.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Process steps: JS adds .visible, CSS uses .is-visible */
+    .process-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .process-step.visible .process-step__node {
+      border-color: var(--color-accent);
+      background: rgba(92, 179, 56, 0.12);
+      box-shadow: 0 0 20px rgba(92, 179, 56, 0.3);
+    }
+
+    /* Nav active link: JS adds .active, CSS uses .is-active */
+    .site-header__nav-link.active {
+      color: var(--color-accent);
+    }
+    .site-header__nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Scroll progress: JS uses transform scaleX, CSS uses width.
+       Override to use transform approach. */
+    .scroll-progress {
+      width: 100% !important;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.1s linear !important;
+    }
+
+    /* Hamburger open state: JS adds .active to .hamburger */
+    .hamburger.active .site-header__hamburger-line:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+      width: 24px;
+    }
+    .hamburger.active .site-header__hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .hamburger.active .site-header__hamburger-line:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+      width: 24px;
+      margin-left: 0;
+    }
+
+    /* ============================================================
+       PAGE-SPECIFIC STYLES — CHI SIAMO
+    ============================================================ */
+
+    /* Internal Page Hero */
+    .page-hero {
+      position: relative;
+      height: clamp(320px, 45vh, 560px);
+      background-color: var(--color-dark);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .page-hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .page-hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .page-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.55) 0%,
+        rgba(10, 10, 10, 0.78) 60%,
+        rgba(10, 10, 10, 0.96) 100%
+      );
+    }
+
+    .page-hero__content {
+      position: relative;
+      z-index: 2;
+      width: var(--container-width);
+      margin-inline: auto;
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+    }
+
+    .page-hero__breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-accent);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-medium);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: var(--space-4);
+    }
+
+    .page-hero__breadcrumb a {
+      color: rgba(255, 255, 255, 0.4);
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+
+    .page-hero__breadcrumb a:hover {
+      color: var(--color-accent);
+    }
+
+    .page-hero__breadcrumb-sep {
+      opacity: 0.4;
+      font-size: var(--text-xs);
+    }
+
+    .page-hero__breadcrumb-current {
+      color: var(--color-accent);
+    }
+
+    .page-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-tight);
+      text-transform: uppercase;
+      color: var(--color-light);
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-3);
+    }
+
+    .page-hero__subtitle {
+      font-size: var(--text-lg);
+      color: rgba(255, 255, 255, 0.5);
+      line-height: var(--leading-relaxed);
+      max-width: 520px;
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+      background-color: var(--color-dark);
+      color: var(--color-text-light);
+      padding-block: var(--section-padding);
+    }
+
+    .timeline-section .container {
+      max-width: min(90%, 900px);
+    }
+
+    .timeline-section .section-header--centered {
+      color: var(--color-text-light);
+    }
+
+    .timeline {
+      position: relative;
+      padding-block: var(--space-7) 0;
+    }
+
+    /* Vertical line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(92, 179, 56, 0.35) 10%,
+        rgba(92, 179, 56, 0.35) 90%,
+        transparent
+      );
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .timeline::before {
+        display: block;
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-bottom: var(--space-9);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0;
+        margin-bottom: var(--space-10);
+      }
+
+      /* Even items: content left, empty right */
+      .timeline-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .timeline-item__side {
+      flex: 1;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item:nth-child(odd) .timeline-item__side--content {
+        padding-right: clamp(2rem, 5vw, 4rem);
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-item__side--spacer {
+        padding-left: clamp(2rem, 5vw, 4rem);
+      }
+
+      .timeline-item:nth-child(even) .timeline-item__side--content {
+        padding-left: clamp(2rem, 5vw, 4rem);
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(even) .timeline-item__side--spacer {
+        padding-right: clamp(2rem, 5vw, 4rem);
+      }
+    }
+
+    .timeline-item__node-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-inline: var(--space-4);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 767px) {
+      .timeline-item__node-col {
+        flex-direction: row;
+        gap: var(--space-4);
+        align-items: center;
+        padding-inline: 0;
+      }
+    }
+
+    .timeline-item__node {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-full);
+      border: 2px solid rgba(92, 179, 56, 0.3);
+      background: rgba(92, 179, 56, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color var(--duration-normal) var(--ease-out),
+                  background var(--duration-normal) var(--ease-out),
+                  box-shadow var(--duration-normal) var(--ease-out);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-item.revealed .timeline-item__node {
+      border-color: var(--color-accent);
+      background: rgba(92, 179, 56, 0.15);
+      box-shadow: 0 0 24px rgba(92, 179, 56, 0.3);
+    }
+
+    .timeline-item__node-icon {
+      color: var(--color-accent);
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+    }
+
+    .timeline-item__year-mobile {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-bold);
+      color: var(--color-accent);
+      letter-spacing: var(--tracking-wider);
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item__year-mobile {
+        display: none;
+      }
+    }
+
+    .timeline-item__card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(92, 179, 56, 0.12);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      transition: border-color var(--duration-normal) var(--ease-out),
+                  background var(--duration-normal) var(--ease-out),
+                  transform var(--duration-normal) var(--ease-out);
+    }
+
+    .timeline-item:hover .timeline-item__card {
+      border-color: rgba(92, 179, 56, 0.28);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-3px);
+    }
+
+    .timeline-item__year {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: var(--weight-bold);
+      color: rgba(92, 179, 56, 0.18);
+      letter-spacing: var(--tracking-tight);
+      line-height: 1;
+      margin-bottom: var(--space-3);
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item__year {
+        display: block;
+      }
+    }
+
+    .timeline-item__title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-bold);
+      color: var(--color-text-light);
+      margin-bottom: var(--space-3);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .timeline-item__desc {
+      font-size: var(--text-base);
+      color: rgba(232, 232, 232, 0.55);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* Gallery Process Section */
+    .gallery-process {
+      background-color: var(--color-light);
+      color: var(--color-text-dark);
+      padding-block: var(--section-padding);
+    }
+
+    .gallery-process__layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-process__layout {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .gallery-process__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: var(--space-3);
+    }
+
+    .gallery-process__item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--color-light-alt);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-process__item:first-child {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+
+    .gallery-process__item:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .gallery-process__item:nth-child(3) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .gallery-process__item:nth-child(4) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+
+    .gallery-process__item:nth-child(5) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+    }
+
+    .gallery-process__item:nth-child(6) {
+      display: none;
+    }
+
+    @media (min-width: 480px) {
+      .gallery-process__item:nth-child(6) {
+        display: block;
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+      }
+    }
+
+    .gallery-process__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1;
+      transition: transform var(--duration-slow) var(--ease-out);
+    }
+
+    .gallery-process__item:first-child img {
+      aspect-ratio: 2/3;
+    }
+
+    .gallery-process__item:nth-child(6) img {
+      aspect-ratio: 16/6;
+    }
+
+    .gallery-process__item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-process__item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(92, 179, 56, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--duration-normal) var(--ease-out);
+    }
+
+    .gallery-process__item:hover .gallery-process__item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-process__content {
+      max-width: 480px;
+    }
+
+    .gallery-process__content h2 {
+      color: var(--color-text-dark);
+      margin-bottom: var(--space-5);
+    }
+
+    .gallery-process__content .overline {
+      margin-bottom: var(--space-4);
+    }
+
+    .gallery-process__content p {
+      color: rgba(26, 26, 26, 0.65);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    /* CTA Section */
+    .chi-siamo-cta {
+      background-color: var(--color-dark);
+      color: var(--color-text-light);
+      padding-block: var(--section-padding);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .chi-siamo-cta__glow {
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70vw;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, rgba(92, 179, 56, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .chi-siamo-cta__inner {
+      position: relative;
+      z-index: 1;
+      width: var(--container-narrow);
+      margin-inline: auto;
+    }
+
+    .chi-siamo-cta__title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-tight);
+      line-height: var(--leading-tight);
+      color: var(--color-text-light);
+      margin-bottom: var(--space-4);
+    }
+
+    .chi-siamo-cta__subtitle {
+      font-size: var(--text-lg);
+      color: rgba(255, 255, 255, 0.5);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-8);
+      max-width: 560px;
+      margin-inline: auto;
+    }
+
+    .chi-siamo-cta__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    @media (min-width: 480px) {
+      .chi-siamo-cta__actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+  ============================================================ -->
+  <div class="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER — Transparent / Fixed Style B
+  ============================================================ -->
+  <header class="site-header header" role="banner">
+    <div class="site-header__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="site-header__logo" aria-label="FREIP — Torna alla home">
+        <img src="00 disegni vari/0 logo Freip2.png"
+             alt="FREIP logo"
+             width="120" height="40"
+             style="height:36px;width:auto;object-fit:contain;" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="site-header__nav header__nav" aria-label="Navigazione principale">
+        <ul class="site-header__nav-list" role="list">
+          <li><a href="index.html"        class="site-header__nav-link">Home</a></li>
+          <li><a href="chi-siamo.html"    class="site-header__nav-link is-active">Chi Siamo</a></li>
+          <li><a href="servizi.html"      class="site-header__nav-link">Servizi</a></li>
+          <li><a href="galleria.html"     class="site-header__nav-link">Galleria</a></li>
+          <li><a href="recensioni.html"   class="site-header__nav-link">Recensioni</a></li>
+          <li><a href="contatti.html"     class="site-header__nav-link">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="contatti.html" class="btn btn-primary site-header__cta magnetic-btn">
+        Crea il Tuo Design
+      </a>
+
+      <!-- Hamburger -->
+      <button class="site-header__hamburger hamburger"
+              aria-label="Apri menu di navigazione"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span class="site-header__hamburger-line"></span>
+        <span class="site-header__hamburger-line"></span>
+        <span class="site-header__hamburger-line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU — Fullscreen Overlay Style A
+  ============================================================ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu di navigazione">
+    <span class="mobile-menu__bg-text" aria-hidden="true">FREIP</span>
+
+    <button class="mobile-menu__close" aria-label="Chiudi menu" style="position:absolute;top:var(--space-6);right:var(--space-6);width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--color-text-light);font-size:1.5rem;z-index:2;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Menu mobile">
+      <div class="mobile-menu__nav-item">
+        <a href="index.html"      class="mobile-menu__nav-link">Home</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="chi-siamo.html"  class="mobile-menu__nav-link" style="color:var(--color-accent);">Chi Siamo</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="servizi.html"    class="mobile-menu__nav-link">Servizi</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="galleria.html"   class="mobile-menu__nav-link">Galleria</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="recensioni.html" class="mobile-menu__nav-link">Recensioni</a>
+      </div>
+      <div class="mobile-menu__nav-item">
+        <a href="contatti.html"   class="mobile-menu__nav-link">Contatti</a>
+      </div>
+    </nav>
+
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__footer-text">
+        <span style="display:block;">3491708065</span>
+        <span style="display:block;margin-top:4px;">tshirtme79@gmail.com</span>
+      </div>
+      <div class="mobile-menu__footer-social">
+        <a href="https://instagram.com/tshirtme79" target="_blank" rel="noopener noreferrer" aria-label="Instagram di FREIP">IG</a>
+        <a href="https://tiktok.com/@freipcustom"  target="_blank" rel="noopener noreferrer" aria-label="TikTok di FREIP">TT</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. INTERNAL PAGE HERO
+    ============================================================ -->
+    <section class="page-hero" aria-label="Chi Siamo — La Nostra Storia">
+
+      <!-- Background image -->
+      <div class="page-hero__bg" aria-hidden="true">
+        <img src="00 disegni vari/alfabeto1.png"
+             alt=""
+             width="1920" height="1080"
+             loading="eager" />
+      </div>
+
+      <!-- Dark overlay -->
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+
+      <!-- Content -->
+      <div class="page-hero__content">
+
+        <!-- Breadcrumb -->
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="page-hero__breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="page-hero__breadcrumb-current" aria-current="page">Chi Siamo</span>
+        </nav>
+
+        <h1 class="page-hero__title reveal-up" data-delay="1">
+          La Nostra Storia
+        </h1>
+
+        <p class="page-hero__subtitle reveal-up" data-delay="2">
+          Dalla passione per il disegno alla tua t-shirt personalizzata
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         2. TIMELINE — Il Nostro Percorso
+    ============================================================ -->
+    <section class="timeline-section" aria-labelledby="timeline-title" style="background-color:#0a0a0a;color:#e8e8e8;">
+      <div class="container">
+
+        <div class="section-header--centered">
+          <p class="label reveal-up" data-delay="0">Il Nostro Percorso</p>
+          <h2 id="timeline-title" class="reveal-up" data-delay="1">Una Storia di Passione</h2>
+        </div>
+
+        <div class="timeline" role="list">
+
+          <!-- Milestone 1 -->
+          <div class="timeline-item reveal-up" data-delay="1" role="listitem">
+            <div class="timeline-item__side timeline-item__side--content">
+              <div class="timeline-item__card">
+                <div class="timeline-item__year">2000s</div>
+                <h3 class="timeline-item__title">La Scuola d'Arte</h3>
+                <p class="timeline-item__desc">La passione per il disegno nasce tra i banchi della scuola artistica. Ogni lezione è un passo verso il sogno di trasformare l'arte in qualcosa di più.</p>
+              </div>
+            </div>
+            <div class="timeline-item__node-col" aria-hidden="true">
+              <div class="timeline-item__node">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="timeline-item__node-icon" aria-hidden="true">
+                  <path d="M4 16l2-2 8-8-2-2-8 8-2 2 2 2zm10-12l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="4.5" cy="15.5" r="1" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="timeline-item__year-mobile">2000s</span>
+            </div>
+            <div class="timeline-item__side timeline-item__side--spacer" aria-hidden="true"></div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item reveal-up" data-delay="2" role="listitem">
+            <div class="timeline-item__side timeline-item__side--spacer" aria-hidden="true"></div>
+            <div class="timeline-item__node-col" aria-hidden="true">
+              <div class="timeline-item__node">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="timeline-item__node-icon" aria-hidden="true">
+                  <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M7 4V3M13 4V3M3 8h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="timeline-item__year-mobile">2010s</span>
+            </div>
+            <div class="timeline-item__side timeline-item__side--content">
+              <div class="timeline-item__card">
+                <div class="timeline-item__year">2010s</div>
+                <h3 class="timeline-item__title">Il Primo Tentativo</h3>
+                <p class="timeline-item__desc">Apertura della prima Partita IVA con il sogno di vivere di arte. Ma i tempi non sono ancora maturi e il mercato non è pronto.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item reveal-up" data-delay="3" role="listitem">
+            <div class="timeline-item__side timeline-item__side--content">
+              <div class="timeline-item__card">
+                <div class="timeline-item__year">2018</div>
+                <h3 class="timeline-item__title">La Pausa</h3>
+                <p class="timeline-item__desc">La passione non si spegne mai davvero. Si mette in attesa, continua a bruciare sotto la superficie, aspettando il momento giusto.</p>
+              </div>
+            </div>
+            <div class="timeline-item__node-col" aria-hidden="true">
+              <div class="timeline-item__node">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="timeline-item__node-icon" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="timeline-item__year-mobile">2018</span>
+            </div>
+            <div class="timeline-item__side timeline-item__side--spacer" aria-hidden="true"></div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item reveal-up" data-delay="4" role="listitem">
+            <div class="timeline-item__side timeline-item__side--spacer" aria-hidden="true"></div>
+            <div class="timeline-item__node-col" aria-hidden="true">
+              <div class="timeline-item__node">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="timeline-item__node-icon" aria-hidden="true">
+                  <path d="M10 2l1.5 4.5H16l-3.7 2.7 1.4 4.3L10 11l-3.7 2.5 1.4-4.3L4 6.5h4.5L10 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="timeline-item__year-mobile">2024</span>
+            </div>
+            <div class="timeline-item__side timeline-item__side--content">
+              <div class="timeline-item__card">
+                <div class="timeline-item__year">2024</div>
+                <h3 class="timeline-item__title">La Rinascita Digitale</h3>
+                <p class="timeline-item__desc">Due anni fa, la decisione: riprendere in mano i sogni. L'era digitale offre nuove possibilità. "Mi sono rimboccato le maniche e mi sono detto: perché no!?"</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 5 -->
+          <div class="timeline-item reveal-up" data-delay="5" role="listitem">
+            <div class="timeline-item__side timeline-item__side--content">
+              <div class="timeline-item__card" style="border-color:rgba(92,179,56,0.3);background:rgba(92,179,56,0.05);">
+                <div class="timeline-item__year" style="color:rgba(92,179,56,0.35);">Oggi</div>
+                <h3 class="timeline-item__title" style="color:var(--color-accent);">FREIP</h3>
+                <p class="timeline-item__desc">Ogni design nasce da una conversazione. Ogni t-shirt racconta una storia. Ogni cliente diventa parte della famiglia FREIP.</p>
+              </div>
+            </div>
+            <div class="timeline-item__node-col" aria-hidden="true">
+              <div class="timeline-item__node" style="border-color:var(--color-accent);background:rgba(92,179,56,0.15);box-shadow:0 0 24px rgba(92,179,56,0.3);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="timeline-item__node-icon" aria-hidden="true">
+                  <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="timeline-item__year-mobile" style="color:var(--color-accent);">Oggi</span>
+            </div>
+            <div class="timeline-item__side timeline-item__side--spacer" aria-hidden="true"></div>
+          </div>
+
+        </div><!-- /.timeline -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. NUMBERS / STATISTICS
+    ============================================================ -->
+    <section class="stats-section section" aria-labelledby="stats-chi-siamo-title">
+      <div class="container">
+
+        <div class="section-header--centered" style="color:var(--color-text-light);">
+          <p class="label reveal-up" data-delay="0">I Numeri</p>
+          <h2 id="stats-chi-siamo-title" class="reveal-up" data-delay="1">FREIP in Cifre</h2>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card reveal-up" data-delay="2">
+            <span class="stat-card__number">
+              <span data-count="150" data-suffix="+">150+</span>
+            </span>
+            <p class="stat-card__label">Design Creati</p>
+          </div>
+
+          <div class="stat-card reveal-up" data-delay="3">
+            <span class="stat-card__number">
+              <span data-count="50" data-suffix="+">50+</span>
+            </span>
+            <p class="stat-card__label">Clienti Serviti</p>
+          </div>
+
+          <div class="stat-card reveal-up" data-delay="4">
+            <span class="stat-card__number">
+              <span data-count="5" data-suffix="+">5+</span>
+            </span>
+            <p class="stat-card__label">Stili Artistici</p>
+          </div>
+
+          <div class="stat-card reveal-up" data-delay="5">
+            <span class="stat-card__number">
+              <span data-count="100" data-suffix="%">100%</span>
+            </span>
+            <p class="stat-card__label">Passione</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. GALLERY PROCESS — Dal Bozzetto al Prodotto Finito
+    ============================================================ -->
+    <section class="gallery-process section" aria-labelledby="gallery-process-title">
+      <div class="container">
+
+        <div class="gallery-process__layout">
+
+          <!-- Image collage -->
+          <div class="gallery-process__grid reveal-up" data-delay="1">
+
+            <div class="gallery-process__item">
+              <img src="00 disegni vari/spray.png"
+                   alt="Design Spray — arte urbana FREIP"
+                   width="600" height="600"
+                   loading="lazy" />
+              <div class="gallery-process__item-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color:var(--color-dark);">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9 14l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="gallery-process__item">
+              <img src="00 disegni vari/alfabeto2.png"
+                   alt="Design Alfabeto 2 — lettering FREIP"
+                   width="600" height="600"
+                   loading="lazy" />
+              <div class="gallery-process__item-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color:var(--color-dark);">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9 14l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="gallery-process__item">
+              <img src="00 disegni vari/lettera G.png"
+                   alt="Design Lettera G — custom lettering FREIP"
+                   width="600" height="600"
+                   loading="lazy" />
+              <div class="gallery-process__item-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color:var(--color-dark);">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9 14l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="gallery-process__item">
+              <img src="00 disegni vari/my style.png"
+                   alt="Design My Style — grafica custom FREIP"
+                   width="600" height="600"
+                   loading="lazy" />
+              <div class="gallery-process__item-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color:var(--color-dark);">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9 14l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="gallery-process__item">
+              <img src="00 disegni vari/heart.png"
+                   alt="Design Heart — custom FREIP"
+                   width="600" height="600"
+                   loading="lazy" />
+              <div class="gallery-process__item-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color:var(--color-dark);">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9 14l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="gallery-process__item">
+              <img src="00 disegni vari/dark king.png"
+                   alt="Design Dark King — street art FREIP"
+                   width="600" height="600"
+                   loading="lazy" />
+              <div class="gallery-process__item-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color:var(--color-dark);">
+                  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M9 14l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Text content -->
+          <div class="gallery-process__content">
+
+            <p class="overline reveal-up" data-delay="2">Il Processo</p>
+
+            <h2 id="gallery-process-title" class="reveal-up" data-delay="3">
+              Dal Bozzetto al Prodotto Finito
+            </h2>
+
+            <p class="body-large reveal-up" data-delay="4">
+              Ogni design attraversa un processo creativo unico. Dalla prima idea al bozzetto, dalla revisione alla stampa finale — ogni passaggio è curato nei minimi dettagli.
+            </p>
+
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);margin-bottom:var(--space-7);">
+
+              <div class="reveal-up" data-delay="4" style="display:flex;align-items:flex-start;gap:var(--space-4);">
+                <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(var(--color-accent-rgb),0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 16l2-2 8-8-2-2-8 8-2 2 2 2z" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p style="font-family:var(--font-display);font-weight:700;color:var(--color-text-dark);margin-bottom:4px;">Disegno a Mano</p>
+                  <p class="body-small text-muted">Ogni concept parte da un bozzetto originale, mai da template prefabbricati.</p>
+                </div>
+              </div>
+
+              <div class="reveal-up" data-delay="5" style="display:flex;align-items:flex-start;gap:var(--space-4);">
+                <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(var(--color-accent-rgb),0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="7" stroke="var(--color-accent)" stroke-width="1.4"/>
+                    <path d="M10 7v3l2 2" stroke="var(--color-accent)" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p style="font-family:var(--font-display);font-weight:700;color:var(--color-text-dark);margin-bottom:4px;">Revisione Condivisa</p>
+                  <p class="body-small text-muted">Il design viene perfezionato insieme al cliente, passo dopo passo.</p>
+                </div>
+              </div>
+
+              <div class="reveal-up" data-delay="6" style="display:flex;align-items:flex-start;gap:var(--space-4);">
+                <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(var(--color-accent-rgb),0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 10l4 4 8-8" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p style="font-family:var(--font-display);font-weight:700;color:var(--color-text-dark);margin-bottom:4px;">Stampa Premium</p>
+                  <p class="body-small text-muted">Materiali e stampa di alta qualità per un risultato che dura nel tempo.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="servizi.html" class="btn btn-outline reveal-up" data-delay="7"
+               style="border-color:var(--color-text-dark);color:var(--color-text-dark);">
+              Scopri i Servizi
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+          </div><!-- /.gallery-process__content -->
+
+        </div><!-- /.gallery-process__layout -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. CTA — Scopri i Servizi
+    ============================================================ -->
+    <section class="chi-siamo-cta" aria-labelledby="chi-siamo-cta-title">
+
+      <div class="chi-siamo-cta__glow" aria-hidden="true"></div>
+
+      <div class="chi-siamo-cta__inner">
+
+        <p class="label reveal-up" data-delay="0" style="margin-bottom:var(--space-4);">Pronti?</p>
+
+        <h2 id="chi-siamo-cta-title" class="chi-siamo-cta__title reveal-up" data-delay="1">
+          Scopri Cosa Possiamo<br />
+          <span style="color:var(--color-accent);">Creare Per Te</span>
+        </h2>
+
+        <p class="chi-siamo-cta__subtitle reveal-up" data-delay="2">
+          Dalle t-shirt custom alle felpe personalizzate, il limite è solo la tua immaginazione.
+        </p>
+
+        <div class="chi-siamo-cta__actions reveal-up" data-delay="3">
+          <a href="servizi.html" class="btn btn-primary magnetic-btn"
+             style="font-size:var(--text-base);padding:var(--space-4) var(--space-8);">
+            Scopri i Servizi
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+             class="btn btn-ghost"
+             target="_blank" rel="noopener noreferrer"
+             style="font-size:var(--text-base);padding:var(--space-4) var(--space-8);">
+            Contattaci
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__main">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <a href="index.html" class="site-footer__brand-logo" aria-label="FREIP — Home">
+          <img src="00 disegni vari/0 logo Freip2.png"
+               alt="FREIP logo"
+               width="100" height="32"
+               loading="lazy"
+               style="height:32px;width:auto;object-fit:contain;margin-bottom:var(--space-3);" />
+        </a>
+        <p class="site-footer__brand-desc">
+          Design custom che raccontano chi sei. T-shirt e felpe personalizzate create su misura, con passione.
+        </p>
+        <div class="site-footer__social">
+          <a href="https://instagram.com/tshirtme79"
+             class="site-footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram di FREIP">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="13" cy="5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@freipcustom"
+             class="site-footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok di FREIP">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M13 1a4 4 0 0 0 4 4M9 6v7a3 3 0 1 1-2-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Pagine -->
+      <div>
+        <p class="site-footer__col-title">Pagine</p>
+        <ul class="site-footer__nav-list" role="list">
+          <li><a href="index.html"       class="site-footer__nav-link">Home</a></li>
+          <li><a href="chi-siamo.html"   class="site-footer__nav-link">Chi Siamo</a></li>
+          <li><a href="servizi.html"     class="site-footer__nav-link">Servizi</a></li>
+          <li><a href="galleria.html"    class="site-footer__nav-link">Galleria</a></li>
+          <li><a href="recensioni.html"  class="site-footer__nav-link">Recensioni</a></li>
+          <li><a href="contatti.html"    class="site-footer__nav-link">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contatti -->
+      <div>
+        <p class="site-footer__col-title">Contatti</p>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 1.5h3.2l1.2 3.2-1.6 1.2c.8 1.6 2 2.8 3.6 3.6l1.2-1.6 3.2 1.2V12a1 1 0 0 1-1 1C5.8 13 3 7.2 3 2.5a1 1 0 0 1 0-.5V1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            <a href="tel:+393491708065">3491708065</a>
+          </div>
+        </div>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M1.5 5.5l6.5 4 6.5-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            <a href="mailto:tshirtme79@gmail.com">tshirtme79@gmail.com</a>
+          </div>
+        </div>
+        <div class="site-footer__contact-item">
+          <div class="site-footer__contact-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="site-footer__contact-text">
+            Lun – Sab: 9:00 – 20:00
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Social -->
+      <div>
+        <p class="site-footer__col-title">Seguici</p>
+        <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.4);margin-bottom:var(--space-5);line-height:var(--leading-relaxed);">
+          Scopri i nostri design e rimani aggiornato sulle nuove creazioni.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+          <a href="https://instagram.com/tshirtme79"
+             class="site-footer__nav-link"
+             target="_blank" rel="noopener noreferrer"
+             style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:var(--color-accent);flex-shrink:0;">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="13" cy="5" r="1" fill="currentColor"/>
+            </svg>
+            Instagram @tshirtme79
+          </a>
+          <a href="https://tiktok.com/@freipcustom"
+             class="site-footer__nav-link"
+             target="_blank" rel="noopener noreferrer"
+             style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:var(--color-accent);flex-shrink:0;">
+              <path d="M13 1a4 4 0 0 0 4 4M9 6v7a3 3 0 1 1-2-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            TikTok @freipcustom
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.site-footer__main -->
+
+    <!-- Bottom bar -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">
+        &copy; <span data-year></span> FREIP. Tutti i diritti riservati.
+      </p>
+      <div class="site-footer__legal">
+        <a href="https://www.ev-digitale.com" target="_blank" rel="noopener noreferrer">
+          Sito web by Evoluzione Digitale
+        </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+  ============================================================ -->
+  <a href="https://wa.me/393491708065?text=Ciao!%20Vorrei%20informazioni%20per%20una%20custom"
+     class="whatsapp-fab"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contattaci su WhatsApp">
+    <span class="whatsapp-fab__pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.113.551 4.098 1.516 5.82L.057 23.57a.5.5 0 0 0 .612.612l5.75-1.459A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.016-1.374l-.36-.213-3.73.946.963-3.632-.234-.373A9.818 9.818 0 1 1 12 21.818z"/>
+    </svg>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+
+  <!-- Timeline node activation on scroll -->
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.timeline-item');
+      if (!items.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      items.forEach(function (item) { obs.observe(item); });
+    })();
+  </script>
+
+  <!-- Footer year -->
+  <script>
+    (function () {
+      var el = document.querySelector('[data-year]');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+</html>
