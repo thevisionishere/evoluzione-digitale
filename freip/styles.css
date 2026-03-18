@@ -3570,21 +3570,31 @@ p {
     display: none;
   }
 
+  .hscroll-section {
+    overflow: visible;
+  }
+
+  .hscroll-wrapper {
+    overflow: visible;
+  }
+
   .hscroll-sticky,
   .horizontal-scroll--mobile .hscroll-sticky {
     height: auto;
     position: static;
-    overflow-x: auto;
+    overflow: visible;
   }
 
   .hscroll-track,
   .horizontal-scroll--mobile .hscroll-track {
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     padding-bottom: var(--space-4);
     will-change: unset;
+    -webkit-overflow-scrolling: touch;
   }
 
   .hscroll-track::-webkit-scrollbar {
