@@ -301,11 +301,21 @@
     }
 
     @media (max-width: 767px) {
+      .timeline-item__side--spacer {
+        display: none;
+      }
+
       .timeline-item__node-col {
+        order: -1;
         flex-direction: row;
         gap: var(--space-4);
         align-items: center;
         padding-inline: 0;
+      }
+
+      .timeline-item__side--content {
+        order: 1;
+        text-align: left !important;
       }
     }
 
