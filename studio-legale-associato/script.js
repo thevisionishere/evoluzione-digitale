@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceExplorer();
   initTextReveal();
   initTabs();
+  initTimeline();
 
   if (!isMobile && !prefersReducedMotion) {
     initCustomCursor();
@@ -599,6 +600,40 @@ document.addEventListener('DOMContentLoaded', () => {
         btns[next].focus();
       });
     });
+  }
+
+  /* ── Timeline — animated line + progressive reveal ── */
+  function initTimeline() {
+    const timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    const lineFill = timeline.querySelector('.timeline-line-fill');
+    const items = timeline.querySelectorAll('.timeline-item');
+    if (!items.length) return;
+
+    function update() {
+      const timelineRect = timeline.getBoundingClientRect();
+      const timelineTop = timelineRect.top;
+      const timelineHeight = timelineRect.height;
+      const trigger = window.innerHeight * 0.65;
+
+      /* Calculate how far the line should extend */
+      const scrolled = trigger - timelineTop;
+      const progress = Math.max(0, Math.min(1, scrolled / timelineHeight));
+      lineFill.style.height = (progress * 100) + '%';
+
+      /* Reveal items + activate dots when line reaches them */
+      items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < trigger) {
+          item.classList.add('visible');
+          item.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
 });
