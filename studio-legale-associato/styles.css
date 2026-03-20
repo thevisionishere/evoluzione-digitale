@@ -483,7 +483,7 @@ p:last-child { margin-block-end: 0; }
 .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.3); }
 .map-info { padding: var(--space-6) 0; }
 .map-info-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
-.map-info-card { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.map-info-card { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); max-width: 400px; }
 .map-info-card h4 { font-size: var(--text-base); margin-block-end: var(--space-1); }
 .map-info-card p, .map-info-card a { color: var(--color-text-muted); font-size: var(--text-sm); }
 
