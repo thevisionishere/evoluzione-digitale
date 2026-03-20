@@ -462,7 +462,7 @@ p:last-child { margin-bottom: 0; }
    MARQUEE
    ============================================ */
 .marquee {
-  overflow: hidden; padding: var(--space-6) 0;
+  overflow: hidden; padding: var(--space-3) 0;
   background: var(--color-dark-alt); border-top: 1px solid rgba(255,255,255,0.05);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -471,14 +471,14 @@ p:last-child { margin-bottom: 0; }
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 .marquee__content {
-  display: flex; align-items: center; gap: var(--space-7); padding-right: var(--space-7);
+  display: flex; align-items: center; gap: var(--space-5); padding-right: var(--space-5);
   white-space: nowrap;
 }
 .marquee__item {
-  font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-semibold);
+  font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--weight-semibold);
   color: rgba(255,255,255,0.3);
 }
-.marquee__sep { color: var(--color-accent); font-size: var(--text-sm); }
+.marquee__sep { color: var(--color-accent); font-size: var(--text-xs); }
 @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ============================================
