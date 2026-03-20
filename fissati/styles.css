@@ -864,8 +864,12 @@ p:last-child { margin-bottom: 0; }
 .section--light .stat-item__label,
 .section--light-alt .stat-item__label { color: var(--color-text-muted); }
 
+.section--light .process-step__number,
+.section--light-alt .process-step__number { color: var(--color-accent-dark); opacity: 0.4; }
 .section--light .process-step__title,
 .section--light-alt .process-step__title { color: var(--color-text-dark); }
+.section--light .process-step__desc,
+.section--light-alt .process-step__desc { color: var(--color-text-muted); }
 .section--light .process-step::after,
 .section--light-alt .process-step::after { color: rgba(0,0,0,0.15); }
 
