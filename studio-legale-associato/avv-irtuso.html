@@ -205,59 +205,59 @@
 
 
     <!-- ============================================================
-         4. SERVIZI — Expanded List (Diritto Civile complementare)
+         4. SERVIZI — Tabs Diritto Civile
          ============================================================ -->
-    <section class="services-expanded" aria-labelledby="services-expanded-heading">
+    <section class="services-tabs" aria-labelledby="services-expanded-heading">
       <div class="container">
 
-        <div class="services-expanded-header reveal-up">
+        <div class="services-tabs-header reveal-up">
           <h2 id="services-expanded-heading">Assistenza in Diritto Civile</h2>
-          <p>Competenze complementari per una tutela a 360&deg;</p>
         </div>
 
-        <div class="civil-grid reveal-up" data-delay="1">
+        <nav class="tabs-nav reveal-up" data-delay="1" aria-label="Navigazione aree di diritto civile">
+          <button class="tab-btn active" data-tab="proprieta" aria-selected="true" role="tab" aria-controls="panel-proprieta">Proprietà e Contratti</button>
+          <button class="tab-btn" data-tab="risarcimento-civile" aria-selected="false" role="tab" aria-controls="panel-risarcimento-civile">Risarcimento e Responsabilità</button>
+          <button class="tab-btn" data-tab="lavoro" aria-selected="false" role="tab" aria-controls="panel-lavoro">Diritto del Lavoro</button>
+        </nav>
 
-          <div class="civil-card">
-            <div class="civil-card-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <!-- Tab Panel: Proprietà e Contratti -->
+        <div class="tab-panel active" id="panel-proprieta" data-panel="proprieta" role="tabpanel">
+          <div class="services-list">
+            <div class="service-item">
+              <h4>Locazioni</h4>
+              <p>Controversie locatizie, procedure di sfratto, rinnovi contrattuali e questioni relative ai rapporti tra locatore e conduttore.</p>
             </div>
-            <h4>Locazioni</h4>
-            <p>Controversie locatizie, procedure di sfratto, rinnovi contrattuali e questioni relative ai rapporti tra locatore e conduttore.</p>
-          </div>
-
-          <div class="civil-card">
-            <div class="civil-card-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            <div class="service-item">
+              <h4>Proprietà e Diritti Reali</h4>
+              <p>Tutela della proprietà, usucapione, servitù prediali, controversie condominiali e azioni possessorie.</p>
             </div>
-            <h4>Responsabilit&agrave; Professionale</h4>
-            <p>Azioni di responsabilità verso professionisti per inadempimenti e negligenza nell'esercizio della professione.</p>
           </div>
-
-          <div class="civil-card">
-            <div class="civil-card-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            </div>
-            <h4>Risarcimento Danni</h4>
-            <p>Richieste risarcitorie per danni patrimoniali e non patrimoniali derivanti da illeciti civili.</p>
-          </div>
-
-          <div class="civil-card">
-            <div class="civil-card-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <h4>Propriet&agrave; e Diritti Reali</h4>
-            <p>Tutela della proprietà, usucapione, servitù prediali, controversie condominiali e azioni possessorie.</p>
-          </div>
-
-          <div class="civil-card">
-            <div class="civil-card-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-            <h4>Licenziamenti</h4>
-            <p>Impugnazione licenziamenti individuali nel settore privato e pubblico, tutela dei diritti del lavoratore.</p>
-          </div>
-
         </div>
+
+        <!-- Tab Panel: Risarcimento e Responsabilità -->
+        <div class="tab-panel" id="panel-risarcimento-civile" data-panel="risarcimento-civile" role="tabpanel">
+          <div class="services-list">
+            <div class="service-item">
+              <h4>Risarcimento Danni</h4>
+              <p>Richieste risarcitorie per danni patrimoniali e non patrimoniali derivanti da illeciti civili.</p>
+            </div>
+            <div class="service-item">
+              <h4>Responsabilità Professionale</h4>
+              <p>Azioni di responsabilità verso professionisti per inadempimenti e negligenza nell'esercizio della professione.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel: Diritto del Lavoro -->
+        <div class="tab-panel" id="panel-lavoro" data-panel="lavoro" role="tabpanel">
+          <div class="services-list">
+            <div class="service-item">
+              <h4>Licenziamenti</h4>
+              <p>Impugnazione licenziamenti individuali nel settore privato e pubblico, tutela dei diritti del lavoratore.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -424,8 +424,9 @@
         <div class="contact-full-inner">
 
           <!-- Left: Info -->
-          <div class="contact-full-info reveal-up">
-            <h2 id="contact-full-heading">Contatti</h2>
+          <h2 id="contact-full-heading" class="reveal-up" style="margin-block-end: var(--space-6);">Contatti</h2>
+
+          <div class="contact-methods-grid reveal-up" data-delay="1">
 
             <!-- Sede -->
             <div class="contact-method">

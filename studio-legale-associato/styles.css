@@ -440,7 +440,7 @@ p:last-child { margin-block-end: 0; }
 /* --- CONTACT FULL --- */
 .contact-full { padding: var(--section-padding) 0; background: var(--color-light); }
 .contact-full-inner { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
-.contact-full-info h2 { margin-block-end: var(--space-6); }
+.contact-methods-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
 .contact-method { display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border-light); }
 .contact-method:last-child { border-bottom: none; }
 .contact-method-icon { width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--color-light-alt); display: flex; align-items: center; justify-content: center; color: var(--color-accent); flex-shrink: 0; }
@@ -471,8 +471,10 @@ p:last-child { margin-block-end: 0; }
 .form-success.show { display: block; }
 .form-success h3 { color: var(--color-accent); margin-block-end: var(--space-3); }
 
-@media (min-width: 1024px) {
-  .contact-full-inner { grid-template-columns: 1fr; max-width: 640px; }
+@media (min-width: 768px) {
+  .contact-methods-grid { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-8); }
+  .contact-methods-grid .contact-method { border-bottom: 1px solid var(--color-border-light); }
+  .contact-methods-grid .contact-method:nth-last-child(-n+2) { border-bottom: none; }
 }
 
 /* --- MAP --- */

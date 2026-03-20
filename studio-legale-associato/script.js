@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function triggerHeroReveal() {
+    const heroContent = document.querySelector('.hero .hero-content');
+    if (heroContent) heroContent.style.opacity = '1';
     const heroElements = document.querySelectorAll('.hero [data-hero-reveal]');
     heroElements.forEach((el, i) => {
       setTimeout(() => {
