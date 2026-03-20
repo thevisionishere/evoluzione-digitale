@@ -1149,28 +1149,32 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================
-   BRAND PARTNERS GRID (Chi Siamo)
+   BRAND GALLERY (Chi Siamo) — Lookbook style
    ============================================ */
-.brand-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
-.brand-logo-item {
-  text-align: center; padding: var(--space-7) var(--space-6);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md);
-  transition: var(--transition-normal);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
+.brand-gallery {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5);
 }
-.brand-logo-item:hover { border-color: var(--color-accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.brand-logo-item img {
-  max-width: 100%; width: 100%; height: 120px; object-fit: contain; margin: 0 auto var(--space-5);
-  filter: grayscale(100%) brightness(2); opacity: 0.5;
-  transition: var(--transition-normal);
+.brand-gallery__item {
+  display: block; text-decoration: none;
 }
-.brand-logo-item:hover img { filter: none; opacity: 1; }
-.brand-logo-item span {
-  display: block; font-size: var(--text-sm); color: var(--color-text-muted);
-  text-transform: uppercase; letter-spacing: var(--tracking-wide); font-weight: var(--weight-medium);
+.brand-gallery__img {
+  overflow: hidden; border-radius: var(--radius-lg);
+  aspect-ratio: 4/5;
 }
-@media (max-width: 767px) { .brand-logos { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .brand-logos { grid-template-columns: 1fr; } }
+.brand-gallery__img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.brand-gallery__item:hover .brand-gallery__img img {
+  transform: scale(1.05);
+}
+.brand-gallery__name {
+  margin-top: var(--space-3); font-size: var(--text-sm);
+  font-weight: var(--weight-semibold); color: var(--color-text-dark);
+  letter-spacing: var(--tracking-wide);
+}
+@media (max-width: 767px) { .brand-gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .brand-gallery { grid-template-columns: 1fr; gap: var(--space-6); } }
 
 /* ============================================
    VALUES GRID (Chi Siamo)
