@@ -45,7 +45,6 @@
         <a href="servizi.html" class="nav-link active" aria-current="page">Servizi</a>
         <a href="galleria.html" class="nav-link">Galleria</a>
         <a href="recensioni.html" class="nav-link">Recensioni</a>
-        <a href="contatti.html" class="nav-link">Contatti</a>
         <a href="faq.html" class="nav-link">FAQ</a>
         <a href="contatti.html" class="btn btn-primary btn-sm" aria-label="Contattaci">Contattaci</a>
       </nav>
@@ -76,7 +75,6 @@
       <a href="servizi.html" class="mobile-menu-link active" aria-current="page">Servizi</a>
       <a href="galleria.html" class="mobile-menu-link">Galleria</a>
       <a href="recensioni.html" class="mobile-menu-link">Recensioni</a>
-      <a href="contatti.html" class="mobile-menu-link">Contatti</a>
       <a href="faq.html" class="mobile-menu-link">FAQ</a>
     </nav>
     <div class="mobile-menu__contact">
@@ -111,7 +109,7 @@
     <!-- ==========================================
          SECTION 2: SERVICES INTRO
          ========================================== -->
-    <section class="section section--light" aria-label="Introduzione ai servizi">
+    <section class="section section--light" style="padding-bottom: 0;" aria-label="Introduzione ai servizi">
       <div class="container-narrow" style="text-align: center;">
         <p class="reveal-up" style="font-size: var(--text-lg); color: var(--color-text-muted); line-height: 1.7;">
           Da Fissati trovi le migliori soluzioni in vetro per architettura e design, selezionate tra i brand più innovativi al mondo. Ogni prodotto è scelto per qualità, prestazioni e design — per offrire al tuo progetto il meglio disponibile sul mercato.
@@ -282,34 +280,50 @@
       <div class="container">
 
         <div style="text-align: center; margin-bottom: var(--space-9);">
-          <span class="section-label section-label--light reveal-up">COME LAVORIAMO</span>
+          <span class="section-label reveal-up">COME LAVORIAMO</span>
           <h2 class="reveal-up" data-delay="1">Il Nostro Processo</h2>
         </div>
 
-        <div class="process-steps">
-
-          <div class="process-step reveal-up" data-delay="1">
-            <p class="process-step__number">01</p>
-            <h3 class="process-step__title">Consulenza</h3>
-            <p class="process-step__desc">Analizziamo le esigenze del tuo progetto e identifichiamo le soluzioni ideali</p>
+        <div class="timeline">
+          <!-- Vertical line (background + animated fill) -->
+          <div class="timeline__line" aria-hidden="true">
+            <div class="timeline__line-fill"></div>
           </div>
 
-          <div class="process-step reveal-up" data-delay="2">
-            <p class="process-step__number">02</p>
-            <h3 class="process-step__title">Progettazione</h3>
-            <p class="process-step__desc">Definiamo specifiche tecniche, dimensioni e finiture con supporto specializzato</p>
+          <div class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__number">01</span>
+              <h3 class="timeline__title">Consulenza</h3>
+              <p class="timeline__desc">Analizziamo le esigenze del tuo progetto e identifichiamo le soluzioni ideali tra i nostri brand partner.</p>
+            </div>
           </div>
 
-          <div class="process-step reveal-up" data-delay="3">
-            <p class="process-step__number">03</p>
-            <h3 class="process-step__title">Fornitura</h3>
-            <p class="process-step__desc">Procuriamo i prodotti dai nostri brand partner con tempi certi e tracciati</p>
+          <div class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__number">02</span>
+              <h3 class="timeline__title">Progettazione</h3>
+              <p class="timeline__desc">Definiamo specifiche tecniche, dimensioni e finiture con supporto specializzato per ogni esigenza.</p>
+            </div>
           </div>
 
-          <div class="process-step reveal-up" data-delay="4">
-            <p class="process-step__number">04</p>
-            <h3 class="process-step__title">Assistenza</h3>
-            <p class="process-step__desc">Ti accompagniamo anche dopo la consegna con supporto tecnico dedicato</p>
+          <div class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__number">03</span>
+              <h3 class="timeline__title">Fornitura</h3>
+              <p class="timeline__desc">Procuriamo i prodotti dai nostri brand partner con tempi certi, tracciati e garantiti.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__number">04</span>
+              <h3 class="timeline__title">Assistenza</h3>
+              <p class="timeline__desc">Ti accompagniamo anche dopo la consegna con supporto tecnico dedicato e continuo.</p>
+            </div>
           </div>
 
         </div>

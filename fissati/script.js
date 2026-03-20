@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.gallery-grid')) initGalleryFilter();
   if (document.querySelector('.gallery-grid')) initLightbox();
   if (document.querySelector('.testimonial-split')) initTestimonialSplit();
+  if (document.querySelector('.timeline')) initTimeline();
 
 
   /* ===========================================
@@ -976,5 +977,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+
+  /* --- Timeline scroll animation --- */
+  function initTimeline() {
+    const timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    const lineFill = timeline.querySelector('.timeline__line-fill');
+    const items = timeline.querySelectorAll('.timeline__item');
+    if (!lineFill || items.length === 0) return;
+
+    function updateTimeline() {
+      const timelineRect = timeline.getBoundingClientRect();
+      const timelineTop = timelineRect.top;
+      const timelineHeight = timelineRect.height;
+
+      /* Line fill: based on how far the viewport center has scrolled through the timeline */
+      const viewportCenter = window.innerHeight * 0.6;
+      const progress = Math.min(Math.max((viewportCenter - timelineTop) / timelineHeight, 0), 1);
+      lineFill.style.height = (progress * 100) + '%';
+
+      /* Items: reveal when their dot crosses the viewport trigger point */
+      items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < window.innerHeight * 0.75) {
+          item.classList.add('in-view');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateTimeline, { passive: true });
+    updateTimeline();
+  }
+
 
 });
