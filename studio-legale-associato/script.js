@@ -606,31 +606,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Timeline — animated line + progressive reveal ── */
   function initTimeline() {
-    const timeline = document.querySelector('.timeline');
-    if (!timeline) return;
-
-    const lineFill = timeline.querySelector('.timeline-line-fill');
-    const items = timeline.querySelectorAll('.timeline-item');
-    if (!items.length) return;
+    const timelines = document.querySelectorAll('.timeline');
+    if (!timelines.length) return;
 
     function update() {
-      const timelineRect = timeline.getBoundingClientRect();
-      const timelineTop = timelineRect.top;
-      const timelineHeight = timelineRect.height;
       const trigger = window.innerHeight * 0.65;
+      timelines.forEach(timeline => {
+        const lineFill = timeline.querySelector('.timeline-line-fill');
+        const items = timeline.querySelectorAll('.timeline-item');
+        if (!lineFill || !items.length) return;
 
-      /* Calculate how far the line should extend */
-      const scrolled = trigger - timelineTop;
-      const progress = Math.max(0, Math.min(1, scrolled / timelineHeight));
-      lineFill.style.height = (progress * 100) + '%';
+        const timelineRect = timeline.getBoundingClientRect();
+        const scrolled = trigger - timelineRect.top;
+        const progress = Math.max(0, Math.min(1, scrolled / timelineRect.height));
+        lineFill.style.height = (progress * 100) + '%';
 
-      /* Reveal items + activate dots when line reaches them */
-      items.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        if (itemTop < trigger) {
-          item.classList.add('visible');
-          item.classList.add('active');
-        }
+        items.forEach(item => {
+          if (item.getBoundingClientRect().top < trigger) {
+            item.classList.add('visible');
+            item.classList.add('active');
+          }
+        });
       });
     }
 
