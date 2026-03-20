@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.services-tabs')) initServicesTabs();
   if (document.querySelector('.gallery-grid')) initGalleryFilter();
   if (document.querySelector('.gallery-grid')) initLightbox();
-  if (document.querySelector('.testimonial-slider')) initTestimonialSlider();
+  if (document.querySelector('.testimonial-split')) initTestimonialSplit();
 
 
   /* ===========================================
@@ -696,14 +696,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function initBrandCards() {
     if (!isMobile) return; /* Desktop handled by CSS :hover */
 
-    document.querySelectorAll('.brand-card').forEach(card => {
+    document.querySelectorAll('.brand-card, .service-card').forEach(card => {
       card.addEventListener('click', (e) => {
         if (e.target.closest('a')) return; /* Let links pass through */
 
         const wasExpanded = card.classList.contains('expanded');
 
-        /* Close all others */
-        document.querySelectorAll('.brand-card.expanded').forEach(c => {
+        /* Close all others of same type */
+        const selector = card.classList.contains('brand-card') ? '.brand-card.expanded' : '.service-card.expanded';
+        document.querySelectorAll(selector).forEach(c => {
           c.classList.remove('expanded');
         });
 
@@ -932,61 +933,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* --- Testimonial Slider (mini reviews after immersive quote) --- */
-  function initTestimonialSlider() {
-    const slider = document.querySelector('.testimonial-slider');
-    if (!slider) return;
+  /* --- Testimonial Split (image + review with arrows) --- */
+  function initTestimonialSplit() {
+    const section = document.querySelector('.testimonial-split');
+    if (!section) return;
 
-    const slides = slider.querySelectorAll('.testimonial-slide');
+    const slides = section.querySelectorAll('.testimonial-split__slide');
+    const prevBtn = section.querySelector('.testimonial-split__arrow--prev');
+    const nextBtn = section.querySelector('.testimonial-split__arrow--next');
+    const currentEl = section.querySelector('.testimonial-split__current');
     if (slides.length < 2) return;
 
     let current = 0;
 
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'testimonial-dots';
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = `testimonial-dot${i === 0 ? ' active' : ''}`;
-      dot.setAttribute('aria-label', `Recensione ${i + 1}`);
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
-    });
-    slider.parentElement.appendChild(dotsContainer);
-
     function goTo(index) {
       slides[current].classList.remove('active');
-      current = index;
+      current = ((index % slides.length) + slides.length) % slides.length;
       slides[current].classList.add('active');
-      slider.style.transform = `translateX(-${current * 100}%)`;
-      dotsContainer.querySelectorAll('.testimonial-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === current);
-      });
+      if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
     }
 
-    /* Auto-advance every 6 seconds */
-    let autoplay = setInterval(() => {
-      goTo((current + 1) % slides.length);
-    }, 6000);
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
 
-    slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoplay));
-    slider.parentElement.addEventListener('mouseleave', () => {
-      autoplay = setInterval(() => {
-        goTo((current + 1) % slides.length);
-      }, 6000);
+    /* Auto-advance every 6 seconds */
+    let autoplay = setInterval(() => goTo(current + 1), 6000);
+    section.addEventListener('mouseenter', () => clearInterval(autoplay));
+    section.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => goTo(current + 1), 6000);
     });
 
     /* Touch swipe */
     let startX = 0;
-    slider.addEventListener('touchstart', (e) => {
+    section.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
       clearInterval(autoplay);
     }, { passive: true });
-
-    slider.addEventListener('touchend', (e) => {
+    section.addEventListener('touchend', (e) => {
       const diff = e.changedTouches[0].clientX - startX;
       if (Math.abs(diff) > 50) {
-        if (diff < 0 && current < slides.length - 1) goTo(current + 1);
-        else if (diff > 0 && current > 0) goTo(current - 1);
+        goTo(diff < 0 ? current + 1 : current - 1);
       }
     }, { passive: true });
   }
