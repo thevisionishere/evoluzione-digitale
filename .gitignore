@@ -18,3 +18,10 @@ npm-debug.log*
 
 # Claude
 .claude/
+
+# LUXE framework state
+.luxe/
+
+# Client source files
+wetransfer_*/
+Questionario-Compilato.docx
