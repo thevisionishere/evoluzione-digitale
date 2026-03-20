@@ -1012,7 +1012,6 @@ p:last-child { margin-bottom: 0; }
 
 .gallery-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
-  grid-auto-rows: 200px; grid-auto-flow: dense;
 }
 .gallery-item {
   position: relative; overflow: hidden; border-radius: var(--radius-sm);
