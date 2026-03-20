@@ -1147,21 +1147,26 @@ p:last-child { margin-bottom: 0; }
 /* ============================================
    BRAND PARTNERS GRID (Chi Siamo)
    ============================================ */
-.brand-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-7); }
+.brand-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
 .brand-logo-item {
-  text-align: center; padding: var(--space-6);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm);
+  text-align: center; padding: var(--space-7) var(--space-6);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md);
   transition: var(--transition-normal);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
-.brand-logo-item:hover { border-color: var(--color-accent); }
+.brand-logo-item:hover { border-color: var(--color-accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .brand-logo-item img {
-  max-width: 160px; height: 50px; object-fit: contain; margin: 0 auto var(--space-4);
+  max-width: 220px; width: 80%; height: 70px; object-fit: contain; margin: 0 auto var(--space-5);
   filter: grayscale(100%) brightness(2); opacity: 0.5;
   transition: var(--transition-normal);
 }
 .brand-logo-item:hover img { filter: none; opacity: 1; }
-.brand-logo-item span { display: block; font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wide); }
+.brand-logo-item span {
+  display: block; font-size: var(--text-sm); color: var(--color-text-muted);
+  text-transform: uppercase; letter-spacing: var(--tracking-wide); font-weight: var(--weight-medium);
+}
 @media (max-width: 767px) { .brand-logos { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .brand-logos { grid-template-columns: 1fr; } }
 
 /* ============================================
    VALUES GRID (Chi Siamo)
