@@ -501,14 +501,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const body = card.querySelector('.explorer-card-body');
       if (!body) return;
 
-      cards.forEach(other => {
-        other.classList.remove('active');
-        other.setAttribute('aria-expanded', 'false');
-        const otherBody = other.querySelector('.explorer-card-body');
-        if (otherBody) otherBody.style.maxHeight = '0';
-      });
-
-      if (!isActive) {
+      if (isActive) {
+        card.classList.remove('active');
+        card.setAttribute('aria-expanded', 'false');
+        body.style.maxHeight = '0';
+      } else {
         card.classList.add('active');
         card.setAttribute('aria-expanded', 'true');
         body.style.maxHeight = body.scrollHeight + 'px';
