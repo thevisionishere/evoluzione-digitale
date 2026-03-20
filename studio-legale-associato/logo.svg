@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 540" width="1000" height="1080">
+  <defs>
+    <style>
+      .lc { fill: #4d4d4d; }
+      .ls { fill: none; stroke: #4d4d4d; }
+    </style>
+  </defs>
+
+  <!-- G — Circle (arc with small gap at ~30°) -->
+  <path d="M340.5 131
+           A 140 140 0 1 0 352 247"
+        class="ls" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- G — Horizontal bar stub (right side, from circle to edge) -->
+  <line x1="352" y1="227" x2="448" y2="227" class="ls" stroke-width="1.8"/>
+
+  <!-- G — Horizontal bar stub (left side) -->
+  <line x1="62" y1="227" x2="138" y2="227" class="ls" stroke-width="1.8"/>
+
+  <!-- White mask behind text to cut through circle -->
+  <rect x="135" y="215" width="260" height="24" fill="#fff"/>
+
+  <!-- Text: STUDIO LEGALE RAJANI -->
+  <text x="265" y="232"
+        text-anchor="middle"
+        font-family="'Cormorant Garamond','Times New Roman','Georgia',serif"
+        font-size="13.5"
+        font-weight="500"
+        letter-spacing="5.5"
+        fill="#4d4d4d">STUDIO  LEGALE  RAJANI</text>
+
+  <!-- R — Vertical stem -->
+  <rect x="229" y="98" width="8" height="282" class="lc" rx="0.5"/>
+
+  <!-- R — Top serif (left) -->
+  <rect x="218" y="98" width="12" height="2" class="lc"/>
+
+  <!-- R — Top serif (right, connects to bowl) -->
+  <rect x="236" y="98" width="8" height="2" class="lc"/>
+
+  <!-- R — Bottom serif (left) -->
+  <path d="M220 378 L229 378 L229 380 L220 380 Z" class="lc"/>
+
+  <!-- R — Bottom serif (right) -->
+  <path d="M237 378 L246 378 L246 380 L237 380 Z" class="lc"/>
+
+  <!-- R — Bowl (upper curve) -->
+  <path d="M237 100
+           C 290 96, 338 108, 338 162
+           C 338 216, 290 228, 237 228
+           L 237 220
+           C 282 220, 326 210, 326 162
+           C 326 114, 282 106, 237 106
+           Z" class="lc"/>
+
+  <!-- R — Tail / Leg (sweeping calligraphic curve) -->
+  <path d="M 260 218
+           C 268 250, 278 285, 298 320
+           C 318 355, 348 395, 392 438
+           L 396 442
+           Q 400 446, 396 448
+           L 390 450
+           C 345 410, 310 365, 290 328
+           C 270 291, 260 255, 250 224
+           Z" class="lc"/>
+</svg>
