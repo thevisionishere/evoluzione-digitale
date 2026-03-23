@@ -1,0 +1,7 @@
+{
+  "name": "studio-rajani-irtuso",
+  "private": true,
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  }
+}
