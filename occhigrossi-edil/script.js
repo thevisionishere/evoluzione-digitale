@@ -344,6 +344,8 @@
     hidePreloader();
   } else {
     window.addEventListener('load', hidePreloader, { once: true });
+    // Fallback: hide preloader after 4s even if external resources (iframes) stall
+    setTimeout(hidePreloader, 4000);
   }
 
 }());
