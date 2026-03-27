@@ -2128,7 +2128,7 @@ body[data-menu-open] {
 /* ── Background layer ── */
 .special-parallax-image__bg {
   position: absolute;
-  inset: -20% 0;   /* Extra vertical space for parallax travel */
+  inset: -35% 0;   /* Extra vertical space for parallax travel */
   will-change: transform;
   z-index: 0;
 }
@@ -2522,7 +2522,7 @@ body[data-menu-open] {
 /* ── Background ── */
 .cta-fullwidth__bg {
   position: absolute;
-  inset: -30%;
+  inset: -35%;
   will-change: transform;
   z-index: 0;
 }
@@ -4223,6 +4223,7 @@ body[data-menu-open] {
 /* ── Site Override: Header scuro su sfondo chiaro ── */
 .header-classic .header-classic__logo {
   color: var(--color-text);
+  letter-spacing: 0.02em;
 }
 
 .header-classic .header-classic__nav-link {
