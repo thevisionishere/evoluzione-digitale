@@ -1203,6 +1203,8 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
 }
 
 .catalog-section { padding: var(--section-padding) 0; background: var(--color-light); }
+.catalog-section .section-header { text-align: left; }
+.catalog-section .section-header p { margin: 0; max-width: 800px; }
 .catalog-section-dark { background: var(--color-dark); color: var(--color-text-light); }
 .catalog-section-dark .section-header h2 { color: var(--color-text-light); }
 .catalog-section-dark .section-header p { color: var(--color-text-muted); }
