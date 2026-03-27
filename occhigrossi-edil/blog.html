@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Occhigrossi Edil</title>
+  <meta name="description" content="Consigli pratici, guide e approfondimenti sui lavori edilizi: ristrutturazioni, cartongesso, pavimenti, cappotto termico e molto altro dal blog di Occhigrossi Edil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================ HEADER -->
+<header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
+  <div class="header-classic__inner container">
+
+    <!-- Logo -->
+    <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+      <span class="header-classic__logo-text">Occhigrossi<span class="header-classic__logo-accent">Edil</span></span>
+    </a>
+
+    <!-- Navigation (desktop) -->
+    <nav class="header-classic__nav" aria-label="Navigazione principale">
+      <ul class="header-classic__nav-list" role="list">
+        <li class="header-classic__nav-item">
+          <a href="index.html" class="header-classic__nav-link">Home</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="index.html#servizi" class="header-classic__nav-link">Servizi</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="portfolio.html" class="header-classic__nav-link">Portfolio</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="faq.html" class="header-classic__nav-link">FAQ</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="blog.html" class="header-classic__nav-link">Blog</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <div class="header-classic__actions">
+      <a href="contatti.html" class="btn btn--primary header-classic__cta">Preventivo Gratuito</a>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="header-classic__hamburger"
+        data-mobile-toggle
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        type="button"
+      >
+        <span class="header-classic__hamburger-bar bar"></span>
+        <span class="header-classic__hamburger-bar bar"></span>
+        <span class="header-classic__hamburger-bar bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <ul class="header-classic__mobile-nav" role="list">
+        <li><a href="index.html" class="header-classic__mobile-link">Home</a></li>
+        <li><a href="index.html#servizi" class="header-classic__mobile-link">Servizi</a></li>
+        <li><a href="portfolio.html" class="header-classic__mobile-link">Portfolio</a></li>
+        <li><a href="faq.html" class="header-classic__mobile-link">FAQ</a></li>
+        <li><a href="blog.html" class="header-classic__mobile-link">Blog</a></li>
+        <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+      </ul>
+      <a href="contatti.html" class="btn btn--primary header-classic__mobile-cta">Preventivo Gratuito</a>
+    </nav>
+  </div>
+</header>
+<!-- ============================================================ /HEADER -->
+
+
+<!-- ============================================================ BLOG GRID -->
+<section class="blog-grid section-padding" aria-labelledby="blog-grid-title">
+  <div class="container">
+
+    <!-- ── Section Header ── -->
+    <div class="blog-grid__header reveal-up">
+      <div class="blog-grid__header-text">
+        <span class="section-label section-label--line">Il Nostro Blog</span>
+        <h2 id="blog-grid-title" class="section-title blog-grid__title">
+          Consigli e guide<br>per la tua <em>casa</em>
+        </h2>
+      </div>
+    </div>
+
+    <!-- ── Post Grid ── -->
+    <div class="blog-grid__grid" role="list">
+
+      <!-- Card 1 -->
+      <article class="blog-grid__card reveal-up stagger-1" role="listitem">
+        <a href="#" class="blog-grid__card-link" aria-label="Leggi l'articolo: Come pianificare una ristrutturazione">
+          <div class="blog-grid__card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=640&h=400&fit=crop&q=80"
+              alt="Appartamento in fase di ristrutturazione con pavimento nuovo e pareti tinteggiate"
+              class="blog-grid__card-image"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <span class="blog-grid__card-category tag tag--accent">Ristrutturazione</span>
+          </div>
+          <div class="blog-grid__card-body">
+            <h3 class="blog-grid__card-title">Come pianificare una ristrutturazione senza stress: la guida completa</h3>
+            <p class="blog-grid__card-excerpt">Budget, permessi, materiali, tempi e scelta dell'impresa: tutto quello che devi sapere prima di iniziare i lavori di ristrutturazione.</p>
+            <footer class="blog-grid__card-meta">
+              <time class="blog-grid__card-date" datetime="2026-02-10">10 febbraio 2026</time>
+              <span class="blog-grid__card-divider" aria-hidden="true">·</span>
+              <span class="blog-grid__card-readtime">6 min di lettura</span>
+              <span class="blog-grid__card-read-link" aria-hidden="true">
+                Leggi
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </footer>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="blog-grid__card reveal-up stagger-2" role="listitem">
+        <a href="#" class="blog-grid__card-link" aria-label="Leggi l'articolo: Cartongesso, tutti gli utilizzi">
+          <div class="blog-grid__card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=640&h=400&fit=crop&q=80"
+              alt="Parete in cartongesso con nicchie illuminate in un salotto moderno"
+              class="blog-grid__card-image"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <span class="blog-grid__card-category tag tag--accent">Cartongesso</span>
+          </div>
+          <div class="blog-grid__card-body">
+            <h3 class="blog-grid__card-title">Cartongesso: tutti gli utilizzi che (forse) non conosci ancora</h3>
+            <p class="blog-grid__card-excerpt">Dal controsoffitto alle pareti divisorie, dalle nicchie luminose ai rivestimenti decorativi: il cartongesso è molto più versatile di quanto pensi.</p>
+            <footer class="blog-grid__card-meta">
+              <time class="blog-grid__card-date" datetime="2026-01-28">28 gennaio 2026</time>
+              <span class="blog-grid__card-divider" aria-hidden="true">·</span>
+              <span class="blog-grid__card-readtime">5 min di lettura</span>
+              <span class="blog-grid__card-read-link" aria-hidden="true">
+                Leggi
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </footer>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="blog-grid__card reveal-up stagger-3" role="listitem">
+        <a href="#" class="blog-grid__card-link" aria-label="Leggi l'articolo: Come scegliere il pavimento giusto">
+          <div class="blog-grid__card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&h=400&fit=crop&q=80"
+              alt="Pavimento in gres porcellanato effetto legno in un soggiorno luminoso"
+              class="blog-grid__card-image"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <span class="blog-grid__card-category tag tag--accent">Pavimenti</span>
+          </div>
+          <div class="blog-grid__card-body">
+            <h3 class="blog-grid__card-title">Come scegliere il pavimento giusto per ogni stanza della casa</h3>
+            <p class="blog-grid__card-excerpt">Gres porcellanato, parquet, cemento, resina: caratteristiche, vantaggi e costi di ogni materiale per aiutarti a fare la scelta migliore.</p>
+            <footer class="blog-grid__card-meta">
+              <time class="blog-grid__card-date" datetime="2026-01-15">15 gennaio 2026</time>
+              <span class="blog-grid__card-divider" aria-hidden="true">·</span>
+              <span class="blog-grid__card-readtime">7 min di lettura</span>
+              <span class="blog-grid__card-read-link" aria-hidden="true">
+                Leggi
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </footer>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="blog-grid__card reveal-up stagger-4" role="listitem">
+        <a href="#" class="blog-grid__card-link" aria-label="Leggi l'articolo: Cappotto termico, vale la pena?">
+          <div class="blog-grid__card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=640&h=400&fit=crop&q=80"
+              alt="Facciata di un edificio con applicazione del cappotto termico"
+              class="blog-grid__card-image"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <span class="blog-grid__card-category tag tag--accent">Cappotto Termico</span>
+          </div>
+          <div class="blog-grid__card-body">
+            <h3 class="blog-grid__card-title">Cappotto termico: vale davvero la pena farlo? Costi, benefici e risparmio in bolletta</h3>
+            <p class="blog-grid__card-excerpt">Un cappotto termico ben eseguito può ridurre i consumi energetici fino al 40%. Ti spieghiamo come funziona, quanto costa e quando conviene farlo.</p>
+            <footer class="blog-grid__card-meta">
+              <time class="blog-grid__card-date" datetime="2025-12-20">20 dicembre 2025</time>
+              <span class="blog-grid__card-divider" aria-hidden="true">·</span>
+              <span class="blog-grid__card-readtime">8 min di lettura</span>
+              <span class="blog-grid__card-read-link" aria-hidden="true">
+                Leggi
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </footer>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="blog-grid__card reveal-up stagger-5" role="listitem">
+        <a href="#" class="blog-grid__card-link" aria-label="Leggi l'articolo: Impermeabilizzazione terrazzo e tetto">
+          <div class="blog-grid__card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1585128903994-9788e2e45c38?w=640&h=400&fit=crop&q=80"
+              alt="Terrazzo impermeabilizzato con guaina e pavimentazione in cotto"
+              class="blog-grid__card-image"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <span class="blog-grid__card-category tag tag--accent">Impermeabilizzazione</span>
+          </div>
+          <div class="blog-grid__card-body">
+            <h3 class="blog-grid__card-title">Impermeabilizzazione di terrazzo e tetto: quando intervenire e come farlo bene</h3>
+            <p class="blog-grid__card-excerpt">Macchie di umidità, infiltrazioni d'acqua, rigonfiamenti: i segnali che indicano che è il momento di impermeabilizzare. Guida ai sistemi e ai materiali più efficaci.</p>
+            <footer class="blog-grid__card-meta">
+              <time class="blog-grid__card-date" datetime="2025-12-05">5 dicembre 2025</time>
+              <span class="blog-grid__card-divider" aria-hidden="true">·</span>
+              <span class="blog-grid__card-readtime">6 min di lettura</span>
+              <span class="blog-grid__card-read-link" aria-hidden="true">
+                Leggi
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </footer>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="blog-grid__card reveal-up stagger-6" role="listitem">
+        <a href="#" class="blog-grid__card-link" aria-label="Leggi l'articolo: 5 errori comuni nei lavori edilizi">
+          <div class="blog-grid__card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=640&h=400&fit=crop&q=80"
+              alt="Operaio edile al lavoro con strumenti professionali su un cantiere"
+              class="blog-grid__card-image"
+              width="640"
+              height="400"
+              loading="lazy"
+            >
+            <span class="blog-grid__card-category tag tag--accent">Consigli</span>
+          </div>
+          <div class="blog-grid__card-body">
+            <h3 class="blog-grid__card-title">5 errori comuni nei lavori edilizi fai-da-te (e come evitarli)</h3>
+            <p class="blog-grid__card-excerpt">Sottovalutare i tempi, risparmiare sui materiali sbagliati, saltare la preparazione del fondo: gli errori più frequenti che costano caro e come non commetterli.</p>
+            <footer class="blog-grid__card-meta">
+              <time class="blog-grid__card-date" datetime="2025-11-18">18 novembre 2025</time>
+              <span class="blog-grid__card-divider" aria-hidden="true">·</span>
+              <span class="blog-grid__card-readtime">5 min di lettura</span>
+              <span class="blog-grid__card-read-link" aria-hidden="true">
+                Leggi
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </footer>
+          </div>
+        </a>
+      </article>
+
+    </div><!-- /.blog-grid__grid -->
+  </div><!-- /.container -->
+</section><!-- /.blog-grid -->
+<!-- ============================================================ /BLOG GRID -->
+
+
+<!-- ============================================================ FOOTER -->
+<footer class="footer-full section--dark">
+  <div class="footer-full__inner container">
+
+    <!-- Top grid -->
+    <div class="footer-full__grid">
+
+      <!-- Col 1: About -->
+      <div class="footer-full__col footer-full__col--about">
+        <a href="index.html" class="footer-full__logo" aria-label="Homepage">
+          <span class="footer-full__logo-text">Occhigrossi<span class="footer-full__logo-accent">Edil</span></span>
+        </a>
+        <p class="footer-full__about-text">
+          Artigiani edili con esperienza nel litorale romano. Ristrutturazioni, cartongesso, pavimentazioni e molto altro. Qualità artigianale, prezzi trasparenti.
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Link Rapidi</h3>
+        <ul class="footer-full__links" role="list">
+          <li><a href="index.html" class="footer-full__link">Home</a></li>
+          <li><a href="portfolio.html" class="footer-full__link">Portfolio</a></li>
+          <li><a href="faq.html" class="footer-full__link">FAQ</a></li>
+          <li><a href="blog.html" class="footer-full__link">Blog</a></li>
+          <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Servizi</h3>
+        <ul class="footer-full__links" role="list">
+          <li><a href="index.html#servizi" class="footer-full__link">Ristrutturazioni</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Cartongesso</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Pavimentazioni</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Cappotto Termico</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Impermeabilizzazioni</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Contatti</h3>
+        <ul class="footer-full__contact-list" role="list">
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span>Via Madrid 3B, Ladispoli RM</span>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <a href="tel:+393349859593" class="footer-full__contact-link">+39 334 985 9593</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="footer-full__divider" aria-hidden="true">
+
+    <!-- Copyright bar -->
+    <div class="footer-full__bottom">
+      <p class="footer-full__copyright">
+        &copy; <span id="footer-year-full" data-year></span> Occhigrossi Edil. Tutti i diritti riservati.
+      </p>
+      <nav class="footer-full__bottom-nav" aria-label="Link legali">
+        <a href="privacy-policy.html" class="footer-full__bottom-link">Privacy Policy</a>
+        <a href="cookie-policy.html" class="footer-full__bottom-link">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<!-- ============================================================ /FOOTER -->
+
+
+<!-- ============================================================ GLOBALS -->
+<!-- WhatsApp Widget -->
+<div
+  class="whatsapp-widget"
+  id="whatsapp-widget"
+  data-whatsapp
+  data-phone="393349859593"
+  data-message="Ciao! Vorrei ricevere maggiori informazioni."
+  aria-hidden="true"
+>
+  <a
+    href="#"
+    class="whatsapp-widget__btn"
+    id="whatsapp-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+    role="button"
+  >
+    <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/>
+    </svg>
+    <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+  </a>
+  <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+</div>
+
+<!-- Cookie Banner -->
+<div
+  class="cookie-banner"
+  id="cookie-banner"
+  data-cookie-banner
+  role="dialog"
+  aria-live="polite"
+  aria-label="Consenso cookie"
+  aria-describedby="cookie-banner-text"
+  aria-hidden="true"
+>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+        <circle cx="17" cy="8" r="1" fill="currentColor"/>
+        <circle cx="9" cy="17" r="1" fill="currentColor"/>
+        <circle cx="16" cy="18" r="2" fill="currentColor"/>
+        <circle cx="20" cy="14" r="1.5" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="cookie-banner__content">
+      <p class="cookie-banner__text" id="cookie-banner-text">
+        Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito, analizzare il traffico e personalizzare i contenuti.
+        Leggi la nostra <a href="privacy-policy.html" class="cookie-banner__policy-link">Privacy Policy</a> e la
+        <a href="cookie-policy.html" class="cookie-banner__policy-link">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--reject" id="cookie-reject" data-cookie-reject aria-label="Rifiuta cookie non essenziali">Solo essenziali</button>
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept" data-cookie-accept aria-label="Accetta tutti i cookie">Accetta tutti</button>
+    </div>
+  </div>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="back-to-top" data-back-to-top aria-label="Torna in cima alla pagina" aria-hidden="true" type="button">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+<!-- ============================================================ /GLOBALS -->
+
+<script src="script.js"></script></body></html>
