@@ -314,6 +314,18 @@
   var preloader = document.querySelector('[data-preloader]');
   if (!preloader) return;
 
+  // Show preloader only on first visit (per session)
+  var seen = false;
+  try { seen = sessionStorage.getItem('preloaderSeen'); } catch (e) {}
+
+  if (seen) {
+    preloader.parentNode.removeChild(preloader);
+    document.body.classList.add('loaded');
+    return;
+  }
+
+  try { sessionStorage.setItem('preloaderSeen', '1'); } catch (e) {}
+
   var MIN_MS = 500;
   var startTime = Date.now();
 
@@ -344,7 +356,6 @@
     hidePreloader();
   } else {
     window.addEventListener('load', hidePreloader, { once: true });
-    // Fallback: hide preloader after 4s even if external resources (iframes) stall
     setTimeout(hidePreloader, 4000);
   }
 
