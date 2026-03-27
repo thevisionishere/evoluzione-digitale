@@ -2135,7 +2135,7 @@ body[data-menu-open] {
 
 .special-parallax-image__img {
   width: 100%;
-  height: 100%;
+  height: 140%;
   object-fit: cover;
   display: block;
 }
@@ -2351,7 +2351,7 @@ body[data-menu-open] {
 }
 
 .process-numbered__step.revealed .process-numbered__number {
-  color: rgba(var(--color-accent-rgb), 0.25);
+  color: var(--color-accent);
 }
 
 .process-numbered__number--accent {
@@ -2529,7 +2529,7 @@ body[data-menu-open] {
 
 .cta-fullwidth__bg-img {
   width: 100%;
-  height: 100%;
+  height: 140%;
   object-fit: cover;
   display: block;
 }

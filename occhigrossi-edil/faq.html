@@ -363,49 +363,6 @@
     section.querySelectorAll('.reveal-up').forEach(function (el) { el.classList.add('revealed'); });
   }
 
-  /* ── Accordion logic (fallback if accordion.js module not loaded) ── */
-  if (typeof window.__accordionModuleLoaded !== 'undefined') return;
-
-  function openItem(item) {
-    var body = item.querySelector('[data-accordion-body]');
-    var trigger = item.querySelector('[data-accordion-trigger]');
-    item.classList.add('faq-accordion__item--open');
-    trigger.setAttribute('aria-expanded', 'true');
-    body.style.maxHeight = body.scrollHeight + 'px';
-  }
-
-  function closeItem(item) {
-    var body = item.querySelector('[data-accordion-body]');
-    var trigger = item.querySelector('[data-accordion-trigger]');
-    item.classList.remove('faq-accordion__item--open');
-    trigger.setAttribute('aria-expanded', 'false');
-    body.style.maxHeight = '0';
-  }
-
-  /* Initialise first item open */
-  var firstItem = section.querySelector('.faq-accordion__item--open');
-  if (firstItem) {
-    var firstBody = firstItem.querySelector('[data-accordion-body]');
-    firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
-  }
-
-  section.querySelectorAll('[data-accordion-trigger]').forEach(function (trigger) {
-    trigger.addEventListener('click', function () {
-      var item = trigger.closest('.faq-accordion__item');
-      var isOpen = item.classList.contains('faq-accordion__item--open');
-
-      /* Close all others (single mode) */
-      section.querySelectorAll('.faq-accordion__item--open').forEach(function (openItem) {
-        if (openItem !== item) closeItem(openItem);
-      });
-
-      if (isOpen) {
-        closeItem(item);
-      } else {
-        openItem(item);
-      }
-    });
-  });
 })();
 </script>
 <!-- ============================================================ /FAQ ACCORDION -->
