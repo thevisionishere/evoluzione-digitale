@@ -91,7 +91,7 @@
       <div class="hero-diagonal__actions reveal-up stagger-6">
         <a href="contatti.html" class="btn btn--primary btn--lg">Richiedi Preventivo</a>
         <a href="tel:+393349859593" class="btn btn--secondary btn--lg">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 5.94 5.94l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.32 16l.6.92z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 5.94 5.94l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.32 16l.6.92z"/></svg>
           334 985 9593
         </a>
       </div>
@@ -582,7 +582,7 @@
     </div>
     <div class="faq-accordion__list" role="list" aria-label="Domande frequenti" data-accordion data-single="true">
 
-      <article class="faq-accordion__item faq-accordion__item--open reveal-up stagger-1" role="listitem">
+      <article class="faq-accordion__item reveal-up stagger-1" role="listitem">
         <button class="faq-accordion__trigger" data-accordion-trigger aria-expanded="true" aria-controls="faq-acc-1" id="faq-acc-btn-1">
           <span class="faq-accordion__question">Quanto costa un preventivo?</span>
           <span class="faq-accordion__chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
@@ -768,7 +768,7 @@
     submitBtn.disabled = true; submitText.hidden = true; submitLoading.hidden = false;
     setTimeout(function() {
       submitBtn.disabled = false; submitText.hidden = false; submitLoading.hidden = true;
-      form.hidden = true; successMsg.hidden = false;
+      form.hidden = true; successMsg.hidden = false; successMsg.classList.add('visible');
     }, 1800);
   });
 })();

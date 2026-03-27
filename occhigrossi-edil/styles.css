@@ -2522,7 +2522,7 @@ body[data-menu-open] {
 /* ── Background ── */
 .cta-fullwidth__bg {
   position: absolute;
-  inset: -15%;
+  inset: -30%;
   will-change: transform;
   z-index: 0;
 }
@@ -3042,7 +3042,7 @@ body[data-menu-open] {
 
 /* ── Success Message ── */
 .contact-split__success {
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-lg);
@@ -3051,6 +3051,10 @@ body[data-menu-open] {
   border-radius: var(--radius-lg);
   color: var(--color-text);
   font-weight: var(--weight-medium);
+}
+
+.contact-split__success.visible {
+  display: flex;
 }
 
 .contact-split__success svg {
