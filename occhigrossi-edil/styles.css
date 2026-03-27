@@ -4204,3 +4204,28 @@ body[data-menu-open] {
     transform: none;
   }
 }
+
+/* ── Site Override: Bebas Neue letter-spacing fix ── */
+.services-icon__item-title,
+.process-numbered__step-title,
+.faq-accordion__question {
+  letter-spacing: 0.02em;
+}
+
+/* ── Site Override: Header scuro su sfondo chiaro ── */
+.header-classic .header-classic__logo {
+  color: var(--color-text);
+}
+
+.header-classic .header-classic__nav-link {
+  color: var(--color-text);
+}
+
+.header-classic .header-classic__hamburger-bar {
+  background: var(--color-text);
+}
+
+.header-classic .header-classic__hamburger:hover,
+.header-classic .header-classic__hamburger:focus-visible {
+  background: var(--color-bg-alt);
+}

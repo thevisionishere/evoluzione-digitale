@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti — Occhigrossi Edil</title>
-  <meta name="description" content="Contatta Occhigrossi Edil per un preventivo gratuito. Sopralluogo senza impegno per ristrutturazioni, cartongesso e pavimenti a Ladispoli e dintorni.">
+  <meta name="description" content="Richiedi un preventivo gratuito per i tuoi lavori edilizi. Contatta Occhigrossi Edil a Ladispoli: sopralluogo gratuito, preventivo dettagliato, nessun impegno.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,14 +12,12 @@
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER CLASSIC
-     ============================================================ -->
+<!-- ============================================================ HEADER -->
 <header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
   <div class="header-classic__inner container">
 
     <!-- Logo -->
-    <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage di Occhigrossi Edil">
+    <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
       <span class="header-classic__logo-text">Occhigrossi<span class="header-classic__logo-accent">Edil</span></span>
     </a>
 
@@ -39,15 +37,12 @@
           <a href="faq.html" class="header-classic__nav-link">FAQ</a>
         </li>
         <li class="header-classic__nav-item">
-          <a href="blog.html" class="header-classic__nav-link">Blog</a>
-        </li>
-        <li class="header-classic__nav-item">
-          <a href="contatti.html" class="header-classic__nav-link header-classic__nav-link--active" aria-current="page">Contatti</a>
+          <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
         </li>
       </ul>
     </nav>
 
-    <!-- CTA + Hamburger -->
+    <!-- CTA -->
     <div class="header-classic__actions">
       <a href="contatti.html" class="btn btn--primary header-classic__cta">Preventivo Gratuito</a>
 
@@ -75,35 +70,34 @@
         <li><a href="index.html#servizi" class="header-classic__mobile-link">Servizi</a></li>
         <li><a href="portfolio.html" class="header-classic__mobile-link">Portfolio</a></li>
         <li><a href="faq.html" class="header-classic__mobile-link">FAQ</a></li>
-        <li><a href="blog.html" class="header-classic__mobile-link">Blog</a></li>
-        <li><a href="contatti.html" class="header-classic__mobile-link header-classic__mobile-link--active" aria-current="page">Contatti</a></li>
+        <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
       </ul>
       <a href="contatti.html" class="btn btn--primary header-classic__mobile-cta">Preventivo Gratuito</a>
     </nav>
   </div>
 </header>
+<!-- ============================================================ /HEADER -->
 
-<!-- ============================================================
-     CONTACT SPLIT — Form sinistra, info + mappa destra
-     ============================================================ -->
+
+<!-- ============================================================ CONTACT SPLIT -->
 <section class="contact-split section-padding" aria-label="Sezione contatti" id="contatti">
 
   <div class="container">
 
-    <!-- Section Header -->
+    <!-- ── Section Header ── -->
     <header class="contact-split__header reveal-up">
       <span class="section-label section-label--line">Contattaci</span>
       <h2 class="section-title contact-split__title">
         Richiedi un <em>preventivo gratuito</em>
       </h2>
       <p class="section-desc">
-        Compila il modulo o chiamaci direttamente. Rispondiamo entro 24 ore.
+        Compila il modulo e ti contatteremo entro 24 ore per fissare un sopralluogo gratuito senza nessun impegno.
       </p>
     </header>
 
     <div class="contact-split__layout">
 
-      <!-- Left: Form -->
+      <!-- ── Left: Form ── -->
       <div class="contact-split__form-col reveal-left">
         <form
           class="contact-split__form"
@@ -116,7 +110,7 @@
         >
 
           <div class="contact-split__form-row">
-            <!-- Nome -->
+            <!-- Name -->
             <div class="form-group contact-split__group">
               <label class="form-label" for="cs-name">
                 Nome e cognome <span class="contact-split__required" aria-label="campo obbligatorio">*</span>
@@ -155,7 +149,7 @@
             </div>
           </div>
 
-          <!-- Telefono -->
+          <!-- Phone -->
           <div class="form-group contact-split__group">
             <label class="form-label" for="cs-phone">Telefono</label>
             <input
@@ -168,40 +162,40 @@
             >
           </div>
 
-          <!-- Oggetto -->
+          <!-- Subject -->
           <div class="form-group contact-split__group">
             <label class="form-label" for="cs-subject">
-              Oggetto <span class="contact-split__required" aria-label="campo obbligatorio">*</span>
+              Tipo di lavoro <span class="contact-split__required" aria-label="campo obbligatorio">*</span>
             </label>
             <input
               class="form-input"
               type="text"
               id="cs-subject"
               name="oggetto"
-              placeholder="Es. Ristrutturazione bagno"
+              placeholder="Es. Ristrutturazione bagno, cartongesso, pavimento..."
               required
               aria-required="true"
               aria-describedby="cs-subject-error"
             >
-            <span class="form-error" id="cs-subject-error" role="alert">Inserisci un oggetto</span>
+            <span class="form-error" id="cs-subject-error" role="alert">Inserisci il tipo di lavoro</span>
           </div>
 
-          <!-- Messaggio -->
+          <!-- Message -->
           <div class="form-group contact-split__group">
             <label class="form-label" for="cs-message">
-              Messaggio <span class="contact-split__required" aria-label="campo obbligatorio">*</span>
+              Descrizione lavori <span class="contact-split__required" aria-label="campo obbligatorio">*</span>
             </label>
             <textarea
               class="form-textarea"
               id="cs-message"
               name="messaggio"
               rows="5"
-              placeholder="Descrivi brevemente i lavori che ti servono..."
+              placeholder="Descrivi brevemente i lavori che vuoi fare, la dimensione degli spazi e qualsiasi informazione utile per il preventivo..."
               required
               aria-required="true"
               aria-describedby="cs-message-error"
             ></textarea>
-            <span class="form-error" id="cs-message-error" role="alert">Inserisci il tuo messaggio</span>
+            <span class="form-error" id="cs-message-error" role="alert">Inserisci una descrizione dei lavori</span>
           </div>
 
           <!-- Privacy -->
@@ -228,7 +222,7 @@
 
           <!-- Submit -->
           <button type="submit" class="btn btn--primary btn--lg contact-split__submit">
-            <span class="contact-split__submit-text">Invia Richiesta</span>
+            <span class="contact-split__submit-text">Invia la richiesta</span>
             <span class="contact-split__submit-loading" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="contact-split__spinner" focusable="false" aria-hidden="true">
                 <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
@@ -242,19 +236,18 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
             </svg>
-            Messaggio inviato! Ti contatteremo entro 24 ore.
+            Richiesta inviata! Ti contatteremo entro 24 ore per fissare il sopralluogo gratuito.
           </div>
 
         </form>
       </div>
 
-      <!-- Right: Info + Map -->
+      <!-- ── Right: Info + Map ── -->
       <div class="contact-split__info-col reveal-right">
 
         <!-- Contact Info -->
         <div class="contact-split__info">
 
-          <!-- Indirizzo -->
           <div class="contact-split__info-item">
             <span class="contact-split__info-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -268,7 +261,6 @@
             </div>
           </div>
 
-          <!-- Telefono -->
           <div class="contact-split__info-item">
             <span class="contact-split__info-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -282,12 +274,12 @@
         </div>
 
         <!-- Map Placeholder -->
-        <div class="contact-split__map" aria-label="Zona di intervento Ladispoli Roma">
+        <div class="contact-split__map" aria-label="Mappa della nostra sede">
           <div class="contact-split__map-placeholder">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
-            <span>Ladispoli, Roma — zona litorale romano</span>
+            <span>Mappa — Sostituire con iframe Google Maps</span>
           </div>
         </div>
 
@@ -335,6 +327,7 @@
     submitText.hidden = true;
     submitLoading.hidden = false;
 
+    // Simulate async send — replace with actual fetch/AJAX
     setTimeout(function() {
       submitBtn.disabled = false;
       submitText.hidden = false;
@@ -345,26 +338,26 @@
   });
 })();
 </script>
+<!-- ============================================================ /CONTACT SPLIT -->
 
-<!-- ============================================================
-     FAQ ACCORDION — Domande rapide
-     ============================================================ -->
-<section class="faq-accordion section-padding" aria-labelledby="faq-accordion-heading">
+
+<!-- ============================================================ FAQ ACCORDION (3 quick items) -->
+<section class="faq-accordion section-padding" aria-labelledby="faq-contatti-heading">
   <div class="container container--narrow">
 
     <!-- Section Header -->
     <div class="faq-accordion__header text-center reveal-up">
-      <span class="section-label section-label--line">Domande Rapide</span>
-      <h2 class="section-title faq-accordion__title" id="faq-accordion-heading">
-        Risposte <em>veloci</em>
+      <span class="section-label section-label--line">Hai dei dubbi?</span>
+      <h2 class="section-title faq-accordion__title" id="faq-contatti-heading">
+        Domande sul <em>preventivo</em>
       </h2>
       <p class="section-desc section-desc--centered">
-        Le domande più frequenti prima di contattarci.
+        Alcune risposte rapide alle domande più comuni sul processo di richiesta.
       </p>
     </div>
 
     <!-- Accordion List -->
-    <div class="faq-accordion__list" role="list" aria-label="Domande frequenti" data-accordion data-single="true">
+    <div class="faq-accordion__list" role="list" aria-label="Domande sul preventivo" data-accordion data-single="true">
 
       <!-- Item 1 — open by default -->
       <article class="faq-accordion__item faq-accordion__item--open reveal-up stagger-1" role="listitem">
@@ -372,10 +365,10 @@
           class="faq-accordion__trigger"
           data-accordion-trigger
           aria-expanded="true"
-          aria-controls="faq-acc-1"
-          id="faq-acc-btn-1"
+          aria-controls="faq-cont-1"
+          id="faq-cont-btn-1"
         >
-          <span class="faq-accordion__question">Il sopralluogo è davvero gratuito?</span>
+          <span class="faq-accordion__question">Il sopralluogo e il preventivo sono davvero gratuiti?</span>
           <span class="faq-accordion__chevron" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"/>
@@ -385,12 +378,12 @@
         <div
           class="faq-accordion__body"
           data-accordion-body
-          id="faq-acc-1"
+          id="faq-cont-1"
           role="region"
-          aria-labelledby="faq-acc-btn-1"
+          aria-labelledby="faq-cont-btn-1"
         >
           <div class="faq-accordion__answer">
-            <p>Sì, il sopralluogo e il preventivo sono completamente gratuiti e senza impegno. Veniamo a casa tua, valutiamo i lavori e ti consegniamo un preventivo dettagliato entro 2-3 giorni.</p>
+            <p>Sì, completamente gratuiti e senza nessun impegno da parte tua. Veniamo da te, valutiamo il lavoro e ti consegniamo un preventivo dettagliato per iscritto. Se decidi di non procedere non devi nulla. Se invece accetti, ci accordiamo sui tempi e iniziamo i lavori.</p>
           </div>
         </div>
       </article>
@@ -401,10 +394,10 @@
           class="faq-accordion__trigger"
           data-accordion-trigger
           aria-expanded="false"
-          aria-controls="faq-acc-2"
-          id="faq-acc-btn-2"
+          aria-controls="faq-cont-2"
+          id="faq-cont-btn-2"
         >
-          <span class="faq-accordion__question">In quali zone operate?</span>
+          <span class="faq-accordion__question">Operate anche fuori dal comune di Ladispoli?</span>
           <span class="faq-accordion__chevron" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"/>
@@ -414,12 +407,12 @@
         <div
           class="faq-accordion__body"
           data-accordion-body
-          id="faq-acc-2"
+          id="faq-cont-2"
           role="region"
-          aria-labelledby="faq-acc-btn-2"
+          aria-labelledby="faq-cont-btn-2"
         >
           <div class="faq-accordion__answer">
-            <p>Siamo basati a Ladispoli e operiamo in tutto il litorale romano: Cerveteri, Fiumicino, Santa Marinella, Civitavecchia e Roma nord-ovest.</p>
+            <p>Sì. Oltre a Ladispoli operiamo in tutto il litorale romano: Cerveteri, Santa Marinella, Civitavecchia, Fiumicino e nelle zone limitrofe. Per interventi più estesi valutiamo anche zone più lontane. Contattaci indicando il comune e ti confermeremo la disponibilità.</p>
           </div>
         </div>
       </article>
@@ -430,10 +423,10 @@
           class="faq-accordion__trigger"
           data-accordion-trigger
           aria-expanded="false"
-          aria-controls="faq-acc-3"
-          id="faq-acc-btn-3"
+          aria-controls="faq-cont-3"
+          id="faq-cont-btn-3"
         >
-          <span class="faq-accordion__question">Quanto tempo ci vuole per avere il preventivo?</span>
+          <span class="faq-accordion__question">Quanto tempo passa tra la richiesta e l'inizio dei lavori?</span>
           <span class="faq-accordion__chevron" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"/>
@@ -443,12 +436,12 @@
         <div
           class="faq-accordion__body"
           data-accordion-body
-          id="faq-acc-3"
+          id="faq-cont-3"
           role="region"
-          aria-labelledby="faq-acc-btn-3"
+          aria-labelledby="faq-cont-btn-3"
         >
           <div class="faq-accordion__answer">
-            <p>Dopo il sopralluogo, prepariamo il preventivo entro 2-3 giorni lavorativi. Per interventi semplici, possiamo fornirlo anche in giornata.</p>
+            <p>Di solito contattiamo entro 24 ore dall'invio del modulo per fissare il sopralluogo. Dopo il sopralluogo il preventivo è pronto in 2–3 giorni lavorativi. Una volta accettato, definiamo insieme la data di inizio in base alla disponibilità e alla tipologia del lavoro.</p>
           </div>
         </div>
       </article>
@@ -457,8 +450,8 @@
 
     <!-- CTA Bottom -->
     <div class="faq-accordion__cta text-center reveal-up">
-      <p class="faq-accordion__cta-text">Altre domande? Consulta la pagina FAQ completa.</p>
-      <a href="faq.html" class="btn btn--primary">Vai alle FAQ</a>
+      <p class="faq-accordion__cta-text">Vuoi sapere di più? Consulta la nostra pagina FAQ completa.</p>
+      <a href="faq.html" class="btn btn--primary">Consulta la pagina FAQ completa</a>
     </div>
 
   </div><!-- /.container -->
@@ -471,7 +464,7 @@
   var section = document.querySelector('.faq-accordion');
   if (!section) return;
 
-  /* Reveal on scroll */
+  /* ── Reveal on scroll ── */
   if ('IntersectionObserver' in window) {
     var revealObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -486,7 +479,7 @@
     section.querySelectorAll('.reveal-up').forEach(function (el) { el.classList.add('revealed'); });
   }
 
-  /* Accordion logic (fallback if accordion.js module not loaded) */
+  /* ── Accordion logic (fallback if accordion.js module not loaded) ── */
   if (typeof window.__accordionModuleLoaded !== 'undefined') return;
 
   function openItem(item) {
@@ -531,10 +524,10 @@
   });
 })();
 </script>
+<!-- ============================================================ /FAQ ACCORDION -->
 
-<!-- ============================================================
-     FOOTER FULL
-     ============================================================ -->
+
+<!-- ============================================================ FOOTER -->
 <footer class="footer-full section--dark">
   <div class="footer-full__inner container">
 
@@ -543,55 +536,38 @@
 
       <!-- Col 1: About -->
       <div class="footer-full__col footer-full__col--about">
-        <a href="index.html" class="footer-full__logo" aria-label="Homepage Occhigrossi Edil">
+        <a href="index.html" class="footer-full__logo" aria-label="Homepage">
           <span class="footer-full__logo-text">Occhigrossi<span class="footer-full__logo-accent">Edil</span></span>
         </a>
         <p class="footer-full__about-text">
-          Ristrutturazioni, cartongesso e pavimenti a Ladispoli e nel litorale romano. Lavori eseguiti con cura, materiali di qualità e prezzi trasparenti.
+          Artigiani edili con esperienza nel litorale romano. Ristrutturazioni, cartongesso, pavimentazioni e molto altro. Qualità artigianale, prezzi trasparenti.
         </p>
-        <!-- Social icons -->
-        <div class="footer-full__social" aria-label="Social network">
-          <a href="#" class="footer-full__social-link" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
-              <path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/>
-            </svg>
-          </a>
-          <a href="#" class="footer-full__social-link" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-              <rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="13.5" cy="4.5" r="1" fill="currentColor"/>
-            </svg>
-          </a>
-        </div>
       </div>
 
-      <!-- Col 2: Link Rapidi -->
+      <!-- Col 2: Quick Links -->
       <div class="footer-full__col">
         <h3 class="footer-full__col-title">Link Rapidi</h3>
         <ul class="footer-full__links" role="list">
           <li><a href="index.html" class="footer-full__link">Home</a></li>
-          <li><a href="index.html#servizi" class="footer-full__link">Servizi</a></li>
           <li><a href="portfolio.html" class="footer-full__link">Portfolio</a></li>
           <li><a href="faq.html" class="footer-full__link">FAQ</a></li>
-          <li><a href="blog.html" class="footer-full__link">Blog</a></li>
           <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
         </ul>
       </div>
 
-      <!-- Col 3: Servizi -->
+      <!-- Col 3: Services -->
       <div class="footer-full__col">
         <h3 class="footer-full__col-title">Servizi</h3>
         <ul class="footer-full__links" role="list">
           <li><a href="index.html#servizi" class="footer-full__link">Ristrutturazioni</a></li>
           <li><a href="index.html#servizi" class="footer-full__link">Cartongesso</a></li>
-          <li><a href="index.html#servizi" class="footer-full__link">Posa Pavimenti</a></li>
-          <li><a href="index.html#servizi" class="footer-full__link">Intonaci e Pitture</a></li>
-          <li><a href="index.html#servizi" class="footer-full__link">Ristrutturazione Bagno</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Pavimentazioni</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Cappotto Termico</a></li>
+          <li><a href="index.html#servizi" class="footer-full__link">Impermeabilizzazioni</a></li>
         </ul>
       </div>
 
-      <!-- Col 4: Contatti -->
+      <!-- Col 4: Contact -->
       <div class="footer-full__col">
         <h3 class="footer-full__col-title">Contatti</h3>
         <ul class="footer-full__contact-list" role="list">
@@ -600,7 +576,7 @@
               <path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/>
               <circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
             </svg>
-            <span>Via Madrid 3B, 00055 Ladispoli RM</span>
+            <span>Via Madrid 3B, Ladispoli RM</span>
           </li>
           <li class="footer-full__contact-item">
             <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -610,7 +586,6 @@
           </li>
         </ul>
       </div>
-
     </div>
 
     <!-- Divider -->
@@ -626,21 +601,19 @@
         <a href="cookie-policy.html" class="footer-full__bottom-link">Cookie Policy</a>
       </nav>
     </div>
-
   </div>
 </footer>
+<!-- ============================================================ /FOOTER -->
 
-<!-- ============================================================
-     GLOBALS
-     ============================================================ -->
 
+<!-- ============================================================ GLOBALS -->
 <!-- WhatsApp Widget -->
 <div
   class="whatsapp-widget"
   id="whatsapp-widget"
   data-whatsapp
   data-phone="393349859593"
-  data-message="Ciao! Vorrei ricevere un preventivo gratuito."
+  data-message="Ciao! Vorrei ricevere maggiori informazioni."
   aria-hidden="true"
 >
   <a
@@ -690,42 +663,18 @@
       </p>
     </div>
     <div class="cookie-banner__actions">
-      <button
-        type="button"
-        class="cookie-banner__btn cookie-banner__btn--reject"
-        id="cookie-reject"
-        data-cookie-reject
-        aria-label="Rifiuta cookie non essenziali"
-      >
-        Solo essenziali
-      </button>
-      <button
-        type="button"
-        class="cookie-banner__btn cookie-banner__btn--accept"
-        id="cookie-accept"
-        data-cookie-accept
-        aria-label="Accetta tutti i cookie"
-      >
-        Accetta tutti
-      </button>
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--reject" id="cookie-reject" data-cookie-reject aria-label="Rifiuta cookie non essenziali">Solo essenziali</button>
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept" data-cookie-accept aria-label="Accetta tutti i cookie">Accetta tutti</button>
     </div>
   </div>
 </div>
 
-<!-- Back to Top -->
-<button
-  class="back-to-top"
-  id="back-to-top"
-  data-back-to-top
-  aria-label="Torna in cima alla pagina"
-  aria-hidden="true"
-  type="button"
->
+<!-- Back to Top Button -->
+<button class="back-to-top" id="back-to-top" data-back-to-top aria-label="Torna in cima alla pagina" aria-hidden="true" type="button">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
     <path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 </button>
+<!-- ============================================================ /GLOBALS -->
 
-<script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script></body></html>
