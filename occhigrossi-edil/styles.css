@@ -3023,9 +3023,13 @@ body[data-menu-open] {
 }
 
 .contact-split__submit-loading {
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--space-sm);
+}
+
+.contact-split__submit-loading[aria-hidden="false"] {
+  display: flex;
 }
 
 .contact-split__spinner {
