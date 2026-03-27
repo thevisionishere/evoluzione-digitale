@@ -25,3 +25,6 @@ npm-debug.log*
 # Client source files
 wetransfer_*/
 Questionario-Compilato.docx
+
+# Offline sites
+fissati/
