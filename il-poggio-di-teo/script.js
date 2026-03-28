@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!preloader) return;
 
     const isHome = document.body.dataset.page === 'home';
-    const visited = sessionStorage.getItem('poggio-visited');
+    const visited = sessionStorage.getItem('poggio-visited') || localStorage.getItem('poggio-preloader-done');
 
     if (!isHome || visited) {
       preloader.remove();
@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       preloader.classList.add('done');
       document.body.classList.remove('preloader-active');
       sessionStorage.setItem('poggio-visited', 'true');
+      localStorage.setItem('poggio-preloader-done', 'true');
 
       setTimeout(() => {
         preloader.remove();
