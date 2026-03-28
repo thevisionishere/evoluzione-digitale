@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti | Agriturismo Il Poggio di Teo</title>
+  <meta name="description" content="Contatta l'Agriturismo Il Poggio di Teo per informazioni e prenotazioni. Siamo a Località La Stellata 14, Manciano (GR), a 8 km dalle Terme di Saturnia." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contatti | Agriturismo Il Poggio di Teo" />
+  <meta property="og:description" content="Contattaci per informazioni e prenotazioni. Agriturismo biologico nella Maremma Toscana, a 8 km dalle Terme di Saturnia." />
+  <meta property="og:url" content="https://www.ilpoggioditeo.it/contatti.html" />
+  <meta property="og:image" content="images/hero/hero-1.jpg" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ilpoggioditeo.it/contatti.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── INNER HERO ─────────────────────────────────────── */
+    .inner-hero {
+      position: relative;
+      height: 45vh;
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .inner-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .inner-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+    .inner-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30, 22, 10, 0.35) 0%,
+        rgba(30, 22, 10, 0.65) 100%
+      );
+      z-index: 1;
+    }
+    .inner-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 var(--space-6) var(--space-8);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(247, 242, 236, 0.7);
+      margin-bottom: var(--space-3);
+      letter-spacing: 0.04em;
+    }
+    .breadcrumb a {
+      color: rgba(247, 242, 236, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: var(--color-primary);
+    }
+    .breadcrumb-sep {
+      color: rgba(247, 242, 236, 0.4);
+      font-size: 0.75rem;
+    }
+    .breadcrumb-current {
+      color: rgba(247, 242, 236, 0.9);
+    }
+    .inner-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      color: var(--color-light);
+      line-height: 1.1;
+      margin: 0 0 var(--space-3);
+    }
+    .inner-hero-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: rgba(247, 242, 236, 0.8);
+      max-width: 520px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── CONTACT FULL ────────────────────────────────────── */
+    .contact-full {
+      background: var(--color-light);
+      padding: var(--space-14) 0;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+
+    /* Contact Details Column */
+    .contact-details-head {
+      margin-bottom: var(--space-7);
+    }
+    .contact-details-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--color-dark);
+      margin: var(--space-2) 0 var(--space-3);
+    }
+    .contact-details-head p {
+      font-family: var(--font-body);
+      color: var(--color-muted);
+      line-height: 1.7;
+      font-size: var(--text-base);
+      margin: 0;
+    }
+    .contact-details-group {
+      margin-bottom: var(--space-7);
+    }
+    .contact-details-group-title {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    .contact-detail:last-child {
+      margin-bottom: 0;
+    }
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(109, 90, 43, 0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-primary);
+    }
+    .contact-detail-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+    .contact-detail-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .contact-detail-label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+    .contact-detail-value {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-dark);
+      line-height: 1.5;
+    }
+    .contact-detail-value a {
+      color: var(--color-dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-detail-value a:hover {
+      color: var(--color-primary);
+    }
+    .contact-hours-note {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+    .contact-social {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-2);
+    }
+    .contact-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(109, 90, 43, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .contact-social a:hover {
+      background: var(--color-primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .contact-social a svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Contact Form Column */
+    .contact-form-wrap {
+      background: var(--color-bg-alt, #f9f5ef);
+      border-radius: 16px;
+      padding: var(--space-8);
+    }
+    @media (max-width: 600px) {
+      .contact-form-wrap {
+        padding: var(--space-6) var(--space-5);
+      }
+    }
+    .contact-form-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--color-dark);
+      margin: 0 0 var(--space-2);
+    }
+    .contact-form-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      margin: 0 0 var(--space-6);
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: var(--space-4);
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: var(--space-2);
+      letter-spacing: 0.02em;
+    }
+    .form-group label .required-mark {
+      color: var(--color-primary);
+      margin-left: 2px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: #fff;
+      border: 1.5px solid rgba(109, 90, 43, 0.18);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-dark);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%236d5a2b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      background-size: 18px;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(109, 90, 43, 0.1);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(109, 90, 43, 0.35);
+    }
+    .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    @media (max-width: 560px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-submit {
+      margin-top: var(--space-5);
+    }
+    .form-submit .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 0.9rem 2rem;
+      font-size: var(--text-base);
+    }
+    .form-privacy {
+      margin-top: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .form-privacy a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .form-privacy a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── MAP SECTION ─────────────────────────────────────── */
+    .map-section {
+      background: var(--color-light);
+      padding: var(--space-14) 0;
+    }
+    .map-intro {
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    .map-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--color-dark);
+      margin: var(--space-2) 0 var(--space-3);
+    }
+    .map-intro p {
+      font-family: var(--font-body);
+      color: var(--color-muted);
+      font-size: var(--text-base);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .map-container {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(30, 22, 10, 0.12);
+      line-height: 0;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 440px;
+      border: 0;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+
+    /* ── COME ARRIVARE ───────────────────────────────────── */
+    .directions {
+      background: var(--color-bg-alt, #f9f5ef);
+      padding: var(--space-14) 0;
+    }
+    .directions-intro {
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+    .directions-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--color-dark);
+      margin: var(--space-2) 0 var(--space-3);
+    }
+    .directions-intro p {
+      font-family: var(--font-body);
+      color: var(--color-muted);
+      font-size: var(--text-base);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .directions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-5);
+    }
+    @media (max-width: 720px) {
+      .directions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .direction-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: var(--space-6);
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      box-shadow: 0 2px 16px rgba(30, 22, 10, 0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .direction-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(30, 22, 10, 0.1);
+    }
+    .direction-card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(109, 90, 43, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-primary);
+    }
+    .direction-card-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .direction-card-body {
+      flex: 1;
+    }
+    .direction-card-from {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+    }
+    .direction-card-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--color-dark);
+      margin: 0 0 0.4rem;
+    }
+    .direction-card-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(109, 90, 43, 0.08);
+      color: var(--color-primary);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      margin-bottom: 0.6rem;
+    }
+    .direction-card-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── LEGAL SECTION ───────────────────────────────────── */
+    .legal-section {
+      background: var(--color-light);
+      padding: var(--space-8) 0;
+      border-top: 1px solid rgba(109, 90, 43, 0.1);
+    }
+    .legal-section .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-3) var(--space-6);
+      text-align: center;
+    }
+    .legal-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+    }
+    .legal-item strong {
+      color: var(--color-dark);
+      font-weight: 700;
+    }
+    .legal-sep {
+      color: rgba(109, 90, 43, 0.25);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    @media (max-width: 600px) {
+      .legal-sep {
+        display: none;
+      }
+      .legal-section .container {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body data-page="contatti">
+
+  <!-- ==================== SCROLL PROGRESS ==================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Il Poggio di Teo — Home">
+        Il <em>Poggio</em> di Teo
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="camere.html">Camere</a>
+        <a href="ristorante.html">Ristorante</a>
+        <a href="benessere.html">Benessere</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html" class="active" aria-current="page">Contatti</a>
+      </nav>
+      <a href="contatti.html" class="header-cta">Prenota</a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="camere.html">Camere</a>
+    <a href="ristorante.html">Ristorante</a>
+    <a href="benessere.html">Benessere</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html" class="active" aria-current="page">Contatti</a>
+    <a href="contatti.html" class="btn btn-primary" style="margin-top: 1rem;">Prenota</a>
+  </nav>
+
+  <main>
+
+    <!-- ==================== 1. HERO INTERNO ==================== -->
+    <section class="inner-hero" aria-label="Hero Contatti">
+      <div class="inner-hero-bg">
+        <img
+          src="images/rooms/room-136.jpg"
+          alt="Ingresso del casale dell'Agriturismo Il Poggio di Teo tra gli ulivi"
+          loading="eager"
+          fetchpriority="high"
+          width="1920"
+          height="860"
+        />
+      </div>
+      <div class="inner-hero-overlay" aria-hidden="true"></div>
+      <div class="inner-hero-content container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span class="breadcrumb-current" aria-current="page">Contatti</span>
+        </nav>
+        <h1 class="inner-hero-title">Contattaci</h1>
+        <p class="inner-hero-subtitle">Siamo a tua disposizione per informazioni e prenotazioni</p>
+      </div>
+    </section>
+
+    <!-- ==================== 2. CONTACT FULL ==================== -->
+    <section class="contact-full" id="contatti" aria-labelledby="contact-main-title">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Colonna Sinistra: Informazioni -->
+          <div class="contact-details reveal-up">
+            <div class="contact-details-head">
+              <span class="section-label">Dove siamo</span>
+              <h2 id="contact-main-title">Vieni a Trovarci</h2>
+              <p>Nella quiete delle colline maremmane, a pochi minuti dai borghi medievali e dalle celebri Terme di Saturnia. Siamo qui per rendere il tuo soggiorno indimenticabile.</p>
+            </div>
+
+            <!-- Telefoni -->
+            <div class="contact-details-group">
+              <div class="contact-details-group-title">Telefono</div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Cellulare</span>
+                  <span class="contact-detail-value"><a href="tel:+393888664087">+39 388 86 64 087</a></span>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Fisso</span>
+                  <span class="contact-detail-value"><a href="tel:+390564620180">+39 0564 620180</a></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-details-group">
+              <div class="contact-details-group-title">Email</div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Indirizzo email</span>
+                  <span class="contact-detail-value"><a href="mailto:info@ilpoggioditeo.it">info@ilpoggioditeo.it</a></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Indirizzo -->
+            <div class="contact-details-group">
+              <div class="contact-details-group-title">Indirizzo</div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Dove trovarci</span>
+                  <span class="contact-detail-value">
+                    Località La Stellata, 14<br>
+                    58014 Manciano (GR)<br>
+                    Maremma Toscana
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orari Ristorante -->
+            <div class="contact-details-group">
+              <div class="contact-details-group-title">Orari Ristorante</div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Apertura settimanale</span>
+                  <span class="contact-detail-value">
+                    Martedì — Domenica
+                    <span class="contact-hours-note">Chiuso il lunedì (esclusi festivi e ponti)</span>
+                  </span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Struttura</span>
+                  <span class="contact-detail-value">Aperta tutto l'anno</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social -->
+            <div class="contact-details-group">
+              <div class="contact-details-group-title">Seguici</div>
+              <div class="contact-social" role="list" aria-label="Profili social">
+                <a href="https://www.facebook.com/AgriturismoIlPoggioDiTeo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Il Poggio di Teo" role="listitem">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/il_poggio_di_teo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Il Poggio di Teo" role="listitem">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+                <a href="https://wa.me/393888664087" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Il Poggio di Teo" role="listitem">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonna Destra: Form -->
+          <div class="contact-form-wrap reveal-up" data-delay="1">
+            <h2 class="contact-form-title">Invia una Richiesta</h2>
+            <p class="contact-form-subtitle">Compila il modulo e ti risponderemo entro 24 ore. Per richieste urgenti, chiamaci direttamente.</p>
+
+            <form action="#" method="POST" data-validate aria-label="Modulo di contatto e prenotazione">
+
+              <div class="form-group">
+                <label for="nome">
+                  Nome e Cognome <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Es. Mario Rossi"
+                  required
+                  autocomplete="name"
+                  aria-required="true"
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">
+                    Email <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="nome@esempio.it"
+                    required
+                    autocomplete="email"
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Telefono</label>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="+39 000 000 0000"
+                    autocomplete="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="data-arrivo">Data Arrivo</label>
+                  <input
+                    type="date"
+                    id="data-arrivo"
+                    name="data_arrivo"
+                    aria-label="Data di arrivo"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="data-partenza">Data Partenza</label>
+                  <input
+                    type="date"
+                    id="data-partenza"
+                    name="data_partenza"
+                    aria-label="Data di partenza"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ospiti">Numero Ospiti</label>
+                <select id="ospiti" name="numero_ospiti" aria-label="Numero di ospiti">
+                  <option value="" hidden>Seleziona</option>
+                  <option value="1">1 ospite</option>
+                  <option value="2">2 ospiti</option>
+                  <option value="3">3 ospiti</option>
+                  <option value="4">4 ospiti</option>
+                  <option value="5">5 ospiti</option>
+                  <option value="6">6 ospiti</option>
+                  <option value="7">7 ospiti</option>
+                  <option value="8">8 ospiti</option>
+                  <option value="9">9 ospiti</option>
+                  <option value="10">10 ospiti</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="messaggio">Messaggio</label>
+                <textarea
+                  id="messaggio"
+                  name="messaggio"
+                  placeholder="Raccontaci le tue esigenze, preferenze o domande..."
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">
+                  Invia Richiesta
+                </button>
+              </div>
+
+              <p class="form-privacy">
+                Inviando questo modulo accetti la nostra
+                <a href="privacy.html">Privacy Policy</a>.
+                I tuoi dati saranno trattati esclusivamente per rispondere alla tua richiesta.
+              </p>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. MAPPA ==================== -->
+    <section class="map-section" id="mappa" aria-labelledby="map-title">
+      <div class="container">
+        <div class="map-intro reveal-up">
+          <span class="section-label">Dove Siamo</span>
+          <h2 id="map-title">Raggiungi il Poggio di Teo</h2>
+          <p>Loc. La Stellata 14, 58014 Manciano (GR) — Maremma Toscana</p>
+        </div>
+        <div class="map-container reveal-up" data-delay="1">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2920.5!2d11.5195!3d42.5876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a29c8c4f0f0f0%3A0x0!2sLocalit%C3%A0+La+Stellata+14%2C+58014+Manciano+GR!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
+            title="Mappa — Agriturismo Il Poggio di Teo, Manciano (GR)"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mappa di Google che mostra la posizione dell'Agriturismo Il Poggio di Teo a Manciano (GR)"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. COME ARRIVARE ==================== -->
+    <section class="directions" id="come-arrivare" aria-labelledby="directions-title">
+      <div class="container">
+        <div class="directions-intro">
+          <span class="section-label reveal-up">Indicazioni Stradali</span>
+          <h2 id="directions-title" class="reveal-up" data-delay="1">Come Arrivare</h2>
+          <p class="reveal-up" data-delay="2">Facilmente raggiungibile dalle principali città italiane e dagli aeroporti internazionali</p>
+        </div>
+
+        <div class="directions-grid">
+
+          <div class="direction-card reveal-up">
+            <div class="direction-card-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <div class="direction-card-body">
+              <div class="direction-card-from">Da Roma</div>
+              <h3 class="direction-card-title">Via Autostrada A1</h3>
+              <div class="direction-card-time">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:14px;height:14px;" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                circa 2 ore
+              </div>
+              <p class="direction-card-desc">Autostrada A1 Roma–Firenze, uscita Orvieto. Proseguire sulla SS74 in direzione Manciano. Seguire le indicazioni per Manciano e poi per Località La Stellata.</p>
+            </div>
+          </div>
+
+          <div class="direction-card reveal-up" data-delay="1">
+            <div class="direction-card-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <div class="direction-card-body">
+              <div class="direction-card-from">Da Firenze</div>
+              <h3 class="direction-card-title">Via Superstrada E78</h3>
+              <div class="direction-card-time">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:14px;height:14px;" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                circa 2,5 ore
+              </div>
+              <p class="direction-card-desc">Autostrada A1 fino a Siena, poi superstrada E78 (Siena–Grosseto). Uscita Grosseto Sud, proseguire sulla SS322 in direzione Manciano. La struttura si trova a 3 km dal centro.</p>
+            </div>
+          </div>
+
+          <div class="direction-card reveal-up" data-delay="2">
+            <div class="direction-card-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <div class="direction-card-body">
+              <div class="direction-card-from">Da Grosseto</div>
+              <h3 class="direction-card-title">Via SS322</h3>
+              <div class="direction-card-time">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:14px;height:14px;" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                circa 1 ora
+              </div>
+              <p class="direction-card-desc">Dalla città di Grosseto percorrere la SS322 in direzione Manciano per circa 50 km. All'ingresso di Manciano seguire le indicazioni per Loc. La Stellata. Il parcheggio è gratuito in struttura.</p>
+            </div>
+          </div>
+
+          <div class="direction-card reveal-up" data-delay="3">
+            <div class="direction-card-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+              </svg>
+            </div>
+            <div class="direction-card-body">
+              <div class="direction-card-from">Aeroporti</div>
+              <h3 class="direction-card-title">Aeroporti Principali</h3>
+              <div class="direction-card-time">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:14px;height:14px;" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                170–200 km
+              </div>
+              <p class="direction-card-desc">Roma Fiumicino (FCO) a 170 km — circa 2 ore in auto. Firenze Peretola (FLR) a 200 km — circa 2,5 ore. Pisa Galilei (PSA) a 220 km. Auto a noleggio disponibile in tutti gli aeroporti.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. INFO LEGALI ==================== -->
+    <section class="legal-section" aria-label="Informazioni legali">
+      <div class="container">
+        <div class="legal-item">
+          <strong>Azienda Agricola Il Poggio di Teo S.S.</strong>
+        </div>
+        <span class="legal-sep" aria-hidden="true">·</span>
+        <div class="legal-item">
+          <span>P.IVA</span>
+          <strong>01601350539</strong>
+        </div>
+        <span class="legal-sep" aria-hidden="true">·</span>
+        <div class="legal-item">
+          <span>CIN</span>
+          <strong>IT053014B5XCJ4VCE4</strong>
+        </div>
+        <span class="legal-sep" aria-hidden="true">·</span>
+        <div class="legal-item">
+          <span>Loc. La Stellata, 14 — 58014 Manciano (GR)</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <h3>Il <em>Poggio</em> di Teo</h3>
+          <p>
+            Agriturismo biologico nel cuore della Maremma Toscana. Un casale storico del 1850 circondato da ulivi centenari, boschi incontaminati e un piccolo lago naturale.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://www.facebook.com/AgriturismoIlPoggioDiTeo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/il_poggio_di_teo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/393888664087" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigazione -->
+        <div>
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Navigazione footer">
+            <a href="index.html">Home</a>
+            <a href="camere.html">Camere</a>
+            <a href="ristorante.html">Ristorante</a>
+            <a href="benessere.html">Benessere</a>
+            <a href="territorio.html">Territorio</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contatti -->
+        <div>
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+393888664087">+39 388 86 64 087</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+390564620180">+39 0564 620180</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <a href="mailto:info@ilpoggioditeo.it">info@ilpoggioditeo.it</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span>Loc. La Stellata, 14<br>58014 Manciano (GR)</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Info Azienda -->
+        <div>
+          <h4>Orari &amp; Info</h4>
+          <div class="footer-links">
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Struttura aperta tutto l'anno</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Ristorante: chiuso il lunedì<br>(esclusi festivi e ponti)</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">A 8 km dalle Terme di Saturnia</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Booking.com 9.2/10 · 194+ recensioni</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Digital Award TripAdvisor 2022</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Azienda Agricola Il Poggio di Teo S.S. — P.IVA 01601350539 · CIN IT053014B5XCJ4VCE4</p>
+        <p>
+          <a href="privacy.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Privacy Policy</a>
+          &nbsp;·&nbsp;
+          <a href="cookie.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Cookie Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP BUTTON ==================== -->
+  <a
+    href="https://wa.me/393888664087"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+  (function() {
+    'use strict';
+
+    // ── SCROLL PROGRESS BAR ───────────────────────────────
+    const scrollBar = document.getElementById('scrollBar');
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      scrollBar.style.transform = 'scaleX(' + progress + ')';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // ── HEADER SCROLL BEHAVIOUR ───────────────────────────
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    function handleHeaderScroll() {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+      if (currentScroll > lastScroll && currentScroll > 300) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScroll = currentScroll;
+    }
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+
+    // ── MOBILE MENU ───────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    // ── REVEAL ON SCROLL ──────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal-up');
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay');
+          if (delay) {
+            setTimeout(function () {
+              entry.target.classList.add('revealed');
+            }, parseInt(delay) * 150);
+          } else {
+            entry.target.classList.add('revealed');
+          }
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+    // ── FORM DATE VALIDATION ──────────────────────────────
+    const arrivo = document.getElementById('data-arrivo');
+    const partenza = document.getElementById('data-partenza');
+    if (arrivo && partenza) {
+      const today = new Date().toISOString().split('T')[0];
+      arrivo.setAttribute('min', today);
+      partenza.setAttribute('min', today);
+      arrivo.addEventListener('change', function () {
+        if (arrivo.value) {
+          partenza.setAttribute('min', arrivo.value);
+          if (partenza.value && partenza.value <= arrivo.value) {
+            partenza.value = '';
+          }
+        }
+      });
+    }
+
+    // ── FORM SUBMIT ───────────────────────────────────────
+    const form = document.querySelector('form[data-validate]');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Invio in corso...';
+        btn.disabled = true;
+        // Simulate — replace with real fetch() call in production
+        setTimeout(function () {
+          btn.textContent = 'Richiesta Inviata!';
+          btn.style.background = '#4a7c59';
+          setTimeout(function () {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            btn.style.background = '';
+            form.reset();
+          }, 3000);
+        }, 1200);
+      });
+    }
+
+  })();
+  </script>
+
+</body>
+</html>

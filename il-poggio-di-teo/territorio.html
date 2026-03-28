@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Territorio | Agriturismo Il Poggio di Teo — Maremma Toscana</title>
+  <meta name="description" content="Borghi medievali, terme, vie cave etrusche e mare: il territorio intorno all'Agriturismo Il Poggio di Teo. A 8 km da Saturnia, vicino a Pitigliano, Sovana, Montemerano e l'Argentario." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Il Territorio | Agriturismo Il Poggio di Teo — Maremma Toscana" />
+  <meta property="og:description" content="Dalla Spia della Maremma lo sguardo spazia a 360° tra borghi medievali, terme sulfuree e spiagge: esplora il territorio attorno al Poggio di Teo." />
+  <meta property="og:url" content="https://www.ilpoggioditeo.it/territorio.html" />
+  <meta property="og:image" content="images/territory/gallery-ext-1.jpg" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ilpoggioditeo.it/territorio.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =========================================================
+       TERRITORIO PAGE — Page-specific styles
+       ========================================================= */
+
+    /* ── Inner Hero ─────────────────────────────────────────── */
+    .hero-inner {
+      position: relative;
+      height: 45vh;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-inner-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-inner-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+
+    .hero-inner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44, 34, 14, 0.55) 0%,
+        rgba(44, 34, 14, 0.65) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-inner-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--space-6);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(247, 242, 236, 0.7);
+    }
+
+    .breadcrumb a {
+      color: rgba(247, 242, 236, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--color-cream);
+    }
+
+    .breadcrumb-sep {
+      color: rgba(247, 242, 236, 0.4);
+      font-size: 0.75em;
+    }
+
+    .hero-inner-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      color: var(--color-cream);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-inner-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(247, 242, 236, 0.82);
+      font-weight: 400;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Intro Text ─────────────────────────────────────────── */
+    .intro-text {
+      background: var(--color-cream);
+      padding: var(--space-20) var(--space-6);
+      text-align: center;
+    }
+
+    .intro-text .section-label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text .intro-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--color-brown);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .intro-text .intro-body {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: var(--color-text-light);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .intro-text .intro-divider {
+      width: 64px;
+      height: 2px;
+      background: var(--color-brown);
+      margin: 2rem auto 0;
+      opacity: 0.4;
+    }
+
+    /* ── Territory Cards Grid ───────────────────────────────── */
+    .territory-grid-section {
+      background: var(--color-bg-alt, #f7f2ec);
+      padding: var(--space-20) var(--space-6);
+    }
+
+    .territory-grid-section .section-header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .territory-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .territory-full-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .territory-full-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    .territory-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(44, 34, 14, 0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .territory-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(44, 34, 14, 0.15);
+    }
+
+    .territory-card-img {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+    }
+
+    .territory-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .territory-card:hover .territory-card-img img {
+      transform: scale(1.06);
+    }
+
+    .territory-card-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--color-brown);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    .territory-card-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+    }
+
+    .territory-card-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--color-brown);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .territory-card-desc {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: var(--color-text-light);
+      line-height: 1.65;
+    }
+
+    /* ── Map Section ────────────────────────────────────────── */
+    .map-section {
+      background: var(--color-cream);
+      padding: var(--space-20) var(--space-6);
+    }
+
+    .map-section .section-header {
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+
+    .map-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .map-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(44, 34, 14, 0.14);
+    }
+
+    .map-container iframe {
+      display: block;
+      width: 100%;
+      height: 460px;
+      border: 0;
+    }
+
+    @media (max-width: 640px) {
+      .map-container iframe {
+        height: 320px;
+      }
+    }
+
+    .map-info-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+    }
+
+    .map-info-bar svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-brown);
+      flex-shrink: 0;
+    }
+
+    /* ── CTA Banner ─────────────────────────────────────────── */
+    .cta-banner {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cta-banner-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .cta-banner-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+      display: block;
+    }
+
+    .cta-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(44, 34, 14, 0.72) 0%,
+        rgba(44, 34, 14, 0.55) 100%
+      );
+      z-index: 1;
+    }
+
+    .cta-banner-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: var(--space-16) var(--space-6);
+      max-width: 680px;
+    }
+
+    .cta-banner-label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: var(--text-xs, 0.75rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(247, 242, 236, 0.65);
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--color-cream);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(247, 242, 236, 0.82);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .cta-banner .btn-primary {
+      background: var(--color-brown);
+      color: #fff;
+      padding: 1rem 2.25rem;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .cta-banner .btn-primary:hover {
+      background: #5a4921;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body data-page="territorio">
+
+  <!-- ==================== SCROLL PROGRESS ==================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Il Poggio di Teo — Home">
+        Il <em>Poggio</em> di Teo
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="camere.html">Camere</a>
+        <a href="ristorante.html">Ristorante</a>
+        <a href="benessere.html">Benessere</a>
+        <a href="territorio.html" class="active" aria-current="page">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="contatti.html" class="header-cta">Prenota</a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="camere.html">Camere</a>
+    <a href="ristorante.html">Ristorante</a>
+    <a href="benessere.html">Benessere</a>
+    <a href="territorio.html" class="active" aria-current="page">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="btn btn-primary" style="margin-top: 1rem;">Prenota</a>
+  </nav>
+
+  <main>
+
+    <!-- ==================== 1. HERO INTERNO ==================== -->
+    <section class="hero-inner" aria-label="Hero Territorio">
+      <div class="hero-inner-bg">
+        <img
+          src="images/territory/gallery-ext-1.jpg"
+          alt="Panorama di Pitigliano nella Maremma Toscana — Il Territorio"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-inner-overlay" aria-hidden="true"></div>
+      <div class="hero-inner-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Territorio</span>
+        </nav>
+        <h1 class="hero-inner-title">Il Territorio</h1>
+        <p class="hero-inner-subtitle">
+          Nel cuore della Maremma Toscana, tra borghi medievali, terme e mare
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 2. INTRO TEXT ==================== -->
+    <section class="intro-text" aria-label="La Spia della Maremma">
+      <div class="container">
+        <span class="section-label reveal-up">La Spia della Maremma</span>
+        <h2 class="intro-heading reveal-up">Una posizione unica nel suo genere</h2>
+        <p class="intro-body reveal-up">
+          Il Poggio di Teo si trova in una posizione strategica e magica: dalla "Spia della Maremma" lo sguardo spazia a 360° dal mare alla montagna, dall'Argentario al Monte Amiata. Un punto di partenza ideale per esplorare uno dei territori più affascinanti d'Italia, ricco di borghi medievali intatti, terme naturali, necropoli etrusche e spiagge incontaminate — tutto a pochi chilometri di distanza.
+        </p>
+        <div class="intro-divider reveal-up" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. TERRITORY CARDS GRID ==================== -->
+    <section class="territory-grid-section" aria-label="Borghi e Attrazioni">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal-up">Dintorni da Scoprire</span>
+          <h2 class="section-title reveal-up">Borghi, Terme &amp; Meraviglie</h2>
+          <p class="section-subtitle reveal-up">
+            Otto destinazioni straordinarie, tutte raggiungibili in meno di un'ora dal Poggio di Teo
+          </p>
+        </div>
+
+        <div class="territory-full-grid">
+
+          <!-- Card 1: Manciano -->
+          <article class="territory-card reveal-up" aria-label="Manciano">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/img-3119.jpg"
+                alt="Borgo medievale di Manciano sulle colline della Maremma"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">3 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Manciano</h3>
+              <p class="territory-card-desc">
+                Borgo medievale con vista panoramica su tutta la Maremma, dal Cassero all'Argentario. Centro storico a ventaglio intorno alla fortezza medievale, custode di secoli di storia toscana.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Terme di Saturnia -->
+          <article class="territory-card reveal-up" aria-label="Terme di Saturnia">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/dsc1706.jpg"
+                alt="Piscine termali di Saturnia con acque sulfuree color smeraldo"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">8 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Terme di Saturnia</h3>
+              <p class="territory-card-desc">
+                4 piscine termali esterne, acque sulfuree a 37.5°C, percorsi vascolari e SPA completa. Un'esperienza di benessere senza pari in uno scenario toscano mozzafiato.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Cascate del Gorello -->
+          <article class="territory-card reveal-up" aria-label="Cascate del Gorello">
+            <div class="territory-card-img">
+              <img
+                src="images/gallery/gallery-5.png"
+                alt="Cascate termali naturali del Gorello in travertino"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">8 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Cascate del Gorello</h3>
+              <p class="territory-card-desc">
+                Cascate termali naturali in travertino con vasche naturali ad accesso libero e gratuito. Un paesaggio da sogno scolpito dall'acqua calda nel corso dei millenni.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 4: Montemerano -->
+          <article class="territory-card reveal-up" aria-label="Montemerano">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/gallery-ext-2.jpg"
+                alt="Antico borgo medievale italiano di Montemerano al tramonto"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">8 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Montemerano</h3>
+              <p class="territory-card-desc">
+                Uno dei borghi più belli d'Italia — centro storico a forma di cuore con la splendida Chiesa di San Giorgio e la Madonna della Gattaiola. Architettura romanica in stato di grazia perfetta.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5: Pitigliano -->
+          <article class="territory-card reveal-up" aria-label="Pitigliano">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/gallery-ext-1.jpg"
+                alt="Pitigliano, borgo etrusco scavato nel tufo — la Piccola Gerusalemme"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">15 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Pitigliano</h3>
+              <p class="territory-card-desc">
+                La "Piccola Gerusalemme": borgo scavato nel tufo con sinagoga storica, Palazzo Orsini e le suggestive Vie Cave. Uno dei panorami più iconici dell'intera Toscana.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 6: Sovana -->
+          <article class="territory-card reveal-up" aria-label="Sovana">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/img-3065.jpg"
+                alt="Atmosfera medievale di Sovana con la necropoli etrusca"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">15 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Sovana</h3>
+              <p class="territory-card-desc">
+                Atmosfera medievale senza tempo nell'Area del Tufo. La Necropoli etrusca con la Tomba Ildebranda e le Vie Cave scavate nella roccia viva custodiscono tremila anni di storia.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 7: Sorano -->
+          <article class="territory-card reveal-up" aria-label="Sorano">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/dsc2225.jpg"
+                alt="Sorano, borgo rupestre scavato nel tufo — la Matera della Toscana"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">24 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Sorano</h3>
+              <p class="territory-card-desc">
+                La "Matera della Toscana" — abitazioni rupestri scavate nel tufo che si arrampicano su uno sperone di roccia. Un borgo fuori dal tempo, dove la pietra racconta storie antiche.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 8: Argentario & Capalbio -->
+          <article class="territory-card reveal-up" aria-label="Argentario e Capalbio">
+            <div class="territory-card-img">
+              <img
+                src="images/territory/img-3249.jpg"
+                alt="Monte Argentario con Porto Ercole e il mare della Maremma toscana"
+                loading="lazy"
+              />
+              <span class="territory-card-badge">29–43 km</span>
+            </div>
+            <div class="territory-card-body">
+              <h3 class="territory-card-name">Argentario &amp; Capalbio</h3>
+              <p class="territory-card-desc">
+                Porto Ercole, Porto Santo Stefano, le spiagge della Feniglia e della Giannella. A Capalbio il leggendario Giardino dei Tarocchi e le spiagge di Ansedonia, meta prediletta dei gourmet del mare.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. MAPPA TERRITORIO ==================== -->
+    <section class="map-section" aria-label="Mappa del Territorio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal-up">Dove Siamo</span>
+          <h2 class="section-title reveal-up">Il Cuore della Maremma</h2>
+          <p class="section-subtitle reveal-up">
+            Loc. La Stellata, 14 — 58014 Manciano (GR)
+          </p>
+        </div>
+
+        <div class="map-wrapper reveal-up">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12263.14!2d11.5099!3d42.5952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a5d3cd8b4f8d3%3A0x1234567890abcdef!2sManciano%2C%20GR%2C%20Italy!5e0!3m2!1sit!2sit!4v1711490000000!5m2!1sit!2sit"
+              width="100%"
+              height="460"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mappa Agriturismo Il Poggio di Teo — Manciano, Maremma Toscana"
+            ></iframe>
+          </div>
+          <div class="map-info-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span>Loc. La Stellata, 14 — 58014 Manciano (GR) · A 8 km dalle Terme di Saturnia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. CTA BANNER ==================== -->
+    <section class="cta-banner" aria-label="Prenota il tuo soggiorno">
+      <div class="cta-banner-bg">
+        <img
+          src="images/hero/hero-1.jpg"
+          alt="Tramonto sulle colline della Maremma Toscana visto dal Poggio di Teo"
+          loading="lazy"
+        />
+      </div>
+      <div class="cta-banner-overlay" aria-hidden="true"></div>
+      <div class="cta-banner-content">
+        <span class="cta-banner-label reveal-up">Il Tuo Punto di Partenza</span>
+        <h2 class="cta-banner-title reveal-up">
+          Esplora la Maremma<br>dal Poggio di Teo
+        </h2>
+        <p class="cta-banner-subtitle reveal-up">
+          Il punto di partenza perfetto per la tua avventura tra borghi, terme e paesaggi unici al mondo
+        </p>
+        <a href="contatti.html" class="btn btn-primary reveal-up">
+          Prenota il Tuo Soggiorno
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <h3>Il <em>Poggio</em> di Teo</h3>
+          <p>
+            Agriturismo biologico nel cuore della Maremma Toscana. Un casale storico del 1850 circondato da ulivi centenari, boschi incontaminati e un piccolo lago naturale.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://www.facebook.com/AgriturismoIlPoggioDiTeo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/il_poggio_di_teo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/393888664087" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigazione -->
+        <div>
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Navigazione footer">
+            <a href="index.html">Home</a>
+            <a href="camere.html">Camere</a>
+            <a href="ristorante.html">Ristorante</a>
+            <a href="benessere.html">Benessere</a>
+            <a href="territorio.html">Territorio</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contatti -->
+        <div>
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+393888664087">+39 388 86 64 087</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+390564620180">+39 0564 620180</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <a href="mailto:info@ilpoggioditeo.it">info@ilpoggioditeo.it</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span>Loc. La Stellata, 14<br>58014 Manciano (GR)</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Info Azienda -->
+        <div>
+          <h4>Orari &amp; Info</h4>
+          <div class="footer-links">
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Struttura aperta tutto l'anno</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Ristorante: chiuso il lunedì<br>(esclusi festivi e ponti)</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">A 8 km dalle Terme di Saturnia</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Booking.com 9.2/10 · 194+ recensioni</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Digital Award TripAdvisor 2022</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Azienda Agricola Il Poggio di Teo S.S. — P.IVA 01601350539 · CIN IT053014B5XCJ4VCE4</p>
+        <p>
+          <a href="privacy.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Privacy Policy</a>
+          &nbsp;·&nbsp;
+          <a href="cookie.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Cookie Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP BUTTON ==================== -->
+  <a
+    href="https://wa.me/393888664087"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+  (function () {
+    'use strict';
+
+    // ── SCROLL PROGRESS BAR ───────────────────────────────
+    const scrollBar = document.getElementById('scrollBar');
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      scrollBar.style.transform = 'scaleX(' + progress + ')';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // ── HEADER SCROLL BEHAVIOUR ───────────────────────────
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    function handleHeaderScroll() {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+      if (currentScroll > lastScroll && currentScroll > 300) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScroll = currentScroll;
+    }
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+
+    // ── MOBILE MENU ───────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    // ── REVEAL ON SCROLL ──────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal-up');
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+  }());
+  </script>
+
+</body>
+</html>

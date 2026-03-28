@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camere | Agriturismo Il Poggio di Teo — Maremma Toscana</title>
+  <meta name="description" content="10 camere uniche nell'Agriturismo Il Poggio di Teo, ognuna dedicata a un albero della proprietà. Pavimenti d'epoca, soffitti a volta, arredi ricercati. A 8 km dalle Terme di Saturnia." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Le Nostre Camere — Agriturismo Il Poggio di Teo" />
+  <meta property="og:description" content="10 camere uniche nel cuore della Maremma Toscana. Ognuna con carattere proprio, ispirata agli alberi della proprietà. Rating Booking.com 9.2/10." />
+  <meta property="og:url" content="https://www.ilpoggioditeo.it/camere.html" />
+  <meta property="og:image" content="images/rooms/room-136.jpg" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ilpoggioditeo.it/camere.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── PAGE-SPECIFIC: CAMERE ─────────────────────────── */
+
+    /* Hero interno */
+    .hero-interno {
+      position: relative;
+      height: 45vh;
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-interno-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-interno-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+    .hero-interno-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30, 22, 10, 0.30) 0%,
+        rgba(30, 22, 10, 0.65) 100%
+      );
+      z-index: 1;
+    }
+    .hero-interno-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: var(--space-10) var(--space-6) var(--space-9);
+    }
+    .hero-interno-content .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(247, 242, 236, 0.65);
+      letter-spacing: 0.04em;
+    }
+    .breadcrumb a {
+      color: rgba(247, 242, 236, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--color-cream); }
+    .breadcrumb-sep {
+      color: rgba(247, 242, 236, 0.40);
+      font-size: 0.7rem;
+    }
+    .breadcrumb-current {
+      color: rgba(247, 242, 236, 0.90);
+    }
+    .hero-interno-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: var(--color-cream);
+      line-height: 1.1;
+      margin: 0 0 var(--space-3);
+    }
+    .hero-interno-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: rgba(247, 242, 236, 0.80);
+      max-width: 520px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Intro section */
+    .camere-intro {
+      padding: var(--space-14) var(--space-6);
+      background: var(--color-cream-light);
+    }
+    .camere-intro-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .camere-intro-inner .section-label {
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+    .camere-intro-inner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--color-dark);
+      line-height: 1.2;
+      margin-bottom: var(--space-5);
+    }
+    .camere-intro-inner p {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--space-8);
+    }
+    .amenities-inline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4) var(--space-6);
+    }
+    .amenity-inline-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+    .amenity-inline-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* Room Full Grid */
+    .rooms-full-section {
+      padding: var(--space-14) var(--space-6);
+      background: var(--color-cream-light);
+    }
+    .rooms-full-section .section-header {
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+    .rooms-full-section .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--color-dark);
+      margin-top: var(--space-3);
+    }
+    .rooms-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-7);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .room-full-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(30, 22, 10, 0.08);
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.35s ease;
+    }
+    .room-full-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(30, 22, 10, 0.14);
+    }
+    .room-full-card-image {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+    .room-full-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .room-full-card:hover .room-full-card-image img {
+      transform: scale(1.04);
+    }
+    .room-full-card-badge {
+      position: absolute;
+      bottom: var(--space-4);
+      left: var(--space-4);
+      background: rgba(30, 22, 10, 0.70);
+      backdrop-filter: blur(8px);
+      color: var(--color-cream);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .room-full-card-badge svg {
+      width: 13px;
+      height: 13px;
+    }
+    .room-full-card-body {
+      padding: var(--space-6) var(--space-6) var(--space-7);
+    }
+    .room-full-card-tagline {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+    .room-full-card-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+      color: var(--color-dark);
+      line-height: 1.15;
+      margin-bottom: var(--space-3);
+    }
+    .room-full-card-desc {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Amenities full section */
+    .amenities-section {
+      padding: var(--space-14) var(--space-6);
+      background: var(--color-dark);
+    }
+    .amenities-section .section-header {
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+    .amenities-section .section-label {
+      color: rgba(247, 242, 236, 0.55);
+    }
+    .amenities-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--color-cream);
+      margin-top: var(--space-3);
+    }
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .amenity-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      text-align: center;
+      padding: var(--space-6) var(--space-4);
+      border: 1px solid rgba(247, 242, 236, 0.10);
+      border-radius: 10px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .amenity-item:hover {
+      border-color: rgba(109, 90, 43, 0.5);
+      background: rgba(109, 90, 43, 0.08);
+    }
+    .amenity-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+    }
+    .amenity-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+    .amenity-label {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(247, 242, 236, 0.80);
+      line-height: 1.4;
+    }
+
+    /* CTA Banner dark variant */
+    .cta-banner-rooms {
+      position: relative;
+      padding: var(--space-16) var(--space-6);
+      background: var(--color-primary);
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-banner-rooms::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-banner-rooms-content {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .cta-banner-rooms h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-cream);
+      line-height: 1.15;
+      margin-bottom: var(--space-4);
+    }
+    .cta-banner-rooms p {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      color: rgba(247, 242, 236, 0.80);
+      line-height: 1.7;
+      margin-bottom: var(--space-8);
+    }
+    .cta-banner-rooms .btn-cream {
+      display: inline-block;
+      background: var(--color-cream);
+      color: var(--color-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+    .cta-banner-rooms .btn-cream:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Reviews section */
+    .camere-reviews {
+      padding: var(--space-14) var(--space-6);
+      background: var(--color-cream-light);
+    }
+    .camere-reviews .intro-text {
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+    .camere-reviews-track {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .rooms-full-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .camere-reviews-track {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero-interno { height: 52vh; min-height: 300px; }
+      .hero-interno-content { padding: var(--space-8) var(--space-5) var(--space-8); }
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+      }
+      .amenity-item { padding: var(--space-5) var(--space-3); }
+      .rooms-full-section,
+      .amenities-section,
+      .camere-intro,
+      .cta-banner-rooms,
+      .camere-reviews { padding-left: var(--space-4); padding-right: var(--space-4); }
+    }
+  </style>
+</head>
+<body data-page="camere">
+
+  <!-- ==================== SCROLL PROGRESS ==================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Il Poggio di Teo — Home">
+        Il <em>Poggio</em> di Teo
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="camere.html" class="active" aria-current="page">Camere</a>
+        <a href="ristorante.html">Ristorante</a>
+        <a href="benessere.html">Benessere</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="contatti.html" class="header-cta">Prenota</a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="camere.html" class="active" aria-current="page">Camere</a>
+    <a href="ristorante.html">Ristorante</a>
+    <a href="benessere.html">Benessere</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="btn btn-primary" style="margin-top: 1rem;">Prenota</a>
+  </nav>
+
+  <main>
+
+    <!-- ==================== 1. HERO INTERNO ==================== -->
+    <section class="hero-interno" aria-label="Hero pagina Camere">
+      <div class="hero-interno-bg">
+        <img
+          src="images/hero/hero-5.jpg"
+          alt="Camera rustica elegante con arredi in legno — Il Poggio di Teo"
+          loading="eager"
+          fetchpriority="high"
+          width="1920"
+          height="900"
+        />
+      </div>
+      <div class="hero-interno-overlay" aria-hidden="true"></div>
+      <div class="hero-interno-content">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Percorso di navigazione">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-current" aria-current="page">Camere</span>
+          </nav>
+          <h1 class="hero-interno-title reveal-up">Le Nostre Camere</h1>
+          <p class="hero-interno-subtitle reveal-up" data-delay="1">
+            10 camere uniche, ognuna con il nome di un albero della proprietà
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. INTRO ==================== -->
+    <section class="camere-intro" aria-labelledby="camere-intro-heading">
+      <div class="camere-intro-inner">
+        <span class="section-label reveal-up">Un Luogo, Dieci Caratteri</span>
+        <h2 id="camere-intro-heading" class="reveal-up" data-delay="1">
+          Ogni camera racconta<br>una storia diversa
+        </h2>
+        <p class="reveal-up" data-delay="2">
+          Ogni camera del Poggio di Teo ha una personalità propria, ispirata alla natura che ci circonda.
+          Pavimenti originali in cotto toscano, soffitti a volta, arredi ricercati e tutti i comfort moderni,
+          per un soggiorno che unisce autenticità e benessere. Dai soffitti a volta dell'Appartamento Cedro
+          ai toni lilla della Quercia, dalla romantica Platano alla spaziosa Faggio con vista sul giardino:
+          c'è la camera perfetta per ogni ospite.
+        </p>
+        <div class="amenities-inline reveal-up" data-delay="3" aria-label="Dotazioni incluse in ogni camera">
+          <div class="amenity-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            </svg>
+            Wi-Fi Gratuito
+          </div>
+          <div class="amenity-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            Aria Condizionata
+          </div>
+          <div class="amenity-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+            </svg>
+            TV Schermo Piatto
+          </div>
+          <div class="amenity-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            Minibar
+          </div>
+          <div class="amenity-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+            </svg>
+            Prodotti di Cortesia
+          </div>
+          <div class="amenity-inline-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+            </svg>
+            Parcheggio Gratuito
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. ROOM GRID ==================== -->
+    <section class="rooms-full-section" id="camere-grid" aria-labelledby="rooms-grid-heading">
+      <div class="section-header reveal-up">
+        <span class="section-label">Le 10 Camere</span>
+        <h2 id="rooms-grid-heading" data-delay="1">Scegli la Tua Casa in Maremma</h2>
+      </div>
+      <div class="rooms-full-grid">
+
+        <!-- 1. Appartamento Cedro -->
+        <article class="room-full-card reveal-up" id="cedro" aria-label="Appartamento Cedro">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/room-136.jpg"
+              alt="Appartamento Cedro — letto a baldacchino, soffitti a volta e camino"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-4 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–4 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Il gioiello del casale</span>
+            <h3 class="room-full-card-name">Appartamento Cedro</h3>
+            <p class="room-full-card-desc">
+              Il fiore all'occhiello dell'agriturismo, nell'antico casale del 1850 con pavimenti originali e soffitti a volta. Letto a baldacchino, camino accogliente, zona living con cucina attrezzata e patio privato. Un appartamento di charme autentico per chi vuole l'esperienza più completa.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2. Camera Elicriso -->
+        <article class="room-full-card reveal-up" data-delay="1" id="elicriso" aria-label="Camera Elicriso">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/elicriso-1.jpg"
+              alt="Camera Elicriso — intima e confortevole con spazio esterno privato"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-3 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–3 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Intima e confortevole</span>
+            <h3 class="room-full-card-name">Camera Elicriso</h3>
+            <p class="room-full-card-desc">
+              Una camera dalla personalità raccolta e accogliente, con il profumo dell'elicriso toscano nell'aria. Dotata di piccolo spazio esterno privato per iniziare la giornata con una tazza di caffè guardando la campagna, bagno con doccia e tutti i comfort per un soggiorno senza pensieri.
+            </p>
+          </div>
+        </article>
+
+        <!-- 3. Camera Acacia -->
+        <article class="room-full-card reveal-up" id="acacia" aria-label="Camera Acacia">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/room-143.jpg"
+              alt="Camera Acacia — accessibile e confortevole con bagno attrezzato"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Accessibile a tutti</span>
+            <h3 class="room-full-card-name">Camera Acacia</h3>
+            <p class="room-full-card-desc">
+              Pensata per accogliere ogni ospite senza distinzione. Letto matrimoniale o configurazione a due letti singoli, armadio guardaroba e bagno attrezzato per persone con disabilità. Piccolo spazio esterno privato. Perché la bellezza della Maremma deve essere accessibile davvero a tutti.
+            </p>
+          </div>
+        </article>
+
+        <!-- 4. Camera Castagno -->
+        <article class="room-full-card reveal-up" data-delay="1" id="castagno" aria-label="Camera Castagno">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/room-150.jpg"
+              alt="Camera Castagno — spaziosa e rinnovata con cura"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-3 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–3 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Rinnovata con gusto</span>
+            <h3 class="room-full-card-name">Camera Castagno</h3>
+            <p class="room-full-card-desc">
+              Spaziosa camera matrimoniale recentemente rinnovata, dove il gusto contemporaneo si fonde armoniosamente con i materiali tradizionali toscani. Bagno con doccia, piccolo spazio esterno e possibilità di aggiungere un terzo letto o una culla per i più piccoli.
+            </p>
+          </div>
+        </article>
+
+        <!-- 5. Camera Cipresso -->
+        <article class="room-full-card reveal-up" id="cipresso" aria-label="Camera Cipresso">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/room-140.jpg"
+              alt="Camera Cipresso — calda e luminosa con divano"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-3 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–3 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Calda e luminosa</span>
+            <h3 class="room-full-card-name">Camera Cipresso</h3>
+            <p class="room-full-card-desc">
+              Luminosa come il sole della Maremma, questa camera matrimoniale avvolge gli ospiti in un'atmosfera calda e accogliente. Un comodo divano ne amplia la versatilità, rendendola perfetta anche come tripla. Piccolo spazio esterno per respirare l'aria pulita della campagna toscana.
+            </p>
+          </div>
+        </article>
+
+        <!-- 6. Camera Melograno -->
+        <article class="room-full-card reveal-up" data-delay="1" id="melograno" aria-label="Camera Melograno">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/room-146.jpg"
+              alt="Camera Melograno — mattoni a vista e pavimenti d'epoca nell'antico casale"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-4 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–4 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Nel cuore del casale</span>
+            <h3 class="room-full-card-name">Camera Melograno</h3>
+            <p class="room-full-card-desc">
+              Immersa nel cuore dell'antico casale del 1850, la Melograno conserva intatti i pavimenti in cotto d'epoca e i mattoni a vista originali. Un'immersione totale nella storia e nel carattere della Maremma. Camera matrimoniale con armadio guardaroba e possibilità di aggiungere fino a due letti extra.
+            </p>
+          </div>
+        </article>
+
+        <!-- 7. Camera Platano -->
+        <article class="room-full-card reveal-up" id="platano" aria-label="Camera Platano">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/quercia-1.jpg"
+              alt="Camera Platano — la più romantica, pet-friendly"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">La più romantica</span>
+            <h3 class="room-full-card-name">Camera Platano</h3>
+            <p class="room-full-card-desc">
+              La preferita delle coppie. La Platano è la camera più romantica del Poggio di Teo: dettagli curati, atmosfera intima e un fascino senza tempo. Armadio guardaroba, bagno con doccia e tutti i comfort. E il vostro cane è benvenuto — perché anche lui merita la Maremma.
+            </p>
+          </div>
+        </article>
+
+        <!-- 8. Camera Quercia -->
+        <article class="room-full-card reveal-up" data-delay="1" id="quercia" aria-label="Camera Quercia">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/room-147.jpg"
+              alt="Camera Quercia — toni lilla, lato tranquillo della proprietà"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-3 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–3 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Relax totale</span>
+            <h3 class="room-full-card-name">Camera Quercia</h3>
+            <p class="room-full-card-desc">
+              Dedicata a chi viene al Poggio di Teo per ritrovare il silenzio. Situata sul lato più quieto della proprietà, la Quercia avvolge in tonalità lilla delicate che invitano al riposo. Armadio guardaroba, bagno con doccia e possibilità di letto aggiuntivo o culla.
+            </p>
+          </div>
+        </article>
+
+        <!-- 9. Camera Ulivo -->
+        <article class="room-full-card reveal-up" id="ulivo" aria-label="Camera Ulivo">
+          <div class="room-full-card-image">
+            <img
+              src="images/rooms/appartamento-girasole.jpg"
+              alt="Camera Ulivo — tonalità rosa pastello e dettagli di qualità"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 2-3 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              2–3 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Dettagli premium</span>
+            <h3 class="room-full-card-name">Camera Ulivo</h3>
+            <p class="room-full-card-desc">
+              I toni rosa pastello della Ulivo evocano la delicatezza dei fiori di pesco in primavera. Una camera curata nei minimi particolari, con finiture di qualità superiore, bagno con doccia, piccolo spazio esterno privato e possibilità di letto aggiuntivo. La scelta di chi non rinuncia all'eleganza.
+            </p>
+          </div>
+        </article>
+
+        <!-- 10. Camera Faggio -->
+        <article class="room-full-card reveal-up" data-delay="1" id="faggio" aria-label="Camera Faggio">
+          <div class="room-full-card-image">
+            <img
+              src="images/spa/piscina-2.jpg"
+              alt="Camera Faggio — quadrupla spaziosa con vista sul giardino"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+            <div class="room-full-card-badge" aria-label="Capacità: 4 ospiti">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+              4 ospiti
+            </div>
+          </div>
+          <div class="room-full-card-body">
+            <span class="room-full-card-tagline">Per tutta la famiglia</span>
+            <h3 class="room-full-card-name">Camera Faggio</h3>
+            <p class="room-full-card-desc">
+              La scelta ideale per le famiglie. Grande camera quadrupla con ampio soggiorno illuminato da grandi finestre che incorniciano il giardino e la natura circostante. Bagno con doppio lavabo e doccia spaziosa. Lo spazio giusto per vivere la Maremma insieme a chi si ama.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. AMENITIES ==================== -->
+    <section class="amenities-section" id="dotazioni" aria-labelledby="amenities-heading">
+      <div class="section-header reveal-up">
+        <span class="section-label">Dotazioni</span>
+        <h2 id="amenities-heading" class="reveal-up" data-delay="1">Incluso in Ogni Camera</h2>
+      </div>
+      <div class="amenities-grid" role="list" aria-label="Lista dotazioni comuni a tutte le camere">
+
+        <div class="amenity-item reveal-up" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- A/C icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2M5.636 5.636l1.414 1.414m8.5 8.5 1.414 1.414M3 12h2m14 0h2M5.636 18.364l1.414-1.414m8.5-8.5 1.414-1.414M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">Aria Condizionata</span>
+        </div>
+
+        <div class="amenity-item reveal-up" data-delay="1" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- Wi-Fi icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">Wi-Fi Gratuito</span>
+        </div>
+
+        <div class="amenity-item reveal-up" data-delay="2" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- TV icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">TV Schermo Piatto</span>
+        </div>
+
+        <div class="amenity-item reveal-up" data-delay="3" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- Minibar / fridge icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">Minibar / Frigobar</span>
+        </div>
+
+        <div class="amenity-item reveal-up" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- Prodotti cortesia: sparkle/star icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">Prodotti di Cortesia</span>
+        </div>
+
+        <div class="amenity-item reveal-up" data-delay="1" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- Parking icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+            </svg>
+          </div>
+          <span class="amenity-label">Parcheggio Gratuito</span>
+        </div>
+
+        <div class="amenity-item reveal-up" data-delay="2" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- Garden / leaf icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">Accesso Giardino</span>
+        </div>
+
+        <div class="amenity-item reveal-up" data-delay="3" role="listitem">
+          <div class="amenity-icon" aria-hidden="true">
+            <!-- Heating / fire icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
+            </svg>
+          </div>
+          <span class="amenity-label">Riscaldamento Autonomo</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. CTA BANNER ==================== -->
+    <section class="cta-banner-rooms" id="prenota-camera" aria-labelledby="cta-rooms-title">
+      <div class="cta-banner-rooms-content">
+        <h2 id="cta-rooms-title" class="reveal-up">Trova la Camera Perfetta per Te</h2>
+        <p class="reveal-up" data-delay="1">
+          Contattaci per disponibilità e tariffe personalizzate.<br>
+          Ti aiuteremo a scegliere la camera che fa per te.
+        </p>
+        <a href="contatti.html" class="btn-cream reveal-up" data-delay="2">Prenota Ora</a>
+      </div>
+    </section>
+
+    <!-- ==================== 6. REVIEWS ==================== -->
+    <section class="camere-reviews" id="recensioni-camere" aria-labelledby="camere-reviews-title">
+      <div class="intro-text">
+        <span class="section-label reveal-up">Dicono delle Nostre Camere</span>
+        <h2 id="camere-reviews-title" class="reveal-up" data-delay="1">Le Voci dei Nostri Ospiti</h2>
+      </div>
+      <div class="camere-reviews-track" role="list" aria-label="Recensioni sulle camere">
+
+        <article class="review-card reveal-up" role="listitem">
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p class="review-text">
+            "L'appartamento Cedro è un sogno — il letto a baldacchino, il camino, i soffitti a volta. Ogni dettaglio racconta la storia di questo posto. Ci siamo sentiti come a casa, ma in un posto molto più bello della nostra casa."
+          </p>
+          <div class="review-author">Stefania P.</div>
+          <div class="review-origin">Milano · Booking.com ✓</div>
+        </article>
+
+        <article class="review-card reveal-up" data-delay="1" role="listitem">
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p class="review-text">
+            "Camera Platano: romantica, silenziosa, perfetta. Abbiamo portato anche il nostro cane ed è stato accolto con un piccolo kit di benvenuto. La cura nei dettagli è quella di chi ama davvero il proprio lavoro."
+          </p>
+          <div class="review-author">Giulia &amp; Marco</div>
+          <div class="review-origin">Roma · TripAdvisor ✓</div>
+        </article>
+
+        <article class="review-card reveal-up" data-delay="2" role="listitem">
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p class="review-text">
+            "La camera Faggio è stata perfetta per la nostra famiglia: spaziosa, luminosa, con vista meravigliosa sul giardino. I bambini hanno adorato il posto. Torneremo sicuramente il prossimo anno."
+          </p>
+          <div class="review-author">Famiglia Rossi</div>
+          <div class="review-origin">Torino · Booking.com ✓</div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <h3>Il <em>Poggio</em> di Teo</h3>
+          <p>
+            Agriturismo biologico nel cuore della Maremma Toscana. Un casale storico del 1850 circondato da ulivi centenari, boschi incontaminati e un piccolo lago naturale.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://www.facebook.com/AgriturismoIlPoggioDiTeo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/il_poggio_di_teo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/393888664087" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigazione -->
+        <div>
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Navigazione footer">
+            <a href="index.html">Home</a>
+            <a href="camere.html">Camere</a>
+            <a href="ristorante.html">Ristorante</a>
+            <a href="benessere.html">Benessere</a>
+            <a href="territorio.html">Territorio</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contatti -->
+        <div>
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+393888664087">+39 388 86 64 087</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+390564620180">+39 0564 620180</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <a href="mailto:info@ilpoggioditeo.it">info@ilpoggioditeo.it</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span>Loc. La Stellata, 14<br>58014 Manciano (GR)</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Info Azienda -->
+        <div>
+          <h4>Orari &amp; Info</h4>
+          <div class="footer-links">
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Struttura aperta tutto l'anno</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Ristorante: chiuso il lunedì<br>(esclusi festivi e ponti)</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">A 8 km dalle Terme di Saturnia</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Booking.com 9.2/10 · 194+ recensioni</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Digital Award TripAdvisor 2022</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Azienda Agricola Il Poggio di Teo S.S. — P.IVA 01601350539 · CIN IT053014B5XCJ4VCE4</p>
+        <p>
+          <a href="privacy.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Privacy Policy</a>
+          &nbsp;·&nbsp;
+          <a href="cookie.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Cookie Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP BUTTON ==================== -->
+  <a
+    href="https://wa.me/393888664087"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+  (function() {
+    'use strict';
+
+    // ── SCROLL PROGRESS BAR ───────────────────────────────
+    const scrollBar = document.getElementById('scrollBar');
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      scrollBar.style.transform = 'scaleX(' + progress + ')';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // ── HEADER SCROLL BEHAVIOUR ───────────────────────────
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    function handleHeaderScroll() {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+      if (currentScroll > lastScroll && currentScroll > 300) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScroll = currentScroll;
+    }
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+
+    // ── MOBILE MENU ───────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    // ── REVEAL ON SCROLL ──────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal-up');
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(function () {
+            entry.target.classList.add('revealed');
+          }, delay * 100);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+  })();
+  </script>
+
+</body>
+</html>

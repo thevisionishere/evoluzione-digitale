@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ristorante &amp; Prodotti | Agriturismo Il Poggio di Teo</title>
+  <meta name="description" content="Il ristorante farm-to-table dell'Agriturismo Il Poggio di Teo: cucina maremmana con prodotti dell'orto biologico. Olio extravergine, pasta trafilata al bronzo, farine macinate a pietra e molto altro." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ristorante &amp; Prodotti | Agriturismo Il Poggio di Teo" />
+  <meta property="og:description" content="Dal campo al piatto — i sapori autentici della Maremma Toscana. Ristorante farm-to-table e prodotti dell'azienda agricola biologica." />
+  <meta property="og:url" content="https://www.ilpoggioditeo.it/ristorante.html" />
+  <meta property="og:image" content="images/restaurant/ristorante-3.jpg" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ilpoggioditeo.it/ristorante.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── PAGE-SPECIFIC STYLES: RISTORANTE ───────────────────── */
+
+    /* ── HERO INTERNO ────────────────────────────────────────── */
+    .hero-interno {
+      position: relative;
+      height: 45vh;
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-interno-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-interno-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+    .hero-interno-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30, 22, 10, 0.35) 0%,
+        rgba(30, 22, 10, 0.68) 100%
+      );
+      z-index: 1;
+    }
+    .hero-interno-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: var(--space-10) 0 var(--space-8);
+    }
+    .hero-interno-breadcrumb {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(247, 242, 236, 0.65);
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-3);
+    }
+    .hero-interno-breadcrumb a {
+      color: rgba(247, 242, 236, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .hero-interno-breadcrumb a:hover {
+      color: var(--color-cream);
+    }
+    .hero-interno-breadcrumb span {
+      margin: 0 0.4em;
+      opacity: 0.5;
+    }
+    .hero-interno-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--color-cream);
+      line-height: 1.1;
+      margin: 0 0 var(--space-3);
+    }
+    .hero-interno-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      color: rgba(247, 242, 236, 0.78);
+      max-width: 520px;
+      line-height: 1.5;
+    }
+
+    /* ── RISTORANTE SPLIT ────────────────────────────────────── */
+    .ristorante-split {
+      padding: var(--space-16) 0;
+      background: var(--color-bg-light);
+    }
+    .ristorante-split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: center;
+    }
+    .ristorante-split-image {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .ristorante-split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+    .ristorante-split-image:hover img {
+      transform: scale(1.04);
+    }
+    .ristorante-split-content .section-label {
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+    .ristorante-split-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: var(--space-5);
+      color: var(--color-dark);
+    }
+    .ristorante-split-content p {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-5);
+    }
+    .ristorante-info-badge {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      background: rgba(109, 90, 43, 0.07);
+      border-left: 3px solid var(--color-primary);
+      border-radius: 2px;
+      padding: var(--space-4) var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+    .ristorante-info-badge svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--color-primary);
+      margin-top: 2px;
+    }
+    .ristorante-info-badge p {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── PROCESS STEPS ───────────────────────────────────────── */
+    .process-section {
+      padding: var(--space-16) 0;
+      background: #f5f0e8;
+    }
+    .process-intro {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+    .process-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      color: var(--color-dark);
+      margin-top: var(--space-3);
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--color-primary) 10%,
+        var(--color-primary) 90%,
+        transparent 100%
+      );
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 var(--space-6);
+      position: relative;
+      z-index: 1;
+    }
+    .process-step-number {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-5);
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(109, 90, 43, 0.28);
+    }
+    .process-step-number svg {
+      width: 36px;
+      height: 36px;
+      color: var(--color-cream);
+    }
+    .process-step h4 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--color-dark);
+      margin-bottom: var(--space-2);
+    }
+    .process-step p {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── PRODUCTS LIST ───────────────────────────────────────── */
+    .products-section {
+      padding: var(--space-16) 0;
+      background: var(--color-bg-light);
+    }
+    .products-intro {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+    .products-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      color: var(--color-dark);
+      margin-top: var(--space-3);
+    }
+    .products-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+    }
+    .product-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: center;
+    }
+    .product-item.reverse {
+      direction: rtl;
+    }
+    .product-item.reverse > * {
+      direction: ltr;
+    }
+    .product-item-image {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 3/2;
+    }
+    .product-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+    .product-item-image:hover img {
+      transform: scale(1.04);
+    }
+    .product-item-tag {
+      position: absolute;
+      top: var(--space-4);
+      left: var(--space-4);
+      background: var(--color-primary);
+      color: var(--color-cream);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+    .product-item-content .section-label {
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+    .product-item-content h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      color: var(--color-dark);
+      margin-bottom: var(--space-4);
+      line-height: 1.15;
+    }
+    .product-item-content p {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-4);
+    }
+    .product-item-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .product-item-features li {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .product-item-features li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* ── CTA BANNER ──────────────────────────────────────────── */
+    .cta-ristorante {
+      position: relative;
+      padding: var(--space-20) 0;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-ristorante-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .cta-ristorante-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .cta-ristorante-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 22, 10, 0.62);
+      z-index: 1;
+    }
+    .cta-ristorante-content {
+      position: relative;
+      z-index: 2;
+    }
+    .cta-ristorante-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      color: var(--color-cream);
+      margin-bottom: var(--space-4);
+      line-height: 1.1;
+    }
+    .cta-ristorante-content p {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      color: rgba(247, 242, 236, 0.8);
+      margin-bottom: var(--space-8);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-ristorante-btns {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .ristorante-split-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+      }
+      .process-steps::before {
+        display: none;
+      }
+      .product-item,
+      .product-item.reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+        direction: ltr;
+      }
+    }
+    @media (max-width: 600px) {
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+      .hero-interno {
+        height: 50vh;
+      }
+    }
+  </style>
+</head>
+<body data-page="ristorante">
+
+  <!-- ==================== SCROLL PROGRESS ==================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Il Poggio di Teo — Home">
+        Il <em>Poggio</em> di Teo
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="camere.html">Camere</a>
+        <a href="ristorante.html" class="active" aria-current="page">Ristorante</a>
+        <a href="benessere.html">Benessere</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="contatti.html" class="header-cta">Prenota</a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="camere.html">Camere</a>
+    <a href="ristorante.html" class="active" aria-current="page">Ristorante</a>
+    <a href="benessere.html">Benessere</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="btn btn-primary" style="margin-top: 1rem;">Prenota</a>
+  </nav>
+
+  <main>
+
+    <!-- ==================== 1. HERO INTERNO ==================== -->
+    <section class="hero-interno" aria-labelledby="page-title">
+      <div class="hero-interno-bg">
+        <img
+          src="images/restaurant/ristorante-3.jpg"
+          alt="Tavola rustica del ristorante Il Poggio di Teo con piatti della cucina maremmana"
+          loading="eager"
+          fetchpriority="high"
+          width="1920"
+          height="860"
+        />
+      </div>
+      <div class="hero-interno-overlay" aria-hidden="true"></div>
+      <div class="hero-interno-content">
+        <div class="container">
+          <nav class="hero-interno-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>Ristorante &amp; Prodotti</span>
+          </nav>
+          <h1 id="page-title" class="hero-interno-title">Ristorante &amp; Prodotti</h1>
+          <p class="hero-interno-subtitle">Dal campo al piatto — i sapori autentici della Maremma</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. RISTORANTE SPLIT CONTENT ==================== -->
+    <section class="ristorante-split" id="ristorante" aria-labelledby="ristorante-title">
+      <div class="container">
+        <div class="ristorante-split-grid">
+
+          <div class="ristorante-split-image reveal-up">
+            <img
+              src="images/restaurant/ristorante-1.jpg"
+              alt="Sala rustica del ristorante Il Poggio di Teo con tavola imbandita"
+              loading="lazy"
+              width="900"
+              height="680"
+            />
+          </div>
+
+          <div class="ristorante-split-content">
+            <span class="section-label reveal-up">Il Ristorante</span>
+            <h2 id="ristorante-title" class="reveal-up" data-delay="1">La Cucina della Maremma</h2>
+            <p class="reveal-up" data-delay="2">
+              Nel nostro ristorante, ogni piatto racconta la storia della terra che ci circonda. Utilizziamo i prodotti del nostro orto biologico, l'olio dei nostri ulivi centenari, la pasta dei nostri grani antichi. Una cucina che celebra la tradizione maremmana con creatività e rispetto per le materie prime.
+            </p>
+            <p class="reveal-up" data-delay="3">
+              Ogni mattina l'orto ci consegna il meglio della stagione: pomodori, erbe aromatiche, legumi e ortaggi che diventano protagonisti di un menu che cambia con il ritmo della natura. Una tavola autentica, dove la distanza tra campo e forchetta si misura in passi.
+            </p>
+            <div class="ristorante-info-badge reveal-up" data-delay="4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p>
+                Chiuso il lunedì (esclusi festivi e ponti) &middot; Opzioni vegetariane, vegane, senza glutine e senza latticini disponibili su richiesta
+              </p>
+            </div>
+            <a href="https://www.thefork.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary reveal-up" data-delay="5">
+              Prenota un Tavolo
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. DAL CAMPO AL PIATTO ==================== -->
+    <section class="process-section" id="processo" aria-labelledby="process-title">
+      <div class="container">
+        <div class="process-intro">
+          <span class="section-label reveal-up">La Nostra Filosofia</span>
+          <h2 id="process-title" class="reveal-up" data-delay="1">Dal Campo al Piatto</h2>
+        </div>
+
+        <div class="process-steps" role="list">
+
+          <div class="process-step reveal-up" role="listitem">
+            <div class="process-step-number" aria-hidden="true">
+              <!-- Orto icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              </svg>
+            </div>
+            <h4>Orto Biologico</h4>
+            <p>Coltiviamo verdure fresche nel nostro orto con serra moderna, senza pesticidi né concimi chimici</p>
+          </div>
+
+          <div class="process-step reveal-up" data-delay="1" role="listitem">
+            <div class="process-step-number" aria-hidden="true">
+              <!-- Raccolta icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+            </div>
+            <h4>Raccolta Quotidiana</h4>
+            <p>Ogni mattina raccogliamo gli ingredienti più freschi direttamente dall'orto per portarli in cucina</p>
+          </div>
+
+          <div class="process-step reveal-up" data-delay="2" role="listitem">
+            <div class="process-step-number" aria-hidden="true">
+              <!-- Cucina icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+              </svg>
+            </div>
+            <h4>Cucina Creativa</h4>
+            <p>I nostri chef trasformano i sapori della terra in piatti unici che celebrano la tradizione maremmana</p>
+          </div>
+
+          <div class="process-step reveal-up" data-delay="3" role="listitem">
+            <div class="process-step-number" aria-hidden="true">
+              <!-- Piatto icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+            </div>
+            <h4>Il Tuo Piatto</h4>
+            <p>Sapori autentici che raccontano la Maremma e rispettano la stagionalità di ogni ingrediente</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. PRODUCTS EXPANDED LIST ==================== -->
+    <section class="products-section" id="prodotti" aria-labelledby="products-title">
+      <div class="container">
+
+        <div class="products-intro">
+          <span class="section-label reveal-up">I Prodotti dell'Azienda</span>
+          <h2 id="products-title" class="reveal-up" data-delay="1">Dalla Terra alla Tua Tavola</h2>
+        </div>
+
+        <div class="products-list">
+
+          <!-- 1. Olio Extravergine — image left -->
+          <article class="product-item reveal-up" id="olio">
+            <div class="product-item-image">
+              <img
+                src="images/restaurant/piatto-a.jpg"
+                alt="Olio extravergine di oliva Il Poggio di Teo — bottiglie con olive"
+                loading="lazy"
+                width="800"
+                height="540"
+              />
+              <span class="product-item-tag">Biologico</span>
+            </div>
+            <div class="product-item-content">
+              <span class="section-label">Prodotto Principale</span>
+              <h3>Olio Extravergine di Oliva</h3>
+              <p>
+                Il cuore della nostra azienda agricola: 700 piante delle varietà Leccino e Frantoiano che ogni autunno ci regalano un olio extravergine dal colore verde brillante e dalla fragranza unica. Estratto a freddo, non filtrato, con un'acidità minima che ne esalta il profilo organolettico.
+              </p>
+              <ul class="product-item-features" aria-label="Caratteristiche olio">
+                <li>700 piante di olivo — varietà Leccino e Frantoiano</li>
+                <li>Colore verde intenso con riflessi dorati</li>
+                <li>Fragranza fruttata con note erbacee</li>
+                <li>Estratto a freddo, produzione biologica certificata</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. Pasta Artigianale — image right -->
+          <article class="product-item reverse reveal-up" id="pasta">
+            <div class="product-item-image">
+              <img
+                src="images/restaurant/piatto-d.jpg"
+                alt="Pasta artigianale trafilata al bronzo — pici, paccheri e tagliatelle"
+                loading="lazy"
+                width="800"
+                height="540"
+              />
+              <span class="product-item-tag">Trafilata al Bronzo</span>
+            </div>
+            <div class="product-item-content">
+              <span class="section-label">Grani Antichi</span>
+              <h3>Pasta Artigianale</h3>
+              <p>
+                Trafilata al bronzo con grani antichi a basso contenuto di glutine, la nostra pasta mantiene una ruvidità naturale che cattura i sughi e sprigiona tutto il sapore dei cereali della Maremma. Ogni formato è un omaggio alla tradizione della pasta italiana.
+              </p>
+              <ul class="product-item-features" aria-label="Formati disponibili">
+                <li>Paccheri — la pasta della domenica</li>
+                <li>Gigli — eleganti e saporiti</li>
+                <li>Tagliatelle — sfoglia d'autore</li>
+                <li>Pici — il formato tipico maremmano</li>
+                <li>Spaghetti — la classicità senza tempo</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. Farine — image left -->
+          <article class="product-item reveal-up" id="farine">
+            <div class="product-item-image">
+              <img
+                src="images/restaurant/piatto-e.jpg"
+                alt="Farine macinate a pietra — integrale, grano duro e grano tenero"
+                loading="lazy"
+                width="800"
+                height="540"
+              />
+              <span class="product-item-tag">Macinate a Pietra</span>
+            </div>
+            <div class="product-item-content">
+              <span class="section-label">Molitura Tradizionale</span>
+              <h3>Farine</h3>
+              <p>
+                La molitura a pietra conserva intatti i nutrienti del germe di grano e la fibra della crusca, regalando farine dal profumo autentico e dal sapore pieno. Ideali per pane, pizza, dolci rustici e pasta fatta in casa, le nostre farine portano il carattere della terra maremmana direttamente nella vostra cucina.
+              </p>
+              <ul class="product-item-features" aria-label="Tipologie di farine">
+                <li>Farina integrale macinata a pietra</li>
+                <li>Farina di grano duro</li>
+                <li>Farina di grano tenero</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 4. Farro Perlato — image right -->
+          <article class="product-item reverse reveal-up" id="farro">
+            <div class="product-item-image">
+              <img
+                src="images/restaurant/piatto-c.jpg"
+                alt="Farro perlato dell'azienda agricola Il Poggio di Teo"
+                loading="lazy"
+                width="800"
+                height="540"
+              />
+              <span class="product-item-tag">Coltivazione Diretta</span>
+            </div>
+            <div class="product-item-content">
+              <span class="section-label">Cereali Antichi</span>
+              <h3>Farro Perlato</h3>
+              <p>
+                Il farro è uno dei cereali più antichi del Mediterraneo, coltivato in Maremma da secoli per la sua resistenza e il suo valore nutritivo. Il nostro farro perlato, coltivato direttamente nei nostri campi, è ideale per zuppe, insalate e contorni: un ingrediente semplice e genuino con un gusto inconfondibile.
+              </p>
+              <ul class="product-item-features" aria-label="Caratteristiche farro">
+                <li>Coltivazione diretta nei campi dell'azienda</li>
+                <li>Ricco di proteine, fibre e minerali</li>
+                <li>Ideale per zuppe, insalate e contorni</li>
+                <li>Produzione biologica, senza pesticidi</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 5. Olio Essenziale di Lavanda — image left -->
+          <article class="product-item reveal-up" id="lavanda">
+            <div class="product-item-image">
+              <img
+                src="images/restaurant/piatto-f.jpg"
+                alt="Olio essenziale di lavanda distillato dalle piante del Poggio di Teo"
+                loading="lazy"
+                width="800"
+                height="540"
+              />
+              <span class="product-item-tag">Distillazione Artigianale</span>
+            </div>
+            <div class="product-item-content">
+              <span class="section-label">Aromaterapia Naturale</span>
+              <h3>Olio Essenziale di Lavanda</h3>
+              <p>
+                Le nostre distese di lavanda colorano ogni estate il Poggio di un viola intenso e riempiono l'aria di un profumo inebriante. Dall'antica arte della distillazione a vapore otteniamo un olio essenziale puro e potente, racchiuso in piccoli flaconi che portano con sé il profumo della Maremma.
+              </p>
+              <ul class="product-item-features" aria-label="Utilizzi olio essenziale">
+                <li>Distillato a vapore dalle nostre piante di lavanda</li>
+                <li>100% puro, senza diluenti o conservanti</li>
+                <li>Proprietà rilassanti e antinfiammatorie</li>
+                <li>Ideale per diffusori, massaggi e cosmetica</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 6. Marmellate & Conserve — image right -->
+          <article class="product-item reverse reveal-up" id="conserve">
+            <div class="product-item-image">
+              <img
+                src="images/restaurant/piatto-b.jpg"
+                alt="Marmellate e conserve artigianali del giardino del Poggio di Teo"
+                loading="lazy"
+                width="800"
+                height="540"
+              />
+              <span class="product-item-tag">Ricette Tradizionali</span>
+            </div>
+            <div class="product-item-content">
+              <span class="section-label">Sapori del Giardino</span>
+              <h3>Marmellate &amp; Conserve</h3>
+              <p>
+                Il nostro giardino ospita albicocchi, noccioli, peri, meli e ciliegi che ogni stagione offrono frutti maturi e profumati. Seguendo ricette tramandate di generazione in generazione, trasformiamo questi doni della natura in marmellate e conserve che portano in tavola i colori e i profumi della Maremma.
+              </p>
+              <ul class="product-item-features" aria-label="Varietà disponibili">
+                <li>Marmellata di albicocche — dolce e profumata</li>
+                <li>Confettura di ciliegie — intensa e corposa</li>
+                <li>Conserva di pere — equilibrata e delicata</li>
+                <li>Crema di nocciole — artigianale e genuina</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. CTA BANNER ==================== -->
+    <section class="cta-ristorante" id="prenota-tavolo" aria-labelledby="cta-ristorante-title">
+      <div class="cta-ristorante-bg" aria-hidden="true">
+        <img
+          src="images/restaurant/ristorante-4.jpg"
+          alt="Tavola con vista sul giardino dell'agriturismo Il Poggio di Teo"
+          loading="lazy"
+          width="1920"
+          height="900"
+        />
+      </div>
+      <div class="cta-ristorante-overlay" aria-hidden="true"></div>
+      <div class="cta-ristorante-content container">
+        <h2 id="cta-ristorante-title" class="reveal-up">Vieni a Gustare la Maremma</h2>
+        <p class="reveal-up" data-delay="1">
+          Riservate il vostro posto a tavola e lasciate che i sapori autentici della nostra terra vi raccontino la Maremma
+        </p>
+        <div class="cta-ristorante-btns reveal-up" data-delay="2">
+          <a href="https://www.thefork.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Prenota un Tavolo
+          </a>
+          <a href="contatti.html" class="btn btn-outline" style="border-color: rgba(247,242,236,0.6); color: var(--color-cream);">
+            Contattaci
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <h3>Il <em>Poggio</em> di Teo</h3>
+          <p>
+            Agriturismo biologico nel cuore della Maremma Toscana. Un casale storico del 1850 circondato da ulivi centenari, boschi incontaminati e un piccolo lago naturale.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://www.facebook.com/AgriturismoIlPoggioDiTeo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/il_poggio_di_teo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Il Poggio di Teo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/393888664087" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigazione -->
+        <div>
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Navigazione footer">
+            <a href="index.html">Home</a>
+            <a href="camere.html">Camere</a>
+            <a href="ristorante.html">Ristorante</a>
+            <a href="benessere.html">Benessere</a>
+            <a href="territorio.html">Territorio</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contatti -->
+        <div>
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+393888664087">+39 388 86 64 087</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+390564620180">+39 0564 620180</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <a href="mailto:info@ilpoggioditeo.it">info@ilpoggioditeo.it</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span>Loc. La Stellata, 14<br>58014 Manciano (GR)</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Info Azienda -->
+        <div>
+          <h4>Orari &amp; Info</h4>
+          <div class="footer-links">
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Struttura aperta tutto l'anno</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Ristorante: chiuso il lunedì<br>(esclusi festivi e ponti)</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">A 8 km dalle Terme di Saturnia</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Booking.com 9.2/10 · 194+ recensioni</span>
+            <span style="color: rgba(247, 242, 236, 0.6); font-size: var(--text-sm);">Digital Award TripAdvisor 2022</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Azienda Agricola Il Poggio di Teo S.S. — P.IVA 01601350539 &middot; CIN IT053014B5XCJ4VCE4</p>
+        <p>
+          <a href="privacy.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Privacy Policy</a>
+          &nbsp;&middot;&nbsp;
+          <a href="cookie.html" style="color: rgba(247, 242, 236, 0.4); transition: color 0.2s;">Cookie Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP BUTTON ==================== -->
+  <a
+    href="https://wa.me/393888664087"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+  (function() {
+    'use strict';
+
+    // ── SCROLL PROGRESS BAR ───────────────────────────────
+    const scrollBar = document.getElementById('scrollBar');
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      scrollBar.style.transform = 'scaleX(' + progress + ')';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // ── HEADER SCROLL BEHAVIOUR ───────────────────────────
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    function handleHeaderScroll() {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+      if (currentScroll > lastScroll && currentScroll > 300) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScroll = currentScroll;
+    }
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+
+    // ── MOBILE MENU ───────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    // ── REVEAL ON SCROLL ──────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal-up');
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay');
+          if (delay) {
+            setTimeout(function () {
+              entry.target.classList.add('revealed');
+            }, parseInt(delay) * 120);
+          } else {
+            entry.target.classList.add('revealed');
+          }
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+  })();
+  </script>
+
+</body>
+</html>
