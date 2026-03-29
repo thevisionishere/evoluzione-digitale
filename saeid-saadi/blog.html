@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog e Approfondimenti — Dott. Saeid Saadi | Neurologo Rimini</title>
+  <meta name="description" content="Articoli, aggiornamenti e approfondimenti dal mondo della neurologia firmati dal Dott. Saeid Saadi e dal team del Poliambulatorio CIN di Rimini. Disturbi neurologici, emicrania, neurofeedback e molto altro.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Blog e Approfondimenti — Dott. Saeid Saadi | Neurologo Rimini">
+  <meta property="og:description" content="Articoli e aggiornamenti dal mondo della neurologia. Consigli pratici per i pazienti e aggiornamenti professionali per i colleghi.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="header-logo" aria-label="Dott. Saeid Saadi — Neurologo, torna alla home">Dott. Saeid <span>Saadi</span></a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="chi-sono.html">Chi Sono</a>
+        <div class="nav-dropdown" aria-haspopup="true">
+          <a href="neurologia.html">Neurologia <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="neurologia.html" role="menuitem">Neurologia</a>
+            <a href="disturbi-funzionali.html" role="menuitem">Disturbi Funzionali</a>
+            <a href="cefalee.html" role="menuitem">Cefalee</a>
+            <a href="elettromiografia.html" role="menuitem">Elettromiografia</a>
+            <a href="approccio-clinico.html" role="menuitem">Approccio Clinico</a>
+          </div>
+        </div>
+        <a href="per-i-medici.html">Per i Medici</a>
+        <a href="per-i-pazienti.html">Per i Pazienti</a>
+        <div class="nav-dropdown" aria-haspopup="true">
+          <a href="video.html" class="active">Risorse <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="video.html" role="menuitem">Video</a>
+            <a href="recensioni.html" role="menuitem">Recensioni</a>
+            <a href="blog.html" role="menuitem" class="active">Blog</a>
+          </div>
+        </div>
+        <a href="contatti.html" class="btn btn-primary">Contatti</a>
+      </nav>
+      <button class="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html">Home</a>
+      <a href="chi-sono.html">Chi Sono</a>
+      <a href="neurologia.html">Neurologia</a>
+      <a href="disturbi-funzionali.html" class="mobile-sub">— Disturbi Funzionali</a>
+      <a href="cefalee.html" class="mobile-sub">— Cefalee</a>
+      <a href="elettromiografia.html" class="mobile-sub">— Elettromiografia</a>
+      <a href="approccio-clinico.html" class="mobile-sub">— Approccio Clinico</a>
+      <a href="per-i-medici.html">Per i Medici</a>
+      <a href="per-i-pazienti.html">Per i Pazienti</a>
+      <a href="video.html">Video</a>
+      <a href="recensioni.html">Recensioni</a>
+      <a href="blog.html" class="active" aria-current="page">Blog</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu-contact">
+      <p><a href="tel:+390541029417">+39 0541 029417</a></p>
+      <p><a href="mailto:info@poliambulatoriocinrimini.it">info@poliambulatoriocinrimini.it</a></p>
+    </div>
+  </div>
+
+  <!-- ===================== HERO INTERNO ===================== -->
+  <section class="hero-internal" aria-labelledby="hero-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Percorso di navigazione">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Blog</span>
+      </nav>
+      <h1 id="hero-heading">Blog e Approfondimenti</h1>
+      <p class="hero-subtitle">Articoli e aggiornamenti dal mondo della neurologia</p>
+    </div>
+  </section>
+
+  <!-- ===================== INTRO ===================== -->
+  <section class="section" aria-labelledby="intro-heading">
+    <div class="container-narrow">
+      <div class="label reveal-up">Dal Poliambulatorio CIN</div>
+      <h2 id="intro-heading" class="reveal-up" data-delay="1">Neurologia e Salute: il Blog del Dott. Saadi</h2>
+      <p class="reveal-up" data-delay="2" style="color: var(--color-text-muted); font-size: var(--text-lg); line-height: var(--leading-relaxed);">
+        Uno spazio dedicato alla divulgazione neurologica di qualità. Qui trovi articoli di approfondimento sulle principali patologie neurologiche, aggiornamenti dalla ricerca scientifica e consigli pratici per orientarti nel percorso di cura. Contenuti pensati sia per i pazienti — che vogliono capire meglio la propria condizione — sia per i colleghi medici, alla ricerca di spunti professionali e aggiornamenti clinici.
+      </p>
+      <p class="reveal-up" data-delay="3" style="color: var(--color-text-muted); line-height: var(--leading-relaxed);">
+        I contenuti sono redatti dal Dott. Saeid Saadi e dal team del Poliambulatorio CIN di Rimini, con l'obiettivo di portare informazione neurologica accurata, accessibile e radicata nella pratica clinica quotidiana.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== BLOG GRID ===================== -->
+  <section class="section section-light-alt" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="label">Articoli e Approfondimenti</div>
+        <h2 id="blog-heading">Tutti gli Articoli</h2>
+      </div>
+
+      <div class="blog-grid">
+
+        <!-- Articolo 1 -->
+        <article class="blog-card reveal-up">
+          <a href="#" aria-label="Leggi: Cosa Sono i Disturbi Neurologici Funzionali">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0c1a2e 0%, #1a6b7a 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">15 Marzo 2026</p>
+            <h4>Cosa Sono i Disturbi Neurologici Funzionali</h4>
+            <p>Una guida chiara per capire una delle diagnosi neurologiche più fraintese</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sui Disturbi Neurologici Funzionali">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 2 -->
+        <article class="blog-card reveal-up" data-delay="1">
+          <a href="#" aria-label="Leggi: Emicrania: 5 Segnali Che Non Devi Ignorare">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(160deg, #142640 0%, #2a8fa1 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">28 Febbraio 2026</p>
+            <h4>Emicrania: 5 Segnali Che Non Devi Ignorare</h4>
+            <p>Quando il mal di testa merita attenzione specialistica</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sull'emicrania">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 3 -->
+        <article class="blog-card reveal-up" data-delay="2">
+          <a href="#" aria-label="Leggi: Neurofeedback: la Tecnologia al Servizio del Cervello">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(120deg, #0f4f5c 0%, #0c1a2e 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">10 Febbraio 2026</p>
+            <h4>Neurofeedback: la Tecnologia al Servizio del Cervello</h4>
+            <p>Come funziona e quando può aiutarti</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sul neurofeedback">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 4 -->
+        <article class="blog-card reveal-up">
+          <a href="#" aria-label="Leggi: Formicolio alle Mani: Quando Fare l'Elettromiografia">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(150deg, #1a6b7a 0%, #142640 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">25 Gennaio 2026</p>
+            <h4>Formicolio alle Mani: Quando Fare l'Elettromiografia</h4>
+            <p>Tunnel carpale, neuropatia o altro? Scopri quando è il momento di indagare</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sul formicolio alle mani">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 5 -->
+        <article class="blog-card reveal-up" data-delay="1">
+          <a href="#" aria-label="Leggi: L'Importanza dell'Approccio Multidisciplinare in Neurologia">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(145deg, #0c1a2e 0%, #2a8fa1 60%, #1a6b7a 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">8 Gennaio 2026</p>
+            <h4>L'Importanza dell'Approccio Multidisciplinare in Neurologia</h4>
+            <p>Perché il paziente neurologico beneficia di una cura integrata</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sull'approccio multidisciplinare">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 6 -->
+        <article class="blog-card reveal-up" data-delay="2">
+          <a href="#" aria-label="Leggi: Vertigini e Capogiri: Cause Neurologiche">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(115deg, #142640 0%, #0f4f5c 50%, #1a6b7a 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">18 Dicembre 2025</p>
+            <h4>Vertigini e Capogiri: Cause Neurologiche</h4>
+            <p>Non sempre è un problema dell'orecchio</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo su vertigini e capogiri">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 7 -->
+        <article class="blog-card reveal-up">
+          <a href="#" aria-label="Leggi: La Cefalea a Grappolo: una Guida per i Pazienti">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(165deg, #0c1a2e 0%, #1a6b7a 70%, #2a8fa1 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">2 Dicembre 2025</p>
+            <h4>La Cefalea a Grappolo: una Guida per i Pazienti</h4>
+            <p>Riconoscerla, diagnosticarla, trattarla</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sulla cefalea a grappolo">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 8 -->
+        <article class="blog-card reveal-up" data-delay="1">
+          <a href="#" aria-label="Leggi: Tremore: Quando Preoccuparsi">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(130deg, #0f4f5c 0%, #142640 50%, #0c1a2e 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">15 Novembre 2025</p>
+            <h4>Tremore: Quando Preoccuparsi</h4>
+            <p>Le cause neurologiche del tremore e quando consultare uno specialista</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo sul tremore">Leggi →</a>
+          </div>
+        </article>
+
+        <!-- Articolo 9 -->
+        <article class="blog-card reveal-up" data-delay="2">
+          <a href="#" aria-label="Leggi: Come Prepararsi alla Visita Neurologica">
+            <div class="blog-card-image">
+              <div style="width: 100%; height: 100%; background: linear-gradient(140deg, #2a8fa1 0%, #0c1a2e 100%);"></div>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">1 Novembre 2025</p>
+            <h4>Come Prepararsi alla Visita Neurologica</h4>
+            <p>Cosa portare, cosa aspettarsi, come descrivere i sintomi</p>
+            <a href="#" class="btn-link" aria-label="Leggi l'articolo su come prepararsi alla visita neurologica">Leggi →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner" aria-labelledby="cta-heading">
+    <div class="container" style="text-align: center;">
+      <h2 id="cta-heading" class="reveal-up">Vuoi Restare Aggiornato?</h2>
+      <p class="reveal-up" data-delay="1">Contattaci per informazioni o prenota una visita</p>
+      <a href="contatti.html" class="btn btn-primary magnetic-btn reveal-up" data-delay="2">Contattaci →</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><h3>Dott. Saeid Saadi</h3><p>Neurologo · Direttore Sanitario del Poliambulatorio CIN di Rimini. Centro di eccellenza neurologica fondato nel 2013.</p><p>Riceve presso: <strong>Poliambulatorio CIN</strong></p></div>
+        <div><h4>Navigazione</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="chi-sono.html">Chi Sono</a></li><li><a href="neurologia.html">Neurologia</a></li><li><a href="contatti.html">Contatti</a></li></ul></div>
+        <div><h4>Servizi</h4><ul class="footer-links"><li><a href="disturbi-funzionali.html">Disturbi Funzionali</a></li><li><a href="cefalee.html">Cefalee</a></li><li><a href="elettromiografia.html">Elettromiografia</a></li><li><a href="approccio-clinico.html">Approccio Clinico</a></li></ul></div>
+        <div class="footer-contact"><h4>Contatti</h4><p>Via Bastioni Meridionali 29/31<br>47921 Rimini (RN)</p><p><a href="tel:+390541029417">+39 0541 029417</a></p><p><a href="mailto:info@poliambulatoriocinrimini.it">info@poliambulatoriocinrimini.it</a></p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; <span data-year></span> Dott. Saeid Saadi — Neurologo. Tutti i diritti riservati.</p><p>Riceve presso Poliambulatorio CIN — Via Bastioni Meridionali 29/31, Rimini</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/390541029417" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <script src="script.js" defer></script>
+
+</body>
+</html>

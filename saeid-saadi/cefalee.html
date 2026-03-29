@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cefalee ed Emicrania — Centro ANIRCEF | Dott. Saeid Saadi, Rimini</title>
+  <meta name="description" content="Centro Cefalee accreditato ANIRCEF a Rimini. Il Dott. Saeid Saadi diagnosa e tratta emicrania, cefalea tensiva, cefalea a grappolo e cefalee secondarie con protocolli aggiornati.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Cefalee ed Emicrania — Centro ANIRCEF | Dott. Saeid Saadi">
+  <meta property="og:description" content="Centro Cefalee accreditato ANIRCEF a Rimini. Diagnosi e trattamento specialistico di tutti i tipi di cefalea. Dott. Saeid Saadi, Neurologo.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="header-logo" aria-label="Dott. Saeid Saadi — Neurologo, torna alla home">
+        Dott. Saeid <span>Saadi</span>
+      </a>
+
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="chi-sono.html">Chi Sono</a>
+
+        <div class="nav-dropdown active" aria-haspopup="true">
+          <a href="neurologia.html" class="active">Neurologia <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="neurologia.html" role="menuitem">Neurologia</a>
+            <a href="disturbi-funzionali.html" role="menuitem">Disturbi Funzionali</a>
+            <a href="cefalee.html" role="menuitem" class="active" aria-current="page">Cefalee</a>
+            <a href="elettromiografia.html" role="menuitem">Elettromiografia</a>
+            <a href="approccio-clinico.html" role="menuitem">Approccio Clinico</a>
+          </div>
+        </div>
+
+        <a href="per-i-medici.html">Per i Medici</a>
+        <a href="per-i-pazienti.html">Per i Pazienti</a>
+
+        <div class="nav-dropdown" aria-haspopup="true">
+          <a href="video.html">Risorse <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="video.html" role="menuitem">Video</a>
+            <a href="recensioni.html" role="menuitem">Recensioni</a>
+            <a href="blog.html" role="menuitem">Blog</a>
+          </div>
+        </div>
+
+        <a href="contatti.html" class="btn btn-primary">Contatti</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html">Home</a>
+      <a href="chi-sono.html">Chi Sono</a>
+      <a href="neurologia.html">Neurologia</a>
+      <a href="disturbi-funzionali.html" class="mobile-sub">— Disturbi Funzionali</a>
+      <a href="cefalee.html" class="mobile-sub active" aria-current="page">— Cefalee</a>
+      <a href="elettromiografia.html" class="mobile-sub">— Elettromiografia</a>
+      <a href="approccio-clinico.html" class="mobile-sub">— Approccio Clinico</a>
+      <a href="per-i-medici.html">Per i Medici</a>
+      <a href="per-i-pazienti.html">Per i Pazienti</a>
+      <a href="video.html">Video</a>
+      <a href="recensioni.html">Recensioni</a>
+      <a href="blog.html">Blog</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu-contact">
+      <p><a href="tel:+390541029417">+39 0541 029417</a></p>
+      <p><a href="mailto:info@poliambulatoriocinrimini.it">info@poliambulatoriocinrimini.it</a></p>
+    </div>
+  </div>
+
+  <!-- ===================== HERO INTERNO ===================== -->
+  <section class="hero-internal" aria-labelledby="hero-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Percorso di navigazione">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="neurologia.html">Neurologia</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Cefalee ed Emicrania</span>
+      </nav>
+      <h1 id="hero-heading">Cefalee ed Emicrania</h1>
+      <p class="hero-subtitle">Centro Cefalee accreditato ANIRCEF a Rimini</p>
+    </div>
+  </section>
+
+  <!-- ===================== SEZIONE INTRO ===================== -->
+  <section class="about-preview" aria-labelledby="intro-heading">
+    <div class="container">
+        <div class="about-image reveal-up">
+          <img
+            src="https://images.unsplash.com/photo-1616012480717-fd5e170a5d3f?w=800&h=500&fit=crop&q=80"
+            alt="Illustrazione scientifica del cervello e delle cefalee"
+            width="800"
+            height="500"
+            loading="lazy"
+          >
+        </div>
+        <div class="about-content reveal-up" data-delay="1">
+          <div class="label">Neurologia Specialistica</div>
+          <h2 id="intro-heading">Il Mal di Testa Non è Mai Solo un Mal di Testa</h2>
+          <p>
+            La cefalea è uno dei disturbi neurologici più diffusi al mondo, eppure ancora troppo spesso sottovalutata o gestita in modo non appropriato. Esistono oltre 150 forme classificate di cefalea, ognuna con cause, caratteristiche e trattamenti specifici: distinguerle con precisione è il primo passo verso una cura efficace.
+          </p>
+          <p>
+            Il Poliambulatorio CIN di Rimini è <strong>Centro Cefalee accreditato ANIRCEF</strong> — l'Associazione Neurologica Italiana per la Ricerca sulle Cefalee — garantendo ai pazienti protocolli diagnostici e terapeutici aggiornati, riconosciuti a livello nazionale.
+          </p>
+          <div class="value-cards" style="margin-top: var(--space-6);">
+            <div class="value-card">
+              <div class="value-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <strong>50% della popolazione</strong>
+                <span>La cefalea colpisce circa il 50% della popolazione mondiale almeno una volta l'anno</span>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Diagnosi differenziale</strong>
+                <span>Oltre 150 forme classificate richiedono un approccio diagnostico esperto e mirato</span>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Protocolli ANIRCEF</strong>
+                <span>Terapie aggiornate e validate, in linea con le linee guida neurologiche nazionali</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ===================== TIPI DI CEFALEA — TABS ===================== -->
+  <section class="section-light-alt" aria-labelledby="tipi-heading" data-tabs>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="label">Classificazione</div>
+        <h2 id="tipi-heading">Tipi di Cefalea</h2>
+        <p class="text-muted">Ogni forma di cefalea ha caratteristiche proprie. Una diagnosi precisa è il fondamento di ogni trattamento efficace.</p>
+      </div>
+
+      <div class="reveal-up" data-delay="1">
+        <div class="tabs-nav" role="tablist" aria-label="Tipi di cefalea">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="emicrania" aria-controls="tab-emicrania" id="btn-emicrania">Emicrania</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="tensiva" aria-controls="tab-tensiva" id="btn-tensiva">Cefalea Tensiva</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="grappolo" aria-controls="tab-grappolo" id="btn-grappolo">Cefalea a Grappolo</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="secondarie" aria-controls="tab-secondarie" id="btn-secondarie">Cefalee Secondarie</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-emicrania" data-panel="emicrania" role="tabpanel" aria-labelledby="btn-emicrania">
+          <div class="tab-content-grid">
+            <div>
+              <h3>Emicrania</h3>
+              <p>
+                L'emicrania è una delle forme più comuni e invalidanti di cefalea primaria. Si manifesta con dolore pulsante, tipicamente unilaterale, di intensità da moderata a severa, accompagnato spesso da nausea, vomito e ipersensibilità alla luce e ai suoni.
+              </p>
+              <p>
+                Gli attacchi durano da 4 a 72 ore e possono essere preceduti da sintomi prodromici (irritabilità, stanchezza, voglia di certi alimenti) o da <em>aura</em> — disturbi visivi, sensitivi o del linguaggio che precedono il dolore di 20-60 minuti.
+              </p>
+              <p>
+                La terapia si articola su due livelli: il trattamento acuto dell'attacco (analgesici specifici, triptani) e la profilassi per ridurre frequenza e intensità degli episodi. Il Dott. Saadi valuta ogni paziente singolarmente per definire il piano più adeguato.
+              </p>
+              <ul style="margin-top: var(--space-5);">
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Emicrania senza aura (più frequente)</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Emicrania con aura (visiva, sensitiva, motoria)</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Emicrania cronica (≥15 giorni al mese)</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Emicrania vestibolare (con vertigini)</li>
+              </ul>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Caratteristiche tipiche</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Dolore pulsante, unilaterale, intensità moderata-severa. Durata 4–72 ore. Peggiora con l'attività fisica.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Prevalenza</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Colpisce circa il 12–15% della popolazione, con prevalenza nelle donne in età fertile (rapporto F:M circa 3:1).</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Approccio terapeutico</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Terapia acuta e profilattica personalizzata, con farmaci di prima e seconda linea secondo le linee guida ANIRCEF.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-tensiva" data-panel="tensiva" role="tabpanel" aria-labelledby="btn-tensiva">
+          <div class="tab-content-grid">
+            <div>
+              <h3>Cefalea Tensiva</h3>
+              <p>
+                La cefalea tensiva è la forma più diffusa in assoluto, spesso descritta come una pressione o un senso di costrizione attorno alla testa — come un cerchio o una morsa. A differenza dell'emicrania, il dolore è tipicamente bilaterale, di intensità lieve-moderata, e non peggiora con l'attività fisica di routine.
+              </p>
+              <p>
+                Può essere episodica (meno di 15 giorni al mese) o cronica (15 o più giorni al mese per almeno 3 mesi). La forma cronica, pur non essendo invalidante come l'emicrania, impatta significativamente sulla qualità della vita.
+              </p>
+              <p>
+                Le cause sono multifattoriali: stress, tensioni muscolari cervicali, posture scorrette, disturbi del sonno. Il trattamento integra terapia farmacologica, tecniche di rilassamento, biofeedback e, nei casi cronici, terapia profilattica.
+              </p>
+              <ul style="margin-top: var(--space-5);">
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea tensiva episodica infrequente</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea tensiva episodica frequente</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea tensiva cronica (≥15 giorni/mese)</li>
+              </ul>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Caratteristiche tipiche</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Pressione bilaterale, senso di costrizione, intensità lieve-moderata. Non peggiora con l'attività. Durata 30 min – 7 giorni.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Prevalenza</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">La forma più comune di cefalea: colpisce fino al 40% della popolazione generale nel corso della vita.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Approccio terapeutico</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Analgesici, miorilassanti, biofeedback, gestione dello stress e correzione delle posture. Profilassi con antidepressivi triciclici nei casi cronici.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-grappolo" data-panel="grappolo" role="tabpanel" aria-labelledby="btn-grappolo">
+          <div class="tab-content-grid">
+            <div>
+              <h3>Cefalea a Grappolo</h3>
+              <p>
+                La cefalea a grappolo è la forma più intensa e dolorosa tra le cefalee primarie, spesso descritta dai pazienti come il dolore più forte che abbiano mai provato. Si manifesta con attacchi di dolore lancinante, strettamente unilaterale, in sede orbitaria o perioculare, con durata da 15 minuti a 3 ore.
+              </p>
+              <p>
+                Gli attacchi si raggruppano in periodi ("grappoli") di settimane o mesi, separati da fasi di remissione. Sono tipicamente accompagnati da sintomi autonomici ipsilaterali: lacrimazione, arrossamento oculare, ostruzione nasale, ptosi palpebrale.
+              </p>
+              <p>
+                Nonostante la rarità relativa (0,1–0,4% della popolazione), la cefalea a grappolo richiede diagnosi esperta e trattamento specialistico urgente: ossigeno ad alto flusso, triptani sottocutanei per l'attacco acuto, e farmaci preventivi (verapamil, litio, corticosteroidi) durante il grappolo.
+              </p>
+              <ul style="margin-top: var(--space-5);">
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea a grappolo episodica</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea a grappolo cronica (senza remissione)</li>
+              </ul>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Caratteristiche tipiche</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Dolore lancinante, sempre unilaterale, area orbitaria. Insorgenza rapida, attacchi frequenti (anche notturni). Agitazione durante l'attacco.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Prevalenza</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Rara (0,1–0,4%), più frequente negli uomini. Richiede valutazione neurologica specialistica tempestiva.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Approccio terapeutico</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Ossigeno ad alto flusso e triptani per l'attacco acuto. Verapamil e corticosteroidi come profilassi durante il periodo di grappolo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-secondarie" data-panel="secondarie" role="tabpanel" aria-labelledby="btn-secondarie">
+          <div class="tab-content-grid">
+            <div>
+              <h3>Cefalee Secondarie</h3>
+              <p>
+                Le cefalee secondarie sono causate da una condizione sottostante identificabile: possono originare da patologie vascolari (ictus, emorragie), infettive (meningite), tumorali, traumatiche, o da abuso di farmaci analgesici. Rappresentano circa il 10% di tutte le cefalee.
+              </p>
+              <p>
+                La <strong>cefalea da uso eccessivo di farmaci</strong> (MOH — Medication Overuse Headache) è una forma secondaria particolarmente rilevante nella pratica clinica: si sviluppa nei pazienti che assumono analgesici per la cefalea per più di 10–15 giorni al mese, e richiede una gestione specifica di disintossicazione e profilassi.
+              </p>
+              <p>
+                L'identificazione e il trattamento della causa sottostante sono fondamentali. In alcuni casi, la cefalea secondaria può essere il primo segnale di una patologia neurologica seria che richiede valutazione urgente.
+              </p>
+              <ul style="margin-top: var(--space-5);">
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea da uso eccessivo di farmaci (MOH)</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea post-traumatica</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea da ipertensione endocranica</li>
+                <li style="padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Cefalea da patologie cervicali (cervicogenica)</li>
+              </ul>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Segnali di allerta</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Esordio improvviso e violento, progressione rapida, febbre associata, deficit neurologici: richiedono valutazione urgente.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Diagnosi</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Esami strumentali (RMN, TC, esami del sangue) per identificare la causa. La diagnostica è il punto di partenza del trattamento.</p>
+              </div>
+              <div class="card" style="border-left: 3px solid var(--color-accent); border-radius: var(--radius-md);">
+                <h4 style="font-size:var(--text-base); margin-bottom:var(--space-2);">Approccio terapeutico</h4>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;">Trattamento della causa primaria. Per la MOH: programma di disintossicazione graduale e terapia preventiva della cefalea di base.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ACCREDITAMENTO ANIRCEF ===================== -->
+  <section class="about-preview section-accent" aria-labelledby="anircef-heading">
+    <div class="container">
+        <div class="about-content reveal-up">
+          <div class="label">Qualità Certificata</div>
+          <h2 id="anircef-heading">Centro Cefalee Accreditato ANIRCEF</h2>
+          <p>
+            L'<strong>ANIRCEF — Associazione Neurologica Italiana per la Ricerca sulle Cefalee</strong> è la principale società scientifica italiana dedicata allo studio e al trattamento delle cefalee. L'accreditamento ANIRCEF attesta che il centro rispetta standard clinici elevati e aggiornati, in linea con le migliori evidenze scientifiche disponibili.
+          </p>
+          <p>
+            Per il paziente, scegliere un Centro Cefalee accreditato ANIRCEF significa affidarsi a una struttura che:
+          </p>
+          <ul class="info-card" style="background: transparent; padding: 0; margin-bottom: var(--space-5);">
+            <li style="padding: var(--space-2) 0; font-size: var(--text-base); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3); border-bottom: 1px solid var(--color-border-light);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Applica protocolli diagnostici e terapeutici aggiornati e validati scientificamente</li>
+            <li style="padding: var(--space-2) 0; font-size: var(--text-base); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3); border-bottom: 1px solid var(--color-border-light);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Garantisce una diagnosi differenziale accurata tra le oltre 150 forme di cefalea classificate</li>
+            <li style="padding: var(--space-2) 0; font-size: var(--text-base); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3); border-bottom: 1px solid var(--color-border-light);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Offre un approccio terapeutico personalizzato, basato sulle caratteristiche specifiche di ogni paziente</li>
+            <li style="padding: var(--space-2) 0; font-size: var(--text-base); color: var(--color-text-muted); display: flex; align-items: flex-start; gap: var(--space-3);"><span style="width:6px;height:6px;background:var(--color-accent);border-radius:9999px;flex-shrink:0;margin-top:8px;"></span>Partecipa ai programmi di formazione e aggiornamento continuo previsti dalla società scientifica</li>
+          </ul>
+          <div class="professional-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Centro Cefalee Accreditato ANIRCEF — Rimini
+          </div>
+        </div>
+        <div class="about-image reveal-up" data-delay="1">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop&q=80"
+            alt="Ambiente clinico del Centro Cefalee Poliambulatorio CIN"
+            width="800"
+            height="500"
+            loading="lazy"
+          >
+        </div>
+    </div>
+  </section>
+
+  <!-- ===================== RED FLAGS ===================== -->
+  <section aria-labelledby="red-flags-heading">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="label">Sicurezza del Paziente</div>
+        <h2 id="red-flags-heading">Quando il Mal di Testa Richiede Attenzione Urgente</h2>
+        <p class="text-muted">La grande maggioranza delle cefalee è benigna. Tuttavia, alcuni segnali specifici richiedono una valutazione medica immediata.</p>
+      </div>
+
+      <div class="red-flags reveal-up" data-delay="1">
+
+        <div class="red-flag-item">
+          <span class="icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Esordio improvviso e violento</strong>
+            <p>Mal di testa descritto come "il peggiore della vita", di massima intensità fin dall'esordio. Può indicare emorragia subaracnoidea o altre emergenze vascolari.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-item">
+          <span class="icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Febbre associata a rigidità nucale</strong>
+            <p>La combinazione di cefalea intensa, febbre alta e rigidità del collo può essere segnale di meningite batterica, una condizione che richiede trattamento d'urgenza immediato.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-item">
+          <span class="icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Cefalea post-traumatica</strong>
+            <p>Mal di testa insorto dopo un trauma cranico, in particolare se progressivo o associato a confusione, perdita di memoria o episodi di perdita di coscienza.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-item">
+          <span class="icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Sintomi neurologici associati</strong>
+            <p>Cefalea accompagnata da deficit motori, sensitivi o del linguaggio, visione doppia, difficoltà di coordinazione o alterazioni della coscienza non riconducibili a una tipica aura emicranica.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-item">
+          <span class="icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Peggioramento progressivo</strong>
+            <p>Cefalea che aumenta progressivamente di intensità e frequenza nelle settimane, senza remissioni, specialmente se associata a nausea mattutina o peggioramento in clinostatismo.</p>
+          </div>
+        </div>
+
+        <div class="red-flag-item">
+          <span class="icon" aria-hidden="true">&#9888;</span>
+          <div>
+            <strong>Prima cefalea intensa dopo i 50 anni</strong>
+            <p>Una cefalea intensa di nuova comparsa in un paziente oltre i 50 anni richiede sempre accertamenti per escludere arterite temporale (vasculite dei vasi cranici) o cause strutturali.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reveal-up" data-delay="2" style="text-align: center; margin-top: var(--space-8); padding: var(--space-6); background: rgba(192, 57, 43, 0.05); border: 1px solid rgba(192, 57, 43, 0.2); border-radius: var(--radius-md);">
+        <p style="font-size: var(--text-base); color: var(--color-text-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">In caso di questi sintomi, rivolgiti immediatamente al pronto soccorso.</p>
+        <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">Non attendere un appuntamento ambulatoriale. Alcuni di questi segnali possono indicare emergenze neurologiche che richiedono trattamento nelle prime ore.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner" aria-labelledby="cta-heading">
+    <div class="container" style="text-align: center;">
+      <div class="label" style="color: var(--color-accent-light); margin-bottom: var(--space-4);">Centro Cefalee ANIRCEF</div>
+      <h2 id="cta-heading">Soffri di Cefalea Frequente?</h2>
+      <p>Il Centro Cefalee accreditato ANIRCEF del Poliambulatorio CIN offre una valutazione neurologica specialistica con diagnosi differenziale accurata e piano terapeutico personalizzato. Non rassegnarti al dolore.</p>
+      <a href="contatti.html" class="btn btn-primary magnetic-btn">Prenota una Visita →</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <h3>Dott. Saeid Saadi</h3>
+          <p>Neurologo · Direttore Sanitario del Poliambulatorio CIN di Rimini. Centro di eccellenza neurologica fondato nel 2013.</p>
+          <p>Riceve presso: <strong>Poliambulatorio CIN</strong></p>
+        </div>
+
+        <div>
+          <h4>Navigazione</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="neurologia.html">Neurologia</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Servizi</h4>
+          <ul class="footer-links">
+            <li><a href="disturbi-funzionali.html">Disturbi Funzionali</a></li>
+            <li><a href="cefalee.html">Cefalee</a></li>
+            <li><a href="elettromiografia.html">Elettromiografia</a></li>
+            <li><a href="approccio-clinico.html">Approccio Clinico</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contatti</h4>
+          <p>Via Bastioni Meridionali 29/31<br>47921 Rimini (RN)</p>
+          <p><a href="tel:+390541029417">+39 0541 029417</a></p>
+          <p><a href="mailto:info@poliambulatoriocinrimini.it">info@poliambulatoriocinrimini.it</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Dott. Saeid Saadi — Neurologo. Tutti i diritti riservati.</p>
+        <p>Riceve presso Poliambulatorio CIN — Via Bastioni Meridionali 29/31, Rimini</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== WHATSAPP BUTTON ===================== -->
+  <a
+    href="https://wa.me/390541029417"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>

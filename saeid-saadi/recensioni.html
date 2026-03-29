@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recensioni Pazienti — Dott. Saeid Saadi | Neurologo a Rimini</title>
+  <meta name="description" content="Leggi le recensioni dei pazienti del Dott. Saeid Saadi, neurologo a Rimini. Valutazione media 4.9/5 con 98% di pazienti soddisfatti. Cefalee, disturbi funzionali, elettromiografia.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Recensioni Pazienti — Dott. Saeid Saadi | Neurologo a Rimini">
+  <meta property="og:description" content="Le esperienze dei pazienti del Dott. Saeid Saadi. Valutazione media 4.9/5 — 98% di pazienti soddisfatti. Prenota la tua visita neurologica a Rimini.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* === RECENSIONI PAGE — Page-specific styles === */
+
+    /* Rating display block */
+    .rating-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-7);
+      padding: var(--space-7) var(--space-6);
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border-light);
+      text-align: center;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rating-stars {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: #f5a623;
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+    .rating-value {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: var(--weight-bold);
+      color: var(--color-text-dark);
+      line-height: 1;
+    }
+    .rating-scale {
+      font-size: 0.45em;
+      color: var(--color-text-muted);
+      font-weight: var(--weight-medium);
+    }
+    .rating-caption {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      letter-spacing: var(--tracking-wide);
+    }
+
+    /* Review date */
+    .review-date {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-4);
+      letter-spacing: var(--tracking-wide);
+    }
+
+    /* CTA button pair spacing */
+    .cta-banner .btn + .btn {
+      margin-left: 0;
+    }
+
+    /* Stats grid: override 4-column for 3 stats at desktop */
+    @media (min-width: 768px) {
+      .section-dark .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="header-logo" aria-label="Dott. Saeid Saadi — Neurologo, torna alla home">Dott. Saeid <span>Saadi</span></a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="chi-sono.html">Chi Sono</a>
+        <div class="nav-dropdown" aria-haspopup="true">
+          <a href="neurologia.html">Neurologia <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="neurologia.html" role="menuitem">Neurologia</a>
+            <a href="disturbi-funzionali.html" role="menuitem">Disturbi Funzionali</a>
+            <a href="cefalee.html" role="menuitem">Cefalee</a>
+            <a href="elettromiografia.html" role="menuitem">Elettromiografia</a>
+            <a href="approccio-clinico.html" role="menuitem">Approccio Clinico</a>
+          </div>
+        </div>
+        <a href="per-i-medici.html">Per i Medici</a>
+        <a href="per-i-pazienti.html">Per i Pazienti</a>
+        <div class="nav-dropdown" aria-haspopup="true">
+          <a href="video.html" class="active">Risorse <span class="dropdown-arrow" aria-hidden="true">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="video.html" role="menuitem">Video</a>
+            <a href="recensioni.html" role="menuitem" class="active">Recensioni</a>
+            <a href="blog.html" role="menuitem">Blog</a>
+          </div>
+        </div>
+        <a href="contatti.html" class="btn btn-primary">Contatti</a>
+      </nav>
+      <button class="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE MENU ===================== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html">Home</a>
+      <a href="chi-sono.html">Chi Sono</a>
+      <a href="neurologia.html">Neurologia</a>
+      <a href="disturbi-funzionali.html" class="mobile-sub">— Disturbi Funzionali</a>
+      <a href="cefalee.html" class="mobile-sub">— Cefalee</a>
+      <a href="elettromiografia.html" class="mobile-sub">— Elettromiografia</a>
+      <a href="approccio-clinico.html" class="mobile-sub">— Approccio Clinico</a>
+      <a href="per-i-medici.html">Per i Medici</a>
+      <a href="per-i-pazienti.html">Per i Pazienti</a>
+      <a href="video.html">Video</a>
+      <a href="recensioni.html" class="active" aria-current="page">Recensioni</a>
+      <a href="blog.html">Blog</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu-contact">
+      <p><a href="tel:+390541029417">+39 0541 029417</a></p>
+      <p><a href="mailto:info@poliambulatoriocinrimini.it">info@poliambulatoriocinrimini.it</a></p>
+    </div>
+  </div>
+
+  <!-- ===================== HERO INTERNO ===================== -->
+  <section class="hero-internal" aria-labelledby="hero-internal-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Recensioni</span>
+      </nav>
+      <h1 class="hero-internal-title" id="hero-internal-heading">Cosa Dicono i Nostri Pazienti</h1>
+      <p class="hero-subtitle">Le esperienze di chi si è affidato al Dott. Saadi</p>
+    </div>
+  </section>
+
+  <!-- ===================== INTRO ===================== -->
+  <section class="section-light" aria-labelledby="intro-heading">
+    <div class="container-narrow">
+
+      <div class="section-header reveal-up">
+        <div class="label">La Fiducia dei Pazienti</div>
+        <h2 id="intro-heading">La Voce dei Pazienti</h2>
+        <p class="text-muted">La soddisfazione di chi si affida alle nostre cure è il riconoscimento più autentico del nostro impegno quotidiano. Ogni testimonianza racconta una storia di ascolto, diagnosi precisa e percorsi terapeutici efficaci.</p>
+      </div>
+
+      <div class="rating-display reveal-up" data-delay="1" aria-label="Valutazione media: 4.9 su 5 stelle">
+        <div class="rating-stars" aria-hidden="true">★★★★★</div>
+        <div class="rating-value">4.9<span class="rating-scale">/5</span></div>
+        <div class="rating-caption">Valutazione media · Basata sulle recensioni verificate dei pazienti</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS GRID ===================== -->
+  <section class="section-light-alt" aria-label="Testimonianze dei pazienti">
+    <div class="container">
+
+      <div class="reviews-grid">
+
+        <!-- 1. Marco R. -->
+        <article class="review-card review-card-full reveal-up" aria-label="Recensione di Marco R.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="review-author">Marco R.</div>
+              <div class="review-role">Cefalee</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Dopo anni di sofferenza con emicranie invalidanti, il Dott. Saadi ha finalmente individuato la causa e impostato una terapia efficace. Oggi la mia qualità di vita è completamente cambiata."</blockquote>
+          <div class="review-date">Marzo 2025</div>
+        </article>
+
+        <!-- 2. Laura B. -->
+        <article class="review-card review-card-full reveal-up" data-delay="1" aria-label="Recensione di Laura B.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">L</div>
+            <div>
+              <div class="review-author">Laura B.</div>
+              <div class="review-role">Disturbi funzionali</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Avevo visto tanti medici senza trovare risposte. Il Dott. Saadi è stato il primo a darmi una diagnosi chiara e a spiegarmi cosa stava succedendo. Mi sono sentita finalmente capita."</blockquote>
+          <div class="review-date">Febbraio 2025</div>
+        </article>
+
+        <!-- 3. Giovanni M. -->
+        <article class="review-card review-card-full reveal-up" data-delay="2" aria-label="Recensione di Giovanni M.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">G</div>
+            <div>
+              <div class="review-author">Giovanni M.</div>
+              <div class="review-role">Elettromiografia</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Esame eseguito con grande professionalità. Il Dott. Saadi mi ha spiegato ogni passaggio e mi ha fatto sentire a mio agio. Referto chiaro e dettagliato."</blockquote>
+          <div class="review-date">Gennaio 2025</div>
+        </article>
+
+        <!-- 4. Francesca T. -->
+        <article class="review-card review-card-full reveal-up" aria-label="Recensione di Francesca T.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">F</div>
+            <div>
+              <div class="review-author">Francesca T.</div>
+              <div class="review-role">Visita neurologica</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Un medico che ascolta davvero. La visita è stata accuratissima, molto più approfondita di quelle fatte in precedenza altrove."</blockquote>
+          <div class="review-date">Dicembre 2024</div>
+        </article>
+
+        <!-- 5. Andrea P. -->
+        <article class="review-card review-card-full reveal-up" data-delay="1" aria-label="Recensione di Andrea P.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="review-author">Andrea P.</div>
+              <div class="review-role">Cefalee</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Centro cefalee di eccellenza. Il percorso terapeutico proposto dal Dott. Saadi ha ridotto drasticamente i miei episodi di emicrania."</blockquote>
+          <div class="review-date">Novembre 2024</div>
+        </article>
+
+        <!-- 6. Maria S. -->
+        <article class="review-card review-card-full reveal-up" data-delay="2" aria-label="Recensione di Maria S.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="review-author">Maria S.</div>
+              <div class="review-role">Disturbi funzionali</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Professionalità e umanità straordinarie. Il Dott. Saadi mi ha seguito con attenzione e competenza in un momento molto difficile."</blockquote>
+          <div class="review-date">Ottobre 2024</div>
+        </article>
+
+        <!-- 7. Roberto L. -->
+        <article class="review-card review-card-full reveal-up" aria-label="Recensione di Roberto L.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">R</div>
+            <div>
+              <div class="review-author">Roberto L.</div>
+              <div class="review-role">Neurofeedback</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="4 stelle su 5">★★★★☆</div>
+          <blockquote class="review-text">"Esperienza innovativa con il neurofeedback. Il Dott. Saadi è un pioniere in questo campo e i risultati si vedono."</blockquote>
+          <div class="review-date">Settembre 2024</div>
+        </article>
+
+        <!-- 8. Elena C. -->
+        <article class="review-card review-card-full reveal-up" data-delay="1" aria-label="Recensione di Elena C.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">E</div>
+            <div>
+              <div class="review-author">Elena C.</div>
+              <div class="review-role">Visita neurologica</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Ambiente accogliente, personale gentile. Il Dott. Saadi si prende il tempo necessario per ogni paziente, senza fretta."</blockquote>
+          <div class="review-date">Agosto 2024</div>
+        </article>
+
+        <!-- 9. Paolo D. -->
+        <article class="review-card review-card-full reveal-up" data-delay="2" aria-label="Recensione di Paolo D.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">P</div>
+            <div>
+              <div class="review-author">Paolo D.</div>
+              <div class="review-role">Elettromiografia</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Avevo molta ansia per l'esame, ma il Dott. Saadi mi ha tranquillizzato e l'esame è andato benissimo. Diagnosi precisa."</blockquote>
+          <div class="review-date">Luglio 2024</div>
+        </article>
+
+        <!-- 10. Claudia F. -->
+        <article class="review-card review-card-full reveal-up" aria-label="Recensione di Claudia F.">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">C</div>
+            <div>
+              <div class="review-author">Claudia F.</div>
+              <div class="review-role">Cefalee</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-label="5 stelle su 5">★★★★★</div>
+          <blockquote class="review-text">"Finalmente un centro che prende sul serio il mal di testa. Non è 'solo un mal di testa', e al CIN lo sanno bene."</blockquote>
+          <div class="review-date">Giugno 2024</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATISTICHE SODDISFAZIONE ===================== -->
+  <section class="section-dark" aria-labelledby="stats-heading">
+    <div class="container">
+
+      <div class="section-header reveal-up">
+        <div class="label" style="color: var(--color-accent-light);">Risultati</div>
+        <h2 id="stats-heading">La Soddisfazione dei Nostri Pazienti</h2>
+      </div>
+
+      <div class="stats-grid reveal-up" data-delay="1">
+
+        <div class="stat-item">
+          <div class="stat-number" aria-label="Valutazione media 4.9 su 5">4.9<span style="font-size: 0.5em; opacity: 0.7;">/5</span></div>
+          <div class="stat-label">Valutazione media</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number" data-count="98" data-suffix="%" aria-label="98% pazienti soddisfatti">0%</div>
+          <div class="stat-label">Pazienti soddisfatti</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number" data-count="95" data-suffix="%" aria-label="95% consiglierebbe il Dott. Saadi">0%</div>
+          <div class="stat-label">Consiglierebbero il Dott. Saadi</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner" aria-labelledby="cta-heading">
+    <div class="container" style="text-align: center;">
+      <h2 id="cta-heading">Anche Tu Sei Stato Nostro Paziente?</h2>
+      <p>Lascia la tua recensione o prenota la tua prima visita neurologica presso il Poliambulatorio CIN di Rimini.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#" class="btn btn-primary magnetic-btn">Lascia una Recensione</a>
+        <a href="contatti.html" class="btn btn-primary magnetic-btn">Prenota una Visita →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><h3>Dott. Saeid Saadi</h3><p>Neurologo · Direttore Sanitario del Poliambulatorio CIN di Rimini. Centro di eccellenza neurologica fondato nel 2013.</p><p>Riceve presso: <strong>Poliambulatorio CIN</strong></p></div>
+        <div><h4>Navigazione</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="chi-sono.html">Chi Sono</a></li><li><a href="neurologia.html">Neurologia</a></li><li><a href="contatti.html">Contatti</a></li></ul></div>
+        <div><h4>Servizi</h4><ul class="footer-links"><li><a href="disturbi-funzionali.html">Disturbi Funzionali</a></li><li><a href="cefalee.html">Cefalee</a></li><li><a href="elettromiografia.html">Elettromiografia</a></li><li><a href="approccio-clinico.html">Approccio Clinico</a></li></ul></div>
+        <div class="footer-contact"><h4>Contatti</h4><p>Via Bastioni Meridionali 29/31<br>47921 Rimini (RN)</p><p><a href="tel:+390541029417">+39 0541 029417</a></p><p><a href="mailto:info@poliambulatoriocinrimini.it">info@poliambulatoriocinrimini.it</a></p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; <span data-year></span> Dott. Saeid Saadi — Neurologo. Tutti i diritti riservati.</p><p>Riceve presso Poliambulatorio CIN — Via Bastioni Meridionali 29/31, Rimini</p></div>
+    </div>
+  </footer>
+
+  <!-- ===================== WHATSAPP BUTTON ===================== -->
+  <a href="https://wa.me/390541029417" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
