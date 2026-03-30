@@ -1045,10 +1045,11 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
   gap: var(--space-6);
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding: var(--space-4) var(--space-2);
+  touch-action: pan-x pan-y;
 }
 .reviews-slider::-webkit-scrollbar { display: none; }
 @media (min-width: 1024px) {
