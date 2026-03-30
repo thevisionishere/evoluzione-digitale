@@ -537,7 +537,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isOpen) {
           btn.classList.add('active');
           btn.setAttribute('aria-expanded', 'true');
-          if (content) content.style.maxHeight = content.scrollHeight + 'px';
           const tabBtn = wrapper.querySelector(`.tab-btn[data-tab="${target}"]`);
           if (tabBtn) {
             tabBtn.classList.add('active');
@@ -545,6 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           const panel = wrapper.querySelector(`#panel-${target}`);
           if (panel) panel.classList.add('active');
+          if (content) content.style.maxHeight = content.scrollHeight + 'px';
         }
       });
     });
