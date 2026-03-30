@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (!isMobile && !prefersReducedMotion) {
-    initCinematic();
+    initCounters();
   }
 
   initTimeline();
@@ -564,39 +564,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ============================================
-     CINEMATIC IMAGE SEQUENCE (Signature 1)
+     ANIMATED COUNTERS (Numbers Section)
      ============================================ */
-  function initCinematic() {
-    const cinematic = document.querySelector('.cinematic');
-    if (!cinematic) return;
+  function initCounters() {
+    const counters = document.querySelectorAll('.counter-number[data-target]');
+    if (!counters.length) return;
 
-    const sticky = cinematic.querySelector('.cinematic-sticky');
-    const frames = cinematic.querySelectorAll('.cinematic-frame');
-    if (!frames.length) return;
+    const duration = 2000;
 
-    let ticking = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target, 10);
+          const start = performance.now();
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const rect = cinematic.getBoundingClientRect();
-          const totalHeight = cinematic.offsetHeight - window.innerHeight;
-          const scrolled = -rect.top;
-          const progress = Math.max(0, Math.min(1, scrolled / totalHeight));
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) requestAnimationFrame(update);
+          }
 
-          const frameIndex = Math.min(Math.floor(progress * frames.length), frames.length - 1);
-          frames.forEach((f, i) => {
-            f.classList.toggle('active', i === frameIndex);
-          });
+          requestAnimationFrame(update);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
 
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Set first frame active
-    if (frames[0]) frames[0].classList.add('active');
+    counters.forEach(c => observer.observe(c));
   }
 
   /* ============================================
