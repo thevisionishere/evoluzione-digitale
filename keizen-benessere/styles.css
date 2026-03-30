@@ -1276,6 +1276,7 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
 /* ============================================
    ABOUT FULL (Chi Siamo — Layout B)
    ============================================ */
+.about-full { padding-bottom: 0; }
 .about-full .container-narrow { text-align: center; }
 .about-full h2 { margin-bottom: var(--space-6); }
 .about-full p { color: var(--color-text-muted); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-6); }
@@ -1292,9 +1293,10 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
 }
 .about-full-image {
   margin-top: var(--space-9);
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 400px;
+  height: 60vh;
+  min-height: 400px;
+  max-height: 700px;
 }
 .about-full-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
