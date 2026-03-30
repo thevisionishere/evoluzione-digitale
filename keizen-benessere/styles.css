@@ -598,9 +598,9 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
 .hero .container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-8);
+  gap: var(--space-5);
   align-items: center;
-  padding: calc(var(--space-10) + 80px) 0 var(--space-10);
+  padding: calc(var(--space-7) + 80px) 0 var(--space-6);
 }
 .hero-content { z-index: 2; }
 .hero-content .label { color: var(--color-accent); }
@@ -620,7 +620,7 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/2;
 }
 .hero-image img {
   width: 100%;
