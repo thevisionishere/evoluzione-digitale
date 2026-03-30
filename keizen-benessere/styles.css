@@ -500,7 +500,7 @@ section { padding: var(--section-padding) 0; }
   background: var(--color-accent);
   border-color: var(--color-accent);
 }
-.footer-social a svg { width: 18px; height: 18px; fill: var(--color-text-light); }
+.footer-social a svg { width: 18px; height: 18px; fill: var(--color-text-light); color: var(--color-text-light); }
 .footer-bottom {
   border-top: 1px solid rgba(240, 232, 222, 0.1);
   padding-top: var(--space-6);
@@ -1754,8 +1754,8 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
   transition: all var(--duration-fast) var(--ease-out);
 }
 .contact-social a:hover { background: var(--color-accent); border-color: var(--color-accent); }
-.contact-social a svg { width: 20px; height: 20px; fill: var(--color-text-dark); transition: fill var(--duration-fast); }
-.contact-social a:hover svg { fill: var(--color-light); }
+.contact-social a svg { width: 20px; height: 20px; color: var(--color-text-dark); transition: color var(--duration-fast); }
+.contact-social a:hover svg { color: var(--color-light); }
 
 /* Form */
 .contact-form { background: var(--color-light-alt); padding: var(--space-8); border-radius: var(--radius-lg); }
