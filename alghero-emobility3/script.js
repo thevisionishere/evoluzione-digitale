@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVehicleCards();
   initHorizontalScroll();
   initBookingSystem();
+  initDatePickers();
   initUSPCascade();
 });
 
@@ -518,6 +519,8 @@ function initHorizontalScroll() {
     const cards = track.querySelectorAll('.explore-card');
     const totalScrollWidth = track.scrollWidth - wrapper.clientWidth;
 
+    if (totalScrollWidth <= 0) return; // All cards fit — no animation needed
+
     function updateScroll() {
       const rect = section.getBoundingClientRect();
       const sectionTop = -rect.top;
@@ -738,6 +741,16 @@ function initBookingSystem() {
 
   // Init: show first step
   showStep(0);
+}
+
+/* --- Date Pickers: open on click --- */
+function initDatePickers() {
+  document.querySelectorAll('input[type="date"]').forEach(function (input) {
+    input.style.cursor = 'pointer';
+    input.addEventListener('click', function () {
+      try { this.showPicker(); } catch (e) { /* unsupported browser */ }
+    });
+  });
 }
 
 /* --- USP Cascade (Signature Moment 3) --- */

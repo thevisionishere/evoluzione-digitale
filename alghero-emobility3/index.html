@@ -130,9 +130,12 @@
     }
 
     .marquee-section .marquee-dot {
-      font-size: var(--text-xl);
-      color: var(--color-accent);
-      line-height: 1;
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: inline-block;
     }
 
     /* --- Outline-light button (for cards on dark bg) --- */
@@ -203,6 +206,10 @@
       transition: var(--transition-fast);
       appearance: none;
       -webkit-appearance: none;
+    }
+
+    .booking-date {
+      cursor: pointer;
     }
 
     .booking-select:focus,
@@ -294,10 +301,7 @@
       display: inline;
     }
 
-    /* --- USP section: icon stroke fix --- */
-    .usp-icon svg {
-      stroke: var(--color-accent);
-    }
+    /* (USP v2: styles in styles.css) */
 
     /* --- Reviews slider wrapper --- */
     .reviews-slider-wrapper {
@@ -545,22 +549,22 @@
   <div class="marquee-section" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-content">
-        <span>E-BIKE</span><span class="marquee-dot">•</span>
-        <span>SCOOTER ELETTRICI</span><span class="marquee-dot">•</span>
-        <span>AUTO SENZA CARTA DI CREDITO</span><span class="marquee-dot">•</span>
-        <span>ZTL FREE</span><span class="marquee-dot">•</span>
-        <span>KM ILLIMITATI</span><span class="marquee-dot">•</span>
-        <span>ALGHERO</span><span class="marquee-dot">•</span>
-        <span>SARDEGNA</span><span class="marquee-dot">•</span>
+        <span>E-BIKE</span><span class="marquee-dot" aria-hidden="true"></span>
+        <span>SCOOTER ELETTRICI</span><span class="marquee-dot" aria-hidden="true"></span>
+        <span>AUTO SENZA CARTA DI CREDITO</span><span class="marquee-dot" aria-hidden="true"></span>
+        <span>ZTL FREE</span><span class="marquee-dot" aria-hidden="true"></span>
+        <span>KM ILLIMITATI</span><span class="marquee-dot" aria-hidden="true"></span>
+        <span>ALGHERO</span><span class="marquee-dot" aria-hidden="true"></span>
+        <span>SARDEGNA</span><span class="marquee-dot" aria-hidden="true"></span>
       </div>
       <div class="marquee-content" aria-hidden="true">
-        <span>E-BIKE</span><span class="marquee-dot">•</span>
-        <span>SCOOTER ELETTRICI</span><span class="marquee-dot">•</span>
-        <span>AUTO SENZA CARTA DI CREDITO</span><span class="marquee-dot">•</span>
-        <span>ZTL FREE</span><span class="marquee-dot">•</span>
-        <span>KM ILLIMITATI</span><span class="marquee-dot">•</span>
-        <span>ALGHERO</span><span class="marquee-dot">•</span>
-        <span>SARDEGNA</span><span class="marquee-dot">•</span>
+        <span>E-BIKE</span><span class="marquee-dot"></span>
+        <span>SCOOTER ELETTRICI</span><span class="marquee-dot"></span>
+        <span>AUTO SENZA CARTA DI CREDITO</span><span class="marquee-dot"></span>
+        <span>ZTL FREE</span><span class="marquee-dot"></span>
+        <span>KM ILLIMITATI</span><span class="marquee-dot"></span>
+        <span>ALGHERO</span><span class="marquee-dot"></span>
+        <span>SARDEGNA</span><span class="marquee-dot"></span>
       </div>
     </div>
   </div>
@@ -583,12 +587,11 @@
           <div class="vehicle-card-overlay"></div>
           <div class="vehicle-card-content">
             <div class="vehicle-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-dark)" stroke-width="1.5" width="24" height="24">
-                <circle cx="5.5" cy="17.5" r="3.5"/>
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="18.5" cy="17.5" r="3.5"/>
-                <path d="M15 6h-3l-2 6H5.5"/>
-                <path d="M18.5 17.5L15 6"/>
-                <path d="M10 6l1.5 5h4"/>
+                <circle cx="5.5" cy="17.5" r="3.5"/>
+                <circle cx="15" cy="5" r="1" fill="var(--color-dark)"/>
+                <path d="M12 17.5V14l-3-3 4-3 2 3h2"/>
               </svg>
             </div>
             <h3>Bici &amp; E-Bike</h3>
@@ -611,12 +614,13 @@
           <div class="vehicle-card-overlay"></div>
           <div class="vehicle-card-content">
             <div class="vehicle-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-dark)" stroke-width="1.5" width="24" height="24">
-                <circle cx="5.5" cy="17.5" r="2.5"/>
-                <circle cx="18.5" cy="17.5" r="2.5"/>
-                <path d="M15 5c1 0 3 1 4 3l1 3H9l2-6h4z"/>
-                <path d="M5.5 17.5H9l1-3"/>
-                <path d="M16 8l2 7"/>
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="5" cy="18" r="3"/>
+                <circle cx="19" cy="18" r="3"/>
+                <path d="M8 18h8"/>
+                <path d="M7 15l1-5h5l1 5"/>
+                <path d="M16 15l2-6"/>
+                <path d="M17 7h2.5"/>
               </svg>
             </div>
             <h3>Scooter &amp; E-Scooter</h3>
@@ -639,11 +643,11 @@
           <div class="vehicle-card-overlay"></div>
           <div class="vehicle-card-content">
             <div class="vehicle-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-dark)" stroke-width="1.5" width="24" height="24">
-                <path d="M5 17H3a2 2 0 01-2-2V9l3-4h14l3 4v6a2 2 0 01-2 2h-2"/>
-                <circle cx="7.5" cy="17.5" r="2.5"/>
-                <circle cx="16.5" cy="17.5" r="2.5"/>
-                <path d="M1 9h22"/>
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 002 12v4c0 .6.4 1 1 1h2"/>
+                <circle cx="7" cy="17" r="2"/>
+                <circle cx="17" cy="17" r="2"/>
+                <path d="M9 17h6"/>
               </svg>
             </div>
             <h3>Auto</h3>
@@ -791,11 +795,11 @@
           </div>
           <div class="booking-mini-field">
             <label for="data-ritiro" class="sr-only">Data Ritiro</label>
-            <input type="date" id="data-ritiro" name="ritiro" class="booking-date" aria-label="Data di ritiro">
+            <input type="date" id="data-ritiro" name="ritiro" class="booking-date" aria-label="Data di ritiro" placeholder="Data Ritiro">
           </div>
           <div class="booking-mini-field">
             <label for="data-riconsegna" class="sr-only">Data Riconsegna</label>
-            <input type="date" id="data-riconsegna" name="riconsegna" class="booking-date" aria-label="Data di riconsegna">
+            <input type="date" id="data-riconsegna" name="riconsegna" class="booking-date" aria-label="Data di riconsegna" placeholder="Data Riconsegna">
           </div>
           <button type="submit" class="btn btn-dark">Verifica Disponibilità</button>
         </form>
@@ -877,52 +881,55 @@
   </section>
 
   <!-- ============================
-       USP CASCADE — Signature Moment 3
+       USP — Premium Why-Us Section
   ============================= -->
-  <section class="usp-section" aria-labelledby="usp-heading">
+  <section class="usp-section-v2" aria-labelledby="usp-heading">
     <div class="container">
-      <h2 id="usp-heading" class="sr-only">I Nostri Vantaggi</h2>
-      <div class="usp-panels">
+      <div class="section-header reveal-up">
+        <span class="label">PERCHÉ SCEGLIERCI</span>
+        <h2 id="usp-heading">Un Noleggio Diverso dagli Altri</h2>
+      </div>
+      <div class="usp-grid-v2">
 
-        <!-- Panel 1: Senza Carta di Credito -->
-        <div class="usp-panel">
-          <div class="usp-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-              <line x1="1" y1="10" x2="23" y2="10"/>
-              <line x1="4" y1="20" x2="20" y2="4" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="usp-text">
+        <!-- USP 1: Senza Carta di Credito -->
+        <div class="usp-card-v2 usp-card-featured reveal-up" data-delay="0">
+          <div class="usp-card-accent"></div>
+          <div class="usp-card-body">
+            <div class="usp-card-number" aria-hidden="true">0€</div>
             <h3>Senza Carta di Credito</h3>
             <p>L'unico noleggio ad Alghero che accetta deposito cauzionale in contanti. Nessun blocco sulla tua carta, nessuna sorpresa.</p>
+            <div class="usp-card-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Solo contanti, zero complicazioni
+            </div>
           </div>
         </div>
 
-        <!-- Panel 2: Eco-Friendly -->
-        <div class="usp-panel">
-          <div class="usp-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M17 8C8 10 5.9 16.17 3.82 19.11L2 22l2.5-1.5C7 22 8 22.5 10 22c5 0 10-5 10-10a6 6 0 00-3-5.2z"/>
-            </svg>
-          </div>
-          <div class="usp-text">
-            <h3>100% Eco-Friendly</h3>
+        <!-- USP 2: Eco-Friendly -->
+        <div class="usp-card-v2 reveal-up" data-delay="1">
+          <div class="usp-card-accent"></div>
+          <div class="usp-card-body">
+            <div class="usp-card-number" aria-hidden="true">100%</div>
+            <h3>Eco-Friendly</h3>
             <p>La nostra flotta di bici e scooter elettrici ti permette di esplorare Alghero in modo sostenibile, nel rispetto dell'ambiente.</p>
+            <div class="usp-card-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Zero emissioni, zero rumore
+            </div>
           </div>
         </div>
 
-        <!-- Panel 3: ZTL -->
-        <div class="usp-panel">
-          <div class="usp-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <div class="usp-text">
+        <!-- USP 3: ZTL -->
+        <div class="usp-card-v2 reveal-up" data-delay="2">
+          <div class="usp-card-accent"></div>
+          <div class="usp-card-body">
+            <div class="usp-card-number" aria-hidden="true">ZTL</div>
             <h3>Accesso Libero ZTL</h3>
             <p>Con i nostri scooter elettrici entri dove le auto non possono. Raggiungi il centro storico e le zone a traffico limitato senza pensieri.</p>
+            <div class="usp-card-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Accesso ovunque, senza limiti
+            </div>
           </div>
         </div>
 
@@ -1083,7 +1090,7 @@
 
   <script src="script.js"></script>
   <script>
-    /* Reviews slider — simple scroll-sync JS */
+    /* Reviews slider — robust scroll-sync JS */
     (function () {
       const slider = document.querySelector('.reviews-slider');
       const dots   = document.querySelectorAll('.reviews-dot');
@@ -1093,41 +1100,73 @@
 
       const cards = slider.querySelectorAll('.review-card');
       let current = 0;
+      let isAutoScrolling = false;
 
-      function scrollTo(index) {
-        if (index < 0) index = cards.length - 1;
-        if (index >= cards.length) index = 0;
-        current = index;
-        cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        dots.forEach((d, i) => {
-          d.classList.toggle('active', i === current);
-          d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      function updateDots(index) {
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === index);
+          d.setAttribute('aria-selected', i === index ? 'true' : 'false');
         });
       }
 
-      if (prev) prev.addEventListener('click', () => scrollTo(current - 1));
-      if (next) next.addEventListener('click', () => scrollTo(current + 1));
-      dots.forEach((dot, i) => dot.addEventListener('click', () => scrollTo(i)));
+      function getNearestCard() {
+        /* If scrolled to the very end, it's the last card */
+        if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 10) {
+          return cards.length - 1;
+        }
+        var center = slider.scrollLeft + slider.offsetWidth / 2;
+        var nearest = 0;
+        var minDist = Infinity;
+        cards.forEach(function (card, i) {
+          var cardCenter = card.offsetLeft + card.offsetWidth / 2;
+          var dist = Math.abs(center - cardCenter);
+          if (dist < minDist) { minDist = dist; nearest = i; }
+        });
+        return nearest;
+      }
 
-      /* Also update dots on native scroll */
-      let scrollTimer;
-      slider.addEventListener('scroll', () => {
+      function goTo(index) {
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
+        current = index;
+        isAutoScrolling = true;
+        var target = cards[current];
+        var scrollPos = target.offsetLeft - slider.offsetWidth / 2 + target.offsetWidth / 2;
+        slider.scrollTo({ left: Math.max(0, scrollPos), behavior: 'smooth' });
+        updateDots(current);
+        /* Guard long enough for cross-slider smooth scroll */
+        clearTimeout(autoScrollTimer);
+        autoScrollTimer = setTimeout(function () { isAutoScrolling = false; }, 1500);
+      }
+
+      var autoScrollTimer;
+
+      if (prev) prev.addEventListener('click', function () {
+        goTo(current - 1);
+      });
+      if (next) next.addEventListener('click', function () {
+        goTo(current + 1);
+      });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); });
+      });
+
+      /* Update dots on native scroll/swipe */
+      var scrollTimer;
+      slider.addEventListener('scroll', function () {
+        if (isAutoScrolling) return;
         clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(() => {
-          const sliderLeft = slider.scrollLeft;
-          const cardWidth  = cards[0] ? cards[0].offsetWidth + parseInt(getComputedStyle(slider).gap || '20') : 1;
-          const idx = Math.round(sliderLeft / cardWidth);
-          if (idx !== current && idx >= 0 && idx < cards.length) {
+        scrollTimer = setTimeout(function () {
+          var idx = getNearestCard();
+          if (idx !== current) {
             current = idx;
-            dots.forEach((d, i) => {
-              d.classList.toggle('active', i === current);
-              d.setAttribute('aria-selected', i === current ? 'true' : 'false');
-            });
+            updateDots(current);
           }
         }, 80);
       }, { passive: true });
 
     })();
+
   </script>
 </body>
 </html>
