@@ -138,6 +138,95 @@ if (sessionStorage.getItem('alghero-visited')) {
 </section>
 
 <!-- ============================================================
+     BOOKING SECTION — Prenota il tuo veicolo
+     ============================================================ -->
+<section id="booking-section" class="section-booking section-padding">
+  <div class="container">
+    <div class="booking-header text-center reveal-up">
+      <span class="section-label section-label--line">Prenota Subito</span>
+      <h2 class="section-title">Prenota il tuo <em>veicolo</em></h2>
+      <p class="section-desc section-desc--centered">Seleziona il mezzo e le date — ti rispondiamo in pochi minuti</p>
+    </div>
+    <div class="booking-form-card reveal-up">
+      <form id="booking-form" class="booking-form">
+        <div class="booking-vehicle-select">
+          <label class="booking-vehicle-option">
+            <input type="radio" name="veicolo" value="Bici Elettrica" checked>
+            <div class="booking-vehicle-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5 2.1v-2c-1.4 0-2.5-.5-3.4-1.4L13.4 5.5c-.4-.4-1-.6-1.6-.6s-1.1.2-1.4.6L7.8 8.4c-.4.4-.6.9-.6 1.4 0 .6.2 1.1.6 1.4L11 14v5h2v-6.2l-2.2-2.3zM19 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z"/></svg>
+              <span>E-Bike</span>
+            </div>
+          </label>
+          <label class="booking-vehicle-option">
+            <input type="radio" name="veicolo" value="Scooter">
+            <div class="booking-vehicle-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1zm10 0c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z"/></svg>
+              <span>Scooter</span>
+            </div>
+          </label>
+          <label class="booking-vehicle-option">
+            <input type="radio" name="veicolo" value="Auto">
+            <div class="booking-vehicle-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+              <span>Auto</span>
+            </div>
+          </label>
+          <label class="booking-vehicle-option">
+            <input type="radio" name="veicolo" value="Bici Tradizionale">
+            <div class="booking-vehicle-card">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5 2.1v-2c-1.4 0-2.5-.5-3.4-1.4L13.4 5.5c-.4-.4-1-.6-1.6-.6s-1.1.2-1.4.6L7.8 8.4c-.4.4-.6.9-.6 1.4 0 .6.2 1.1.6 1.4L11 14v5h2v-6.2l-2.2-2.3zM19 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z"/></svg>
+              <span>Bici</span>
+            </div>
+          </label>
+        </div>
+        <div class="booking-dates">
+          <div class="booking-date-group">
+            <label for="booking-ritiro">Data Ritiro</label>
+            <input type="date" id="booking-ritiro" name="ritiro" required>
+          </div>
+          <div class="booking-date-group">
+            <label for="booking-riconsegna">Data Riconsegna</label>
+            <input type="date" id="booking-riconsegna" name="riconsegna" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn--primary booking-submit-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2A1.884 1.884 0 003.8 21.454l3.032-.892A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Prenota su WhatsApp
+        </button>
+      </form>
+      <div class="booking-alt-methods">
+        <span>oppure contattaci:</span>
+        <a href="tel:+393282747108">+39 328.274.7108</a>
+        <span>&bull;</span>
+        <a href="mailto:info@algheroemobility.com">info@algheroemobility.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var form = document.getElementById('booking-form');
+  if (!form) return;
+  // Set min dates to today
+  var today = new Date().toISOString().split('T')[0];
+  var ritiro = document.getElementById('booking-ritiro');
+  var riconsegna = document.getElementById('booking-riconsegna');
+  if (ritiro) ritiro.min = today;
+  if (riconsegna) riconsegna.min = today;
+  ritiro.addEventListener('change', function(){ riconsegna.min = this.value; });
+  // WhatsApp submit
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var veicolo = form.querySelector('input[name="veicolo"]:checked').value;
+    var r = ritiro.value, c = riconsegna.value;
+    if (!r || !c) { alert('Seleziona le date di ritiro e riconsegna'); return; }
+    var msg = 'Ciao! Vorrei prenotare: ' + veicolo + '%0ARitiro: ' + r + '%0ARiconsegna: ' + c;
+    window.open('https://wa.me/393282747108?text=' + msg, '_blank');
+  });
+})();
+</script>
+
+<!-- ============================================================
      SERVICES ALTERNATING
      ============================================================ -->
 <section class="services-alt section-padding" aria-labelledby="services-alt-title" style="padding-bottom: var(--space-2xl);">
