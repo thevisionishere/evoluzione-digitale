@@ -6658,3 +6658,159 @@ a.contact-detailed__info-value:hover {
 .about-numbers.section--alt .about-numbers__bottom p {
   color: var(--color-text-light) !important;
 }
+
+/* ── PROCESS ICONS: Center icons above text on desktop ──────── */
+@media (min-width: 768px) {
+  .process-icons__icon-wrap {
+    justify-content: center !important;
+  }
+  .process-icons__icon-circle {
+    margin: 0 auto;
+  }
+  .process-icons__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   ROUND 5 — Parallax 140% height, reviews smooth transition
+   ============================================================ */
+
+/* ── PARALLAX: 140% height, no visible gaps ─────────────────── */
+/* Hero background */
+.hero-fullscreen__bg {
+  inset: -20% !important;
+  transform: scale(1.1) !important;
+}
+/* Special parallax image section */
+.special-parallax-image__bg {
+  inset: -25% 0 !important;
+}
+.special-parallax-image {
+  overflow: hidden !important;
+}
+/* CTA fullwidth background */
+.cta-fullwidth__bg {
+  inset: -25% !important;
+}
+.cta-fullwidth {
+  overflow: hidden !important;
+}
+
+/* ── HEADER: Force dark text when scrolled (white bg) ───────── */
+[data-header][data-scrolled="true"] .header-classic__nav-link {
+  color: var(--color-text) !important;
+  text-shadow: none !important;
+}
+[data-header][data-scrolled="true"] .header-classic__logo {
+  color: var(--color-text) !important;
+}
+[data-header][data-scrolled="true"] .header-classic__logo-img {
+  filter: none !important;
+}
+
+/* ── REVIEWS CAROUSEL: Smooth crossfade instead of glitchy swap ─ */
+.reviews-carousel__track {
+  position: relative !important;
+  min-height: 300px;
+}
+.reviews-carousel__slide {
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+.reviews-carousel__slide[data-active="true"],
+.reviews-carousel__slide.reviews-carousel__slide--active {
+  opacity: 1 !important;
+  pointer-events: auto;
+  position: relative !important;
+}
+/* Hide the transform-based sliding — use opacity only */
+.reviews-carousel__track {
+  transform: none !important;
+  display: block !important;
+}
+
+/* ============================================================
+   ROUND 6 — Multi-page fixes batch
+   ============================================================ */
+
+/* ── BADGE "2014" on chi-siamo: white text on green bg ──────── */
+.about-story__badge {
+  color: #fff !important;
+}
+.about-story__badge-year {
+  color: #fff !important;
+}
+.about-story__badge-label {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+/* ── FEATURED CARD (Accessibilità): light icon/tag on dark bg ─ */
+.about-values__card--featured .about-values__card-icon {
+  color: rgba(255,255,255,0.85) !important;
+}
+.about-values__card--featured .about-values__card-tag {
+  color: rgba(255,255,255,0.6) !important;
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+.about-values__card--featured .about-values__card-title {
+  color: #fff !important;
+}
+.about-values__card--featured .about-values__card-desc {
+  color: rgba(255,255,255,0.75) !important;
+}
+.about-values__card--featured .about-values__card-icon-bg {
+  background: rgba(255,255,255,0.08) !important;
+}
+.about-values__card--featured .about-values__icon-svg {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* ── LOGO in footer: make dark text white, keep green part ──── */
+.footer-full .footer-full__logo-img {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* ── PROCESS ICONS: stronger visual hierarchy ───────────────── */
+.process-icons__icon-circle {
+  border-width: 2px !important;
+  border-color: var(--color-accent) !important;
+  background: rgba(61, 139, 47, 0.06) !important;
+  color: var(--color-accent) !important;
+}
+.process-icons__icon-circle--accent {
+  background: var(--color-accent) !important;
+  color: #fff !important;
+  border-color: var(--color-accent) !important;
+}
+.process-icons__step-number {
+  color: var(--color-accent) !important;
+  font-weight: 700 !important;
+  font-size: var(--text-sm) !important;
+}
+.process-icons__step-title {
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  font-style: normal !important;
+}
+.process-icons__connector {
+  background: var(--color-accent) !important;
+  opacity: 0.3;
+}
+
+/* ── CONTACT FORM: hide success message until shown by JS ───── */
+.contact-detailed__success[hidden] {
+  display: none !important;
+}
+
+/* ── HERO-MINIMAL (servizi, chi-siamo): title outline fix ───── */
+.hero-minimal__headline-outline {
+  -webkit-text-stroke-color: var(--color-accent) !important;
+  color: transparent !important;
+}
