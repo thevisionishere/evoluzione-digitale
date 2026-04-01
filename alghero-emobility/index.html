@@ -199,11 +199,10 @@ if (sessionStorage.getItem('alghero-visited')) {
      ============================================================ -->
 <section class="special-marquee" aria-label="Elementi del brand in evidenza" aria-hidden="false">
 
-  <!-- Row 1: Left to right -->
+  <!-- Row 1: Left to right — long set to prevent gaps -->
   <div class="special-marquee__track-wrap" aria-hidden="true">
-    <div class="special-marquee__track special-marquee__track--1" role="presentation" data-marquee data-direction="left" data-speed="30">
-      <!-- First set -->
-      <div class="special-marquee__set">
+    <div class="special-marquee__track special-marquee__track--1" role="presentation" data-marquee data-direction="left" data-speed="40">
+      <div class="special-marquee__set" style="display:flex;align-items:center;gap:var(--space-lg);">
         <span class="special-marquee__item">Noleggio Auto</span>
         <span class="special-marquee__dot" aria-hidden="true">✦</span>
         <span class="special-marquee__item special-marquee__item--outline">Scooter Elettrici</span>
@@ -216,21 +215,16 @@ if (sessionStorage.getItem('alghero-visited')) {
         <span class="special-marquee__dot" aria-hidden="true">✦</span>
         <span class="special-marquee__item special-marquee__item--outline">Alghero Centro</span>
         <span class="special-marquee__dot" aria-hidden="true">✦</span>
-      </div>
-      <!-- Duplicate for seamless loop -->
-      <div class="special-marquee__set" aria-hidden="true">
-        <span class="special-marquee__item">Noleggio Auto</span>
-        <span class="special-marquee__dot">✦</span>
-        <span class="special-marquee__item special-marquee__item--outline">Scooter Elettrici</span>
-        <span class="special-marquee__dot">✦</span>
-        <span class="special-marquee__item">E-Bike</span>
-        <span class="special-marquee__dot">✦</span>
-        <span class="special-marquee__item special-marquee__item--outline">Bici</span>
-        <span class="special-marquee__dot">✦</span>
-        <span class="special-marquee__item">Senza Carta di Credito</span>
-        <span class="special-marquee__dot">✦</span>
-        <span class="special-marquee__item special-marquee__item--outline">Alghero Centro</span>
-        <span class="special-marquee__dot">✦</span>
+        <span class="special-marquee__item">Mobilità Sostenibile</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Km Illimitati</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item">IVA Inclusa</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Accesso ZTL</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item">Sardegna</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
       </div>
     </div>
   </div>
@@ -446,7 +440,7 @@ if (sessionStorage.getItem('alghero-visited')) {
         <div class="about-numbers__stat reveal-up stagger-1" role="listitem">
           <div class="about-numbers__stat-inner">
             <span class="about-numbers__stat-value">
-              <span data-count="10" data-count-suffix="+">10+</span>
+              <span>10+</span>
             </span>
             <span class="about-numbers__stat-label">Anni di Esperienza</span>
             <p class="about-numbers__stat-desc">
@@ -461,7 +455,7 @@ if (sessionStorage.getItem('alghero-visited')) {
         <div class="about-numbers__stat reveal-up stagger-2" role="listitem">
           <div class="about-numbers__stat-inner">
             <span class="about-numbers__stat-value">
-              <span data-count="200" data-count-suffix="+">200+</span>
+              <span>200+</span>
             </span>
             <span class="about-numbers__stat-label">Veicoli in Flotta</span>
             <p class="about-numbers__stat-desc">
@@ -476,7 +470,7 @@ if (sessionStorage.getItem('alghero-visited')) {
         <div class="about-numbers__stat reveal-up stagger-3" role="listitem">
           <div class="about-numbers__stat-inner">
             <span class="about-numbers__stat-value">
-              <span data-count="15000" data-count-suffix="+">15.000+</span>
+              <span>15.000+</span>
             </span>
             <span class="about-numbers__stat-label">Clienti Soddisfatti</span>
             <p class="about-numbers__stat-desc">
@@ -491,7 +485,7 @@ if (sessionStorage.getItem('alghero-visited')) {
         <div class="about-numbers__stat reveal-up stagger-4" role="listitem">
           <div class="about-numbers__stat-inner">
             <span class="about-numbers__stat-value">
-              <span data-count="500000" data-count-suffix="+">500.000+</span>
+              <span>500.000+</span>
             </span>
             <span class="about-numbers__stat-label">Km Percorsi</span>
             <p class="about-numbers__stat-desc">
