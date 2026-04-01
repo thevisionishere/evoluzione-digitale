@@ -658,7 +658,7 @@ if (sessionStorage.getItem('alghero-visited')) {
     </header>
 
     <!-- Carousel Wrapper -->
-    <div class="reviews-carousel__wrapper" role="region" aria-label="Carosello testimonianze" aria-live="polite" data-carousel data-autoplay="6000" data-fade="true" data-loop="true">
+    <div class="reviews-carousel__wrapper" role="region" aria-label="Carosello testimonianze" aria-live="polite">
 
       <!-- Decorative quote mark -->
       <div class="reviews-carousel__quote-mark" aria-hidden="true">&ldquo;</div>
@@ -817,7 +817,52 @@ if (sessionStorage.getItem('alghero-visited')) {
   </div><!-- /.container -->
 
 </section><!-- /.reviews-carousel -->
+<script>
+(function(){
+  var slides = document.querySelectorAll('.reviews-carousel__slide');
+  var dots = document.querySelectorAll('.reviews-carousel__dot');
+  var prev = document.getElementById('reviewsPrev');
+  var next = document.getElementById('reviewsNext');
+  if (!slides.length) return;
+  var current = 0, total = slides.length, timer;
 
+  function show(i) {
+    slides[current].style.opacity = '0';
+    slides[current].style.position = 'absolute';
+    dots[current].classList.remove('reviews-carousel__dot--active');
+    dots[current].setAttribute('aria-selected','false');
+    current = ((i % total) + total) % total;
+    slides[current].style.opacity = '1';
+    slides[current].style.position = 'relative';
+    dots[current].classList.add('reviews-carousel__dot--active');
+    dots[current].setAttribute('aria-selected','true');
+  }
+  function auto() { timer = setInterval(function(){ show(current+1); }, 6000); }
+  function reset() { clearInterval(timer); auto(); }
+
+  // Init: hide all except first
+  slides.forEach(function(s,i){
+    s.style.transition = 'opacity 0.5s ease';
+    s.style.opacity = i === 0 ? '1' : '0';
+    s.style.position = i === 0 ? 'relative' : 'absolute';
+    s.style.top = '0'; s.style.left = '0'; s.style.width = '100%';
+  });
+  // Make track relative
+  var track = document.getElementById('reviewsTrack');
+  if (track) track.style.position = 'relative';
+
+  prev.addEventListener('click', function(){ show(current-1); reset(); });
+  next.addEventListener('click', function(){ show(current+1); reset(); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ show(+this.dataset.index); reset(); }); });
+
+  // Touch swipe
+  var sx=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){var d=sx-e.changedTouches[0].clientX;if(Math.abs(d)>50){show(d>0?current+1:current-1);reset();}},{passive:true});
+
+  auto();
+})();
+</script>
 
 <!-- ============================================================
      9. SPECIAL PARALLAX IMAGE

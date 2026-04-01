@@ -6684,12 +6684,22 @@ a.contact-detailed__info-value:hover {
   inset: -20% !important;
   transform: scale(1.1) !important;
 }
-/* Special parallax image section */
-.special-parallax-image__bg {
-  inset: -25% 0 !important;
-}
+/* Special parallax image section — 140% height to eliminate gaps */
 .special-parallax-image {
   overflow: hidden !important;
+  position: relative !important;
+}
+.special-parallax-image__bg {
+  position: absolute !important;
+  top: -40% !important;
+  bottom: -40% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+.special-parallax-image__img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 /* CTA fullwidth background */
 .cta-fullwidth__bg {
@@ -6733,28 +6743,10 @@ a.contact-detailed__info-value:hover {
   background: var(--color-text) !important;
 }
 
-/* ── REVIEWS CAROUSEL: Smooth crossfade instead of glitchy swap ─ */
+/* ── REVIEWS CAROUSEL: handled by inline script, not carousel.js ─ */
 .reviews-carousel__track {
-  position: relative !important;
-  min-height: 300px;
-}
-.reviews-carousel__slide {
-  position: absolute !important;
-  inset: 0 !important;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  pointer-events: none;
-}
-.reviews-carousel__slide[data-active="true"],
-.reviews-carousel__slide.reviews-carousel__slide--active {
-  opacity: 1 !important;
-  pointer-events: auto;
-  position: relative !important;
-}
-/* Hide the transform-based sliding — use opacity only */
-.reviews-carousel__track {
-  transform: none !important;
-  display: block !important;
+  position: relative;
+  min-height: 200px;
 }
 
 /* ============================================================
