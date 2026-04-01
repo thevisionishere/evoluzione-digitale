@@ -821,46 +821,32 @@ body.custom-cursor, body.custom-cursor * { cursor: none; }
 }
 
 /* ============================================
-   SECTION — Fleet CTA (Chi Siamo Redesign)
+   SECTION — Fleet Banner (Chi Siamo)
    ============================================ */
-.section-fleet-cta { padding: var(--section-padding) 0; background: var(--color-dark); overflow: hidden; }
-.fleet-cta-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-7);
-  align-items: center;
+.section-fleet-banner {
+  position: relative;
+  padding: clamp(5rem, 10vw, 10rem) 0;
+  overflow: hidden;
+  text-align: center;
 }
-.fleet-cta-content { text-align: center; }
-.fleet-cta-content h2 { color: white; font-size: var(--text-3xl); margin-bottom: var(--space-4); }
-.fleet-cta-content p { color: rgba(255,255,255,0.6); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-6); max-width: 480px; margin-inline: auto; }
-.fleet-cta-stats { display: flex; justify-content: center; gap: var(--space-7); margin-bottom: var(--space-7); }
-.fleet-cta-stat { text-align: center; }
-.fleet-cta-stat strong { display: block; font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-extrabold); color: var(--color-accent); line-height: 1; }
-.fleet-cta-stat span { font-size: var(--text-xs); color: rgba(255,255,255,0.5); letter-spacing: var(--tracking-wide); text-transform: uppercase; margin-top: var(--space-1); display: block; }
-.fleet-cta-visual { display: flex; justify-content: center; gap: var(--space-5); }
-.fleet-cta-vehicle {
-  width: 90px;
-  height: 90px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-normal);
+.fleet-banner-bg { position: absolute; inset: 0; }
+.fleet-banner-bg img { width: 100%; height: 100%; object-fit: cover; }
+.fleet-banner-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,26,42,0.85) 0%, rgba(12,26,42,0.75) 100%); }
+.fleet-banner-content { position: relative; z-index: 1; max-width: 600px; margin-inline: auto; }
+.fleet-banner-content h2 { color: white; font-size: var(--text-3xl); margin-bottom: var(--space-3); }
+.fleet-banner-content p { color: rgba(255,255,255,0.7); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-7); }
+.fleet-banner-stats { display: flex; justify-content: center; gap: var(--space-8); margin-bottom: var(--space-7); }
+.fleet-banner-stat { text-align: center; }
+.fleet-banner-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-accent-light);
+  line-height: 1;
+  margin-bottom: var(--space-1);
 }
-.fleet-cta-vehicle:hover { background: rgba(13, 127, 51, 0.1); border-color: var(--color-accent); transform: translateY(-4px); }
-.fleet-cta-vehicle svg { width: 40px; height: 40px; fill: var(--color-accent); }
-
-@media (min-width: 768px) {
-  .fleet-cta-inner { grid-template-columns: 1.2fr 0.8fr; text-align: left; }
-  .fleet-cta-content { text-align: left; }
-  .fleet-cta-content p { margin-inline: 0; }
-  .fleet-cta-stats { justify-content: flex-start; }
-  .fleet-cta-visual { flex-direction: column; }
-  .fleet-cta-vehicle { width: 110px; height: 110px; }
-  .fleet-cta-vehicle svg { width: 48px; height: 48px; }
-}
+.fleet-banner-stat span { font-size: var(--text-xs); color: rgba(255,255,255,0.5); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
 
 /* ============================================
    SECTION — Explore Page Intro
