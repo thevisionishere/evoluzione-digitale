@@ -109,81 +109,33 @@ if (sessionStorage.getItem('alghero-visited')) {
 <!-- ============================================================
      HERO MINIMAL
      ============================================================ -->
-<section class="hero-minimal" aria-label="Intestazione principale">
-
-  <!-- Decorative dot grid — top right -->
-  <div class="hero-minimal__dot-grid" aria-hidden="true">
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false">
-      <pattern id="hero-min-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1.5" fill="var(--color-accent)" opacity="0.35"/>
-      </pattern>
-      <rect width="120" height="120" fill="url(#hero-min-dots)"/>
-    </svg>
-  </div>
-
-  <!-- Decorative corner bracket — bottom left -->
-  <div class="hero-minimal__bracket" aria-hidden="true">
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-      <path d="M62 62 L2 62 L2 2" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.5"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="hero-minimal__inner">
-
-      <!-- Eyebrow -->
-      <div class="hero-minimal__eyebrow-wrap reveal-up stagger-1">
-        <span class="hero-minimal__eyebrow section-label">
-          Noleggio Veicoli &middot; Alghero, Sardegna
-        </span>
-      </div>
-
-      <!-- Main headline -->
-      <h1 class="hero-minimal__headline reveal-up stagger-2">
-        I Nostri<br>
-        <span class="hero-minimal__headline-outline">Veicoli</span>
+<section class="hero-servizi" aria-label="Intestazione principale">
+  <div class="hero-servizi__inner">
+    <!-- Left: Text -->
+    <div class="hero-servizi__content">
+      <span class="hero-servizi__eyebrow section-label reveal-up stagger-1">Noleggio Veicoli &middot; Alghero</span>
+      <h1 class="hero-servizi__headline reveal-up stagger-2">
+        I Nostri<br><em>Veicoli</em>
       </h1>
-
-      <!-- Accent separator line -->
-      <div class="hero-minimal__separator reveal-up stagger-3" aria-hidden="true">
-        <span class="hero-minimal__separator-line"></span>
-        <span class="hero-minimal__separator-diamond" aria-hidden="true"></span>
-        <span class="hero-minimal__separator-line"></span>
+      <p class="hero-servizi__desc reveal-up stagger-3">
+        Auto, scooter, e-bike e bici tradizionali. Scegli il veicolo perfetto per esplorare la Sardegna in totale libertà.
+      </p>
+      <div class="hero-servizi__trust reveal-up stagger-4">
+        <span>&#10003; Senza Carta di Credito</span>
+        <span>&#10003; Km Illimitati</span>
+        <span>&#10003; IVA Inclusa</span>
       </div>
-
-      <!-- Sub-copy row -->
-      <div class="hero-minimal__body reveal-up stagger-4">
-        <p class="hero-minimal__desc">
-          Auto, scooter, e-bike e bici tradizionali. Scegli il veicolo perfetto per esplorare Alghero e la Sardegna.
-        </p>
-
-        <!-- Discipline tags -->
-        <ul class="hero-minimal__disciplines" aria-label="Tipologie di veicoli">
-          <li>Auto</li>
-          <li>Scooter</li>
-          <li>E-Bike</li>
-          <li>Bici</li>
-          <li>Senza Carta di Credito</li>
-        </ul>
+      <div class="hero-servizi__actions reveal-up stagger-5">
+        <a href="contatti.html" class="btn btn--primary btn--lg">Prenota Ora</a>
+        <a href="#servizi" class="btn btn--secondary btn--lg">Scopri la Flotta</a>
       </div>
-
-      <!-- CTA -->
-      <div class="hero-minimal__actions reveal-up stagger-5">
-        <a href="contatti.html" class="btn btn--primary btn--lg">
-          Contattaci
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="index.html" class="btn btn--secondary btn--lg">
-          Torna alla Home
-        </a>
-      </div>
-
-    </div><!-- /.hero-minimal__inner -->
-  </div><!-- /.container -->
-
-</section><!-- /.hero-minimal -->
+    </div>
+    <!-- Right: Image -->
+    <div class="hero-servizi__media reveal-up">
+      <img src="images/servizio-auto.jpg" alt="Fiat 500 su costa mediterranea sarda" class="hero-servizi__img" width="800" height="800" loading="eager">
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      SERVICES ALTERNATING
@@ -349,7 +301,7 @@ if (sessionStorage.getItem('alghero-visited')) {
 <!-- ============================================================
      PROCESS ICONS
      ============================================================ -->
-<section class="process-icons section-padding" aria-labelledby="process-icons-heading">
+<section class="process-icons section-padding" aria-labelledby="process-icons-heading" style="padding-top: var(--space-2xl);">
   <div class="container">
 
     <!-- Section Header -->
