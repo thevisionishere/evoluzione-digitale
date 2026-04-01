@@ -6993,6 +6993,7 @@ a.contact-detailed__info-value:hover {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: var(--space-sm) var(--container-padding) var(--space-2xl);
+  padding-left: max(var(--container-padding), calc((100vw - var(--container-max)) / 2 + var(--container-padding)));
   scrollbar-width: none;
 }
 .reviews-hscroll__track::-webkit-scrollbar {
