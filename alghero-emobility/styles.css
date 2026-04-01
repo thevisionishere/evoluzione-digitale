@@ -7178,3 +7178,12 @@ a.contact-detailed__info-value:hover {
 }
 
 
+
+/* ── CHI SIAMO: disciplines horizontal below text, not beside ── */
+.hero-minimal__body {
+  flex-direction: column !important;
+}
+.hero-minimal__disciplines {
+  flex-direction: row !important;
+  justify-content: center;
+}
