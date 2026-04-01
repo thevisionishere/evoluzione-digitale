@@ -7101,3 +7101,38 @@ a.contact-detailed__info-value:hover {
 .hero-fullscreen__bg-img {
   object-position: 25% center !important;
 }
+
+/* ── HERO: Stronger overlay for bright Alghero photo ────────── */
+.hero-fullscreen__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.50) 40%,
+    rgba(0, 0, 0, 0.72) 100%
+  ) !important;
+}
+.hero-fullscreen__headline {
+  text-shadow: 0 3px 30px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5) !important;
+}
+.hero-fullscreen__subheadline {
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6) !important;
+}
+.hero-fullscreen__eyebrow {
+  text-shadow: 0 1px 12px rgba(0,0,0,0.6) !important;
+}
+.hero-fullscreen__trust-item {
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6) !important;
+}
+
+/* ── LOGO in header: white text on hero (green part stays green) ─ */
+[data-header]:not([data-scrolled="true"]) .header-classic__logo-img {
+  filter: brightness(0) invert(1) !important;
+}
+/* When scrolled (white bg): normal logo */
+[data-header][data-scrolled="true"] .header-classic__logo-img {
+  filter: none !important;
+}
+/* Light-hero pages: always normal logo (dark bg already handled) */
+.light-hero .header-classic__logo-img {
+  filter: none !important;
+}
