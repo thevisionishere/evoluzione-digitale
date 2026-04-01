@@ -307,8 +307,11 @@
     .reviews-slider-wrapper {
       position: relative;
     }
-    .reviews-slider-wrapper::before,
-    .reviews-slider-wrapper::after {
+    .reviews-slider-fade {
+      position: relative;
+    }
+    .reviews-slider-fade::before,
+    .reviews-slider-fade::after {
       content: '';
       position: absolute;
       top: 0;
@@ -317,11 +320,11 @@
       z-index: 2;
       pointer-events: none;
     }
-    .reviews-slider-wrapper::before {
+    .reviews-slider-fade::before {
       left: 0;
       background: linear-gradient(to right, var(--color-light), transparent);
     }
-    .reviews-slider-wrapper::after {
+    .reviews-slider-fade::after {
       right: 0;
       background: linear-gradient(to left, var(--color-light), transparent);
     }
@@ -1133,6 +1136,7 @@
         <h2 id="reviews-heading">Cosa Dicono i Nostri Clienti</h2>
       </div>
       <div class="reviews-slider-wrapper reveal-up" data-delay="1">
+        <div class="reviews-slider-fade">
         <div class="reviews-slider" role="list">
 
           <!-- Review 1 -->
@@ -1195,6 +1199,7 @@
             </footer>
           </article>
 
+        </div>
         </div>
         <div class="reviews-controls" aria-label="Controlli slider recensioni">
           <button class="reviews-prev" aria-label="Recensione precedente">
