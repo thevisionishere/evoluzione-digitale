@@ -77,9 +77,14 @@
       margin-bottom: var(--space-6);
     }
 
-    /* Pricing grid wider on desktop */
+    /* Pricing grid + note constrained on desktop */
     @media (min-width: 768px) {
       .pricing-grid-veicoli {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .pricing-grid-veicoli + .pricing-note {
         max-width: 760px;
         margin-left: auto;
         margin-right: auto;
