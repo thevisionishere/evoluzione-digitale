@@ -7151,3 +7151,10 @@ a.contact-detailed__info-value:hover {
 [data-header]:not([data-scrolled="true"]) .header-classic__logo-img {
   filter: none !important;
 }
+
+/* ── PROCESS ICONS: remove horizontal line ──────────────────── */
+@media (min-width: 768px) {
+  .process-icons__steps::before {
+    display: none !important;
+  }
+}
