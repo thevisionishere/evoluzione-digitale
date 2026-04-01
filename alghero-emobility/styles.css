@@ -7136,3 +7136,18 @@ a.contact-detailed__info-value:hover {
 .light-hero .header-classic__logo-img {
   filter: none !important;
 }
+
+/* ── LOGO SWAP: white on hero, normal when scrolled ─────────── */
+/* Default (on hero): show white logo, hide dark */
+.header-classic__logo-img--dark { display: none; }
+.header-classic__logo-img--light { display: block; }
+/* When scrolled: show dark logo, hide white */
+[data-header][data-scrolled="true"] .header-classic__logo-img--dark { display: block; }
+[data-header][data-scrolled="true"] .header-classic__logo-img--light { display: none; }
+/* Light-hero pages: always dark logo */
+.light-hero .header-classic__logo-img--dark { display: block !important; }
+.light-hero .header-classic__logo-img--light { display: none !important; }
+/* Remove old filter hacks */
+[data-header]:not([data-scrolled="true"]) .header-classic__logo-img {
+  filter: none !important;
+}
