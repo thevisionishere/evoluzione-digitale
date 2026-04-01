@@ -1450,6 +1450,7 @@ section {
 .cta-banner {
   position: relative;
   overflow: hidden;
+  padding: 0;
 }
 
 .cta-banner-inner {
@@ -1472,7 +1473,7 @@ section {
 }
 
 .cta-banner-text p {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.75);
   font-size: var(--text-lg);
   margin-bottom: var(--space-6);
 }

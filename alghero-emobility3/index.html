@@ -307,6 +307,24 @@
     .reviews-slider-wrapper {
       position: relative;
     }
+    .reviews-slider-wrapper::before,
+    .reviews-slider-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .reviews-slider-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, var(--color-light), transparent);
+    }
+    .reviews-slider-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, var(--color-light), transparent);
+    }
 
     /* --- Reviews slider controls --- */
     .reviews-controls {
@@ -1032,7 +1050,7 @@
        CTA BANNER — Style B: Split
   ============================= -->
   <section class="cta-banner" aria-labelledby="cta-heading">
-    <div class="cta-banner-grid">
+    <div class="cta-banner-inner">
       <div class="cta-banner-text reveal-up">
         <h2 id="cta-heading">Prenota il Tuo Mezzo Oggi</h2>
         <p>Inizia la tua avventura ad Alghero con i nostri veicoli eco-sostenibili</p>
