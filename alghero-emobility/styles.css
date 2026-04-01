@@ -7158,3 +7158,22 @@ a.contact-detailed__info-value:hover {
     display: none !important;
   }
 }
+
+/* ── PROCESS ARROWS between steps ───────────────────────────── */
+.process-icons__arrow {
+  display: none; /* hidden on mobile */
+}
+@media (min-width: 768px) {
+  .process-icons__arrow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 24px; /* align with center of 72px circle */
+    color: var(--color-accent);
+    opacity: 0.4;
+    flex-shrink: 0;
+    width: 40px;
+  }
+}
+
+
