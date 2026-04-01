@@ -814,6 +814,7 @@ body.custom-cursor, body.custom-cursor * { cursor: none; }
 }
 
 @media (min-width: 768px) {
+  .section-brand-partners .section-subtitle { max-width: calc(50% - var(--space-6) / 2); }
   .brand-partners-grid { grid-template-columns: repeat(2, 1fr); }
   .brand-partner-card { grid-template-columns: 1fr; }
   .brand-partner-logo { min-height: 140px; padding: var(--space-8) var(--space-6); }
