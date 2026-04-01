@@ -6659,7 +6659,7 @@ a.contact-detailed__info-value:hover {
   color: var(--color-text-light) !important;
 }
 
-/* ── PROCESS ICONS: Center icons above text on desktop ──────── */
+/* ── PROCESS ICONS: Center icons + fix connector gap ──────── */
 @media (min-width: 768px) {
   .process-icons__icon-wrap {
     justify-content: center !important;
@@ -6671,6 +6671,22 @@ a.contact-detailed__info-value:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  /* Ensure all steps have equal flex distribution */
+  .process-icons__steps {
+    display: flex !important;
+  }
+  .process-icons__step {
+    flex: 1 1 0 !important;
+  }
+  /* Connector lines: extend fully between circles */
+  .process-icons__connector {
+    flex: 1 !important;
+    min-width: 20px;
+  }
+  /* Last step accent circle: connect visually with offset */
+  .process-icons__step--last .process-icons__icon-wrap {
+    justify-content: center !important;
   }
 }
 
