@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Alghero E-Mobility — Noleggio Auto, Scooter ed E-Bike ad Alghero</title>
+  <meta name="description" content="Noleggio auto senza carta di credito, scooter ed e-bike nel centro di Alghero. Mobilità eco-sostenibile in Sardegna. Km illimitati, IVA inclusa.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alghero E-Mobility — Noleggio Auto, Scooter ed E-Bike ad Alghero">
+  <meta property="og:description" content="Noleggio auto senza carta di credito, scooter ed e-bike nel centro di Alghero. Mobilità eco-sostenibile in Sardegna.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     1. PRELOADER — Logo (first visit only via sessionStorage)
+     ============================================================ -->
+<div class="preloader-logo" id="preloader-logo" data-preloader aria-live="polite" aria-label="Caricamento in corso" role="status">
+  <div class="preloader-logo__content">
+    <div class="preloader-logo__mark" aria-hidden="true">
+      <span class="preloader-logo__mark-ring"></span>
+      <span class="preloader-logo__mark-dot"></span>
+    </div>
+    <div class="preloader-logo__wordmark" aria-hidden="true">
+      <img src="https://algheroemobility.com/wp-content/uploads/2022/04/cropped-logo.png" alt="" class="preloader-logo__img" width="200" height="60" style="filter: brightness(0) invert(1); opacity: 0.9;">
+    </div>
+  </div>
+</div>
+<script>
+/* Show preloader only on first visit per session */
+if (sessionStorage.getItem('alghero-visited')) {
+  var pl = document.querySelector('[data-preloader]');
+  if (pl) pl.remove();
+  document.body.classList.add('loaded');
+} else {
+  sessionStorage.setItem('alghero-visited', '1');
+}
+</script>
+
+<!-- ============================================================
+     2. HEADER CLASSIC
+     ============================================================ -->
+<header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
+  <div class="header-classic__inner container">
+
+    <!-- Logo -->
+    <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+      <img src="https://algheroemobility.com/wp-content/uploads/2022/04/cropped-logo.png" alt="Alghero E-Mobility" class="header-classic__logo-img" width="160" height="48">
+    </a>
+
+    <!-- Navigation (desktop) -->
+    <nav class="header-classic__nav" aria-label="Navigazione principale">
+      <ul class="header-classic__nav-list" role="list">
+        <li class="header-classic__nav-item">
+          <a href="index.html" class="header-classic__nav-link header-classic__nav-link--active" aria-current="page">Home</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="servizi.html" class="header-classic__nav-link">I Nostri Veicoli</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="chi-siamo.html" class="header-classic__nav-link">Chi Siamo</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <div class="header-classic__actions">
+      <a href="contatti.html" class="btn btn--primary header-classic__cta">Prenota Ora</a>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="header-classic__hamburger"
+        data-mobile-toggle
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        type="button"
+      >
+        <span class="header-classic__hamburger-bar bar"></span>
+        <span class="header-classic__hamburger-bar bar"></span>
+        <span class="header-classic__hamburger-bar bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <ul class="header-classic__mobile-nav" role="list">
+        <li><a href="index.html" class="header-classic__mobile-link" aria-current="page">Home</a></li>
+        <li><a href="servizi.html" class="header-classic__mobile-link">I Nostri Veicoli</a></li>
+        <li><a href="chi-siamo.html" class="header-classic__mobile-link">Chi Siamo</a></li>
+        <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+      </ul>
+      <a href="contatti.html" class="btn btn--primary header-classic__mobile-cta">Prenota Ora</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     3. HERO FULLSCREEN
+     ============================================================ -->
+<section
+  class="hero-fullscreen"
+  aria-label="Intestazione principale"
+  data-hero-parallax
+>
+
+  <!-- Background Image Layer -->
+  <figure class="hero-fullscreen__bg" aria-hidden="true" data-parallax="0.25">
+    <!-- Wikimedia Commons: Alghero Panorama by Gianni Careddu, CC BY-SA 4.0 -->
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/65/Alghero_-_Panorama_%2801%29.jpg"
+      alt=""
+      class="hero-fullscreen__bg-img"
+      width="1920"
+      height="1080"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      aria-hidden="true"
+    >
+    <!-- Replace: panoramic photo of Alghero coastline or old town from above -->
+  </figure>
+
+  <!-- Gradient Overlay -->
+  <div class="hero-fullscreen__overlay" aria-hidden="true"></div>
+
+  <!-- Centered Content -->
+  <div class="hero-fullscreen__content">
+
+    <div class="hero-fullscreen__inner container">
+
+      <!-- Eyebrow / location label -->
+      <span class="hero-fullscreen__eyebrow reveal-up stagger-1">
+        Via Garibaldi 53 · Alghero, Sardegna
+      </span>
+
+      <!-- Main headline -->
+      <h1 class="hero-fullscreen__headline reveal-up stagger-2">
+        Esplora Alghero<br>
+        in Totale <span class="hero-fullscreen__headline-accent">Libertà</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="hero-fullscreen__subheadline reveal-up stagger-3">
+        Noleggio auto, scooter ed e-bike nel cuore di Alghero. Senza carta di credito.
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-fullscreen__actions reveal-up stagger-4">
+        <a href="servizi.html" class="btn btn--primary btn--lg">
+          Scopri i Veicoli
+        </a>
+        <a href="contatti.html" class="btn btn--outline-light btn--lg">
+          Prenota Ora
+        </a>
+      </div>
+
+      <!-- Trust row -->
+      <div class="hero-fullscreen__trust reveal-up stagger-5" aria-label="Vantaggi principali">
+        <span class="hero-fullscreen__trust-item">&#10003; Senza Carta di Credito</span>
+        <span class="hero-fullscreen__trust-divider" aria-hidden="true">·</span>
+        <span class="hero-fullscreen__trust-item">&#10003; Km Illimitati</span>
+        <span class="hero-fullscreen__trust-divider" aria-hidden="true">·</span>
+        <span class="hero-fullscreen__trust-item">&#10003; IVA Inclusa</span>
+        <span class="hero-fullscreen__trust-divider" aria-hidden="true">·</span>
+        <span class="hero-fullscreen__trust-item">&#10003; Centro Storico</span>
+      </div>
+
+    </div><!-- /.hero-fullscreen__inner -->
+  </div><!-- /.hero-fullscreen__content -->
+
+  <!-- Scroll Indicator -->
+  <div class="hero-fullscreen__scroll-indicator" aria-label="Scorri verso il basso">
+    <span class="hero-fullscreen__scroll-label">Scorri</span>
+    <span class="hero-fullscreen__scroll-arrow" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </span>
+  </div>
+
+</section><!-- /.hero-fullscreen -->
+
+
+<!-- ============================================================
+     4. SPECIAL MARQUEE
+     ============================================================ -->
+<section class="special-marquee" aria-label="Elementi del brand in evidenza" aria-hidden="false">
+
+  <!-- Row 1: Left to right -->
+  <div class="special-marquee__track-wrap" aria-hidden="true">
+    <div class="special-marquee__track special-marquee__track--1" role="presentation" data-marquee data-direction="left" data-speed="30">
+      <!-- First set -->
+      <div class="special-marquee__set">
+        <span class="special-marquee__item">Noleggio Auto</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Scooter Elettrici</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item">E-Bike</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Bici</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item">Senza Carta di Credito</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Alghero Centro</span>
+        <span class="special-marquee__dot" aria-hidden="true">✦</span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="special-marquee__set" aria-hidden="true">
+        <span class="special-marquee__item">Noleggio Auto</span>
+        <span class="special-marquee__dot">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Scooter Elettrici</span>
+        <span class="special-marquee__dot">✦</span>
+        <span class="special-marquee__item">E-Bike</span>
+        <span class="special-marquee__dot">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Bici</span>
+        <span class="special-marquee__dot">✦</span>
+        <span class="special-marquee__item">Senza Carta di Credito</span>
+        <span class="special-marquee__dot">✦</span>
+        <span class="special-marquee__item special-marquee__item--outline">Alghero Centro</span>
+        <span class="special-marquee__dot">✦</span>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /.special-marquee -->
+
+<!-- ============================================================
+     5. SERVICES HOVER REVEAL — 4 cards (2x2 grid)
+     ============================================================ -->
+<section class="services-reveal section-padding" aria-labelledby="services-reveal-title">
+  <div class="container">
+
+    <!-- Section Header -->
+    <header class="services-reveal__header reveal-up">
+      <span class="services-reveal__eyebrow section-label">I Nostri Servizi</span>
+      <h2 class="services-reveal__title section-title" id="services-reveal-title">
+        I Nostri Veicoli<br>
+        <em>per Ogni Avventura</em>
+      </h2>
+      <p class="services-reveal__desc section-desc">
+        Auto, scooter, e-bike e bici nel cuore di Alghero.
+        Scegli il mezzo perfetto per esplorare la Sardegna in libertà.
+      </p>
+    </header>
+
+    <!-- Grid (4 cards — 2x2) -->
+    <div class="services-reveal__grid" role="list" style="--cols: 2; grid-template-columns: repeat(2, 1fr);">
+
+      <!-- Card 1: Auto -->
+      <article class="services-reveal__card reveal-up stagger-1" role="listitem">
+        <a href="servizi.html" class="services-reveal__card-link" aria-label="Scopri: Auto">
+          <!-- Background Image -->
+          <div class="services-reveal__card-bg" aria-hidden="true">
+            <img
+              src="https://algheroemobility.com/wp-content/uploads/2022/04/noleggio-auto.jpg"
+              alt="Auto a noleggio di Alghero E-Mobility nel centro storico di Alghero"
+              class="services-reveal__card-image"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+            <!-- Replace: photo of rental car in Alghero city center -->
+            <div class="services-reveal__card-image-placeholder"></div>
+          </div>
+          <!-- Always visible: number -->
+          <div class="services-reveal__card-header" aria-hidden="true">
+            <span class="services-reveal__card-num">01</span>
+          </div>
+          <!-- Title always visible at bottom -->
+          <div class="services-reveal__card-title-wrap">
+            <h3 class="services-reveal__card-title">Auto</h3>
+          </div>
+          <!-- Overlay (slides up on hover / always visible mobile) -->
+          <div class="services-reveal__card-overlay" aria-hidden="true">
+            <div class="services-reveal__card-overlay-inner">
+              <h3 class="services-reveal__card-overlay-title">Auto</h3>
+              <p class="services-reveal__card-overlay-desc">
+                Noleggio auto senza carta di credito. Deposito cauzionale in contanti accettato. Chilometraggio illimitato e IVA inclusi.
+              </p>
+              <span class="services-reveal__card-overlay-cta">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 2: Scooter -->
+      <article class="services-reveal__card reveal-up stagger-2" role="listitem">
+        <a href="servizi.html" class="services-reveal__card-link" aria-label="Scopri: Scooter">
+          <div class="services-reveal__card-bg" aria-hidden="true">
+            <img
+              src="https://algheroemobility.com/wp-content/uploads/2022/04/noleggio-scooter.jpg"
+              alt="Scooter elettrico a noleggio nelle strade di Alghero"
+              class="services-reveal__card-image"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+            <!-- Replace: photo of scooter on a street in Alghero old town -->
+            <div class="services-reveal__card-image-placeholder"></div>
+          </div>
+          <div class="services-reveal__card-header" aria-hidden="true">
+            <span class="services-reveal__card-num">02</span>
+          </div>
+          <div class="services-reveal__card-title-wrap">
+            <h3 class="services-reveal__card-title">Scooter</h3>
+          </div>
+          <div class="services-reveal__card-overlay" aria-hidden="true">
+            <div class="services-reveal__card-overlay-inner">
+              <h3 class="services-reveal__card-overlay-title">Scooter</h3>
+              <p class="services-reveal__card-overlay-desc">
+                Scooter 50cc, 125cc ed elettrici. Accesso libero alla ZTL. Ideali per il traffico estivo di Alghero.
+              </p>
+              <span class="services-reveal__card-overlay-cta">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3: E-Bike -->
+      <article class="services-reveal__card reveal-up stagger-3" role="listitem">
+        <a href="servizi.html" class="services-reveal__card-link" aria-label="Scopri: E-Bike">
+          <div class="services-reveal__card-bg" aria-hidden="true">
+            <img
+              src="https://algheroemobility.com/wp-content/uploads/2022/04/alghero-e-mobility-noleggio-bici-elettriche.jpg"
+              alt="E-Bike a pedalata assistita lungo la costa di Alghero"
+              class="services-reveal__card-image"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+            <!-- Replace: photo of e-bike on Alghero coastal path or promenade -->
+            <div class="services-reveal__card-image-placeholder"></div>
+          </div>
+          <div class="services-reveal__card-header" aria-hidden="true">
+            <span class="services-reveal__card-num">03</span>
+          </div>
+          <div class="services-reveal__card-title-wrap">
+            <h3 class="services-reveal__card-title">E-Bike</h3>
+          </div>
+          <div class="services-reveal__card-overlay" aria-hidden="true">
+            <div class="services-reveal__card-overlay-inner">
+              <h3 class="services-reveal__card-overlay-title">E-Bike</h3>
+              <p class="services-reveal__card-overlay-desc">
+                Bici elettriche a pedalata assistita. La soluzione green per esplorare Alghero e dintorni senza fatica.
+              </p>
+              <span class="services-reveal__card-overlay-cta">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 4: Bici -->
+      <article class="services-reveal__card reveal-up stagger-1" role="listitem">
+        <a href="servizi.html" class="services-reveal__card-link" aria-label="Scopri: Bici">
+          <div class="services-reveal__card-bg" aria-hidden="true">
+            <img
+              src="https://algheroemobility.com/wp-content/uploads/2022/04/noleggio-bici-passeggio.jpg"
+              alt="Bici tradizionali a noleggio per esplorare Alghero e la Sardegna"
+              class="services-reveal__card-image"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+            <!-- Replace: photo of bicycles with Alghero scenery in background -->
+            <div class="services-reveal__card-image-placeholder"></div>
+          </div>
+          <div class="services-reveal__card-header" aria-hidden="true">
+            <span class="services-reveal__card-num">04</span>
+          </div>
+          <div class="services-reveal__card-title-wrap">
+            <h3 class="services-reveal__card-title">Bici</h3>
+          </div>
+          <div class="services-reveal__card-overlay" aria-hidden="true">
+            <div class="services-reveal__card-overlay-inner">
+              <h3 class="services-reveal__card-overlay-title">Bici</h3>
+              <p class="services-reveal__card-overlay-desc">
+                Bici tradizionali da passeggio. Per godersi il paesaggio sardo con calma, senza fretta.
+              </p>
+              <span class="services-reveal__card-overlay-cta">
+                Scopri di più
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+    </div><!-- /.services-reveal__grid -->
+  </div><!-- /.container -->
+</section>
+
+<!-- ============================================================
+     6. ABOUT NUMBERS
+     ============================================================ -->
+<section class="about-numbers section--alt" aria-labelledby="about-numbers-heading">
+
+  <!-- Decorative background element -->
+  <div class="about-numbers__bg-pattern" aria-hidden="true"></div>
+
+  <!-- Top: Section header -->
+  <div class="about-numbers__top section-padding">
+    <div class="container">
+      <div class="about-numbers__header reveal-up">
+        <span class="section-label section-label--line">La Nostra Missione</span>
+        <h2 class="section-title about-numbers__heading" id="about-numbers-heading">
+          Mobilità eco-sostenibile<br>
+          nel cuore di <em>Alghero.</em>
+        </h2>
+        <p class="section-desc">
+          Da anni operiamo per rendere la mobilità sarda più sostenibile e accessibile.
+          Ogni veicolo della nostra flotta è scelto per ridurre l'impatto ambientale
+          e offrire la massima libertà di esplorazione.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats grid -->
+  <div class="about-numbers__stats-band" role="list" aria-label="Statistiche principali">
+    <div class="container">
+      <div class="about-numbers__stats-grid">
+
+        <!-- Stat 1 -->
+        <div class="about-numbers__stat reveal-up stagger-1" role="listitem">
+          <div class="about-numbers__stat-inner">
+            <span class="about-numbers__stat-value">
+              <span data-count="10" data-count-suffix="+">10+</span>
+            </span>
+            <span class="about-numbers__stat-label">Anni di Esperienza</span>
+            <p class="about-numbers__stat-desc">
+              Presenti ad Alghero da oltre un decennio, al servizio
+              di turisti e residenti con passione per la mobilità green.
+            </p>
+          </div>
+          <div class="about-numbers__stat-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="about-numbers__stat reveal-up stagger-2" role="listitem">
+          <div class="about-numbers__stat-inner">
+            <span class="about-numbers__stat-value">
+              <span data-count="200" data-count-suffix="+">200+</span>
+            </span>
+            <span class="about-numbers__stat-label">Veicoli in Flotta</span>
+            <p class="about-numbers__stat-desc">
+              Auto, scooter, e-bike e bici sempre disponibili,
+              manutenuti con cura per la tua sicurezza e comodità.
+            </p>
+          </div>
+          <div class="about-numbers__stat-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="about-numbers__stat reveal-up stagger-3" role="listitem">
+          <div class="about-numbers__stat-inner">
+            <span class="about-numbers__stat-value">
+              <span data-count="15000" data-count-suffix="+">15.000+</span>
+            </span>
+            <span class="about-numbers__stat-label">Clienti Soddisfatti</span>
+            <p class="about-numbers__stat-desc">
+              Turisti da tutta Europa che hanno scelto noi
+              per esplorare la Sardegna in libertà e sostenibilità.
+            </p>
+          </div>
+          <div class="about-numbers__stat-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="about-numbers__stat reveal-up stagger-4" role="listitem">
+          <div class="about-numbers__stat-inner">
+            <span class="about-numbers__stat-value">
+              <span data-count="500000" data-count-suffix="+">500.000+</span>
+            </span>
+            <span class="about-numbers__stat-label">Km Percorsi</span>
+            <p class="about-numbers__stat-desc">
+              Chilometri esplorati dai nostri clienti lungo le coste,
+              i borghi e le campagne della Sardegna più autentica.
+            </p>
+          </div>
+          <div class="about-numbers__stat-line about-numbers__stat-line--last" aria-hidden="true"></div>
+        </div>
+
+      </div><!-- /.about-numbers__stats-grid -->
+    </div>
+  </div><!-- /.about-numbers__stats-band -->
+
+  <!-- Bottom: Two-column text -->
+  <div class="about-numbers__bottom section-padding">
+    <div class="container">
+      <div class="about-numbers__text-grid">
+
+        <div class="about-numbers__text-col reveal-up stagger-1">
+          <h3 class="about-numbers__text-heading">
+            La sostenibilità come scelta, non come moda
+          </h3>
+          <p class="about-numbers__text-body">
+            Siamo nati con la convinzione che esplorare non significhi inquinare.
+            La nostra flotta di scooter elettrici e e-bike è la risposta concreta
+            a una domanda di mobilità più responsabile in uno dei territori più
+            belli d'Italia.
+          </p>
+          <p class="about-numbers__text-body">
+            Ogni anno rinnoviamo la flotta scegliendo veicoli sempre più efficienti,
+            perché crediamo che il futuro di Alghero passi anche attraverso scelte
+            quotidiane più consapevoli.
+          </p>
+        </div>
+
+        <div class="about-numbers__text-col reveal-up stagger-2">
+          <h3 class="about-numbers__text-heading">
+            Il vantaggio di essere nel centro storico
+          </h3>
+          <p class="about-numbers__text-body">
+            Il nostro punto noleggio in Via Garibaldi 53 è a pochi passi da tutto:
+            dal porto, dalle spiagge, dalla ZTL e dai principali monumenti.
+            Ritiri il veicolo, esci dalla porta e sei già in mezzo alla magia di Alghero.
+          </p>
+          <p class="about-numbers__text-body">
+            Nessun tragitto in taxi per raggiungere l'agenzia, nessuna
+            perdita di tempo. La tua avventura sarda inizia subito.
+          </p>
+          <div class="about-numbers__text-actions">
+            <a href="contatti.html" class="btn btn--primary">
+              Prenota il Tuo Veicolo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section><!-- /.about-numbers -->
+
+
+<!-- ============================================================
+     7. CTA SPLIT
+     ============================================================ -->
+<section class="cta-split" aria-label="Chiamata all'azione" id="prenota">
+
+  <div class="cta-split__inner">
+
+    <!-- Left: Image -->
+    <figure class="cta-split__media" aria-label="Noleggio veicoli Alghero">
+      <img
+        src="https://algheroemobility.com/wp-content/uploads/2022/04/alghero-e-mobility-noleggio-scooter-elettrici.jpg"
+        alt="Punto noleggio Alghero E-Mobility in Via Garibaldi con la flotta di veicoli"
+        class="cta-split__img"
+        width="800"
+        height="900"
+        loading="lazy"
+      >
+      <!-- Replace: photo of the rental shop front or vehicles lined up at Via Garibaldi 53 -->
+      <div class="cta-split__media-badge" aria-label="Nessuna carta di credito richiesta">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <span>Senza carta di credito</span>
+      </div>
+    </figure>
+
+    <!-- Right: Content -->
+    <div class="cta-split__content">
+      <div class="cta-split__content-inner">
+
+        <span class="cta-split__eyebrow section-label reveal-right">
+          Prenota ora
+        </span>
+
+        <h2 class="cta-split__title reveal-right stagger-1">
+          Prenota il Tuo<br>
+          <em>Veicolo</em>
+        </h2>
+
+        <p class="cta-split__desc reveal-right stagger-2">
+          Scegli tra auto, scooter, e-bike e bici. Ritira nel centro storico di Alghero. Nessuna carta di credito richiesta per le auto.
+        </p>
+
+        <ul class="cta-split__benefits reveal-right stagger-3" aria-label="Vantaggi">
+          <li class="cta-split__benefit">
+            <span class="cta-split__benefit-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            Senza carta di credito
+          </li>
+          <li class="cta-split__benefit">
+            <span class="cta-split__benefit-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            Km illimitati
+          </li>
+          <li class="cta-split__benefit">
+            <span class="cta-split__benefit-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            Ritiro in centro storico
+          </li>
+          <li class="cta-split__benefit">
+            <span class="cta-split__benefit-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            IVA inclusa
+          </li>
+        </ul>
+
+        <div class="cta-split__actions reveal-right stagger-4">
+          <a href="contatti.html" class="btn btn--primary btn--lg cta-split__btn">
+            Contattaci
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /.cta-split__inner -->
+
+</section><!-- /.cta-split -->
+
+<!-- ============================================================
+     8. REVIEWS CAROUSEL
+     ============================================================ -->
+<section class="reviews-carousel section-padding" aria-label="Testimonianze clienti" id="testimonianze">
+
+  <div class="container">
+
+    <!-- Section Header -->
+    <header class="reviews-carousel__header text-center reveal-up">
+      <span class="section-label section-label--line">Cosa dicono di noi</span>
+      <h2 class="section-title reviews-carousel__title">
+        La voce dei nostri <em>clienti</em>
+      </h2>
+      <p class="section-desc section-desc--centered">
+        Ogni stagione, migliaia di turisti scelgono Alghero E-Mobility per esplorare la Sardegna. Ecco alcune delle loro esperienze.
+      </p>
+    </header>
+
+    <!-- Carousel Wrapper -->
+    <div class="reviews-carousel__wrapper" role="region" aria-label="Carosello testimonianze" aria-live="polite" data-carousel data-autoplay="6000" data-fade="true" data-loop="true">
+
+      <!-- Decorative quote mark -->
+      <div class="reviews-carousel__quote-mark" aria-hidden="true">&ldquo;</div>
+
+      <!-- Slides Track -->
+      <div class="reviews-carousel__track" id="reviewsTrack" data-carousel-track>
+
+        <!-- Testimonial 1 -->
+        <article class="reviews-carousel__slide" aria-label="Testimonianza 1 di 5" data-index="0" data-carousel-slide data-active="true">
+          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="reviews-carousel__quote">
+            "Fantastico servizio! Abbiamo noleggiato un'e-bike e abbiamo esplorato tutta la costa. Il punto di ritiro in centro è comodissimo, a pochi passi da tutto. Torneremo sicuramente!"
+          </blockquote>
+          <footer class="reviews-carousel__author">
+            <figure class="reviews-carousel__avatar">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzJkNTAxNiIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+TVI8L3RleHQ+PC9zdmc+" alt="Ritratto di Marco R." width="64" height="64" loading="lazy">
+              <!-- Replace with actual avatar or remove img if not available -->
+            </figure>
+            <div class="reviews-carousel__author-info">
+              <cite class="reviews-carousel__author-name">Marco R.</cite>
+              <span class="reviews-carousel__author-role">Cliente — Milano</span>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Testimonial 2 -->
+        <article class="reviews-carousel__slide" aria-label="Testimonianza 2 di 5" data-index="1" aria-hidden="true" data-carousel-slide>
+          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="reviews-carousel__quote">
+            "Finalmente un noleggio auto senza carta di credito! Servizio gentilissimo e auto in ottime condizioni. Ho potuto girare tutta la Sardegna senza pensieri."
+          </blockquote>
+          <footer class="reviews-carousel__author">
+            <figure class="reviews-carousel__avatar">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzNmNmUyMCIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+TEI8L3RleHQ+PC9zdmc+" alt="Ritratto di Laura B." width="64" height="64" loading="lazy">
+              <!-- Replace with actual avatar or remove img if not available -->
+            </figure>
+            <div class="reviews-carousel__author-info">
+              <cite class="reviews-carousel__author-name">Laura B.</cite>
+              <span class="reviews-carousel__author-role">Cliente — Roma</span>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Testimonial 3 -->
+        <article class="reviews-carousel__slide" aria-label="Testimonianza 3 di 5" data-index="2" aria-hidden="true" data-carousel-slide>
+          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="reviews-carousel__quote">
+            "Scooter perfetto per muoversi ad Alghero d'estate. Accesso alla ZTL incluso, che comodità! Siamo arrivati ovunque senza problemi di parcheggio."
+          </blockquote>
+          <footer class="reviews-carousel__author">
+            <figure class="reviews-carousel__avatar">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzFlMzYwZSIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+VEs8L3RleHQ+PC9zdmc+" alt="Ritratto di Thomas K." width="64" height="64" loading="lazy">
+              <!-- Replace with actual avatar or remove img if not available -->
+            </figure>
+            <div class="reviews-carousel__author-info">
+              <cite class="reviews-carousel__author-name">Thomas K.</cite>
+              <span class="reviews-carousel__author-role">Cliente — München</span>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Testimonial 4 -->
+        <article class="reviews-carousel__slide" aria-label="Testimonianza 4 di 5" data-index="3" aria-hidden="true" data-carousel-slide>
+          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="reviews-carousel__quote">
+            "Prezzi onesti e personale molto disponibile. Consigliamo le e-bike per esplorare la Riviera del Corallo — paesaggi meravigliosi, fatica zero!"
+          </blockquote>
+          <footer class="reviews-carousel__author">
+            <figure class="reviews-carousel__avatar">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzRhNmUyOCIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+U0Q8L3RleHQ+PC9zdmc+" alt="Ritratto di Sophie D." width="64" height="64" loading="lazy">
+              <!-- Replace with actual avatar or remove img if not available -->
+            </figure>
+            <div class="reviews-carousel__author-info">
+              <cite class="reviews-carousel__author-name">Sophie D.</cite>
+              <span class="reviews-carousel__author-role">Cliente — Paris</span>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Testimonial 5 -->
+        <article class="reviews-carousel__slide" aria-label="Testimonianza 5 di 5" data-index="4" aria-hidden="true" data-carousel-slide>
+          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="reviews-carousel__quote">
+            "Tutto perfetto dalla prenotazione alla riconsegna. L'opzione senza carta di credito è un grande plus per chi viaggia senza bancomat internazionale. Servizio top!"
+          </blockquote>
+          <footer class="reviews-carousel__author">
+            <figure class="reviews-carousel__avatar">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzJkNTAxNiIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+QVA8L3RleHQ+PC9zdmc+" alt="Ritratto di Andrea P." width="64" height="64" loading="lazy">
+              <!-- Replace with actual avatar or remove img if not available -->
+            </figure>
+            <div class="reviews-carousel__author-info">
+              <cite class="reviews-carousel__author-name">Andrea P.</cite>
+              <span class="reviews-carousel__author-role">Cliente — Torino</span>
+            </div>
+          </footer>
+        </article>
+
+      </div><!-- /.reviews-carousel__track -->
+
+      <!-- Navigation Controls -->
+      <div class="reviews-carousel__controls" role="group" aria-label="Navigazione carosello">
+        <button class="reviews-carousel__arrow reviews-carousel__arrow--prev" id="reviewsPrev" aria-label="Testimonianza precedente" data-carousel-prev>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
+        </button>
+
+        <!-- Dot indicators -->
+        <div class="reviews-carousel__dots" role="tablist" aria-label="Seleziona testimonianza" data-carousel-dots>
+          <button class="reviews-carousel__dot reviews-carousel__dot--active" role="tab" aria-selected="true" aria-label="Testimonianza 1" data-index="0"></button>
+          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 2" data-index="1"></button>
+          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 3" data-index="2"></button>
+          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 4" data-index="3"></button>
+          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 5" data-index="4"></button>
+        </div>
+
+        <button class="reviews-carousel__arrow reviews-carousel__arrow--next" id="reviewsNext" aria-label="Testimonianza successiva" data-carousel-next>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+    </div><!-- /.reviews-carousel__wrapper -->
+
+  </div><!-- /.container -->
+
+</section><!-- /.reviews-carousel -->
+
+
+<!-- ============================================================
+     9. SPECIAL PARALLAX IMAGE
+     ============================================================ -->
+<section
+  class="special-parallax-image"
+  aria-label="Sezione immagine panoramica"
+>
+
+  <!-- Parallax Background -->
+  <!-- data-parallax="0.35" is on the bg element (the moving element), NOT the section -->
+  <div class="special-parallax-image__bg" data-parallax="0.35" data-parallax-bg aria-hidden="true">
+    <img
+      src="https://algheroemobility.com/wp-content/uploads/2022/04/alghero-e-mobility-noleggio-auto.jpg"
+      alt=""
+      class="special-parallax-image__img"
+      width="1920"
+      height="1080"
+      loading="eager"
+      aria-hidden="true"
+    >
+    <!-- Replace: wide landscape photo of Alghero coastline, beaches, or Sardinian countryside -->
+  </div>
+
+  <!-- Dark overlay gradient -->
+  <div class="special-parallax-image__overlay" aria-hidden="true"></div>
+
+  <!-- Text Overlay -->
+  <div class="special-parallax-image__content" aria-label="Citazione">
+    <div class="special-parallax-image__content-inner reveal-up">
+      <span class="special-parallax-image__quote-mark" aria-hidden="true">"</span>
+      <blockquote class="special-parallax-image__quote">
+        <p>La mobilità sostenibile è il futuro. Noi la rendiamo semplice, oggi.</p>
+        <footer class="special-parallax-image__quote-author">
+          <cite>Alghero E-Mobility</cite>
+        </footer>
+      </blockquote>
+      <div class="special-parallax-image__divider" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="special-parallax-image__scroll-hint" aria-hidden="true">
+    <span class="special-parallax-image__scroll-line"></span>
+  </div>
+
+</section><!-- /.special-parallax-image -->
+
+
+<!-- ============================================================
+     10. FAQ ACCORDION
+     ============================================================ -->
+<section class="faq-accordion section-padding" aria-labelledby="faq-accordion-heading">
+  <div class="container container--narrow">
+
+    <!-- Section Header -->
+    <div class="faq-accordion__header text-center reveal-up">
+      <span class="section-label section-label--line">Domande Frequenti</span>
+      <h2 class="section-title faq-accordion__title" id="faq-accordion-heading">
+        Tutto quello che vuoi <em>sapere</em>
+      </h2>
+      <p class="section-desc section-desc--centered">
+        Abbiamo raccolto le domande più comuni dei nostri clienti.
+        Non trovi la risposta che cerchi? Contattaci direttamente.
+      </p>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="faq-accordion__list" role="list" aria-label="Domande frequenti" data-accordion data-single="true">
+
+      <!-- Item 1 — open by default -->
+      <article class="faq-accordion__item reveal-up stagger-1" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-1"
+          id="faq-acc-btn-1"
+        >
+          <span class="faq-accordion__question">Serve la carta di credito per il noleggio auto?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-1"
+          role="region"
+          aria-labelledby="faq-acc-btn-1"
+        >
+          <div class="faq-accordion__answer">
+            <p>No! Accettiamo deposito cauzionale in contanti con documento d'identità valido. Non è necessaria nessuna carta di credito per noleggiare un'auto da noi.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 2 -->
+      <article class="faq-accordion__item reveal-up stagger-2" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-2"
+          id="faq-acc-btn-2"
+        >
+          <span class="faq-accordion__question">Dove posso ritirare il veicolo?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-2"
+          role="region"
+          aria-labelledby="faq-acc-btn-2"
+        >
+          <div class="faq-accordion__answer">
+            <p>Nel nostro punto noleggio in Via Garibaldi 53, nel centro storico di Alghero (SS). Siamo facilmente raggiungibili a piedi dal porto, dalle spiagge principali e dai principali alloggi del centro.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 3 -->
+      <article class="faq-accordion__item reveal-up stagger-3" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-3"
+          id="faq-acc-btn-3"
+        >
+          <span class="faq-accordion__question">Il chilometraggio è illimitato?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-3"
+          role="region"
+          aria-labelledby="faq-acc-btn-3"
+        >
+          <div class="faq-accordion__answer">
+            <p>Sì, tutte le nostre tariffe includono chilometraggio illimitato e IVA. Puoi esplorare la Sardegna da nord a sud senza preoccuparti dei km percorsi.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 4 -->
+      <article class="faq-accordion__item reveal-up stagger-4" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-4"
+          id="faq-acc-btn-4"
+        >
+          <span class="faq-accordion__question">Posso accedere alla ZTL con lo scooter?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-4"
+          role="region"
+          aria-labelledby="faq-acc-btn-4"
+        >
+          <div class="faq-accordion__answer">
+            <p>Sì, tutti i nostri scooter hanno accesso libero alla Zona a Traffico Limitato di Alghero. Potrai muoverti nel centro storico senza limitazioni, anche nei periodi di alta stagione estiva.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 5 -->
+      <article class="faq-accordion__item reveal-up stagger-5" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-5"
+          id="faq-acc-btn-5"
+        >
+          <span class="faq-accordion__question">Quali documenti servono?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-5"
+          role="region"
+          aria-labelledby="faq-acc-btn-5"
+        >
+          <div class="faq-accordion__answer">
+            <p>Patente di guida valida e documento d'identità. Per le auto è richiesto anche il deposito cauzionale in contanti. Per scooter 125cc è necessaria la patente A1 o superiore. Per e-bike e bici non è richiesta nessuna patente.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 6 -->
+      <article class="faq-accordion__item reveal-up stagger-6" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-6"
+          id="faq-acc-btn-6"
+        >
+          <span class="faq-accordion__question">Offrite assicurazione extra?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-6"
+          role="region"
+          aria-labelledby="faq-acc-btn-6"
+        >
+          <div class="faq-accordion__answer">
+            <p>Sì, da €15/giorno puoi ridurre la franchigia in caso di danni o furto con la nostra copertura assicurativa aggiuntiva. Ti consigliamo di valutarla per una maggiore tranquillità durante il noleggio.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 7 -->
+      <article class="faq-accordion__item reveal-up stagger-7" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-7"
+          id="faq-acc-btn-7"
+        >
+          <span class="faq-accordion__question">Quali sono gli orari di apertura?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-7"
+          role="region"
+          aria-labelledby="faq-acc-btn-7"
+        >
+          <div class="faq-accordion__answer">
+            <p>Siamo aperti Lunedì–Sabato dalle 9:00 alle 20:00. La domenica riceviamo su appuntamento. Per prenotazioni fuori orario o consegne speciali, contattaci via WhatsApp al +39 328 274 7108.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 8 -->
+      <article class="faq-accordion__item reveal-up stagger-8" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-acc-8"
+          id="faq-acc-btn-8"
+        >
+          <span class="faq-accordion__question">Posso prenotare tramite WhatsApp?</span>
+          <span class="faq-accordion__chevron" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </button>
+        <div
+          class="faq-accordion__body"
+          data-accordion-body
+          id="faq-acc-8"
+          role="region"
+          aria-labelledby="faq-acc-btn-8"
+        >
+          <div class="faq-accordion__answer">
+            <p>Certamente! Contattaci su WhatsApp al +39 328 274 7108 per prenotare il tuo veicolo, richiedere informazioni o verificare la disponibilità. Risponderemo nel minor tempo possibile.</p>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.faq-accordion__list -->
+
+    <!-- CTA Bottom -->
+    <div class="faq-accordion__cta text-center reveal-up">
+      <p class="faq-accordion__cta-text">Hai ancora domande? Siamo qui per aiutarti.</p>
+      <a href="contatti.html" class="btn btn--primary">Contattaci ora</a>
+    </div>
+
+  </div><!-- /.container -->
+</section><!-- /.faq-accordion -->
+
+
+<!-- ============================================================
+     11. CTA FULLWIDTH
+     ============================================================ -->
+<section class="cta-fullwidth" aria-label="Chiamata all'azione" id="cta-finale">
+
+  <!-- Background Image -->
+  <div class="cta-fullwidth__bg" data-parallax="0.3" aria-hidden="true">
+    <img
+      src="https://algheroemobility.com/wp-content/uploads/2022/04/alghero-e-mobility-noleggio-scooter-elettrici.jpg"
+      alt=""
+      class="cta-fullwidth__bg-img"
+      width="1920"
+      height="1080"
+      loading="eager"
+      role="presentation"
+    >
+    <!-- Replace: aerial or wide-angle photo of Alghero or Sardinian landscape -->
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="cta-fullwidth__overlay" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="cta-fullwidth__content">
+
+      <span class="cta-fullwidth__eyebrow section-label reveal-up">
+        Inizia oggi stesso
+      </span>
+
+      <h2 class="cta-fullwidth__title reveal-up stagger-1">
+        Inizia la Tua Avventura<br>ad <em>Alghero</em>
+      </h2>
+
+      <p class="cta-fullwidth__desc reveal-up stagger-2">
+        Scegli il veicolo perfetto per te e scopri la Sardegna in libertà.
+      </p>
+
+      <div class="cta-fullwidth__actions reveal-up stagger-3">
+        <a href="contatti.html" class="btn btn--primary btn--lg">
+          Prenota Ora
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="tel:+393282747108" class="btn btn--outline-light btn--lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Chiama Ora
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section><!-- /.cta-fullwidth -->
+
+
+<!-- ============================================================
+     12. FOOTER FULL
+     ============================================================ -->
+<footer class="footer-full section--dark">
+  <div class="footer-full__inner container">
+
+    <!-- Top grid: 4 columns -->
+    <div class="footer-full__grid">
+
+      <!-- Col 1: About -->
+      <div class="footer-full__col footer-full__col--about">
+        <a href="index.html" class="footer-full__logo" aria-label="Homepage Alghero E-Mobility">
+          <img src="https://algheroemobility.com/wp-content/uploads/2022/04/cropped-logo.png" alt="Alghero E-Mobility" class="footer-full__logo-img" width="140" height="42">
+        </a>
+        <p class="footer-full__about-text">
+          Noleggio auto, scooter ed e-bike nel cuore di Alghero. Mobilità eco-sostenibile in Sardegna, senza carta di credito.
+        </p>
+        <!-- Social icons -->
+        <div class="footer-full__social" aria-label="Social network">
+          <a href="#" class="footer-full__social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
+              <path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-full__social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="13.5" cy="4.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-full__social-link" aria-label="TripAdvisor">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
+              <path d="M9 2a7 7 0 100 14A7 7 0 009 2zm0 2a5 5 0 110 10A5 5 0 019 4zm0 2a3 3 0 100 6 3 3 0 000-6zm0 1.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-full__social-link" aria-label="Google Maps">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
+              <path d="M9 1.5A5.5 5.5 0 003.5 7c0 3.5 5.5 9.5 5.5 9.5S14.5 10.5 14.5 7A5.5 5.5 0 009 1.5zm0 7.5a2 2 0 110-4 2 2 0 010 4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Link Rapidi</h3>
+        <ul class="footer-full__links" role="list">
+          <li><a href="index.html" class="footer-full__link">Home</a></li>
+          <li><a href="servizi.html" class="footer-full__link">I Nostri Veicoli</a></li>
+          <li><a href="chi-siamo.html" class="footer-full__link">Chi Siamo</a></li>
+          <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">I Nostri Veicoli</h3>
+        <ul class="footer-full__links" role="list">
+          <li><a href="servizi.html" class="footer-full__link">Auto</a></li>
+          <li><a href="servizi.html" class="footer-full__link">Scooter</a></li>
+          <li><a href="servizi.html" class="footer-full__link">E-Bike</a></li>
+          <li><a href="servizi.html" class="footer-full__link">Bici</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Contatti</h3>
+        <ul class="footer-full__contact-list" role="list">
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span>Via Garibaldi 53, 07041 Alghero (SS)</span>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <a href="tel:+393282747108" class="footer-full__contact-link">+39 328 274 7108</a>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="2" y="3.5" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <a href="mailto:info@algheroemobility.com" class="footer-full__contact-link">info@algheroemobility.com</a>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Lun–Sab 9:00–20:00 · Dom su appuntamento</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="footer-full__divider" aria-hidden="true">
+
+    <!-- Copyright bar -->
+    <div class="footer-full__bottom">
+      <p class="footer-full__copyright">
+        &copy; <span id="footer-year-full" data-year></span> Alghero E-Mobility. Tutti i diritti riservati.
+      </p>
+      <nav class="footer-full__bottom-nav" aria-label="Link legali">
+        <a href="privacy-policy.html" class="footer-full__bottom-link">Privacy Policy</a>
+        <a href="cookie-policy.html" class="footer-full__bottom-link">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     GLOBAL: COOKIE BANNER
+     ============================================================ -->
+<div
+  class="cookie-banner"
+  id="cookie-banner"
+  data-cookie-banner
+  role="dialog"
+  aria-live="polite"
+  aria-label="Consenso cookie"
+  aria-describedby="cookie-banner-text"
+  aria-hidden="true"
+>
+  <div class="cookie-banner__inner">
+    <!-- Icon -->
+    <div class="cookie-banner__icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+        <circle cx="17" cy="8" r="1" fill="currentColor"/>
+        <circle cx="9" cy="17" r="1" fill="currentColor"/>
+        <circle cx="16" cy="18" r="2" fill="currentColor"/>
+        <circle cx="20" cy="14" r="1.5" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Text -->
+    <div class="cookie-banner__content">
+      <p class="cookie-banner__text" id="cookie-banner-text">
+        Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito, analizzare il traffico e personalizzare i contenuti.
+        Leggi la nostra <a href="privacy-policy.html" class="cookie-banner__policy-link">Privacy Policy</a> e la
+        <a href="cookie-policy.html" class="cookie-banner__policy-link">Cookie Policy</a>.
+      </p>
+    </div>
+
+    <!-- Actions -->
+    <div class="cookie-banner__actions">
+      <button
+        type="button"
+        class="cookie-banner__btn cookie-banner__btn--reject"
+        id="cookie-reject"
+        data-cookie-reject
+        aria-label="Rifiuta cookie non essenziali"
+      >
+        Solo essenziali
+      </button>
+      <button
+        type="button"
+        class="cookie-banner__btn cookie-banner__btn--accept"
+        id="cookie-accept"
+        data-cookie-accept
+        aria-label="Accetta tutti i cookie"
+      >
+        Accetta tutti
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     GLOBAL: WHATSAPP WIDGET
+     ============================================================ -->
+<div
+  class="whatsapp-widget"
+  id="whatsapp-widget"
+  data-whatsapp
+  data-phone="393282747108"
+  data-message="Ciao! Vorrei informazioni sul noleggio veicoli ad Alghero."
+  aria-hidden="true"
+>
+  <a
+    href="#"
+    class="whatsapp-widget__btn"
+    id="whatsapp-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+    role="button"
+  >
+    <!-- WhatsApp SVG logo -->
+    <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/>
+    </svg>
+    <!-- Pulse ring -->
+    <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+  </a>
+
+  <!-- Tooltip label -->
+  <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+</div>
+
+<!-- ============================================================
+     GLOBAL: BACK TO TOP
+     ============================================================ -->
+<button
+  class="back-to-top"
+  id="back-to-top"
+  data-back-to-top
+  aria-label="Torna in cima alla pagina"
+  aria-hidden="true"
+  type="button"
+>
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<!-- ============================================================
+     CORE JS
+     ============================================================ -->
+<script src="script.js"></script>
+
+</body>
+</html>

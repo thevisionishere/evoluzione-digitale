@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chi Siamo | Alghero E-Mobility</title>
+  <meta name="description" content="Passione per la mobilità sostenibile e amore per il territorio sardo. Scopri la storia di Alghero E-Mobility: da oltre 10 anni il punto di riferimento per il noleggio eco-friendly ad Alghero.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chi Siamo | Alghero E-Mobility">
+  <meta property="og:description" content="Passione per la mobilità sostenibile e amore per il territorio sardo. Scopri la storia di Alghero E-Mobility: da oltre 10 anni il punto di riferimento per il noleggio eco-friendly ad Alghero.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     PRELOADER
+     ============================================================ -->
+<div class="preloader-logo" id="preloader-logo" data-preloader aria-live="polite" aria-label="Caricamento in corso" role="status">
+  <div class="preloader-logo__content">
+    <div class="preloader-logo__mark" aria-hidden="true">
+      <span class="preloader-logo__mark-ring"></span>
+      <span class="preloader-logo__mark-dot"></span>
+    </div>
+    <div class="preloader-logo__wordmark" aria-hidden="true">
+      <img src="https://algheroemobility.com/wp-content/uploads/2022/04/cropped-logo.png" alt="" class="preloader-logo__img" width="200" height="60" style="filter: brightness(0) invert(1); opacity: 0.9;">
+    </div>
+  </div>
+</div>
+<script>
+if (sessionStorage.getItem('alghero-visited')) {
+  var pl = document.querySelector('[data-preloader]');
+  if (pl) pl.remove();
+  document.body.classList.add('loaded');
+} else {
+  sessionStorage.setItem('alghero-visited', '1');
+}
+</script>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header header-classic" id="site-header" data-header data-scrolled="true">
+  <div class="header-classic__inner container">
+
+    <!-- Logo -->
+    <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+      <img src="https://algheroemobility.com/wp-content/uploads/2022/04/cropped-logo.png" alt="Alghero E-Mobility" class="header-classic__logo-img" width="160" height="48">
+    </a>
+
+    <!-- Navigation (desktop) -->
+    <nav class="header-classic__nav" aria-label="Navigazione principale">
+      <ul class="header-classic__nav-list" role="list">
+        <li class="header-classic__nav-item">
+          <a href="index.html" class="header-classic__nav-link">Home</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="servizi.html" class="header-classic__nav-link">I Nostri Veicoli</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="chi-siamo.html" class="header-classic__nav-link active">Chi Siamo</a>
+        </li>
+        <li class="header-classic__nav-item">
+          <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <div class="header-classic__actions">
+      <a href="contatti.html" class="btn btn--primary header-classic__cta">Prenota Ora</a>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="header-classic__hamburger"
+        data-mobile-toggle
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        type="button"
+      >
+        <span class="header-classic__hamburger-bar bar"></span>
+        <span class="header-classic__hamburger-bar bar"></span>
+        <span class="header-classic__hamburger-bar bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <ul class="header-classic__mobile-nav" role="list">
+        <li><a href="index.html" class="header-classic__mobile-link">Home</a></li>
+        <li><a href="servizi.html" class="header-classic__mobile-link">I Nostri Veicoli</a></li>
+        <li><a href="chi-siamo.html" class="header-classic__mobile-link active">Chi Siamo</a></li>
+        <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+      </ul>
+      <a href="contatti.html" class="btn btn--primary header-classic__mobile-cta">Prenota Ora</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO MINIMAL
+     ============================================================ -->
+<section class="hero-minimal" aria-label="Intestazione principale">
+
+  <!-- Decorative dot grid — top right -->
+  <div class="hero-minimal__dot-grid" aria-hidden="true">
+    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false">
+      <pattern id="hero-min-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.5" fill="var(--color-accent)" opacity="0.35"/>
+      </pattern>
+      <rect width="120" height="120" fill="url(#hero-min-dots)"/>
+    </svg>
+  </div>
+
+  <!-- Decorative corner bracket — bottom left -->
+  <div class="hero-minimal__bracket" aria-hidden="true">
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+      <path d="M62 62 L2 62 L2 2" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-minimal__inner">
+
+      <!-- Eyebrow -->
+      <div class="hero-minimal__eyebrow-wrap reveal-up stagger-1">
+        <span class="hero-minimal__eyebrow section-label">
+          La Nostra Storia &middot; Alghero, dal 2014
+        </span>
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="hero-minimal__headline reveal-up stagger-2">
+        Chi<br>
+        <span class="hero-minimal__headline-outline">Siamo</span>
+      </h1>
+
+      <!-- Accent separator line -->
+      <div class="hero-minimal__separator reveal-up stagger-3" aria-hidden="true">
+        <span class="hero-minimal__separator-line"></span>
+        <span class="hero-minimal__separator-diamond" aria-hidden="true"></span>
+        <span class="hero-minimal__separator-line"></span>
+      </div>
+
+      <!-- Sub-copy row -->
+      <div class="hero-minimal__body reveal-up stagger-4">
+        <p class="hero-minimal__desc">
+          Passione per la mobilità sostenibile e amore per il territorio: la nostra missione è farti vivere Alghero in libertà.
+        </p>
+
+        <!-- Tags -->
+        <ul class="hero-minimal__disciplines" aria-label="I nostri valori">
+          <li>Mobilità Sostenibile</li>
+          <li>Eco-Friendly</li>
+          <li>Alghero</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-minimal__actions reveal-up stagger-5">
+        <a href="servizi.html" class="btn btn--primary btn--lg">
+          I Nostri Veicoli
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="contatti.html" class="btn btn--secondary btn--lg">
+          Contattaci
+        </a>
+      </div>
+
+    </div><!-- /.hero-minimal__inner -->
+  </div><!-- /.container -->
+
+</section><!-- /.hero-minimal -->
+
+<!-- ============================================================
+     ABOUT STORY
+     ============================================================ -->
+<section class="about-story section-padding" aria-labelledby="about-story-heading">
+  <div class="container">
+    <div class="about-story__inner">
+
+      <!-- Left: Text Content -->
+      <div class="about-story__content">
+
+        <span class="section-label section-label--line reveal-up stagger-1">La Nostra Storia</span>
+
+        <h2 class="section-title about-story__heading reveal-up stagger-2" id="about-story-heading">
+          Mobilità Sostenibile<br>
+          nel Cuore della <em>Sardegna</em>
+        </h2>
+
+        <p class="about-story__lead reveal-up stagger-3">
+          Nati nel cuore di Alghero, abbiamo iniziato con una visione semplice: rendere accessibile a tutti una mobilità rispettosa dell'ambiente e del territorio.
+        </p>
+
+        <!-- Pull quote -->
+        <blockquote class="about-story__quote reveal-up stagger-4" aria-label="La nostra filosofia">
+          <span class="about-story__quote-mark" aria-hidden="true">&ldquo;</span>
+          <p class="about-story__quote-text">
+            Ogni veicolo che noleggiate è un passo verso una Sardegna più green.
+          </p>
+          <footer class="about-story__quote-author">
+            <strong>Alghero E-Mobility</strong>
+            <span>Via Garibaldi 53, Alghero</span>
+          </footer>
+        </blockquote>
+
+        <p class="about-story__body reveal-up stagger-5">
+          Dalle prime biciclette alla flotta completa di auto, scooter ed e-bike di oggi, ogni veicolo che offriamo è un invito a scoprire la Sardegna in modo diverso. Crediamo che viaggiare debba essere semplice, accessibile e sostenibile. Per questo abbiamo eliminato barriere come l'obbligo di carta di credito per il noleggio auto — una scelta che ci ha resi unici in Sardegna. La nostra posizione nel centro storico di Alghero, a pochi passi dal lungomare e dalle principali attrazioni, completa un'esperienza di noleggio pensata per chi vuole vivere il territorio senza complicazioni.
+        </p>
+
+        <!-- Stats -->
+        <div class="about-story__stats reveal-up stagger-6" aria-label="Dati principali">
+          <div class="about-story__stat">
+            <span class="about-story__stat-number">10+</span>
+            <span class="about-story__stat-label">Anni di Attività</span>
+          </div>
+          <div class="about-story__stat-divider" aria-hidden="true"></div>
+          <div class="about-story__stat">
+            <span class="about-story__stat-number">200+</span>
+            <span class="about-story__stat-label">Veicoli</span>
+          </div>
+          <div class="about-story__stat-divider" aria-hidden="true"></div>
+          <div class="about-story__stat">
+            <span class="about-story__stat-number">15.000+</span>
+            <span class="about-story__stat-label">Clienti</span>
+          </div>
+        </div>
+
+        <div class="about-story__actions reveal-up stagger-7">
+          <a href="servizi.html" class="btn btn--primary">
+            Scopri i Veicoli
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="contatti.html" class="btn btn--secondary">Contattaci</a>
+        </div>
+
+      </div><!-- /.about-story__content -->
+
+      <!-- Right: Image with decorative frame -->
+      <figure class="about-story__media reveal-scale stagger-2" aria-label="Alghero E-Mobility — la nostra sede">
+        <div class="about-story__media-frame" aria-hidden="true"></div>
+        <div class="about-story__media-clip">
+          <img
+            src="https://algheroemobility.com/wp-content/uploads/2022/04/alghero-e-mobility-noleggio-auto.jpg"
+            alt="La sede di Alghero E-Mobility in Via Garibaldi 53, nel centro storico di Alghero"
+            class="about-story__img"
+            width="720"
+            height="900"
+            loading="lazy"
+          >
+          <!-- Replace: foto della sede o del team al lavoro, oppure panorama di Alghero con un veicolo in primo piano -->
+        </div>
+        <!-- Floating badge -->
+        <div class="about-story__badge" aria-label="Operativi dal 2014">
+          <span class="about-story__badge-year">2014</span>
+          <span class="about-story__badge-label">Fondazione</span>
+        </div>
+      </figure><!-- /.about-story__media -->
+
+    </div><!-- /.about-story__inner -->
+  </div><!-- /.container -->
+</section><!-- /.about-story -->
+
+
+<!-- ============================================================
+     ABOUT VALUES
+     ============================================================ -->
+<section class="about-values section-padding section--alt" aria-labelledby="about-values-heading">
+  <div class="container">
+
+    <!-- Section Header -->
+    <header class="about-values__header reveal-up">
+      <span class="section-label section-label--line">I Nostri Principi</span>
+      <h2 class="section-title about-values__title" id="about-values-heading">
+        Guidati da valori<br>che <em>non scendono a compromessi</em>
+      </h2>
+      <p class="section-desc">
+        Ogni veicolo che mettiamo a disposizione, ogni scelta che facciamo e ogni relazione che costruiamo con i nostri clienti nasce da tre principi fondamentali che definiscono chi siamo.
+      </p>
+    </header>
+
+    <!-- Cards Grid -->
+    <div class="about-values__grid" role="list">
+
+      <!-- Card 1: Sostenibilità -->
+      <article class="about-values__card reveal-up stagger-2" role="listitem" aria-labelledby="values-sostenibilita-title">
+        <div class="about-values__card-icon" aria-hidden="true">
+          <!-- Leaf / sustainability icon -->
+          <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M52 12C52 12 52 36 32 44C20 48 12 44 12 44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 44C12 44 16 28 32 24C42 21 52 12 52 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <path d="M12 44L20 52" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="1" opacity="0.15"/>
+          </svg>
+          <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-values__card-tag">Valore</div>
+        <h3 class="about-values__card-title" id="values-sostenibilita-title">
+          Sostenibilità
+        </h3>
+        <p class="about-values__card-desc">
+          Promuoviamo la mobilità elettrica e a basso impatto ambientale per proteggere il patrimonio naturale della Sardegna. Ogni e-bike e scooter elettrico noleggiato è un contributo concreto a un'isola più verde.
+        </p>
+        <div class="about-values__card-accent" aria-hidden="true"></div>
+      </article>
+
+      <!-- Card 2: Accessibilità (featured) -->
+      <article class="about-values__card about-values__card--featured reveal-up stagger-3" role="listitem" aria-labelledby="values-accessibilita-title">
+        <div class="about-values__card-icon" aria-hidden="true">
+          <!-- Key / accessibility icon -->
+          <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <circle cx="24" cy="28" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="28" r="6" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <path d="M34 38L54 58" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M46 50L50 46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M42 54L46 50" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          </svg>
+          <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-values__card-tag">Missione</div>
+        <h3 class="about-values__card-title" id="values-accessibilita-title">
+          Accessibilità
+        </h3>
+        <p class="about-values__card-desc">
+          Niente carta di credito, niente complicazioni. Noleggiare deve essere semplice per tutti, turisti e residenti. Abbiamo rimosso le barriere burocratiche perché crediamo che la libertà di muoversi debba essere davvero per tutti.
+        </p>
+        <div class="about-values__card-accent" aria-hidden="true"></div>
+      </article>
+
+      <!-- Card 3: Territorio -->
+      <article class="about-values__card reveal-up stagger-4" role="listitem" aria-labelledby="values-territorio-title">
+        <div class="about-values__card-icon" aria-hidden="true">
+          <!-- Map pin / territory icon -->
+          <svg class="about-values__icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M32 8C21.5 8 14 16 14 26C14 40 32 56 32 56C32 56 50 40 50 26C50 16 42.5 8 32 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="32" cy="26" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="32" cy="26" r="2" fill="currentColor"/>
+            <path d="M14 26H8M50 26H56" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+          </svg>
+          <div class="about-values__card-icon-bg" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-values__card-tag">Valore</div>
+        <h3 class="about-values__card-title" id="values-territorio-title">
+          Territorio
+        </h3>
+        <p class="about-values__card-desc">
+          Conosciamo Alghero come le nostre tasche. Vi guidiamo verso le esperienze migliori che la zona ha da offrire: dalle spiagge nascoste alle cale più belle, dai percorsi panoramici ai borghi tipici.
+        </p>
+        <div class="about-values__card-accent" aria-hidden="true"></div>
+      </article>
+
+    </div><!-- /.about-values__grid -->
+
+    <!-- Bottom CTA row -->
+    <div class="about-values__footer reveal-up stagger-5">
+      <p class="about-values__footer-text">
+        Vuoi scoprire Alghero con il veicolo giusto per te?
+      </p>
+      <a href="servizi.html" class="btn btn--primary">
+        Vedi i Nostri Veicoli
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</section><!-- /.about-values -->
+
+
+<!-- ============================================================
+     CTA MINIMAL
+     ============================================================ -->
+<section class="cta-minimal section-padding section--alt" aria-label="Chiamata all'azione" id="cta">
+
+  <div class="container">
+
+    <div class="cta-minimal__inner text-center">
+
+      <span class="section-label section-label--line reveal-up">Esplora la Sardegna con noi</span>
+
+      <h2 class="cta-minimal__title reveal-up stagger-1">
+        Pronti a<br>Esplorare? <em>Siamo qui.</em>
+      </h2>
+
+      <!-- Decorative separator -->
+      <div class="cta-minimal__separator reveal-up stagger-2" aria-hidden="true">
+        <span class="cta-minimal__separator-line"></span>
+        <span class="cta-minimal__separator-diamond"></span>
+        <span class="cta-minimal__separator-line"></span>
+      </div>
+
+      <p class="cta-minimal__desc section-desc section-desc--centered reveal-up stagger-3">
+        Contattaci per prenotare il tuo veicolo o per qualsiasi informazione. Siamo aperti Lun–Sab 9:00–20:00 e disponibili su appuntamento la domenica.
+      </p>
+
+      <div class="cta-minimal__actions reveal-up stagger-4">
+        <a href="contatti.html" class="btn btn--primary btn--lg">
+          Contattaci
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Trust micro-copy -->
+      <p class="cta-minimal__trust reveal-up stagger-5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        Risposta rapida via WhatsApp &nbsp;&middot;&nbsp; Nessuna carta di credito richiesta
+      </p>
+
+    </div>
+
+  </div><!-- /.container -->
+
+</section><!-- /.cta-minimal -->
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer-full section--dark">
+  <div class="footer-full__inner container">
+
+    <!-- Top grid: 4 columns -->
+    <div class="footer-full__grid">
+
+      <!-- Col 1: About -->
+      <div class="footer-full__col footer-full__col--about">
+        <a href="index.html" class="footer-full__logo" aria-label="Homepage Alghero E-Mobility">
+          <img src="https://algheroemobility.com/wp-content/uploads/2022/04/cropped-logo.png" alt="Alghero E-Mobility" class="footer-full__logo-img" width="160" height="48">
+        </a>
+        <p class="footer-full__about-text">
+          Noleggio veicoli eco-sostenibili nel centro di Alghero. Auto, scooter, e-bike e bici per esplorare la Sardegna in libertà.
+        </p>
+        <!-- Social icons -->
+        <div class="footer-full__social" aria-label="Social network">
+          <a href="#" class="footer-full__social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
+              <path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-full__social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="13.5" cy="4.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Link Rapidi</h3>
+        <ul class="footer-full__links" role="list">
+          <li><a href="index.html" class="footer-full__link">Home</a></li>
+          <li><a href="servizi.html" class="footer-full__link">I Nostri Veicoli</a></li>
+          <li><a href="chi-siamo.html" class="footer-full__link">Chi Siamo</a></li>
+          <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Servizi</h3>
+        <ul class="footer-full__links" role="list">
+          <li><a href="servizi.html" class="footer-full__link">Auto</a></li>
+          <li><a href="servizi.html" class="footer-full__link">Scooter</a></li>
+          <li><a href="servizi.html" class="footer-full__link">E-Bike</a></li>
+          <li><a href="servizi.html" class="footer-full__link">Bici Tradizionali</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact -->
+      <div class="footer-full__col">
+        <h3 class="footer-full__col-title">Contatti</h3>
+        <ul class="footer-full__contact-list" role="list">
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span>Via Garibaldi 53, 07041 Alghero (SS)</span>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <a href="tel:+393282747108" class="footer-full__contact-link">+39 328 274 7108</a>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="2" y="3.5" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <a href="mailto:info@algheroemobility.com" class="footer-full__contact-link">info@algheroemobility.com</a>
+          </li>
+          <li class="footer-full__contact-item">
+            <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Lun–Sab 9:00–20:00 · Dom su appuntamento</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="footer-full__divider" aria-hidden="true">
+
+    <!-- Copyright bar -->
+    <div class="footer-full__bottom">
+      <p class="footer-full__copyright">
+        &copy; <span id="footer-year-full" data-year></span> Alghero E-Mobility. Tutti i diritti riservati.
+      </p>
+      <nav class="footer-full__bottom-nav" aria-label="Link legali">
+        <a href="#" class="footer-full__bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-full__bottom-link">Cookie Policy</a>
+        <a href="#" class="footer-full__bottom-link">Note Legali</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     GLOBALS
+     ============================================================ -->
+
+<!-- Cookie Banner -->
+<div
+  class="cookie-banner"
+  id="cookie-banner"
+  data-cookie-banner
+  role="dialog"
+  aria-live="polite"
+  aria-label="Consenso cookie"
+  aria-describedby="cookie-banner-text"
+  aria-hidden="true"
+>
+  <div class="cookie-banner__inner">
+    <!-- Icon -->
+    <div class="cookie-banner__icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+        <circle cx="17" cy="8" r="1" fill="currentColor"/>
+        <circle cx="9" cy="17" r="1" fill="currentColor"/>
+        <circle cx="16" cy="18" r="2" fill="currentColor"/>
+        <circle cx="20" cy="14" r="1.5" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Text -->
+    <div class="cookie-banner__content">
+      <p class="cookie-banner__text" id="cookie-banner-text">
+        Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito, analizzare il traffico e personalizzare i contenuti.
+        Leggi la nostra <a href="/privacy-policy" class="cookie-banner__policy-link">Privacy Policy</a> e la
+        <a href="/cookie-policy" class="cookie-banner__policy-link">Cookie Policy</a>.
+      </p>
+    </div>
+
+    <!-- Actions -->
+    <div class="cookie-banner__actions">
+      <button
+        type="button"
+        class="cookie-banner__btn cookie-banner__btn--reject"
+        id="cookie-reject"
+        data-cookie-reject
+        aria-label="Rifiuta cookie non essenziali"
+      >
+        Solo essenziali
+      </button>
+      <button
+        type="button"
+        class="cookie-banner__btn cookie-banner__btn--accept"
+        id="cookie-accept"
+        data-cookie-accept
+        aria-label="Accetta tutti i cookie"
+      >
+        Accetta tutti
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp Widget -->
+<div
+  class="whatsapp-widget"
+  id="whatsapp-widget"
+  data-whatsapp
+  data-phone="393282747108"
+  data-message="Ciao! Vorrei informazioni sul noleggio veicoli ad Alghero."
+  aria-hidden="true"
+>
+  <a
+    href="#"
+    class="whatsapp-widget__btn"
+    id="whatsapp-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contattaci su WhatsApp"
+    role="button"
+  >
+    <!-- WhatsApp SVG logo -->
+    <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/>
+    </svg>
+    <!-- Pulse ring -->
+    <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+  </a>
+
+  <!-- Tooltip label -->
+  <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+</div>
+
+<!-- Back to Top Button -->
+<button
+  class="back-to-top"
+  id="back-to-top"
+  data-back-to-top
+  aria-label="Torna in cima alla pagina"
+  aria-hidden="true"
+  type="button"
+>
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
