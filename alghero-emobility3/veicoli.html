@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Nostri Veicoli — Alghero E-Mobility</title>
+  <meta name="description" content="Scopri la flotta di Alghero E-Mobility: e-bike, scooter elettrici e auto a noleggio senza carta di credito. Mobilità ecologica ad Alghero, Sardegna.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.algheroemobility.com/veicoli.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="I Nostri Veicoli — Alghero E-Mobility">
+  <meta property="og:description" content="E-bike, scooter elettrici e auto a noleggio ad Alghero. Accesso ZTL libero, nessuna carta di credito richiesta.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:url" content="https://www.algheroemobility.com/veicoli.html">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Alghero E-Mobility">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="I Nostri Veicoli — Alghero E-Mobility">
+  <meta name="twitter:description" content="E-bike, scooter elettrici e auto a noleggio ad Alghero senza carta di credito.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    /* Services expanded section background */
+    .services-section-bg {
+      background: var(--color-light);
+    }
+
+    /* CTA Banner — Style A (Dark + Text, Centered) */
+    .cta-banner-simple {
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner-simple::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0, 200, 83, 0.07) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-banner-simple .cta-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-banner-simple h2 {
+      color: var(--color-light);
+      margin-bottom: var(--space-3);
+    }
+
+    .cta-banner-simple p {
+      color: rgba(255,255,255,0.7);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Pricing grid wider on desktop */
+    @media (min-width: 768px) {
+      .pricing-grid-veicoli {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="logo.png" alt="Alghero E-Mobility">
+      </a>
+      <nav class="header-nav" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="veicoli.html" class="active" aria-current="page">Veicoli</a>
+        <a href="prenota.html">Prenota</a>
+        <a href="esplora.html">Esplora Alghero</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="prenota.html" class="btn btn-primary header-cta magnetic-btn">Prenota Ora</a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav">
+      <a href="index.html">Home</a>
+      <a href="veicoli.html" class="active">Veicoli</a>
+      <a href="prenota.html">Prenota</a>
+      <a href="esplora.html">Esplora Alghero</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu-contact">
+      <a href="tel:+393282747108">+39 328.274.7108</a>
+      <a href="mailto:info@algheroemobility.com">info@algheroemobility.com</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- =============================================
+         HERO INTERNAL
+         ============================================= -->
+    <section class="hero-internal" aria-label="Intestazione pagina">
+      <div class="hero-internal-content container">
+        <nav class="breadcrumb" aria-label="Percorso di navigazione">
+          <a href="index.html">Home</a>
+          <span class="separator" aria-hidden="true">/</span>
+          <span aria-current="page">Veicoli</span>
+        </nav>
+        <h1>I Nostri Veicoli</h1>
+        <p>Scegli il mezzo perfetto per la tua avventura ad Alghero</p>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SERVICES EXPANDED — Zig-Zag Layout
+         ============================================= -->
+    <section class="services-section-bg" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="services-expanded">
+
+          <!-- Row 1 — Bici & E-Bike -->
+          <div class="service-row reveal-up" data-delay="1">
+            <div class="service-image">
+              <img
+                src="images/servizio-ebike.jpg"
+                alt="E-bike su pista ciclabile ad Alghero"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+            </div>
+            <div class="service-content">
+              <span class="label">Bici &amp; E-Bike</span>
+              <h3>Libertà su Due Ruote</h3>
+              <p>Scopri Alghero pedalando in completa libertà con le nostre biciclette standard e a pedalata assistita. Le e-bike Future-Bike ti permettono di raggiungere qualsiasi destinazione senza fatica, godendoti il paesaggio sardo.</p>
+              <ul class="service-features" aria-label="Caratteristiche bici e e-bike">
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  E-Bike Future-Bike a pedalata assistita
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Taga Bike multifunzionale per famiglie
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Biciclette standard per passeggiate
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Mobilità ecologica al 100%
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Percorsi ciclabili verso le spiagge
+                </li>
+              </ul>
+              <a href="prenota.html" class="btn btn-primary">Prenota una Bici</a>
+            </div>
+          </div>
+
+          <!-- Row 2 — Scooter & E-Scooter -->
+          <div class="service-row reveal-up" data-delay="1">
+            <div class="service-image">
+              <img
+                src="images/servizio-scooter.jpg"
+                alt="Scooter nel centro storico di Alghero"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+            </div>
+            <div class="service-content">
+              <span class="label">Scooter &amp; E-Scooter</span>
+              <h3>Accesso Libero alla ZTL</h3>
+              <p>Muoviti agilmente nel traffico estivo e accedi liberamente alle zone a traffico limitato di Alghero con i nostri scooter. Disponibili in versione 50cc, 125cc e completamente elettrica.</p>
+              <ul class="service-features" aria-label="Caratteristiche scooter e e-scooter">
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Accesso libero alla ZTL
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Velocità massima 50 Km/h
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Bauletto porta oggetti incluso
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Disponibili 50cc, 125cc ed elettrici
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Omologato per una persona
+                </li>
+              </ul>
+              <a href="prenota.html" class="btn btn-primary">Prenota uno Scooter</a>
+            </div>
+          </div>
+
+          <!-- Row 3 — Auto -->
+          <div class="service-row reveal-up" data-delay="1">
+            <div class="service-image">
+              <img
+                src="images/servizio-auto.jpg"
+                alt="Auto su strada costiera sarda vicino ad Alghero"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+            </div>
+            <div class="service-content">
+              <span class="label">Auto</span>
+              <h3>Comodità Senza Carta di Credito</h3>
+              <p>Goditi la comodità di un'auto a noleggio anche senza carta di credito. Accettiamo deposito cauzionale in contanti, con chilometraggio illimitato e IVA inclusa in tutte le tariffe.</p>
+              <ul class="service-features" aria-label="Caratteristiche noleggio auto">
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Noleggio SENZA carta di credito
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Chilometraggio illimitato
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Tariffe inclusive di IVA
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Deposito cauzionale in contanti
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Documentazione: patente + documento
+                </li>
+              </ul>
+              <a href="prenota.html" class="btn btn-primary">Prenota un'Auto</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PRICING EXTRAS
+         ============================================= -->
+    <section class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header reveal-up" data-delay="1">
+          <span class="label">Opzioni Extra</span>
+          <h2 id="pricing-heading">Servizi Aggiuntivi</h2>
+        </div>
+
+        <div class="pricing-grid pricing-grid-veicoli reveal-up" data-delay="2">
+
+          <!-- Card 1 — Assicurazione Extra -->
+          <div class="pricing-card">
+            <div class="pricing-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="pricing-card-body">
+              <h4>Assicurazione Extra</h4>
+              <p>Riduce la franchigia per danni e furto</p>
+              <span class="price">da €15/giorno</span>
+            </div>
+          </div>
+
+          <!-- Card 2 — Navigatore GPS -->
+          <div class="pricing-card">
+            <div class="pricing-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+              </svg>
+            </div>
+            <div class="pricing-card-body">
+              <h4>Navigatore GPS</h4>
+              <p>Per esplorare la Sardegna senza perderti</p>
+              <span class="price">€10/giorno</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pricing-note reveal-up" data-delay="3">
+          <p>Le tariffe proposte sono inclusive di IVA e chilometraggio illimitato</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         FAQ VEICOLI
+         ============================================= -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header reveal-up" data-delay="1">
+          <span class="label">Domande Frequenti</span>
+          <h2 id="faq-heading">Tutto Quello che Devi Sapere</h2>
+        </div>
+
+        <div class="faq-list reveal-up" data-delay="2">
+
+          <!-- FAQ 1 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="faq-answer-1"
+              itemprop="name"
+            >
+              Serve la carta di credito per noleggiare un'auto?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </div>
+            <div class="faq-answer" id="faq-answer-1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq-answer-inner" itemprop="text">
+                No, Alghero E-Mobility è l'unico noleggio ad Alghero che accetta anche il deposito cauzionale in contanti. Dovrai presentare un documento d'identità valido e la patente di guida.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="faq-answer-2"
+              itemprop="name"
+            >
+              Posso entrare nella ZTL con lo scooter?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </div>
+            <div class="faq-answer" id="faq-answer-2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq-answer-inner" itemprop="text">
+                Sì, i nostri scooter elettrici hanno accesso libero alla Zona Traffico Limitato di Alghero. Potrai raggiungere il centro storico e i bastioni senza alcuna restrizione.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="faq-answer-3"
+              itemprop="name"
+            >
+              Quali documenti servono per il noleggio?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </div>
+            <div class="faq-answer" id="faq-answer-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq-answer-inner" itemprop="text">
+                Patente di guida valida e documento d'identità. Per il noleggio auto è richiesto anche un deposito cauzionale (in contanti o con carta).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="faq-answer-4"
+              itemprop="name"
+            >
+              Il chilometraggio è illimitato?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </div>
+            <div class="faq-answer" id="faq-answer-4" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq-answer-inner" itemprop="text">
+                Sì, per il noleggio auto tutte le nostre tariffe includono chilometraggio illimitato e IVA.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="faq-answer-5"
+              itemprop="name"
+            >
+              Fate consegna in hotel o aeroporto?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </div>
+            <div class="faq-answer" id="faq-answer-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div class="faq-answer-inner" itemprop="text">
+                Contattaci per accordi personalizzati di consegna e ritiro. Siamo flessibili e pronti a venire incontro alle tue esigenze.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         CTA BANNER — Style A (Dark + Text, Centered)
+         ============================================= -->
+    <section class="cta-banner-simple" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-inner reveal-up" data-delay="1">
+          <h2 id="cta-heading">Trova il Mezzo Giusto per Te</h2>
+          <p>Prenota ora e inizia la tua avventura ad Alghero</p>
+          <a href="prenota.html" class="btn btn-primary magnetic-btn">Prenota Ora</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Alghero E-Mobility" loading="lazy">
+          <p>Noleggio auto, scooter e bici elettriche ad Alghero, Sardegna.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigazione</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="veicoli.html">Veicoli</a></li>
+            <li><a href="prenota.html">Prenota</a></li>
+            <li><a href="esplora.html">Esplora Alghero</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contatti</h4>
+          <p>Via Garibaldi 53, 07041 Alghero (SS)</p>
+          <p><a href="tel:+393282747108">+39 328.274.7108</a></p>
+          <p><a href="mailto:info@algheroemobility.com">info@algheroemobility.com</a></p>
+          <p>Lun&ndash;Sab: 9:00&ndash;20:00 | Dom: su prenotazione</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Alghero E-Mobility. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/393282747108" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+  <!-- All JS handled by script.js -->
+
+</body>
+</html>
