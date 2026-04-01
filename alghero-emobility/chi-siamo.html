@@ -109,79 +109,33 @@ if (sessionStorage.getItem('alghero-visited')) {
 <!-- ============================================================
      HERO MINIMAL
      ============================================================ -->
-<section class="hero-minimal" aria-label="Intestazione principale">
-
-  <!-- Decorative dot grid — top right -->
-  <div class="hero-minimal__dot-grid" aria-hidden="true">
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false">
-      <pattern id="hero-min-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1.5" fill="var(--color-accent)" opacity="0.35"/>
-      </pattern>
-      <rect width="120" height="120" fill="url(#hero-min-dots)"/>
-    </svg>
-  </div>
-
-  <!-- Decorative corner bracket — bottom left -->
-  <div class="hero-minimal__bracket" aria-hidden="true">
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-      <path d="M62 62 L2 62 L2 2" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.5"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="hero-minimal__inner">
-
-      <!-- Eyebrow -->
-      <div class="hero-minimal__eyebrow-wrap reveal-up stagger-1">
-        <span class="hero-minimal__eyebrow section-label">
-          La Nostra Storia &middot; Alghero, dal 2014
-        </span>
-      </div>
-
-      <!-- Main headline -->
-      <h1 class="hero-minimal__headline reveal-up stagger-2">
-        Chi<br>
-        <span class="hero-minimal__headline-outline">Siamo</span>
+<section class="hero-servizi" aria-label="Intestazione principale">
+  <div class="hero-servizi__inner">
+    <!-- Left: Text -->
+    <div class="hero-servizi__content">
+      <span class="hero-servizi__eyebrow section-label reveal-up stagger-1">La Nostra Storia &middot; dal 2014</span>
+      <h1 class="hero-servizi__headline reveal-up stagger-2">
+        Chi<br><em>Siamo</em>
       </h1>
-
-      <!-- Accent separator line -->
-      <div class="hero-minimal__separator reveal-up stagger-3" aria-hidden="true">
-        <span class="hero-minimal__separator-line"></span>
-        <span class="hero-minimal__separator-diamond" aria-hidden="true"></span>
-        <span class="hero-minimal__separator-line"></span>
+      <p class="hero-servizi__desc reveal-up stagger-3">
+        Passione per la mobilità sostenibile e amore per il territorio. Dal 2014 aiutiamo turisti e residenti a vivere Alghero in totale libertà.
+      </p>
+      <div class="hero-servizi__trust reveal-up stagger-4">
+        <span>&#10003; Dal 2014</span>
+        <span>&#10003; Centro Storico</span>
+        <span>&#10003; Eco-Friendly</span>
       </div>
-
-      <!-- Sub-copy row -->
-      <div class="hero-minimal__body reveal-up stagger-4">
-        <p class="hero-minimal__desc">
-          Passione per la mobilità sostenibile e amore per il territorio: la nostra missione è farti vivere Alghero in libertà.
-        </p>
-
-        <!-- Tags -->
-        <ul class="hero-minimal__disciplines" aria-label="I nostri valori">
-          <li>Mobilità Sostenibile</li>
-          <li>Eco-Friendly</li>
-          <li>Alghero</li>
-        </ul>
+      <div class="hero-servizi__actions reveal-up stagger-5">
+        <a href="servizi.html" class="btn btn--primary btn--lg">I Nostri Veicoli</a>
+        <a href="contatti.html" class="btn btn--secondary btn--lg">Contattaci</a>
       </div>
-
-      <!-- CTA -->
-      <div class="hero-minimal__actions reveal-up stagger-5">
-        <a href="servizi.html" class="btn btn--primary btn--lg">
-          I Nostri Veicoli
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="contatti.html" class="btn btn--secondary btn--lg">
-          Contattaci
-        </a>
-      </div>
-
-    </div><!-- /.hero-minimal__inner -->
-  </div><!-- /.container -->
-
-</section><!-- /.hero-minimal -->
+    </div>
+    <!-- Right: Image -->
+    <div class="hero-servizi__media reveal-up">
+      <img src="images/servizio-bici.jpg" alt="Bicicletta vintage in un vicolo della costa italiana con bouganville" class="hero-servizi__img" width="800" height="800" loading="eager">
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      ABOUT STORY
