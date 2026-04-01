@@ -7061,3 +7061,38 @@ a.contact-detailed__info-value:hover {
     flex: 0 0 85vw;
   }
 }
+
+/* ============================================================
+   ROUND 8 — Contact fields, process icon bg
+   ============================================================ */
+
+/* ── CONTACT FORM: White fields, black text ─────────────────── */
+.contact-detailed__input {
+  background: #fff !important;
+  color: var(--color-text) !important;
+  border-color: rgba(0,0,0,0.15) !important;
+}
+.contact-detailed__input::placeholder {
+  color: rgba(0,0,0,0.35) !important;
+}
+.contact-detailed__input:hover {
+  border-color: rgba(0,0,0,0.25) !important;
+}
+.contact-detailed__input:focus {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(61, 139, 47, 0.15) !important;
+}
+/* Labels on dark section */
+.contact-detailed__label {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* ── PROCESS ICONS: Solid bg on circles so line doesn't show through */
+@media (min-width: 768px) {
+  .process-icons__icon-circle {
+    background: var(--color-bg) !important;
+  }
+  .process-icons__icon-circle--accent {
+    background: var(--color-accent) !important;
+  }
+}
