@@ -6452,13 +6452,21 @@ a.contact-detailed__info-value:hover {
 .special-marquee {
   padding: var(--space-md) 0 !important;
   overflow: hidden;
+  line-height: 1.4 !important;
+}
+.special-marquee__track-wrap {
+  overflow: visible !important;
+  padding: var(--space-xs) 0;
 }
 .special-marquee__item {
   font-size: clamp(1rem, 2vw, 1.6rem) !important;
 }
+/* Outline items: solid green instead of outline stroke */
 .special-marquee__item--outline {
   font-size: clamp(1rem, 2vw, 1.6rem) !important;
-  -webkit-text-stroke-width: 0.5px;
+  color: var(--color-accent) !important;
+  -webkit-text-stroke: 0 !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
 }
 .special-marquee__dot {
   font-size: clamp(0.5rem, 1vw, 0.8rem) !important;
