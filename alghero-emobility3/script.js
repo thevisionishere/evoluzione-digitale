@@ -543,7 +543,7 @@ function initHorizontalScroll() {
     section.style.height = `${window.innerHeight + totalScrollWidth}px`;
     wrapper.style.position = 'sticky';
     wrapper.style.top = '0';
-    wrapper.style.height = '100vh';
+    wrapper.style.height = '70vh';
     wrapper.style.display = 'flex';
     wrapper.style.alignItems = 'center';
   }

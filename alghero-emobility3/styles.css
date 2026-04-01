@@ -1,7 +1,7 @@
 /* ============================================
    ALGHERO E-MOBILITY — styles.css
    Design: Bold Contrast (Eco-Mobility + Sardinia)
-   Font: Syne + Work Sans
+   Font: Inter + Work Sans
    ============================================ */
 
 /* --- CSS Custom Properties --- */
@@ -26,9 +26,9 @@
   --color-success:       #00c853;
   --color-overlay:       rgba(10, 22, 40, 0.7);
 
-  --font-display:    'Syne', sans-serif;
+  --font-display:    'Inter', sans-serif;
   --font-body:       'Work Sans', sans-serif;
-  --font-accent:     'Syne', sans-serif;
+  --font-accent:     'Inter', sans-serif;
 
   --text-xs:    clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
   --text-sm:    clamp(0.8125rem, 0.76rem + 0.26vw, 0.875rem);
@@ -978,7 +978,7 @@ section {
 
 .horizontal-scroll-wrapper {
   position: relative;
-  height: 500px;
+  height: 380px;
 }
 
 .horizontal-scroll-track {
@@ -995,6 +995,9 @@ section {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .explore-card-image {
@@ -2396,6 +2399,7 @@ section {
   inset: 0;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
