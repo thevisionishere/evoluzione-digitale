@@ -6669,32 +6669,45 @@ a.contact-detailed__info-value:hover {
 
 /* ── PROCESS ICONS: Center icons + fix connector gap ──────── */
 @media (min-width: 768px) {
+  .process-icons__steps {
+    display: flex !important;
+    position: relative;
+  }
+  .process-icons__step {
+    flex: 1 1 0 !important;
+  }
+  /* Icon wrap: stack vertically, center the circle */
   .process-icons__icon-wrap {
-    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative;
+  }
+  /* Hide the per-step connector — we use a single line across all */
+  .process-icons__connector {
+    display: none !important;
   }
   .process-icons__icon-circle {
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  /* Single horizontal line spanning all 4 circles */
+  .process-icons__steps::before {
+    content: '';
+    position: absolute;
+    top: 36px; /* half of 72px circle */
+    left: calc(25% / 2 + 36px);
+    right: calc(25% / 2 + 36px);
+    height: 2px;
+    background: linear-gradient(to right, var(--color-accent), var(--color-border));
+    z-index: 1;
   }
   .process-icons__text {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  /* Ensure all steps have equal flex distribution */
-  .process-icons__steps {
-    display: flex !important;
-  }
-  .process-icons__step {
-    flex: 1 1 0 !important;
-  }
-  /* Connector lines: extend fully between circles */
-  .process-icons__connector {
-    flex: 1 !important;
-    min-width: 20px;
-  }
-  /* Last step accent circle: connect visually with offset */
-  .process-icons__step--last .process-icons__icon-wrap {
-    justify-content: center !important;
+    text-align: center;
   }
 }
 
@@ -6961,5 +6974,90 @@ a.contact-detailed__info-value:hover {
     max-width: 400px;
     margin: 0 auto;
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* ============================================================
+   REVIEWS HORIZONTAL SCROLL — Multiple cards visible
+   ============================================================ */
+.reviews-hscroll {
+  overflow: hidden;
+}
+.reviews-hscroll__header {
+  margin-bottom: var(--space-2xl);
+}
+.reviews-hscroll__track {
+  display: flex;
+  gap: var(--space-xl);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-sm) var(--container-padding) var(--space-2xl);
+  scrollbar-width: none;
+}
+.reviews-hscroll__track::-webkit-scrollbar {
+  display: none;
+}
+.reviews-hscroll__card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: box-shadow var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+}
+.reviews-hscroll__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.reviews-hscroll__stars {
+  color: #e8b931;
+  font-size: var(--text-lg);
+  letter-spacing: 2px;
+}
+.reviews-hscroll__quote {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+  margin: 0;
+  flex: 1;
+  font-style: italic;
+}
+.reviews-hscroll__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+.reviews-hscroll__author strong {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+.reviews-hscroll__author span {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+}
+.reviews-hscroll__author span::before {
+  content: "— ";
+}
+/* First card offset from left edge on desktop */
+@media (min-width: 768px) {
+  .reviews-hscroll__track {
+    padding-left: max(var(--container-padding), calc((100vw - var(--container-max)) / 2 + var(--container-padding)));
+  }
+  .reviews-hscroll__card {
+    flex: 0 0 380px;
+  }
+}
+/* Mobile: smaller cards */
+@media (max-width: 767px) {
+  .reviews-hscroll__card {
+    flex: 0 0 85vw;
   }
 }

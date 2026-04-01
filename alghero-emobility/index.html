@@ -640,229 +640,48 @@ if (sessionStorage.getItem('alghero-visited')) {
 </section><!-- /.cta-split -->
 
 <!-- ============================================================
-     8. REVIEWS CAROUSEL
+     8. REVIEWS — Horizontal scroll cards
      ============================================================ -->
-<section class="reviews-carousel section-padding" aria-label="Testimonianze clienti" id="testimonianze">
-
+<section class="reviews-hscroll section-padding" aria-label="Testimonianze clienti" id="testimonianze">
   <div class="container">
-
-    <!-- Section Header -->
-    <header class="reviews-carousel__header text-center reveal-up">
+    <header class="reviews-hscroll__header text-center reveal-up">
       <span class="section-label section-label--line">Cosa dicono di noi</span>
-      <h2 class="section-title reviews-carousel__title">
-        La voce dei nostri <em>clienti</em>
-      </h2>
-      <p class="section-desc section-desc--centered">
-        Ogni stagione, migliaia di turisti scelgono Alghero E-Mobility per esplorare la Sardegna. Ecco alcune delle loro esperienze.
-      </p>
+      <h2 class="section-title">La voce dei nostri <em>clienti</em></h2>
     </header>
-
-    <!-- Carousel Wrapper -->
-    <div class="reviews-carousel__wrapper" role="region" aria-label="Carosello testimonianze" aria-live="polite">
-
-      <!-- Decorative quote mark -->
-      <div class="reviews-carousel__quote-mark" aria-hidden="true">&ldquo;</div>
-
-      <!-- Slides Track -->
-      <div class="reviews-carousel__track" id="reviewsTrack" data-carousel-track>
-
-        <!-- Testimonial 1 -->
-        <article class="reviews-carousel__slide" aria-label="Testimonianza 1 di 5" data-index="0" data-carousel-slide data-active="true">
-          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote class="reviews-carousel__quote">
-            "Fantastico servizio! Abbiamo noleggiato un'e-bike e abbiamo esplorato tutta la costa. Il punto di ritiro in centro è comodissimo, a pochi passi da tutto. Torneremo sicuramente!"
-          </blockquote>
-          <footer class="reviews-carousel__author">
-            <figure class="reviews-carousel__avatar">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzJkNTAxNiIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+TVI8L3RleHQ+PC9zdmc+" alt="Ritratto di Marco R." width="64" height="64" loading="lazy">
-              <!-- Replace with actual avatar or remove img if not available -->
-            </figure>
-            <div class="reviews-carousel__author-info">
-              <cite class="reviews-carousel__author-name">Marco R.</cite>
-              <span class="reviews-carousel__author-role">Cliente — Milano</span>
-            </div>
-          </footer>
-        </article>
-
-        <!-- Testimonial 2 -->
-        <article class="reviews-carousel__slide" aria-label="Testimonianza 2 di 5" data-index="1" aria-hidden="true" data-carousel-slide>
-          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote class="reviews-carousel__quote">
-            "Finalmente un noleggio auto senza carta di credito! Servizio gentilissimo e auto in ottime condizioni. Ho potuto girare tutta la Sardegna senza pensieri."
-          </blockquote>
-          <footer class="reviews-carousel__author">
-            <figure class="reviews-carousel__avatar">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzNmNmUyMCIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+TEI8L3RleHQ+PC9zdmc+" alt="Ritratto di Laura B." width="64" height="64" loading="lazy">
-              <!-- Replace with actual avatar or remove img if not available -->
-            </figure>
-            <div class="reviews-carousel__author-info">
-              <cite class="reviews-carousel__author-name">Laura B.</cite>
-              <span class="reviews-carousel__author-role">Cliente — Roma</span>
-            </div>
-          </footer>
-        </article>
-
-        <!-- Testimonial 3 -->
-        <article class="reviews-carousel__slide" aria-label="Testimonianza 3 di 5" data-index="2" aria-hidden="true" data-carousel-slide>
-          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote class="reviews-carousel__quote">
-            "Scooter perfetto per muoversi ad Alghero d'estate. Accesso alla ZTL incluso, che comodità! Siamo arrivati ovunque senza problemi di parcheggio."
-          </blockquote>
-          <footer class="reviews-carousel__author">
-            <figure class="reviews-carousel__avatar">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzFlMzYwZSIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+VEs8L3RleHQ+PC9zdmc+" alt="Ritratto di Thomas K." width="64" height="64" loading="lazy">
-              <!-- Replace with actual avatar or remove img if not available -->
-            </figure>
-            <div class="reviews-carousel__author-info">
-              <cite class="reviews-carousel__author-name">Thomas K.</cite>
-              <span class="reviews-carousel__author-role">Cliente — München</span>
-            </div>
-          </footer>
-        </article>
-
-        <!-- Testimonial 4 -->
-        <article class="reviews-carousel__slide" aria-label="Testimonianza 4 di 5" data-index="3" aria-hidden="true" data-carousel-slide>
-          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote class="reviews-carousel__quote">
-            "Prezzi onesti e personale molto disponibile. Consigliamo le e-bike per esplorare la Riviera del Corallo — paesaggi meravigliosi, fatica zero!"
-          </blockquote>
-          <footer class="reviews-carousel__author">
-            <figure class="reviews-carousel__avatar">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzRhNmUyOCIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+U0Q8L3RleHQ+PC9zdmc+" alt="Ritratto di Sophie D." width="64" height="64" loading="lazy">
-              <!-- Replace with actual avatar or remove img if not available -->
-            </figure>
-            <div class="reviews-carousel__author-info">
-              <cite class="reviews-carousel__author-name">Sophie D.</cite>
-              <span class="reviews-carousel__author-role">Cliente — Paris</span>
-            </div>
-          </footer>
-        </article>
-
-        <!-- Testimonial 5 -->
-        <article class="reviews-carousel__slide" aria-label="Testimonianza 5 di 5" data-index="4" aria-hidden="true" data-carousel-slide>
-          <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote class="reviews-carousel__quote">
-            "Tutto perfetto dalla prenotazione alla riconsegna. L'opzione senza carta di credito è un grande plus per chi viaggia senza bancomat internazionale. Servizio top!"
-          </blockquote>
-          <footer class="reviews-carousel__author">
-            <figure class="reviews-carousel__avatar">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIzMiIgZmlsbD0iIzJkNTAxNiIvPjx0ZXh0IHg9IjMyIiB5PSIzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIiBmaWxsPSIjZjlmNmYwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjYwMCI+QVA8L3RleHQ+PC9zdmc+" alt="Ritratto di Andrea P." width="64" height="64" loading="lazy">
-              <!-- Replace with actual avatar or remove img if not available -->
-            </figure>
-            <div class="reviews-carousel__author-info">
-              <cite class="reviews-carousel__author-name">Andrea P.</cite>
-              <span class="reviews-carousel__author-role">Cliente — Torino</span>
-            </div>
-          </footer>
-        </article>
-
-      </div><!-- /.reviews-carousel__track -->
-
-      <!-- Navigation Controls -->
-      <div class="reviews-carousel__controls" role="group" aria-label="Navigazione carosello">
-        <button class="reviews-carousel__arrow reviews-carousel__arrow--prev" id="reviewsPrev" aria-label="Testimonianza precedente" data-carousel-prev>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M19 12H5M12 5l-7 7 7 7"/>
-          </svg>
-        </button>
-
-        <!-- Dot indicators -->
-        <div class="reviews-carousel__dots" role="tablist" aria-label="Seleziona testimonianza" data-carousel-dots>
-          <button class="reviews-carousel__dot reviews-carousel__dot--active" role="tab" aria-selected="true" aria-label="Testimonianza 1" data-index="0"></button>
-          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 2" data-index="1"></button>
-          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 3" data-index="2"></button>
-          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 4" data-index="3"></button>
-          <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 5" data-index="4"></button>
-        </div>
-
-        <button class="reviews-carousel__arrow reviews-carousel__arrow--next" id="reviewsNext" aria-label="Testimonianza successiva" data-carousel-next>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </button>
-      </div>
-
-    </div><!-- /.reviews-carousel__wrapper -->
-
-  </div><!-- /.container -->
-
-</section><!-- /.reviews-carousel -->
-<script>
-(function(){
-  var slides = document.querySelectorAll('.reviews-carousel__slide');
-  var dots = document.querySelectorAll('.reviews-carousel__dot');
-  var prev = document.getElementById('reviewsPrev');
-  var next = document.getElementById('reviewsNext');
-  if (!slides.length) return;
-  var current = 0, total = slides.length, timer;
-
-  function show(i) {
-    slides[current].style.opacity = '0';
-    slides[current].style.position = 'absolute';
-    dots[current].classList.remove('reviews-carousel__dot--active');
-    dots[current].setAttribute('aria-selected','false');
-    current = ((i % total) + total) % total;
-    slides[current].style.opacity = '1';
-    slides[current].style.position = 'relative';
-    dots[current].classList.add('reviews-carousel__dot--active');
-    dots[current].setAttribute('aria-selected','true');
-  }
-  function auto() { timer = setInterval(function(){ show(current+1); }, 6000); }
-  function reset() { clearInterval(timer); auto(); }
-
-  // Init: hide all except first
-  slides.forEach(function(s,i){
-    s.style.transition = 'opacity 0.5s ease';
-    s.style.opacity = i === 0 ? '1' : '0';
-    s.style.position = i === 0 ? 'relative' : 'absolute';
-    s.style.top = '0'; s.style.left = '0'; s.style.width = '100%';
-  });
-  // Make track relative
-  var track = document.getElementById('reviewsTrack');
-  if (track) track.style.position = 'relative';
-
-  prev.addEventListener('click', function(){ show(current-1); reset(); });
-  next.addEventListener('click', function(){ show(current+1); reset(); });
-  dots.forEach(function(d){ d.addEventListener('click', function(){ show(+this.dataset.index); reset(); }); });
-
-  // Touch swipe
-  var sx=0;
-  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
-  track.addEventListener('touchend',function(e){var d=sx-e.changedTouches[0].clientX;if(Math.abs(d)>50){show(d>0?current+1:current-1);reset();}},{passive:true});
-
-  auto();
-})();
-</script>
+  </div>
+  <div class="reviews-hscroll__track">
+    <!-- Card 1 -->
+    <article class="reviews-hscroll__card">
+      <div class="reviews-hscroll__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote class="reviews-hscroll__quote">"Fantastico servizio! Abbiamo noleggiato un'e-bike e abbiamo esplorato tutta la costa. Il punto di ritiro in centro è comodissimo. Torneremo sicuramente!"</blockquote>
+      <footer class="reviews-hscroll__author"><strong>Marco R.</strong><span>Milano</span></footer>
+    </article>
+    <!-- Card 2 -->
+    <article class="reviews-hscroll__card">
+      <div class="reviews-hscroll__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote class="reviews-hscroll__quote">"Finalmente un noleggio auto senza carta di credito! Servizio gentilissimo e auto in ottime condizioni. Ho potuto girare tutta la Sardegna senza pensieri."</blockquote>
+      <footer class="reviews-hscroll__author"><strong>Laura B.</strong><span>Roma</span></footer>
+    </article>
+    <!-- Card 3 -->
+    <article class="reviews-hscroll__card">
+      <div class="reviews-hscroll__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote class="reviews-hscroll__quote">"Scooter perfetto per muoversi ad Alghero d'estate. Accesso alla ZTL incluso, che comodità! Siamo arrivati ovunque senza problemi di parcheggio."</blockquote>
+      <footer class="reviews-hscroll__author"><strong>Thomas K.</strong><span>München</span></footer>
+    </article>
+    <!-- Card 4 -->
+    <article class="reviews-hscroll__card">
+      <div class="reviews-hscroll__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote class="reviews-hscroll__quote">"Prezzi onesti e personale molto disponibile. Consigliamo le e-bike per esplorare la Riviera del Corallo — paesaggi meravigliosi, fatica zero!"</blockquote>
+      <footer class="reviews-hscroll__author"><strong>Sophie D.</strong><span>Paris</span></footer>
+    </article>
+    <!-- Card 5 -->
+    <article class="reviews-hscroll__card">
+      <div class="reviews-hscroll__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote class="reviews-hscroll__quote">"Tutto perfetto dalla prenotazione alla riconsegna. L'opzione senza carta di credito è un grande plus per chi viaggia senza bancomat internazionale. Top!"</blockquote>
+      <footer class="reviews-hscroll__author"><strong>Andrea P.</strong><span>Torino</span></footer>
+    </article>
+  </div>
+</section>
 
 <!-- ============================================================
      9. SPECIAL PARALLAX IMAGE
