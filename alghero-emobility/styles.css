@@ -7096,3 +7096,8 @@ a.contact-detailed__info-value:hover {
     background: var(--color-accent) !important;
   }
 }
+
+/* ── HERO IMAGE: focus on left side (old town) ──────────────── */
+.hero-fullscreen__bg-img {
+  object-position: 25% center !important;
+}
