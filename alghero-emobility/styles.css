@@ -6711,6 +6711,28 @@ a.contact-detailed__info-value:hover {
   filter: none !important;
 }
 
+/* ── HEADER on light-hero pages: ALWAYS dark text ───────────── */
+/* Inner pages (servizi, chi-siamo, contatti) have light backgrounds,
+   so the header must always use dark text — even when not scrolled. */
+.light-hero .header-classic__nav-link {
+  color: var(--color-text) !important;
+  text-shadow: none !important;
+}
+.light-hero .header-classic__logo {
+  color: var(--color-text) !important;
+}
+.light-hero .header-classic__logo-img {
+  filter: none !important;
+}
+.light-hero [data-header] {
+  background: var(--color-bg) !important;
+  box-shadow: var(--shadow-sm);
+}
+/* Mobile menu toggle on light-hero pages */
+.light-hero .header-classic__mobile-btn .bar {
+  background: var(--color-text) !important;
+}
+
 /* ── REVIEWS CAROUSEL: Smooth crossfade instead of glitchy swap ─ */
 .reviews-carousel__track {
   position: relative !important;
