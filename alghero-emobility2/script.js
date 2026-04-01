@@ -570,6 +570,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Force calendar picker open on click for all date inputs
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+      input.addEventListener('click', () => {
+        try { input.showPicker(); } catch(e) { /* older browsers fallback to native */ }
+      });
+    });
+
     // Auto-set riconsegna min when ritiro changes
     if (ritiro && riconsegna) {
       ritiro.addEventListener('change', () => {
