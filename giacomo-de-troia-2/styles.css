@@ -1230,13 +1230,15 @@ body.viewer-open .cursor-follower.hover {
 }
 .artist-work-item img {
   width: 100%;
-  height: auto;
+  height: 350px;
+  object-fit: contain;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 .artist-work-item:hover img { transform: scale(1.03); }
 
 @media (min-width: 768px) {
   .artist-work-item { width: 40vw; }
+  .artist-work-item img { height: 450px; }
 }
 
 /* ============================================================
