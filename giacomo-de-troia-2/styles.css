@@ -1230,15 +1230,13 @@ body.viewer-open .cursor-follower.hover {
 }
 .artist-work-item img {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
+  height: auto;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 .artist-work-item:hover img { transform: scale(1.03); }
 
 @media (min-width: 768px) {
   .artist-work-item { width: 40vw; }
-  .artist-work-item img { height: 450px; }
 }
 
 /* ============================================================
@@ -1543,8 +1541,7 @@ body.viewer-open .cursor-follower.hover {
 }
 .exhibition-card img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto;
 }
 .exhibition-info h3 {
   font-family: var(--font-display);
