@@ -24,7 +24,11 @@ npm-debug.log*
 
 # Client source files
 wetransfer_*/
+info-del-cliente/
 Questionario-Compilato.docx
+
+# Large media (served locally, not via GitHub)
+*.mp4
 
 # Offline sites
 fissati/
