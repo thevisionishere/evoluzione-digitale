@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAudioPlayer();
   initVideoPlayer();
   initPaintingViewer();
+  initArtBook();
   initGalleryWalk();
   initCriticsSlider();
   initContactForm();
@@ -522,6 +523,215 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowLeft') showPainting((currentIndex - 1 + paintings.length) % paintings.length);
       if (e.key === 'ArrowRight') showPainting((currentIndex + 1) % paintings.length);
     });
+  }
+
+  /* ==========================================================
+     9b. ART BOOK (Page flip catalog)
+     ========================================================== */
+  function initArtBook() {
+    const book = document.getElementById('art-book');
+    if (!book) return;
+
+    const leaves = Array.from(book.querySelectorAll('.book-leaf'));
+    const totalLeaves = leaves.length;
+    const prevBtn = document.querySelector('.book-prev-btn');
+    const nextBtn = document.querySelector('.book-next-btn');
+    const counter = document.querySelector('.book-page-counter');
+
+    // Fullscreen viewer elements
+    const viewer = document.querySelector('.painting-viewer');
+    const viewerImg = viewer ? viewer.querySelector('.painting-viewer-content img') : null;
+    const viewerTitle = viewer ? viewer.querySelector('.painting-viewer-info h3') : null;
+    const viewerMeta = viewer ? viewer.querySelector('.painting-viewer-info p') : null;
+    const viewerCounter = viewer ? viewer.querySelector('.viewer-counter') : null;
+    const closeBtn = viewer ? viewer.querySelector('.viewer-close') : null;
+    const viewerPrev = viewer ? viewer.querySelector('.viewer-prev') : null;
+    const viewerNext = viewer ? viewer.querySelector('.viewer-next') : null;
+
+    // Extract painting data from leaves for fullscreen viewer
+    const paintings = [];
+    leaves.forEach(leaf => {
+      if (leaf.dataset.painting !== undefined) {
+        const img = leaf.querySelector('.leaf-painting img');
+        const cap = leaf.querySelector('.painting-caption');
+        if (img) {
+          paintings.push({
+            src: img.src,
+            title: cap ? cap.querySelector('h3').textContent : '',
+            meta: cap ? cap.querySelector('p').textContent : ''
+          });
+        }
+      }
+    });
+
+    let currentPage = 0;
+    let isAnimating = false;
+    let viewerIndex = 0;
+    const animDuration = prefersReducedMotion ? 50 : 1050;
+
+    // Reduced motion: skip animations
+    if (prefersReducedMotion) {
+      leaves.forEach(l => l.classList.add('no-transition'));
+    }
+
+    // Initial z-indexes
+    updateZIndexes();
+
+    function updateZIndexes() {
+      leaves.forEach((leaf, i) => {
+        if (leaf.classList.contains('flipped')) {
+          leaf.style.zIndex = i + 1;
+        } else {
+          leaf.style.zIndex = totalLeaves - i;
+        }
+      });
+    }
+
+    function flipForward() {
+      if (currentPage >= totalLeaves || isAnimating) return;
+      isAnimating = true;
+
+      const leaf = leaves[currentPage];
+      leaf.style.zIndex = totalLeaves + 10;
+      leaf.classList.add('flipped');
+      currentPage++;
+      updateUI();
+
+      setTimeout(() => {
+        updateZIndexes();
+        isAnimating = false;
+      }, animDuration);
+    }
+
+    function flipBackward() {
+      if (currentPage <= 0 || isAnimating) return;
+      isAnimating = true;
+
+      currentPage--;
+      const leaf = leaves[currentPage];
+      leaf.style.zIndex = totalLeaves + 10;
+      leaf.classList.remove('flipped');
+      updateUI();
+
+      setTimeout(() => {
+        updateZIndexes();
+        isAnimating = false;
+      }, animDuration);
+    }
+
+    function updateUI() {
+      if (counter) {
+        if (currentPage === 0) {
+          counter.textContent = 'Copertina';
+        } else if (currentPage >= totalLeaves) {
+          counter.textContent = 'Fine';
+        } else {
+          counter.textContent = currentPage + ' / ' + (totalLeaves - 1);
+        }
+      }
+      if (prevBtn) prevBtn.disabled = currentPage <= 0;
+      if (nextBtn) nextBtn.disabled = currentPage >= totalLeaves;
+    }
+
+    // Navigation buttons
+    if (prevBtn) prevBtn.addEventListener('click', flipBackward);
+    if (nextBtn) nextBtn.addEventListener('click', flipForward);
+
+    // Click on leaves to flip
+    leaves.forEach(leaf => {
+      leaf.addEventListener('click', (e) => {
+        // If clicking a painting image, open viewer instead
+        if (e.target.closest('.leaf-painting img')) return;
+
+        const idx = parseInt(leaf.dataset.leaf);
+        if (leaf.classList.contains('flipped')) {
+          if (idx === currentPage - 1) flipBackward();
+        } else {
+          if (idx === currentPage) flipForward();
+        }
+      });
+    });
+
+    // Click painting image → open fullscreen viewer
+    leaves.forEach(leaf => {
+      const img = leaf.querySelector('.leaf-painting img');
+      if (img && viewer) {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const pIdx = parseInt(leaf.dataset.painting);
+          if (!isNaN(pIdx)) openViewer(pIdx);
+        });
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (viewer && viewer.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); flipForward(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); flipBackward(); }
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    let touchStartY = 0;
+    book.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    book.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        if (dx < 0) flipForward();
+        else flipBackward();
+      }
+    }, { passive: true });
+
+    // --- Fullscreen viewer ---
+    function openViewer(index) {
+      if (!viewer || !paintings[index]) return;
+      viewerIndex = index;
+      showViewerPainting(index);
+      viewer.classList.add('active');
+      document.body.classList.add('viewer-open');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeViewerFn() {
+      if (!viewer) return;
+      viewer.classList.remove('active');
+      document.body.classList.remove('viewer-open');
+      document.body.style.overflow = '';
+    }
+
+    function showViewerPainting(index) {
+      viewerIndex = index;
+      if (viewerImg) { viewerImg.src = paintings[index].src; viewerImg.alt = paintings[index].title; }
+      if (viewerTitle) viewerTitle.textContent = paintings[index].title;
+      if (viewerMeta) viewerMeta.textContent = paintings[index].meta;
+      if (viewerCounter) viewerCounter.textContent = (index + 1) + ' / ' + paintings.length;
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeViewerFn);
+    if (viewerPrev) viewerPrev.addEventListener('click', () => {
+      showViewerPainting((viewerIndex - 1 + paintings.length) % paintings.length);
+    });
+    if (viewerNext) viewerNext.addEventListener('click', () => {
+      showViewerPainting((viewerIndex + 1) % paintings.length);
+    });
+    if (viewer) viewer.addEventListener('click', (e) => {
+      if (e.target === viewer) closeViewerFn();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!viewer || !viewer.classList.contains('active')) return;
+      if (e.key === 'Escape') closeViewerFn();
+      if (e.key === 'ArrowLeft') showViewerPainting((viewerIndex - 1 + paintings.length) % paintings.length);
+      if (e.key === 'ArrowRight') showViewerPainting((viewerIndex + 1) % paintings.length);
+    });
+
+    updateUI();
   }
 
   /* ==========================================================

@@ -1326,48 +1326,381 @@ body.viewer-open .cursor-follower.hover {
 }
 
 /* ============================================================
-   OPERE PAGE — Book Gallery
+   OPERE PAGE — Art Book
    ============================================================ */
-.book-gallery {
+.art-book-section {
   padding: var(--section-padding) 0;
   background: var(--color-light);
 }
-.book-gallery-intro {
+.art-book-intro {
   text-align: center;
   margin-bottom: var(--space-9);
 }
-.paintings-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-7);
-  width: var(--container-width);
-  margin-inline: auto;
-}
-.painting-card {
+.art-book-wrapper {
   position: relative;
-  cursor: pointer;
-  transition: transform var(--duration-normal) var(--ease-out);
+  width: min(92vw, 1100px);
+  margin: 0 auto;
+  padding-bottom: var(--space-8);
 }
-.painting-card:hover { transform: translateY(-4px); }
-.painting-card img {
+.art-book {
+  position: relative;
   width: 100%;
-  height: auto;
-  box-shadow: var(--shadow-md);
-  transition: box-shadow var(--duration-normal) var(--ease-out);
+  aspect-ratio: 8 / 5;
+  perspective: 2500px;
+  filter: drop-shadow(0 15px 50px rgba(0,0,0,0.12));
 }
-.painting-card:hover img { box-shadow: var(--shadow-xl); }
-.painting-info {
-  padding-top: var(--space-4);
+
+/* --- Static book backgrounds --- */
+.book-bg-left,
+.book-bg-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
 }
-.painting-info h3 {
+.book-bg-left {
+  left: 0;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(135deg, #f8f4ef 0%, #f2ede6 100%);
+  box-shadow: inset -6px 0 15px -8px rgba(0,0,0,0.08);
+}
+.book-bg-right {
+  right: 0;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(225deg, #f8f4ef 0%, #f2ede6 100%);
+  box-shadow: inset 6px 0 15px -8px rgba(0,0,0,0.08);
+}
+
+/* --- Spine shadow --- */
+.book-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0,0,0,0.04) 20%,
+    rgba(0,0,0,0.1) 45%,
+    rgba(0,0,0,0.12) 50%,
+    rgba(0,0,0,0.1) 55%,
+    rgba(0,0,0,0.04) 80%,
+    transparent 100%
+  );
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* --- Inside front cover --- */
+.book-inside-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.book-inside-cover .ic-text {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* --- Book leaf (each flipping page) --- */
+.book-leaf {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+.book-leaf.flipped {
+  transform: rotateY(-180deg);
+}
+.book-leaf.no-transition {
+  transition: none;
+}
+
+/* Front and back faces */
+.leaf-front,
+.leaf-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.leaf-front {
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(225deg, #f8f4ef 0%, #f2ede6 100%);
+}
+.leaf-back {
+  transform: rotateY(180deg);
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(135deg, #f8f4ef 0%, #f2ede6 100%);
+}
+
+/* Subtle page edge shadow */
+.leaf-front::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.03), transparent);
+  pointer-events: none;
+}
+
+/* --- Cover page (leaf 0 front) --- */
+.leaf-cover-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+  background: var(--color-dark) !important;
+  color: var(--color-light);
+  border-radius: 0 4px 4px 0;
+}
+.leaf-cover-front .cover-overline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-5);
+}
+.leaf-cover-front .cover-line {
+  width: 50px;
+  height: 1px;
+  background: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+.leaf-cover-front h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-light);
+  margin-bottom: var(--space-3);
+}
+.leaf-cover-front .cover-author {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: rgba(250,248,245,0.7);
+  margin-bottom: var(--space-6);
+}
+.leaf-cover-front .cover-count {
+  font-size: var(--text-xs);
+  color: rgba(250,248,245,0.4);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* --- Painting page (leaf fronts 1-17) --- */
+.leaf-painting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+.leaf-painting img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.painting-caption {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-4) var(--space-5);
+  background: linear-gradient(transparent, rgba(26,26,26,0.7));
+  text-align: center;
+}
+.painting-caption h3 {
   font-family: var(--font-display);
   font-size: var(--text-lg);
+  color: var(--color-light);
   font-weight: var(--weight-semibold);
   margin-bottom: var(--space-1);
 }
-.painting-info .painting-meta {
+.painting-caption p {
+  font-size: var(--text-xs);
+  color: rgba(250,248,245,0.7);
+}
+
+/* --- Info page (leaf backs 0-16) --- */
+.leaf-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+}
+.leaf-info .info-number {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+.leaf-info .info-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-dark);
+  line-height: var(--leading-snug);
+}
+.leaf-info .info-line {
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+  margin: var(--space-5) 0;
+}
+.leaf-info .info-meta {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+.leaf-info .info-technique {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-accent);
+}
+
+/* --- End page (last leaf back) --- */
+.leaf-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+}
+.leaf-end .end-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+}
+.leaf-end .end-line {
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+.leaf-end .end-author {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+.leaf-end .end-contact {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+
+/* --- Navigation --- */
+.book-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-full);
+  color: var(--color-text-dark);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  z-index: 200;
+  box-shadow: var(--shadow-md);
+  line-height: 1;
+}
+.book-nav-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-light);
+  border-color: var(--color-accent);
+}
+.book-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.book-prev-btn { left: -56px; }
+.book-next-btn { right: -56px; }
+.book-page-counter {
+  text-align: center;
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+}
+.book-hint {
+  text-align: center;
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+/* --- Mobile book --- */
+@media (max-width: 767px) {
+  .art-book-wrapper { width: min(92vw, 450px); }
+  .art-book {
+    aspect-ratio: 3 / 4;
+    perspective: 1200px;
+  }
+  .book-bg-left,
+  .book-spine,
+  .book-inside-cover { display: none; }
+  .book-bg-right {
+    width: 100%;
+    left: 0;
+    border-radius: 4px;
+  }
+  .book-leaf {
+    left: 0;
+    width: 100%;
+  }
+  .leaf-front,
+  .leaf-cover-front { border-radius: 4px; }
+  .leaf-back { border-radius: 4px; }
+  .leaf-info { display: none; }
+  .leaf-end { display: none; }
+  .painting-caption { display: block; }
+  .book-prev-btn { left: var(--space-2); }
+  .book-next-btn { right: var(--space-2); }
+  .leaf-painting { padding: var(--space-4); }
+}
+@media (min-width: 768px) and (max-width: 1250px) {
+  .book-prev-btn { left: var(--space-3); }
+  .book-next-btn { right: var(--space-3); }
 }
 
 /* Fullscreen Painting Viewer */
