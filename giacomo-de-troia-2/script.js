@@ -314,29 +314,98 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconMute = player.querySelector('.icon-mute');
     const tooltip = player.querySelector('.audio-tooltip');
 
-    audio.volume = 0.3;
+    audio.volume = 0.15;
     audio.loop = true;
+
+    // Persist playback state across page navigations
+    const wasPlaying = sessionStorage.getItem('gdt-audio-playing') === '1';
+    const savedTime = parseFloat(sessionStorage.getItem('gdt-audio-time') || '0');
+
+    function setPlaying() {
+      player.classList.add('playing');
+      if (iconPlay) iconPlay.style.display = 'none';
+      if (iconMute) iconMute.style.display = 'block';
+      if (tooltip) tooltip.textContent = 'Disattiva musica';
+      sessionStorage.setItem('gdt-audio-playing', '1');
+    }
+
+    function setPaused() {
+      player.classList.remove('playing');
+      if (iconPlay) iconPlay.style.display = 'block';
+      if (iconMute) iconMute.style.display = 'none';
+      if (tooltip) tooltip.textContent = 'Attiva musica ambientale';
+      sessionStorage.setItem('gdt-audio-playing', '0');
+    }
+
+    // Save playback position periodically
+    audio.addEventListener('timeupdate', () => {
+      sessionStorage.setItem('gdt-audio-time', String(audio.currentTime));
+    });
+
+    // Save state before leaving the page
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('gdt-audio-time', String(audio.currentTime));
+      sessionStorage.setItem('gdt-audio-playing', audio.paused ? '0' : '1');
+    });
 
     function toggleAudio() {
       if (audio.paused) {
-        audio.play().then(() => {
-          player.classList.add('playing');
-          if (iconPlay) iconPlay.style.display = 'none';
-          if (iconMute) iconMute.style.display = 'block';
-          if (tooltip) tooltip.textContent = 'Disattiva musica';
-        }).catch(() => {});
+        audio.play().then(setPlaying).catch(() => {});
       } else {
         audio.pause();
-        player.classList.remove('playing');
-        if (iconPlay) iconPlay.style.display = 'block';
-        if (iconMute) iconMute.style.display = 'none';
-        if (tooltip) tooltip.textContent = 'Attiva musica ambientale';
+        setPaused();
       }
     }
 
-    player.addEventListener('click', toggleAudio);
+    function removeAutoplayListeners() {
+      document.removeEventListener('click', startOnInteraction);
+      document.removeEventListener('touchstart', startOnInteraction);
+      document.removeEventListener('keydown', startOnInteraction);
+      document.removeEventListener('scroll', startOnInteraction);
+    }
+
+    function startOnInteraction(e) {
+      if (player.contains(e.target)) return;
+      if (savedTime) audio.currentTime = savedTime;
+      audio.play().then(() => {
+        setPlaying();
+        removeAutoplayListeners();
+      }).catch(() => {});
+    }
+
+    // Resume if was playing on previous page, or autoplay on first visit
+    if (wasPlaying) {
+      audio.currentTime = savedTime;
+      audio.play().then(() => {
+        setPlaying();
+      }).catch(() => {
+        // Browser blocked — wait for interaction to resume
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('touchstart', startOnInteraction);
+        document.addEventListener('keydown', startOnInteraction);
+      });
+    } else if (!sessionStorage.getItem('gdt-audio-playing')) {
+      // First visit ever — try autoplay
+      audio.play().then(setPlaying).catch(() => {
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('touchstart', startOnInteraction);
+        document.addEventListener('keydown', startOnInteraction);
+        document.addEventListener('scroll', startOnInteraction, { once: true });
+      });
+    }
+    // If gdt-audio-playing === '0', user manually paused — don't autoplay
+
+    player.addEventListener('click', (e) => {
+      e.stopPropagation();
+      removeAutoplayListeners();
+      toggleAudio();
+    });
     player.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAudio(); }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        removeAutoplayListeners();
+        toggleAudio();
+      }
     });
   }
 
@@ -419,12 +488,14 @@ document.addEventListener('DOMContentLoaded', () => {
       previousFocusViewer = document.activeElement;
       showPainting(index);
       viewer.classList.add('active');
+      document.body.classList.add('viewer-open');
       document.body.style.overflow = 'hidden';
       if (closeBtn) closeBtn.focus();
     }
 
     function closeViewer() {
       viewer.classList.remove('active');
+      document.body.classList.remove('viewer-open');
       document.body.style.overflow = '';
       if (previousFocusViewer) previousFocusViewer.focus();
     }
