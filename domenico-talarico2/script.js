@@ -44,16 +44,10 @@
     }
 
     var counter = qs('.preloader-counter', preloader);
-    var line = qs('.preloader-line', preloader);
+    var barFill = qs('.preloader-bar-fill', preloader);
     var start = null;
     var duration = 2000;
     var current = 0;
-
-    if (line) {
-      setTimeout(function () {
-        line.classList.add('grow');
-      }, 100);
-    }
 
     function step(timestamp) {
       if (!start) start = timestamp;
@@ -65,6 +59,7 @@
       if (value !== current) {
         current = value;
         if (counter) counter.textContent = current;
+        if (barFill) barFill.style.width = current + '%';
       }
 
       if (progress < 1) {
