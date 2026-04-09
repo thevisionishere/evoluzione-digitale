@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bioedilizia — Domenico Talarico Impresa Edile</title>
+  <meta name="description" content="Costruzioni sostenibili con materiali naturali: calcestruzzo di canapa, intonaci naturali, isolanti bio. Scopri i vantaggi e simula il tuo risparmio energetico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Cormorant:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Energy Simulator ── */
+    .energy-sim {
+      background: var(--color-light-alt);
+      border-radius: var(--radius-xl);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .energy-sim-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      color: var(--color-dark);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .energy-sim-subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 2.5rem;
+      font-size: var(--text-base);
+    }
+    .energy-sim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem 2.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) { .energy-sim-grid { grid-template-columns: 1fr; } }
+    .energy-field label {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: var(--weight-semibold);
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-dark);
+      margin-bottom: 0.75rem;
+    }
+    .calc-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    button.calc-option {
+      padding: 0.45rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background: #fff;
+      color: var(--color-text-muted);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      line-height: 1;
+    }
+    button.calc-option:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    button.calc-option.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    .range-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .range-row input[type="range"] {
+      flex: 1;
+      accent-color: var(--color-accent);
+      height: 4px;
+      cursor: pointer;
+    }
+    .range-val {
+      font-weight: var(--weight-semibold);
+      color: var(--color-accent);
+      min-width: 4rem;
+      text-align: right;
+      font-size: var(--text-base);
+    }
+    .energy-field select {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: #fff;
+      color: var(--color-dark);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      cursor: pointer;
+      outline: none;
+      transition: var(--transition-fast);
+    }
+    .energy-field select:focus { border-color: var(--color-accent); }
+    .energy-calc-btn-wrap { text-align: center; }
+    #energy-calc-btn {
+      padding: 0.85rem 2.5rem;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: var(--font-body);
+      font-weight: var(--weight-semibold);
+      font-size: var(--text-base);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      letter-spacing: var(--tracking-wide);
+    }
+    #energy-calc-btn:hover { background: var(--color-accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* Results */
+    .energy-result {
+      display: none;
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--color-border);
+      padding-top: 2.5rem;
+    }
+    .energy-result.visible { display: block; animation: fadeUp 0.5s var(--ease-out) both; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+    .energy-comparison {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 550px) { .energy-comparison { grid-template-columns: 1fr 1fr; } .energy-comparison .arrow-col { display: none; } }
+    .energy-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .energy-box-label {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .energy-box-amount {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+    .energy-box.after .energy-box-amount { color: var(--color-accent); }
+    .arrow-col {
+      text-align: center;
+      color: var(--color-accent);
+    }
+    .arrow-col svg { width: 32px; height: 32px; }
+    .energy-savings {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .energy-savings-label {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 0.4rem;
+    }
+    .energy-savings-amount {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+    }
+    .energy-class-section { margin-bottom: 1.5rem; }
+    .energy-class-label-text {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--color-dark);
+      margin-bottom: 0.75rem;
+    }
+    .energy-class-bar {
+      display: flex;
+      gap: 4px;
+      align-items: flex-end;
+      height: 50px;
+    }
+    .energy-class-item {
+      flex: 1;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      position: relative;
+      transition: all 0.3s var(--ease-out);
+      cursor: default;
+    }
+    .energy-class-item[data-class="G"] { background:#d63031; height:50px; }
+    .energy-class-item[data-class="F"] { background:#e17055; height:44px; }
+    .energy-class-item[data-class="E"] { background:#fdcb6e; height:38px; }
+    .energy-class-item[data-class="D"] { background:#f9ca24; height:32px; }
+    .energy-class-item[data-class="C"] { background:#badc58; height:26px; }
+    .energy-class-item[data-class="B"] { background:#6ab04c; height:20px; }
+    .energy-class-item[data-class="A"] { background:#27ae60; height:14px; }
+    .energy-class-item .class-letter {
+      position: absolute;
+      bottom: -1.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+    .energy-class-item.highlight {
+      outline: 3px solid var(--color-dark);
+      outline-offset: 2px;
+    }
+    .energy-class-item.highlight .class-letter { color: var(--color-dark); }
+    .energy-class-wrap { padding-bottom: 1.8rem; }
+    #energy-roi {
+      font-size: var(--text-base);
+      color: var(--color-dark);
+      font-weight: var(--weight-semibold);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .energy-disclaimer {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      line-height: var(--leading-relaxed);
+    }
+    .energy-result-cta { text-align: center; }
+  </style>
+</head>
+<body class="page-bioedilizia">
+
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo"><span>T</span>alarico</a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown active">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Servizi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="costruzioni.html" role="menuitem">Costruzioni</a>
+            <a href="ristrutturazioni.html" role="menuitem">Ristrutturazioni</a>
+            <a href="ristrutturazione-bagno.html" role="menuitem">Rifacimento Bagno</a>
+            <a href="bioedilizia.html" role="menuitem" class="active">Bioedilizia</a>
+            <a href="esterni.html" role="menuitem">Coperture ed Esterni</a>
+          </div>
+        </div>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="preventivo.html">Preventivo</a>
+        <a href="blog.html">Blog</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="preventivo.html" class="btn btn-primary btn-sm magnetic-btn header-cta">Preventivo Gratuito</a>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+    <div class="mobile-menu-nav">
+      <a href="index.html">Home</a>
+      <a href="costruzioni.html">Costruzioni</a>
+      <a href="ristrutturazioni.html">Ristrutturazioni</a>
+      <div class="mobile-submenu">
+        <a href="ristrutturazione-bagno.html">Rifacimento Bagno</a>
+        <a href="bioedilizia.html" class="active">Bioedilizia</a>
+        <a href="esterni.html">Coperture ed Esterni</a>
+      </div>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="preventivo.html">Preventivo</a>
+      <a href="blog.html">Blog</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="mobile-menu-contact">
+      <a href="tel:+393496134656">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+        </svg>
+        +39 349 613 4656
+      </a>
+      <a href="mailto:talarico1966@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        talarico1966@gmail.com
+      </a>
+      <div class="mobile-menu-social">
+        <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- SECTION 1: INTERNAL HERO -->
+    <section
+      class="hero-internal"
+      style="background-image: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1920&h=800&fit=crop&q=80');"
+      aria-label="Bioedilizia — Costruire Sostenibile e Innovativo"
+    >
+      <div class="hero-internal-content container">
+        <p class="breadcrumb" aria-label="Percorso di navigazione">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">&rsaquo;</span>
+          <a href="costruzioni.html">Servizi</a>
+          <span class="sep" aria-hidden="true">&rsaquo;</span>
+          <span>Bioedilizia</span>
+        </p>
+        <p class="label reveal-up">Costruzioni Eco-Sostenibili</p>
+        <h1 class="reveal-up" data-delay="1">Bioedilizia</h1>
+        <p class="hero-internal-sub reveal-up" data-delay="2">Costruire Sostenibile e Innovativo</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTRO NARRATIVE -->
+    <section class="content-section" aria-label="Il futuro dell'edilizia sostenibile">
+      <div class="container container-narrow">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Il Nostro Approccio</p>
+          <h2>Il Futuro dell'Edilizia è Sostenibile</h2>
+          <p class="reveal-up" data-delay="1">Costruire in modo sostenibile non è solo una scelta ecologica — è un investimento nel comfort e nella salute della tua famiglia. Da anni investiamo nella ricerca di materiali e tecniche che rispettano l'ambiente senza compromettere la qualità. Ogni intervento in bioedilizia che realizziamo nasce da una progettazione attenta, dove le prestazioni energetiche e il benessere degli abitanti vengono prima di tutto il resto.</p>
+          <p class="reveal-up" data-delay="2" style="color: var(--color-text-muted); font-style: italic; font-family: var(--font-accent); font-size: var(--text-lg);">"Una casa sana è quella che si prende cura di chi ci vive, rispettando l'ambiente che la circonda."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: HEMP CONCRETE SPLIT LAYOUT -->
+    <section class="content-section bg-light" aria-label="Calcestruzzo di canapa">
+      <div class="container">
+        <div class="zigzag-step reveal-up">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=650&fit=crop&q=80"
+              alt="Costruzione con materiali naturali e canapa"
+              loading="lazy"
+              style="width:100%; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: 4/3;"
+            >
+          </div>
+          <div>
+            <p class="label">Materiale Chiave</p>
+            <h2>Calcestruzzo di Canapa:<br><em style="font-family: var(--font-accent); font-style: italic;">Il Materiale del Futuro</em></h2>
+            <p style="color: var(--color-text-muted); line-height: var(--leading-relaxed); margin-bottom: 1.5rem;">Il calcestruzzo di canapa (hempcrete) è una miscela di fibra di canapa, calce e acqua che offre prestazioni termiche e acustiche eccellenti, con un impatto ambientale straordinariamente basso. È il cuore del nostro approccio alla bioedilizia.</p>
+            <ul class="check-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Isolante naturale</strong> — comfort termico tutto l'anno senza impianti invasivi</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Traspirante</strong> — previene condensa, umidità e muffe strutturalmente</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Resistente al fuoco</strong> — sicurezza certificata, autoestinguente</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Leggero</strong> — riduce il carico strutturale, ideale per ristrutturazioni</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Ecologico</strong> — la canapa cattura CO₂ durante la crescita, bilancio negativo</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MATERIALS GRID -->
+    <section class="content-section" aria-label="Materiali naturali certificati">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Portfolio Materiali</p>
+          <h2>Materiali Naturali Certificati</h2>
+          <p class="reveal-up" data-delay="1">Selezioniamo solo materiali di origine naturale, certificati e testati per garantire prestazioni eccellenti e massima sicurezza per la tua famiglia.</p>
+        </div>
+        <div class="features-grid cols-4">
+
+          <article class="feature-card reveal-up" data-delay="1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <h4>Travi Effetto Legno</h4>
+            <p>In polistirolo espanso ad alta densità, replicano l'estetica del legno con prestazioni superiori e zero manutenzione.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M3 9h18M3 15h18M9 3v18M15 3v18"></path>
+            </svg>
+            <h4>Intonaci Naturali</h4>
+            <p>Formulati a base calce e argilla, completamente traspiranti. Regolano naturalmente l'umidità interna delle pareti.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path>
+              <path d="M8 12s0-4 4-4 4 4 4 4-0 4-4 4-4-4-4-4z"></path>
+            </svg>
+            <h4>Isolanti in Canapa e Sughero</h4>
+            <p>Pannelli e feltri di origine 100% naturale. Ottima inerzia termica, traspiranti e completamente biodegradabili.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <h4>Materiali Atossici e Ignifughi</h4>
+            <p>Zero VOC, zero formaldeide. Tutti i materiali impiegati sono certificati A+ per la qualità dell'aria indoor.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: HEALTH BENEFITS -->
+    <section class="content-section bg-light" aria-label="Benefici per la salute e il comfort">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Benessere Abitativo</p>
+          <h2>Una Casa che Si Prende Cura di Te</h2>
+          <p class="reveal-up" data-delay="1">La bioedilizia non riguarda solo l'ambiente. Riguarda la qualità della vita di chi abita quegli spazi, ogni giorno.</p>
+        </div>
+        <div class="features-grid cols-3" style="margin-top: 3rem;">
+
+          <article class="feature-card reveal-up" data-delay="1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"></path>
+            </svg>
+            <h4>Comfort Termico Naturale</h4>
+            <p>Temperatura ideale tutto l'anno senza sbalzi. L'inerzia termica dei materiali naturali mantiene fresco d'estate e caldo d'inverno.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 18v-6a9 9 0 0118 0v6"></path>
+              <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
+            </svg>
+            <h4>Riduzione Rumori</h4>
+            <p>Isolamento acustico superiore grazie alla densità e alla struttura fibrosa dei materiali naturali. Meno rumore dall'esterno, più serenità.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 6a7 7 0 0110 0M5 10a9 9 0 0114 0M3 14a13 13 0 0018 0M12 22v-8"></path>
+            </svg>
+            <h4>Pareti Traspiranti</h4>
+            <p>Le pareti "respirano" regolando naturalmente l'umidità. Niente condensa, niente muffa, aria sempre pulita e sana.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"></path>
+            </svg>
+            <h4>Materiali Atossici</h4>
+            <p>Zero emissioni nocive nell'aria che respiri. Nessun solvente, nessuna formaldeide. Ideale per famiglie con bambini e anziani.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+            <h4>Risparmio Energetico</h4>
+            <p>Bollette ridotte fino al 40%. L'eccellente isolamento riduce drasticamente il fabbisogno di riscaldamento e raffrescamento.</p>
+          </article>
+
+          <article class="feature-card reveal-up" data-delay="3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"></path>
+            </svg>
+            <h4>Valore Immobiliare</h4>
+            <p>Gli immobili in bioedilizia con alta classe energetica mantengono e aumentano il loro valore nel tempo. Un investimento sicuro.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: ENERGY SIMULATOR -->
+    <section class="content-section" style="background: var(--color-light);" aria-label="Simulatore risparmio energetico">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Tool Interattivo</p>
+          <h2>Quanto Puoi Risparmiare<br>con la Bioedilizia?</h2>
+          <p class="reveal-up" data-delay="1">Inserisci i dati del tuo immobile e scopri subito una stima del risparmio energetico annuale ottenibile con un intervento in bioedilizia.</p>
+        </div>
+
+        <div class="energy-sim reveal-up" data-delay="2">
+          <div class="energy-sim-grid">
+
+            <!-- Input 1: Tipo Immobile -->
+            <div class="energy-field">
+              <label>Tipo di Immobile</label>
+              <div class="calc-options">
+                <button class="calc-option active" data-group="type" data-value="appartamento">Appartamento</button>
+                <button class="calc-option" data-group="type" data-value="villa">Villa</button>
+                <button class="calc-option" data-group="type" data-value="commerciale">Locale Commerciale</button>
+              </div>
+            </div>
+
+            <!-- Input 3: Anno Costruzione -->
+            <div class="energy-field">
+              <label>Anno di Costruzione</label>
+              <select id="energy-year">
+                <option value="pre1980">Prima del 1980</option>
+                <option value="1980-2000">1980 – 2000</option>
+                <option value="2000-2010">2000 – 2010</option>
+                <option value="post2010">Dopo il 2010</option>
+              </select>
+            </div>
+
+            <!-- Input 2: Superficie -->
+            <div class="energy-field" style="grid-column: 1 / -1;">
+              <label>Superficie Abitativa</label>
+              <div class="range-row">
+                <input type="range" id="energy-area" min="50" max="300" value="100" step="5">
+                <span class="range-val" id="energy-area-val">100 mq</span>
+              </div>
+            </div>
+
+            <!-- Input 4: Riscaldamento -->
+            <div class="energy-field" style="grid-column: 1 / -1;">
+              <label>Tipo di Riscaldamento Attuale</label>
+              <div class="calc-options">
+                <button class="calc-option active" data-group="heat" data-value="gas">Gas</button>
+                <button class="calc-option" data-group="heat" data-value="gasolio">Gasolio</button>
+                <button class="calc-option" data-group="heat" data-value="elettrico">Elettrico</button>
+                <button class="calc-option" data-group="heat" data-value="pompa">Pompa di Calore</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="energy-calc-btn-wrap">
+            <button id="energy-calc-btn">Calcola il Mio Risparmio</button>
+          </div>
+
+          <!-- RESULTS -->
+          <div class="energy-result" id="energy-result" aria-live="polite">
+
+            <div class="energy-comparison">
+              <div class="energy-box before">
+                <p class="energy-box-label">Costo Annuale Attuale</p>
+                <p class="energy-box-amount" id="cost-before">€ 0</p>
+              </div>
+              <div class="arrow-col" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </div>
+              <div class="energy-box after">
+                <p class="energy-box-label">Costo Annuale con Bioedilizia</p>
+                <p class="energy-box-amount" id="cost-after">€ 0</p>
+              </div>
+            </div>
+
+            <div class="energy-savings">
+              <p class="energy-savings-label">Risparmio Annuale Stimato</p>
+              <p class="energy-savings-amount" id="savings-amount">€ 0</p>
+            </div>
+
+            <div class="energy-class-section">
+              <p class="energy-class-label-text">Classe Energetica: da <strong id="class-from">G</strong> a <strong id="class-to">B</strong></p>
+              <div class="energy-class-wrap">
+                <div class="energy-class-bar" role="img" aria-label="Barre classi energetiche da G ad A">
+                  <div class="energy-class-item" data-class="G"><span class="class-letter">G</span></div>
+                  <div class="energy-class-item" data-class="F"><span class="class-letter">F</span></div>
+                  <div class="energy-class-item" data-class="E"><span class="class-letter">E</span></div>
+                  <div class="energy-class-item" data-class="D"><span class="class-letter">D</span></div>
+                  <div class="energy-class-item" data-class="C"><span class="class-letter">C</span></div>
+                  <div class="energy-class-item" data-class="B"><span class="class-letter">B</span></div>
+                  <div class="energy-class-item" data-class="A"><span class="class-letter">A</span></div>
+                </div>
+              </div>
+            </div>
+
+            <p id="energy-roi"></p>
+
+            <p class="energy-disclaimer">Valori indicativi basati su medie nazionali ENEA e ISTAT. I risultati reali dipendono dalle caratteristiche specifiche dell'immobile, dalla zona climatica e dai consumi effettivi. Per un'analisi dettagliata, richiedi un sopralluogo gratuito.</p>
+
+            <div class="energy-result-cta">
+              <a href="contatti.html" class="btn btn-primary magnetic-btn">Richiedi Analisi Energetica Gratuita</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CTA BANNER -->
+    <section
+      class="cta-banner"
+      style="background-image: url('https://images.unsplash.com/photo-1446941303996-2c35e95b0edb?w=1920&h=600&fit=crop&q=80');"
+      aria-label="Costruisci nel rispetto dell'ambiente"
+    >
+      <div class="cta-banner-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-banner-content reveal-up">
+          <h2>Costruisci nel Rispetto dell'Ambiente</h2>
+          <p>Un progetto sostenibile comincia da una conversazione. Raccontaci la tua idea e progetteremo insieme la soluzione più adatta.</p>
+          <a href="contatti.html" class="btn btn-primary magnetic-btn">Parliamo del Tuo Progetto</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo"><span>T</span>alarico</a>
+          <p class="footer-tagline">Impresa Edile dal 2014. Costruzioni, ristrutturazioni e bioedilizia in tutta la Lombardia.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Link footer navigazione">
+            <a href="index.html">Home</a>
+            <a href="costruzioni.html">Servizi</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <nav class="footer-links" aria-label="Link footer servizi">
+            <a href="costruzioni.html">Costruzioni</a>
+            <a href="ristrutturazioni.html">Ristrutturazioni</a>
+            <a href="ristrutturazione-bagno.html">Rifacimento Bagno</a>
+            <a href="bioedilizia.html">Bioedilizia</a>
+            <a href="esterni.html">Coperture ed Esterni</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+            <a href="tel:+393496134656">+39 349 613 4656</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:talarico1966@gmail.com">talarico1966@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <address style="font-style: normal;">Via Massimo D'Azeglio, 6, 23811 Ballabio (LC)</address>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path></svg>
+            <span>P.IVA 04028240135</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Domenico Talarico &mdash; Impresa Edile | P.IVA 04028240135</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="cookie-policy.html">Cookie Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/393496134656" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    // ── Energy Simulator Logic ──
+    (function () {
+      // Base cost per mq per year by fuel type (EUR)
+      const fuelCost = { gas: 14, gasolio: 17, elettrico: 22, pompa: 9 };
+      // Multiplier by building era (inefficiency factor)
+      const eraMult = { pre1980: 1.9, '1980-2000': 1.5, '2000-2010': 1.15, post2010: 0.9 };
+      // Multiplier by type
+      const typeMult = { appartamento: 1.0, villa: 1.35, commerciale: 1.6 };
+      // Starting class by era
+      const eraClass = { pre1980: 'G', '1980-2000': 'F', '2000-2010': 'D', post2010: 'C' };
+      // Bioedilizia improvement map (from → to)
+      const classUpgrade = { G:'B', F:'B', E:'B', D:'B', C:'A', B:'A', A:'A' };
+      // Saving factor by fuel after upgrade
+      const savingFactor = { gas:0.42, gasolio:0.45, elettrico:0.38, pompa:0.30 };
+
+      const classOrder = ['G','F','E','D','C','B','A'];
+
+      // state
+      const state = { type:'appartamento', heat:'gas', area:100, year:'pre1980' };
+
+      // Radio buttons
+      document.querySelectorAll('button.calc-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const group = btn.dataset.group;
+          document.querySelectorAll(`button.calc-option[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state[group === 'type' ? 'type' : 'heat'] = btn.dataset.value;
+        });
+      });
+
+      // Range slider
+      const slider = document.getElementById('energy-area');
+      const sliderVal = document.getElementById('energy-area-val');
+      slider.addEventListener('input', () => {
+        state.area = parseInt(slider.value);
+        sliderVal.textContent = state.area + ' mq';
+      });
+
+      // Year select
+      document.getElementById('energy-year').addEventListener('change', e => {
+        state.year = e.target.value;
+      });
+
+      // Calculate button
+      document.getElementById('energy-calc-btn').addEventListener('click', () => {
+        const baseCost = fuelCost[state.heat] * state.area * eraMult[state.year] * typeMult[state.type];
+        const saving = baseCost * savingFactor[state.heat];
+        const afterCost = baseCost - saving;
+        const roi = Math.round((baseCost * 8) / saving); // rough investment ~8x annual cost
+
+        const classFrom = eraClass[state.year];
+        const classTo = classUpgrade[classFrom];
+
+        // Update DOM
+        document.getElementById('cost-before').textContent = '€ ' + Math.round(baseCost).toLocaleString('it-IT');
+        document.getElementById('cost-after').textContent = '€ ' + Math.round(afterCost).toLocaleString('it-IT');
+        document.getElementById('savings-amount').textContent = '€ ' + Math.round(saving).toLocaleString('it-IT');
+        document.getElementById('class-from').textContent = classFrom;
+        document.getElementById('class-to').textContent = classTo;
+        document.getElementById('energy-roi').textContent = 'Rientro stimato dell\'investimento in circa ' + roi + ' anni';
+
+        // Highlight bars
+        document.querySelectorAll('.energy-class-item').forEach(item => {
+          item.classList.remove('highlight');
+          const cl = item.dataset.class;
+          if (cl === classFrom || cl === classTo) item.classList.add('highlight');
+        });
+
+        // Show results
+        const result = document.getElementById('energy-result');
+        result.classList.add('visible');
+        setTimeout(() => result.scrollIntoView({ behavior:'smooth', block:'nearest' }), 50);
+      });
+    })();
+  </script>
+
+</body>
+</html>

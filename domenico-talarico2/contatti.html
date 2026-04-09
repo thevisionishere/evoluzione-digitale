@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Domenico Talarico Impresa Edile</title>
+  <meta name="description" content="Contatta l'Impresa Edile Domenico Talarico. Telefono, email, indirizzo e modulo di contatto. Sede a Ballabio (LC), operiamo in tutta la Lombardia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Cormorant:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Contact Grid ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* Info column */
+    .contact-info-heading {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--color-dark);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-info-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--color-light-alt);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-info-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-accent);
+      stroke: var(--color-accent);
+    }
+    .contact-info-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .contact-info-label {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      font-weight: var(--weight-semibold);
+    }
+    .contact-info-value {
+      font-size: var(--text-base);
+      color: var(--color-dark);
+      font-weight: var(--weight-medium);
+      line-height: var(--leading-snug);
+    }
+    .contact-info-value a {
+      color: var(--color-dark);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+    .contact-info-value a:hover { color: var(--color-accent); }
+    .contact-social-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .contact-social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-dark);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      font-weight: var(--weight-medium);
+    }
+    .contact-social-link svg { width: 15px; height: 15px; }
+    .contact-social-link:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(181, 101, 29, 0.05);
+    }
+    .contact-whatsapp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.75rem;
+      padding: 0.75rem 1.5rem;
+      background: #25d366;
+      color: #fff;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+    .contact-whatsapp-cta svg { width: 20px; height: 20px; }
+    .contact-whatsapp-cta:hover { background: #1ebe57; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* Form column */
+    .contact-form-heading {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--color-dark);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+    .site-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--color-dark);
+      letter-spacing: var(--tracking-wide);
+    }
+    .form-group label .required { color: var(--color-accent); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: #fff;
+      color: var(--color-dark);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      outline: none;
+      transition: var(--transition-fast);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(181, 101, 29, 0.1);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--color-text-muted); opacity: 0.7; }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .form-checkbox input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      accent-color: var(--color-accent);
+      cursor: pointer;
+      margin-top: 2px;
+      border-radius: var(--radius-sm);
+    }
+    .form-checkbox label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+      cursor: pointer;
+    }
+    .form-checkbox label a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    .form-submit-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .form-submit-row .btn {
+      align-self: flex-start;
+    }
+    .form-note {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .form-note svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* Map */
+    .map-section {
+      padding: 0;
+    }
+    .map-container {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Areas grid */
+    .areas-intro {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-top: 1rem;
+      font-size: var(--text-sm);
+    }
+  </style>
+</head>
+<body class="page-contatti">
+
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo"><span>T</span>alarico</a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Servizi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="costruzioni.html" role="menuitem">Costruzioni</a>
+            <a href="ristrutturazioni.html" role="menuitem">Ristrutturazioni</a>
+            <a href="ristrutturazione-bagno.html" role="menuitem">Rifacimento Bagno</a>
+            <a href="bioedilizia.html" role="menuitem">Bioedilizia</a>
+            <a href="esterni.html" role="menuitem">Coperture ed Esterni</a>
+          </div>
+        </div>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="preventivo.html">Preventivo</a>
+        <a href="blog.html">Blog</a>
+        <a href="contatti.html" class="active">Contatti</a>
+      </nav>
+      <a href="preventivo.html" class="btn btn-primary btn-sm magnetic-btn header-cta">Preventivo Gratuito</a>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+    <div class="mobile-menu-nav">
+      <a href="index.html">Home</a>
+      <a href="costruzioni.html">Costruzioni</a>
+      <a href="ristrutturazioni.html">Ristrutturazioni</a>
+      <div class="mobile-submenu">
+        <a href="ristrutturazione-bagno.html">Rifacimento Bagno</a>
+        <a href="bioedilizia.html">Bioedilizia</a>
+        <a href="esterni.html">Coperture ed Esterni</a>
+      </div>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="preventivo.html">Preventivo</a>
+      <a href="blog.html">Blog</a>
+      <a href="contatti.html" class="active">Contatti</a>
+    </div>
+    <div class="mobile-menu-contact">
+      <a href="tel:+393496134656">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+        </svg>
+        +39 349 613 4656
+      </a>
+      <a href="mailto:talarico1966@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        talarico1966@gmail.com
+      </a>
+      <div class="mobile-menu-social">
+        <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- SECTION 1: INTERNAL HERO -->
+    <section
+      class="hero-internal"
+      style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=800&fit=crop&q=80');"
+      aria-label="Contattaci — Siamo a Tua Disposizione"
+    >
+      <div class="hero-internal-content container">
+        <p class="breadcrumb" aria-label="Percorso di navigazione">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">&rsaquo;</span>
+          <span>Contatti</span>
+        </p>
+        <p class="label reveal-up">Parliamo del Tuo Progetto</p>
+        <h1 class="reveal-up" data-delay="1">Contattaci</h1>
+        <p class="hero-internal-sub reveal-up" data-delay="2">Siamo a Tua Disposizione</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONTACT GRID (info + form) -->
+    <section class="content-section" aria-label="Recapiti e modulo di contatto">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- LEFT: Contact Info -->
+          <div class="reveal-up">
+            <h2 class="contact-info-heading">I Nostri Recapiti</h2>
+            <ul class="contact-info-list">
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Telefono</span>
+                  <span class="contact-info-value"><a href="tel:+393496134656">+39 349 613 4656</a></span>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Email</span>
+                  <span class="contact-info-value"><a href="mailto:talarico1966@gmail.com">talarico1966@gmail.com</a></span>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Indirizzo</span>
+                  <address class="contact-info-value" style="font-style: normal;">Via Massimo D'Azeglio, 6<br>23811 Ballabio (LC)</address>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path></svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Partita IVA</span>
+                  <span class="contact-info-value">04028240135</span>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">WhatsApp</span>
+                  <span class="contact-info-value">
+                    <a href="https://wa.me/393496134656" target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a>
+                  </span>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M8 12h8M8 16h5"></path></svg>
+                </div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Social</span>
+                  <div class="contact-social-row">
+                    <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Seguici su Facebook">
+                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                      Facebook
+                    </a>
+                    <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Seguici su Instagram">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                      Instagram
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+            <a href="https://wa.me/393496134656" target="_blank" rel="noopener noreferrer" class="contact-whatsapp-cta" aria-label="Contattaci su WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Scrivici su WhatsApp
+            </a>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div class="reveal-up" data-delay="1">
+            <h2 class="contact-form-heading">Scrivici</h2>
+            <form class="site-form" action="form-handler.php" method="POST" novalidate aria-label="Modulo di contatto">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Nome e Cognome <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="contact-name" name="nome" placeholder="Mario Rossi" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email <span class="required" aria-hidden="true">*</span></label>
+                  <input type="email" id="contact-email" name="email" placeholder="mario@esempio.it" required autocomplete="email">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-phone">Telefono <span class="required" aria-hidden="true">*</span></label>
+                  <input type="tel" id="contact-phone" name="telefono" placeholder="+39 333 000 0000" required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label for="contact-service">Servizio di Interesse</label>
+                  <select id="contact-service" name="servizio">
+                    <option value="" disabled selected>Seleziona un servizio</option>
+                    <option value="nuova-costruzione">Nuova Costruzione</option>
+                    <option value="ristrutturazione">Ristrutturazione</option>
+                    <option value="rifacimento-bagno">Rifacimento Bagno</option>
+                    <option value="bioedilizia">Bioedilizia</option>
+                    <option value="coperture-esterni">Coperture / Esterni</option>
+                    <option value="altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Messaggio <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="messaggio" placeholder="Descrivi brevemente il tuo progetto o la tua richiesta..." required></textarea>
+              </div>
+              <div class="form-checkbox">
+                <input type="checkbox" id="contact-privacy" name="privacy" required>
+                <label for="contact-privacy">
+                  Autorizzo il trattamento dei dati personali ai sensi del D.Lgs. 196/2003 e del GDPR 2016/679. Leggi la nostra <a href="privacy-policy.html">Privacy Policy</a>.
+                </label>
+              </div>
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary magnetic-btn">Invia Messaggio</button>
+                <p class="form-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Ti ricontatteremo entro 24 ore lavorative.
+                </p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: GOOGLE MAP -->
+    <section class="map-section" aria-label="Mappa sede Talarico Impresa Edile">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.5!2d9.3981!3d45.8967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4785b6c7a5a3b3d1%3A0x0!2sVia+Massimo+D'Azeglio%2C+6%2C+23811+Ballabio+LC!5e0!3m2!1sit!2sit!4v1"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sede Impresa Edile Talarico — Via Massimo D'Azeglio 6, Ballabio (LC)"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SERVICE AREAS -->
+    <section class="content-section bg-light" aria-label="Zone operative in Lombardia">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Copertura Territoriale</p>
+          <h2>Zone Operative</h2>
+        </div>
+        <div class="areas-grid reveal-up" data-delay="1">
+
+          <div class="area-card sede">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              <span>Lecco</span>
+              <small style="display: block; font-size: var(--text-xs); color: var(--color-accent); margin-top: 2px;">Sede Principale</small>
+            </div>
+          </div>
+
+          <div class="area-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Como</span>
+          </div>
+
+          <div class="area-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Milano</span>
+          </div>
+
+          <div class="area-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Bergamo</span>
+          </div>
+
+          <div class="area-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Brescia</span>
+          </div>
+
+          <div class="area-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Monza e Brianza</span>
+          </div>
+
+        </div>
+        <p class="areas-intro reveal-up" data-delay="2">Operiamo in tutta la Lombardia. Contattaci per verificare la copertura nella tua zona.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo"><span>T</span>alarico</a>
+          <p class="footer-tagline">Impresa Edile dal 2014. Costruzioni, ristrutturazioni e bioedilizia in tutta la Lombardia.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Link footer navigazione">
+            <a href="index.html">Home</a>
+            <a href="costruzioni.html">Servizi</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <nav class="footer-links" aria-label="Link footer servizi">
+            <a href="costruzioni.html">Costruzioni</a>
+            <a href="ristrutturazioni.html">Ristrutturazioni</a>
+            <a href="ristrutturazione-bagno.html">Rifacimento Bagno</a>
+            <a href="bioedilizia.html">Bioedilizia</a>
+            <a href="esterni.html">Coperture ed Esterni</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+            <a href="tel:+393496134656">+39 349 613 4656</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:talarico1966@gmail.com">talarico1966@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <address style="font-style: normal;">Via Massimo D'Azeglio, 6, 23811 Ballabio (LC)</address>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path></svg>
+            <span>P.IVA 04028240135</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Domenico Talarico &mdash; Impresa Edile | P.IVA 04028240135</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="cookie-policy.html">Cookie Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/393496134656" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

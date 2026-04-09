@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristrutturazioni Chiavi in Mano — Domenico Talarico Impresa Edile</title>
+  <meta name="description" content="Ristrutturazioni complete di appartamenti, ville e locali commerciali a Lecco e in tutta la Lombardia. Sopralluogo gratuito, gestione completa cantiere e pratiche burocratiche.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Cormorant:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-ristrutturazioni">
+
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo"><span>T</span>alarico</a>
+      <nav class="header-nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Servizi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="costruzioni.html" role="menuitem">Costruzioni</a>
+            <a href="ristrutturazioni.html" role="menuitem" class="active">Ristrutturazioni</a>
+            <a href="ristrutturazione-bagno.html" role="menuitem">Rifacimento Bagno</a>
+            <a href="bioedilizia.html" role="menuitem">Bioedilizia</a>
+            <a href="esterni.html" role="menuitem">Coperture ed Esterni</a>
+          </div>
+        </div>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="preventivo.html">Preventivo</a>
+        <a href="blog.html">Blog</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="preventivo.html" class="btn btn-primary btn-sm magnetic-btn header-cta">Preventivo Gratuito</a>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+    <div class="mobile-menu-nav">
+      <a href="index.html">Home</a>
+      <a href="costruzioni.html">Costruzioni</a>
+      <a href="ristrutturazioni.html" class="active">Ristrutturazioni</a>
+      <div class="mobile-submenu">
+        <a href="ristrutturazione-bagno.html">Rifacimento Bagno</a>
+        <a href="bioedilizia.html">Bioedilizia</a>
+        <a href="esterni.html">Coperture ed Esterni</a>
+      </div>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="preventivo.html">Preventivo</a>
+      <a href="blog.html">Blog</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="mobile-menu-contact">
+      <a href="tel:+393496134656">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+        </svg>
+        +39 349 613 4656
+      </a>
+      <a href="mailto:talarico1966@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        talarico1966@gmail.com
+      </a>
+      <div class="mobile-menu-social">
+        <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- SECTION 1: INTERNAL HERO -->
+    <section
+      class="hero-internal"
+      style="background-image: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&h=800&fit=crop&q=80');"
+      aria-label="Ristrutturazioni Chiavi in Mano — Domenico Talarico"
+    >
+      <div class="hero-internal-content container">
+        <p class="breadcrumb" aria-label="Percorso di navigazione">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">&rsaquo;</span>
+          <a href="ristrutturazioni.html">Servizi</a>
+          <span class="sep" aria-hidden="true">&rsaquo;</span>
+          <span>Ristrutturazioni</span>
+        </p>
+        <p class="hero-accent reveal-up"><em>Trasforma il Tuo Spazio</em></p>
+        <h1 class="reveal-up" data-delay="1">Ristrutturazioni Chiavi in Mano</h1>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SERVICE DESCRIPTION -->
+    <section class="content-section" aria-label="Ristrutturazioni complete">
+      <div class="container">
+        <div class="content-narrative reveal-up">
+          <h2>Trasforma il Tuo Spazio con un Servizio Completo</h2>
+          <p>Ci occupiamo di ristrutturazioni complete per appartamenti, ville storiche e locali commerciali in tutta la Lombardia. Ogni progetto inizia con un sopralluogo gratuito: veniamo da te, ascoltiamo le tue esigenze, valutiamo lo stato dell'immobile e ti presentiamo una proposta personalizzata e trasparente.</p>
+          <p>La nostra forza è la gestione integrata: seguiamo personalmente ogni fase del cantiere, coordiniamo tutte le maestranze specializzate e ci occupiamo di ogni pratica burocratica — dai permessi alle comunicazioni agli enti competenti. Tu non devi fare nulla: pensiamo a tutto noi.</p>
+          <blockquote class="pull-quote">
+            <em>"Un unico referente dall'inizio alla fine"</em>
+          </blockquote>
+          <p>Collaboriamo con architetti e designer per offrirti anche un supporto nella progettazione degli interni, trasformando spazi obsoleti in ambienti moderni, funzionali e belli. Che si tratti di una ristrutturazione totale o di un intervento mirato, il risultato finale è sempre impeccabile.</p>
+          <a href="preventivo.html" class="btn btn-primary magnetic-btn" style="margin-top: var(--space-5);">Richiedi Sopralluogo Gratuito</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SERVICE FEATURES (4 PILASTRI) -->
+    <section class="content-section bg-light" aria-label="I pilastri del servizio ristrutturazioni">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Il Nostro Metodo</p>
+          <h2>Quattro Pilastri del Servizio</h2>
+        </div>
+
+        <div class="zigzag-step reveal-up">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=800&h=560&fit=crop&q=80" alt="Consulenza su misura" loading="lazy">
+          </div>
+          <div class="zigzag-content">
+            <span class="step-number">01</span>
+            <h3>Consulenza su Misura</h3>
+            <p>Ogni ristrutturazione nasce dall'ascolto. Durante il sopralluogo gratuito, raccogliamo tutte le tue esigenze, i tuoi desideri e il tuo budget per costruire una soluzione che sia davvero su misura. Nessuno schema preconfezionato: ogni progetto è unico.</p>
+          </div>
+        </div>
+
+        <div class="zigzag-step zigzag-reverse reveal-up">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=560&fit=crop&q=80" alt="Interventi multi-tipo appartamenti ville locali" loading="lazy">
+          </div>
+          <div class="zigzag-content">
+            <span class="step-number">02</span>
+            <h3>Interventi Multi-Tipo</h3>
+            <p>Ristrutturiamo appartamenti, ville, case d'epoca, loft e locali commerciali. La nostra esperienza decennale ci permette di gestire ogni tipologia di immobile, dalle piccole metrature ai grandi spazi, con la stessa attenzione al dettaglio.</p>
+          </div>
+        </div>
+
+        <div class="zigzag-step reveal-up">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=560&fit=crop&q=80" alt="Gestione completa cantiere" loading="lazy">
+          </div>
+          <div class="zigzag-content">
+            <span class="step-number">03</span>
+            <h3>Gestione Completa del Cantiere</h3>
+            <p>Ci occupiamo di tutto: pratiche comunali, approvvigionamento materiali, coordinamento di muratori, piastrellisti, elettricisti e idraulici. Un direttore di cantiere sempre presente garantisce qualità, sicurezza e rispetto dei tempi concordati.</p>
+          </div>
+        </div>
+
+        <div class="zigzag-step zigzag-reverse reveal-up">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=560&fit=crop&q=80" alt="Finiture di pregio" loading="lazy">
+          </div>
+          <div class="zigzag-content">
+            <span class="step-number">04</span>
+            <h3>Finiture di Pregio</h3>
+            <p>La differenza si vede nei dettagli. Selezioniamo materiali di alta qualità — gres, parquet, intonaci decorativi, sanitari premium — per garantire risultati esteticamente impeccabili e duratori nel tempo. Perché una ristrutturazione ben fatta dura decenni.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: BEFORE/AFTER GALLERY -->
+    <section class="content-section" aria-label="Esempi di ristrutturazioni prima e dopo">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">I Nostri Lavori</p>
+          <h2>Prima e Dopo</h2>
+          <p class="section-intro">Trascina il cursore per scoprire la trasformazione. Ogni spazio racconta una storia di rinnovamento.</p>
+        </div>
+
+        <div class="ba-sliders-wrap reveal-up">
+          <!-- Before/After Slider 1 -->
+          <div class="ba-slider" role="group" aria-label="Prima e dopo - Ristrutturazione appartamento">
+            <div class="ba-before">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&h=600&fit=crop&q=80" alt="Prima della ristrutturazione — appartamento datato" loading="lazy">
+              <span class="ba-label ba-label-before">Prima</span>
+            </div>
+            <div class="ba-after">
+              <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=900&h=600&fit=crop&q=80" alt="Dopo la ristrutturazione — appartamento moderno" loading="lazy">
+              <span class="ba-label ba-label-after">Dopo</span>
+            </div>
+            <div class="ba-handle" aria-hidden="true">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+
+          <!-- Before/After Slider 2 -->
+          <div class="ba-slider" role="group" aria-label="Prima e dopo - Ristrutturazione cucina">
+            <div class="ba-before">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&h=600&fit=crop&q=80" alt="Prima della ristrutturazione — cucina da rinnovare" loading="lazy">
+              <span class="ba-label ba-label-before">Prima</span>
+            </div>
+            <div class="ba-after">
+              <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&h=600&fit=crop&q=80" alt="Dopo la ristrutturazione — cucina moderna" loading="lazy">
+              <span class="ba-label ba-label-after">Dopo</span>
+            </div>
+            <div class="ba-handle" aria-hidden="true">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: VANTAGGI (CHECK LIST) -->
+    <section class="content-section bg-light" aria-label="I vantaggi del servizio ristrutturazioni">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <p class="label">Perché Sceglierci</p>
+          <h2>Tutto Quello che Ci Distingue</h2>
+        </div>
+        <div class="check-list-wrap reveal-up" data-delay="1">
+          <ul class="check-list" role="list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <strong>Sopralluoghi gratuiti</strong>
+                <p>Veniamo da te senza impegno per valutare l'immobile e capire le tue esigenze. Nessun costo, nessun vincolo.</p>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <strong>Preventivi dettagliati e trasparenti</strong>
+                <p>Ogni voce di spesa è chiara e documentata. Nessuna sorpresa in corso d'opera: il prezzo concordato è quello finale.</p>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <strong>Unico referente per tutto il progetto</strong>
+                <p>Non devi gestire decine di artigiani diversi. Un unico punto di contatto coordina tutto dall'inizio alla fine.</p>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <strong>Gestione pratiche burocratiche</strong>
+                <p>CILA, SCIA, comunicazioni al Comune: ci occupiamo di tutta la documentazione amministrativa necessaria per procedere in regola.</p>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <strong>Approvvigionamento materiali</strong>
+                <p>Grazie alle nostre partnership con fornitori selezionati, garantiamo materiali di qualità a prezzi competitivi, senza che tu debba occupartene.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="text-center reveal-up" style="margin-top: var(--space-8);">
+          <a href="preventivo.html" class="btn btn-primary magnetic-btn">Richiedi Preventivo Gratuito</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CTA BANNER -->
+    <section
+      class="cta-banner"
+      style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=600&fit=crop&q=80');"
+      aria-label="Trasforma il tuo spazio oggi"
+    >
+      <div class="cta-banner-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-banner-content reveal-up">
+          <h2>Trasforma il Tuo Spazio Oggi</h2>
+          <p>Contattaci per un sopralluogo gratuito. Preventivo dettagliato e senza impegno entro 48 ore.</p>
+          <a href="preventivo.html" class="btn btn-primary magnetic-btn">Richiedi Preventivo Gratuito</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo"><span>T</span>alarico</a>
+          <p class="footer-tagline">Impresa Edile dal 2014. Costruzioni, ristrutturazioni e bioedilizia in tutta la Lombardia.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigazione</h4>
+          <nav class="footer-links" aria-label="Link footer navigazione">
+            <a href="index.html">Home</a>
+            <a href="costruzioni.html">Servizi</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contatti.html">Contatti</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <nav class="footer-links" aria-label="Link footer servizi">
+            <a href="costruzioni.html">Costruzioni</a>
+            <a href="ristrutturazioni.html">Ristrutturazioni</a>
+            <a href="ristrutturazione-bagno.html">Rifacimento Bagno</a>
+            <a href="bioedilizia.html">Bioedilizia</a>
+            <a href="esterni.html">Coperture ed Esterni</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.61-.61a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+            <a href="tel:+393496134656">+39 349 613 4656</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:talarico1966@gmail.com">talarico1966@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <address style="font-style: normal;">Via Massimo D'Azeglio, 6, 23811 Ballabio (LC)</address>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path></svg>
+            <span>P.IVA 04028240135</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Domenico Talarico &mdash; Impresa Edile | P.IVA 04028240135</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="cookie-policy.html">Cookie Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/393496134656" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>
