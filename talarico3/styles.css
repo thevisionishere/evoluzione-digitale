@@ -276,7 +276,7 @@ p:last-child { margin-block-end: 0; }
   z-index: 1000;
   padding: var(--space-4) 0;
   transition: var(--transition-normal);
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(30, 26, 20, 0.7) 0%, rgba(30, 26, 20, 0.3) 60%, transparent 100%);
 }
 .header-scrolled {
   background: rgba(30, 26, 20, 0.95);
@@ -452,6 +452,8 @@ p:last-child { margin-block-end: 0; }
 /* --- Custom Cursor (desktop only) --- */
 .cursor-dot {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 8px;
   height: 8px;
   background: var(--color-accent);
@@ -462,6 +464,8 @@ p:last-child { margin-block-end: 0; }
 }
 .cursor-follower {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 32px;
   height: 32px;
   border: 1px solid var(--color-accent);
@@ -505,16 +509,17 @@ body.custom-cursor, body.custom-cursor a, body.custom-cursor button { cursor: no
 }
 .hero-label.show { opacity: 1; transform: translateY(0); transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out); }
 .hero-title {
-  color: var(--color-light);
+  color: #fff;
   margin-bottom: var(--space-5);
   opacity: 0;
   transform: translateY(30px);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 .hero-title.show { opacity: 1; transform: translateY(0); transition: opacity var(--duration-slow) var(--ease-out) 0.15s, transform var(--duration-slow) var(--ease-out) 0.15s; }
 .hero-title .accent-text { color: var(--color-accent-light); }
 .hero-desc {
-  font-size: var(--text-lg);
-  color: var(--color-text-muted);
+  font-size: var(--text-xl);
+  color: rgba(240, 232, 222, 0.85);
   max-width: 500px;
   margin-bottom: var(--space-7);
   opacity: 0;
@@ -529,6 +534,19 @@ body.custom-cursor, body.custom-cursor a, body.custom-cursor button { cursor: no
   transform: translateY(20px);
 }
 .hero-btns.show { opacity: 1; transform: translateY(0); transition: opacity var(--duration-slow) var(--ease-out) 0.45s, transform var(--duration-slow) var(--ease-out) 0.45s; }
+.hero-btns .btn {
+  padding: var(--space-5) var(--space-8);
+  font-size: var(--text-base);
+}
+.hero-btns .btn-secondary {
+  color: var(--color-light);
+  border-color: rgba(240, 232, 222, 0.4);
+}
+.hero-btns .btn-secondary:hover {
+  background: var(--color-light);
+  color: var(--color-dark);
+  border-color: var(--color-light);
+}
 .hero-image {
   position: relative;
   overflow: hidden;
@@ -904,7 +922,7 @@ body.custom-cursor, body.custom-cursor a, body.custom-cursor button { cursor: no
 }
 .bioedilizia-card-icon svg { width: 100%; height: 100%; }
 .bioedilizia-card h3 { color: var(--color-light); margin-bottom: var(--space-2); font-size: var(--text-lg); }
-.bioedilizia-card p { color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: 0; }
+.bioedilizia-card p { color: rgba(240, 232, 222, 0.75); font-size: var(--text-sm); margin-bottom: 0; }
 
 /* ============================================
    CALCOLATORE PREVIEW
@@ -1580,6 +1598,77 @@ input[type="range"]::-webkit-slider-thumb {
 .benefit-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
 .benefit-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
 
+/* Esterni Benefits — Premium Redesign */
+.ext-benefits {
+  padding: var(--section-padding) 0;
+  background: var(--color-dark);
+}
+.ext-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.ext-benefit-card {
+  position: relative;
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  background: rgba(240, 232, 222, 0.04);
+  border: 1px solid rgba(240, 232, 222, 0.08);
+  border-radius: var(--radius-lg);
+  transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+}
+.ext-benefit-card:hover {
+  transform: translateY(-4px);
+  background: rgba(240, 232, 222, 0.07);
+  border-color: rgba(var(--color-accent-rgb), 0.3);
+}
+.ext-benefit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.ext-benefit-number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-accent);
+  opacity: 0.25;
+  line-height: 1;
+}
+.ext-benefit-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-light);
+  background: rgba(var(--color-accent-rgb), 0.1);
+  border-radius: var(--radius-md);
+}
+.ext-benefit-icon svg { width: 24px; height: 24px; }
+.ext-benefit-card h3 {
+  font-size: var(--text-lg);
+  color: var(--color-light);
+  margin-bottom: var(--space-2);
+}
+.ext-benefit-card p {
+  font-size: var(--text-sm);
+  color: rgba(240, 232, 222, 0.65);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+.ext-benefit-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-accent-light);
+  background: rgba(var(--color-accent-rgb), 0.1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
 /* Material cards */
 .materials-grid {
   display: grid;
@@ -1623,7 +1712,7 @@ input[type="range"]::-webkit-slider-thumb {
 .service-type-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(30,26,20,0.8) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(30,26,20,0.9) 0%, rgba(30,26,20,0.4) 60%, rgba(30,26,20,0.2) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1753,6 +1842,8 @@ input[type="range"]::-webkit-slider-thumb {
   .footer-bottom { flex-direction: row; justify-content: space-between; }
 
   .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .ext-benefits-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1024px) {
@@ -1767,6 +1858,8 @@ input[type="range"]::-webkit-slider-thumb {
   .why-choose-grid { grid-template-columns: repeat(4, 1fr); }
 
   .materials-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .ext-benefits-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ============================================

@@ -251,10 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const follower = document.createElement('div');
     follower.className = 'cursor-follower';
 
-    dot.style.left = '-100px';
-    dot.style.top = '-100px';
-    follower.style.left = '-100px';
-    follower.style.top = '-100px';
+    dot.classList.add('hidden');
+    follower.classList.add('hidden');
 
     document.body.appendChild(dot);
     document.body.appendChild(follower);
@@ -270,6 +268,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!cursorActivated) {
         cursorActivated = true;
+        dot.classList.remove('hidden');
+        follower.classList.remove('hidden');
         document.body.classList.add('custom-cursor');
       }
     });
@@ -494,9 +494,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function showStep(index) {
       steps.forEach((s, i) => {
         s.classList.toggle('active', i === index);
-      });
-      progressDots.forEach((d, i) => {
-        d.classList.toggle('active', i === index);
+        const dots = s.querySelectorAll('.calc-progress-dot');
+        dots.forEach((d, j) => {
+          d.classList.toggle('active', j <= index);
+        });
       });
       currentStep = index;
     }

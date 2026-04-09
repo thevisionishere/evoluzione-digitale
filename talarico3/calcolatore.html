@@ -25,11 +25,7 @@
       background: var(--color-light-alt);
     }
 
-    /* Disclaimer section */
-    .calc-disclaimer-section {
-      padding: var(--space-10) 0;
-      background: #fff;
-    }
+    /* Disclaimer box */
     .calc-disclaimer-box {
       max-width: 800px;
       margin-inline: auto;
@@ -71,6 +67,14 @@
     .why-choose-card-icon svg {
       width: 26px;
       height: 26px;
+    }
+
+    /* Why Choose — 3-column layout for 3 cards */
+    @media (min-width: 1024px) {
+      .calculator-page ~ .why-choose .why-choose-grid,
+      body[data-page="calcolatore"] .why-choose-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     /* CTA Banner — page-specific override to match exact spec */
@@ -349,13 +353,8 @@
           </div>
 
         </div>
-      </div>
-    </section>
 
-    <!-- ====== DISCLAIMER ====== -->
-    <section class="calc-disclaimer-section">
-      <div class="container">
-        <div class="calc-disclaimer-box reveal-up">
+        <div class="calc-disclaimer-box reveal-up" style="margin-top: var(--space-6); max-width: 900px;">
           <svg class="calc-disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <line x1="12" y1="8" x2="12" y2="12"/>
@@ -363,6 +362,7 @@
           </svg>
           <p>I prezzi indicati sono stime basate su medie di mercato. Il costo effettivo dipende da numerosi fattori specifici del progetto, che possono essere valutati solo attraverso un sopralluogo professionale. Affidati sempre a un tecnico qualificato per un preventivo preciso e vincolante.</p>
         </div>
+
       </div>
     </section>
 
@@ -421,7 +421,7 @@
     <!-- ====== CTA BANNER ====== -->
     <section class="cta-banner calcolatore-cta">
       <div class="cta-banner-bg">
-        <img src="images/construction-workers.jpg" alt="Team Talarico al lavoro in cantiere" width="1920" height="800" loading="lazy" data-parallax="0.1">
+        <img src="images/construction-workers.jpg" alt="Team Talarico al lavoro in cantiere" width="1920" height="800" loading="lazy">
       </div>
       <div class="container">
         <h2 class="reveal-up">Preferisci <span class="accent-text" style="color: var(--color-accent-light);">Parlare con Noi?</span></h2>
