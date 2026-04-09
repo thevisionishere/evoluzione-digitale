@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcolatore Preventivo Ristrutturazione — Domenico Talarico</title>
+  <meta name="description" content="Calcola una stima indicativa del costo della tua ristrutturazione, costruzione o rifacimento bagno in meno di 2 minuti. Strumento gratuito dell'impresa edile Domenico Talarico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&family=Cormorant:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================
+       CALCOLATORE PAGE — Page-Specific Overrides
+       ============================================ */
+
+    /* Wider calculator card on the dedicated page */
+    .calculator-page .calculator-card {
+      max-width: 900px;
+    }
+
+    /* Full calculator section */
+    .calculator-page-section {
+      padding: var(--section-padding) 0;
+      background: var(--color-light-alt);
+    }
+
+    /* Disclaimer section */
+    .calc-disclaimer-section {
+      padding: var(--space-10) 0;
+      background: #fff;
+    }
+    .calc-disclaimer-box {
+      max-width: 800px;
+      margin-inline: auto;
+      background: rgba(var(--color-accent-rgb), 0.06);
+      border: 1px solid rgba(var(--color-accent-rgb), 0.2);
+      border-left: 4px solid var(--color-accent);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-7);
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .calc-disclaimer-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: var(--color-accent);
+      margin-top: 2px;
+    }
+    .calc-disclaimer-box p {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* Why Choose Cards — icon style */
+    .why-choose-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-lg);
+      background: rgba(var(--color-accent-rgb), 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+      color: var(--color-accent);
+    }
+    .why-choose-card-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* CTA Banner — page-specific override to match exact spec */
+    .calcolatore-cta .hero-btns {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+  </style>
+</head>
+<body data-page="calcolatore">
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo.png" alt="Domenico Talarico Impresa Edile" width="160" height="40">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="costruzioni.html">Costruzioni</a>
+        <a href="ristrutturazioni.html">Ristrutturazioni</a>
+        <a href="bagno.html">Bagno</a>
+        <a href="bioedilizia.html">Bioedilizia</a>
+        <a href="esterni.html">Esterni</a>
+        <a href="calcolatore.html" class="active">Calcolatore</a>
+        <a href="contatti.html" class="header-cta">Contattaci</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="costruzioni.html">Costruzioni</a>
+    <a href="ristrutturazioni.html">Ristrutturazioni</a>
+    <a href="bagno.html">Bagno</a>
+    <a href="bioedilizia.html">Bioedilizia</a>
+    <a href="esterni.html">Esterni</a>
+    <a href="calcolatore.html" class="active">Calcolatore</a>
+    <a href="contatti.html">Contattaci</a>
+    <div class="mobile-menu-contact">
+      <a href="tel:+393496134656">+39 349 613 4656</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ====== HERO INTERNAL ====== -->
+    <section class="hero-internal">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Calcolatore</span>
+        </nav>
+        <h1 class="reveal-up">Calcola il Preventivo della Tua Ristrutturazione</h1>
+        <p class="reveal-up">Ottieni una stima indicativa in meno di 2 minuti</p>
+      </div>
+    </section>
+
+    <!-- ====== FULL CALCULATOR ====== -->
+    <section class="calculator-page-section">
+      <div class="container calculator-page">
+
+        <div class="calculator-card reveal-up calculator">
+
+          <!-- Step 1: Tipo intervento -->
+          <div class="calc-step active" data-step="0">
+            <h3>Che tipo di intervento ti interessa?</h3>
+            <div class="calc-options">
+
+              <div class="calc-option" data-type="ristrutturazione">
+                <div class="calc-option-icon">
+                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="10" width="30" height="24" rx="2"/>
+                    <path d="M5 18h30M15 10v6M25 10v6"/>
+                    <path d="M12 24h6M22 24h6M12 30h6M22 30h6"/>
+                  </svg>
+                </div>
+                <h4>Ristrutturazione Completa</h4>
+                <p>Appartamento o villa</p>
+              </div>
+
+              <div class="calc-option" data-type="bagno">
+                <div class="calc-option-icon">
+                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="8" y="12" width="24" height="20" rx="2"/>
+                    <path d="M14 32v-8h12v8"/>
+                    <circle cx="20" cy="22" r="2"/>
+                    <path d="M8 18h24"/>
+                  </svg>
+                </div>
+                <h4>Rifacimento Bagno</h4>
+                <p>Bagno su misura</p>
+              </div>
+
+              <div class="calc-option" data-type="costruzione">
+                <div class="calc-option-icon">
+                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 34h32M8 34V16l12-10 12 10v18"/>
+                    <path d="M8 16h24"/>
+                    <path d="M16 34v-8h8v8"/>
+                  </svg>
+                </div>
+                <h4>Costruzione Nuova</h4>
+                <p>Ex novo chiavi in mano</p>
+              </div>
+
+              <div class="calc-option" data-type="copertura">
+                <div class="calc-option-icon">
+                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 34h32M8 34V20l12-8 12 8v14M8 20h24"/>
+                    <path d="M14 26h4M22 26h4M14 31h4M22 31h4"/>
+                  </svg>
+                </div>
+                <h4>Copertura / Esterni</h4>
+                <p>Tetto, cappotto, facciata</p>
+              </div>
+
+            </div>
+            <div class="calc-nav">
+              <div class="calc-progress">
+                <div class="calc-progress-dot active"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+              </div>
+              <button class="btn btn-primary" data-calc-next>Avanti</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Metratura -->
+          <div class="calc-step" data-step="1">
+            <h3>Quanti metri quadri?</h3>
+            <div class="calc-slider-wrap">
+              <div class="calc-slider-value"><span>100</span> <small>mq</small></div>
+              <input type="range" class="calc-slider" min="20" max="300" value="100" step="5">
+              <div class="calc-slider-labels"><span>20 mq</span><span>300 mq</span></div>
+            </div>
+            <div class="calc-nav">
+              <button class="btn btn-secondary" data-calc-prev>Indietro</button>
+              <div class="calc-progress">
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot active"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+              </div>
+              <button class="btn btn-primary" data-calc-next>Avanti</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Livello finiture -->
+          <div class="calc-step" data-step="2">
+            <h3>Che livello di finiture desideri?</h3>
+            <div class="calc-finish-options">
+
+              <div class="calc-finish-option" data-finish="standard">
+                <h4>Standard</h4>
+                <p>Materiali classici, soluzioni funzionali. Ottimo rapporto qualità-prezzo.</p>
+              </div>
+
+              <div class="calc-finish-option" data-finish="premium">
+                <h4>Premium</h4>
+                <p>Materiali di qualità, design ricercato. Il miglior equilibrio tra estetica e budget.</p>
+              </div>
+
+              <div class="calc-finish-option" data-finish="luxury">
+                <h4>Luxury</h4>
+                <p>Materiali top, personalizzazione totale. Per chi non vuole compromessi.</p>
+              </div>
+
+            </div>
+            <div class="calc-nav">
+              <button class="btn btn-secondary" data-calc-prev>Indietro</button>
+              <div class="calc-progress">
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot active"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+              </div>
+              <button class="btn btn-primary" data-calc-next>Avanti</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Extras -->
+          <div class="calc-step" data-step="3">
+            <h3>Servizi extra? <small style="font-weight:400; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted);">(opzionale)</small></h3>
+            <div class="calc-extras">
+
+              <div class="calc-extra-item" data-extra="bioedilizia">
+                <div class="calc-extra-checkbox">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                </div>
+                <div>
+                  <strong>Bioedilizia</strong>
+                  <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin:0;">Materiali ecologici (+15-25%)</p>
+                </div>
+              </div>
+
+              <div class="calc-extra-item" data-extra="cappotto">
+                <div class="calc-extra-checkbox">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                </div>
+                <div>
+                  <strong>Cappotto Termico</strong>
+                  <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin:0;">Isolamento esterno</p>
+                </div>
+              </div>
+
+              <div class="calc-extra-item" data-extra="elettrico">
+                <div class="calc-extra-checkbox">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                </div>
+                <div>
+                  <strong>Impianto Elettrico</strong>
+                  <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin:0;">Rifacimento completo</p>
+                </div>
+              </div>
+
+              <div class="calc-extra-item" data-extra="idraulico">
+                <div class="calc-extra-checkbox">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                </div>
+                <div>
+                  <strong>Impianto Idraulico</strong>
+                  <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin:0;">Rifacimento completo</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="calc-nav">
+              <button class="btn btn-secondary" data-calc-prev>Indietro</button>
+              <div class="calc-progress">
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot active"></div>
+                <div class="calc-progress-dot"></div>
+              </div>
+              <button class="btn btn-primary" data-calc-next>Calcola</button>
+            </div>
+          </div>
+
+          <!-- Step 5: Result -->
+          <div class="calc-step" data-step="4">
+            <div class="calc-result">
+              <span class="label">Stima Indicativa</span>
+              <div class="calc-result-range">€60.000 — €80.000</div>
+              <p>Il preventivo definitivo richiede un sopralluogo gratuito per valutare le specificità del tuo progetto.</p>
+            </div>
+            <div style="text-align:center; margin-top: var(--space-6);">
+              <a href="contatti.html" class="btn btn-primary magnetic-btn">Richiedi Preventivo Dettagliato</a>
+              <p style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted);">Sopralluogo gratuito e senza impegno</p>
+            </div>
+            <div class="calc-nav">
+              <button class="btn btn-secondary" data-calc-prev>Ricalcola</button>
+              <div class="calc-progress">
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot"></div>
+                <div class="calc-progress-dot active"></div>
+              </div>
+              <div style="width: 1px;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== DISCLAIMER ====== -->
+    <section class="calc-disclaimer-section">
+      <div class="container">
+        <div class="calc-disclaimer-box reveal-up">
+          <svg class="calc-disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <p>I prezzi indicati sono stime basate su medie di mercato. Il costo effettivo dipende da numerosi fattori specifici del progetto, che possono essere valutati solo attraverso un sopralluogo professionale. Affidati sempre a un tecnico qualificato per un preventivo preciso e vincolante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHY CHOOSE ====== -->
+    <section class="why-choose">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="label">Perché Sceglierci</span>
+          <h2>Dalla Stima al Progetto Reale</h2>
+          <p>Il calcolatore è solo il primo passo. Siamo qui per trasformare la stima in un progetto concreto e su misura.</p>
+        </div>
+        <div class="why-choose-grid">
+
+          <div class="why-choose-card reveal-up">
+            <div class="why-choose-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3>Sopralluogo Gratuito</h3>
+            <p>Veniamo da te per valutare lo spazio, ascoltare le tue esigenze e offrire una stima precisa e personalizzata. Senza costi, senza vincoli.</p>
+          </div>
+
+          <div class="why-choose-card reveal-up" data-delay="1">
+            <div class="why-choose-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3>Preventivo Senza Impegno</h3>
+            <p>Ricevi un preventivo dettagliato con voci, materiali e tempistiche. Totale trasparenza, nessuna sorpresa nascosta, nessun obbligo di firma.</p>
+          </div>
+
+          <div class="why-choose-card reveal-up" data-delay="2">
+            <div class="why-choose-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                <path d="M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+            </div>
+            <h3>Consulenza Personalizzata</h3>
+            <p>Ogni progetto è unico. Ti affianchiamo in ogni scelta — materiali, tempi, soluzioni tecniche — con un unico referente dalla firma alla consegna.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA BANNER ====== -->
+    <section class="cta-banner calcolatore-cta">
+      <div class="cta-banner-bg">
+        <img src="images/construction-workers.jpg" alt="Team Talarico al lavoro in cantiere" width="1920" height="800" loading="lazy" data-parallax="0.1">
+      </div>
+      <div class="container">
+        <h2 class="reveal-up">Preferisci <span class="accent-text" style="color: var(--color-accent-light);">Parlare con Noi?</span></h2>
+        <p class="reveal-up">Raccontaci il tuo progetto direttamente. Chiamaci o scrivici su WhatsApp: rispondiamo entro poche ore.</p>
+        <div class="hero-btns reveal-up" style="justify-content: center;">
+          <a href="tel:+393496134656" class="btn btn-primary magnetic-btn">
+            <svg viewBox="0 0 16 16" fill="currentColor" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;"><path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122l-2.19.547a1.745 1.745 0 01-1.657-.459L5.482 8.062a1.745 1.745 0 01-.46-1.657l.548-2.19a.678.678 0 00-.122-.58L3.654 1.328z"/></svg>
+            Chiama Ora
+          </a>
+          <a href="https://wa.me/+393496134656" class="btn btn-light" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;margin-right:6px;vertical-align:-2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Scrivi su WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Domenico Talarico</h3>
+          <p>Impresa edile chiavi in mano. Costruzioni, ristrutturazioni e bioedilizia in tutta la Lombardia da oltre 10 anni.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/domenicotalaricoimpresaedile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/domenicotalaricoedile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://wa.me/+393496134656" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Servizi</h4>
+          <a href="costruzioni.html">Costruzioni</a>
+          <a href="ristrutturazioni.html">Ristrutturazioni</a>
+          <a href="bagno.html">Rifacimento Bagno</a>
+          <a href="bioedilizia.html">Bioedilizia</a>
+          <a href="esterni.html">Coperture ed Esterni</a>
+        </div>
+        <div class="footer-links">
+          <h4>Azienda</h4>
+          <a href="index.html">Home</a>
+          <a href="calcolatore.html">Calcolatore Preventivo</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+        <div class="footer-contact">
+          <h4 style="color: var(--color-light); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-wider); margin-bottom: var(--space-4);">Contatti</h4>
+          <a href="tel:+393496134656"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122l-2.19.547a1.745 1.745 0 01-1.657-.459L5.482 8.062a1.745 1.745 0 01-.46-1.657l.548-2.19a.678.678 0 00-.122-.58L3.654 1.328z"/></svg> +39 349 613 4656</a>
+          <a href="mailto:talarico1966@gmail.com"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.729 8.82l-5.694 3.44A1 1 0 002 13h12a1 1 0 00.966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/></svg> talarico1966@gmail.com</a>
+          <a href="https://maps.google.com/?q=Via+Massimo+D'Azeglio+6+Ballabio+LC" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 002 6c0 4.314 6 10 6 10zm0-7a3 3 0 110-6 3 3 0 010 6z"/></svg> Via M. D'Azeglio 6, Ballabio (LC)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Domenico Talarico — Impresa Edile | P.IVA 04028240135</p>
+        <p>Sito realizzato da <a href="https://www.ev-digitale.com" target="_blank" rel="noopener noreferrer">Evoluzione Digitale</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/+393496134656" class="whatsapp-btn pulse" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
