@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domenico Talarico | Impresa Edile a Lecco | Costruzioni e Ristrutturazioni Chiavi in Mano</title>
+  <meta name="description" content="Impresa edile a Lecco specializzata in costruzioni, ristrutturazioni chiavi in mano, rifacimento bagni e bioedilizia. Oltre 10 anni di esperienza in Lombardia. Preventivo gratuito.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="preloader-counter" id="preloader-counter" data-preloader aria-live="assertive" role="status">
+    <!-- Number display -->
+    <div class="preloader-counter__number" id="preloader-counter-number" aria-label="Caricamento" aria-atomic="true">0</div>
+
+    <!-- Label -->
+    <div class="preloader-counter__label" aria-hidden="true">Caricamento</div>
+
+    <!-- Progress bar -->
+    <div class="preloader-counter__bar-track" aria-hidden="true">
+      <div class="preloader-counter__bar-fill" id="preloader-counter-bar"></div>
+    </div>
+  </div>
+
+  <header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
+    <div class="header-classic__inner container">
+
+      <!-- Logo -->
+      <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+        <span class="header-classic__logo-text">Domenico<span class="header-classic__logo-accent">Talarico</span></span>
+      </a>
+
+      <!-- Navigation (desktop) -->
+      <nav class="header-classic__nav" aria-label="Navigazione principale">
+        <ul class="header-classic__nav-list" role="list">
+          <li class="header-classic__nav-item">
+            <a href="index.html" class="header-classic__nav-link header-classic__nav-link--active" aria-current="page">Home</a>
+          </li>
+          <li class="header-classic__nav-item header-classic__nav-item--has-dropdown">
+            <a href="#" class="header-classic__nav-link" aria-haspopup="true" aria-expanded="false">
+              Servizi
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <ul class="header-classic__dropdown" role="list">
+              <li><a href="costruzioni.html" class="header-classic__dropdown-link">Costruzioni</a></li>
+              <li><a href="ristrutturazioni.html" class="header-classic__dropdown-link">Ristrutturazioni</a></li>
+              <li><a href="ristrutturazione-bagno.html" class="header-classic__dropdown-link">Bagno</a></li>
+              <li><a href="bioedilizia.html" class="header-classic__dropdown-link">Bioedilizia</a></li>
+              <li><a href="esterni.html" class="header-classic__dropdown-link">Esterni</a></li>
+            </ul>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="blog.html" class="header-classic__nav-link">Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <div class="header-classic__actions">
+        <a href="contatti.html" class="btn btn--primary header-classic__cta">Preventivo Gratuito</a>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="header-classic__hamburger"
+          data-mobile-toggle
+          aria-label="Apri menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav aria-label="Menu mobile">
+        <ul class="header-classic__mobile-nav" role="list">
+          <li><a href="index.html" class="header-classic__mobile-link">Home</a></li>
+          <li><a href="costruzioni.html" class="header-classic__mobile-link">Costruzioni</a></li>
+          <li><a href="ristrutturazioni.html" class="header-classic__mobile-link">Ristrutturazioni</a></li>
+          <li><a href="ristrutturazione-bagno.html" class="header-classic__mobile-link">Bagno</a></li>
+          <li><a href="bioedilizia.html" class="header-classic__mobile-link">Bioedilizia</a></li>
+          <li><a href="esterni.html" class="header-classic__mobile-link">Esterni</a></li>
+          <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+          <li><a href="blog.html" class="header-classic__mobile-link">Blog</a></li>
+        </ul>
+        <a href="contatti.html" class="btn btn--primary header-classic__mobile-cta">Preventivo Gratuito</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ============================================================
+       HERO FULLSCREEN
+       ============================================================ -->
+  <section
+    class="hero-fullscreen"
+    aria-label="Intestazione principale"
+    data-hero-parallax
+  >
+    <figure class="hero-fullscreen__bg" aria-hidden="true" data-parallax="0.25">
+      <img
+        src="images/hero-home.jpg"
+        alt="Impresa edile Domenico Talarico — costruzioni e ristrutturazioni chiavi in mano a Lecco"
+        class="hero-fullscreen__bg-img"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        aria-hidden="true"
+      >
+    </figure>
+    <div class="hero-fullscreen__overlay" aria-hidden="true"></div>
+    <div class="hero-fullscreen__content">
+      <div class="hero-fullscreen__inner container">
+        <span class="hero-fullscreen__eyebrow reveal-up stagger-1">
+          Impresa Edile a Lecco &middot; Dal progetto alla consegna
+        </span>
+        <h1 class="hero-fullscreen__headline reveal-up stagger-2">
+          Costruiamo il Tuo<br>
+          <span class="hero-fullscreen__headline-accent">Futuro</span>
+        </h1>
+        <p class="hero-fullscreen__subheadline reveal-up stagger-3">
+          Costruzioni, ristrutturazioni e bioedilizia chiavi in mano.
+          Oltre 10 anni di esperienza, qualita certificata e massima
+          trasparenza in ogni fase del progetto.
+        </p>
+        <div class="hero-fullscreen__actions reveal-up stagger-4">
+          <a href="contatti.html" class="btn btn--primary btn--lg">
+            Richiedi Preventivo Gratuito
+          </a>
+        </div>
+        <div class="hero-fullscreen__trust reveal-up stagger-5" aria-label="Punti di forza">
+          <span class="hero-fullscreen__trust-item">10+ Anni Esperienza</span>
+          <span class="hero-fullscreen__trust-divider" aria-hidden="true">&middot;</span>
+          <span class="hero-fullscreen__trust-item">Chiavi in Mano</span>
+          <span class="hero-fullscreen__trust-divider" aria-hidden="true">&middot;</span>
+          <span class="hero-fullscreen__trust-item">Tutta la Lombardia</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-fullscreen__scroll-indicator" aria-label="Scorri verso il basso">
+      <span class="hero-fullscreen__scroll-label">Scorri</span>
+      <span class="hero-fullscreen__scroll-arrow" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </span>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    var section = document.querySelector('.hero-fullscreen');
+    var bg = section && section.querySelector('.hero-fullscreen__bg');
+    if (!section || !bg) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+    var maxMove = 18;
+    var currentX = 0, currentY = 0;
+    var targetX = 0, targetY = 0;
+    var rafId = null;
+    section.addEventListener('mousemove', function (e) {
+      var rect = section.getBoundingClientRect();
+      var cx = (e.clientX - rect.left) / rect.width  - 0.5;
+      var cy = (e.clientY - rect.top)  / rect.height - 0.5;
+      targetX = cx * maxMove;
+      targetY = cy * maxMove;
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    }, { passive: true });
+    section.addEventListener('mouseleave', function () {
+      targetX = 0; targetY = 0;
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    }, { passive: true });
+    function tick() {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      bg.style.transform = 'translate(' + currentX.toFixed(2) + 'px, ' + currentY.toFixed(2) + 'px) scale(1.06)';
+      rafId = null;
+      if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+        rafId = requestAnimationFrame(tick);
+      }
+    }
+  }());
+  </script>
+
+  <!-- ============================================================
+       COUNTER STATS
+       ============================================================ -->
+  <section
+    class="special-counter-stats section--dark section-padding"
+    aria-labelledby="counter-stats-title"
+    data-counter-section
+  >
+    <div class="special-counter-stats__bg-dots" aria-hidden="true"></div>
+    <div class="special-counter-stats__bg-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="special-counter-stats__header text-center reveal-up">
+        <span class="section-label section-label--line">I nostri numeri</span>
+        <h2 id="counter-stats-title" class="section-title special-counter-stats__title">
+          Risultati che parlano chiaro
+        </h2>
+      </div>
+      <div class="special-counter-stats__grid" role="list" aria-label="Statistiche impresa">
+
+        <div class="special-counter-stats__item reveal-up stagger-1" role="listitem">
+          <div class="special-counter-stats__number-wrap">
+            <span class="special-counter-stats__number" data-count="10" data-count-suffix="+" aria-label="Oltre 10 anni di esperienza">0</span>
+            <span class="special-counter-stats__suffix" aria-hidden="true">+</span>
+          </div>
+          <span class="special-counter-stats__label">Anni di Esperienza</span>
+          <p class="special-counter-stats__desc">Dal 2014, al fianco di privati e aziende per costruzioni e ristrutturazioni in Lombardia</p>
+          <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="special-counter-stats__item reveal-up stagger-2" role="listitem">
+          <div class="special-counter-stats__number-wrap">
+            <span class="special-counter-stats__number" data-count="150" data-count-suffix="+" aria-label="Oltre 150 progetti completati">0</span>
+            <span class="special-counter-stats__suffix" aria-hidden="true">+</span>
+          </div>
+          <span class="special-counter-stats__label">Progetti Completati</span>
+          <p class="special-counter-stats__desc">Costruzioni nuove, ristrutturazioni complete, rifacimenti bagno e interventi esterni realizzati con successo</p>
+          <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="special-counter-stats__item reveal-up stagger-3" role="listitem">
+          <div class="special-counter-stats__number-wrap">
+            <span class="special-counter-stats__number" data-count="50000" data-count-suffix="+" aria-label="Oltre 50.000 m&sup2; realizzati">0</span>
+            <span class="special-counter-stats__suffix" aria-hidden="true">+</span>
+          </div>
+          <span class="special-counter-stats__label">m&sup2; Realizzati</span>
+          <p class="special-counter-stats__desc">Superfici costruite e ristrutturate con cura in tutta la provincia di Lecco e Lombardia</p>
+          <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="special-counter-stats__item reveal-up stagger-4" role="listitem">
+          <div class="special-counter-stats__number-wrap">
+            <span class="special-counter-stats__number" data-count="200" data-count-suffix="+" aria-label="Oltre 200 clienti soddisfatti">0</span>
+            <span class="special-counter-stats__suffix" aria-hidden="true">+</span>
+          </div>
+          <span class="special-counter-stats__label">Clienti Soddisfatti</span>
+          <p class="special-counter-stats__desc">La stragrande maggioranza dei nostri lavori arriva da referenze dirette e clienti fidelizzati</p>
+          <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counterEls = document.querySelectorAll('[data-count]');
+    if (!counterEls.length) return;
+    if (prefersReduced) {
+      counterEls.forEach(function(el) { el.textContent = el.dataset.count; });
+      return;
+    }
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count, 10);
+      const duration = 2000;
+      const start = performance.now();
+      function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(easeOutQuart(progress) * target);
+        el.textContent = value.toLocaleString('it-IT');
+        if (progress < 1) { requestAnimationFrame(update); } else { el.textContent = target.toLocaleString('it-IT'); }
+      }
+      requestAnimationFrame(update);
+    }
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { animateCounter(entry.target); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.5 });
+    counterEls.forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
+
+  <!-- ============================================================
+       SERVICES ALTERNATING
+       ============================================================ -->
+  <section class="services-alt section-padding" aria-labelledby="services-alt-title">
+    <div class="container">
+
+      <header class="services-alt__header reveal-up">
+        <span class="services-alt__eyebrow section-label">Cosa Facciamo</span>
+        <h2 class="services-alt__title section-title" id="services-alt-title">
+          I Nostri<br>
+          <em>Servizi</em>
+        </h2>
+      </header>
+
+      <!-- Service 1: Image Left -->
+      <article class="services-alt__item services-alt__item--image-left reveal-up" aria-label="Servizio: Costruzioni">
+        <div class="services-alt__image-col">
+          <div class="services-alt__image-wrap">
+            <img src="images/servizi-costruzioni.jpg" alt="Costruzione di nuova abitazione chiavi in mano a Lecco realizzata da Domenico Talarico" class="services-alt__image" width="720" height="540" loading="lazy"/>
+            <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+            <div class="services-alt__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="services-alt__content-col">
+          <div class="services-alt__content-inner">
+            <span class="services-alt__number" aria-hidden="true">01</span>
+            <h3 class="services-alt__service-title">Costruzioni</h3>
+            <p class="services-alt__service-desc">
+              Realizziamo case su misura, chiavi in mano, con materiali di qualita e massima efficienza.
+              Dalle fondazioni alla consegna, seguiamo ogni fase del progetto.
+            </p>
+            <a href="costruzioni.html" class="services-alt__link" aria-label="Scopri di piu sulle costruzioni">
+              Scopri di piu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="services-alt__divider" aria-hidden="true"></div>
+      </article>
+
+      <!-- Service 2: Image Right -->
+      <article class="services-alt__item services-alt__item--image-right reveal-up" aria-label="Servizio: Ristrutturazioni Complete">
+        <div class="services-alt__image-col">
+          <div class="services-alt__image-wrap">
+            <img src="images/servizi-ristrutturazioni.jpg" alt="Ristrutturazione completa chiavi in mano a Lecco — prima e dopo" class="services-alt__image" width="720" height="540" loading="lazy"/>
+            <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+            <div class="services-alt__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="services-alt__content-col">
+          <div class="services-alt__content-inner">
+            <span class="services-alt__number" aria-hidden="true">02</span>
+            <h3 class="services-alt__service-title">Ristrutturazioni Complete</h3>
+            <p class="services-alt__service-desc">
+              Trasformiamo i tuoi spazi con un servizio completo dalla consulenza alla consegna finale,
+              rispettando tempi e budget concordati.
+            </p>
+            <a href="ristrutturazioni.html" class="services-alt__link" aria-label="Scopri di piu sulle ristrutturazioni complete">
+              Scopri di piu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="services-alt__divider" aria-hidden="true"></div>
+      </article>
+
+      <!-- Service 3: Image Left -->
+      <article class="services-alt__item services-alt__item--image-left reveal-up" aria-label="Servizio: Rifacimento Bagno">
+        <div class="services-alt__image-col">
+          <div class="services-alt__image-wrap">
+            <img src="images/servizi-bagno.jpg" alt="Rifacimento bagno chiavi in mano a Lecco con doccia walk-in e pavimento in gres" class="services-alt__image" width="720" height="540" loading="lazy"/>
+            <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+            <div class="services-alt__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="services-alt__content-col">
+          <div class="services-alt__content-inner">
+            <span class="services-alt__number" aria-hidden="true">03</span>
+            <h3 class="services-alt__service-title">Rifacimento Bagno</h3>
+            <p class="services-alt__service-desc">
+              Rinnova il tuo bagno con soluzioni chiavi in mano: progettazione su misura,
+              materiali di alta qualita e finiture di pregio.
+            </p>
+            <a href="ristrutturazione-bagno.html" class="services-alt__link" aria-label="Scopri di piu sul rifacimento bagno">
+              Scopri di piu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="services-alt__divider" aria-hidden="true"></div>
+      </article>
+
+      <!-- Service 4: Image Right -->
+      <article class="services-alt__item services-alt__item--image-right reveal-up" aria-label="Servizio: Bioedilizia">
+        <div class="services-alt__image-col">
+          <div class="services-alt__image-wrap">
+            <img src="images/servizi-bioedilizia.jpg" alt="Costruzione bioedilizia con materiali naturali e tecnologie sostenibili a Lecco" class="services-alt__image" width="720" height="540" loading="lazy"/>
+            <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+            <div class="services-alt__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="services-alt__content-col">
+          <div class="services-alt__content-inner">
+            <span class="services-alt__number" aria-hidden="true">04</span>
+            <h3 class="services-alt__service-title">Bioedilizia</h3>
+            <p class="services-alt__service-desc">
+              Costruiamo in modo sostenibile con materiali naturali e tecnologie innovative
+              per abitazioni sane, efficienti e durature.
+            </p>
+            <a href="bioedilizia.html" class="services-alt__link" aria-label="Scopri di piu sulla bioedilizia">
+              Scopri di piu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="services-alt__divider" aria-hidden="true"></div>
+      </article>
+
+      <!-- Service 5: Image Left -->
+      <article class="services-alt__item services-alt__item--image-left reveal-up" aria-label="Servizio: Coperture ed Esterni">
+        <div class="services-alt__image-col">
+          <div class="services-alt__image-wrap">
+            <img src="images/servizi-esterni.jpg" alt="Rifacimento tetto e cappotto termico su abitazione a Lecco — coperture ed esterni" class="services-alt__image" width="720" height="540" loading="lazy"/>
+            <div class="services-alt__image-placeholder" aria-hidden="true"></div>
+            <div class="services-alt__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="services-alt__content-col">
+          <div class="services-alt__content-inner">
+            <span class="services-alt__number" aria-hidden="true">05</span>
+            <h3 class="services-alt__service-title">Coperture ed Esterni</h3>
+            <p class="services-alt__service-desc">
+              Proteggiamo e valorizziamo la tua casa con interventi su tetti, facciate e cappotti termici
+              per massima efficienza energetica.
+            </p>
+            <a href="esterni.html" class="services-alt__link" aria-label="Scopri di piu su coperture ed esterni">
+              Scopri di piu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SPLIT IMAGE
+       ============================================================ -->
+  <section class="about-split-image section-padding" aria-labelledby="about-split-heading">
+    <div class="container--wide">
+      <div class="about-split-image__inner">
+
+        <div class="about-split-image__media" aria-label="Immagini impresa">
+          <figure class="about-split-image__primary reveal-left stagger-1">
+            <img
+              src="images/about-1.jpg"
+              alt="Domenico Talarico imprenditore edile a Lecco durante un sopralluogo"
+              class="about-split-image__primary-img"
+              width="800"
+              height="960"
+              loading="lazy"
+            >
+          </figure>
+          <figure class="about-split-image__secondary reveal-up stagger-3" aria-label="Lavori di costruzione">
+            <img
+              src="images/about-2.jpg"
+              alt="Squadra di lavoro dell'impresa edile Domenico Talarico sul cantiere"
+              class="about-split-image__secondary-img"
+              width="400"
+              height="320"
+              loading="lazy"
+            >
+            <div class="about-split-image__secondary-corner" aria-hidden="true"></div>
+          </figure>
+          <div class="about-split-image__exp-badge reveal-scale stagger-4" aria-label="Anno di fondazione">
+            <span class="about-split-image__exp-num">Dal</span>
+            <span class="about-split-image__exp-text">2014</span>
+          </div>
+        </div>
+
+        <div class="about-split-image__content">
+          <span class="section-label section-label--line reveal-up stagger-1">Chi Siamo</span>
+          <h2 class="section-title about-split-image__heading reveal-up stagger-2" id="about-split-heading">
+            L&apos;Impresa Edile<br><em>Domenico Talarico</em>
+          </h2>
+          <p class="about-split-image__desc reveal-up stagger-3">
+            Da oltre 10 anni, l&apos;impresa edile Domenico Talarico e un punto di riferimento
+            per chi cerca competenza, affidabilita e risultati di alto livello nel settore
+            delle costruzioni e ristrutturazioni a Lecco e provincia.
+          </p>
+          <p class="about-split-image__desc reveal-up stagger-4">
+            Ogni intervento e seguito con attenzione e precisione, dalla fase di progettazione
+            alla consegna chiavi in mano.
+          </p>
+
+          <div class="about-split-image__stats reveal-up stagger-5" aria-label="Statistiche impresa">
+            <div class="about-split-image__stat">
+              <span class="about-split-image__stat-value">
+                <span data-count="10" data-count-suffix="+">10+</span>
+              </span>
+              <span class="about-split-image__stat-label">Anni Esperienza</span>
+            </div>
+            <div class="about-split-image__stat">
+              <span class="about-split-image__stat-value">
+                <span data-count="150" data-count-suffix="+">150+</span>
+              </span>
+              <span class="about-split-image__stat-label">Progetti Realizzati</span>
+            </div>
+            <div class="about-split-image__stat">
+              <span class="about-split-image__stat-value">
+                <span data-count="6">6</span>
+              </span>
+              <span class="about-split-image__stat-label">Province Coperte</span>
+            </div>
+          </div>
+
+          <div class="about-split-image__actions reveal-up stagger-6">
+            <a href="contatti.html" class="btn btn--primary btn--lg">
+              Richiedi un Preventivo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="ristrutturazioni.html" class="btn btn--secondary btn--lg">Vedi i Lavori</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.about-split-image .reveal-up, .about-split-image .reveal-left, .about-split-image .reveal-scale').forEach(function (el) { el.classList.add('revealed'); });
+      return;
+    }
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.about-split-image .reveal-up, .about-split-image .reveal-left, .about-split-image .reveal-scale').forEach(function (el) { revealObs.observe(el); });
+
+    var counters = document.querySelectorAll('.about-split-image [data-count]');
+    if (!counters.length) return;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var counterObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.dataset.count, 10);
+        var suffix = el.dataset.countSuffix || '';
+        counterObs.unobserve(el);
+        if (prefersReducedMotion) { el.textContent = target.toLocaleString('it-IT') + suffix; return; }
+        var startTime = null;
+        var duration = 2000;
+        function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          el.textContent = Math.floor(easeOutQuart(progress) * target).toLocaleString('it-IT') + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(function (el) { counterObs.observe(el); });
+  })();
+  </script>
+
+  <!-- ============================================================
+       GALLERY BEFORE/AFTER
+       ============================================================ -->
+  <section class="gallery-ba section-padding" aria-label="Prima e dopo — le nostre trasformazioni">
+    <div class="container">
+
+      <header class="gallery-ba__header text-center reveal-up">
+        <span class="section-label section-label--line">Trasformazioni Reali</span>
+        <h2 class="section-title gallery-ba__title">
+          Le Nostre <em>Trasformazioni</em>
+        </h2>
+        <p class="section-desc section-desc--centered">
+          Guarda con i tuoi occhi la differenza che facciamo. Trascina il cursore
+          per confrontare il prima e il dopo dei nostri interventi.
+        </p>
+      </header>
+
+      <!-- Main Comparison -->
+      <div class="gallery-ba__main reveal-scale">
+        <div
+          class="gallery-ba__comparator"
+          role="slider"
+          aria-label="Comparatore prima e dopo"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="50"
+          aria-valuetext="50% — trascina per rivelare il risultato"
+          tabindex="0"
+          data-ba-id="main"
+          data-before-after
+        >
+          <div class="gallery-ba__after" aria-hidden="true">
+            <img src="images/gallery-ristr-appartamento-dopo.jpg" alt="DOPO: Appartamento a Lecco dopo la ristrutturazione completa — soggiorno luminoso con parquet e pareti tinteggiate" class="gallery-ba__img" width="1200" height="700" loading="lazy">
+            <span class="gallery-ba__label gallery-ba__label--after">Dopo</span>
+          </div>
+          <div class="gallery-ba__before" aria-hidden="true" style="width:50%">
+            <img src="images/gallery-ristr-appartamento-prima.jpg" alt="PRIMA: Appartamento a Lecco prima della ristrutturazione — soggiorno datato con pavimento ammalorato" class="gallery-ba__img" width="1200" height="700" loading="lazy">
+            <span class="gallery-ba__label gallery-ba__label--before">Prima</span>
+          </div>
+          <div class="gallery-ba__handle" aria-hidden="true">
+            <div class="gallery-ba__handle-line"></div>
+            <div class="gallery-ba__handle-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg>
+            </div>
+            <div class="gallery-ba__handle-line"></div>
+          </div>
+          <div class="gallery-ba__hint" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg>
+            <span>Trascina</span>
+          </div>
+        </div>
+        <figcaption class="gallery-ba__main-caption">
+          <strong>Appartamento — Lecco Centro</strong>
+          <span>Ristrutturazione completa soggiorno e zona giorno &middot; 85 m&sup2; &middot; 2025</span>
+        </figcaption>
+      </div>
+
+      <!-- Smaller Comparisons -->
+      <div class="gallery-ba__grid" aria-label="Altri esempi di lavori">
+
+        <div class="gallery-ba__item reveal-up stagger-2">
+          <div class="gallery-ba__comparator" role="slider" aria-label="Prima e dopo: bagno padronale" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" data-ba-id="bagno" data-before-after>
+            <div class="gallery-ba__after" aria-hidden="true">
+              <img src="images/gallery-bagno-dopo.jpg" alt="DOPO: Bagno padronale ristrutturato a Lecco con doccia walk-in e sanitari sospesi" class="gallery-ba__img" width="800" height="600" loading="lazy">
+              <span class="gallery-ba__label gallery-ba__label--after">Dopo</span>
+            </div>
+            <div class="gallery-ba__before" aria-hidden="true" style="width:50%">
+              <img src="images/gallery-bagno-prima.jpg" alt="PRIMA: Bagno datato con vasca in vetroresina e piastrelle anni 90" class="gallery-ba__img" width="800" height="600" loading="lazy">
+              <span class="gallery-ba__label gallery-ba__label--before">Prima</span>
+            </div>
+            <div class="gallery-ba__handle" aria-hidden="true">
+              <div class="gallery-ba__handle-line"></div>
+              <div class="gallery-ba__handle-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg></div>
+              <div class="gallery-ba__handle-line"></div>
+            </div>
+          </div>
+          <p class="gallery-ba__item-caption"><strong>Bagno Padronale — Malgrate, Lecco</strong> &middot; 2024</p>
+        </div>
+
+        <div class="gallery-ba__item reveal-up stagger-3">
+          <div class="gallery-ba__comparator" role="slider" aria-label="Prima e dopo: cucina" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" data-ba-id="cucina" data-before-after>
+            <div class="gallery-ba__after" aria-hidden="true">
+              <img src="images/gallery-cucina-dopo.jpg" alt="DOPO: Cucina moderna ristrutturata a Lecco con isola centrale e piano in quarzo" class="gallery-ba__img" width="800" height="600" loading="lazy">
+              <span class="gallery-ba__label gallery-ba__label--after">Dopo</span>
+            </div>
+            <div class="gallery-ba__before" aria-hidden="true" style="width:50%">
+              <img src="images/gallery-cucina-prima.jpg" alt="PRIMA: Cucina obsoleta con mobili in laminato e piastrelle ingiallite" class="gallery-ba__img" width="800" height="600" loading="lazy">
+              <span class="gallery-ba__label gallery-ba__label--before">Prima</span>
+            </div>
+            <div class="gallery-ba__handle" aria-hidden="true">
+              <div class="gallery-ba__handle-line"></div>
+              <div class="gallery-ba__handle-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg></div>
+              <div class="gallery-ba__handle-line"></div>
+            </div>
+          </div>
+          <p class="gallery-ba__item-caption"><strong>Cucina — Calolziocorte, Lecco</strong> &middot; 2024</p>
+        </div>
+
+        <div class="gallery-ba__item reveal-up stagger-4">
+          <div class="gallery-ba__comparator" role="slider" aria-label="Prima e dopo: facciata esterna" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" data-ba-id="facciata" data-before-after>
+            <div class="gallery-ba__after" aria-hidden="true">
+              <img src="images/gallery-facciata-dopo.jpg" alt="DOPO: Facciata esterna riqualificata con cappotto termico e tinteggiatura moderna a Lecco" class="gallery-ba__img" width="800" height="600" loading="lazy">
+              <span class="gallery-ba__label gallery-ba__label--after">Dopo</span>
+            </div>
+            <div class="gallery-ba__before" aria-hidden="true" style="width:50%">
+              <img src="images/gallery-facciata-prima.jpg" alt="PRIMA: Facciata con intonaco scrostato e crepe visibili" class="gallery-ba__img" width="800" height="600" loading="lazy">
+              <span class="gallery-ba__label gallery-ba__label--before">Prima</span>
+            </div>
+            <div class="gallery-ba__handle" aria-hidden="true">
+              <div class="gallery-ba__handle-line"></div>
+              <div class="gallery-ba__handle-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg></div>
+              <div class="gallery-ba__handle-line"></div>
+            </div>
+          </div>
+          <p class="gallery-ba__item-caption"><strong>Facciata Esterna — Valmadrera, Lecco</strong> &middot; 2023</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    'use strict';
+    document.querySelectorAll('.gallery-ba__comparator').forEach(function(el) {
+      var beforeEl = el.querySelector('.gallery-ba__before');
+      var handleEl = el.querySelector('.gallery-ba__handle');
+      var hintEl = el.querySelector('.gallery-ba__hint');
+      var isDragging = false;
+      var hasInteracted = false;
+      function setPosition(pct) {
+        pct = Math.max(2, Math.min(98, pct));
+        if (beforeEl) beforeEl.style.width = pct + '%';
+        if (handleEl) handleEl.style.left = pct + '%';
+        el.setAttribute('aria-valuenow', Math.round(pct));
+        el.setAttribute('aria-valuetext', Math.round(pct) + '% — immagine prima');
+        if (!hasInteracted && hintEl) { hintEl.style.opacity = '0'; hintEl.style.pointerEvents = 'none'; hasInteracted = true; }
+      }
+      function getPercent(clientX) { var rect = el.getBoundingClientRect(); return ((clientX - rect.left) / rect.width) * 100; }
+      el.addEventListener('mousedown', function(e) { isDragging = true; setPosition(getPercent(e.clientX)); e.preventDefault(); });
+      document.addEventListener('mousemove', function(e) { if (!isDragging) return; setPosition(getPercent(e.clientX)); });
+      document.addEventListener('mouseup', function() { isDragging = false; });
+      el.addEventListener('touchstart', function(e) { isDragging = true; setPosition(getPercent(e.touches[0].clientX)); }, { passive: true });
+      el.addEventListener('touchmove', function(e) { if (!isDragging) return; setPosition(getPercent(e.touches[0].clientX)); e.preventDefault(); }, { passive: false });
+      el.addEventListener('touchend', function() { isDragging = false; });
+      el.addEventListener('keydown', function(e) {
+        var now = parseInt(el.getAttribute('aria-valuenow') || 50, 10);
+        var step = e.shiftKey ? 10 : 2;
+        if (e.key === 'ArrowLeft') { setPosition(now - step); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { setPosition(now + step); e.preventDefault(); }
+        if (e.key === 'Home') { setPosition(2); e.preventDefault(); }
+        if (e.key === 'End') { setPosition(98); e.preventDefault(); }
+      });
+      if (handleEl) handleEl.style.left = '50%';
+    });
+  })();
+  </script>
+
+  <!-- ============================================================
+       CALCOLATORE PREVENTIVO (CUSTOM)
+       ============================================================ -->
+  <section class="calculator-section section-padding" id="calcolatore" aria-label="Calcolatore preventivo">
+    <div class="container">
+      <header class="text-center reveal-up">
+        <span class="section-label section-label--line section-eyebrow">Strumento Gratuito</span>
+        <h2 class="section-title" style="color: var(--color-text-inverse)">Calcola il Preventivo della Tua <em>Ristrutturazione</em></h2>
+        <p class="section-desc section-desc--centered" style="color: var(--color-text-inverse-light)">Ottieni una stima indicativa dei costi in pochi secondi. Inserisci i dettagli del tuo progetto e scopri quanto potrebbe costare.</p>
+      </header>
+      <div class="calculator__container reveal-up" data-calculator="preventivo">
+        <form class="calculator__form" novalidate>
+          <div class="calculator__field">
+            <label class="calculator__label" for="calc-work-type">Tipo di Intervento</label>
+            <select class="calculator__select" name="work-type" id="calc-work-type" required>
+              <option value="">Seleziona il tipo di lavoro</option>
+              <option value="ristrutturazione-completa">Ristrutturazione Completa</option>
+              <option value="rifacimento-bagno">Rifacimento Bagno</option>
+              <option value="costruzione-nuova">Costruzione Nuova</option>
+              <option value="cappotto-termico">Cappotto Termico</option>
+              <option value="rifacimento-tetto">Rifacimento Tetto</option>
+              <option value="facciata">Rifacimento Facciata</option>
+              <option value="bioedilizia">Bioedilizia</option>
+            </select>
+          </div>
+          <div class="calculator__row">
+            <div class="calculator__field">
+              <label class="calculator__label" for="calc-sqm">Superficie (m2)</label>
+              <input class="calculator__input" type="number" name="square-meters" id="calc-sqm" placeholder="Es. 80" min="1" max="10000" required>
+            </div>
+            <div class="calculator__field">
+              <label class="calculator__label" for="calc-quality">Livello Qualita</label>
+              <select class="calculator__select" name="quality" id="calc-quality" required>
+                <option value="">Seleziona</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+                <option value="luxury">Luxury</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="calculator__btn">Calcola Preventivo
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10h10M12 7l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="calculator__result">
+          <div class="calculator__result-label">Stima indicativa del costo</div>
+          <div class="calculator__result-value">--</div>
+          <div class="calculator__result-range"></div>
+          <div class="calculator__result-cta"><a href="contatti.html">Richiedi un preventivo preciso e personalizzato <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M10 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          <div class="calculator__disclaimer">* Stima basata su prezzi medi di mercato 2026. Il preventivo reale dipende dalla valutazione specifica del progetto.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS CAROUSEL
+       ============================================================ -->
+  <section class="reviews-carousel section-padding" aria-label="Testimonianze clienti" id="testimonianze">
+    <div class="container">
+
+      <header class="reviews-carousel__header text-center reveal-up">
+        <span class="section-label section-label--line">Cosa dicono di noi</span>
+        <h2 class="section-title reviews-carousel__title">
+          Cosa Dicono i Nostri <em>Clienti</em>
+        </h2>
+        <p class="section-desc section-desc--centered">
+          Oltre 200 famiglie e aziende in Lombardia hanno scelto la nostra impresa. Ecco le loro parole.
+        </p>
+      </header>
+
+      <div class="reviews-carousel__wrapper" role="region" aria-label="Carosello testimonianze" aria-live="polite" data-carousel data-autoplay="6000" data-fade="true" data-loop="true">
+        <div class="reviews-carousel__quote-mark" aria-hidden="true">&ldquo;</div>
+
+        <div class="reviews-carousel__track" id="reviewsTrack" data-carousel-track>
+
+          <article class="reviews-carousel__slide" aria-label="Testimonianza 1 di 5" data-index="0" data-carousel-slide data-active="true">
+            <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="reviews-carousel__quote">
+              "Abbiamo ristrutturato il nostro appartamento a Lecco completamente. Domenico e il suo team hanno rispettato ogni scadenza e il preventivo iniziale senza sorprese. Risultato impeccabile, lo consiglio senza riserve."
+            </blockquote>
+            <footer class="reviews-carousel__author">
+              <figure class="reviews-carousel__avatar">
+                <img src="" alt="Foto di Marco Colombo" width="64" height="64" loading="lazy">
+              </figure>
+              <div class="reviews-carousel__author-info">
+                <cite class="reviews-carousel__author-name">Marco Colombo</cite>
+                <span class="reviews-carousel__author-role">Privato &mdash; Lecco</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="reviews-carousel__slide" aria-label="Testimonianza 2 di 5" data-index="1" aria-hidden="true" data-carousel-slide>
+            <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="reviews-carousel__quote">
+              "Avevo gia avuto brutte esperienze con altre imprese edili. Talarico e stato completamente diverso: puntuale, professionale e onesto. Il rifacimento del bagno e venuto esattamente come lo avevo immaginato."
+            </blockquote>
+            <footer class="reviews-carousel__author">
+              <figure class="reviews-carousel__avatar">
+                <img src="" alt="Foto di Silvia Riva" width="64" height="64" loading="lazy">
+              </figure>
+              <div class="reviews-carousel__author-info">
+                <cite class="reviews-carousel__author-name">Silvia Riva</cite>
+                <span class="reviews-carousel__author-role">Privata &mdash; Merate, Lecco</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="reviews-carousel__slide" aria-label="Testimonianza 3 di 5" data-index="2" aria-hidden="true" data-carousel-slide>
+            <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="reviews-carousel__quote">
+              "Abbiamo affidato a Talarico la ristrutturazione del nostro ufficio a Lecco. Lavori eseguiti durante il weekend per non interrompere l'attivita. Precisione, pulizia e qualita dei materiali eccellenti."
+            </blockquote>
+            <footer class="reviews-carousel__author">
+              <figure class="reviews-carousel__avatar">
+                <img src="" alt="Foto di Davide Fumagalli" width="64" height="64" loading="lazy">
+              </figure>
+              <div class="reviews-carousel__author-info">
+                <cite class="reviews-carousel__author-name">Davide Fumagalli</cite>
+                <span class="reviews-carousel__author-role">Imprenditore &mdash; Lecco</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="reviews-carousel__slide" aria-label="Testimonianza 4 di 5" data-index="3" aria-hidden="true" data-carousel-slide>
+            <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="reviews-carousel__quote">
+              "Villa ristrutturata completamente in tempi record. Domenico ha gestito tutto in autonomia: pratiche, fornitori e coordinamento operai. Noi ci siamo limitati a scegliere i materiali. Servizio chiavi in mano al massimo livello."
+            </blockquote>
+            <footer class="reviews-carousel__author">
+              <figure class="reviews-carousel__avatar">
+                <img src="" alt="Foto di Carla Beretta" width="64" height="64" loading="lazy">
+              </figure>
+              <div class="reviews-carousel__author-info">
+                <cite class="reviews-carousel__author-name">Carla Beretta</cite>
+                <span class="reviews-carousel__author-role">Privata &mdash; Valmadrera, Lecco</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="reviews-carousel__slide" aria-label="Testimonianza 5 di 5" data-index="4" aria-hidden="true" data-carousel-slide>
+            <div class="reviews-carousel__stars" aria-label="Valutazione 5 stelle su 5">
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="reviews-carousel__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="reviews-carousel__quote">
+              "Cappotto termico e rifacimento facciata completati in soli 10 giorni. La casa ha cambiato completamente aspetto e le bollette del riscaldamento sono calate del 35%. Professionisti veri, con attenzione al dettaglio rara."
+            </blockquote>
+            <footer class="reviews-carousel__author">
+              <figure class="reviews-carousel__avatar">
+                <img src="" alt="Foto di Roberto Manzoni" width="64" height="64" loading="lazy">
+              </figure>
+              <div class="reviews-carousel__author-info">
+                <cite class="reviews-carousel__author-name">Roberto Manzoni</cite>
+                <span class="reviews-carousel__author-role">Privato &mdash; Calolziocorte, Lecco</span>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+
+        <div class="reviews-carousel__controls" role="group" aria-label="Navigazione carosello">
+          <button class="reviews-carousel__arrow reviews-carousel__arrow--prev" id="reviewsPrev" aria-label="Testimonianza precedente" data-carousel-prev>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="reviews-carousel__dots" role="tablist" aria-label="Seleziona testimonianza" data-carousel-dots>
+            <button class="reviews-carousel__dot reviews-carousel__dot--active" role="tab" aria-selected="true" aria-label="Testimonianza 1" data-index="0"></button>
+            <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 2" data-index="1"></button>
+            <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 3" data-index="2"></button>
+            <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 4" data-index="3"></button>
+            <button class="reviews-carousel__dot" role="tab" aria-selected="false" aria-label="Testimonianza 5" data-index="4"></button>
+          </div>
+          <button class="reviews-carousel__arrow reviews-carousel__arrow--next" id="reviewsNext" aria-label="Testimonianza successiva" data-carousel-next>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    'use strict';
+    var track = document.getElementById('reviewsTrack');
+    if (!track) return;
+    var slides = track.querySelectorAll('.reviews-carousel__slide');
+    var dots = document.querySelectorAll('.reviews-carousel__dot');
+    var prevBtn = document.getElementById('reviewsPrev');
+    var nextBtn = document.getElementById('reviewsNext');
+    var current = 0;
+    var total = slides.length;
+    var autoTimer = null;
+    var isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function goTo(index) {
+      slides[current].classList.remove('reviews-carousel__slide--active');
+      slides[current].setAttribute('aria-hidden', 'true');
+      dots[current].classList.remove('reviews-carousel__dot--active');
+      dots[current].setAttribute('aria-selected', 'false');
+      current = (index + total) % total;
+      slides[current].classList.add('reviews-carousel__slide--active');
+      slides[current].setAttribute('aria-hidden', 'false');
+      dots[current].classList.add('reviews-carousel__dot--active');
+      dots[current].setAttribute('aria-selected', 'true');
+    }
+    function startAuto() { if (isReducedMotion) return; autoTimer = setInterval(function() { goTo(current + 1); }, 6000); }
+    function resetAuto() { clearInterval(autoTimer); startAuto(); }
+    slides[0].classList.add('reviews-carousel__slide--active');
+    slides[0].setAttribute('aria-hidden', 'false');
+    prevBtn.addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+    nextBtn.addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+    dots.forEach(function(dot) { dot.addEventListener('click', function() { goTo(parseInt(this.dataset.index)); resetAuto(); }); });
+    var startX = 0;
+    track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+    }, { passive: true });
+    startAuto();
+  })();
+  </script>
+
+  <!-- ============================================================
+       PROCESS NUMBERED
+       ============================================================ -->
+  <section class="process-numbered section-padding" aria-labelledby="process-numbered-heading">
+    <div class="container">
+
+      <div class="process-numbered__header text-center reveal-up">
+        <span class="section-label section-label--line">Come Lavoriamo</span>
+        <h2 class="section-title process-numbered__title" id="process-numbered-heading">
+          Come <em>Lavoriamo</em>
+        </h2>
+        <p class="section-desc section-desc--centered">
+          Ogni progetto segue un processo strutturato che garantisce trasparenza, qualita e risultati all'altezza delle aspettative.
+        </p>
+      </div>
+
+      <div class="process-numbered__steps">
+
+        <article class="process-numbered__step reveal-up stagger-1" aria-label="Fase 01: Consulenza Gratuita">
+          <div class="process-numbered__number-col">
+            <span class="process-numbered__number" aria-hidden="true">01</span>
+            <div class="process-numbered__connector" aria-hidden="true"></div>
+          </div>
+          <div class="process-numbered__content">
+            <div class="process-numbered__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3 class="process-numbered__step-title">Consulenza Gratuita</h3>
+            <p class="process-numbered__step-desc">
+              Effettuiamo un sopralluogo gratuito presso il tuo immobile. Analizziamo lo spazio, ascoltiamo le esigenze e definiamo insieme gli obiettivi. Nessun impegno, nessun costo.
+            </p>
+            <div class="process-numbered__meta">
+              <span class="process-numbered__duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Entro 48 ore
+              </span>
+              <span class="process-numbered__deliverable">Deliverable: Sopralluogo gratuito, analisi immobile</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="process-numbered__step reveal-up stagger-2" aria-label="Fase 02: Progettazione">
+          <div class="process-numbered__number-col">
+            <span class="process-numbered__number" aria-hidden="true">02</span>
+            <div class="process-numbered__connector" aria-hidden="true"></div>
+          </div>
+          <div class="process-numbered__content">
+            <div class="process-numbered__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3 class="process-numbered__step-title">Progettazione</h3>
+            <p class="process-numbered__step-desc">
+              Sviluppiamo un progetto dettagliato con piante, specifiche tecniche e preventivo preciso. Selezioniamo i materiali migliori nel rispetto del budget concordato.
+            </p>
+            <div class="process-numbered__meta">
+              <span class="process-numbered__duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1&ndash;2 settimane
+              </span>
+              <span class="process-numbered__deliverable">Deliverable: Progetto dettagliato, preventivo scritto, piano lavori</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="process-numbered__step reveal-up stagger-3" aria-label="Fase 03: Gestione Burocratica">
+          <div class="process-numbered__number-col">
+            <span class="process-numbered__number" aria-hidden="true">03</span>
+            <div class="process-numbered__connector" aria-hidden="true"></div>
+          </div>
+          <div class="process-numbered__content">
+            <div class="process-numbered__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="process-numbered__step-title">Gestione Burocratica</h3>
+            <p class="process-numbered__step-desc">
+              Ci occupiamo di tutte le pratiche: CILA, SCIA, permessi di costruzione e pratiche per i bonus fiscali (Ecobonus, Sismabonus). Tu non devi preoccuparti di nulla.
+            </p>
+            <div class="process-numbered__meta">
+              <span class="process-numbered__duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Gestione completa
+              </span>
+              <span class="process-numbered__deliverable">Deliverable: Pratiche edilizie, autorizzazioni, accesso bonus</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="process-numbered__step reveal-up stagger-4" aria-label="Fase 04: Realizzazione">
+          <div class="process-numbered__number-col">
+            <span class="process-numbered__number" aria-hidden="true">04</span>
+            <div class="process-numbered__connector" aria-hidden="true"></div>
+          </div>
+          <div class="process-numbered__content">
+            <div class="process-numbered__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="process-numbered__step-title">Realizzazione</h3>
+            <p class="process-numbered__step-desc">
+              Coordiniamo tutte le maestranze e i fornitori per portare avanti i lavori con la massima efficienza. Aggiornamenti costanti sull'avanzamento del cantiere.
+            </p>
+            <div class="process-numbered__meta">
+              <span class="process-numbered__duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Tempi concordati
+              </span>
+              <span class="process-numbered__deliverable">Deliverable: Lavori eseguiti, report avanzamento, sopralluoghi</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="process-numbered__step process-numbered__step--last reveal-up stagger-5" aria-label="Fase 05: Consegna">
+          <div class="process-numbered__number-col">
+            <span class="process-numbered__number process-numbered__number--accent" aria-hidden="true">05</span>
+          </div>
+          <div class="process-numbered__content">
+            <div class="process-numbered__icon process-numbered__icon--accent" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="process-numbered__step-title">Consegna</h3>
+            <p class="process-numbered__step-desc">
+              Consegniamo l'immobile rifinito nei minimi dettagli, con sopralluogo finale e verifica completa. Garantiamo per iscritto la qualita del lavoro eseguito.
+            </p>
+            <div class="process-numbered__meta">
+              <span class="process-numbered__duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Chiavi in mano
+              </span>
+              <span class="process-numbered__deliverable">Deliverable: Consegna chiavi, garanzia scritta, assistenza post-lavori</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    'use strict';
+    var section = document.querySelector('.process-numbered');
+    if (!section) return;
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      section.querySelectorAll('.reveal-up').forEach(function (el) { obs.observe(el); });
+    } else {
+      section.querySelectorAll('.reveal-up').forEach(function (el) { el.classList.add('revealed'); });
+    }
+  })();
+  </script>
+
+  <!-- ============================================================
+       CALCOLATORE BONUS FISCALI (CUSTOM)
+       ============================================================ -->
+  <section class="bonus-section section-padding" id="bonus-fiscali" aria-label="Calcolatore bonus fiscali">
+    <div class="container">
+      <header class="text-center reveal-up">
+        <span class="section-label section-label--line">Risparmia sulle Tasse</span>
+        <h2 class="section-title">Calcola i Tuoi <em>Bonus Fiscali</em> 2026</h2>
+        <p class="section-desc section-desc--centered">Scopri quanto puoi risparmiare grazie alle detrazioni fiscali per ristrutturazione, efficientamento energetico e molto altro.</p>
+      </header>
+      <div class="bonus__grid reveal-up" data-calculator="bonus">
+        <div class="bonus__form-wrapper">
+          <form class="bonus__form" novalidate>
+            <div class="bonus__field">
+              <label class="bonus__label" for="bonus-type">Tipo di Intervento</label>
+              <select class="bonus__select" name="intervention-type" id="bonus-type" required>
+                <option value="">Seleziona l'intervento</option>
+                <option value="ristrutturazione">Ristrutturazione Edilizia</option>
+                <option value="efficienza-energetica">Riqualificazione Energetica</option>
+                <option value="cappotto-termico">Cappotto Termico / Coibentazione</option>
+                <option value="sostituzione-infissi">Sostituzione Infissi</option>
+                <option value="impianto-riscaldamento">Impianto di Riscaldamento</option>
+                <option value="pannelli-solari">Pannelli Solari Termici</option>
+                <option value="antisismica">Interventi Antisismici</option>
+                <option value="barriere-architettoniche">Eliminazione Barriere Architettoniche</option>
+                <option value="verde">Bonus Verde / Giardini</option>
+              </select>
+            </div>
+            <div class="bonus__field">
+              <label class="bonus__label" for="bonus-cost">Costo Previsto dell'Intervento (EUR)</label>
+              <input class="bonus__input" type="number" name="intervention-cost" id="bonus-cost" placeholder="Es. 50000" min="1" required>
+            </div>
+            <button type="submit" class="bonus__btn">Calcola Bonus
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10h10M12 7l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+        <div class="bonus__results"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FULLWIDTH
+       ============================================================ -->
+  <section class="cta-fullwidth" aria-label="Chiamata all'azione" id="cta">
+    <div class="cta-fullwidth__bg" data-parallax="0.3" aria-hidden="true">
+      <img src="images/cta-home.jpg" alt="" class="cta-fullwidth__bg-img" width="1920" height="1080" loading="lazy" role="presentation">
+    </div>
+    <div class="cta-fullwidth__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-fullwidth__content">
+        <span class="cta-fullwidth__eyebrow section-label reveal-up">
+          Inizia oggi stesso
+        </span>
+        <h2 class="cta-fullwidth__title reveal-up stagger-1">
+          Pronto a Realizzare<br>il Tuo <em>Progetto?</em>
+        </h2>
+        <p class="cta-fullwidth__desc reveal-up stagger-2">
+          Contattaci oggi per un sopralluogo gratuito e un preventivo personalizzato.
+        </p>
+        <div class="cta-fullwidth__actions reveal-up stagger-3">
+          <a href="contatti.html" class="btn btn--primary btn--lg">
+            Richiedi Preventivo Gratuito
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+393496134656" class="btn btn--outline-light btn--lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Chiama Ora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    'use strict';
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var el = document.querySelector('.cta-fullwidth__bg');
+    if (!el) return;
+    var factor = parseFloat(el.dataset.parallax) || 0.3;
+    var ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var rect = el.closest('.cta-fullwidth').getBoundingClientRect();
+          var offset = rect.top * factor;
+          el.style.transform = 'translateY(' + offset + 'px)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+  </script>
+
+  <!-- ============================================================
+       BLOG MINIMAL
+       ============================================================ -->
+  <section class="blog-minimal section-padding" aria-labelledby="blog-minimal-title">
+    <div class="container">
+
+      <div class="blog-minimal__header reveal-up">
+        <div class="blog-minimal__header-inner">
+          <span class="section-label section-label--line">Dal Nostro Blog</span>
+          <h2 id="blog-minimal-title" class="section-title blog-minimal__title">
+            Dal Nostro<br>Blog
+          </h2>
+        </div>
+        <p class="section-desc blog-minimal__desc">
+          Consigli pratici, aggiornamenti normativi e guide sui bonus fiscali per chi vuole ristrutturare o costruire in Lombardia.
+        </p>
+      </div>
+
+      <div class="blog-minimal__group reveal-up">
+        <h3 class="blog-minimal__month" aria-label="Articoli di Aprile 2026">
+          <span class="blog-minimal__month-label">Aprile</span>
+          <span class="blog-minimal__month-year">2026</span>
+        </h3>
+        <ol class="blog-minimal__list" aria-label="Articoli di aprile 2026">
+          <li class="blog-minimal__item stagger-1">
+            <a href="blog/bioedilizia-materiali-naturali.html" class="blog-minimal__link" aria-label="Leggi: Bioedilizia e materiali naturali">
+              <time class="blog-minimal__date" datetime="2026-04-05">05.04</time>
+              <span class="blog-minimal__post-title">Bioedilizia: perche costruire con materiali naturali migliora la qualita della vita</span>
+              <span class="blog-minimal__arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </li>
+          <li class="blog-minimal__item stagger-2">
+            <a href="blog/servizi-chiavi-in-mano.html" class="blog-minimal__link" aria-label="Leggi: Cosa significa servizio chiavi in mano">
+              <time class="blog-minimal__date" datetime="2026-04-02">02.04</time>
+              <span class="blog-minimal__post-title">Servizio chiavi in mano: tutto quello che devi sapere prima di iniziare una ristrutturazione</span>
+              <span class="blog-minimal__arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </li>
+          <li class="blog-minimal__item stagger-3">
+            <a href="blog/ristrutturare-casa-guida-completa.html" class="blog-minimal__link" aria-label="Leggi: Guida completa per ristrutturare casa">
+              <time class="blog-minimal__date" datetime="2026-03-28">28.03</time>
+              <span class="blog-minimal__post-title">Ristrutturare casa a Lecco: la guida completa per non sbagliare nulla</span>
+              <span class="blog-minimal__arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SPLIT
+       ============================================================ -->
+  <section class="contact-split section-padding" aria-label="Sezione contatti" id="contatti">
+    <div class="container">
+
+      <header class="contact-split__header reveal-up">
+        <span class="section-label section-label--line">Contattaci</span>
+        <h2 class="section-title contact-split__title">
+          Parliamo del tuo <em>Progetto</em>
+        </h2>
+        <p class="section-desc">
+          Compila il modulo e ti risponderemo entro 24 ore lavorative con un preventivo gratuito.
+        </p>
+      </header>
+
+      <div class="contact-split__layout">
+
+        <div class="contact-split__form-col reveal-left">
+          <form
+            class="contact-split__form"
+            id="contactSplitForm"
+            action="form-handler.php"
+            method="POST"
+            novalidate
+            data-validate
+            aria-label="Modulo di contatto"
+          >
+            <div class="contact-split__form-row">
+              <div class="form-group contact-split__group">
+                <label class="form-label" for="cs-name">Nome e cognome <span class="contact-split__required" aria-label="campo obbligatorio">*</span></label>
+                <input class="form-input" type="text" id="cs-name" name="nome" autocomplete="name" placeholder="Mario Rossi" required aria-required="true" aria-describedby="cs-name-error">
+                <span class="form-error" id="cs-name-error" role="alert">Inserisci il tuo nome</span>
+              </div>
+              <div class="form-group contact-split__group">
+                <label class="form-label" for="cs-email">Email <span class="contact-split__required" aria-label="campo obbligatorio">*</span></label>
+                <input class="form-input" type="email" id="cs-email" name="email" autocomplete="email" placeholder="mario@esempio.it" required aria-required="true" aria-describedby="cs-email-error">
+                <span class="form-error" id="cs-email-error" role="alert">Inserisci un'email valida</span>
+              </div>
+            </div>
+            <div class="form-group contact-split__group">
+              <label class="form-label" for="cs-phone">Telefono</label>
+              <input class="form-input" type="tel" id="cs-phone" name="telefono" autocomplete="tel" placeholder="+39 349 613 4656">
+            </div>
+            <div class="form-group contact-split__group">
+              <label class="form-label" for="cs-message">Messaggio <span class="contact-split__required" aria-label="campo obbligatorio">*</span></label>
+              <textarea class="form-textarea" id="cs-message" name="messaggio" rows="5" placeholder="Descrivici il tuo progetto, il tipo di intervento e qualsiasi informazione utile..." required aria-required="true" aria-describedby="cs-message-error"></textarea>
+              <span class="form-error" id="cs-message-error" role="alert">Inserisci il tuo messaggio</span>
+            </div>
+            <div class="form-group contact-split__privacy">
+              <label class="contact-split__checkbox-label">
+                <input class="contact-split__checkbox" type="checkbox" id="cs-privacy" name="privacy" required aria-required="true" aria-describedby="cs-privacy-error">
+                <span class="contact-split__checkbox-custom" aria-hidden="true"></span>
+                <span class="contact-split__checkbox-text">Ho letto e accetto la <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> <span class="contact-split__required" aria-label="campo obbligatorio">*</span></span>
+              </label>
+              <span class="form-error" id="cs-privacy-error" role="alert">Devi accettare la Privacy Policy</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg contact-split__submit">
+              <span class="contact-split__submit-text">Invia il messaggio</span>
+              <span class="contact-split__submit-loading" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="contact-split__spinner" focusable="false" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                Invio in corso...
+              </span>
+            </button>
+            <div class="contact-split__success" id="csSuccess" aria-live="polite" role="status" hidden>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              Messaggio inviato! Ti risponderemo entro 24 ore.
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-split__info-col reveal-right">
+          <div class="contact-split__info">
+
+            <div class="contact-split__info-item">
+              <span class="contact-split__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div class="contact-split__info-text">
+                <span class="contact-split__info-label">Indirizzo</span>
+                <address class="contact-split__info-value">
+                  Via Massimo D&apos;Azeglio, 6<br>
+                  23811 Ballabio (LC)
+                </address>
+              </div>
+            </div>
+
+            <div class="contact-split__info-item">
+              <span class="contact-split__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </span>
+              <div class="contact-split__info-text">
+                <span class="contact-split__info-label">Telefono</span>
+                <a href="tel:+393496134656" class="contact-split__info-value contact-split__info-link">+39 349 613 4656</a>
+              </div>
+            </div>
+
+            <div class="contact-split__info-item">
+              <span class="contact-split__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div class="contact-split__info-text">
+                <span class="contact-split__info-label">Email</span>
+                <a href="mailto:talarico1966@gmail.com" class="contact-split__info-value contact-split__info-link">talarico1966@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-split__info-item">
+              <span class="contact-split__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              </span>
+              <div class="contact-split__info-text">
+                <span class="contact-split__info-label">Orari</span>
+                <span class="contact-split__info-value">
+                  Lun&ndash;Ven: 8:00&ndash;18:00<br>
+                  Sabato: su appuntamento
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="contact-split__map" aria-label="Mappa della nostra sede">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2771.6!2d9.3891!3d45.8601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478697b6a8b7b1b5%3A0x0!2sVia+Massimo+D'Azeglio+6%2C+23811+Ballabio+LC!5e0!3m2!1sit!2sit!4v1"
+              width="100%"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Posizione impresa edile Domenico Talarico a Ballabio, Lecco"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    'use strict';
+    var form = document.getElementById('contactSplitForm');
+    if (!form) return;
+    var submitBtn = form.querySelector('.contact-split__submit');
+    var submitText = form.querySelector('.contact-split__submit-text');
+    var submitLoading = form.querySelector('.contact-split__submit-loading');
+    var successMsg = document.getElementById('csSuccess');
+    function validateField(field) {
+      var group = field.closest('.form-group, .contact-split__privacy');
+      var error = group ? group.querySelector('.form-error') : null;
+      var valid = field.validity.valid;
+      field.classList.toggle('error', !valid);
+      if (error) error.classList.toggle('visible', !valid);
+      return valid;
+    }
+    form.querySelectorAll('input, textarea').forEach(function(field) {
+      field.addEventListener('blur', function() { if (field.value) validateField(field); });
+      field.addEventListener('input', function() { if (field.classList.contains('error')) validateField(field); });
+    });
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var allValid = true;
+      form.querySelectorAll('[required]').forEach(function(field) { if (!validateField(field)) allValid = false; });
+      if (!allValid) return;
+      submitBtn.disabled = true;
+      submitText.hidden = true;
+      submitLoading.hidden = false;
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function() {
+          submitBtn.disabled = false; submitText.hidden = false; submitLoading.hidden = true;
+          form.hidden = true; successMsg.hidden = false;
+        })
+        .catch(function() {
+          submitBtn.disabled = false; submitText.hidden = false; submitLoading.hidden = true;
+        });
+    });
+  })();
+  </script>
+
+  </main>
+
+  <footer class="footer-full section--dark">
+    <div class="footer-full__inner container">
+
+      <!-- Top grid: 4 columns -->
+      <div class="footer-full__grid">
+
+        <!-- Col 1: About -->
+        <div class="footer-full__col footer-full__col--about">
+          <a href="index.html" class="footer-full__logo" aria-label="Homepage">
+            <span class="footer-full__logo-text">Domenico<span class="footer-full__logo-accent">Talarico</span></span>
+          </a>
+          <p class="footer-full__about-text">
+            Impresa edile specializzata in costruzioni, ristrutturazioni e bioedilizia chiavi in mano a Lecco e provincia.
+          </p>
+          <!-- Social icons -->
+          <div class="footer-full__social" aria-label="Social network">
+            <a href="#" class="footer-full__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
+                <path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-full__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="13.5" cy="4.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Servizi -->
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Servizi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="costruzioni.html" class="footer-full__link">Costruzioni</a></li>
+            <li><a href="ristrutturazioni.html" class="footer-full__link">Ristrutturazioni</a></li>
+            <li><a href="ristrutturazione-bagno.html" class="footer-full__link">Rifacimento Bagno</a></li>
+            <li><a href="bioedilizia.html" class="footer-full__link">Bioedilizia</a></li>
+            <li><a href="esterni.html" class="footer-full__link">Lavori Esterni</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Link Rapidi -->
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Link Rapidi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="index.html" class="footer-full__link">Home</a></li>
+            <li><a href="contatti.html" class="footer-full__link">Contatti</a></li>
+            <li><a href="blog.html" class="footer-full__link">Blog</a></li>
+            <li><a href="contatti.html" class="footer-full__link">Preventivo Gratuito</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Contatti</h3>
+          <ul class="footer-full__contact-list" role="list">
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+              <span>Lecco e Provincia, Lombardia</span>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <a href="tel:+393496134656" class="footer-full__contact-link">+39 349 613 4656</a>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <rect x="2" y="3.5" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <a href="mailto:info@domenicotalarico.it" class="footer-full__contact-link">info@domenicotalarico.it</a>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Lun-Ven 8:00-18:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="footer-full__divider" aria-hidden="true">
+
+      <!-- Copyright bar -->
+      <div class="footer-full__bottom">
+        <p class="footer-full__copyright">
+          &copy; <span id="footer-year-full" data-year></span> Domenico Talarico Impresa Edile. Tutti i diritti riservati. P.IVA 04028240135
+        </p>
+        <nav class="footer-full__bottom-nav" aria-label="Link legali">
+          <a href="privacy-policy.html" class="footer-full__bottom-link">Privacy Policy</a>
+          <a href="cookie-policy.html" class="footer-full__bottom-link">Cookie Policy</a>
+          <a href="note-legali.html" class="footer-full__bottom-link">Note Legali</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       GLOBALS
+       ============================================================ -->
+
+  <!-- Cookie Banner -->
+  <div
+    class="cookie-banner"
+    id="cookie-banner"
+    data-cookie-banner
+    role="dialog"
+    aria-live="polite"
+    aria-label="Consenso cookie"
+    aria-describedby="cookie-banner-text"
+    aria-hidden="true"
+  >
+    <div class="cookie-banner__inner">
+      <!-- Icon -->
+      <div class="cookie-banner__icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+          <circle cx="17" cy="8" r="1" fill="currentColor"/>
+          <circle cx="9" cy="17" r="1" fill="currentColor"/>
+          <circle cx="16" cy="18" r="2" fill="currentColor"/>
+          <circle cx="20" cy="14" r="1.5" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <!-- Text -->
+      <div class="cookie-banner__content">
+        <p class="cookie-banner__text" id="cookie-banner-text">
+          Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito, analizzare il traffico e personalizzare i contenuti.
+          Leggi la nostra <a href="privacy-policy.html" class="cookie-banner__policy-link">Privacy Policy</a> e la
+          <a href="cookie-policy.html" class="cookie-banner__policy-link">Cookie Policy</a>.
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="cookie-banner__actions">
+        <button
+          type="button"
+          class="cookie-banner__btn cookie-banner__btn--reject"
+          id="cookie-reject"
+          data-cookie-reject
+          aria-label="Rifiuta cookie non essenziali"
+        >
+          Solo essenziali
+        </button>
+        <button
+          type="button"
+          class="cookie-banner__btn cookie-banner__btn--accept"
+          id="cookie-accept"
+          data-cookie-accept
+          aria-label="Accetta tutti i cookie"
+        >
+          Accetta tutti
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Widget -->
+  <div
+    class="whatsapp-widget"
+    id="whatsapp-widget"
+    data-whatsapp
+    data-phone="393496134656"
+    data-message="Ciao! Vorrei ricevere informazioni su una ristrutturazione."
+    aria-hidden="true"
+  >
+    <a
+      href="#"
+      class="whatsapp-widget__btn"
+      id="whatsapp-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contattaci su WhatsApp"
+      role="button"
+    >
+      <!-- WhatsApp SVG logo -->
+      <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/>
+      </svg>
+      <!-- Pulse ring -->
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+    </a>
+
+    <!-- Tooltip label -->
+    <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button
+    class="back-to-top"
+    id="back-to-top"
+    data-back-to-top
+    aria-label="Torna in cima alla pagina"
+    aria-hidden="true"
+    type="button"
+  >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

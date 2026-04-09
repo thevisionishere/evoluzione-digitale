@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costruzioni a Lecco | Domenico Talarico — Impresa Edile</title>
+  <meta name="description" content="Impresa di costruzioni a Lecco. Realizziamo case su misura chiavi in mano con materiali di qualita e massima efficienza. Contattaci per un preventivo.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="costruzioni.html">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base CSS + Preset -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ============================================================
+       CONSTRUCTION SOLID PRESET TOKENS
+       ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --color-primary: #374151;
+      --color-primary-light: #4b5563;
+      --color-primary-dark: #1f2937;
+      --color-bg: #f0f0f0;
+      --color-bg-alt: #e0e0e0;
+      --color-bg-dark: #1f2937;
+      --color-bg-dark-alt: #111827;
+      --color-surface: #ffffff;
+      --color-surface-alt: #f5f5f5;
+      --color-text: #111827;
+      --color-text-light: #4b5563;
+      --color-text-lighter: #9ca3af;
+      --color-text-inverse: #f9fafb;
+      --color-text-inverse-light: rgba(249,250,251,0.7);
+      --color-accent: #ea580c;
+      --color-accent-light: #f97316;
+      --color-accent-dark: #c2410c;
+      --color-accent-rgb: 234, 88, 12;
+      --color-border: rgba(55,65,81,0.12);
+      --color-border-light: rgba(55,65,81,0.06);
+      --color-border-dark: rgba(249,250,251,0.08);
+      --color-border-dark-light: rgba(249,250,251,0.04);
+      --font-heading: 'Bebas Neue', -apple-system, sans-serif;
+      --font-body: 'Source Sans 3', -apple-system, sans-serif;
+      --font-accent: 'Source Sans 3', -apple-system, sans-serif;
+      --radius-sm: 0px;
+      --radius-md: 2px;
+      --radius-lg: 4px;
+      --shadow-sm: 0 2px 6px rgba(17,24,39,0.08);
+      --shadow-md: 0 4px 16px rgba(17,24,39,0.12);
+      --shadow-lg: 0 8px 32px rgba(17,24,39,0.16);
+      --shadow-xl: 0 16px 48px rgba(17,24,39,0.2);
+    }
+
+    /* ============================================================
+       BASE RESET & GLOBALS
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .container--narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+    .section-padding { padding: 96px 0; }
+    .section--alt { background: var(--color-bg-alt); }
+    .section--dark { background: var(--color-bg-dark); color: var(--color-text-inverse); }
+    .text-center { text-align: center; }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+    .section-label--line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label--line::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--color-accent);
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--color-text);
+      margin-bottom: 20px;
+    }
+    .section-title em { font-style: normal; color: var(--color-accent); }
+    .section-desc { font-size: 1.0625rem; color: var(--color-text-light); max-width: 600px; line-height: 1.7; }
+    .section-desc--centered { margin: 0 auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .btn--primary { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+    .btn--primary:hover { background: var(--color-accent-dark); border-color: var(--color-accent-dark); }
+    .btn--secondary { background: transparent; color: var(--color-text); border-color: var(--color-text); }
+    .btn--secondary:hover { background: var(--color-text); color: #fff; }
+    .btn--outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+    .btn--outline-light:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+    .btn--lg { padding: 16px 36px; font-size: 1rem; }
+
+    /* Tags */
+    .tag { display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-sm); }
+    .tag--accent { background: rgba(var(--color-accent-rgb), 0.1); color: var(--color-accent); }
+
+    /* Reveal animations */
+    .reveal-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-up.revealed { opacity: 1; transform: translateY(0); }
+    .reveal-scale { opacity: 0; transform: scale(0.96); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-scale.revealed { opacity: 1; transform: scale(1); }
+    .reveal-right { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-right.revealed { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+    .stagger-7 { transition-delay: 0.7s; }
+
+    /* Card */
+    .card { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+
+    /* ============================================================
+       PRELOADER COUNTER
+       ============================================================ */
+    .preloader-counter {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--color-bg-dark-alt);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 16px;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .preloader-counter.hidden { opacity: 0; visibility: hidden; }
+    .preloader-counter__number {
+      font-family: var(--font-heading);
+      font-size: clamp(4rem, 10vw, 8rem);
+      color: var(--color-text-inverse);
+      line-height: 1;
+    }
+    .preloader-counter__label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-inverse-light);
+    }
+    .preloader-counter__bar-track {
+      width: 200px; height: 2px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 2px; overflow: hidden;
+    }
+    .preloader-counter__bar-fill {
+      height: 100%; width: 0%;
+      background: var(--color-accent);
+      transition: width 0.05s linear;
+    }
+
+    /* ============================================================
+       HEADER CLASSIC
+       ============================================================ */
+    .site-header.header-classic {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--color-bg-dark-alt);
+      border-bottom: 1px solid var(--color-border-dark);
+      transition: box-shadow 0.3s ease;
+    }
+    .site-header.header-classic[data-scrolled="true"] {
+      box-shadow: var(--shadow-lg);
+    }
+    .header-classic__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .header-classic__logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      color: var(--color-text-inverse);
+    }
+    .header-classic__logo-accent { color: var(--color-accent); }
+    .header-classic__nav { display: flex; }
+    .header-classic__nav-list { display: flex; align-items: center; gap: 4px; }
+    .header-classic__nav-item { position: relative; }
+    .header-classic__nav-link {
+      display: flex; align-items: center; gap: 4px;
+      padding: 8px 14px;
+      font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--color-text-inverse-light);
+      transition: color 0.2s;
+      border-radius: var(--radius-sm);
+    }
+    .header-classic__nav-link:hover,
+    .header-classic__nav-item--active > .header-classic__nav-link { color: var(--color-accent); }
+    .header-classic__dropdown {
+      position: absolute; top: 100%; left: 0;
+      min-width: 220px;
+      background: var(--color-bg-dark-alt);
+      border: 1px solid var(--color-border-dark);
+      box-shadow: var(--shadow-lg);
+      opacity: 0; visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s ease;
+      z-index: 200;
+    }
+    .header-classic__nav-item--has-dropdown:hover .header-classic__dropdown {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .header-classic__dropdown-link {
+      display: block; padding: 10px 18px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--color-text-inverse-light);
+      transition: color 0.15s, background 0.15s;
+    }
+    .header-classic__dropdown-link:hover { color: var(--color-accent); background: rgba(255,255,255,0.04); }
+    .header-classic__dropdown-link--active { color: var(--color-accent); }
+    .header-classic__actions { display: flex; align-items: center; gap: 12px; }
+    .header-classic__cta { padding: 10px 20px; font-size: 0.8125rem; }
+
+    /* Hamburger */
+    .header-classic__hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      width: 40px; height: 40px;
+      align-items: center; justify-content: center;
+    }
+    .header-classic__hamburger-bar {
+      display: block; width: 24px; height: 2px;
+      background: var(--color-text-inverse);
+      transition: all 0.3s ease;
+    }
+    .header-classic__hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .header-classic__hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .header-classic__hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .header-classic__mobile-menu {
+      display: none;
+      background: var(--color-bg-dark-alt);
+      border-top: 1px solid var(--color-border-dark);
+      padding: 16px 24px 24px;
+    }
+    .header-classic__mobile-menu.open { display: block; }
+    .header-classic__mobile-nav { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .header-classic__mobile-link {
+      padding: 10px 0;
+      font-size: 0.9375rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--color-text-inverse-light);
+      border-bottom: 1px solid var(--color-border-dark);
+    }
+    .header-classic__mobile-link:hover { color: var(--color-accent); }
+    .header-classic__mobile-cta { display: inline-flex; }
+
+    @media (max-width: 900px) {
+      .header-classic__nav { display: none; }
+      .header-classic__cta { display: none; }
+      .header-classic__hamburger { display: flex; }
+    }
+
+    /* ============================================================
+       HERO SPLIT
+       ============================================================ */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      padding-top: 72px;
+    }
+    .hero-split__content {
+      background: var(--color-bg-dark-alt);
+      display: flex; align-items: center;
+    }
+    .hero-split__content-inner {
+      padding: 80px 60px 80px 48px;
+      max-width: 580px;
+    }
+    .hero-split__accent-line {
+      width: 48px; height: 3px;
+      background: var(--color-accent);
+      margin-bottom: 20px;
+    }
+    .hero-split__eyebrow { color: var(--color-accent); margin-bottom: 16px; }
+    .hero-split__headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      color: var(--color-text-inverse);
+      margin-bottom: 24px;
+    }
+    .hero-split__headline em { font-style: normal; color: var(--color-accent); }
+    .hero-split__desc {
+      font-size: 1.0625rem; color: var(--color-text-inverse-light);
+      line-height: 1.7; margin-bottom: 32px;
+    }
+    .hero-split__badges {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap; margin-bottom: 36px;
+    }
+    .hero-split__badge { display: flex; flex-direction: column; }
+    .hero-split__badge-num {
+      font-family: var(--font-heading);
+      font-size: 1.75rem; line-height: 1;
+      color: var(--color-accent);
+    }
+    .hero-split__badge-label {
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-text-inverse-light);
+    }
+    .hero-split__badge-divider { width: 1px; height: 36px; background: var(--color-border-dark); }
+    .hero-split__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-split__media { position: relative; overflow: hidden; }
+    .hero-split__img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-split__corner {
+      position: absolute; bottom: 24px; left: 24px;
+    }
+    .hero-split__credential {
+      position: absolute; bottom: 24px; right: 24px;
+      background: var(--color-bg-dark-alt);
+      border: 1px solid var(--color-accent);
+      padding: 10px 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hero-split__credential-icon { font-size: 1.25rem; }
+    .hero-split__credential-text { font-size: 0.8125rem; font-weight: 600; color: var(--color-text-inverse); }
+
+    @media (max-width: 768px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .hero-split__content-inner { padding: 60px 24px; }
+      .hero-split__media { min-height: 300px; }
+    }
+
+    /* ============================================================
+       ABOUT STORY
+       ============================================================ */
+    .about-story { background: var(--color-surface); }
+    .about-story__inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: center;
+    }
+    .about-story__lead {
+      font-size: 1.125rem; color: var(--color-text-light);
+      line-height: 1.7; margin-bottom: 24px;
+    }
+    .about-story__quote {
+      border-left: 3px solid var(--color-accent);
+      padding: 20px 24px;
+      background: var(--color-surface-alt);
+      margin: 28px 0;
+    }
+    .about-story__quote-mark {
+      font-family: Georgia, serif;
+      font-size: 2rem; line-height: 1;
+      color: var(--color-accent); display: block;
+    }
+    .about-story__quote-text {
+      font-size: 1rem; font-style: italic;
+      color: var(--color-text); line-height: 1.6;
+      margin: 4px 0 8px;
+    }
+    .about-story__quote-author { font-size: 0.875rem; color: var(--color-text-light); }
+    .about-story__body { font-size: 1rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 32px; }
+    .about-story__stats {
+      display: flex; align-items: center; gap: 24px;
+      flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .about-story__stat { display: flex; flex-direction: column; }
+    .about-story__stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem; color: var(--color-accent); line-height: 1;
+    }
+    .about-story__stat-label { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-light); }
+    .about-story__stat-divider { width: 1px; height: 40px; background: var(--color-border); }
+    .about-story__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .about-story__media { position: relative; }
+    .about-story__media-frame {
+      position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px;
+      border: 2px solid var(--color-accent);
+      pointer-events: none; z-index: 0;
+    }
+    .about-story__media-clip { position: relative; z-index: 1; overflow: hidden; }
+    .about-story__img { width: 100%; object-fit: cover; aspect-ratio: 4/5; }
+    .about-story__badge {
+      position: absolute; bottom: -16px; right: -16px; z-index: 2;
+      background: var(--color-accent);
+      padding: 16px 20px;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .about-story__badge-year {
+      font-family: var(--font-heading);
+      font-size: 1.75rem; color: #fff; line-height: 1;
+    }
+    .about-story__badge-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+
+    @media (max-width: 768px) {
+      .about-story__inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-story__media { margin-top: 20px; }
+    }
+
+    /* ============================================================
+       SERVICES ICON GRID
+       ============================================================ */
+    .services-icon { background: var(--color-bg); }
+    .services-icon__header { margin-bottom: 56px; }
+    .services-icon__desc { margin-top: 12px; color: var(--color-text-light); }
+    .services-icon__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+    }
+    .services-icon__item {
+      background: var(--color-surface);
+      transition: box-shadow 0.2s ease;
+    }
+    .services-icon__item:hover { box-shadow: var(--shadow-md); }
+    .services-icon__item-link {
+      display: flex; flex-direction: column;
+      padding: 32px 28px;
+      height: 100%;
+      position: relative;
+    }
+    .services-icon__icon-wrap {
+      position: relative; width: 56px; height: 56px;
+      margin-bottom: 20px;
+    }
+    .services-icon__icon-bg {
+      position: absolute; inset: 0;
+      background: rgba(var(--color-accent-rgb), 0.08);
+    }
+    .services-icon__icon {
+      position: relative; z-index: 1;
+      width: 32px; height: 32px;
+      margin: 12px;
+      color: var(--color-accent);
+    }
+    .services-icon__item-title {
+      font-family: var(--font-heading);
+      font-size: 1.375rem; letter-spacing: 0.04em;
+      color: var(--color-text); margin-bottom: 10px;
+    }
+    .services-icon__item-desc { font-size: 0.9375rem; color: var(--color-text-light); line-height: 1.6; flex: 1; }
+    .services-icon__item-arrow {
+      margin-top: 20px; color: var(--color-accent);
+      display: flex; align-items: center;
+    }
+
+    /* ============================================================
+       PROCESS TIMELINE
+       ============================================================ */
+    .process-timeline { background: var(--color-bg-dark); }
+    .process-timeline .section-label { color: var(--color-accent); }
+    .process-timeline .section-title { color: var(--color-text-inverse); }
+    .process-timeline .section-desc { color: var(--color-text-inverse-light); }
+    .process-timeline__header { margin-bottom: 64px; }
+    .process-timeline__track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      position: relative;
+      gap: 0;
+    }
+    .process-timeline__line {
+      position: absolute;
+      top: 28px; left: 10%; right: 10%;
+      height: 2px;
+      background: rgba(255,255,255,0.1);
+    }
+    .process-timeline__line-fill {
+      height: 100%; width: 0%;
+      background: var(--color-accent);
+      transition: width 1s ease;
+    }
+    .process-timeline__item {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 0 12px;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .process-timeline__item--revealed { opacity: 1; transform: translateY(0); }
+    .process-timeline__item:nth-child(2) { transition-delay: 0.1s; }
+    .process-timeline__item:nth-child(3) { transition-delay: 0.2s; }
+    .process-timeline__item:nth-child(4) { transition-delay: 0.3s; }
+    .process-timeline__item:nth-child(5) { transition-delay: 0.4s; }
+    .process-timeline__dot-wrap { position: relative; z-index: 1; margin-bottom: 24px; }
+    .process-timeline__dot {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--color-bg-dark-alt);
+      border: 2px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .process-timeline__item--active .process-timeline__dot,
+    .process-timeline__item--revealed .process-timeline__dot {
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+    }
+    .process-timeline__dot--final { border-color: var(--color-accent); }
+    .process-timeline__dot-num {
+      font-family: var(--font-heading);
+      font-size: 1.25rem; color: var(--color-text-inverse);
+    }
+    .process-timeline__card { }
+    .process-timeline__card-icon {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+      color: var(--color-accent);
+    }
+    .process-timeline__card-icon--accent { color: var(--color-accent); }
+    .process-timeline__step-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem; letter-spacing: 0.04em;
+      color: var(--color-text-inverse); margin-bottom: 8px;
+    }
+    .process-timeline__step-desc {
+      font-size: 0.875rem; color: var(--color-text-inverse-light);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .process-timeline__track { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .process-timeline__line { display: none; }
+    }
+    @media (max-width: 500px) {
+      .process-timeline__track { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       GALLERY SHOWCASE
+       ============================================================ */
+    .gallery-sc { background: var(--color-surface); }
+    .gallery-sc__header { margin-bottom: 48px; }
+    .gallery-sc__featured { margin-bottom: 32px; }
+    .gallery-sc__featured-inner {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 0;
+      min-height: 480px;
+      background: var(--color-bg-dark-alt);
+    }
+    .gallery-sc__featured-media { position: relative; overflow: hidden; }
+    .gallery-sc__featured-link { display: block; height: 100%; }
+    .gallery-sc__featured-figure { height: 100%; }
+    .gallery-sc__featured-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .gallery-sc__featured-link:hover .gallery-sc__featured-img { transform: scale(1.03); }
+    .gallery-sc__featured-cat-tag {
+      position: absolute; top: 20px; left: 20px;
+      background: var(--color-accent); color: #fff;
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 10px;
+    }
+    .gallery-sc__featured-content {
+      padding: 48px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .gallery-sc__featured-cat {
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--color-accent); margin-bottom: 12px;
+    }
+    .gallery-sc__featured-title {
+      font-family: var(--font-heading);
+      font-size: 2.25rem; letter-spacing: 0.04em;
+      color: var(--color-text-inverse); line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .gallery-sc__featured-title em { font-style: normal; color: var(--color-accent); }
+    .gallery-sc__featured-desc {
+      font-size: 0.9375rem; color: var(--color-text-inverse-light);
+      line-height: 1.6; margin-bottom: 24px;
+    }
+    .gallery-sc__featured-stats {
+      display: flex; gap: 24px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .gallery-sc__featured-stats li { display: flex; flex-direction: column; }
+    .gallery-sc__stat-num { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-accent); }
+    .gallery-sc__stat-label { font-size: 0.75rem; color: var(--color-text-inverse-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .gallery-sc__grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    }
+    .gallery-sc__card { background: var(--color-bg-dark-alt); overflow: hidden; }
+    .gallery-sc__card-link { display: block; }
+    .gallery-sc__card-media { overflow: hidden; aspect-ratio: 16/9; }
+    .gallery-sc__card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .gallery-sc__card:hover .gallery-sc__card-img { transform: scale(1.04); }
+    .gallery-sc__card-body { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .gallery-sc__card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .gallery-sc__card-year { font-size: 0.75rem; color: var(--color-text-inverse-light); }
+    .gallery-sc__card-title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem; letter-spacing: 0.04em;
+      color: var(--color-text-inverse); line-height: 1.1;
+    }
+    .gallery-sc__card-arrow { color: var(--color-accent); }
+    .gallery-sc__card-body > div { flex: 1; }
+
+    @media (max-width: 768px) {
+      .gallery-sc__featured-inner { grid-template-columns: 1fr; }
+      .gallery-sc__grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-accordion { background: var(--color-bg); }
+    .faq-accordion__header { margin-bottom: 48px; }
+    .faq-accordion__list { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+    .faq-accordion__item {
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+    .faq-accordion__item:first-child { border-top: 1px solid var(--color-border); }
+    .faq-accordion__trigger {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
+      padding: 20px 24px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .faq-accordion__question {
+      font-size: 1rem; font-weight: 600;
+      color: var(--color-text); line-height: 1.4;
+    }
+    .faq-accordion__chevron { flex-shrink: 0; color: var(--color-accent); transition: transform 0.3s ease; }
+    .faq-accordion__item--open .faq-accordion__chevron { transform: rotate(180deg); }
+    .faq-accordion__body {
+      overflow: hidden; max-height: 0;
+      transition: max-height 0.35s ease;
+    }
+    .faq-accordion__item--open .faq-accordion__body { max-height: 500px; }
+    .faq-accordion__answer { padding: 0 24px 20px; }
+    .faq-accordion__answer p { font-size: 0.9375rem; color: var(--color-text-light); line-height: 1.7; }
+    .faq-accordion__cta { margin-top: 40px; }
+    .faq-accordion__cta-text { font-size: 1rem; color: var(--color-text-light); margin-bottom: 16px; }
+
+    /* ============================================================
+       CTA FULLWIDTH
+       ============================================================ */
+    .cta-fullwidth {
+      position: relative; overflow: hidden;
+      min-height: 400px;
+      display: flex; align-items: center;
+      background: var(--color-bg-dark-alt);
+    }
+    .cta-fullwidth__bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .cta-fullwidth__bg-img { width: 100%; height: 100%; object-fit: cover; }
+    .cta-fullwidth__overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: rgba(17,24,39,0.8);
+    }
+    .cta-fullwidth .container { position: relative; z-index: 2; width: 100%; }
+    .cta-fullwidth__content { text-align: center; max-width: 680px; margin: 0 auto; padding: 80px 0; }
+    .cta-fullwidth__eyebrow { color: var(--color-accent); margin-bottom: 16px; }
+    .cta-fullwidth__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: 0.03em; line-height: 1.1;
+      color: var(--color-text-inverse); margin-bottom: 16px;
+    }
+    .cta-fullwidth__title em { font-style: normal; color: var(--color-accent); }
+    .cta-fullwidth__desc { font-size: 1.0625rem; color: var(--color-text-inverse-light); line-height: 1.7; margin-bottom: 36px; }
+    .cta-fullwidth__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ============================================================
+       FOOTER FULL
+       ============================================================ */
+    .footer-full { background: var(--color-bg-dark-alt); color: var(--color-text-inverse); padding: 72px 0 0; }
+    .footer-full__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 56px;
+    }
+    .footer-full__logo {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 1.375rem; letter-spacing: 0.06em;
+      color: var(--color-text-inverse);
+      margin-bottom: 16px;
+    }
+    .footer-full__logo-accent { color: var(--color-accent); }
+    .footer-full__about-text { font-size: 0.875rem; color: var(--color-text-inverse-light); line-height: 1.7; margin-bottom: 20px; }
+    .footer-full__social { display: flex; gap: 10px; }
+    .footer-full__social-link {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.06);
+      color: var(--color-text-inverse-light);
+      transition: background 0.2s, color 0.2s;
+    }
+    .footer-full__social-link:hover { background: var(--color-accent); color: #fff; }
+    .footer-full__col-title {
+      font-family: var(--font-heading);
+      font-size: 1rem; letter-spacing: 0.08em;
+      color: var(--color-text-inverse); margin-bottom: 20px;
+    }
+    .footer-full__links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-full__link { font-size: 0.875rem; color: var(--color-text-inverse-light); transition: color 0.2s; }
+    .footer-full__link:hover { color: var(--color-accent); }
+    .footer-full__contact-list { display: flex; flex-direction: column; gap: 12px; }
+    .footer-full__contact-item { display: flex; align-items: flex-start; gap: 10px; }
+    .footer-full__contact-icon { color: var(--color-accent); flex-shrink: 0; margin-top: 2px; }
+    .footer-full__contact-item span,
+    .footer-full__contact-link { font-size: 0.875rem; color: var(--color-text-inverse-light); line-height: 1.5; }
+    .footer-full__contact-link:hover { color: var(--color-accent); }
+    .footer-full__divider { border: none; border-top: 1px solid var(--color-border-dark); }
+    .footer-full__bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-full__copyright { font-size: 0.8125rem; color: var(--color-text-inverse-light); }
+    .footer-full__bottom-nav { display: flex; gap: 20px; }
+    .footer-full__bottom-link { font-size: 0.8125rem; color: var(--color-text-inverse-light); transition: color 0.2s; }
+    .footer-full__bottom-link:hover { color: var(--color-accent); }
+
+    @media (max-width: 900px) {
+      .footer-full__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .footer-full__grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-full__bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ============================================================
+       COOKIE BANNER
+       ============================================================ */
+    .cookie-banner {
+      position: fixed; bottom: 24px; left: 24px; right: 24px;
+      z-index: 9998;
+      background: var(--color-bg-dark-alt);
+      border: 1px solid var(--color-border-dark);
+      box-shadow: var(--shadow-xl);
+      max-width: 920px;
+      margin: 0 auto;
+      transform: translateY(120%);
+      transition: transform 0.4s ease;
+    }
+    .cookie-banner[aria-hidden="false"] { transform: translateY(0); }
+    .cookie-banner__inner {
+      display: flex; align-items: center; gap: 20px;
+      padding: 20px 24px;
+      flex-wrap: wrap;
+    }
+    .cookie-banner__icon { color: var(--color-accent); flex-shrink: 0; }
+    .cookie-banner__content { flex: 1; min-width: 200px; }
+    .cookie-banner__text { font-size: 0.875rem; color: var(--color-text-inverse-light); line-height: 1.6; }
+    .cookie-banner__policy-link { color: var(--color-accent); text-decoration: underline; }
+    .cookie-banner__actions { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-banner__btn {
+      padding: 10px 18px;
+      font-size: 0.8125rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      cursor: pointer; border: 2px solid;
+      transition: all 0.2s;
+    }
+    .cookie-banner__btn--reject {
+      background: transparent; color: var(--color-text-inverse-light);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .cookie-banner__btn--reject:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+    .cookie-banner__btn--accept { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+    .cookie-banner__btn--accept:hover { background: var(--color-accent-dark); border-color: var(--color-accent-dark); }
+
+    /* ============================================================
+       WHATSAPP WIDGET
+       ============================================================ */
+    .whatsapp-widget {
+      position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    }
+    .whatsapp-widget__btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      color: #fff;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+    .whatsapp-widget__btn:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
+    .whatsapp-widget__pulse {
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(37,211,102,0.4);
+      animation: waPulse 2s ease-out infinite;
+    }
+    @keyframes waPulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    .whatsapp-widget__tooltip {
+      position: absolute; bottom: 100%; right: 0;
+      margin-bottom: 8px;
+      background: var(--color-bg-dark-alt);
+      color: var(--color-text-inverse);
+      font-size: 0.75rem; font-weight: 600;
+      white-space: nowrap;
+      padding: 6px 10px;
+      pointer-events: none;
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .whatsapp-widget:hover .whatsapp-widget__tooltip { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
+    .back-to-top {
+      position: fixed; bottom: 32px; left: 32px; z-index: 998;
+      width: 44px; height: 44px;
+      background: var(--color-bg-dark-alt);
+      border: 1px solid var(--color-border-dark);
+      color: var(--color-text-inverse);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      opacity: 0; visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.2s;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--color-accent); }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       PRELOADER
+       ============================================================ -->
+  <div class="preloader-counter" id="preloader-counter" data-preloader aria-live="assertive" role="status">
+    <div class="preloader-counter__number" id="preloader-counter-number" aria-label="Caricamento" aria-atomic="true">0</div>
+    <div class="preloader-counter__label" aria-hidden="true">Caricamento</div>
+    <div class="preloader-counter__bar-track" aria-hidden="true">
+      <div class="preloader-counter__bar-fill" id="preloader-counter-bar"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header header-classic" id="site-header" data-header data-scrolled="false">
+    <div class="header-classic__inner container">
+      <a href="index.html" class="header-classic__logo" aria-label="Torna alla homepage">
+        <span class="header-classic__logo-text">Domenico<span class="header-classic__logo-accent">Talarico</span></span>
+      </a>
+
+      <nav class="header-classic__nav" aria-label="Navigazione principale">
+        <ul class="header-classic__nav-list" role="list">
+          <li class="header-classic__nav-item">
+            <a href="index.html" class="header-classic__nav-link">Home</a>
+          </li>
+          <li class="header-classic__nav-item header-classic__nav-item--has-dropdown header-classic__nav-item--active">
+            <a href="#" class="header-classic__nav-link" aria-haspopup="true" aria-expanded="false">
+              Servizi
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <ul class="header-classic__dropdown" role="list">
+              <li><a href="costruzioni.html" class="header-classic__dropdown-link header-classic__dropdown-link--active">Costruzioni</a></li>
+              <li><a href="ristrutturazioni.html" class="header-classic__dropdown-link">Ristrutturazioni</a></li>
+              <li><a href="ristrutturazione-bagno.html" class="header-classic__dropdown-link">Rifacimento Bagno</a></li>
+              <li><a href="bioedilizia.html" class="header-classic__dropdown-link">Bioedilizia</a></li>
+              <li><a href="esterni.html" class="header-classic__dropdown-link">Coperture ed Esterni</a></li>
+            </ul>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="contatti.html" class="header-classic__nav-link">Contatti</a>
+          </li>
+          <li class="header-classic__nav-item">
+            <a href="blog.html" class="header-classic__nav-link">Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-classic__actions">
+        <a href="contatti.html" class="btn btn--primary header-classic__cta">Preventivo Gratuito</a>
+        <button class="header-classic__hamburger" data-mobile-toggle aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+          <span class="header-classic__hamburger-bar bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header-classic__mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav aria-label="Menu mobile">
+        <ul class="header-classic__mobile-nav" role="list">
+          <li><a href="index.html" class="header-classic__mobile-link">Home</a></li>
+          <li><a href="costruzioni.html" class="header-classic__mobile-link">Costruzioni</a></li>
+          <li><a href="ristrutturazioni.html" class="header-classic__mobile-link">Ristrutturazioni</a></li>
+          <li><a href="ristrutturazione-bagno.html" class="header-classic__mobile-link">Rifacimento Bagno</a></li>
+          <li><a href="bioedilizia.html" class="header-classic__mobile-link">Bioedilizia</a></li>
+          <li><a href="esterni.html" class="header-classic__mobile-link">Coperture ed Esterni</a></li>
+          <li><a href="contatti.html" class="header-classic__mobile-link">Contatti</a></li>
+          <li><a href="blog.html" class="header-classic__mobile-link">Blog</a></li>
+        </ul>
+        <a href="contatti.html" class="btn btn--primary header-classic__mobile-cta">Preventivo Gratuito</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SPLIT
+       ============================================================ -->
+  <section class="hero-split" aria-label="Intestazione principale">
+    <div class="hero-split__content">
+      <div class="hero-split__content-inner">
+        <div class="hero-split__accent-line" aria-hidden="true"></div>
+        <span class="hero-split__eyebrow section-label reveal-up stagger-1">Costruzioni a Lecco</span>
+        <h1 class="hero-split__headline reveal-up stagger-2">
+          Dalla Progettazione<br>
+          alla Casa<br>
+          <em>Finita</em>
+        </h1>
+        <p class="hero-split__desc reveal-up stagger-3">
+          Realizziamo case su misura, chiavi in mano. Grazie all'esperienza maturata sul territorio, siamo in grado di valorizzare al meglio ogni terreno edificabile e dare forma a progetti unici.
+        </p>
+        <div class="hero-split__badges reveal-up stagger-4" aria-label="Numeri chiave">
+          <span class="hero-split__badge">
+            <span class="hero-split__badge-num">10+</span>
+            <span class="hero-split__badge-label">Anni</span>
+          </span>
+          <span class="hero-split__badge-divider" aria-hidden="true"></span>
+          <span class="hero-split__badge">
+            <span class="hero-split__badge-num">50+</span>
+            <span class="hero-split__badge-label">Ville Realizzate</span>
+          </span>
+          <span class="hero-split__badge-divider" aria-hidden="true"></span>
+          <span class="hero-split__badge">
+            <span class="hero-split__badge-num">6</span>
+            <span class="hero-split__badge-label">Province</span>
+          </span>
+        </div>
+        <div class="hero-split__actions reveal-up stagger-5">
+          <a href="contatti.html" class="btn btn--primary btn--lg">
+            Richiedi Preventivo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <figure class="hero-split__media" aria-label="Fotografia di un cantiere Talarico">
+      <img src="images/costruzioni-hero.jpg" alt="Costruzione di una villa su misura a Lecco da parte dell'impresa Domenico Talarico" class="hero-split__img" width="960" height="1080" loading="eager" fetchpriority="high">
+      <div class="hero-split__corner" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M2 46 L2 2 L46 2" stroke="var(--color-accent)" stroke-width="2" fill="none"/></svg>
+      </div>
+      <div class="hero-split__credential" aria-label="Impresa edile certificata">
+        <span class="hero-split__credential-icon" aria-hidden="true">🏗</span>
+        <span class="hero-split__credential-text">Impresa Edile Certificata</span>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ============================================================
+       ABOUT STORY
+       ============================================================ -->
+  <section class="about-story section-padding" aria-labelledby="about-story-heading">
+    <div class="container">
+      <div class="about-story__inner">
+        <div class="about-story__content">
+          <span class="section-label section-label--line reveal-up stagger-1">Costruzioni Chiavi in Mano</span>
+          <h2 class="section-title about-story__heading reveal-up stagger-2" id="about-story-heading">
+            Costruzioni Chiavi in<br>
+            Mano a <em>Lecco</em>
+          </h2>
+          <p class="about-story__lead reveal-up stagger-3">
+            Costruire una casa a Lecco significa trasformare un sogno in realta. La nostra formula costruzioni chiavi in mano a Lecco e pensata per chi desidera un risultato impeccabile senza doversi preoccupare di nulla.
+          </p>
+          <blockquote class="about-story__quote reveal-up stagger-4" aria-label="La nostra filosofia costruttiva">
+            <span class="about-story__quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="about-story__quote-text">
+              Ogni intervento e studiato per rispondere alle tue necessita abitative e per valorizzare al meglio il contesto.
+            </p>
+          </blockquote>
+          <p class="about-story__body reveal-up stagger-5">
+            Dalla prima consulenza alla consegna delle chiavi, seguiamo ogni fase del processo con competenza e trasparenza. Gestiamo progettazione, pratiche burocratiche, lavori strutturali, impianti e finiture — tutto con un unico interlocutore. Operiamo a Lecco e in tutta la Lombardia, con una presenza consolidata su 6 province.
+          </p>
+          <div class="about-story__stats reveal-up stagger-6" aria-label="Numeri principali">
+            <div class="about-story__stat">
+              <span class="about-story__stat-number">10+</span>
+              <span class="about-story__stat-label">Anni di Attivita</span>
+            </div>
+            <div class="about-story__stat-divider" aria-hidden="true"></div>
+            <div class="about-story__stat">
+              <span class="about-story__stat-number">50+</span>
+              <span class="about-story__stat-label">Ville Realizzate</span>
+            </div>
+            <div class="about-story__stat-divider" aria-hidden="true"></div>
+            <div class="about-story__stat">
+              <span class="about-story__stat-number">6</span>
+              <span class="about-story__stat-label">Province</span>
+            </div>
+          </div>
+          <div class="about-story__actions reveal-up stagger-7">
+            <a href="contatti.html" class="btn btn--primary">
+              Richiedi Preventivo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <figure class="about-story__media reveal-scale stagger-2" aria-label="Progetto costruttivo Talarico">
+          <div class="about-story__media-frame" aria-hidden="true"></div>
+          <div class="about-story__media-clip">
+            <img src="images/costruzioni-about.jpg" alt="Domenico Talarico durante la supervisione di un cantiere di costruzione a Lecco" class="about-story__img" width="720" height="900" loading="lazy">
+          </div>
+          <div class="about-story__badge" aria-label="Fondata nel 2014">
+            <span class="about-story__badge-year">2014</span>
+            <span class="about-story__badge-label">Fondazione</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES ICON GRID — Cosa Realizziamo
+       ============================================================ -->
+  <section class="services-icon section-padding" aria-labelledby="services-icon-title">
+    <div class="container">
+      <header class="services-icon__header reveal-up">
+        <span class="services-icon__eyebrow section-label">I Nostri Interventi</span>
+        <h2 class="services-icon__title section-title" id="services-icon-title">
+          Cosa <em>Realizziamo</em>
+        </h2>
+        <p class="services-icon__desc section-desc">
+          Ogni tipologia costruttiva affrontata con la stessa cura artigianale e la stessa attenzione alla qualita dei materiali.
+        </p>
+      </header>
+
+      <div class="services-icon__grid" role="list">
+
+        <article class="services-icon__item reveal-up stagger-1" role="listitem">
+          <a href="contatti.html" class="services-icon__item-link" aria-label="Ville Unifamiliari: richiedi informazioni">
+            <div class="services-icon__icon-wrap" aria-hidden="true">
+              <div class="services-icon__icon-bg"></div>
+              <svg class="services-icon__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="services-icon__item-content">
+              <h3 class="services-icon__item-title">Ville Unifamiliari</h3>
+              <p class="services-icon__item-desc">Progettiamo e costruiamo ville su misura, personalizzando ogni dettaglio in base alle esigenze del cliente. Dalle fondamenta alle finiture, un unico interlocutore per tutta la durata dei lavori.</p>
+            </div>
+            <span class="services-icon__item-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-icon__item reveal-up stagger-2" role="listitem">
+          <a href="contatti.html" class="services-icon__item-link" aria-label="Bifamiliari e Residenziali: richiedi informazioni">
+            <div class="services-icon__icon-wrap" aria-hidden="true">
+              <div class="services-icon__icon-bg"></div>
+              <svg class="services-icon__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <rect x="2" y="7" width="9" height="15" rx="1"/>
+                <rect x="13" y="3" width="9" height="19" rx="1"/>
+                <path d="M6 7V5M18 3V1"/>
+              </svg>
+            </div>
+            <div class="services-icon__item-content">
+              <h3 class="services-icon__item-title">Bifamiliari e Residenziali</h3>
+              <p class="services-icon__item-desc">Soluzioni abitative doppie e plurifamiliari progettate per massimizzare gli spazi condivisi garantendo al tempo stesso la privacy di ogni nucleo familiare. Strutture solide e finiture di qualita.</p>
+            </div>
+            <span class="services-icon__item-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-icon__item reveal-up stagger-3" role="listitem">
+          <a href="contatti.html" class="services-icon__item-link" aria-label="Edifici Residenziali: richiedi informazioni">
+            <div class="services-icon__icon-wrap" aria-hidden="true">
+              <div class="services-icon__icon-bg"></div>
+              <svg class="services-icon__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <rect x="3" y="2" width="18" height="20" rx="1"/>
+                <path d="M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2M10 22v-4h4v4"/>
+              </svg>
+            </div>
+            <div class="services-icon__item-content">
+              <h3 class="services-icon__item-title">Edifici Residenziali</h3>
+              <p class="services-icon__item-desc">Costruzione di condomini e palazzine residenziali su piu piani con piena gestione di struttura, impianti, isolamento e finiture. Rispettiamo le normative antisismiche e le classi energetiche piu elevate.</p>
+            </div>
+            <span class="services-icon__item-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-icon__item reveal-up stagger-1" role="listitem">
+          <a href="contatti.html" class="services-icon__item-link" aria-label="Piccoli Complessi Abitativi: richiedi informazioni">
+            <div class="services-icon__icon-wrap" aria-hidden="true">
+              <div class="services-icon__icon-bg"></div>
+              <svg class="services-icon__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <path d="M2 22V10L12 2l10 8v12"/>
+                <path d="M8 22v-6h8v6"/>
+                <path d="M8 10h8"/>
+              </svg>
+            </div>
+            <div class="services-icon__item-content">
+              <h3 class="services-icon__item-title">Piccoli Complessi Abitativi</h3>
+              <p class="services-icon__item-desc">Pianifichiamo e realizziamo piccoli complessi di villette a schiera o in linea, ottimizzando i costi di costruzione senza mai sacrificare la qualita costruttiva e il valore dell'investimento immobiliare.</p>
+            </div>
+            <span class="services-icon__item-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROCESS TIMELINE
+       ============================================================ -->
+  <section class="process-timeline section-padding" aria-labelledby="process-timeline-heading">
+    <div class="container">
+      <div class="process-timeline__header text-center reveal-up">
+        <span class="section-label section-label--line">Il Nostro Metodo</span>
+        <h2 class="section-title process-timeline__title" id="process-timeline-heading">
+          Il Nostro Processo <em>Costruttivo</em>
+        </h2>
+        <p class="section-desc section-desc--centered">
+          Cinque fasi precise per portare il tuo progetto dal foglio bianco alle chiavi in mano, con piena trasparenza e zero sorprese.
+        </p>
+      </div>
+
+      <div class="process-timeline__track reveal-up stagger-1" aria-label="Fasi del processo costruttivo">
+        <div class="process-timeline__line" aria-hidden="true">
+          <div class="process-timeline__line-fill"></div>
+        </div>
+
+        <div class="process-timeline__item process-timeline__item--active" data-step="1">
+          <div class="process-timeline__dot-wrap" aria-hidden="true">
+            <div class="process-timeline__dot"><span class="process-timeline__dot-num">1</span></div>
+          </div>
+          <div class="process-timeline__card">
+            <div class="process-timeline__card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3 class="process-timeline__step-title">Consulenza e Progettazione</h3>
+            <p class="process-timeline__step-desc">Ascoltiamo le tue esigenze e studiamo il terreno. Collaboriamo con i nostri tecnici per sviluppare una soluzione progettuale ottimale, con planimetrie e render preliminari.</p>
+          </div>
+        </div>
+
+        <div class="process-timeline__item" data-step="2">
+          <div class="process-timeline__dot-wrap" aria-hidden="true">
+            <div class="process-timeline__dot"><span class="process-timeline__dot-num">2</span></div>
+          </div>
+          <div class="process-timeline__card">
+            <div class="process-timeline__card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3 class="process-timeline__step-title">Pratiche e Permessi</h3>
+            <p class="process-timeline__step-desc">Gestiamo integralmente le pratiche burocratiche: permesso di costruire, DIA, SCIA, collaudi e allacciamenti. Nessuna burocrazia a tuo carico.</p>
+          </div>
+        </div>
+
+        <div class="process-timeline__item" data-step="3">
+          <div class="process-timeline__dot-wrap" aria-hidden="true">
+            <div class="process-timeline__dot"><span class="process-timeline__dot-num">3</span></div>
+          </div>
+          <div class="process-timeline__card">
+            <div class="process-timeline__card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="process-timeline__step-title">Fondazioni e Strutture</h3>
+            <p class="process-timeline__step-desc">Realizziamo le fondamenta e la struttura portante nel rispetto delle normative antisismiche vigenti, con materiali certificati e controlli di qualita in ogni fase.</p>
+          </div>
+        </div>
+
+        <div class="process-timeline__item" data-step="4">
+          <div class="process-timeline__dot-wrap" aria-hidden="true">
+            <div class="process-timeline__dot"><span class="process-timeline__dot-num">4</span></div>
+          </div>
+          <div class="process-timeline__card">
+            <div class="process-timeline__card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3 class="process-timeline__step-title">Impianti e Finiture</h3>
+            <p class="process-timeline__step-desc">Installiamo impianti elettrici, idraulici e di riscaldamento. Curiamo ogni finitura — pavimenti, rivestimenti, serramenti, pitture — con materiali di prima scelta.</p>
+          </div>
+        </div>
+
+        <div class="process-timeline__item" data-step="5">
+          <div class="process-timeline__dot-wrap" aria-hidden="true">
+            <div class="process-timeline__dot process-timeline__dot--final"><span class="process-timeline__dot-num">5</span></div>
+          </div>
+          <div class="process-timeline__card">
+            <div class="process-timeline__card-icon process-timeline__card-icon--accent" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="process-timeline__step-title">Collaudo e Consegna</h3>
+            <p class="process-timeline__step-desc">Collaudo finale con il tecnico, consegna di tutta la documentazione (certificato di agibilita, manuali impianti) e consegna delle chiavi. Il tuo sogno e realta.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY SHOWCASE
+       ============================================================ -->
+  <section class="gallery-sc section-padding" aria-label="Showcase dei progetti di costruzione">
+    <div class="container">
+      <header class="gallery-sc__header reveal-up">
+        <span class="section-label section-label--line">Progetti Selezionati</span>
+        <h2 class="section-title gallery-sc__title">
+          I Nostri <em>Progetti</em>
+        </h2>
+      </header>
+
+      <article class="gallery-sc__featured reveal-up" aria-label="Progetto in evidenza">
+        <div class="gallery-sc__featured-inner">
+          <div class="gallery-sc__featured-media">
+            <a href="contatti.html" class="gallery-sc__featured-link" aria-label="Scopri questo progetto">
+              <figure class="gallery-sc__featured-figure">
+                <img src="images/progetto-villa-ballabio.jpg" alt="Villa unifamiliare costruita da Domenico Talarico a Ballabio, Lecco — vista esterna con giardino" class="gallery-sc__featured-img" width="1000" height="700" loading="lazy">
+              </figure>
+            </a>
+            <span class="gallery-sc__featured-cat-tag" aria-hidden="true">Progetto Principale</span>
+          </div>
+          <div class="gallery-sc__featured-content">
+            <span class="gallery-sc__featured-cat">Villa Unifamiliare · Ballabio (LC), 2023</span>
+            <h3 class="gallery-sc__featured-title">Villa Privata<br><em>Ballabio</em></h3>
+            <p class="gallery-sc__featured-desc">Villa unifamiliare su tre livelli con garage interrato, giardino privato e terrazzo panoramico. Costruzione in classe energetica A, con impianto fotovoltaico integrato e riscaldamento a pavimento.</p>
+            <ul class="gallery-sc__featured-stats" aria-label="Dettagli progetto">
+              <li><span class="gallery-sc__stat-num">280</span><span class="gallery-sc__stat-label">m2 Abitabili</span></li>
+              <li><span class="gallery-sc__stat-num">A</span><span class="gallery-sc__stat-label">Classe Energetica</span></li>
+              <li><span class="gallery-sc__stat-num">14</span><span class="gallery-sc__stat-label">Mesi di Cantiere</span></li>
+            </ul>
+            <a href="contatti.html" class="btn btn--primary" aria-label="Richiedi informazioni su questo progetto">
+              Richiedi Preventivo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <div class="gallery-sc__grid" role="list" aria-label="Altri progetti realizzati">
+
+        <article class="gallery-sc__card reveal-scale stagger-1" role="listitem">
+          <a href="contatti.html" class="gallery-sc__card-link" aria-label="Progetto: Bifamiliare Lecco">
+            <div class="gallery-sc__card-media">
+              <img src="images/progetto-bifamiliare-lecco.jpg" alt="Bifamiliare costruita a Lecco da Domenico Talarico — facciata in pietra e legno con doppio ingresso" class="gallery-sc__card-img" width="700" height="520" loading="lazy">
+            </div>
+            <div class="gallery-sc__card-body">
+              <div>
+                <div class="gallery-sc__card-meta">
+                  <span class="tag tag--accent gallery-sc__card-tag">Bifamiliare</span>
+                  <span class="gallery-sc__card-year">2023</span>
+                </div>
+                <h3 class="gallery-sc__card-title">Bifamiliare<br>Lecco</h3>
+              </div>
+              <span class="gallery-sc__card-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-sc__card reveal-scale stagger-2" role="listitem">
+          <a href="contatti.html" class="gallery-sc__card-link" aria-label="Progetto: Villetta Valmadrera">
+            <div class="gallery-sc__card-media">
+              <img src="images/progetto-valmadrera.jpg" alt="Villetta singola costruita a Valmadrera con facciata moderna e giardino terrazzato" class="gallery-sc__card-img" width="700" height="520" loading="lazy">
+            </div>
+            <div class="gallery-sc__card-body">
+              <div>
+                <div class="gallery-sc__card-meta">
+                  <span class="tag tag--accent gallery-sc__card-tag">Villetta</span>
+                  <span class="gallery-sc__card-year">2022</span>
+                </div>
+                <h3 class="gallery-sc__card-title">Villetta<br>Valmadrera</h3>
+              </div>
+              <span class="gallery-sc__card-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-sc__card reveal-scale stagger-3" role="listitem">
+          <a href="contatti.html" class="gallery-sc__card-link" aria-label="Progetto: Residenza Como">
+            <div class="gallery-sc__card-media">
+              <img src="images/progetto-residenza-como.jpg" alt="Piccola residenza plurifamiliare costruita nel Comasco — tre unita abitative con giardini privati" class="gallery-sc__card-img" width="700" height="520" loading="lazy">
+            </div>
+            <div class="gallery-sc__card-body">
+              <div>
+                <div class="gallery-sc__card-meta">
+                  <span class="tag tag--accent gallery-sc__card-tag">Residenza</span>
+                  <span class="gallery-sc__card-year">2022</span>
+                </div>
+                <h3 class="gallery-sc__card-title">Residenza<br>Comasco</h3>
+              </div>
+              <span class="gallery-sc__card-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-sc__card reveal-scale stagger-4" role="listitem">
+          <a href="contatti.html" class="gallery-sc__card-link" aria-label="Progetto: Villa Olginate">
+            <div class="gallery-sc__card-media">
+              <img src="images/progetto-villa-olginate.jpg" alt="Villa singola a Olginate con ampio portico, piscina esterna e doppio garage interrato" class="gallery-sc__card-img" width="700" height="520" loading="lazy">
+            </div>
+            <div class="gallery-sc__card-body">
+              <div>
+                <div class="gallery-sc__card-meta">
+                  <span class="tag tag--accent gallery-sc__card-tag">Villa</span>
+                  <span class="gallery-sc__card-year">2021</span>
+                </div>
+                <h3 class="gallery-sc__card-title">Villa<br>Olginate</h3>
+              </div>
+              <span class="gallery-sc__card-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ ACCORDION
+       ============================================================ -->
+  <section class="faq-accordion section-padding" aria-labelledby="faq-accordion-heading">
+    <div class="container container--narrow">
+      <div class="faq-accordion__header text-center reveal-up">
+        <span class="section-label section-label--line">Domande Frequenti</span>
+        <h2 class="section-title faq-accordion__title" id="faq-accordion-heading">
+          Domande Frequenti sulle <em>Costruzioni</em>
+        </h2>
+        <p class="section-desc section-desc--centered">
+          Le risposte alle domande piu comuni sui nostri cantieri di nuova costruzione.
+        </p>
+      </div>
+
+      <div class="faq-accordion__list" role="list" aria-label="Domande frequenti sulle costruzioni" data-accordion data-single="true">
+
+        <article class="faq-accordion__item faq-accordion__item--open reveal-up stagger-1" role="listitem">
+          <button class="faq-accordion__trigger" data-accordion-trigger aria-expanded="true" aria-controls="faq-cost-1" id="faq-btn-1">
+            <span class="faq-accordion__question">Quanto costa costruire una casa a Lecco?</span>
+            <span class="faq-accordion__chevron" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-accordion__body" data-accordion-body id="faq-cost-1" role="region" aria-labelledby="faq-btn-1">
+            <div class="faq-accordion__answer">
+              <p>Il costo di costruzione dipende da molti fattori: tipologia (villa, bifamiliare, condominio), superficie, qualita dei materiali, complessita del terreno e finiture scelte. In linea di massima, per una villa di qualita medio-alta a Lecco si parte da 1.500-1.800 euro/m2 per la sola costruzione. Con il nostro preventivo gratuito, calcoliamo il costo preciso del tuo progetto specifico.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="faq-accordion__item reveal-up stagger-2" role="listitem">
+          <button class="faq-accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="faq-cost-2" id="faq-btn-2">
+            <span class="faq-accordion__question">Quanto tempo ci vuole per costruire una casa?</span>
+            <span class="faq-accordion__chevron" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-accordion__body" data-accordion-body id="faq-cost-2" role="region" aria-labelledby="faq-btn-2">
+            <div class="faq-accordion__answer">
+              <p>I tempi variano in base alla complessita del progetto. Una villetta singola richiede mediamente 10-14 mesi di cantiere, escluse le pratiche burocratiche preliminari (3-6 mesi). Forniamo sempre un cronoprogramma dettagliato prima dell'avvio dei lavori con milestone precise e aggiorniamo il cliente con report periodici sullo stato di avanzamento.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="faq-accordion__item reveal-up stagger-3" role="listitem">
+          <button class="faq-accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="faq-cost-3" id="faq-btn-3">
+            <span class="faq-accordion__question">Quali materiali utilizzate per le costruzioni?</span>
+            <span class="faq-accordion__chevron" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-accordion__body" data-accordion-body id="faq-cost-3" role="region" aria-labelledby="faq-btn-3">
+            <div class="faq-accordion__answer">
+              <p>Utilizziamo esclusivamente materiali certificati CE provenienti da fornitori selezionati. Per le strutture: calcestruzzo armato conforme alle normative antisismiche NTC 2018. Per l'isolamento: sistemi a cappotto ad alta efficienza. Per le finiture: selezioniamo materiali di qualita premium italiani, adattando le scelte alle preferenze e al budget del cliente. Offriamo anche soluzioni in bioedilizia con materiali naturali a km zero.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="faq-accordion__item reveal-up stagger-4" role="listitem">
+          <button class="faq-accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="faq-cost-4" id="faq-btn-4">
+            <span class="faq-accordion__question">Gestite anche le pratiche burocratiche?</span>
+            <span class="faq-accordion__chevron" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-accordion__body" data-accordion-body id="faq-cost-4" role="region" aria-labelledby="faq-btn-4">
+            <div class="faq-accordion__answer">
+              <p>Si, la gestione integrale delle pratiche burocratiche e inclusa nella nostra formula chiavi in mano. Ci occupiamo di permessi di costruire, DIA, SCIA, deposito strutturale, allacciamenti (acqua, luce, gas), certificato di agibilita e tutte le pratiche catastali. Collaboriamo con geometri, ingegneri strutturisti e tecnici di fiducia per garantire tutto in regola.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="faq-accordion__item reveal-up stagger-5" role="listitem">
+          <button class="faq-accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="faq-cost-5" id="faq-btn-5">
+            <span class="faq-accordion__question">E possibile costruire in bioedilizia a Lecco?</span>
+            <span class="faq-accordion__chevron" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-accordion__body" data-accordion-body id="faq-cost-5" role="region" aria-labelledby="faq-btn-5">
+            <div class="faq-accordion__answer">
+              <p>Assolutamente si. Siamo specializzati anche in bioedilizia e costruiamo case in legno, case passive e abitazioni con materiali naturali come calce, canapa e pietra locale. Queste soluzioni garantiscono classi energetiche A o A+ con costi di gestione bassissimi e massimo comfort abitativo. Possono beneficiare di incentivi fiscali aggiuntivi rispetto alle costruzioni tradizionali. Contattaci per una consulenza specifica.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="faq-accordion__cta text-center reveal-up">
+        <p class="faq-accordion__cta-text">Hai altre domande? Chiamaci o scrivici, rispondiamo entro 24 ore.</p>
+        <a href="contatti.html" class="btn btn--primary">Contattaci Ora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FULLWIDTH
+       ============================================================ -->
+  <section class="cta-fullwidth" aria-label="Chiamata all'azione" id="cta">
+    <div class="cta-fullwidth__bg" data-parallax="0.3" aria-hidden="true">
+      <img src="images/cta-costruzioni-bg.jpg" alt="" class="cta-fullwidth__bg-img" width="1920" height="1080" loading="lazy" role="presentation">
+    </div>
+    <div class="cta-fullwidth__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-fullwidth__content">
+        <span class="cta-fullwidth__eyebrow section-label reveal-up">Inizia il Tuo Progetto</span>
+        <h2 class="cta-fullwidth__title reveal-up stagger-1">
+          Pronto a Costruire<br>la Tua <em>Casa?</em>
+        </h2>
+        <p class="cta-fullwidth__desc reveal-up stagger-2">
+          Il primo passo e un sopralluogo gratuito sul tuo terreno. Valutiamo la fattibilita, ti illustriamo le soluzioni e prepariamo un preventivo dettagliato senza impegno.
+        </p>
+        <div class="cta-fullwidth__actions reveal-up stagger-3">
+          <a href="contatti.html" class="btn btn--primary btn--lg">
+            Richiedi Preventivo Gratuito
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+393496134656" class="btn btn--outline-light btn--lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            349 613 4656
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer-full section--dark">
+    <div class="footer-full__inner container">
+      <div class="footer-full__grid">
+        <div class="footer-full__col footer-full__col--about">
+          <a href="index.html" class="footer-full__logo" aria-label="Homepage">
+            <span class="footer-full__logo-text">Domenico<span class="footer-full__logo-accent">Talarico</span></span>
+          </a>
+          <p class="footer-full__about-text">Impresa edile specializzata in costruzioni, ristrutturazioni e bioedilizia chiavi in mano. Operiamo a Lecco e in tutta la Lombardia.</p>
+          <div class="footer-full__social" aria-label="Social network">
+            <a href="https://www.facebook.com/domenicotalaricoimpresaedile" class="footer-full__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><path d="M10 2H12V0H10C8.3 0 7 1.3 7 3v2H5v2h2v8h2V7h2l.5-2H9V3c0-.6.4-1 1-1z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/domenicotalaricoedile" class="footer-full__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="13.5" cy="4.5" r="1" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Link Rapidi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="index.html" class="footer-full__link">Home</a></li>
+            <li><a href="costruzioni.html" class="footer-full__link">Costruzioni</a></li>
+            <li><a href="ristrutturazioni.html" class="footer-full__link">Ristrutturazioni</a></li>
+            <li><a href="ristrutturazione-bagno.html" class="footer-full__link">Bagno</a></li>
+            <li><a href="bioedilizia.html" class="footer-full__link">Bioedilizia</a></li>
+            <li><a href="esterni.html" class="footer-full__link">Esterni</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Servizi</h3>
+          <ul class="footer-full__links" role="list">
+            <li><a href="costruzioni.html" class="footer-full__link">Costruzioni</a></li>
+            <li><a href="ristrutturazioni.html" class="footer-full__link">Ristrutturazioni</a></li>
+            <li><a href="ristrutturazione-bagno.html" class="footer-full__link">Rifacimento Bagno</a></li>
+            <li><a href="bioedilizia.html" class="footer-full__link">Bioedilizia</a></li>
+            <li><a href="esterni.html" class="footer-full__link">Coperture ed Esterni</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-full__col">
+          <h3 class="footer-full__col-title">Contatti</h3>
+          <ul class="footer-full__contact-list" role="list">
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5A4.5 4.5 0 0112.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 018 1.5z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+              <span>Via Massimo D'Azeglio, 6, 23811 Ballabio (LC)</span>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14.5 11.5a1.5 1.5 0 01-1.5 1.5 12.5 12.5 0 01-9-9A1.5 1.5 0 015.5 2.5l1 1a1.5 1.5 0 010 2.1l-.5.5a8 8 0 003.9 3.9l.5-.5a1.5 1.5 0 012.1 0l1 1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <a href="tel:+393496134656" class="footer-full__contact-link">+39 349 613 4656</a>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <a href="mailto:talarico1966@gmail.com" class="footer-full__contact-link">talarico1966@gmail.com</a>
+            </li>
+            <li class="footer-full__contact-item">
+              <svg class="footer-full__contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Lun-Sab 7:00-19:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-full__divider" aria-hidden="true">
+
+      <div class="footer-full__bottom">
+        <p class="footer-full__copyright">
+          &copy; <span id="footer-year-full" data-year></span> Domenico Talarico — Impresa Edile. P.IVA 04028240135
+        </p>
+        <nav class="footer-full__bottom-nav" aria-label="Link legali">
+          <a href="#" class="footer-full__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-full__bottom-link">Cookie Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       COOKIE BANNER
+       ============================================================ -->
+  <div class="cookie-banner" id="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Consenso cookie" aria-describedby="cookie-banner-text" aria-hidden="true">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/><circle cx="17" cy="8" r="1" fill="currentColor"/><circle cx="9" cy="17" r="1" fill="currentColor"/><circle cx="16" cy="18" r="2" fill="currentColor"/><circle cx="20" cy="14" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <div class="cookie-banner__content">
+        <p class="cookie-banner__text" id="cookie-banner-text">
+          Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito, analizzare il traffico e personalizzare i contenuti.
+          Leggi la nostra <a href="#" class="cookie-banner__policy-link">Privacy Policy</a> e la
+          <a href="#" class="cookie-banner__policy-link">Cookie Policy</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--reject" id="cookie-reject" data-cookie-reject aria-label="Rifiuta cookie non essenziali">Solo essenziali</button>
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept" data-cookie-accept aria-label="Accetta tutti i cookie">Accetta tutti</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       WHATSAPP WIDGET
+       ============================================================ -->
+  <div class="whatsapp-widget" id="whatsapp-widget" data-whatsapp data-phone="393496134656" data-message="Ciao! Vorrei ricevere informazioni sui vostri servizi edili." aria-hidden="true">
+    <a href="#" class="whatsapp-widget__btn" id="whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp" role="button">
+      <svg class="whatsapp-widget__icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C6.82 1 1 6.82 1 14c0 2.37.65 4.6 1.79 6.51L1 27l6.7-1.75A13 13 0 1014 1zm0 2a11 11 0 110 22 11 11 0 010-22zm-4.1 6.5c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.6 1.16 3.15 1.32 3.37.16.22 2.27 3.47 5.52 4.73.77.3 1.37.47 1.84.6.77.22 1.48.19 2.04.12.62-.09 1.9-.78 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.3-.21-.63-.37-.33-.16-1.92-.95-2.22-1.06-.3-.1-.51-.16-.72.16-.22.32-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.5.14-.67.15-.14.33-.37.49-.55.16-.19.22-.32.33-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.53-.71-.54l-.6-.01z" fill="currentColor"/></svg>
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+    </a>
+    <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+  </div>
+
+  <!-- ============================================================
+       BACK TO TOP
+       ============================================================ -->
+  <button class="back-to-top" id="back-to-top" data-back-to-top aria-label="Torna in cima alla pagina" aria-hidden="true" type="button">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="script.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    /* ── Preloader ── */
+    var preloader = document.getElementById('preloader-counter');
+    var numEl = document.getElementById('preloader-counter-number');
+    var barEl = document.getElementById('preloader-counter-bar');
+    var count = 0;
+    var interval = setInterval(function () {
+      count += Math.floor(Math.random() * 12) + 4;
+      if (count >= 100) {
+        count = 100;
+        clearInterval(interval);
+        setTimeout(function () {
+          preloader.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 300);
+      }
+      if (numEl) numEl.textContent = count;
+      if (barEl) barEl.style.width = count + '%';
+    }, 40);
+    document.body.style.overflow = 'hidden';
+
+    /* ── Header scroll ── */
+    var header = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      if (header) header.dataset.scrolled = window.scrollY > 40 ? 'true' : 'false';
+    }, { passive: true });
+
+    /* ── Mobile menu ── */
+    var toggle = document.querySelector('[data-mobile-toggle]');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !open);
+        mobileMenu.setAttribute('aria-hidden', open);
+        mobileMenu.classList.toggle('open', !open);
+      });
+    }
+
+    /* ── Reveal on scroll ── */
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-right').forEach(function (el) { obs.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-right').forEach(function (el) { el.classList.add('revealed'); });
+    }
+
+    /* ── Process timeline steps ── */
+    var items = document.querySelectorAll('.process-timeline__item');
+    var lineFill = document.querySelector('.process-timeline__line-fill');
+    if ('IntersectionObserver' in window && items.length) {
+      var stepObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('process-timeline__item--revealed'); stepObs.unobserve(e.target); }
+        });
+      }, { threshold: 0.3 });
+      items.forEach(function (item) { stepObs.observe(item); });
+    }
+
+    /* ── FAQ Accordion ── */
+    var firstItem = document.querySelector('.faq-accordion__item--open');
+    if (firstItem) {
+      var fb = firstItem.querySelector('[data-accordion-body]');
+      if (fb) fb.style.maxHeight = fb.scrollHeight + 'px';
+    }
+    document.querySelectorAll('[data-accordion-trigger]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var item = trigger.closest('.faq-accordion__item');
+        var body = item.querySelector('[data-accordion-body]');
+        var isOpen = item.classList.contains('faq-accordion__item--open');
+        document.querySelectorAll('.faq-accordion__item--open').forEach(function (o) {
+          if (o !== item) {
+            o.classList.remove('faq-accordion__item--open');
+            o.querySelector('[data-accordion-trigger]').setAttribute('aria-expanded', 'false');
+            var ob = o.querySelector('[data-accordion-body]');
+            if (ob) ob.style.maxHeight = '0';
+          }
+        });
+        if (isOpen) {
+          item.classList.remove('faq-accordion__item--open');
+          trigger.setAttribute('aria-expanded', 'false');
+          if (body) body.style.maxHeight = '0';
+        } else {
+          item.classList.add('faq-accordion__item--open');
+          trigger.setAttribute('aria-expanded', 'true');
+          if (body) body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* ── CTA parallax ── */
+    var ctaBg = document.querySelector('.cta-fullwidth__bg');
+    if (ctaBg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.addEventListener('scroll', function () {
+        var rect = ctaBg.closest('.cta-fullwidth').getBoundingClientRect();
+        ctaBg.style.transform = 'translateY(' + rect.top * 0.3 + 'px)';
+      }, { passive: true });
+    }
+
+    /* ── Cookie banner ── */
+    var banner = document.getElementById('cookie-banner');
+    if (banner && !localStorage.getItem('cookieConsent')) {
+      setTimeout(function () { banner.setAttribute('aria-hidden', 'false'); }, 1200);
+    }
+    document.getElementById('cookie-accept') && document.getElementById('cookie-accept').addEventListener('click', function () {
+      localStorage.setItem('cookieConsent', 'all');
+      banner.setAttribute('aria-hidden', 'true');
+    });
+    document.getElementById('cookie-reject') && document.getElementById('cookie-reject').addEventListener('click', function () {
+      localStorage.setItem('cookieConsent', 'essential');
+      banner.setAttribute('aria-hidden', 'true');
+    });
+
+    /* ── WhatsApp widget ── */
+    var wa = document.getElementById('whatsapp-widget');
+    var waLink = document.getElementById('whatsapp-link');
+    if (wa && waLink) {
+      var phone = wa.dataset.phone;
+      var msg = encodeURIComponent(wa.dataset.message || '');
+      waLink.href = 'https://wa.me/' + phone + '?text=' + msg;
+      wa.setAttribute('aria-hidden', 'false');
+    }
+
+    /* ── Back to top ── */
+    var btt = document.getElementById('back-to-top');
+    if (btt) {
+      window.addEventListener('scroll', function () {
+        btt.classList.toggle('visible', window.scrollY > 400);
+        btt.setAttribute('aria-hidden', window.scrollY > 400 ? 'false' : 'true');
+      }, { passive: true });
+      btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    /* ── Footer year ── */
+    var yearEl = document.getElementById('footer-year-full');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
