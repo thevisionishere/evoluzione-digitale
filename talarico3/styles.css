@@ -460,6 +460,8 @@ p:last-child { margin-block-end: 0; }
   border-radius: var(--radius-full);
   pointer-events: none;
   z-index: 10000;
+  transform: translate(-50%, -50%);
+  will-change: left, top;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 .cursor-follower {
@@ -472,6 +474,8 @@ p:last-child { margin-block-end: 0; }
   border-radius: var(--radius-full);
   pointer-events: none;
   z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: left, top;
   transition: width var(--duration-normal) var(--ease-out), height var(--duration-normal) var(--ease-out), background var(--duration-normal) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
 }
 .cursor-follower.hover {
@@ -480,7 +484,7 @@ p:last-child { margin-block-end: 0; }
   background: rgba(var(--color-accent-rgb), 0.1);
 }
 .cursor-dot.hidden, .cursor-follower.hidden { opacity: 0; }
-body.custom-cursor, body.custom-cursor a, body.custom-cursor button { cursor: none; }
+body.custom-cursor, body.custom-cursor * { cursor: none !important; }
 
 /* ============================================
    HERO — Split Layout (Variant B)
