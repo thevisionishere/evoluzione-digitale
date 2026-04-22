@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le Opere — Giacomo De Troia</title>
-  <meta name="description" content="Catalogo completo delle 17 opere di Giacomo De Troia. Dipinti ad acrilico su tela che esplorano il teatro della vita, le emozioni e l'esperienza umana. Lucera, Puglia.">
+  <meta name="description" content="Book artistico di Giacomo De Troia. Dipinti ad acrilico su tela che esplorano il teatro della vita, le emozioni e l'esperienza umana. Lucera, Puglia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- TODO: inserire ID GA4 fornito dal cliente -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- TODO: meta verifica Search Console -->
+  <!-- <meta name="google-site-verification" content="XXXXXXXXXX"> -->
 </head>
 <body>
 
@@ -61,10 +71,10 @@
     <!-- ====== ART BOOK ====== -->
     <section class="art-book-section section-light">
       <div class="art-book-intro container">
-        <p class="overline reveal-up">17 Dipinti</p>
-        <h2 class="reveal-up" data-delay="1">Il Catalogo delle Opere</h2>
+        <p class="overline reveal-up">Book Artistico</p>
+        <h2 class="reveal-up" data-delay="1">Il Book di <strong>Giacomo De Troia</strong></h2>
         <p class="reveal-up" data-delay="2" style="max-width: 580px; margin-inline: auto; color: var(--color-text-muted); margin-top: var(--space-4);">
-          Sfoglia il catalogo come un libro d'arte. Clicca su un dipinto per vederlo in dettaglio.
+          Sfoglia il book artistico come un libro d'arte. Clicca su un dipinto per vederlo in dettaglio.
         </p>
       </div>
 
@@ -80,276 +90,155 @@
             <p class="ic-text">Sfoglia il catalogo &rarr;</p>
           </div>
 
-          <!-- LEAF 0: Cover -->
+          <!-- LEAF 0: Cover (Biography on front) -->
           <div class="book-leaf" data-leaf="0">
             <div class="leaf-front leaf-cover-front">
-              <span class="cover-overline">Catalogo Completo</span>
+              <span class="cover-overline">Biografia</span>
               <div class="cover-line"></div>
-              <h2>Le Opere</h2>
-              <p class="cover-author">Giacomo De Troia</p>
-              <span class="cover-count">17 Dipinti &mdash; Acrilico su Tela</span>
+              <h2 class="cover-name"><strong>Giacomo De Troia</strong></h2>
+              <div class="cover-bio">
+                <p><strong>Giacomo De Troia</strong> nasce a Lucera nel 1961. Il talento innato, specie nel disegno, inizia molto giovane la sua attività creativa, con terracotta ornamentali, ceramiche, vetrate d'arte.</p>
+                <p>La necessità quasi biologica di esprimersi tramite il linguaggio artistico sfocia nella pittura. È il veicolo di messaggi diversi, di valori umani oltre l'estetica.</p>
+                <p>La grammatica pittorica che egli esprime è pensiero e riflessione, metafora di realtà esistenziale, dialogo continuo con la propria interiorità. Enigma del vivere e sul mistero dell'essere.</p>
+              </div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">I</span>
-              <h3 class="info-title">Protagonisti</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2023 &mdash; 113&times;121 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 1: Protagonisti -->
-          <div class="book-leaf" data-leaf="1" data-painting="0">
+          <div class="book-leaf" data-leaf="1" data-painting="0" data-title="Protagonisti" data-meta="2023 — 113×121 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/protagonisti.png" alt="Protagonisti, acrilico su tela, 2023">
-              <div class="painting-caption"><h3>Protagonisti</h3><p>2023 &mdash; 113&times;121 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">II</span>
-              <h3 class="info-title">A Little Rock</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2021 &mdash; 80&times;80 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 2: A Little Rock -->
-          <div class="book-leaf" data-leaf="2" data-painting="1">
+          <div class="book-leaf" data-leaf="2" data-painting="1" data-title="A Little Rock" data-meta="2021 — 80×80 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/a-little-rock.png" alt="A Little Rock, acrilico su tela, 2021">
-              <div class="painting-caption"><h3>A Little Rock</h3><p>2021 &mdash; 80&times;80 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">III</span>
-              <h3 class="info-title">Artisti di Strada</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2021 &mdash; 65&times;65 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 3: Artisti di Strada -->
-          <div class="book-leaf" data-leaf="3" data-painting="2">
+          <div class="book-leaf" data-leaf="3" data-painting="2" data-title="Artisti di Strada" data-meta="2021 — 65×65 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/artisti-di-strada.png" alt="Artisti di Strada, acrilico su tela, 2021" loading="lazy">
-              <div class="painting-caption"><h3>Artisti di Strada</h3><p>2021 &mdash; 65&times;65 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">IV</span>
-              <h3 class="info-title">Anime Sospese</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 51&times;55 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 4: Anime Sospese -->
-          <div class="book-leaf" data-leaf="4" data-painting="3">
+          <div class="book-leaf" data-leaf="4" data-painting="3" data-title="Anime Sospese" data-meta="2020 — 51×55 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/anime-sospese.png" alt="Anime Sospese, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Anime Sospese</h3><p>2020 &mdash; 51&times;55 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">V</span>
-              <h3 class="info-title">Burn</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 58,5&times;67 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 5: Burn -->
-          <div class="book-leaf" data-leaf="5" data-painting="4">
+          <div class="book-leaf" data-leaf="5" data-painting="4" data-title="Burn" data-meta="2020 — 58,5×67 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/burn.png" alt="Burn, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Burn</h3><p>2020 &mdash; 58,5&times;67 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">VI</span>
-              <h3 class="info-title">Capitano del Mio Destino</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 90&times;90 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 6: Capitano del Mio Destino -->
-          <div class="book-leaf" data-leaf="6" data-painting="5">
+          <div class="book-leaf" data-leaf="6" data-painting="5" data-title="Capitano del Mio Destino" data-meta="2020 — 90×90 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/capitano-del-mio-destino.png" alt="Capitano del Mio Destino, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Capitano del Mio Destino</h3><p>2020 &mdash; 90&times;90 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">VII</span>
-              <h3 class="info-title">Cinque Monete</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 82&times;40 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 7: Cinque Monete -->
-          <div class="book-leaf" data-leaf="7" data-painting="6">
+          <div class="book-leaf" data-leaf="7" data-painting="6" data-title="Cinque Monete" data-meta="2020 — 82×40 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/cinque-monete.png" alt="Cinque Monete, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Cinque Monete</h3><p>2020 &mdash; 82&times;40 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">VIII</span>
-              <h3 class="info-title">Circe</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 74,5&times;74,5 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 8: Circe -->
-          <div class="book-leaf" data-leaf="8" data-painting="7">
+          <div class="book-leaf" data-leaf="8" data-painting="7" data-title="Circe" data-meta="2020 — 74,5×74,5 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/circe.png" alt="Circe, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Circe</h3><p>2020 &mdash; 74,5&times;74,5 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">IX</span>
-              <h3 class="info-title">Fiat Voluntas Tua</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 92&times;130 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 9: Fiat Voluntas Tua -->
-          <div class="book-leaf" data-leaf="9" data-painting="8">
+          <div class="book-leaf" data-leaf="9" data-painting="8" data-title="Fiat Voluntas Tua" data-meta="2020 — 92×130 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/fiat-voluntas-tua.png" alt="Fiat Voluntas Tua, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Fiat Voluntas Tua</h3><p>2020 &mdash; 92&times;130 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">X</span>
-              <h3 class="info-title">I Custodi della Vita</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 99&times;99 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 10: I Custodi della Vita -->
-          <div class="book-leaf" data-leaf="10" data-painting="9">
+          <div class="book-leaf" data-leaf="10" data-painting="9" data-title="I Custodi della Vita" data-meta="2020 — 99×99 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/i-custodi-della-vita.png" alt="I Custodi della Vita, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>I Custodi della Vita</h3><p>2020 &mdash; 99&times;99 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XI</span>
-              <h3 class="info-title">Little Eva</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 40&times;70 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 11: Little Eva -->
-          <div class="book-leaf" data-leaf="11" data-painting="10">
+          <div class="book-leaf" data-leaf="11" data-painting="10" data-title="Little Eva" data-meta="2020 — 40×70 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/little-eva.png" alt="Little Eva, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Little Eva</h3><p>2020 &mdash; 40&times;70 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XII</span>
-              <h3 class="info-title">Musa Assassina</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2020 &mdash; 80&times;100 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 12: Musa Assassina -->
-          <div class="book-leaf" data-leaf="12" data-painting="11">
+          <div class="book-leaf" data-leaf="12" data-painting="11" data-title="Musa Assassina" data-meta="2020 — 80×100 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/musa-assassina.png" alt="Musa Assassina, acrilico su tela, 2020" loading="lazy">
-              <div class="painting-caption"><h3>Musa Assassina</h3><p>2020 &mdash; 80&times;100 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XIII</span>
-              <h3 class="info-title">Indifferenza</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2019 &mdash; 100&times;80 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 13: Indifferenza -->
-          <div class="book-leaf" data-leaf="13" data-painting="12">
+          <div class="book-leaf" data-leaf="13" data-painting="12" data-title="Indifferenza" data-meta="2019 — 100×80 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/indifferenza.png" alt="Indifferenza, acrilico su tela, 2019" loading="lazy">
-              <div class="painting-caption"><h3>Indifferenza</h3><p>2019 &mdash; 100&times;80 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XIV</span>
-              <h3 class="info-title">La Strumentista</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2019 &mdash; 54&times;74 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 14: La Strumentista -->
-          <div class="book-leaf" data-leaf="14" data-painting="13">
+          <div class="book-leaf" data-leaf="14" data-painting="13" data-title="La Strumentista" data-meta="2019 — 54×74 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/la-strumentista.png" alt="La Strumentista, acrilico su tela, 2019" loading="lazy">
-              <div class="painting-caption"><h3>La Strumentista</h3><p>2019 &mdash; 54&times;74 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XV</span>
-              <h3 class="info-title">Angie</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2018 &mdash; 110&times;130 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 15: Angie -->
-          <div class="book-leaf" data-leaf="15" data-painting="14">
+          <div class="book-leaf" data-leaf="15" data-painting="14" data-title="Angie" data-meta="2018 — 110×130 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/angie.png" alt="Angie, acrilico su tela, 2018" loading="lazy">
-              <div class="painting-caption"><h3>Angie</h3><p>2018 &mdash; 110&times;130 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XVI</span>
-              <h3 class="info-title">Altri Mondi</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2018 &mdash; 75&times;95 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 16: Altri Mondi -->
-          <div class="book-leaf" data-leaf="16" data-painting="15">
+          <div class="book-leaf" data-leaf="16" data-painting="15" data-title="Altri Mondi" data-meta="2018 — 75×95 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/altri-mondi.png" alt="Altri Mondi, acrilico su tela, 2018" loading="lazy">
-              <div class="painting-caption"><h3>Altri Mondi</h3><p>2018 &mdash; 75&times;95 cm</p></div>
             </div>
-            <div class="leaf-back leaf-info">
-              <span class="info-number">XVII</span>
-              <h3 class="info-title">Riaccendiamo la Cultura</h3>
-              <div class="info-line"></div>
-              <p class="info-meta">2017 &mdash; 110&times;120 cm</p>
-              <p class="info-technique">Acrilico su tela</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
           <!-- LEAF 17: Riaccendiamo la Cultura -->
-          <div class="book-leaf" data-leaf="17" data-painting="16">
+          <div class="book-leaf" data-leaf="17" data-painting="16" data-title="Riaccendiamo la Cultura" data-meta="2017 — 110×120 cm">
             <div class="leaf-front leaf-painting">
               <img src="images/dipinti/riaccendiamo-la-cultura.png" alt="Riaccendiamo la Cultura, acrilico su tela, 2017" loading="lazy">
-              <div class="painting-caption"><h3>Riaccendiamo la Cultura</h3><p>2017 &mdash; 110&times;120 cm</p></div>
             </div>
-            <div class="leaf-back leaf-end">
-              <p class="end-title">Fine del Catalogo</p>
-              <div class="end-line"></div>
-              <p class="end-author">Giacomo De Troia</p>
-              <p class="end-contact">giacomodetroia@libero.it</p>
-            </div>
+            <div class="leaf-back leaf-blank"></div>
           </div>
 
         </div>
@@ -411,8 +300,24 @@
         <p class="reveal-up" data-delay="2" style="color: var(--color-text-muted); margin-top: var(--space-4); margin-bottom: var(--space-5);">
           Per informazioni su disponibilità e prezzi, o per richiedere un'opera su commissione, contatta direttamente l'artista. Il prezzo è concordato in base alle dimensioni e alle caratteristiche dell'opera. Il pagamento avviene tramite bonifico bancario.
         </p>
-        <a href="contatti.html" class="btn-primary magnetic-btn reveal-up" data-delay="3" style="margin-top: var(--space-6);">Contattami &rarr;</a>
+        <a href="contatti.html?oggetto=acquisto" class="btn-primary magnetic-btn reveal-up" data-delay="3" style="margin-top: var(--space-6);">Acquista ora &rarr;</a>
         <p class="final-cta-signature reveal-up" data-delay="4">G. De Troia</p>
+      </div>
+    </section>
+
+    <!-- ====== NEWSLETTER (Placeholder) ====== -->
+    <section class="newsletter-section">
+      <div class="container-narrow">
+        <div class="newsletter-inner reveal-up">
+          <p class="overline">Newsletter</p>
+          <h3>Resta in contatto con <strong>Giacomo De Troia</strong></h3>
+          <p class="newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere, mostre e iniziative.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
+            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
+            <button type="submit" class="btn-primary">Iscriviti</button>
+          </form>
+          <p class="newsletter-note"><em>Placeholder — il form verrà collegato al servizio email del cliente.</em></p>
+        </div>
       </div>
     </section>
 
@@ -423,7 +328,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">Giacomo De Troia</div>
+          <div class="footer-logo"><strong>Giacomo De Troia</strong></div>
           <div class="footer-tagline">Pittura sul Teatro della Vita</div>
           <p>Arte contemporanea — dipinti ad acrilico su tela che esplorano la drammaticità e la bellezza dell'esperienza umana.</p>
         </div>
@@ -462,9 +367,17 @@
             </a>
           </div>
         </div>
+        <div class="footer-nav">
+          <h4>Informazioni Legali</h4>
+          <ul>
+            <li><a href="condizioni-vendita.html">Condizioni di Vendita</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span data-year></span> Giacomo De Troia. Tutti i diritti riservati.</p>
+        <p>&copy; <span data-year></span> <strong>Giacomo De Troia</strong>. Tutti i diritti riservati.</p>
         <p>Sito realizzato da <a href="https://ev-digitale.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light);">Evoluzione Digitale</a></p>
       </div>
     </div>

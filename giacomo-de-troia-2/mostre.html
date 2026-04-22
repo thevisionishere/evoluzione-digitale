@@ -9,6 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- TODO: inserire ID GA4 fornito dal cliente -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- TODO: meta verifica Search Console -->
+  <!-- <meta name="google-site-verification" content="XXXXXXXXXX"> -->
 </head>
 <body>
 
@@ -224,6 +234,22 @@
       </div>
     </section>
 
+    <!-- ====== NEWSLETTER (Placeholder) ====== -->
+    <section class="newsletter-section">
+      <div class="container-narrow">
+        <div class="newsletter-inner reveal-up">
+          <p class="overline">Newsletter</p>
+          <h3>Resta in contatto con <strong>Giacomo De Troia</strong></h3>
+          <p class="newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere, mostre e iniziative.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
+            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
+            <button type="submit" class="btn-primary">Iscriviti</button>
+          </form>
+          <p class="newsletter-note"><em>Placeholder — il form verrà collegato al servizio email del cliente.</em></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -231,7 +257,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">Giacomo De Troia</div>
+          <div class="footer-logo"><strong>Giacomo De Troia</strong></div>
           <div class="footer-tagline">Pittura sul Teatro della Vita</div>
           <p>Arte contemporanea — dipinti ad acrilico su tela che esplorano la drammaticità e la bellezza dell'esperienza umana.</p>
         </div>
@@ -270,9 +296,17 @@
             </a>
           </div>
         </div>
+        <div class="footer-nav">
+          <h4>Informazioni Legali</h4>
+          <ul>
+            <li><a href="condizioni-vendita.html">Condizioni di Vendita</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span data-year></span> Giacomo De Troia. Tutti i diritti riservati.</p>
+        <p>&copy; <span data-year></span> <strong>Giacomo De Troia</strong>. Tutti i diritti riservati.</p>
         <p>Sito realizzato da <a href="https://ev-digitale.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-light);">Evoluzione Digitale</a></p>
       </div>
     </div>

@@ -553,12 +553,11 @@ document.addEventListener('DOMContentLoaded', () => {
     leaves.forEach(leaf => {
       if (leaf.dataset.painting !== undefined) {
         const img = leaf.querySelector('.leaf-painting img');
-        const cap = leaf.querySelector('.painting-caption');
         if (img) {
           paintings.push({
             src: img.src,
-            title: cap ? cap.querySelector('h3').textContent : '',
-            meta: cap ? cap.querySelector('p').textContent : ''
+            title: leaf.dataset.title || '',
+            meta: leaf.dataset.meta || ''
           });
         }
       }

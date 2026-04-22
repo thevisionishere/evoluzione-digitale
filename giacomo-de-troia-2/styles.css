@@ -1463,14 +1463,14 @@ body.viewer-open .cursor-follower.hover {
   pointer-events: none;
 }
 
-/* --- Cover page (leaf 0 front) --- */
+/* --- Cover page (leaf 0 front) — Biography --- */
 .leaf-cover-front {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-8);
+  padding: clamp(var(--space-5), 3.5vw, var(--space-8));
   background: var(--color-dark) !important;
   color: var(--color-light);
   border-radius: 0 4px 4px 0;
@@ -1481,33 +1481,48 @@ body.viewer-open .cursor-follower.hover {
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);
   color: var(--color-accent-light);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 .leaf-cover-front .cover-line {
   width: 50px;
   height: 1px;
   background: var(--color-accent);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
-.leaf-cover-front h2 {
+.leaf-cover-front .cover-name {
   font-family: var(--font-display);
-  font-size: var(--text-3xl);
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
   font-weight: var(--weight-bold);
   color: var(--color-light);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
 }
-.leaf-cover-front .cover-author {
+.leaf-cover-front .cover-bio {
+  max-width: 92%;
+}
+.leaf-cover-front .cover-bio p {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 0.85vw, 0.82rem);
+  line-height: 1.55;
+  color: rgba(250,248,245,0.85);
+  margin-bottom: var(--space-3);
+  text-align: justify;
+  text-align-last: center;
+}
+.leaf-cover-front .cover-bio p:last-child {
+  margin-bottom: 0;
   font-family: var(--font-accent);
   font-style: italic;
-  font-size: var(--text-lg);
-  color: rgba(250,248,245,0.7);
-  margin-bottom: var(--space-6);
+  color: var(--color-accent-light);
 }
-.leaf-cover-front .cover-count {
-  font-size: var(--text-xs);
-  color: rgba(250,248,245,0.4);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+.leaf-cover-front .cover-bio strong {
+  color: var(--color-light);
+  font-weight: var(--weight-semibold);
+}
+
+/* --- Blank leaf back --- */
+.leaf-blank {
+  background: linear-gradient(135deg, #f8f4ef 0%, #f2ede6 100%);
 }
 
 /* --- Painting page (leaf fronts 1-17) --- */
@@ -2041,4 +2056,208 @@ body.viewer-open .cursor-follower.hover {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   LEGAL PAGES (Condizioni, Privacy, Cookie)
+   ============================================================ */
+.legal-hero {
+  background: var(--color-dark);
+  color: var(--color-light);
+  padding: calc(var(--space-10) + 60px) 0 var(--space-9);
+  text-align: center;
+}
+.legal-hero .overline {
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-4);
+}
+.legal-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-light);
+  margin-bottom: var(--space-4);
+  font-weight: var(--weight-bold);
+}
+.legal-hero-sub {
+  color: rgba(250, 248, 245, 0.7);
+  font-size: var(--text-lg);
+  max-width: 600px;
+  margin-inline: auto;
+}
+.legal-content {
+  padding: var(--space-10) 0;
+  background: var(--color-light);
+}
+.legal-block {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid var(--color-border-light);
+}
+.legal-block:last-child {
+  border-bottom: none;
+}
+.legal-block h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+}
+.legal-block h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+.legal-block p {
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+.legal-block ul {
+  margin: var(--space-3) 0 var(--space-4) var(--space-5);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+.legal-block ul li {
+  margin-bottom: var(--space-2);
+}
+.legal-block blockquote {
+  margin: var(--space-4) 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-light-alt);
+  border-left: 3px solid var(--color-accent);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  line-height: var(--leading-relaxed);
+}
+.legal-block a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast);
+}
+.legal-block a:hover {
+  color: var(--color-accent-dark);
+}
+.legal-block strong {
+  color: var(--color-text-dark);
+  font-weight: var(--weight-semibold);
+}
+.legal-update {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   PHILOSOPHY SIGNATURE
+   ============================================================ */
+.philosophy-signature {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  text-align: center;
+  margin-top: var(--space-5);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================================
+   HERO CTA GROUP (Home with Esplora + Scopri di più)
+   ============================================================ */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+.hero-cta-secondary {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: rgba(250, 248, 245, 0.75);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid rgba(250, 248, 245, 0.3);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.hero-cta-secondary:hover {
+  color: var(--color-accent-light);
+  border-bottom-color: var(--color-accent-light);
+}
+@media (max-width: 640px) {
+  .hero-cta-group { gap: var(--space-3); }
+  .hero-cta-secondary { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
+}
+
+/* ============================================================
+   NEWSLETTER (Placeholder)
+   ============================================================ */
+.newsletter-section {
+  padding: var(--space-9) 0;
+  background: var(--color-light-alt);
+  border-top: 1px solid var(--color-border-light);
+}
+.newsletter-inner {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.newsletter-inner .overline {
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+.newsletter-inner h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
+  font-weight: var(--weight-semibold);
+}
+.newsletter-desc {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-6);
+}
+.newsletter-form {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 480px;
+  margin-inline: auto;
+  flex-wrap: wrap;
+}
+.newsletter-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  background: var(--color-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-dark);
+  transition: border-color var(--duration-fast);
+}
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+.newsletter-form button {
+  padding: var(--space-3) var(--space-5);
+  white-space: nowrap;
+}
+.newsletter-note {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+@media (max-width: 500px) {
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form button { width: 100%; }
 }
