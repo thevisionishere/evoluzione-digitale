@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proprietà — 26 ville, case e appartamenti in Maremma e Roma | Eleviora</title>
+  <meta name="description" content="Scopri le 26 proprietà curate di Eleviora: ville con piscina a Saturnia e Capalbio, appartamenti a Orbetello e Roma, case sulla Costa Maremma. Prenotazione via Smart PMS.">
+  <meta name="theme-color" content="#2e3928">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-internal page-proprieta">
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">ELEVIORA</a>
+      <nav class="header-nav" aria-label="Navigazione principale">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="proprieta.html" class="nav-link">Proprietà</a>
+        <a href="esperienze-servizi.html" class="nav-link">Esperienze</a>
+        <a href="chi-siamo.html" class="nav-link">Chi siamo</a>
+        <a href="affida-casa.html" class="nav-link">Affida la tua casa</a>
+        <a href="contatti.html" class="nav-link">Contatti</a>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn btn-primary" data-booking-engine title="Portale prenotazioni Smart PMS">Prenota</a>
+      </div>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html">Home</a>
+      <a href="proprieta.html">Proprietà</a>
+      <a href="esperienze-servizi.html">Esperienze</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="affida-casa.html">Affida la tua casa</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu-cta">
+      <a href="#" class="btn btn-primary" data-booking-engine>Prenota ora</a>
+      <div class="mobile-menu-contact">
+        <a href="tel:+393488697862">+39 348 869 7862</a> ·
+        <a href="mailto:elevioragroup@gmail.it">elevioragroup@gmail.it</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERNAL HERO -->
+  <section class="hero-internal" aria-label="Proprietà Eleviora">
+    <div class="hero-internal-bg">
+      <img src="https://images.unsplash.com/photo-1568484671395-1cb59b3cf60b?w=1920&h=720&fit=crop&q=80"
+           alt="Panorama delle colline della Maremma toscana" width="1920" height="720">
+    </div>
+    <div class="hero-internal-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span><span>Proprietà</span>
+      </nav>
+      <h1>26 proprietà curate in <em class="accent-italic">6 zone</em> autentiche</h1>
+      <p>Dalla Maremma all'Argentario, da Roma alla costa — ogni dimora selezionata per un'esperienza di qualità.</p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section style="padding-block: var(--space-7) var(--space-6);">
+    <div class="section-head reveal-up" style="margin-bottom: var(--space-5);">
+      <h2 style="font-size: var(--text-2xl);">Filtra per zona</h2>
+    </div>
+    <div class="properties-filters" role="group" aria-label="Filtro per zona">
+      <button class="filter-chip active" data-zone="all">Tutte <span class="count">(26)</span></button>
+      <button class="filter-chip" data-zone="saturnia">Saturnia <span class="count">(8)</span></button>
+      <button class="filter-chip" data-zone="maremma">Maremma <span class="count">(8)</span></button>
+      <button class="filter-chip" data-zone="orbetello">Orbetello <span class="count">(3)</span></button>
+      <button class="filter-chip" data-zone="capalbio">Capalbio <span class="count">(2)</span></button>
+      <button class="filter-chip" data-zone="costa">Costa <span class="count">(2)</span></button>
+      <button class="filter-chip" data-zone="roma">Roma <span class="count">(3)</span></button>
+    </div>
+    <div class="properties-filters" role="group" aria-label="Filtro per tipologia" style="margin-top: var(--space-4);">
+      <button class="filter-chip active" data-kind="all">Tutte le tipologie</button>
+      <button class="filter-chip" data-kind="villa">Ville</button>
+      <button class="filter-chip" data-kind="appartamento">Appartamenti</button>
+      <button class="filter-chip" data-kind="casa">Case</button>
+      <button class="filter-chip" data-kind="tiny-house">Tiny House</button>
+      <button class="filter-chip" data-kind="alloggio">Alloggi</button>
+    </div>
+  </section>
+
+  <!-- PROPERTY GRID -->
+  <section style="padding-block: var(--space-5) var(--space-10);">
+    <div class="property-grid">
+<article class="property-card" data-zone="maremma" data-kind="villa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4MjQxNTA=/original/d96c7a4d-8605-4668-b83a-14bbe1db5f49.jpeg?im_w=1440" alt="Villa Paradiso con piscina, parcheggio e privacy in Maremma Toscana" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.84 · 25</span>
+    <span class="property-card-badge">Villa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>Villa Paradiso [Piscina, Parcheggio e Privacy]</h3>
+    <div class="property-card-actions">
+      <!-- BOOKING ENGINE: replace href="#" with Smart PMS URL for this property -->
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="12824150">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/12824150" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="alloggio">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-18786322/original/bdf2aa7f-fcf9-4249-8376-c025d05eb3a0.jpeg?im_w=1440" alt="Alloggio a 20 minuti dalle terme di Saturnia con Free Wi-Fi" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.87 · 182</span>
+    <span class="property-card-badge">Alloggio</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>20 minuti dalle terme di Saturnia [Free Wi-Fi]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="18786322">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/18786322" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="alloggio">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-860191527496976384/original/36e7782d-cc65-4288-b937-ea6b47e5d7f2.jpeg?im_w=1440" alt="Alloggio in centro storico a 20 minuti dalle terme di Saturnia" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.86 · 99</span>
+    <span class="property-card-badge">Alloggio</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>[Centro storico] 20 minuti dalle terme di Saturnia</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="860191527496976384">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/860191527496976384" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="casa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-942675626350335964/original/b2d7db17-981c-4f91-bca2-ceaab5becc1b.jpeg?im_w=1440" alt="La Casa in Piazza con super terrazza a 18 minuti dalle terme" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.71 · 21</span>
+    <span class="property-card-badge">Casa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>La Casa in Piazza [Super terrazza - 18' dalle Terme]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="942675626350335964">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/942675626350335964" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="villa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1118050765648990844/original/226ecdb0-8a11-4fee-94d5-e58e5d548f2b.jpeg?im_w=1440" alt="Villa Saturnia con piscina privata a 9 minuti dalle terme" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.9 · 21</span>
+    <span class="property-card-badge">Villa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>Villa Saturnia [Piscina Privata - 9' dalle Terme]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1118050765648990844">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1118050765648990844" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="orbetello" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1235421137229263887/original/db61873b-1a33-4dbc-8e0c-790b0abbba13.jpeg?im_w=1440" alt="Orbetello Lagoon Suite a 5 minuti da spiaggia e centro" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.71 · 17</span>
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Orbetello (GR)</span>
+    <h3>Orbetello Lagoon Suite – Beach &amp; Town in 5 Minutes</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1235421137229263887">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1235421137229263887" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1280307018512989470/original/4e26b7fe-c9ec-4812-a253-6eff0be3649b.jpeg?im_w=1440" alt="Carampi Charm appartamento di design in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">5.0 · 3</span>
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>Carampi Charm</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1280307018512989470">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1280307018512989470" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMyNTU1NzE1OTIyMTgxMDQyMw==/original/87cea989-c7ea-4a9f-b783-5203eed4ef8d.jpeg?im_w=1440" alt="Appartamento La Grotta con design artigianale in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.92 · 36</span>
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>Appartamento La Grotta [Design Artigianale]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1325557159221810423">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1325557159221810423" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="roma" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1340029637826632281/original/1a9a0d67-6144-4884-8c76-fde0ccd7c237.jpeg?im_w=1440" alt="Appartamento Vaticano con aria condizionata a Roma" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.65 · 37</span>
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Roma</span>
+    <h3>Appartamento Vaticano [con aria condizionata]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1340029637826632281">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1340029637826632281" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="costa" data-kind="alloggio">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM2MzgzMjIzMzI1Nzg2NDMzMQ==/original/b61c2b64-441f-4692-af11-ada27df99f97.jpeg?im_w=1440" alt="Alloggio a due passi dal mare in oasi naturale della Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-rating">4.36 · 11</span>
+    <span class="property-card-badge">Alloggio</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Costa Maremma</span>
+    <h3>A due passi dal mare - oasi</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1363832233257864331">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1363832233257864331" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="casa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM3MzgzMjU0MTY5NjM2Mjc0MQ==/original/4fda90e6-0b74-44be-a60d-ef6e261e4185.jpeg?im_w=1440" alt="La Dimora del Borgo con vista panoramica in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Casa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>La Dimora del Borgo [Vista Panoramica]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1373832541696362741">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1373832541696362741" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="costa" data-kind="casa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1373886966218840265/original/b33fd0b5-d0c7-403e-b943-5aa70f9ded7e.jpeg?im_w=1440" alt="Casa CreatureCreative con giardino a 3 minuti dal mare" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Casa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Costa Maremma</span>
+    <h3>Casa CreatureCreative [con Giardino a 3' dal mare]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1373886966218840265">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1373886966218840265" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="capalbio" data-kind="alloggio">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1374188007174435226/original/9027fcf0-debe-42d4-b6e5-1ba568668870.jpeg?im_w=1440" alt="Capalbio Relax con super terrazza in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Alloggio</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Capalbio (GR)</span>
+    <h3>Capalbio Relax [Super terrazza]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1374188007174435226">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1374188007174435226" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="capalbio" data-kind="villa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM5ODU0OTQwOTkwMjcxMjk4NA==/original/6be56a7d-cd5e-4411-8232-acd420dd2035.jpeg?im_w=1440" alt="Villa Luxury Capalbio con piscina, tramonti e privacy" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Villa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Capalbio (GR)</span>
+    <h3>Villa Luxury Capalbio [Piscina, Tramonti, Privacy]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1398549409902712984">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1398549409902712984" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="villa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQwMjk2NTI2Njk1OTI2MDI1Mw==/original/43548356-f01d-4214-87cf-bd5c68493794.jpeg?im_w=1440" alt="Villa Flo con piscina privata, relax e privacy in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Villa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>Villa Flo' [Piscina Privata, Relax, Privacy]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1402965266959260253">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1402965266959260253" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQwMzgyNjQyNjQyNzQ5NDAwMw==/original/9f67667a-a504-4e71-966d-92faab33eb64.jpeg?im_w=1440" alt="Saturnia Next Luxury Apartment vicino alle terme" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>Saturnia Next [Luxury Apartment]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1403826426427494003">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1403826426427494003" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="casa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQwNTI0MjE4NDg3NTc1MjIxNw==/original/62631552-8c0c-48c3-92c5-b90dcd27a5f7.jpeg?im_w=1440" alt="Il Glicine tra natura, stelle, relax e piscina in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Casa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>Il Glicine [Natura, Stelle, Relax e Piscina]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1405242184875752217">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1405242184875752217" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="casa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQwNTk3NDIyMzkwNDY4MjEwNg==/original/7add46c7-5200-4497-990e-387be48182ee.jpeg?im_w=1440" alt="La Mangiatoia tra natura, stelle, relax e piscina in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Casa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>La Mangiatoia [Natura, Stelle, Relax e Piscina]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1405974223904682106">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1405974223904682106" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="roma" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyMDI3MjY5NTU4ODcxNTUwNg==/original/2931742d-699c-41c3-8727-c36cc0ca45ec.jpeg?im_w=1440" alt="Vaticano Luxury Apartment Aurum Homes a Roma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Roma</span>
+    <h3>Vaticano Luxury Apartment [Aurum Homes]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1420272695588715506">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1420272695588715506" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="tiny-house">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyMDQyMTYxNzM2NjkwMjE2MQ==/original/3177520c-769a-4dbb-b264-40714efc4f93.jpeg?im_w=1440" alt="Tiny House con aria condizionata a 18 minuti dalle terme di Saturnia" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Tiny House</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>Tiny House [Aria Condizionata - 18' dalle Terme]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1420421617366902161">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1420421617366902161" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="orbetello" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQzMDI3NzM4NTQyMzk0NzA2Nw==/original/8bafc74c-4a9d-4022-8906-1bfb9ab8f416.jpeg?im_w=1440" alt="Orbetello Sunset Suite con relax e privacy al mare" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Orbetello (GR)</span>
+    <h3>Orbetello Sunset Suite [Relax e Privacy al mare]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1430277385423947067">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1430277385423947067" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="alloggio">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ0NTg1NTIyODg4NDQ3ODI2NA==/original/271e4f01-5539-4f5f-938b-0cf0a4ad0625.jpeg?im_w=1440" alt="Alloggio Comfort e design a 20 minuti dalle terme di Saturnia" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Alloggio</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>Comfort &amp; design [20' dalle terme di Saturnia]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1445855228884478264">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1445855228884478264" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="saturnia" data-kind="casa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1496355668374819641/original/d3a1445c-233d-4d23-b37f-f076d07d2e91.jpeg?im_w=1440" alt="La Loggetta dei Poderi a 5 minuti dalle terme di Saturnia" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Casa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Saturnia (GR)</span>
+    <h3>La Loggetta dei Poderi - 5' dalle Terme di Saturnia</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1496355668374819641">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1496355668374819641" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="roma" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1500767720026945548/original/9f3d85c6-4da6-4d0f-a9b9-9b702612faf9.jpeg?im_w=1440" alt="Rome Luxury Apartment a San Giovanni a 5 minuti dalla metro" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Roma</span>
+    <h3>Rome Luxury Apartment · San Giovanni · 5' Metro</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1500767720026945548">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1500767720026945548" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="maremma" data-kind="villa">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1560883279483840269/original/2a7258df-5db8-4593-afff-57b4c68fd924.jpeg?im_w=1440" alt="Villa Luxury Toscana La Stellata con piscina in Maremma" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Villa</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Maremma Toscana</span>
+    <h3>Villa Luxury Toscana con piscina [La Stellata]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1560883279483840269">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1560883279483840269" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+<article class="property-card" data-zone="orbetello" data-kind="appartamento">
+  <div class="property-card-media">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1568885655618760522/original/a80156db-c32e-4021-94dd-7a8bea163668.jpeg?im_w=1440" alt="Orbetello Charme Apartment con relax e mare" loading="lazy" width="560" height="420">
+    <span class="property-card-badge">Appartamento</span>
+  </div>
+  <div class="property-card-body">
+    <span class="property-card-zone">Orbetello (GR)</span>
+    <h3>Orbetello Charme Apartment [Relax &amp; Mare]</h3>
+    <div class="property-card-actions">
+      <a href="#" class="btn btn-primary" data-booking-engine data-property-id="1568885655618760522">Prenota</a>
+      <a href="https://www.airbnb.it/rooms/1568885655618760522" class="property-link-external" target="_blank" rel="noopener">Dettagli <span>↗</span></a>
+    </div>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <!-- HOW BOOKING WORKS -->
+  <section class="bg-light-alt">
+    <div class="section-head reveal-up">
+      <span class="overline">Come prenoti</span>
+      <h2>Tre passi, <em class="accent-italic">zero sorprese</em></h2>
+    </div>
+    <div class="process-horizontal">
+      <div class="process-step reveal-up" data-delay="1">
+        <div class="process-step-num">1</div>
+        <h4>Scegli la proprietà</h4>
+        <p>Filtra per zona o tipologia. Leggi i dettagli, guarda le foto.</p>
+      </div>
+      <div class="process-step reveal-up" data-delay="2">
+        <div class="process-step-num">2</div>
+        <h4>Prenota via Smart PMS</h4>
+        <p>Il portale di prenotazione gestito direttamente da noi — disponibilità e tariffe sempre aggiornate.</p>
+      </div>
+      <div class="process-step reveal-up" data-delay="3">
+        <div class="process-step-num">3</div>
+        <h4>Concierge attivo</h4>
+        <p>Dalla spesa pre-arrivo al check-out, siamo al tuo fianco con tutto il nostro network di servizi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXTUAL CTA -->
+  <section class="contextual-cta">
+    <div class="contextual-cta-inner">
+      <h2 class="reveal-up">Non trovi quello che <em class="accent-italic">cerchi</em>?</h2>
+      <p class="reveal-up" data-delay="1">Ti aiutiamo a scegliere la proprietà perfetta per il tuo soggiorno. Scrivici su WhatsApp o chiama — ti rispondiamo in poche ore.</p>
+      <div class="btn-group reveal-up" data-delay="2" style="justify-content:center;">
+        <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20aiuto%20nella%20scelta%20di%20una%20propriet%C3%A0" class="btn btn-primary" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+        <a href="contatti.html" class="btn btn-secondary">Tutti i contatti</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">ELEVIORA</span>
+        <p>Property management premium per la Maremma toscana e Roma. 26 proprietà curate, concierge completo, esperienze autentiche.</p>
+      </div>
+      <div>
+        <h4>Navigazione</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="proprieta.html">Proprietà</a>
+          <a href="esperienze-servizi.html">Esperienze &amp; Servizi</a>
+          <a href="chi-siamo.html">Chi siamo</a>
+          <a href="affida-casa.html">Affida la tua casa</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <div class="footer-contact">
+          <a href="tel:+393488697862">+39 348 869 7862</a>
+          <a href="https://wa.me/393488697862" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:elevioragroup@gmail.it">elevioragroup@gmail.it</a>
+          <span>Sede legale: Via Tosco Romagnola 187, 56021 Cascina (PI)</span>
+          <span>Zona operativa: Maremma · Argentario · Roma</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Eleviora Group SRLS · P.IVA 02548570502</span>
+      <span><a href="#">Privacy</a> · <a href="#">Cookie</a> · <a href="#">Termini</a></span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20informazioni" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esperienze & Servizi — Eleviora | Chef privato, terme, esperienze esclusive in Maremma</title>
+  <meta name="description" content="Servizi esclusivi in villa e esperienze autentiche in Maremma: chef privato, Terme di Saturnia, tour cantine, barca privata, allestimenti romantici. Eleviora Group.">
+  <meta name="keywords" content="chef privato Maremma, terme Saturnia, esperienze Maremma, tour cantine Toscana, barca privata Argentario, cooking class Toscana, servizi villa Maremma">
+  <meta property="og:title" content="Esperienze & Servizi — Eleviora Group">
+  <meta property="og:description" content="Servizi esclusivi in villa, esperienze autentiche nel territorio, vantaggi riservati. Ogni dettaglio curato da Eleviora.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2e3928">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-internal page-esperienze">
+  <!-- =============== SCROLL PROGRESS =============== -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- =============== HEADER =============== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">ELEVIORA</a>
+      <nav class="header-nav" aria-label="Navigazione principale">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="proprieta.html" class="nav-link">Proprietà</a>
+        <a href="esperienze-servizi.html" class="nav-link">Esperienze</a>
+        <a href="chi-siamo.html" class="nav-link">Chi siamo</a>
+        <a href="affida-casa.html" class="nav-link">Affida la tua casa</a>
+        <a href="contatti.html" class="nav-link">Contatti</a>
+      </nav>
+      <div class="header-cta">
+        <!-- BOOKING ENGINE: replace href="#" with Smart PMS URL -->
+        <a href="#" class="btn btn-primary" data-booking-engine title="Portale prenotazioni Smart PMS">Prenota</a>
+      </div>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =============== MOBILE MENU =============== -->
+  <div class="mobile-menu" id="mobile-menu" aria-label="Menu di navigazione">
+    <nav class="mobile-menu-nav" aria-label="Navigazione mobile">
+      <a href="index.html">Home</a>
+      <a href="proprieta.html">Proprietà</a>
+      <a href="esperienze-servizi.html">Esperienze</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="affida-casa.html">Affida la tua casa</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu-cta">
+      <!-- BOOKING ENGINE: replace href="#" with Smart PMS URL -->
+      <a href="#" class="btn btn-primary" data-booking-engine>Prenota ora</a>
+      <div class="mobile-menu-contact">
+        <a href="tel:+393488697862">+39 348 869 7862</a> ·
+        <a href="mailto:elevioragroup@gmail.it">elevioragroup@gmail.it</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== 1. HERO INTERNO =============== -->
+  <section class="hero-internal" aria-label="Esperienze e Servizi">
+    <div class="hero-internal-bg">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=860&fit=crop&q=80"
+           alt="Chef che impatta elegantemente un piatto in cucina rustica toscana"
+           width="1920" height="860" loading="eager">
+    </div>
+    <div class="hero-internal-inner">
+      <nav class="breadcrumb" aria-label="Percorso di navigazione">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">·</span>
+        <span aria-current="page">Esperienze &amp; Servizi</span>
+      </nav>
+      <h1 class="reveal-up">Il territorio a portata <em class="accent-italic">d'ospite</em></h1>
+      <p class="reveal-up" data-delay="1">Servizi esclusivi in villa, esperienze autentiche in Maremma, accessi riservati. Ogni dettaglio curato.</p>
+    </div>
+  </section>
+
+  <!-- =============== 2. TABBED SERVICE EXPLORER =============== -->
+  <section class="section bg-light" aria-label="Servizi ed esperienze per categoria">
+    <div class="container">
+      <div class="section-head reveal-up">
+        <span class="overline">Tutto quello che puoi vivere</span>
+        <h2>Scegli la tua <em class="accent-italic">esperienza</em></h2>
+        <p>Dai servizi in villa alle attività nel territorio, dai vantaggi riservati alle esperienze su misura: ogni ospite Eleviora ha accesso a un mondo curato.</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <nav class="service-tabs-nav reveal-up" data-delay="1" aria-label="Categorie di servizi">
+        <button class="service-tab-btn active" data-tab="villa" aria-selected="true" aria-controls="panel-villa" id="tab-villa">
+          🏡 Soggiorni in Villa
+        </button>
+        <button class="service-tab-btn" data-tab="territorio" aria-selected="false" aria-controls="panel-territorio" id="tab-territorio">
+          🌿 Il Meglio del Territorio
+        </button>
+        <button class="service-tab-btn" data-tab="vantaggi" aria-selected="false" aria-controls="panel-vantaggi" id="tab-vantaggi">
+          ⭐ Vantaggi Esclusivi
+        </button>
+        <button class="service-tab-btn" data-tab="esclusive" aria-selected="false" aria-controls="panel-esclusive" id="tab-esclusive">
+          💎 Esperienze su Richiesta
+        </button>
+      </nav>
+
+      <!-- ===== TAB 1: SOGGIORNI IN VILLA ===== -->
+      <div class="service-tab-panel active" id="panel-villa" data-panel="villa" role="tabpanel" aria-labelledby="tab-villa">
+        <div class="service-item-grid">
+
+          <article class="service-item reveal-up">
+            <div class="service-item-icon">🍽️</div>
+            <div>
+              <h4>Chef privato</h4>
+              <p>Il meglio della cucina toscana, senza uscire di casa. Menu personalizzato con prodotti locali a km zero.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Chef%20privato" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="1">
+            <div class="service-item-icon">🔥</div>
+            <div>
+              <h4>BBQ experience con chef</h4>
+              <p>Grigliata d'autore a bordo piscina. Carni selezionate, verdure di stagione, regia dello chef.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20BBQ%20experience%20con%20chef" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="2">
+            <div class="service-item-icon">🍷</div>
+            <div>
+              <h4>Degustazione vini in villa</h4>
+              <p>Sommelier a domicilio, cantine locali. Un viaggio nel vino toscano senza spostarsi dalla villa.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Degustazione%20vini%20in%20villa" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="3">
+            <div class="service-item-icon">💆</div>
+            <div>
+              <h4>Massaggi in villa</h4>
+              <p>Rigenera in privacy. Olistico o shiatsu: terapeuta qualificata direttamente nella tua villa, su prenotazione.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Massaggi%20in%20villa" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="4">
+            <div class="service-item-icon">♨️</div>
+            <div>
+              <h4>Accesso convenzionato Terme di Saturnia</h4>
+              <p>Le cascate calde più famose d'Italia, con tariffe riservate agli ospiti Eleviora. Un'esperienza imperdibile.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Tariffa conv.</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Accesso%20Terme%20di%20Saturnia" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="5">
+            <div class="service-item-icon">🛒</div>
+            <div>
+              <h4>Spesa a domicilio pre-arrivo</h4>
+              <p>Frigo pieno al check-in, scelto da te. Invii la lista, arriviamo prima di te a riempire la dispensa.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Servizio incluso su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Spesa%20a%20domicilio%20pre-arrivo" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up">
+            <div class="service-item-icon">🥐</div>
+            <div>
+              <h4>Colazione in villa</h4>
+              <p>Prodotti locali, preparata e servita. Frise, marmellate artigianali, pane fresco — direttamente a tavola.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Colazione%20in%20villa" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="1">
+            <div class="service-item-icon">👶</div>
+            <div>
+              <h4>Babysitter</h4>
+              <p>Personale qualificato, per coppie in relax. Così puoi vivere una serata libera sapendo i bambini in buone mani.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da €/h su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Babysitter" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="2">
+            <div class="service-item-icon">🚗</div>
+            <div>
+              <h4>Autista privato</h4>
+              <p>Muoviti con comfort e discrezione. Disponibile per spostamenti giornalieri, serate, visite al territorio.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da €/giorno su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Autista%20privato" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="3">
+            <div class="service-item-icon">✈️</div>
+            <div>
+              <h4>Transfer aeroporti</h4>
+              <p>Da/per Fiumicino, Ciampino, Pisa, Firenze. Arrivi rilassato e riparti senza pensieri, in auto privata.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Prezzo per tratta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Transfer%20aeroporti" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="4">
+            <div class="service-item-icon">⛵</div>
+            <div>
+              <h4>Uscita in barca privata</h4>
+              <p>Argentario, Giglio, Giannutri — esclusiva. Giornata in mare tra le isole dell'Argentario, solo per voi.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Uscita%20in%20barca%20privata" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="5">
+            <div class="service-item-icon">💐</div>
+            <div>
+              <h4>Allestimenti romantici / eventi privati</h4>
+              <p>Tavola, fiori, luci — per ricorrenze speciali. Anniversari, compleanni, proposte: curiamo ogni dettaglio scenografico.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Allestimenti%20romantici%20e%20eventi%20privati" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ===== TAB 2: IL MEGLIO DEL TERRITORIO ===== -->
+      <div class="service-tab-panel" id="panel-territorio" data-panel="territorio" role="tabpanel" aria-labelledby="tab-territorio">
+        <div class="service-item-grid">
+
+          <article class="service-item reveal-up">
+            <div class="service-item-icon">🍷</div>
+            <div>
+              <h4>Tour cantine con degustazione</h4>
+              <p>Visita alle migliori cantine della Maremma con degustazione guidata. Morellino, Ansonica, Vermentino — il vino di questa terra.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Tour%20cantine%20con%20degustazione" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="1">
+            <div class="service-item-icon">🍽️</div>
+            <div>
+              <h4>Cooking class tradizionale</h4>
+              <p>Impara a preparare la pasta fresca, i pici, il cinghiale in umido: lezione con chef locale, prodotti a km zero, pranzo finale.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Cooking%20class%20tradizionale" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="2">
+            <div class="service-item-icon">🚴</div>
+            <div>
+              <h4>Tour e-bike</h4>
+              <p>Percorri le strade bianche e i borghi della Maremma in sella a una e-bike, guidato da chi conosce ogni angolo del territorio.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Tour%20e-bike" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="3">
+            <div class="service-item-icon">🐴</div>
+            <div>
+              <h4>Passeggiate a cavallo</h4>
+              <p>Tra macchia mediterranea e colline dorate: escursioni a cavallo per tutti i livelli, con accompagnatore esperto.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Passeggiate%20a%20cavallo" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="4">
+            <div class="service-item-icon">🥾</div>
+            <div>
+              <h4>Trekking guidato</h4>
+              <p>Sentieri naturalistici nel Parco della Maremma e sulle pendici dell'Amiata con guida ambientale escursionistica certificata.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Trekking%20guidato" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="5">
+            <div class="service-item-icon">🍄</div>
+            <div>
+              <h4>Ricerca del tartufo</h4>
+              <p>Nei boschi con i cacciatori locali e i loro lagotti: trovare il tartufo, pulirlo e assaggiarlo è un rito che si vive una volta sola.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Ricerca%20del%20tartufo" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up">
+            <div class="service-item-icon">⛵</div>
+            <div>
+              <h4>Uscita in barca condivisa</h4>
+              <p>Una giornata in mare verso le isole dell'Arcipelago Toscano, in condivisione con altri ospiti: relax, snorkeling, tramonti.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Uscita%20in%20barca%20condivisa" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="1">
+            <div class="service-item-icon">🚗</div>
+            <div>
+              <h4>Noleggio auto con consegna</h4>
+              <p>L'auto arriva direttamente alla tua villa. Scegli il modello, noi la consegniamo e la riprendiamo a fine soggiorno.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da €/giorno su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Noleggio%20auto%20con%20consegna" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="2">
+            <div class="service-item-icon">🚐</div>
+            <div>
+              <h4>Transfer locali</h4>
+              <p>Spostamenti tra i borghi, le spiagge, le terme: un servizio di transfer flessibile per muoversi senza pensieri in Maremma.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Prezzo per tratta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Transfer%20locali" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ===== TAB 3: VANTAGGI ESCLUSIVI ===== -->
+      <div class="service-tab-panel" id="panel-vantaggi" data-panel="vantaggi" role="tabpanel" aria-labelledby="tab-vantaggi">
+        <div class="service-item-grid">
+
+          <article class="service-item reveal-up">
+            <div class="service-item-icon">🍽️</div>
+            <div>
+              <h4>Ristoranti selezionati</h4>
+              <p>Prenotazione facilitata con tavolo garantito e benefit riservati agli ospiti Eleviora: antipasto di benvenuto, bottiglia in omaggio o priorità in lista d'attesa.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Accesso riservato ospiti</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20sui%20Ristoranti%20selezionati" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="1">
+            <div class="service-item-icon">🏖️</div>
+            <div>
+              <h4>Stabilimenti balneari</h4>
+              <p>Accesso convenuto a stabilimenti premium e standard sulle coste dell'Argentario, Capalbio e Orbetello: ombrellone e lettini garantiti.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Tariffa convenzionata</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20sugli%20Stabilimenti%20balneari" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="2">
+            <div class="service-item-icon">🎟️</div>
+            <div>
+              <h4>Attrazioni locali con accesso facilitato</h4>
+              <p>Musei, parchi naturali, siti etruschi, terme convenzionate: accesso facilitato e in alcuni casi prioritario per gli ospiti del circuito Eleviora.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Accesso riservato ospiti</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20sulle%20Attrazioni%20locali" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="3">
+            <div class="service-item-icon">🛍️</div>
+            <div>
+              <h4>Spacci e negozi di prodotti tipici</h4>
+              <p>Olio, pecorino, vino, miele, conserve artigianali: accesso diretto a produttori locali con sconti riservati e consegna in villa.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Convenzione esclusiva</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20sui%20Prodotti%20tipici%20e%20spacci" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ===== TAB 4: ESPERIENZE SU RICHIESTA ===== -->
+      <div class="service-tab-panel" id="panel-esclusive" data-panel="esclusive" role="tabpanel" aria-labelledby="tab-esclusive">
+        <div class="service-item-grid">
+
+          <article class="service-item reveal-up">
+            <div class="service-item-icon">🪂</div>
+            <div>
+              <h4>Volo in paracadute tandem</h4>
+              <p>Un salto nel vuoto sopra la Maremma con istruttore certificato. Adrenalina pura, vista dall'alto sul mare e sulle colline.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Volo%20in%20paracadute%20tandem" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="1">
+            <div class="service-item-icon">🕯️</div>
+            <div>
+              <h4>Cena esclusiva in location riservata</h4>
+              <p>Una cena privata in una torre medievale, una cantina storica o una terrazza con vista sul mare: location, chef, servizio — tutto incluso.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Cena%20esclusiva%20in%20location%20riservata" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="2">
+            <div class="service-item-icon">💍</div>
+            <div>
+              <h4>Proposal setup</h4>
+              <p>Il momento più importante merita una scenografia perfetta. Allestimento, fiori, musica, champagne, fotografo: organizziamo tutto noi.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Proposal%20setup" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item reveal-up" data-delay="3">
+            <div class="service-item-icon">🎉</div>
+            <div>
+              <h4>Eventi privati su misura</h4>
+              <p>Compleanno, anniversario, riunione di famiglia, team retreat: costruiamo l'evento attorno a te, dalla location al catering al programma.</p>
+              <div class="service-item-meta">
+                <span class="service-item-price">Da € su richiesta</span>
+                <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Evento%20privato%20su%20misura" class="service-item-cta" target="_blank" rel="noopener">Richiedi disponibilità <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== 3. COME FUNZIONA — PROCESS ILLUSTRATED =============== -->
+  <section class="section process-illustrated bg-light-alt" aria-label="Come funziona il servizio">
+    <div class="container">
+      <div class="section-head reveal-up">
+        <span class="overline">Il nostro metodo</span>
+        <h2>Come <em class="accent-italic">funziona</em></h2>
+        <p>Dalla prima richiesta all'esperienza vissuta: un processo semplice, curato, senza sorprese.</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="process-row reveal-up">
+        <div class="process-row-media">
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=600&fit=crop&q=80"
+               alt="Persona che scrive un messaggio WhatsApp su smartphone"
+               loading="lazy" width="800" height="600">
+        </div>
+        <div class="process-row-text">
+          <span class="process-step-num">01</span>
+          <h3>Richiesta</h3>
+          <p>Scrivici su WhatsApp o compila il form. Dicci cosa vorresti vivere — anche solo un'idea vaga è un punto di partenza.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="process-row reverse reveal-up">
+        <div class="process-row-media">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop&q=80"
+               alt="Persona che compila una proposta personalizzata a una scrivania elegante"
+               loading="lazy" width="800" height="600">
+        </div>
+        <div class="process-row-text">
+          <span class="process-step-num">02</span>
+          <h3>Proposta personalizzata</h3>
+          <p>Ti torniamo con un'idea su misura, con tempi e costi. Tutto chiaro, niente ambiguità — decidi con calma.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="process-row reveal-up">
+        <div class="process-row-media">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop&q=80"
+               alt="Stretta di mano per conferma accordo"
+               loading="lazy" width="800" height="600">
+        </div>
+        <div class="process-row-text">
+          <span class="process-step-num">03</span>
+          <h3>Conferma</h3>
+          <p>Confermi tu, poi organizziamo tutto per te. Dal primo contatto con i fornitori alla logistica: ci pensiamo noi.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="process-row reverse reveal-up">
+        <div class="process-row-media">
+          <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?w=800&h=600&fit=crop&q=80"
+               alt="Tavola apparecchiata a bordo piscina in villa toscana al tramonto"
+               loading="lazy" width="800" height="600">
+        </div>
+        <div class="process-row-text">
+          <span class="process-step-num">04</span>
+          <h3>Esperienza</h3>
+          <p>Il giorno X si apre la porta della tua villa — e del tuo soggiorno curato. Tu non devi fare nulla tranne vivere il momento.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== 4. FEATURED EXPERIENCE SPOTLIGHT =============== -->
+  <section class="section" aria-label="Esperienza signature: cena privata con chef" style="position:relative; min-height: 60vh; padding: var(--space-9) 0; color: var(--color-text-light); overflow: hidden;">
+    <div style="position:absolute; inset:0; z-index:0;">
+      <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1920&h=1080&fit=crop&q=80"
+           alt="Chef stellato che impatta un piatto raffinato durante una cena privata in villa toscana"
+           loading="lazy" width="1920" height="1080"
+           style="width:100%; height:100%; object-fit:cover; object-position:center;">
+      <div style="position:absolute; inset:0; background: linear-gradient(90deg, rgba(10,15,8,0.82) 0%, rgba(10,15,8,0.55) 60%, rgba(10,15,8,0.30) 100%);"></div>
+    </div>
+    <div class="container" style="position:relative; z-index:1;">
+      <div style="max-width: 560px;">
+        <span class="overline reveal-up" style="color: var(--color-accent, #b5a07a); letter-spacing: 0.15em;">Esperienza Signature</span>
+        <h2 class="reveal-up" data-delay="1" style="color: #fff; margin-top: var(--space-3);">
+          Cena privata con chef <em class="accent-italic">nella tua villa</em>
+        </h2>
+        <p class="reveal-up" data-delay="2" style="color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-top: var(--space-4);">
+          Un menù pensato con te, costruito sui prodotti del territorio, servito dove vorresti — a bordo piscina, sul terrazzo, nel tuo salone.
+        </p>
+        <ul class="reveal-up" data-delay="3" style="list-style:none; padding:0; margin: var(--space-5) 0; color: rgba(255,255,255,0.80); display: flex; flex-direction: column; gap: var(--space-2);">
+          <li style="display:flex; align-items:center; gap: 0.6em;"><span style="color: var(--color-accent, #b5a07a);">✦</span> Menù personalizzato</li>
+          <li style="display:flex; align-items:center; gap: 0.6em;"><span style="color: var(--color-accent, #b5a07a);">✦</span> Ingredienti locali a km zero</li>
+          <li style="display:flex; align-items:center; gap: 0.6em;"><span style="color: var(--color-accent, #b5a07a);">✦</span> Servizio completo in villa</li>
+          <li style="display:flex; align-items:center; gap: 0.6em;"><span style="color: var(--color-accent, #b5a07a);">✦</span> Abbinamento vini opzionale</li>
+        </ul>
+        <div class="btn-group reveal-up" data-delay="4">
+          <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20info%20su%20Cena%20privata%20con%20chef%20in%20villa" class="btn btn-primary" target="_blank" rel="noopener">Richiedi disponibilità</a>
+          <a href="contatti.html" class="btn btn-ghost" style="border-color: rgba(255,255,255,0.4); color:#fff;">Scopri di più</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 5. CONTEXTUAL CTA =============== -->
+  <section class="contextual-cta bg-dark" aria-label="Hai un'occasione speciale">
+    <div class="contextual-cta-inner">
+      <div class="section-head reveal-up">
+        <span class="overline">Creiamo qualcosa di unico</span>
+        <h2>Hai un'<em class="accent-italic">occasione speciale</em>?</h2>
+        <p class="reveal-up" data-delay="1">Cena riservata, proposta di matrimonio, evento privato: creiamo esperienze su misura che restano nel ricordo.</p>
+      </div>
+      <div class="btn-group reveal-up" data-delay="2">
+        <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20ho%20un%27occasione%20speciale%20e%20vorrei%20creare%20un%27esperienza%20su%20misura" class="btn btn-primary" target="_blank" rel="noopener">Parla con noi su WhatsApp</a>
+        <a href="contatti.html" class="btn btn-secondary">Scrivici dal sito</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">ELEVIORA</span>
+        <p>Property management premium per la Maremma toscana e Roma. 26 proprietà curate, concierge completo, esperienze autentiche.</p>
+      </div>
+      <div>
+        <h4>Navigazione</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="proprieta.html">Proprietà</a>
+          <a href="esperienze-servizi.html">Esperienze &amp; Servizi</a>
+          <a href="chi-siamo.html">Chi siamo</a>
+          <a href="affida-casa.html">Affida la tua casa</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <div class="footer-contact">
+          <a href="tel:+393488697862">+39 348 869 7862</a>
+          <a href="https://wa.me/393488697862" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:elevioragroup@gmail.it">elevioragroup@gmail.it</a>
+          <span>Sede legale: Via Tosco Romagnola 187, 56021 Cascina (PI)</span>
+          <span>Zona operativa: Maremma · Argentario · Roma</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Eleviora Group SRLS · P.IVA 02548570502</span>
+      <span><a href="#">Privacy</a> · <a href="#">Cookie</a> · <a href="#">Termini</a></span>
+    </div>
+  </footer>
+
+  <!-- =============== WHATSAPP FLOATING =============== -->
+  <a href="https://wa.me/393488697862?text=Ciao%20Eleviora%2C%20vorrei%20informazioni" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
