@@ -26,6 +26,7 @@
   --font-display:    'Cormorant Garamond', Georgia, serif;
   --font-body:       'Plus Jakarta Sans', system-ui, sans-serif;
   --font-accent:     'Cormorant Garamond', Georgia, serif;
+  --font-headline:   'Mea Culpa', 'Cormorant Garamond', cursive;
 
   --text-xs:    clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
   --text-sm:    clamp(0.8125rem, 0.76rem + 0.26vw, 0.875rem);
@@ -2413,3 +2414,48 @@ body.viewer-open .cursor-follower.hover {
   .reading-title { font-size: var(--text-xl); }
   .reading-body p { font-size: var(--text-sm); }
 }
+
+/* ============================================================
+   HEADLINE FONT OVERRIDE — Mea Culpa (script/decorativo)
+   ============================================================ */
+.hero-title,
+.hero-internal .hero-title,
+section h2,
+.philosophy-statement,
+.legal-hero h1,
+.reading-title {
+  font-family: var(--font-headline);
+  font-weight: 400;           /* Mea Culpa is a single-weight font */
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+/* Bump sizes so script font reads at the right visual weight */
+.hero-title {
+  font-size: clamp(3rem, 2.2rem + 4.5vw, 6.5rem);
+}
+.hero-internal .hero-title {
+  font-size: clamp(2.6rem, 2rem + 3vw, 4.5rem);
+}
+section h2 {
+  font-size: clamp(2.5rem, 1.8rem + 3vw, 4.25rem);
+}
+.philosophy-statement {
+  font-size: clamp(2.8rem, 5vw + 1rem, 5.5rem);
+  line-height: 1.05;
+}
+.legal-hero h1 {
+  font-size: clamp(3rem, 2rem + 3vw, 4.5rem);
+}
+.reading-title {
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+}
+
+/* The accent span inside hero-title should match the new font */
+.hero-title .accent-text,
+.philosophy-statement .accent-text {
+  font-family: inherit;
+}
+
+/* Keep Cormorant on smaller subheadings/utility headings (h3, h4) */
+/* These are not "headlines" in the editorial sense — they remain serif */
