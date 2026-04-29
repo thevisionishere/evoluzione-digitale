@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (currentPage >= totalLeaves) {
           counter.textContent = 'Fine';
         } else {
-          counter.textContent = currentPage + ' / ' + (totalLeaves - 1);
+          counter.textContent = '';
         }
       }
       if (prevBtn) prevBtn.disabled = currentPage <= 0;
