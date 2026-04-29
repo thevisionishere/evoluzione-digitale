@@ -2459,3 +2459,50 @@ section h2 {
 
 /* Keep Cormorant on smaller subheadings/utility headings (h3, h4) */
 /* These are not "headlines" in the editorial sense — they remain serif */
+
+/* ============================================================
+   CATALOGO COMPLETO MOSTRE (compact list, mostre.html)
+   ============================================================ */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 900px;
+  border-top: 1px solid var(--color-border-light);
+}
+.catalog-item {
+  display: grid;
+  grid-template-columns: 70px 180px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: baseline;
+}
+.catalog-year {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+}
+.catalog-place {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+}
+.catalog-venue {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+@media (max-width: 600px) {
+  .catalog-item {
+    grid-template-columns: 50px 1fr;
+    gap: var(--space-3);
+  }
+  .catalog-venue {
+    grid-column: 1 / -1;
+    margin-left: calc(50px + var(--space-3));
+    padding-left: 0;
+  }
+}
