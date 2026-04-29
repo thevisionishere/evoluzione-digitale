@@ -32,7 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================== */
   function initPreloader() {
     const preloader = document.querySelector('.preloader');
-    if (!preloader) return;
+    if (!preloader) {
+      // No preloader on this page — trigger hero reveal immediately so the
+      // hero text fades in instead of staying at opacity 0 forever.
+      triggerHeroReveal(100);
+      return;
+    }
 
     const isHome = document.body.classList.contains('page-home');
     const visited = sessionStorage.getItem('luxe-visited');
