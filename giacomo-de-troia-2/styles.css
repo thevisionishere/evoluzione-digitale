@@ -2548,11 +2548,18 @@ section h2 {
 }
 
 /* ============================================================
-   PUBLICATIONS PHOTO (artista.html)
+   PUBLICATIONS GALLERY (artista.html)
    ============================================================ */
-.publications-photo {
-  max-width: 700px;
+.publications-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  max-width: 1000px;
   margin: 0 auto var(--space-9) auto;
+  align-items: start;
+}
+.publications-photo {
+  margin: 0;
   text-align: center;
 }
 .publications-photo img {
@@ -2569,4 +2576,52 @@ section h2 {
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: var(--leading-relaxed);
+}
+@media (min-width: 768px) {
+  .publications-gallery {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+/* ============================================================
+   ARTIST IN ACTION (homepage — replaces video section)
+   ============================================================ */
+.artist-in-action-section {
+  padding: var(--section-padding) 0;
+  background: var(--color-light-alt);
+}
+.artist-action-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 1200px;
+}
+.artist-action-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.artist-action-item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+.artist-action-item:hover img {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.artist-action-item figcaption {
+  margin-top: var(--space-3);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .artist-action-grid { grid-template-columns: repeat(3, 1fr); }
 }
