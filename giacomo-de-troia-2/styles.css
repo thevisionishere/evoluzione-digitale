@@ -2546,3 +2546,27 @@ section h2 {
     padding-left: 0;
   }
 }
+
+/* ============================================================
+   PUBLICATIONS PHOTO (artista.html)
+   ============================================================ */
+.publications-photo {
+  max-width: 700px;
+  margin: 0 auto var(--space-9) auto;
+  text-align: center;
+}
+.publications-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+.publications-photo figcaption {
+  margin-top: var(--space-4);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
