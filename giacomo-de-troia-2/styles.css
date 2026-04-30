@@ -2625,3 +2625,4 @@ section h2 {
 @media (min-width: 768px) {
   .artist-action-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
