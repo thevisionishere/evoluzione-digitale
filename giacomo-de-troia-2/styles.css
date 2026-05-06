@@ -1237,6 +1237,25 @@ body.viewer-open .cursor-follower.hover {
   .artist-work-item img { height: 450px; }
 }
 
+/* Mobile: stack vertically — horizontal scroll feels broken on small screens */
+@media (max-width: 767px) {
+  .artist-work-strip {
+    flex-direction: column;
+    overflow-x: visible;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-4);
+  }
+  .artist-work-item {
+    width: 100%;
+    max-width: 500px;
+  }
+  .artist-work-item img {
+    height: auto;
+    max-height: 360px;
+  }
+}
+
 /* ============================================================
    VIDEO SHOWCASE
    ============================================================ */
