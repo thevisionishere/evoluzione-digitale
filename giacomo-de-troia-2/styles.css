@@ -911,8 +911,10 @@ body.viewer-open .cursor-follower.hover {
   color: var(--color-text-muted);
 }
 
-@media (max-width: 767px) {
-  .gallery-walk-wrapper { height: auto; }
+/* Touch devices (incl. tablet >= 768px) — JS sticky scroll isn't initialized.
+   Fall back to horizontal scroll so the section doesn't appear blank. */
+@media (hover: none), (max-width: 767px) {
+  .gallery-walk-wrapper { height: auto !important; }
   .gallery-walk-sticky {
     position: relative;
     height: auto;
@@ -922,9 +924,14 @@ body.viewer-open .cursor-follower.hover {
     -webkit-overflow-scrolling: touch;
     padding: var(--space-5) 0;
   }
-  .gallery-walk-track { gap: var(--space-5); }
+  .gallery-walk-track {
+    gap: var(--space-5);
+    transform: none !important;
+    padding: 0 5vw;
+  }
   .gallery-walk-item {
     width: 85vw;
+    max-width: 600px;
     scroll-snap-align: center;
   }
 }
@@ -1454,7 +1461,9 @@ body.viewer-open .cursor-follower.hover {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   overflow: hidden;
+  contain: layout paint;
 }
 .leaf-front {
   border-radius: 0 4px 4px 0;
