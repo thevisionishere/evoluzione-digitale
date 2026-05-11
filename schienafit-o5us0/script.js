@@ -619,6 +619,22 @@ function initCustomCursor() {
   let followerX = -200, followerY = -200;
   let cursorActivated = false;
 
+  // Detect dark/teal background sections — invert cursor to white for visibility
+  const darkSelectors = '.numbers, .cta-banner, .footer, .section-dark, [data-cursor="light"]';
+  let isOverDark = false;
+  let checkPending = false;
+
+  function updateCursorContrast() {
+    checkPending = false;
+    const el = document.elementFromPoint(mouseX, mouseY);
+    const overDark = !!(el && el.closest && el.closest(darkSelectors));
+    if (overDark !== isOverDark) {
+      isOverDark = overDark;
+      dot.classList.toggle('is-light', isOverDark);
+      follower.classList.toggle('is-light', isOverDark);
+    }
+  }
+
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -627,7 +643,19 @@ function initCustomCursor() {
       cursorActivated = true;
       document.body.classList.add('custom-cursor');
     }
+    if (!checkPending) {
+      checkPending = true;
+      requestAnimationFrame(updateCursorContrast);
+    }
   });
+
+  // Also re-check on scroll (background changes as sections pass under cursor)
+  window.addEventListener('scroll', () => {
+    if (!checkPending && cursorActivated) {
+      checkPending = true;
+      requestAnimationFrame(updateCursorContrast);
+    }
+  }, { passive: true });
 
   function update() {
     followerX += (mouseX - followerX) * 0.16;

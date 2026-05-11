@@ -19,7 +19,9 @@
 
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="index.html" class="header__brand" aria-label="Schienafit — Home">schienafit<span class="header__brand-dot" aria-hidden="true"></span></a>
+      <a href="index.html" class="header__brand" aria-label="Schienafit — Home">
+        <img src="images/logo-schienafit.png" alt="Schienafit" class="header__brand-img" width="200" height="40">
+      </a>
       <nav class="header__nav" role="navigation" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="servizi.html">Servizi</a>
@@ -91,28 +93,84 @@
       </div>
     </section>
 
-    <!-- ABOUT NARRATIVE (Layout B) -->
-    <section class="about-narrative" aria-labelledby="about-narrative-title">
-      <div class="about-narrative__inner">
-        <div class="section-header reveal-up" style="margin-bottom: 0;">
-          <span class="eyebrow">Il percorso</span>
-          <h2 class="about-narrative__title" id="about-narrative-title">Come ho costruito Schienafit.</h2>
+    <!-- IL PERCORSO — Editorial Story rebuild -->
+    <section class="story" aria-labelledby="story-title">
+      <div class="container">
+        <div class="story__container">
+          <div class="story__intro reveal-up">
+            <span class="eyebrow">Il percorso</span>
+            <h2 id="story-title">Come ho costruito Schienafit.</h2>
+          </div>
+
+          <article class="story__chapter reveal-up">
+            <div class="story__chapter-marker">
+              <span class="story__chapter-num">01</span>
+              <span class="story__chapter-label">2019 — L'inizio</span>
+            </div>
+            <div class="story__chapter-body">
+              <h3 class="story__chapter-title">Il momento in cui ho detto basta ai protocolli identici.</h3>
+              <p>Ho iniziato a occuparmi seriamente di posturologia nel 2019. Non era il punto di arrivo: era un punto di partenza, quello in cui ho deciso che il modo in cui le persone con mal di schiena venivano accompagnate non mi bastava.</p>
+              <div class="story__highlight">
+                <p>Troppi protocolli identici per situazioni diverse. Troppe "intuizioni" senza misurazioni dietro.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="story__chapter reveal-up">
+            <div class="story__chapter-marker">
+              <span class="story__chapter-num">02</span>
+              <span class="story__chapter-label">Anni di clinica</span>
+            </div>
+            <div class="story__chapter-body">
+              <h3 class="story__chapter-title">Persone diverse, una frustrazione comune.</h3>
+              <p>Ho lavorato con persone diversissime tra loro: adolescenti con scoliosi, impiegati con cervicalgie, sportivi con sciatalgie ricorrenti. La cosa che li accomunava non era il dolore.</p>
+              <p>Era la frustrazione di sentirsi dire le stesse cose, di sentirsi proporre gli stessi esercizi, di non avere mai un dato chiaro di dove stessero migliorando.</p>
+            </div>
+          </article>
+
+          <blockquote class="story__pullquote reveal-up">
+            &ldquo;Ogni schiena ha la sua storia. Il mio lavoro è imparare a leggerla.&rdquo;
+          </blockquote>
+
+          <article class="story__chapter reveal-up">
+            <div class="story__chapter-marker">
+              <span class="story__chapter-num">03</span>
+              <span class="story__chapter-label">La svolta</span>
+            </div>
+            <div class="story__chapter-body">
+              <h3 class="story__chapter-title">Da quella frustrazione è nato il metodo A.A.P.E.C.</h3>
+              <p>Non è un'invenzione folgorante: è un protocollo onesto che mette al primo posto l'accoglienza e l'anamnesi, e che usa la tecnologia per togliere l'arbitrio dalla valutazione.</p>
+              <p>Cinque fasi, ognuna con un output chiaro. Niente magia, solo metodo.</p>
+            </div>
+          </article>
+
+          <article class="story__chapter reveal-up">
+            <div class="story__chapter-marker">
+              <span class="story__chapter-num">04</span>
+              <span class="story__chapter-label">Investimento</span>
+            </div>
+            <div class="story__chapter-body">
+              <h3 class="story__chapter-title">Strumenti diagnostici, non opinioni.</h3>
+              <p>L'investimento più importante che ho fatto è stato in strumenti diagnostici: software 3D della colonna, pedana di forza, goniometro digitale. Strumenti che non sostituiscono lo sguardo clinico — lo affiancano e lo rendono comunicabile.</p>
+              <div class="story__highlight">
+                <p>Quando un paziente vede su uno schermo come si è modificata la sua postura in dodici settimane, succede qualcosa che le parole non possono fare.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="story__chapter reveal-up">
+            <div class="story__chapter-marker">
+              <span class="story__chapter-num">05</span>
+              <span class="story__chapter-label">Oggi</span>
+            </div>
+            <div class="story__chapter-body">
+              <h3 class="story__chapter-title">Uno studio piccolo, costruito con cura.</h3>
+              <p>Oggi Schienafit è uno studio piccolo, ma costruito con cura. Lavoro su appuntamento, con un solo paziente per volta o piccoli gruppi quando ha senso.</p>
+              <p>Non punto al volume: punto al fatto che ogni persona che entra qui ne esca con qualcosa di reale — un piano misurabile, una comprensione nuova del proprio corpo, e una direzione.</p>
+            </div>
+          </article>
+
         </div>
-        <p class="about-narrative__lead reveal-up">Ho iniziato a occuparmi seriamente di posturologia nel 2019. Non era il punto di arrivo: era un punto di partenza, quello in cui ho deciso che il modo in cui le persone con mal di schiena venivano accompagnate non mi bastava. Troppi protocolli identici per situazioni diverse. Troppe "intuizioni" senza misurazioni dietro.</p>
-        <p class="about-narrative__lead reveal-up">In quegli anni ho lavorato con persone diversissime tra loro — adolescenti con scoliosi, impiegati con cervicalgie, sportivi con sciatalgie ricorrenti. La cosa che li accomunava non era il dolore, ma la frustrazione di sentirsi dire le stesse cose, di sentirsi proporre gli stessi esercizi, di non avere mai un dato chiaro di dove stessero migliorando.</p>
-
-        <blockquote class="about-narrative__pullquote reveal-up">
-          &ldquo;Ogni schiena ha la sua storia. Il mio lavoro è imparare a leggerla.&rdquo;
-        </blockquote>
-
-        <p class="about-narrative__lead reveal-up">Da quella frustrazione è nato il metodo A.A.P.E.C. Non è un'invenzione folgorante: è un protocollo onesto che mette al primo posto l'accoglienza e l'anamnesi, e che usa la tecnologia per togliere l'arbitrio dalla valutazione. Cinque fasi, ognuna con un output chiaro. Niente magia, solo metodo.</p>
-        <p class="about-narrative__lead reveal-up">L'investimento più importante che ho fatto in questi anni è stato quello in strumenti diagnostici: software 3D della colonna, pedana di forza, goniometro digitale. Strumenti che non sostituiscono lo sguardo clinico — lo affiancano e lo rendono comunicabile. Quando un paziente vede su uno schermo come si è modificata la sua postura in dodici settimane, succede qualcosa che le parole non possono fare.</p>
-
-        <div class="about-narrative__strip reveal-up">
-          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1800&h=771&fit=crop&q=80" loading="lazy" width="1800" height="771" alt="Riccardo Andreani al lavoro con un paziente nel suo studio di Marina di Carrara">
-        </div>
-
-        <p class="about-narrative__lead reveal-up">Oggi Schienafit è uno studio piccolo, ma costruito con cura. Lavoro su appuntamento, con un solo paziente per volta o piccoli gruppi quando ha senso. Non punto al volume: punto al fatto che ogni persona che entra qui ne esca con qualcosa di reale — un piano misurabile, una comprensione nuova del proprio corpo, e una direzione.</p>
       </div>
     </section>
 
@@ -196,7 +254,7 @@
       <div class="container">
         <div class="numbers__header reveal-up">
           <span class="eyebrow eyebrow--on-dark">In numeri</span>
-          <h2 id="numbers-chisono-title">Pochi, ma onesti.</h2>
+          <h2 id="numbers-chisono-title">Cinque anni di posturologia, in tre cifre.</h2>
         </div>
         <div class="numbers__grid" style="grid-template-columns: repeat(3, 1fr); max-width: 880px; margin-inline: auto;">
           <div class="number-item reveal-up">
@@ -236,7 +294,9 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
       <div class="footer__brand-block">
-        <a href="index.html" class="footer__brand">schienafit<span class="footer__brand-dot" aria-hidden="true"></span></a>
+        <a href="index.html" class="footer__brand" aria-label="Schienafit — Home">
+          <img src="images/logo-schienafit.png" alt="Schienafit" class="footer__brand-img" width="220" height="52">
+        </a>
         <p class="footer__tagline">L'alleato della tua schiena.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/super_schiena/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

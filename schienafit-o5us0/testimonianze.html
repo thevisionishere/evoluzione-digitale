@@ -19,7 +19,9 @@
 
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="index.html" class="header__brand" aria-label="Schienafit — Home">schienafit<span class="header__brand-dot" aria-hidden="true"></span></a>
+      <a href="index.html" class="header__brand" aria-label="Schienafit — Home">
+        <img src="images/logo-schienafit.png" alt="Schienafit" class="header__brand-img" width="200" height="40">
+      </a>
       <nav class="header__nav" role="navigation" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="servizi.html">Servizi</a>
@@ -83,27 +85,46 @@
       </div>
     </section>
 
-    <!-- FEATURED STORY -->
+    <!-- TRUST RATING (Real Google reviews via Trustindex) -->
     <section class="featured-story" aria-labelledby="featured-title">
       <div class="container">
-        <div class="featured-story__inner">
-          <div class="featured-story__content reveal-up">
-            <span class="eyebrow">La storia di Marco</span>
-            <h2 class="featured-story__title" id="featured-title">10 anni di lombalgia. Tre mesi per ripartire.</h2>
-            <div class="featured-story__body">
-              <p>Marco è arrivato in studio con un'aria stanca. Quarantasette anni, impiegato in un ufficio amministrativo, mal di schiena basso ricorrente da quando ne aveva trentotto. Aveva provato un po' di tutto — fisioterapie, palestra generica, un paio di trattamenti osteopatici. "Ogni volta sembrava funzionare. Per due mesi. Poi tornava." Era arrivato al punto di considerare il dolore parte del pacchetto della vita adulta.</p>
-              <p>La prima valutazione bio-funzionale ha mostrato quello che nessuna risonanza poteva mostrare: uno spostamento del baricentro asimmetrico, un'antiversione bacino marcata, una rigidità dorsale che compensava da anni una postura di lavoro sedentaria. Il software 3D ha reso visibile in un'immagine quello che il suo corpo cercava di dirgli da una decade.</p>
-              <p>Il piano è stato costruito su misura: due sessioni a settimana per le prime sei settimane, esercizi di stabilizzazione lombare, mobilità dorsale, lavoro propriocettivo. A casa, dieci minuti al giorno di routine specifica. Il check-up a otto settimane ha mostrato miglioramenti misurabili — non sensazioni, numeri.</p>
-              <p>Tre mesi dopo l'inizio, Marco ha dormito una settimana intera senza dolore. Non era mai successo dal 2015. Oggi continua con sessioni di mantenimento ogni due settimane e check-up trimestrali.</p>
-            </div>
-            <span class="featured-story__tag">Lombalgia cronica · Sedentarietà · Recupero in 12 settimane</span>
-            <blockquote class="featured-story__quote">"Adesso so cosa fare se il dolore prova a tornare. Questa è la differenza."</blockquote>
-            <p class="featured-story__attr">Marco P., 47 anni, impiegato. Percorso A.A.P.E.C. completato nel 2025.</p>
+
+        <div class="trust-rating reveal-up">
+          <span class="trust-rating__label">ECCELLENTE</span>
+          <div class="trust-rating__score">
+            <span class="trust-rating__value">5,0</span>
+            <span class="trust-rating__stars" aria-label="5 stelle su 5">★★★★★</span>
           </div>
-          <div class="featured-story__image reveal-up" data-delay="1">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop&q=80" loading="lazy" width="800" height="1000" alt="Uomo sereno e attivo dopo percorso posturale completato">
-          </div>
+          <span class="trust-rating__count">In base a 109 recensioni Google</span>
+          <span class="trust-rating__source">
+            <svg class="trust-rating__source-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Verificate Google
+          </span>
         </div>
+
+        <!-- Featured: Santo Tavella (review più dettagliata) -->
+        <article class="testimonial-featured reveal-up" id="featured-title">
+          <div class="testimonial-featured__header">
+            <div class="testimonial-featured__avatar" aria-hidden="true">S</div>
+            <div class="testimonial-featured__meta">
+              <span class="testimonial-featured__name">Santo Tavella</span>
+              <span class="testimonial-featured__date">28 Novembre 2023</span>
+              <span class="testimonial-featured__stars" aria-label="5 stelle su 5">★★★★★</span>
+            </div>
+          </div>
+          <div class="testimonial-featured__quote">
+            <p>Sono un settantenne con alle spalle una storia di mal di schiena importante, originatosi oltre 20 anni addietro da un paio di ernie discali, che mi ha fortemente condizionato negli anni successivi.</p>
+            <p>Con le cure mediche e con la fisioterapia, a suo tempo, il problema principale è stato superato, ma ho sempre convissuto con un mal di schiena cronico, che in qualche modo ha reso sempre meno piacevoli le varie attività, quotidiane o sportive.</p>
+            <p>Alla fine ho voluto sperimentare le capacità di un posturologo e mi sono rivolto al centro Super Schiena, di Riccardo Andreani. Le mie esperienze precedenti non mi portavano ad essere molto ottimista, ma con mia grande sorpresa e soddisfazione, <strong>dopo neppure 5 incontri con Riccardo, la situazione è completamente cambiata</strong>.</p>
+            <p>La mia schiena vive una fase di benessere che non ricordavo da lunghissimo tempo. È molto appagante alzarsi dal letto senza alcuna sensazione sgradevole ed essere pronto ad affrontare le varie attività della giornata. Anche l'umore e la disponibilità verso gli altri ne risentono positivamente.</p>
+            <p>Riccardo è un professionista molto concreto, senza tanti fronzoli e teorizzazioni, dimostra con i fatti la concretezza e la produttività delle sue conoscenze. Per la mia esperienza personale non posso che parlarne bene e consigliarlo.</p>
+          </div>
+          <span class="testimonial-featured__source">
+            <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Recensione Google verificata
+          </span>
+        </article>
+
       </div>
     </section>
 
@@ -112,59 +133,87 @@
       <div class="container">
         <div class="section-header reveal-up">
           <span class="eyebrow">Altre voci</span>
-          <h2 id="reviews-title">Quello che ci dicono dopo il percorso.</h2>
+          <h2 id="reviews-title">Quello che dicono i pazienti dopo il percorso.</h2>
         </div>
 
         <div class="reviews-grid">
 
           <article class="review-card reveal-up">
-            <p class="review-card__quote">Pensavo di dover convivere con la cervicale per sempre. Riccardo mi ha mostrato che era una conseguenza, non una causa. Cambiare prospettiva mi ha cambiato anche le giornate.</p>
-            <p class="review-card__attr">
-              <strong>Anna M., 38 anni</strong>
-              Cervicalgia da postura lavorativa
-            </p>
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">R</div>
+              <div class="review-card__meta">
+                <span class="review-card__name">Raffaele Angelino</span>
+                <span class="review-card__date">31 Ottobre 2023</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="review-card__quote">È il posto giusto se vuoi essere seguito al meglio e risolvere o migliorare i tuoi problemi di schiena, se vuoi riacquisire elasticità muscolare e riattivare un percorso equilibrato di allenamento. Riccardo è persona competente, educata ma sopratutto preparata, sempre disponibile all'ascolto dei tuoi problemi fisici e alla ricerca delle migliori soluzioni. Da quando frequento ne vedo i benefici. Lo consiglio.</p>
           </article>
 
           <article class="review-card reveal-up" data-delay="1">
-            <p class="review-card__quote">Il software 3D mi ha fatto vedere cose che nessun fisioterapista mi aveva mai mostrato. Non è marketing, è dato. E quando i dati cambiano nel check-up successivo, è una soddisfazione concreta.</p>
-            <p class="review-card__attr">
-              <strong>Luca R., 52 anni</strong>
-              Lombalgia + dorsalgia
-            </p>
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">S</div>
+              <div class="review-card__meta">
+                <span class="review-card__name">Simona Campaniello</span>
+                <span class="review-card__date">31 Ottobre 2023</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="review-card__quote">Professionalità, pulizia e competenza. Riccardo è sempre disponibile ad ascoltare i problemi per trovare le migliori soluzioni. Da quando frequento sto meglio e il mio problema di schiena sta migliorando. Lo consiglio vivamente.</p>
           </article>
 
           <article class="review-card reveal-up" data-delay="2">
-            <p class="review-card__quote">Mio figlio ha 14 anni e una scoliosi leggera. Il piano di Schienafit ci ha dato uno strumento concreto, non solo allarme. Sapere cosa fare ogni settimana ha tolto tanta ansia a tutta la famiglia.</p>
-            <p class="review-card__attr">
-              <strong>Sara V., madre</strong>
-              Scoliosi adolescenziale del figlio
-            </p>
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">C</div>
+              <div class="review-card__meta">
+                <span class="review-card__name">Cinzia Ricci</span>
+                <span class="review-card__date">18 Maggio 2023</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="review-card__quote">Riccardo è un professionista eccellente, ti segue con costanza, delicatezza e gentilezza. Da quando frequento la sua palestra ho avuto notevoli miglioramenti. Lo consiglio vivamente.</p>
           </article>
 
           <article class="review-card reveal-up">
-            <p class="review-card__quote">Sono tornato a correre dopo 2 anni. Senza dolore. Pensavo non fosse più possibile e invece era una questione di metodo, non di volontà.</p>
-            <p class="review-card__attr">
-              <strong>Davide F., 45 anni</strong>
-              Recupero da ernia lombare
-            </p>
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">A</div>
+              <div class="review-card__meta">
+                <span class="review-card__name">Antonella Bertagnini</span>
+                <span class="review-card__date">19 Maggio 2023</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="review-card__quote">Competenza, professionalità e serietà caratterizzano il posturologo Riccardo Andreani. Esperienza più che positiva a Super Schiena.</p>
           </article>
 
           <article class="review-card reveal-up" data-delay="1">
-            <p class="review-card__quote">L'anamnesi è stata diversa da tutte le precedenti. Mi sentivo ascoltata, non interrogata. È la prima volta che mi è stato chiesto anche come stessi emotivamente — e che ha avuto un senso ai fini del piano.</p>
-            <p class="review-card__attr">
-              <strong>Elena T., 50 anni</strong>
-              Sciatalgia ricorrente
-            </p>
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">C</div>
+              <div class="review-card__meta">
+                <span class="review-card__name">Christian</span>
+                <span class="review-card__date">19 Maggio 2023</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="review-card__quote">Avevo un problema inizialmente alla schiena, curato in poche sedute. Poi mi si è presentata la pubalgia e con qualche seduta è stata subito curata. A livello personale e professionale il numero 1.</p>
           </article>
 
           <article class="review-card reveal-up" data-delay="2">
-            <p class="review-card__quote">Il check-up periodico è ciò che mi dà la sicurezza che funziona davvero. Vedere i progressi nei numeri, non solo sentirli, è un altro livello di consapevolezza.</p>
-            <p class="review-card__attr">
-              <strong>Marco G., 41 anni</strong>
-              Postura lavorativa
-            </p>
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">F</div>
+              <div class="review-card__meta">
+                <span class="review-card__name">Free Spirit</span>
+                <span class="review-card__date">23 Giugno 2023</span>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="review-card__quote">Ottimo centro posturale diretto da Riccardo, che sa seguirti e consigliarti per risolvere i problemi di schiena.</p>
           </article>
 
+        </div>
+
+        <div class="reveal-up" style="text-align: center; margin-top: var(--space-7);">
+          <a href="https://www.google.com/search?q=Schienafit+Marina+di+Carrara+recensioni" target="_blank" rel="noopener noreferrer" class="btn-arrow">Leggi tutte le recensioni su Google</a>
         </div>
       </div>
     </section>
@@ -197,7 +246,7 @@
     <!-- CTA -->
     <section class="cta-banner" aria-labelledby="cta-test-title">
       <div class="cta-banner__image" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1920&h=820&fit=crop&q=80" loading="lazy" width="1920" height="820" alt="">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&h=820&fit=crop&q=80" loading="lazy" width="1920" height="820" alt="">
       </div>
       <div class="cta-banner__inner">
         <span class="eyebrow eyebrow--on-dark">Il prossimo capitolo</span>
@@ -222,7 +271,9 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
       <div class="footer__brand-block">
-        <a href="index.html" class="footer__brand">schienafit<span class="footer__brand-dot" aria-hidden="true"></span></a>
+        <a href="index.html" class="footer__brand" aria-label="Schienafit — Home">
+          <img src="images/logo-schienafit.png" alt="Schienafit" class="footer__brand-img" width="220" height="52">
+        </a>
         <p class="footer__tagline">L'alleato della tua schiena.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/super_schiena/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

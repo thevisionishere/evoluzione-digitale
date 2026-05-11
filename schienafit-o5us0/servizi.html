@@ -20,7 +20,7 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="index.html" class="header__brand" aria-label="Schienafit — Home">
-        schienafit<span class="header__brand-dot" aria-hidden="true"></span>
+        <img src="images/logo-schienafit.png" alt="Schienafit" class="header__brand-img" width="200" height="40">
       </a>
       <nav class="header__nav" role="navigation" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
@@ -131,7 +131,7 @@
 
         <article class="service-row reveal-up" id="checkup">
           <div class="service-row__image">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&h=675&fit=crop&q=80" loading="lazy" width="900" height="675" alt="Analisi dati posturali e report di monitoraggio progressi">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&h=675&fit=crop&q=80" loading="lazy" width="900" height="675" alt="Paziente uomo in sessione di check-up posturale con il professionista">
           </div>
           <div class="service-row__content">
             <span class="eyebrow">Fase 3</span>
@@ -149,76 +149,91 @@
       </div>
     </section>
 
-    <!-- IL METODO A.A.P.E.C. — Illustrated Steps -->
-    <section class="method-steps" id="metodo" aria-labelledby="metodo-aapec-title">
+    <!-- IL METODO A.A.P.E.C. — Journey rebuild -->
+    <section class="method-journey" id="metodo" aria-labelledby="metodo-aapec-title">
       <div class="container">
-        <div class="section-header reveal-up">
+        <div class="method-journey__intro reveal-up">
           <span class="eyebrow">Il metodo</span>
           <h2 id="metodo-aapec-title">A.A.P.E.C. — Il nostro acronimo, la tua via.</h2>
           <p class="lead" style="margin-inline: auto;">Cinque fasi pensate per accompagnare ogni persona dal primo "ciao" al check-up che misura i suoi progressi nel tempo.</p>
         </div>
 
-        <div class="method-steps__list">
+        <div class="method-journey__list">
 
-          <div class="method-step reveal-up">
-            <div class="method-step__visual"><span class="method-step__letter">A</span></div>
-            <div class="method-step__content">
-              <span class="method-step__phase">Fase 1 di 5</span>
-              <h3 class="method-step__title">Accoglienza</h3>
-              <p class="method-step__desc">Il primo incontro non è una valutazione tecnica: è una conversazione. Vogliamo capire chi sei, da dove arrivi, cosa ti ha portato qui, quali sono i tuoi obiettivi reali. Senza fretta. Senza protocolli pronti.</p>
-              <div class="method-step__output">
-                <strong>Durata indicativa</strong>30 minuti — risultato: comprensione del contesto e degli obiettivi personali
+          <article class="journey-step reveal-up">
+            <div class="journey-step__visual">
+              <span class="journey-step__count">Fase 1 di 5</span>
+              <span class="journey-step__letter">A</span>
+            </div>
+            <div class="journey-step__content">
+              <h3 class="journey-step__title">Accoglienza</h3>
+              <p class="journey-step__desc">Il primo incontro non è una valutazione tecnica: è una conversazione. Vogliamo capire chi sei, da dove arrivi, cosa ti ha portato qui, quali sono i tuoi obiettivi reali. Senza fretta. Senza protocolli pronti.</p>
+              <div class="journey-step__meta">
+                <span class="journey-step__meta-item"><strong>Durata</strong>30 minuti</span>
+                <span class="journey-step__meta-item"><strong>Risultato</strong>Comprensione contesto e obiettivi</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="method-step method-step--reverse reveal-up">
-            <div class="method-step__visual"><span class="method-step__letter">A</span></div>
-            <div class="method-step__content">
-              <span class="method-step__phase">Fase 2 di 5</span>
-              <h3 class="method-step__title">Anamnesi</h3>
-              <p class="method-step__desc">Raccogliamo la tua storia. Storia clinica, certo, ma anche quella funzionale ed emotiva. Le tue abitudini, il tuo lavoro, gli infortuni, i carichi quotidiani. Il dolore è quasi sempre un risultato — qui scopriamo gli ingredienti che lo hanno cucinato.</p>
-              <div class="method-step__output">
-                <strong>Durata indicativa</strong>45 minuti — risultato: profilo bio-funzionale completo e prime ipotesi di lavoro
+          <article class="journey-step reveal-up">
+            <div class="journey-step__visual">
+              <span class="journey-step__count">Fase 2 di 5</span>
+              <span class="journey-step__letter">A</span>
+            </div>
+            <div class="journey-step__content">
+              <h3 class="journey-step__title">Anamnesi</h3>
+              <p class="journey-step__desc">Raccogliamo la tua storia. Clinica, certo, ma anche funzionale ed emotiva. Le tue abitudini, il tuo lavoro, gli infortuni, i carichi quotidiani. Il dolore è quasi sempre un risultato — qui scopriamo gli ingredienti che lo hanno cucinato.</p>
+              <div class="journey-step__meta">
+                <span class="journey-step__meta-item"><strong>Durata</strong>45 minuti</span>
+                <span class="journey-step__meta-item"><strong>Risultato</strong>Profilo bio-funzionale completo</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="method-step reveal-up">
-            <div class="method-step__visual"><span class="method-step__letter">P</span></div>
-            <div class="method-step__content">
-              <span class="method-step__phase">Fase 3 di 5</span>
-              <h3 class="method-step__title">Programmazione</h3>
-              <p class="method-step__desc">Adesso entra la tecnologia. Software 3D, pedana di forza, goniometro digitale: misuriamo invece di stimare. Sulla base dei dati e di quello che hai raccontato, disegniamo un piano che ha senso per te. Numeri prima, intuizioni dopo.</p>
-              <div class="method-step__output">
-                <strong>Durata indicativa</strong>60 minuti — risultato: piano personalizzato, dettagliato, misurabile
+          <article class="journey-step reveal-up">
+            <div class="journey-step__visual">
+              <span class="journey-step__count">Fase 3 di 5</span>
+              <span class="journey-step__letter">P</span>
+            </div>
+            <div class="journey-step__content">
+              <h3 class="journey-step__title">Programmazione</h3>
+              <p class="journey-step__desc">Adesso entra la tecnologia. Software 3D, pedana di forza, goniometro digitale: misuriamo invece di stimare. Sulla base dei dati e di quello che hai raccontato, disegniamo un piano che ha senso per te. Numeri prima, intuizioni dopo.</p>
+              <div class="journey-step__meta">
+                <span class="journey-step__meta-item"><strong>Durata</strong>60 minuti</span>
+                <span class="journey-step__meta-item"><strong>Risultato</strong>Piano personalizzato e misurabile</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="method-step method-step--reverse reveal-up">
-            <div class="method-step__visual"><span class="method-step__letter">E</span></div>
-            <div class="method-step__content">
-              <span class="method-step__phase">Fase 4 di 5</span>
-              <h3 class="method-step__title">Esercizi</h3>
-              <p class="method-step__desc">Il piano diventa pratica. Sessioni individuali o in piccoli gruppi, con esercizi specifici per le tue aree di lavoro. Ti spieghiamo sempre perché stiamo facendo ciò che stiamo facendo — perché la consapevolezza è metà del risultato.</p>
-              <div class="method-step__output">
-                <strong>Durata indicativa</strong>Sessioni di 50–60 minuti — risultato: riduzione progressiva del dolore + nuova consapevolezza posturale
+          <article class="journey-step reveal-up">
+            <div class="journey-step__visual">
+              <span class="journey-step__count">Fase 4 di 5</span>
+              <span class="journey-step__letter">E</span>
+            </div>
+            <div class="journey-step__content">
+              <h3 class="journey-step__title">Esercizi</h3>
+              <p class="journey-step__desc">Il piano diventa pratica. Sessioni individuali o in piccoli gruppi, con esercizi specifici per le tue aree di lavoro. Ti spieghiamo sempre perché stiamo facendo ciò che stiamo facendo — la consapevolezza è metà del risultato.</p>
+              <div class="journey-step__meta">
+                <span class="journey-step__meta-item"><strong>Durata</strong>Sessioni 50–60 min</span>
+                <span class="journey-step__meta-item"><strong>Risultato</strong>Riduzione del dolore + consapevolezza</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="method-step reveal-up">
-            <div class="method-step__visual"><span class="method-step__letter">C</span></div>
-            <div class="method-step__content">
-              <span class="method-step__phase">Fase 5 di 5</span>
-              <h3 class="method-step__title">Check-up</h3>
-              <p class="method-step__desc">Ogni 6–12 settimane rifacciamo le misurazioni con gli stessi strumenti dell'inizio. I tuoi progressi non sono un'opinione: sono nei numeri. Se serve aggiustiamo la rotta. Il check-up è anche il momento in cui ricordi a te stesso da dove sei partito.</p>
-              <div class="method-step__output">
-                <strong>Durata indicativa</strong>30–45 minuti — risultato: dati di progresso documentati + aggiustamenti del piano
+          <article class="journey-step reveal-up">
+            <div class="journey-step__visual">
+              <span class="journey-step__count">Fase 5 di 5</span>
+              <span class="journey-step__letter">C</span>
+            </div>
+            <div class="journey-step__content">
+              <h3 class="journey-step__title">Check-up</h3>
+              <p class="journey-step__desc">Ogni 6–12 settimane rifacciamo le misurazioni con gli stessi strumenti dell'inizio. I tuoi progressi non sono un'opinione: sono nei numeri. Se serve aggiustiamo la rotta. Il check-up è anche il momento in cui ricordi a te stesso da dove sei partito.</p>
+              <div class="journey-step__meta">
+                <span class="journey-step__meta-item"><strong>Durata</strong>30–45 minuti</span>
+                <span class="journey-step__meta-item"><strong>Risultato</strong>Dati di progresso documentati</span>
               </div>
             </div>
-          </div>
+          </article>
 
         </div>
 
@@ -349,7 +364,9 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
       <div class="footer__brand-block">
-        <a href="index.html" class="footer__brand">schienafit<span class="footer__brand-dot" aria-hidden="true"></span></a>
+        <a href="index.html" class="footer__brand" aria-label="Schienafit — Home">
+          <img src="images/logo-schienafit.png" alt="Schienafit" class="footer__brand-img" width="220" height="52">
+        </a>
         <p class="footer__tagline">L'alleato della tua schiena.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/super_schiena/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

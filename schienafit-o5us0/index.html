@@ -33,7 +33,7 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="index.html" class="header__brand" aria-label="Schienafit — Home">
-        schienafit<span class="header__brand-dot" aria-hidden="true"></span>
+        <img src="images/logo-schienafit.png" alt="Schienafit" class="header__brand-img" width="200" height="40">
       </a>
       <nav class="header__nav" role="navigation" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="hero__visual reveal-up" data-delay="2">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&h=1125&fit=crop&q=80" width="900" height="1125" alt="Sessione di valutazione posturale con paziente in studio luminoso">
+          <img src="images/riccardo-andreani.png" width="1024" height="1024" alt="Riccardo Andreani, fondatore di Schienafit e posturologo a Marina di Carrara">
           <div class="hero__badge">
             <div class="hero__badge-avatar" aria-hidden="true">R</div>
             <div class="hero__badge-text">
@@ -165,125 +165,56 @@
       </div>
     </section>
 
-    <!-- METHOD VISUALIZER (Signature 2) -->
-    <section class="method-viz" id="metodo" aria-labelledby="method-title">
-      <div class="method-viz__header">
-        <div>
+    <!-- A.A.P.E.C. CLEAN STEPPER -->
+    <section class="aapec-clean" id="metodo" aria-labelledby="method-title">
+      <div class="container">
+        <div class="aapec-clean__header reveal-up">
           <span class="eyebrow">Il metodo</span>
-          <h2 class="method-viz__title reveal-up" id="method-title">A.A.P.E.C. — Cinque fasi, un percorso.</h2>
-        </div>
-        <p class="method-viz__lead reveal-up" data-delay="1">Non c'è un protocollo che vada bene per tutti. C'è un percorso che funziona se è costruito su di te, misurato, e seguito nel tempo.</p>
-      </div>
-
-      <div class="method-viz__panels reveal-up" data-delay="2" role="tablist" aria-label="Fasi del metodo A.A.P.E.C.">
-        <div class="method-panel" role="tab" tabindex="0" aria-selected="true">
-          <div class="method-panel__compact">
-            <div class="method-panel__letter">A</div>
-            <div class="method-panel__phase">Fase 1</div>
-            <div class="method-panel__name">Accoglienza</div>
-          </div>
-          <div class="method-panel__expanded">
-            <p>Il primo contatto. Capiamo chi sei, da dove vieni e che obiettivi hai. Senza fretta, senza giudizio.</p>
-            <div class="method-panel__details">
-              <div class="method-panel__detail">
-                <strong>Durata</strong>
-                30 minuti
-              </div>
-              <div class="method-panel__detail">
-                <strong>Output</strong>
-                Quadro generale + comprensione obiettivi
-              </div>
-            </div>
-          </div>
+          <h2 class="aapec-clean__title" id="method-title">A.A.P.E.C. — Cinque fasi, un percorso.</h2>
+          <p class="aapec-clean__lead">Non c'è un protocollo che vada bene per tutti. C'è un percorso che funziona se è costruito su di te, misurato, e seguito nel tempo.</p>
         </div>
 
-        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
-          <div class="method-panel__compact">
-            <div class="method-panel__letter">A</div>
-            <div class="method-panel__phase">Fase 2</div>
-            <div class="method-panel__name">Anamnesi</div>
-          </div>
-          <div class="method-panel__expanded">
-            <p>Raccogliamo la tua storia clinica e funzionale, integrando aspetti fisici ed emotivi. Il dolore non è mai solo meccanico.</p>
-            <div class="method-panel__details">
-              <div class="method-panel__detail">
-                <strong>Durata</strong>
-                45 minuti
-              </div>
-              <div class="method-panel__detail">
-                <strong>Output</strong>
-                Profilo bio-funzionale + ipotesi di lavoro
-              </div>
-            </div>
-          </div>
+        <div class="aapec-stepper">
+          <article class="aapec-step reveal-up">
+            <span class="aapec-step__num">01</span>
+            <div class="aapec-step__letter">A</div>
+            <h3 class="aapec-step__title">Accoglienza</h3>
+            <p class="aapec-step__desc">Il primo contatto. Capiamo chi sei, da dove vieni e che obiettivi hai. Senza fretta, senza giudizio.</p>
+            <div class="aapec-step__meta">30 minuti</div>
+          </article>
+          <article class="aapec-step reveal-up" data-delay="1">
+            <span class="aapec-step__num">02</span>
+            <div class="aapec-step__letter">A</div>
+            <h3 class="aapec-step__title">Anamnesi</h3>
+            <p class="aapec-step__desc">Raccogliamo la tua storia clinica e funzionale, integrando aspetti fisici ed emotivi. Il dolore non è mai solo meccanico.</p>
+            <div class="aapec-step__meta">45 minuti</div>
+          </article>
+          <article class="aapec-step reveal-up" data-delay="2">
+            <span class="aapec-step__num">03</span>
+            <div class="aapec-step__letter">P</div>
+            <h3 class="aapec-step__title">Programmazione</h3>
+            <p class="aapec-step__desc">Disegniamo il tuo percorso su misura usando valutazione 3D, pedana di forza e goniometro digitale. Niente protocolli pre-confezionati.</p>
+            <div class="aapec-step__meta">60 minuti</div>
+          </article>
+          <article class="aapec-step reveal-up" data-delay="3">
+            <span class="aapec-step__num">04</span>
+            <div class="aapec-step__letter">E</div>
+            <h3 class="aapec-step__title">Esercizi</h3>
+            <p class="aapec-step__desc">Training individuale o in piccoli gruppi, esercizi mirati, postura applicata alla vita di ogni giorno.</p>
+            <div class="aapec-step__meta">Sessioni 50–60 min</div>
+          </article>
+          <article class="aapec-step reveal-up" data-delay="4">
+            <span class="aapec-step__num">05</span>
+            <div class="aapec-step__letter">C</div>
+            <h3 class="aapec-step__title">Check-up</h3>
+            <p class="aapec-step__desc">Misuriamo nel tempo. Rivalutiamo con gli stessi strumenti per oggettivare i tuoi progressi.</p>
+            <div class="aapec-step__meta">30–45 minuti</div>
+          </article>
         </div>
 
-        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
-          <div class="method-panel__compact">
-            <div class="method-panel__letter">P</div>
-            <div class="method-panel__phase">Fase 3</div>
-            <div class="method-panel__name">Programmazione</div>
-          </div>
-          <div class="method-panel__expanded">
-            <p>Disegniamo il tuo percorso su misura usando valutazione 3D, pedana di forza e goniometro digitale. Niente protocolli pre-confezionati.</p>
-            <div class="method-panel__details">
-              <div class="method-panel__detail">
-                <strong>Durata</strong>
-                60 minuti
-              </div>
-              <div class="method-panel__detail">
-                <strong>Output</strong>
-                Piano personalizzato misurabile
-              </div>
-            </div>
-          </div>
+        <div class="reveal-up" style="text-align: center; margin-top: var(--space-7);">
+          <a href="servizi.html" class="btn-arrow">Vedi tutti i dettagli del metodo</a>
         </div>
-
-        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
-          <div class="method-panel__compact">
-            <div class="method-panel__letter">E</div>
-            <div class="method-panel__phase">Fase 4</div>
-            <div class="method-panel__name">Esercizi</div>
-          </div>
-          <div class="method-panel__expanded">
-            <p>Inizia il lavoro: training individuale o in piccoli gruppi, esercizi mirati, postura applicata alla vita quotidiana.</p>
-            <div class="method-panel__details">
-              <div class="method-panel__detail">
-                <strong>Durata</strong>
-                Sessioni 50–60 minuti
-              </div>
-              <div class="method-panel__detail">
-                <strong>Output</strong>
-                Riduzione progressiva del dolore + nuova consapevolezza
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
-          <div class="method-panel__compact">
-            <div class="method-panel__letter">C</div>
-            <div class="method-panel__phase">Fase 5</div>
-            <div class="method-panel__name">Check-up</div>
-          </div>
-          <div class="method-panel__expanded">
-            <p>Misuriamo nel tempo. Rivalutiamo con gli stessi strumenti per oggettivare i tuoi progressi.</p>
-            <div class="method-panel__details">
-              <div class="method-panel__detail">
-                <strong>Durata</strong>
-                30–45 minuti
-              </div>
-              <div class="method-panel__detail">
-                <strong>Output</strong>
-                Dati di progresso + aggiustamenti del piano
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="method-viz__footer">
-        <a href="servizi.html" class="btn-arrow reveal-up">Vedi tutti i dettagli del metodo</a>
       </div>
     </section>
 
@@ -394,7 +325,7 @@
       <div class="container">
         <div class="about-preview">
           <div class="about-preview__image reveal-up">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=1000&fit=crop&q=80" loading="lazy" width="800" height="1000" alt="Ritratto di Riccardo Andreani, posturologo e fondatore di Schienafit">
+            <img src="images/riccardo-andreani.png" loading="lazy" width="1024" height="1024" alt="Riccardo Andreani, posturologo e fondatore di Schienafit">
           </div>
           <div class="about-preview__content reveal-up" data-delay="1">
             <span class="eyebrow">Chi c'è dietro</span>
@@ -596,7 +527,9 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
       <div class="footer__brand-block">
-        <a href="index.html" class="footer__brand">schienafit<span class="footer__brand-dot" aria-hidden="true"></span></a>
+        <a href="index.html" class="footer__brand" aria-label="Schienafit — Home">
+          <img src="images/logo-schienafit.png" alt="Schienafit" class="footer__brand-img" width="220" height="52">
+        </a>
         <p class="footer__tagline">L'alleato della tua schiena.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/super_schiena/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
