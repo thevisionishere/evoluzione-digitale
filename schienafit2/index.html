@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | SchienaFit · Postura e Benessere con Riccardo Andreani</title>
+  <meta name="description" content="SchienaFit: percorsi posturali personalizzati con il Posturologo Riccardo Andreani. Riduci il dolore, migliora la postura, ritrova il benessere.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── Preloader ── -->
+<div class="preloader-minimal" data-preloader aria-hidden="true" role="status" aria-label="Caricamento in corso">
+  <div class="preloader-minimal__bar"></div>
+</div>
+
+<!-- ── Header ── -->
+<header class="header-classic" data-header aria-label="Navigazione principale">
+  <div class="header-classic__inner container">
+    <a href="index.html" class="header-classic__logo" aria-label="SchienaFit · Homepage">
+      <img src="images/logo.png" alt="SchienaFit Logo" width="150" height="48" loading="eager">
+    </a>
+    <nav class="header-classic__nav" aria-label="Menu principale">
+      <ul class="header-classic__nav-list" role="list">
+        <li><a href="index.html" class="header-classic__nav-link active" aria-current="page">Home</a></li>
+        <li><a href="chi-sono.html" class="header-classic__nav-link">Chi Sono</a></li>
+        <li><a href="servizi.html" class="header-classic__nav-link">Servizi</a></li>
+        <li><a href="metodo.html" class="header-classic__nav-link">Il Metodo</a></li>
+        <li><a href="contatti.html" class="header-classic__nav-link">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="header-classic__actions">
+      <a href="contatti.html" class="btn btn--primary header-classic__cta">Prenota una consulenza</a>
+      <button
+        class="header-classic__mobile-toggle"
+        data-mobile-toggle
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="header-classic__mobile-menu" id="mobileMenu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <ul role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="chi-sono.html">Chi Sono</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="metodo.html">Il Metodo</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+      <a href="contatti.html" class="btn btn--primary">Prenota una consulenza</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── Hero Portrait ── -->
+<section class="hero-portrait" aria-label="Benvenuto su SchienaFit">
+  <div class="hero-portrait__layout container">
+    <div class="hero-portrait__content">
+      <span class="section-label reveal-up">Postura e Benessere</span>
+      <h1 class="hero-portrait__title reveal-up stagger-1">
+        Ritrova una schiena<br><em>libera dal dolore</em>
+      </h1>
+      <p class="hero-portrait__desc reveal-up stagger-2">
+        Percorsi posturali personalizzati guidati da Riccardo Andreani, Posturologo e Fisioterapista. Un approccio scientifico e umano per recuperare la tua qualita di vita.
+      </p>
+      <div class="hero-portrait__actions reveal-up stagger-3">
+        <a href="contatti.html" class="btn btn--primary btn--lg">Prenota la tua prima consulenza</a>
+        <a href="metodo.html" class="btn btn--outline btn--lg">Scopri il Metodo</a>
+      </div>
+      <div class="hero-portrait__trust reveal-up stagger-4">
+        <span class="hero-portrait__trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Approccio certificato
+        </span>
+        <span class="hero-portrait__trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Centinaia di pazienti seguiti
+        </span>
+        <span class="hero-portrait__trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          Risultati duraturi
+        </span>
+      </div>
+    </div>
+    <div class="hero-portrait__image-col">
+      <div class="hero-portrait__image-wrap">
+        <img
+          src="images/riccardo-andreani.png"
+          alt="Riccardo Andreani · Posturologo e Fisioterapista"
+          class="hero-portrait__img"
+          width="520"
+          height="640"
+          loading="eager"
+        >
+        <div class="hero-portrait__image-badge">
+          <strong>Riccardo Andreani</strong>
+          <span>Posturologo e Fisioterapista</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Special Text Reveal ── -->
+<section
+  class="special-text-reveal section-padding"
+  aria-labelledby="text-reveal-title"
+  data-text-reveal-section
+>
+  <div class="special-text-reveal__accent" aria-hidden="true"></div>
+  <div class="container">
+    <div class="special-text-reveal__inner">
+      <span class="special-text-reveal__eyebrow section-label reveal-up" aria-label="La nostra filosofia">
+        La nostra filosofia
+      </span>
+      <h2
+        id="text-reveal-title"
+        class="special-text-reveal__text"
+        data-text-reveal="words"
+        aria-label="Crediamo che ogni corpo meriti attenzione individuale, che il dolore non sia inevitabile e che il movimento corretto sia la chiave per una vita piena."
+      >
+        <span class="special-text-reveal__static-fallback">
+          Crediamo che ogni corpo meriti attenzione individuale, che il dolore non sia inevitabile e che il movimento corretto sia la chiave per una vita piena.
+        </span>
+      </h2>
+      <div class="special-text-reveal__bottom reveal-up">
+        <div class="special-text-reveal__divider" aria-hidden="true"></div>
+        <p class="special-text-reveal__sub">SchienaFit · Associazione Super Schiena</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services Numbered (3 servizi principali) ── -->
+<section class="services-numbered section-padding" aria-labelledby="services-num-title">
+  <div class="container">
+    <header class="services-numbered__header reveal-up">
+      <span class="section-label section-label--line">Cosa facciamo</span>
+      <h2 id="services-num-title" class="section-title">I nostri <em>servizi</em></h2>
+      <p class="section-desc">Tre percorsi pensati per rispondere alle esigenze più comuni: dolore, postura e prevenzione.</p>
+    </header>
+    <ol class="services-numbered__list" role="list" aria-label="Elenco servizi">
+
+      <li class="services-numbered__item reveal-up stagger-1">
+        <span class="services-numbered__num" aria-hidden="true">01</span>
+        <div class="services-numbered__body">
+          <h3 class="services-numbered__title">Valutazione Posturale Bio-Funzionale</h3>
+          <p class="services-numbered__desc">
+            Un'analisi approfondita della tua postura statica e dinamica per identificare le cause reali del dolore e impostare un piano di recupero su misura.
+          </p>
+          <a href="servizi.html" class="services-numbered__link" aria-label="Scopri la Valutazione Posturale">
+            Scopri di più
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+          </a>
+        </div>
+      </li>
+
+      <li class="services-numbered__item reveal-up stagger-2">
+        <span class="services-numbered__num" aria-hidden="true">02</span>
+        <div class="services-numbered__body">
+          <h3 class="services-numbered__title">Training Individuale e di Gruppo</h3>
+          <p class="services-numbered__desc">
+            Un programma di esercizi specifici e tecniche posturali calibrato sul tuo corpo, con sessioni individuali e monitoraggio costante dei progressi.
+          </p>
+          <a href="servizi.html" class="services-numbered__link" aria-label="Scopri il Training Individuale e di Gruppo">
+            Scopri di più
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+          </a>
+        </div>
+      </li>
+
+      <li class="services-numbered__item reveal-up stagger-3">
+        <span class="services-numbered__num" aria-hidden="true">03</span>
+        <div class="services-numbered__body">
+          <h3 class="services-numbered__title">Check-up di Monitoraggio</h3>
+          <p class="services-numbered__desc">
+            Per chi vuole mantenere una postura corretta nel tempo e prevenire recidive: esercizi quotidiani, educazione posturale e supporto continuo.
+          </p>
+          <a href="servizi.html" class="services-numbered__link" aria-label="Scopri il Check-up di Monitoraggio">
+            Scopri di più
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+          </a>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ── About Split Image ── -->
+<section class="about-split-image section-padding" aria-labelledby="about-split-title">
+  <div class="container">
+    <div class="about-split-image__layout">
+      <div class="about-split-image__image-col reveal-left">
+        <div class="about-split-image__image-wrap">
+          <img
+            src="images/riccardo-andreani.png"
+            alt="Riccardo Andreani in studio"
+            class="about-split-image__img"
+            width="560"
+            height="620"
+            loading="lazy"
+          >
+        </div>
+        <div class="about-split-image__badge reveal-up stagger-2">
+          <strong>10+ anni</strong>
+          <span>di esperienza clinica</span>
+        </div>
+      </div>
+      <div class="about-split-image__content reveal-right">
+        <span class="section-label">Chi sono</span>
+        <h2 id="about-split-title" class="section-title about-split-image__title">
+          Riccardo Andreani<br><em>Posturologo e Fisioterapista</em>
+        </h2>
+        <p class="about-split-image__lead">
+          Aiuto le persone a liberarsi dal dolore cronico alla schiena attraverso un approccio posturale scientifico e personalizzato.
+        </p>
+        <p class="about-split-image__text">
+          Con oltre dieci anni di esperienza clinica, ho sviluppato il Metodo A.A.P.E.C. per affrontare la radice del problema, non solo i sintomi. Ogni paziente e unico: per questo ogni percorso inizia sempre da un'analisi approfondita.
+        </p>
+        <ul class="about-split-image__list" role="list">
+          <li>Laurea in Fisioterapia e specializzazione in Posturologia</li>
+          <li>Fondatore dell'Associazione Super Schiena</li>
+          <li>Ideatore del Metodo A.A.P.E.C.</li>
+          <li>Formatore e divulgatore nel campo del benessere posturale</li>
+        </ul>
+        <a href="chi-sono.html" class="btn btn--primary">Scopri la mia storia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Special Counter Stats ── -->
+<section
+  class="special-counter-stats section--dark section-padding"
+  aria-labelledby="counter-stats-title"
+  data-counter-section
+>
+  <div class="special-counter-stats__bg-dots" aria-hidden="true"></div>
+  <div class="special-counter-stats__bg-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="special-counter-stats__header text-center reveal-up">
+      <span class="section-label section-label--line">I nostri numeri</span>
+      <h2 id="counter-stats-title" class="section-title special-counter-stats__title">
+        Risultati che parlano chiaro
+      </h2>
+    </div>
+    <div class="special-counter-stats__grid" role="list" aria-label="Statistiche SchienaFit">
+
+      <div class="special-counter-stats__item reveal-up stagger-1" role="listitem">
+        <div class="special-counter-stats__number-wrap">
+          <span class="special-counter-stats__number" data-count="500" data-count-suffix="+" aria-label="Oltre 500 pazienti seguiti">0</span>
+          <span class="special-counter-stats__suffix" aria-hidden="true">+</span>
+        </div>
+        <span class="special-counter-stats__label">Pazienti seguiti</span>
+        <p class="special-counter-stats__desc">Persone che hanno ritrovato benessere e qualita di vita grazie al percorso SchienaFit</p>
+        <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="special-counter-stats__item reveal-up stagger-2" role="listitem">
+        <div class="special-counter-stats__number-wrap">
+          <span class="special-counter-stats__number" data-count="95" data-count-suffix="%" aria-label="95% di pazienti soddisfatti">0</span>
+          <span class="special-counter-stats__suffix" aria-hidden="true">%</span>
+        </div>
+        <span class="special-counter-stats__label">Pazienti soddisfatti</span>
+        <p class="special-counter-stats__desc">La stragrande maggioranza dei nostri pazienti riporta un miglioramento significativo gia dopo le prime settimane</p>
+        <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="special-counter-stats__item reveal-up stagger-3" role="listitem">
+        <div class="special-counter-stats__number-wrap">
+          <span class="special-counter-stats__number" data-count="10" data-count-suffix="+" aria-label="Oltre 10 anni di esperienza">0</span>
+          <span class="special-counter-stats__suffix" aria-hidden="true">+</span>
+        </div>
+        <span class="special-counter-stats__label">Anni di esperienza</span>
+        <p class="special-counter-stats__desc">Decennio di pratica clinica dedicata alla posturologia e alla fisioterapia</p>
+        <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="special-counter-stats__item reveal-up stagger-4" role="listitem">
+        <div class="special-counter-stats__number-wrap">
+          <span class="special-counter-stats__number" data-count="5" data-count-suffix="" aria-label="5 fasi del Metodo A.A.P.E.C.">0</span>
+          <span class="special-counter-stats__suffix" aria-hidden="true"></span>
+        </div>
+        <span class="special-counter-stats__label">Fasi del Metodo</span>
+        <p class="special-counter-stats__desc">Il Metodo A.A.P.E.C. si articola in cinque fasi progressive per un risultato duraturo</p>
+        <div class="special-counter-stats__accent-line" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Process Cards (Metodo A.A.P.E.C.) ── -->
+<section class="process-cards section-padding" aria-labelledby="process-cards-title">
+  <div class="container">
+    <header class="process-cards__header reveal-up">
+      <span class="section-label section-label--line">Come lavoriamo</span>
+      <h2 id="process-cards-title" class="section-title">Il Metodo <em>A.A.P.E.C.</em></h2>
+      <p class="section-desc">Un percorso in cinque fasi scientificamente strutturato per affrontare il dolore alla radice e costruire una postura duratura.</p>
+    </header>
+    <div class="process-cards__grid" role="list">
+
+      <article class="process-cards__card reveal-up stagger-1" role="listitem">
+        <div class="process-cards__card-num" aria-hidden="true">01</div>
+        <div class="process-cards__card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="process-cards__card-title">Accoglienza</h3>
+        <p class="process-cards__card-desc">Ti accolgo come persona, prima che come paziente. Uno spazio sereno dove raccontare la tua storia, senza fretta. La fiducia si costruisce qui.</p>
+      </article>
+
+      <article class="process-cards__card reveal-up stagger-2" role="listitem">
+        <div class="process-cards__card-num" aria-hidden="true">02</div>
+        <div class="process-cards__card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="process-cards__card-title">Anamnesi</h3>
+        <p class="process-cards__card-desc">Analisi approfondita del tuo passato fisico ed emotivo. Capire la radice del problema, non solo i sintomi. Esami, abitudini, stress: tutto conta.</p>
+      </article>
+
+      <article class="process-cards__card reveal-up stagger-3" role="listitem">
+        <div class="process-cards__card-num" aria-hidden="true">03</div>
+        <div class="process-cards__card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="process-cards__card-title">Programmazione</h3>
+        <p class="process-cards__card-desc">Costruiamo insieme un percorso su misura per i tuoi obiettivi, ritmi ed esigenze. Niente protocolli generici: solo un piano pensato per te.</p>
+      </article>
+
+      <article class="process-cards__card reveal-up stagger-4" role="listitem">
+        <div class="process-cards__card-num" aria-hidden="true">04</div>
+        <div class="process-cards__card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="process-cards__card-title">Esercizi</h3>
+        <p class="process-cards__card-desc">Training individuale o in piccoli gruppi, con esercizi mirati per la tua postura. Sessioni concrete, sempre supervisionate, calibrate sul tuo livello.</p>
+      </article>
+
+      <article class="process-cards__card reveal-up stagger-5" role="listitem">
+        <div class="process-cards__card-num" aria-hidden="true">05</div>
+        <div class="process-cards__card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
+        </div>
+        <h3 class="process-cards__card-title">Check-up</h3>
+        <p class="process-cards__card-desc">Monitoraggio costante dei progressi con nuove valutazioni periodiche. Aggiustiamo il percorso in base ai risultati per assicurare benefici duraturi.</p>
+      </article>
+
+    </div>
+    <div class="process-cards__cta reveal-up">
+      <a href="metodo.html" class="btn btn--primary">Approfondisci il Metodo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ── -->
+<section class="cta-banner section--dark" aria-labelledby="cta-banner-title">
+  <div class="container">
+    <div class="cta-banner__inner reveal-up">
+      <div class="cta-banner__content">
+        <span class="section-label">Inizia oggi</span>
+        <h2 id="cta-banner-title" class="cta-banner__title">
+          Pronto a dire addio al dolore?
+        </h2>
+        <p class="cta-banner__desc">
+          Prenota la tua prima consulenza posturale gratuita. Analizzeremo insieme la tua situazione e ti mostreremo il percorso più adatto a te.
+        </p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="contatti.html" class="btn btn--primary btn--lg">Prenota ora gratuitamente</a>
+        <a href="tel:+393386875265" class="btn btn--outline btn--lg">Chiamaci: +39 338 687 5265</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ Accordion ── -->
+<section class="faq-accordion section-padding" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="faq-accordion__header reveal-up">
+      <span class="section-label section-label--line">Domande frequenti</span>
+      <h2 id="faq-title" class="section-title">Hai qualche <em>dubbio?</em></h2>
+      <p class="section-desc">Le risposte alle domande che ci fanno più spesso i nuovi pazienti.</p>
+    </header>
+    <div class="faq-accordion__list" role="list">
+
+      <div class="faq-accordion__item reveal-up stagger-1" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-1"
+          id="faq-trigger-1"
+        >
+          <span>La posturologia puo davvero eliminare il mal di schiena cronico?</span>
+          <span class="faq-accordion__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+          </span>
+        </button>
+        <div class="faq-accordion__body" id="faq-1" data-accordion-body aria-labelledby="faq-trigger-1" hidden>
+          <p>Nella maggior parte dei casi, si. Il mal di schiena cronico ha spesso origine da squilibri posturali che si accumulano nel tempo. Il nostro approccio identifica queste cause e le corregge sistematicamente, offrendo risultati duraturi che i soli farmaci o la fisioterapia tradizionale non riescono a garantire.</p>
+        </div>
+      </div>
+
+      <div class="faq-accordion__item reveal-up stagger-2" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-2"
+          id="faq-trigger-2"
+        >
+          <span>Quante sedute sono necessarie per vedere risultati?</span>
+          <span class="faq-accordion__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+          </span>
+        </button>
+        <div class="faq-accordion__body" id="faq-2" data-accordion-body aria-labelledby="faq-trigger-2" hidden>
+          <p>I primi miglioramenti si avvertono spesso dopo 4-6 sedute. Un percorso completo tipicamente si sviluppa su 10-15 settimane, a seconda della complessita del caso. Dopo la valutazione iniziale potrai avere un'idea precisa dei tempi per la tua situazione specifica.</p>
+        </div>
+      </div>
+
+      <div class="faq-accordion__item reveal-up stagger-3" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-3"
+          id="faq-trigger-3"
+        >
+          <span>Devo avere una diagnosi medica per iniziare?</span>
+          <span class="faq-accordion__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+          </span>
+        </button>
+        <div class="faq-accordion__body" id="faq-3" data-accordion-body aria-labelledby="faq-trigger-3" hidden>
+          <p>Non e obbligatorio, ma se hai referti medici o esami strumentali (lastre, risonanze) portali alla prima seduta: ci aiuteranno a costruire un quadro più completo. Riccardo effettuera comunque una valutazione posturale autonoma e completa.</p>
+        </div>
+      </div>
+
+      <div class="faq-accordion__item reveal-up stagger-4" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-4"
+          id="faq-trigger-4"
+        >
+          <span>Il percorso e adatto anche agli anziani o ai bambini?</span>
+          <span class="faq-accordion__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+          </span>
+        </button>
+        <div class="faq-accordion__body" id="faq-4" data-accordion-body aria-labelledby="faq-trigger-4" hidden>
+          <p>Assolutamente si. Il Metodo A.A.P.E.C. e adattabile a tutte le fasce d'eta. Per i bambini e utile in fase di crescita per prevenire deviazioni posturali. Per gli anziani consente di recuperare mobilita e ridurre il rischio di cadute. Ogni programma viene calibrato sulle specifiche esigenze.</p>
+        </div>
+      </div>
+
+      <div class="faq-accordion__item reveal-up stagger-5" role="listitem">
+        <button
+          class="faq-accordion__trigger"
+          data-accordion-trigger
+          aria-expanded="false"
+          aria-controls="faq-5"
+          id="faq-trigger-5"
+        >
+          <span>Posso continuare lo sport mentre seguo il percorso?</span>
+          <span class="faq-accordion__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+          </span>
+        </button>
+        <div class="faq-accordion__body" id="faq-5" data-accordion-body aria-labelledby="faq-trigger-5" hidden>
+          <p>Nella maggior parte dei casi si, anzi lo sport praticato correttamente accelera i risultati. Riccardo ti guidera su come modificare eventualmente la tecnica o i carichi per ottenere il massimo beneficio senza aggravare la situazione.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Minimal ── -->
+<section class="cta-minimal section-padding section--accent" aria-labelledby="cta-minimal-title">
+  <div class="container">
+    <div class="cta-minimal__inner reveal-up">
+      <h2 id="cta-minimal-title" class="cta-minimal__title">Inizia il tuo percorso verso il benessere</h2>
+      <p class="cta-minimal__desc">Contattaci per una prima consulenza gratuita. Riccardo sara felice di rispondere a tutte le tue domande.</p>
+      <div class="cta-minimal__actions">
+        <a href="contatti.html" class="btn btn--primary btn--lg">Prenota la consulenza gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer-split" aria-label="Pie di pagina">
+  <div class="footer-split__main">
+    <div class="container">
+      <div class="footer-split__grid">
+
+        <div class="footer-split__brand">
+          <a href="index.html" class="footer-split__logo" aria-label="SchienaFit · Home">
+            <img src="images/logo.png" alt="SchienaFit Logo" width="140" height="44" loading="lazy">
+          </a>
+          <p class="footer-split__tagline">Postura e Benessere con il Metodo A.A.P.E.C.</p>
+          <div class="footer-split__social" aria-label="Seguici sui social">
+            <a href="https://instagram.com/schienafit" class="footer-split__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://facebook.com/schienafit" class="footer-split__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-split__nav-col" aria-label="Pagine">
+          <h3 class="footer-split__nav-title">Pagine</h3>
+          <ul class="footer-split__nav-list" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="metodo.html">Il Metodo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-split__nav-col" aria-label="Servizi">
+          <h3 class="footer-split__nav-title">Servizi</h3>
+          <ul class="footer-split__nav-list" role="list">
+            <li><a href="servizi.html">Valutazione Posturale</a></li>
+            <li><a href="servizi.html">Training Individuale</a></li>
+            <li><a href="servizi.html">Check-up di Monitoraggio</a></li>
+            <li><a href="metodo.html">Metodo A.A.P.E.C.</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-split__contact-col">
+          <h3 class="footer-split__nav-title">Contatti</h3>
+          <address class="footer-split__contact-info">
+            <p>
+              <a href="tel:+393386875265">+39 338 687 5265</a>
+            </p>
+            <p>
+              <a href="mailto:schienafit@gmail.com">schienafit@gmail.com</a>
+            </p>
+          </address>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer-split__bottom">
+    <div class="container">
+      <p class="footer-split__copy">
+        &copy; <span data-year></span> SchienaFit · Associazione Super Schiena. Tutti i diritti riservati.
+      </p>
+      <nav class="footer-split__legal" aria-label="Link legali">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/cookie">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WhatsApp Widget ── -->
+<div
+  class="whatsapp-widget"
+  data-whatsapp
+  data-phone="393386875265"
+  data-message="Ciao, vorrei informazioni su un percorso posturale."
+  aria-label="Contattaci su WhatsApp"
+>
+  <button class="whatsapp-widget__btn" aria-label="Apri chat WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.126 1.527 5.858L.057 23.625a.75.75 0 00.918.918l5.767-1.47A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.677-.518-5.197-1.422l-.372-.224-3.864.986.986-3.864-.224-.372A9.953 9.953 0 012 12C2 6.478 6.478 2 12 2s10 4.478 10 10-4.478 10-10 10z"/>
+    </svg>
+  </button>
+  <div class="whatsapp-widget__tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
+</div>
+
+<!-- ── Cookie Banner ── -->
+<div class="cookie-banner" data-cookie-banner role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__text">
+      <strong id="cookie-title">Utilizziamo i cookie</strong>
+      <p id="cookie-desc">Questo sito utilizza cookie tecnici e di analisi per migliorare la tua esperienza. <a href="/cookie">Leggi la Cookie Policy</a>.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--outline btn--sm" data-cookie-reject>Solo necessari</button>
+      <button class="btn btn--primary btn--sm" data-cookie-accept>Accetta tutti</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Back to Top ── -->
+<button class="back-to-top" data-back-to-top aria-label="Torna in cima alla pagina" hidden>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18,15 12,9 6,15"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
