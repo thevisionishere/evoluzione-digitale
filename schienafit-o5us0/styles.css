@@ -889,7 +889,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   gap: var(--space-8);
   align-items: center;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1100px) {
   .hero__inner {
     grid-template-columns: 1.1fr 0.9fr;
     gap: var(--space-9);
@@ -962,7 +962,29 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
 .hero:not(.hero--internal) .hero__visual img {
   transform: scale(1.12);
 }
-.hero:not(.hero--internal) .hero__visual { aspect-ratio: 1 / 1; max-width: 520px; }
+.hero:not(.hero--internal) .hero__visual {
+  aspect-ratio: 1 / 1;
+  max-width: 380px;
+}
+@media (min-width: 1100px) {
+  .hero:not(.hero--internal) .hero__visual { max-width: 520px; }
+}
+
+/* Mobile + tablet (anything < 1100px): force single column and center everything */
+@media (max-width: 1099px) {
+  .hero__inner {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6);
+  }
+  .hero__content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .hero__ctas { justify-content: center; }
+  .hero__meta { justify-content: center; }
+}
 .hero__visual::after {
   content: '';
   position: absolute;
