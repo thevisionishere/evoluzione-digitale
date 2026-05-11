@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schienafit · Posturologia a Marina di Carrara — L'alleato della tua schiena</title>
+  <meta name="description" content="Schienafit applica il metodo A.A.P.E.C. — un percorso personalizzato di valutazione, allenamento e check-up con tecnologie diagnostiche 3D. A Marina di Carrara con Riccardo Andreani, posturologo dal 2019.">
+  <meta name="theme-color" content="#0F4F4A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F4F4A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23FBFAF7'%3Es%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home" class="preloader-active">
+  <a href="#main-content" class="skip-link">Vai al contenuto</a>
+
+  <!-- PRELOADER (Counter) -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__brand">
+      schienafit<small>Posturologia · Marina di Carrara</small>
+    </div>
+    <div class="preloader__counter">0</div>
+    <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__brand" aria-label="Schienafit — Home">
+        schienafit<span class="header__brand-dot" aria-hidden="true"></span>
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="chi-sono.html">Chi Sono</a>
+        <a href="testimonianze.html">Testimonianze</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="contatti.html" class="btn btn-primary header__cta">Prenota</a>
+      <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu__backdrop"></div>
+  <aside class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <nav class="mobile-menu__nav">
+      <a href="index.html">Home</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="chi-sono.html">Chi Sono</a>
+      <a href="testimonianze.html">Testimonianze</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="mobile-menu__cta">
+      <a href="contatti.html" class="btn btn-primary">Prenota la valutazione</a>
+      <a href="tel:+393386875265" class="btn btn-secondary">Chiama ora</a>
+    </div>
+    <div class="mobile-menu__contact">
+      <span><strong>+39 338 687 5265</strong></span>
+      <span>schienafit@gmail.com</span>
+      <span>Viale D. Zaccagna 47 · Marina di Carrara</span>
+    </div>
+    <div class="mobile-menu__social">
+      <a href="https://www.instagram.com/super_schiena/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9a3.72 3.72 0 01-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63a5.86 5.86 0 00-2.13 1.38A5.86 5.86 0 00.63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.71 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56.79-.3 1.46-.71 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.86 5.86 0 00-1.38-2.13A5.86 5.86 0 0019.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/schienafit/?locale=it_IT" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- HERO (Split Layout B) -->
+    <section class="hero">
+      <div class="hero__pattern" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow reveal-up">Posturologia · Marina di Carrara</span>
+          <h1 class="hero__title reveal-up" data-delay="1">
+            Il dolore alla schiena ha un <em>alleato</em>.
+          </h1>
+          <p class="hero__subtitle reveal-up" data-delay="2">
+            Schienafit applica il metodo <strong>A.A.P.E.C.</strong> — un percorso personalizzato di valutazione, allenamento e check-up, con tecnologie diagnostiche 3D che misurano i tuoi progressi.
+          </p>
+          <div class="hero__ctas reveal-up" data-delay="3">
+            <a href="contatti.html" class="btn btn-primary">Prenota la valutazione</a>
+            <a href="#metodo" class="btn btn-secondary">Scopri il metodo</a>
+          </div>
+          <div class="hero__meta reveal-up" data-delay="4">
+            <span>Software 3D</span>
+            <span>Pedana di Forza</span>
+            <span>Goniometro Digitale</span>
+          </div>
+        </div>
+        <div class="hero__visual reveal-up" data-delay="2">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&h=1125&fit=crop&q=80" width="900" height="1125" alt="Sessione di valutazione posturale con paziente in studio luminoso">
+          <div class="hero__badge">
+            <div class="hero__badge-avatar" aria-hidden="true">R</div>
+            <div class="hero__badge-text">
+              <strong>Riccardo Andreani</strong>
+              <span>Fondatore &amp; Posturologo dal 2019</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Software 3D della colonna</span>
+        <span class="marquee__item">Pedana di Forza</span>
+        <span class="marquee__item">Goniometro Digitale</span>
+        <span class="marquee__item">Anamnesi bio-funzionale</span>
+        <span class="marquee__item">Approccio personalizzato</span>
+        <span class="marquee__item">Metodo A.A.P.E.C.</span>
+        <span class="marquee__item">Posturologia clinica</span>
+        <span class="marquee__item">Training individuale</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee__item">Software 3D della colonna</span>
+        <span class="marquee__item">Pedana di Forza</span>
+        <span class="marquee__item">Goniometro Digitale</span>
+        <span class="marquee__item">Anamnesi bio-funzionale</span>
+        <span class="marquee__item">Approccio personalizzato</span>
+        <span class="marquee__item">Metodo A.A.P.E.C.</span>
+        <span class="marquee__item">Posturologia clinica</span>
+        <span class="marquee__item">Training individuale</span>
+      </div>
+    </div>
+
+    <!-- TEXT REVEAL (Signature 1) -->
+    <section class="text-reveal" aria-labelledby="problem-headline">
+      <div class="text-reveal__inner">
+        <span class="eyebrow">Il punto di partenza</span>
+        <h2 class="text-reveal__statement" id="problem-headline">
+          <span class="text-reveal__word">Il</span>
+          <span class="text-reveal__word">dolore</span>
+          <span class="text-reveal__word">alla</span>
+          <span class="text-reveal__word">schiena</span>
+          <span class="text-reveal__word">non</span>
+          <span class="text-reveal__word">è</span>
+          <span class="text-reveal__word text-reveal__word--accent">inevitabile.</span>
+          <span class="text-reveal__word">È</span>
+          <span class="text-reveal__word">un</span>
+          <span class="text-reveal__word text-reveal__word--accent">linguaggio.</span>
+          <span class="text-reveal__word">Possiamo</span>
+          <span class="text-reveal__word">imparare</span>
+          <span class="text-reveal__word">a</span>
+          <span class="text-reveal__word">leggerlo,</span>
+          <span class="text-reveal__word">insieme.</span>
+        </h2>
+        <p class="text-reveal__sub">Quando si lavora con un metodo strutturato, i risultati si misurano. Il prossimo paragrafo è il nostro.</p>
+      </div>
+    </section>
+
+    <!-- METHOD VISUALIZER (Signature 2) -->
+    <section class="method-viz" id="metodo" aria-labelledby="method-title">
+      <div class="method-viz__header">
+        <div>
+          <span class="eyebrow">Il metodo</span>
+          <h2 class="method-viz__title reveal-up" id="method-title">A.A.P.E.C. — Cinque fasi, un percorso.</h2>
+        </div>
+        <p class="method-viz__lead reveal-up" data-delay="1">Non c'è un protocollo che vada bene per tutti. C'è un percorso che funziona se è costruito su di te, misurato, e seguito nel tempo.</p>
+      </div>
+
+      <div class="method-viz__panels reveal-up" data-delay="2" role="tablist" aria-label="Fasi del metodo A.A.P.E.C.">
+        <div class="method-panel" role="tab" tabindex="0" aria-selected="true">
+          <div class="method-panel__compact">
+            <div class="method-panel__letter">A</div>
+            <div class="method-panel__phase">Fase 1</div>
+            <div class="method-panel__name">Accoglienza</div>
+          </div>
+          <div class="method-panel__expanded">
+            <p>Il primo contatto. Capiamo chi sei, da dove vieni e che obiettivi hai. Senza fretta, senza giudizio.</p>
+            <div class="method-panel__details">
+              <div class="method-panel__detail">
+                <strong>Durata</strong>
+                30 minuti
+              </div>
+              <div class="method-panel__detail">
+                <strong>Output</strong>
+                Quadro generale + comprensione obiettivi
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
+          <div class="method-panel__compact">
+            <div class="method-panel__letter">A</div>
+            <div class="method-panel__phase">Fase 2</div>
+            <div class="method-panel__name">Anamnesi</div>
+          </div>
+          <div class="method-panel__expanded">
+            <p>Raccogliamo la tua storia clinica e funzionale, integrando aspetti fisici ed emotivi. Il dolore non è mai solo meccanico.</p>
+            <div class="method-panel__details">
+              <div class="method-panel__detail">
+                <strong>Durata</strong>
+                45 minuti
+              </div>
+              <div class="method-panel__detail">
+                <strong>Output</strong>
+                Profilo bio-funzionale + ipotesi di lavoro
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
+          <div class="method-panel__compact">
+            <div class="method-panel__letter">P</div>
+            <div class="method-panel__phase">Fase 3</div>
+            <div class="method-panel__name">Programmazione</div>
+          </div>
+          <div class="method-panel__expanded">
+            <p>Disegniamo il tuo percorso su misura usando valutazione 3D, pedana di forza e goniometro digitale. Niente protocolli pre-confezionati.</p>
+            <div class="method-panel__details">
+              <div class="method-panel__detail">
+                <strong>Durata</strong>
+                60 minuti
+              </div>
+              <div class="method-panel__detail">
+                <strong>Output</strong>
+                Piano personalizzato misurabile
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
+          <div class="method-panel__compact">
+            <div class="method-panel__letter">E</div>
+            <div class="method-panel__phase">Fase 4</div>
+            <div class="method-panel__name">Esercizi</div>
+          </div>
+          <div class="method-panel__expanded">
+            <p>Inizia il lavoro: training individuale o in piccoli gruppi, esercizi mirati, postura applicata alla vita quotidiana.</p>
+            <div class="method-panel__details">
+              <div class="method-panel__detail">
+                <strong>Durata</strong>
+                Sessioni 50–60 minuti
+              </div>
+              <div class="method-panel__detail">
+                <strong>Output</strong>
+                Riduzione progressiva del dolore + nuova consapevolezza
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-panel" role="tab" tabindex="0" aria-selected="false">
+          <div class="method-panel__compact">
+            <div class="method-panel__letter">C</div>
+            <div class="method-panel__phase">Fase 5</div>
+            <div class="method-panel__name">Check-up</div>
+          </div>
+          <div class="method-panel__expanded">
+            <p>Misuriamo nel tempo. Rivalutiamo con gli stessi strumenti per oggettivare i tuoi progressi.</p>
+            <div class="method-panel__details">
+              <div class="method-panel__detail">
+                <strong>Durata</strong>
+                30–45 minuti
+              </div>
+              <div class="method-panel__detail">
+                <strong>Output</strong>
+                Dati di progresso + aggiustamenti del piano
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="method-viz__footer">
+        <a href="servizi.html" class="btn-arrow reveal-up">Vedi tutti i dettagli del metodo</a>
+      </div>
+    </section>
+
+    <!-- SERVIZI CARD GRID -->
+    <section class="section-light" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="eyebrow">Cosa facciamo</span>
+          <h2 id="services-title">Tre fasi del tuo percorso.</h2>
+        </div>
+        <div class="services-grid">
+
+          <article class="service-card reveal-up">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18M8 7c0 0 1.5 2 4 2s4-2 4-2M7 12c0 0 2 2 5 2s5-2 5-2M8 17c0 0 1.5 2 4 2s4-2 4-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__number">Fase 1</span>
+            <h3 class="service-card__title">Valutazione Bio-Funzionale</h3>
+            <p class="service-card__desc">Una sessione di analisi approfondita: postura, distribuzione del carico, ampiezza dei movimenti. I dati che ci dicono cosa sta succedendo davvero.</p>
+            <div class="service-card__bullets">Software 3D · Pedana di Forza · Goniometro digitale</div>
+            <a href="servizi.html#valutazione" class="btn-arrow service-card__link">Approfondisci</a>
+          </article>
+
+          <article class="service-card reveal-up" data-delay="1">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 20l3-8 4 5 5-10M3 20h18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__number">Fase 2</span>
+            <h3 class="service-card__title">Training Personalizzato</h3>
+            <p class="service-card__desc">Sessioni one-to-one o in piccoli gruppi. Esercizi costruiti su quello che è emerso in valutazione, niente schede fotocopia.</p>
+            <div class="service-card__bullets">Sessioni 1:1 · Mini gruppi · Esercizi mirati</div>
+            <a href="servizi.html#training" class="btn-arrow service-card__link">Approfondisci</a>
+          </article>
+
+          <article class="service-card reveal-up" data-delay="2">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h4l3 8 4-16 3 8h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="service-card__number">Fase 3</span>
+            <h3 class="service-card__title">Check-up &amp; Monitoraggio</h3>
+            <p class="service-card__desc">Rivalutiamo periodicamente con gli stessi strumenti. I tuoi progressi non sono un'opinione: si vedono nei numeri.</p>
+            <div class="service-card__bullets">Misurazioni · Confronti · Aggiustamenti</div>
+            <a href="servizi.html#checkup" class="btn-arrow service-card__link">Approfondisci</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECNOLOGIE -->
+    <section class="section-cream" aria-labelledby="tech-title">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="eyebrow">Strumenti di precisione</span>
+          <h2 id="tech-title">La tecnologia al servizio della tua schiena.</h2>
+          <p class="lead" style="margin-inline: auto;">Misuriamo invece di stimare. I tuoi progressi si vedono nei dati.</p>
+        </div>
+        <div class="tech-grid">
+
+          <article class="tech-card reveal-up">
+            <div class="tech-card__image">
+              <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&h=500&fit=crop&q=80" loading="lazy" width="800" height="500" alt="Schermata di analisi 3D della colonna vertebrale">
+            </div>
+            <div class="tech-card__body">
+              <h3 class="tech-card__title">Software 3D della Colonna Vertebrale</h3>
+              <p class="tech-card__desc">Un'analisi tridimensionale che mappa la postura nello spazio, senza esposizione a radiazioni. Una fotografia oggettiva di dove sei oggi.</p>
+              <ul class="tech-card__bullets">
+                <li>Asimmetrie laterali e rotazioni</li>
+                <li>Atteggiamenti antalgici</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tech-card reveal-up" data-delay="1">
+            <div class="tech-card__image">
+              <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=800&h=500&fit=crop&q=80" loading="lazy" width="800" height="500" alt="Pedana di forza per analisi della stabilometria">
+            </div>
+            <div class="tech-card__body">
+              <h3 class="tech-card__title">Pedana di Forza (Stabilometria)</h3>
+              <p class="tech-card__desc">Analizza come distribuisci il peso e come oscilli da fermo. La base meccanica di come ti stai reggendo nel mondo, in numeri.</p>
+              <ul class="tech-card__bullets">
+                <li>Distribuzione del carico</li>
+                <li>Stabilità statica e dinamica</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tech-card reveal-up" data-delay="2">
+            <div class="tech-card__image">
+              <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=500&fit=crop&q=80" loading="lazy" width="800" height="500" alt="Misurazione con goniometro digitale durante valutazione posturale">
+            </div>
+            <div class="tech-card__body">
+              <h3 class="tech-card__title">Goniometro Digitale</h3>
+              <p class="tech-card__desc">Quantifica l'ampiezza articolare in gradi precisi. Dove si muove la tua schiena oggi, e di quanto si muoverà tra dodici settimane.</p>
+              <ul class="tech-card__bullets">
+                <li>Range of motion articolare</li>
+                <li>Confronto pre e post percorso</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="section-light" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-preview">
+          <div class="about-preview__image reveal-up">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=1000&fit=crop&q=80" loading="lazy" width="800" height="1000" alt="Ritratto di Riccardo Andreani, posturologo e fondatore di Schienafit">
+          </div>
+          <div class="about-preview__content reveal-up" data-delay="1">
+            <span class="eyebrow">Chi c'è dietro</span>
+            <h2 id="about-title">Riccardo Andreani · Posturologo, fondatore.</h2>
+            <p>Lavoro con la posturologia dal 2019. Ho costruito Schienafit perché credo che il mal di schiena meriti più di un trattamento generico: merita misurazioni, ascolto, e un piano costruito sulla persona reale che ho davanti.</p>
+            <p>Ogni schiena ha una storia diversa. Il mio lavoro è ascoltarla, leggerla con strumenti che la oggettivano, e accompagnare le persone nel percorso che le riporta al movimento senza dolore.</p>
+            <div class="about-preview__values">
+              <div class="value-card">
+                <div class="value-card__title">5+ anni</div>
+                <p class="value-card__desc">Di clinica continuativa</p>
+              </div>
+              <div class="value-card">
+                <div class="value-card__title">Bio-funzionale</div>
+                <p class="value-card__desc">Approccio integrato fisico ed emotivo</p>
+              </div>
+              <div class="value-card">
+                <div class="value-card__title">3D &amp; Forza</div>
+                <p class="value-card__desc">Strumenti diagnostici di precisione</p>
+              </div>
+            </div>
+            <a href="chi-sono.html" class="btn-arrow" style="margin-top: var(--space-3); align-self: flex-start;">Conosci la mia storia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="numbers" aria-labelledby="numbers-title">
+      <div class="container">
+        <div class="numbers__header reveal-up">
+          <span class="eyebrow eyebrow--on-dark">I numeri di Schienafit</span>
+          <h2 id="numbers-title">Onesti. Verificabili. Tuoi.</h2>
+        </div>
+        <div class="numbers__grid">
+          <div class="number-item reveal-up">
+            <div class="number-item__value" data-count="2019">2019</div>
+            <div class="number-item__label">Anno di inizio attività</div>
+          </div>
+          <div class="number-item reveal-up" data-delay="1">
+            <div class="number-item__value" data-count="5">5</div>
+            <div class="number-item__label">Fasi del metodo A.A.P.E.C.</div>
+          </div>
+          <div class="number-item reveal-up" data-delay="2">
+            <div class="number-item__value" data-count="3">3</div>
+            <div class="number-item__label">Tecnologie diagnostiche di precisione</div>
+          </div>
+          <div class="number-item reveal-up" data-delay="3">
+            <div class="number-item__value" data-count="100" data-suffix="%">100%</div>
+            <div class="number-item__label">Percorsi personalizzati</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL IMMERSION (Signature 3) -->
+    <section class="testimonial-immersion" aria-labelledby="testimonial-title">
+      <div class="testimonial-immersion__inner">
+        <div class="testimonial-immersion__content">
+          <span class="testimonial-immersion__marks" aria-hidden="true">"</span>
+          <span class="eyebrow">Una storia</span>
+          <blockquote class="testimonial-immersion__quote" id="testimonial-title">
+            <span class="reveal-word">Per</span>
+            <span class="reveal-word">anni</span>
+            <span class="reveal-word">avevo</span>
+            <span class="reveal-word">cercato</span>
+            <span class="reveal-word">risposte</span>
+            <span class="reveal-word">da</span>
+            <span class="reveal-word">fisioterapisti</span>
+            <span class="reveal-word">diversi.</span>
+            <span class="reveal-word">Con</span>
+            <span class="reveal-word">Riccardo</span>
+            <span class="reveal-word">ho</span>
+            <span class="reveal-word">capito</span>
+            <span class="reveal-word">che</span>
+            <span class="reveal-word">il</span>
+            <span class="reveal-word">mio</span>
+            <span class="reveal-word">dolore</span>
+            <span class="reveal-word">aveva</span>
+            <span class="reveal-word">una</span>
+            <span class="reveal-word">causa</span>
+            <span class="reveal-word">precisa</span>
+            <span class="reveal-word">—</span>
+            <span class="reveal-word">e</span>
+            <span class="reveal-word">che</span>
+            <span class="reveal-word">si</span>
+            <span class="reveal-word">poteva</span>
+            <span class="reveal-word">misurare.</span>
+            <span class="reveal-word">In</span>
+            <span class="reveal-word">tre</span>
+            <span class="reveal-word">mesi</span>
+            <span class="reveal-word">ho</span>
+            <span class="reveal-word">ripreso</span>
+            <span class="reveal-word">a</span>
+            <span class="reveal-word">dormire.</span>
+          </blockquote>
+          <footer class="testimonial-immersion__attribution">
+            <strong>Anna M.</strong>
+            Lombalgia cronica · Percorso A.A.P.E.C. 2025
+          </footer>
+        </div>
+        <div class="testimonial-immersion__image reveal-up">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1000&fit=crop&q=80" loading="lazy" width="800" height="1000" alt="Ritratto di donna serena dopo percorso posturale completato">
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-light" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="eyebrow">Domande frequenti</span>
+          <h2 id="faq-title">Quello che le persone ci chiedono prima di prenotare.</h2>
+        </div>
+        <div class="faq-list reveal-up">
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button">
+              <span>Quanto dura un percorso completo?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__content">
+              <p>Dipende dall'obiettivo e dal punto di partenza. La maggior parte dei percorsi ha una durata indicativa tra 8 e 16 settimane, con frequenza di una o due sessioni a settimana. Il check-up di rivalutazione viene fissato in base ai progressi, di solito ogni 6–12 settimane.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button">
+              <span>Schienafit è adatto a chi ha ernia o protrusioni?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__content">
+              <p>Sì, ed è proprio uno dei casi più frequenti che trattiamo. Il punto non è solo l'ernia in sé, ma come tutto il sistema posturale si è organizzato attorno ad essa. La valutazione iniziale ci permette di capire come muoverci in sicurezza.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button">
+              <span>Devo portare esami o referti?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__content">
+              <p>Se ne hai, sì — anche vecchi (risonanze, radiografie, referti specialistici). Ci aiutano a costruire un quadro più completo. Se non ne hai, non è un problema: la valutazione bio-funzionale dà comunque dati oggettivi su cui lavorare.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button">
+              <span>Posso fare gli esercizi anche a casa?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__content">
+              <p>Una parte del programma è pensata proprio per il lavoro autonomo tra una sessione e l'altra: esercizi mirati, semplici da memorizzare, con indicazioni precise. La continuità è ciò che fa la differenza nei risultati.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button">
+              <span>Quali sono i tempi per i primi risultati?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__content">
+              <p>Una riduzione percepita della sintomatologia avviene spesso entro le prime 4–6 settimane di lavoro consistente. I cambiamenti strutturali misurabili con software 3D e pedana di forza si consolidano nel medio periodo (12+ settimane).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button">
+              <span>Schienafit è una palestra o un centro clinico?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__content">
+              <p>Né l'uno né l'altro nel senso classico. È uno studio specializzato in posturologia che integra valutazione strumentale e training applicato. Si lavora su appuntamento, in spazi dedicati, con un solo paziente o piccoli gruppi.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER FINAL -->
+    <section class="cta-banner" aria-labelledby="cta-final-title">
+      <div class="cta-banner__image" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1583416750470-a1c6e4b6a8c4?w=1920&h=820&fit=crop&q=80" loading="lazy" width="1920" height="820" alt="">
+      </div>
+      <div class="cta-banner__inner">
+        <span class="eyebrow eyebrow--on-dark">Il primo passo</span>
+        <h2 class="cta-banner__title" id="cta-final-title">Prenota la tua <em>valutazione</em> posturale.</h2>
+        <p class="cta-banner__sub">Una sessione per capire cosa sta succedendo alla tua schiena — e cosa possiamo fare insieme.</p>
+        <div class="cta-banner__actions">
+          <a href="contatti.html" class="btn btn-primary">Prenota ora</a>
+        </div>
+        <p class="cta-banner__line">Oppure chiama il <a href="tel:+393386875265">+39 338 687 5265</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand-block">
+        <a href="index.html" class="footer__brand">schienafit<span class="footer__brand-dot" aria-hidden="true"></span></a>
+        <p class="footer__tagline">L'alleato della tua schiena.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/super_schiena/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9a3.72 3.72 0 01-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63a5.86 5.86 0 00-2.13 1.38A5.86 5.86 0 00.63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.71 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56.79-.3 1.46-.71 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.86 5.86 0 00-1.38-2.13A5.86 5.86 0 0019.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/schienafit/?locale=it_IT" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Menu</h4>
+        <div class="footer__list">
+          <a href="index.html">Home</a>
+          <a href="servizi.html">Servizi &amp; Metodo</a>
+          <a href="chi-sono.html">Chi Sono</a>
+          <a href="testimonianze.html">Testimonianze</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contatti</h4>
+        <div class="footer__list">
+          <a href="tel:+393386875265">+39 338 687 5265</a>
+          <a href="mailto:schienafit@gmail.com">schienafit@gmail.com</a>
+          <span>Viale D. Zaccagna 47<br>54033 Marina di Carrara (MS)</span>
+          <span>Su appuntamento · Lun–Sab</span>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Inizia</h4>
+        <div class="footer__list">
+          <a href="contatti.html" class="btn-arrow" style="padding: 0;">Prenota una valutazione</a>
+          <a href="https://wa.me/393386875265" target="_blank" rel="noopener noreferrer">Scrivi su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Associazione Super Schiena · Schienafit · P.IVA da definire</span>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <a class="whatsapp-fab" href="https://wa.me/393386875265?text=Ciao%20Riccardo%2C%20vorrei%20prenotare%20una%20valutazione." target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
