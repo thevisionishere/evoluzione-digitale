@@ -87,7 +87,7 @@
   --space-11:  10rem;
   --space-12:  12rem;
 
-  --section-padding: clamp(5rem, 9vw, 9rem);
+  --section-padding: clamp(3rem, 6vw, 5.5rem);
   --container-width: min(92%, 1280px);
   --container-narrow: min(88%, 880px);
   --container-wide: min(94%, 1480px);
@@ -287,7 +287,7 @@ section { padding-block: var(--section-padding); }
   text-align: center;
   max-width: 740px;
   margin-inline: auto;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 .section-header.left { text-align: left; margin-inline: 0; }
 
@@ -1129,7 +1129,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
    16. TEXT REVEAL (Signature 1)
    ------------------------------------------------------------- */
 .text-reveal {
-  padding-block: clamp(6rem, 14vw, 12rem);
+  padding-block: clamp(3rem, 8vw, 6rem);
   background-color: var(--color-light);
 }
 .text-reveal__inner {
@@ -1177,7 +1177,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
 .method-viz__header {
   width: var(--container-width);
   margin-inline: auto;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-5);
@@ -1616,7 +1616,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
    ------------------------------------------------------------- */
 .testimonial-immersion {
   background-color: var(--color-sand);
-  padding-block: clamp(6rem, 14vw, 12rem);
+  padding-block: clamp(3rem, 8vw, 6rem);
   position: relative;
   overflow: hidden;
 }
@@ -1788,7 +1788,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
 .cta-banner__inner {
   width: var(--container-narrow);
   margin-inline: auto;
-  padding-block: clamp(5rem, 12vw, 9rem);
+  padding-block: clamp(3rem, 7vw, 5rem);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1845,7 +1845,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
 
 /* CTA Style D — Minimal Line */
 .cta-minimal {
-  padding-block: clamp(5rem, 10vw, 8rem);
+  padding-block: clamp(3rem, 7vw, 5rem);
   background-color: var(--color-cream);
   text-align: center;
 }
@@ -2792,10 +2792,10 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   text-align: center;
   max-width: 760px;
   margin-inline: auto;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 .aapec-clean__title { font-size: var(--text-3xl); line-height: var(--leading-tight); }
 .aapec-clean__lead { font-size: var(--text-lg); color: var(--color-text-muted); margin-inline: auto; max-width: 60ch; }
@@ -2890,10 +2890,10 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   text-align: center;
   max-width: 760px;
   margin-inline: auto;
-  margin-bottom: var(--space-9);
+  margin-bottom: var(--space-7);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 .method-journey__list {
   display: flex;
@@ -3289,7 +3289,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);
+  gap: var(--space-6);
 }
 .story-min__intro {
   text-align: center;
@@ -3375,10 +3375,10 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   text-align: center;
   max-width: 720px;
   margin-inline: auto;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 .video-reviews__grid {
   display: grid;
