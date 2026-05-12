@@ -870,9 +870,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
    ------------------------------------------------------------- */
 .hero {
   position: relative;
-  min-height: 0;
-  display: flex;
-  align-items: center;
+  display: block;
   padding-top: calc(var(--header-height) + var(--space-3));
   padding-bottom: var(--space-6);
   background-color: var(--color-light);
@@ -886,12 +884,15 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   padding-top: var(--space-5) !important;
 }
 .hero__inner {
-  width: var(--container-width);
-  margin-inline: auto;
+  width: min(92%, 1280px);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-8);
+  gap: var(--space-6);
   align-items: center;
+  box-sizing: border-box;
 }
 @media (min-width: 1100px) {
   .hero__inner {
@@ -976,17 +977,15 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   .hero:not(.hero--internal) .hero__visual { max-width: 520px; }
 }
 
-/* Mobile + tablet (anything < 1100px): force single column and center everything */
+/* Mobile + tablet (anything < 1100px): single column, centered content */
 @media (max-width: 1099px) {
-  .hero__inner {
-    grid-template-columns: 1fr !important;
-    gap: var(--space-6);
-  }
   .hero__content {
-    max-width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
     align-items: center;
     text-align: center;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero__ctas { justify-content: center; }
   .hero__meta { justify-content: center; }
