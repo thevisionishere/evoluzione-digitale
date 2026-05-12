@@ -873,13 +873,17 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   min-height: 0;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--header-height) + var(--space-4));
-  padding-bottom: var(--space-7);
+  padding-top: calc(var(--header-height) + var(--space-3));
+  padding-bottom: var(--space-6);
   background-color: var(--color-light);
   overflow: hidden;
 }
 @media (min-width: 1024px) {
-  .hero { padding-top: calc(var(--header-height) + var(--space-5)); padding-bottom: var(--space-8); }
+  .hero { padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-7); }
+}
+.hero + section,
+.hero + .marquee + section {
+  padding-top: var(--space-5) !important;
 }
 .hero__inner {
   width: var(--container-width);
@@ -960,7 +964,9 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   object-position: center 25%;
 }
 .hero:not(.hero--internal) .hero__visual img {
-  transform: scale(1.12);
+  transform: scale(1.06);
+  transform-origin: center top;
+  object-position: center 30%;
 }
 .hero:not(.hero--internal) .hero__visual {
   aspect-ratio: 1 / 1;
@@ -1042,22 +1048,31 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
 
 .hero > * { position: relative; z-index: 1; }
 
-/* Internal hero — very compact, almost no empty space below navbar */
+/* Internal hero — extra-compact, content starts right under navbar */
 .hero--internal {
   min-height: 0;
-  padding-top: calc(var(--header-height) + var(--space-3));
-  padding-bottom: var(--space-4);
+  padding-top: calc(var(--header-height) + var(--space-2));
+  padding-bottom: 0;
 }
 @media (min-width: 1024px) {
   .hero--internal {
-    padding-top: calc(var(--header-height) + var(--space-4));
-    padding-bottom: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-3));
+    padding-bottom: 0;
   }
 }
-.hero--internal .hero__title { margin-bottom: var(--space-2); font-size: var(--text-3xl); }
-.hero--internal .hero__content { gap: var(--space-3); }
-.hero--internal + section { padding-top: var(--space-5) !important; }
-.hero--internal + section .section-header { margin-bottom: var(--space-6); }
+.hero--internal .hero__title {
+  margin-bottom: var(--space-1);
+  font-size: var(--text-2xl);
+  line-height: 1.15;
+}
+.hero--internal .hero__subtitle { font-size: var(--text-base); }
+.hero--internal .hero__content { gap: var(--space-2); }
+.hero--internal + section {
+  padding-top: var(--space-4) !important;
+}
+.hero--internal + section .section-header {
+  margin-bottom: var(--space-5);
+}
 .hero--internal .hero__inner { grid-template-columns: 1fr; max-width: 880px; }
 .hero--internal .hero__title { font-size: var(--text-3xl); }
 @media (min-width: 1024px) {
@@ -1765,25 +1780,33 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
    ------------------------------------------------------------- */
 .cta-banner {
   position: relative;
-  background-color: var(--color-accent-dark);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
   color: var(--color-text-light);
   overflow: hidden;
-  isolation: isolate;
 }
 .cta-banner__image {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
+  opacity: 0.22;
+  pointer-events: none;
 }
 .cta-banner__image img {
   width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.6);
 }
-.cta-banner__image::after {
+.cta-banner__image::after { display: none; }
+.cta-banner::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(15, 79, 74, 0.97) 0%, rgba(7, 58, 53, 0.99) 100%);
-  z-index: -1;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 70%);
+  top: -300px;
+  right: -200px;
+  pointer-events: none;
+  z-index: 0;
 }
 .cta-banner__inner {
   width: var(--container-narrow);
@@ -1795,7 +1818,7 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
   align-items: center;
   gap: var(--space-5);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .cta-banner__title {
   font-size: var(--text-3xl);

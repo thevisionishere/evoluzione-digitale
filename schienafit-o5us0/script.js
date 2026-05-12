@@ -703,24 +703,8 @@ function initMagneticButtons() {
 
 
 /* -------------------------------------------------------------
-   HERO PARALLAX (desktop only)
+   HERO PARALLAX (disabled to keep portrait fully visible — no head crop)
    ------------------------------------------------------------- */
 function initHeroParallax() {
-  const heroVisual = document.querySelector('.hero:not(.hero--internal) .hero__visual');
-  if (!heroVisual) return;
-  const img = heroVisual.querySelector('img');
-  if (!img) return;
-  let ticking = false;
-  const maxOffset = window.innerHeight * 0.07;
-  function update() {
-    const rect = heroVisual.getBoundingClientRect();
-    if (rect.bottom < 0 || rect.top > window.innerHeight) { ticking = false; return; }
-    const y = Math.min(window.scrollY * 0.12, maxOffset);
-    img.style.transform = `translateY(${y}px) scale(1.12)`;
-    ticking = false;
-  }
-  window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  img.style.transform = 'scale(1.12)';
+  return;
 }
