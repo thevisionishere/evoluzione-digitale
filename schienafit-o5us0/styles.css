@@ -871,13 +871,13 @@ html { scrollbar-width: thin; scrollbar-color: var(--color-accent-light) var(--c
 .hero {
   position: relative;
   display: block;
-  padding-top: calc(var(--header-height) + var(--space-3));
-  padding-bottom: var(--space-6);
+  padding-top: var(--header-height);
+  padding-bottom: var(--space-5);
   background-color: var(--color-light);
   overflow: hidden;
 }
 @media (min-width: 1024px) {
-  .hero { padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-7); }
+  .hero { padding-top: calc(var(--header-height) + var(--space-2)); padding-bottom: var(--space-7); }
 }
 .hero + section,
 .hero + .marquee + section {
