@@ -2654,3 +2654,147 @@ section h2 {
   .artist-action-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+
+/* ============================================================
+   EVOLUZIONE DELL'ARTISTA (evoluzione.html)
+   ============================================================ */
+.lang-tabs-section {
+  padding: var(--space-7) 0 0;
+  background: var(--color-light);
+}
+.lang-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 0;
+}
+.lang-tab {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  font-weight: var(--weight-medium);
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: var(--transition-fast);
+}
+.lang-tab:hover {
+  color: var(--color-text-dark);
+}
+.lang-tab.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.evoluzione-section {
+  padding: var(--space-9) 0 var(--space-10);
+  background: var(--color-light);
+}
+
+.evoluzione-text {
+  margin-bottom: var(--space-8);
+}
+.evoluzione-text p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+  text-align: justify;
+}
+.evoluzione-text p:last-child { margin-bottom: 0; }
+.evoluzione-text em { color: var(--color-accent-dark); }
+.evoluzione-text strong { color: var(--color-text-dark); font-weight: var(--weight-semibold); }
+
+.evo-caption-line {
+  text-align: center !important;
+  color: var(--color-accent) !important;
+  font-family: var(--font-display) !important;
+  font-style: italic;
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  margin: var(--space-6) 0 !important;
+}
+.evo-caption-line strong { color: var(--color-text-dark); font-weight: var(--weight-semibold); }
+
+/* Triptych — 3 images side by side */
+.evoluzione-triptych {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin: var(--space-8) 0;
+  align-items: end;
+}
+.evo-image {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.evo-image img {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  background: var(--color-light-alt);
+}
+.evo-image figcaption {
+  margin-top: var(--space-3);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+@media (min-width: 768px) {
+  .evoluzione-triptych { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Side-by-side text+image (Boccadirosa, Amore Alieno) */
+.evoluzione-side {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin: var(--space-8) 0;
+  align-items: center;
+}
+.evoluzione-side.reverse .evo-side-image {
+  order: 1;
+}
+.evo-side-image img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  margin-inline: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+.evo-side-text p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-dark);
+  text-align: justify;
+}
+.evo-side-text strong { font-weight: var(--weight-semibold); }
+@media (min-width: 768px) {
+  .evoluzione-side {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-7);
+  }
+  .evoluzione-side.reverse {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .evoluzione-side.reverse .evo-side-image {
+    order: 2;
+  }
+}
