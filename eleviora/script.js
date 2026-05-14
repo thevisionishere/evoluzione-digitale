@@ -219,8 +219,8 @@ function animateCounter(element) {
 function initCustomCursor() {
   const dot = document.createElement('div'); dot.className = 'cursor-dot';
   const follower = document.createElement('div'); follower.className = 'cursor-follower';
-  dot.style.left = '-100px'; dot.style.top = '-100px';
-  follower.style.left = '-100px'; follower.style.top = '-100px';
+  dot.style.transform = 'translate(-100px, -100px)';
+  follower.style.transform = 'translate(-100px, -100px)';
   document.body.appendChild(dot);
   document.body.appendChild(follower);
 
