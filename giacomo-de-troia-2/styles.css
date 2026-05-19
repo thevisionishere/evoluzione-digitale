@@ -1642,6 +1642,67 @@ body.viewer-open .cursor-follower.hover {
   background: linear-gradient(135deg, #f8f4ef 0%, #f2ede6 100%);
 }
 
+/* --- Leaf back: painting caption --- */
+.leaf-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(var(--space-5), 3.5vw, var(--space-8));
+  background: linear-gradient(135deg, #f8f4ef 0%, #f2ede6 100%);
+}
+.leaf-cap-overline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+.leaf-cap-line {
+  width: 50px;
+  height: 1px;
+  background: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+.leaf-cap-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-dark);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-4);
+  max-width: 92%;
+}
+.leaf-cap-meta {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+.leaf-cap-tech {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(0.78rem, 0.95vw, 0.88rem);
+  color: var(--color-accent);
+  margin: 0;
+}
+.leaf-cap-sold {
+  display: inline-block;
+  margin-top: var(--space-4);
+  padding: 2px 12px;
+  background: rgba(26, 26, 26, 0.85);
+  color: var(--color-light);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
 /* --- Painting page (leaf fronts 1-17) --- */
 .leaf-painting {
   display: flex;
