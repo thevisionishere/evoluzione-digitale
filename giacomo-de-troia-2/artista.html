@@ -33,7 +33,17 @@
         <a href="opere.html">Galleria</a>
         <a href="artista.html" class="active">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
-        <a href="mostre.html">Mostre e Premi</a>
+        <div class="nav-dropdown">
+          <a href="mostre.html" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Mostre e Premi
+            <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="mostre.html#mostre" role="menuitem">Mostre</a>
+            <a href="mostre.html#premi" role="menuitem">Premi</a>
+            <a href="mostre.html#pubblicazioni" role="menuitem">Pubblicazioni</a>
+          </div>
+        </div>
         <a href="contatti.html">Contatti</a>
       </nav>
       <button class="hamburger" aria-label="Menu" aria-expanded="false">
@@ -48,6 +58,9 @@
     <a href="artista.html" class="active">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html">Mostre e Premi</a>
+    <a href="mostre.html#mostre" class="mobile-submenu-item">— Mostre</a>
+    <a href="mostre.html#premi" class="mobile-submenu-item">— Premi</a>
+    <a href="mostre.html#pubblicazioni" class="mobile-submenu-item">— Pubblicazioni</a>
     <a href="contatti.html">Contatti</a>
     <div class="mobile-menu-contact">
       <a href="tel:+393384501982">338 450 1982</a>
@@ -278,74 +291,6 @@
             </div><!-- /.readings-track -->
           </div><!-- /.readings-viewport -->
         </div><!-- /.readings-slideshow -->
-      </div>
-    </section>
-
-    <!-- ====== PUBLICATIONS ====== -->
-    <section class="publications-section">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: var(--space-8);">
-          <p class="overline reveal-up">Stampa e Cataloghi</p>
-          <h2 class="reveal-up" data-delay="1">Pubblicazioni</h2>
-        </div>
-
-        <div class="publications-gallery reveal-up">
-          <figure class="publications-photo">
-            <img src="images/artista/pubblicazioni-libri.jpeg" alt="Volumi e cataloghi che hanno accolto le opere di Giacomo De Troia: enciclopedie d'arte, Il Tocco dell'Arte, Vallata, Lenzuola d'Arte" loading="lazy">
-            <figcaption>I volumi e i cataloghi che hanno accolto le opere di <strong>Giacomo De Troia</strong>.</figcaption>
-          </figure>
-          <figure class="publications-photo">
-            <img src="images/artista/locandina-rassegna-lucera-2025.jpeg" alt="Locandina della Prima Rassegna di Arti Visive — Lucera Capitale Cultura Puglia 2025, di cui Giacomo De Troia è Direttore Artistico" loading="lazy">
-            <figcaption>Prima Rassegna di Arti Visive &mdash; Lucera Capitale Cultura Puglia 2025 &mdash; <strong>Giacomo De Troia</strong>, Direttore Artistico.</figcaption>
-          </figure>
-        </div>
-
-        <ul class="publications-list">
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Artleader</span>
-            <span class="pub-detail">Ancona, 2000</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Artecultura dei Critici Martucci</span>
-            <span class="pub-detail">Milano-Brera, 2004</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Palabrea a Colori — Sara Ventura</span>
-            <span class="pub-detail">Bari, 2013</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Commissioni, Parole e Colori della Quarantena</span>
-            <span class="pub-detail">Bari, 2019</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Il Convivio</span>
-            <span class="pub-detail">Catania, 2019</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Il Giornale di Alghero</span>
-            <span class="pub-detail">Alghero, 2019</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Accademia delle Belle Arti</span>
-            <span class="pub-detail">San Severo, 2020</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">&ldquo;Pennello d&rsquo;Oro&rdquo; Iconovetere</span>
-            <span class="pub-detail">Foggia, 2020</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Catalogo dell&rsquo;Arte Moderna Mondadori</span>
-            <span class="pub-detail">Milano, 2021</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">Catalogo dell&rsquo;Arte Moderna Mondadori</span>
-            <span class="pub-detail">Milano, 2022</span>
-          </li>
-          <li class="publication-item reveal-up">
-            <span class="pub-title">5th Arte</span>
-            <span class="pub-detail">New York</span>
-          </li>
-        </ul>
       </div>
     </section>
 

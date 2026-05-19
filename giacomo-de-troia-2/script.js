@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleriaFilters();
   initGalleriaDetail();
   initReadingsSlideshow();
+  initNavDropdown();
+  initMostreTabs();
 
   // Custom cursor disabled — use native browser cursor
   // if (!isMobile) initCustomCursor();
@@ -976,6 +978,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    // On initial page load with a hash (e.g. /mostre.html#premi), adjust scroll to account for sticky header.
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        // Wait a moment for layout (images, reveal-up etc.) before scrolling
+        setTimeout(() => {
+          const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+          window.scrollTo({ top, behavior: prefersReducedMotion ? 'instant' : 'smooth' });
+        }, 300);
+      }
+    }
   }
 
   /* ==========================================================
@@ -1201,6 +1216,86 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!a.hasAttribute('tabindex')) a.setAttribute('tabindex', '0');
       a.style.cursor = 'pointer';
     });
+  }
+
+  /* ==========================================================
+     NAV DROPDOWN (Mostre e Premi)
+     ========================================================== */
+  function initNavDropdown() {
+    document.querySelectorAll('.nav-dropdown').forEach(dd => {
+      const trigger = dd.querySelector('.nav-dropdown-trigger');
+      if (!trigger) return;
+
+      // On touch / no-hover devices, tap toggles open; otherwise rely on CSS hover
+      const isTouch = !window.matchMedia('(hover: hover)').matches;
+      if (isTouch) {
+        trigger.addEventListener('click', e => {
+          // First tap opens dropdown; second tap (or tap on a menu item) follows link
+          if (!dd.classList.contains('open')) {
+            e.preventDefault();
+            // Close other dropdowns
+            document.querySelectorAll('.nav-dropdown.open').forEach(other => {
+              if (other !== dd) other.classList.remove('open');
+            });
+            dd.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+        document.addEventListener('click', e => {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      // Keyboard support: Esc closes, Down/Up traverses menu items
+      trigger.addEventListener('keydown', e => {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          dd.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+          const first = dd.querySelector('.nav-dropdown-menu a');
+          if (first) first.focus();
+        }
+      });
+      dd.querySelectorAll('.nav-dropdown-menu a').forEach((item, i, arr) => {
+        item.addEventListener('keydown', e => {
+          if (e.key === 'ArrowDown') { e.preventDefault(); (arr[i+1] || arr[0]).focus(); }
+          if (e.key === 'ArrowUp')   { e.preventDefault(); (arr[i-1] || arr[arr.length-1]).focus(); }
+          if (e.key === 'Escape')    { e.preventDefault(); dd.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); trigger.focus(); }
+        });
+      });
+    });
+  }
+
+  /* ==========================================================
+     MOSTRE TABS (mostre.html — Lista / Immagini)
+     ========================================================== */
+  function initMostreTabs() {
+    const tabsRoot = document.querySelector('.mostre-tabs');
+    if (!tabsRoot) return;
+    const tabs   = Array.from(tabsRoot.querySelectorAll('.mostre-tab'));
+    const panels = Array.from(document.querySelectorAll('.mostre-tabpanel'));
+
+    function activate(name) {
+      tabs.forEach(t => {
+        const isActive = t.dataset.tab === name;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      panels.forEach(p => {
+        p.hidden = p.dataset.tabpanel !== name;
+      });
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
+
+    // Initial scroll-to-hash for sub-anchors (if user came in via #mostre etc.)
+    // We just ensure the default "lista" tab is active on landing.
+    if (window.location.hash === '#mostre' || !window.location.hash) {
+      activate('lista');
+    }
   }
 
   /* ==========================================================

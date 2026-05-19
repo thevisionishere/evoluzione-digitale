@@ -33,7 +33,17 @@
         <a href="opere.html">Galleria</a>
         <a href="artista.html">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
-        <a href="mostre.html" class="active">Mostre e Premi</a>
+        <div class="nav-dropdown">
+          <a href="mostre.html" class="nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+            Mostre e Premi
+            <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="mostre.html#mostre" role="menuitem">Mostre</a>
+            <a href="mostre.html#premi" role="menuitem">Premi</a>
+            <a href="mostre.html#pubblicazioni" role="menuitem">Pubblicazioni</a>
+          </div>
+        </div>
         <a href="contatti.html">Contatti</a>
       </nav>
       <button class="hamburger" aria-label="Menu" aria-expanded="false">
@@ -48,6 +58,9 @@
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html" class="active">Mostre e Premi</a>
+    <a href="mostre.html#mostre" class="mobile-submenu-item">— Mostre</a>
+    <a href="mostre.html#premi" class="mobile-submenu-item">— Premi</a>
+    <a href="mostre.html#pubblicazioni" class="mobile-submenu-item">— Pubblicazioni</a>
     <a href="contatti.html">Contatti</a>
     <div class="mobile-menu-contact">
       <a href="tel:+393384501982">338 450 1982</a>
@@ -74,121 +87,21 @@
       </div>
     </section>
 
-    <!-- ====== AWARDS LIST ====== -->
-    <section class="awards-list-section">
+    <!-- ====== MOSTRE (with Lista/Immagini tabs) ====== -->
+    <section class="exhibitions-section section-light" id="mostre">
       <div class="container">
-        <p class="overline reveal-up" style="text-align: center; margin-bottom: var(--space-5);">Riconoscimenti</p>
-        <h2 class="reveal-up" data-delay="1" style="text-align: center; margin-bottom: var(--space-9);">Premi e Riconoscimenti</h2>
-        <div class="awards-list">
+        <h2 class="reveal-up" data-delay="1" style="text-align: center; margin-bottom: var(--space-6);">Mostre</h2>
 
-          <div class="award-list-item has-image reveal-up">
-            <div class="award-year">2026</div>
-            <div class="award-details">
-              <h3>Riconoscimento del Comune di Lucera</h3>
-              <p>L'Amministrazione Comunale conferisce al Maestro <strong>Giacomo De Troia</strong>, artista e pittore autodidatta, che con oltre 35 anni di passione e talento ha portato la sua arte oltre i confini di Lucera, in ambito nazionale ed internazionale.<br>Il Sindaco Avv. Giuseppe Pitta &mdash; Lucera, 10 Maggio 2026</p>
-            </div>
-            <div class="award-image">
-              <img src="images/mostre/targa-comune-lucera-2026.jpg" alt="Targa del Comune di Lucera al Maestro Giacomo De Troia — Lucera, 10 Maggio 2026" loading="lazy">
-            </div>
-          </div>
-
-          <div class="award-list-item has-image reveal-up">
-            <div class="award-year">2025</div>
-            <div class="award-details">
-              <h3>Artista Segnalato</h3>
-              <p>Biennale d'Arte Contemporanea &ldquo;CIAO Umbria&rdquo; — IV Edizione, Citt&agrave; di Castello</p>
-            </div>
-            <div class="award-image">
-              <img src="images/mostre/targa-ciao-umbria-2025.jpeg" alt="Targa Biennale CIAO Umbria 2025 — Giacomo De Troia Artista Segnalato" loading="lazy">
-            </div>
-          </div>
-
-          <div class="award-list-item has-image reveal-up">
-            <div class="award-year">2025</div>
-            <div class="award-details">
-              <h3>Premio alla Carriera &ldquo;Lucera Citt&agrave; d'Arte&rdquo;</h3>
-              <p>Associazione Culturale &ldquo;Per una Lucera Bella&rdquo; — partner ufficiale Casa Sanremo 2025<br>Lucera, 18 Maggio 2025</p>
-            </div>
-            <div class="award-image">
-              <img src="images/mostre/targa-carriera-lucera-2025.jpeg" alt="Targa Premio alla Carriera Lucera Città d'Arte 2025" loading="lazy">
-            </div>
-          </div>
-
-          <div class="award-list-item has-image reveal-up">
-            <div class="award-year">2025</div>
-            <div class="award-details">
-              <h3>Premio della Presidenza</h3>
-              <p>Premio di Letteratura e Arti Visive &ldquo;Ci&ograve; Che Caino Non Sa&rdquo; — VI Edizione, Sezione P Violenza Donne e Minori<br>Opera: <em>Torneranno gli aquiloni</em> — Foggia, 21 giugno 2025</p>
-            </div>
-            <div class="award-image">
-              <img src="images/mostre/targa-caino-aquiloni-2025.jpeg" alt="Targa Premio Presidenza Ciò Che Caino Non Sa VI Edizione 2025 — Torneranno gli Aquiloni" loading="lazy">
-            </div>
-          </div>
-
-          <div class="award-list-item reveal-up">
-            <div class="award-year">2024</div>
-            <div class="award-details">
-              <h3>1° Classificato</h3>
-              <p>Premio Nazionale &ldquo;Ci&ograve; Che Caino Non Sa&rdquo; — V Edizione, Violenza Donne e Minori<br>Opera: <em>Vittime Invisibili</em> — Foggia</p>
-            </div>
-          </div>
-
-          <div class="award-list-item has-image reveal-up">
-            <div class="award-year">2019</div>
-            <div class="award-details">
-              <h3>Premio Speciale &ldquo;Pennello d'Oro&rdquo;</h3>
-              <p>Concorso dell'Iconavetere &mdash; CULTURALMENTE<br>Foggia, Marzo 2019</p>
-            </div>
-            <div class="award-image">
-              <img src="images/mostre/targa-pennello-oro-2019.jpeg" alt="Targa Pennello d'Oro CULTURALMENTE Concorso dell'Iconavetere Foggia 2019" loading="lazy">
-            </div>
-          </div>
-
-          <div class="award-list-item reveal-up">
-            <div class="award-year">2025</div>
-            <div class="award-details">
-              <h3>2° Classificato</h3>
-              <p>Concorso V. Piccirillo — Monticchio</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== EXHIBITIONS WITH IMAGES ====== -->
-    <section class="exhibitions-section section-light">
-      <div class="container">
-        <p class="overline reveal-up" style="margin-bottom: var(--space-5);">Esposizioni</p>
-        <h2 class="reveal-up" data-delay="1" style="margin-bottom: var(--space-9);">Mostre</h2>
-        <div class="exhibitions-grid">
-
-          <div class="exhibition-card reveal-up">
-            <img src="images/mostre/museo-eboli.jpg" alt="Mostra Lenzuola D'Arte al Museo Archeologico Nazionale di Eboli — opera L'Angelo di Luce di Giacomo De Troia" width="600" height="400" loading="lazy">
-            <div class="exhibition-info">
-              <h3>Museo Archeologico Nazionale di Eboli</h3>
-              <p class="exhibition-meta">&ldquo;Lenzuola D&rsquo;Arte&rdquo;</p>
-              <p>Opera esposta: <em>L&rsquo;Angelo di Luce</em></p>
-            </div>
-          </div>
-
-          <div class="exhibition-card reveal-up">
-            <img src="images/mostre/mostra-bovino-2024.jpeg" alt="Mostra Pittura sul Teatro della Vita al Chiostro S. Antonio di Bovino, agosto-settembre 2024" width="600" height="400" loading="lazy">
-            <div class="exhibition-info">
-              <h3>Chiostro S. Antonio, Villa Comunale — Bovino</h3>
-              <p class="exhibition-meta">&ldquo;Pittura sul Teatro della Vita&rdquo; — 24 Agosto – 01 Settembre 2024</p>
-              <p>Una selezione di opere che esplorano la drammaticità e la bellezza dell&rsquo;esperienza umana, esposte nel suggestivo chiostro storico di Bovino.</p>
-            </div>
-          </div>
-
+        <!-- Tab switcher -->
+        <div class="mostre-tabs reveal-up" data-delay="2" role="tablist" aria-label="Vista mostre">
+          <button class="mostre-tab active" type="button" role="tab" aria-selected="true" data-tab="lista">Lista</button>
+          <button class="mostre-tab" type="button" role="tab" aria-selected="false" data-tab="immagini">Immagini</button>
         </div>
 
-        <!-- Historical exhibitions — chronological timeline -->
-        <div style="margin-top: var(--space-9);">
-          <p class="overline reveal-up" style="margin-bottom: var(--space-6);">Cronologia Espositiva</p>
+        <!-- Lista tab: chronological timeline only -->
+        <div class="mostre-tabpanel" data-tabpanel="lista">
           <div class="exhibitions-timeline">
-
-            <div class="timeline-item reveal-up">
+<div class="timeline-item reveal-up">
               <span class="timeline-year">2017</span>
               <div class="timeline-info">
                 <h4>Dubai &mdash; Gallery of Light</h4>
@@ -363,72 +276,222 @@
                 <p>Prima esposizione personale &mdash; opere di grafica</p>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- Catalogo Completo Mostre — compact list -->
-        <div style="margin-top: var(--space-9);">
-          <p class="overline reveal-up" style="margin-bottom: var(--space-3);">Catalogo Completo</p>
-          <h3 class="reveal-up" data-delay="1" style="margin-bottom: var(--space-6); font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold);">Altre Mostre Personali</h3>
-          <div class="catalog-grid">
-            <div class="catalog-item reveal-up"><span class="catalog-year">2017</span><span class="catalog-place">Bari</span><span class="catalog-venue">Galleria d'Arte &ldquo;Gaglianoarte&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2016</span><span class="catalog-place">Foggia</span><span class="catalog-venue">Palazzetto dell'Arte &mdash; &ldquo;La Fascinazione del Mistero&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2016</span><span class="catalog-place">Foggia</span><span class="catalog-venue">Villa Comunale</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2015</span><span class="catalog-place">Teora (AV)</span><span class="catalog-venue">&ldquo;Il Teatro della Vita&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2015</span><span class="catalog-place">Grottaglie (TA)</span><span class="catalog-venue">&ldquo;Il Teatro della Vita&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2015</span><span class="catalog-place">Lioni (AV)</span><span class="catalog-venue">&ldquo;L'Energia dell'Arte&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2014</span><span class="catalog-place">Foggia</span><span class="catalog-venue">Villa Comunale</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2014</span><span class="catalog-place">Troia (FG)</span><span class="catalog-venue">Sala Azzurra</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2013</span><span class="catalog-place">Vasto (CB)</span><span class="catalog-venue">Sala Mattioli</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2013</span><span class="catalog-place">Martina Franca (TA)</span><span class="catalog-venue">Alexander Museum</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2012</span><span class="catalog-place">Martina Franca (TA)</span><span class="catalog-venue">Arte Nazionale</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2012</span><span class="catalog-place">Bovino (FG)</span><span class="catalog-venue">&ldquo;Intrecci&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2012</span><span class="catalog-place">Foggia</span><span class="catalog-venue">Palazzetto dell'Arte &mdash; Sala Propilei</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2012</span><span class="catalog-place">Bologna</span><span class="catalog-venue">Galleria D'Arte De Marchi</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2010</span><span class="catalog-place">Pescara</span><span class="catalog-venue">Galleria D'Arte Boscio</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2010</span><span class="catalog-place">Bologna</span><span class="catalog-venue">Galleria D'Arte De Marchi</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2005</span><span class="catalog-place">Rimini</span><span class="catalog-venue">Hotel La Goletta</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2004</span><span class="catalog-place">Rimini</span><span class="catalog-venue">Hotel Marconi</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2003</span><span class="catalog-place">San Severo (FG)</span><span class="catalog-venue">Associazione &ldquo;Il Melograno&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2003</span><span class="catalog-place">Lucera (FG)</span><span class="catalog-venue">Spazio Mostra</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">2002</span><span class="catalog-place">Bologna</span><span class="catalog-venue">Galleria Galle</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">1999</span><span class="catalog-place">Cattolica (RN)</span><span class="catalog-venue">&ldquo;Artisti della Regina&rdquo;</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">1999</span><span class="catalog-place">Milano-Brera</span><span class="catalog-venue">Galleria d'Arte Modigliani</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">1995</span><span class="catalog-place">Vieste (FG)</span><span class="catalog-venue">Museo Civico</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">1993</span><span class="catalog-place">Lucera (FG)</span><span class="catalog-venue">Palazzetto G.I.L. &mdash; Centro Nuova Cultura</span></div>
-            <div class="catalog-item reveal-up"><span class="catalog-year">1991</span><span class="catalog-place">Lucera (FG)</span><span class="catalog-venue">Palazzetto G.I.L.</span></div>
+        <!-- Immagini tab: featured cards + locandine -->
+        <div class="mostre-tabpanel" data-tabpanel="immagini" hidden>
+          <div class="exhibitions-grid">
+<div class="exhibition-card reveal-up">
+            <img src="images/mostre/museo-eboli.jpg" alt="Mostra Lenzuola D'Arte al Museo Archeologico Nazionale di Eboli — opera L'Angelo di Luce di Giacomo De Troia" width="600" height="400" loading="lazy">
+            <div class="exhibition-info">
+              <h3>Museo Archeologico Nazionale di Eboli</h3>
+              <p class="exhibition-meta">&ldquo;Lenzuola D&rsquo;Arte&rdquo;</p>
+              <p>Opera esposta: <em>L&rsquo;Angelo di Luce</em></p>
+            </div>
+          </div>
+
+          <div class="exhibition-card reveal-up">
+            <img src="images/mostre/mostra-bovino-2024.jpeg" alt="Mostra Pittura sul Teatro della Vita al Chiostro S. Antonio di Bovino, agosto-settembre 2024" width="600" height="400" loading="lazy">
+            <div class="exhibition-info">
+              <h3>Chiostro S. Antonio, Villa Comunale — Bovino</h3>
+              <p class="exhibition-meta">&ldquo;Pittura sul Teatro della Vita&rdquo; — 24 Agosto – 01 Settembre 2024</p>
+              <p>Una selezione di opere che esplorano la drammaticità e la bellezza dell&rsquo;esperienza umana, esposte nel suggestivo chiostro storico di Bovino.</p>
+            </div>
+          </div>
+            <div class="exhibition-card reveal-up">
+              <img src="images/mostre/locandina-frammenti-di-vita-2026.jpeg" alt="Locandina &ldquo;Frammenti di Vita&rdquo; — Esposizione personale di Giacomo De Troia, Circolo Unione Lucera, 2-10 Maggio 2026" width="600" height="800" loading="lazy">
+              <div class="exhibition-info">
+                <h3>&ldquo;Frammenti di Vita&rdquo;</h3>
+                <p class="exhibition-meta">Circolo Unione &mdash; Lucera, 2&ndash;10 Maggio 2026</p>
+                <p>Esposizione personale presso il Circolo Unione di Lucera.</p>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ====== GALLERY FOTOGRAFICA ====== -->
-    <section class="artist-work-section section-light-alt">
-      <div class="container artist-work-header">
-        <p class="overline reveal-up">Immagini</p>
-        <h2 class="reveal-up" data-delay="1">Dai Luoghi dell'Arte</h2>
+    <!-- ====== PREMI ====== -->
+    <section class="awards-list-section" id="premi">
+      <div class="container">
+        <h2 class="reveal-up" data-delay="1" style="text-align: center; margin-bottom: var(--space-9);">Premi e Riconoscimenti</h2>
+        <div class="awards-list">
+<div class="award-list-item has-image reveal-up">
+            <div class="award-year">2026</div>
+            <div class="award-details">
+              <h3>Riconoscimento del Comune di Lucera</h3>
+              <p>L'Amministrazione Comunale conferisce al Maestro <strong>Giacomo De Troia</strong>, artista e pittore autodidatta, che con oltre 35 anni di passione e talento ha portato la sua arte oltre i confini di Lucera, in ambito nazionale ed internazionale.<br>Il Sindaco Avv. Giuseppe Pitta &mdash; Lucera, 10 Maggio 2026</p>
+            </div>
+            <div class="award-image">
+              <img src="images/mostre/targa-comune-lucera-2026.jpg" alt="Targa del Comune di Lucera al Maestro Giacomo De Troia — Lucera, 10 Maggio 2026" loading="lazy">
+            </div>
+          </div>
+
+          <div class="award-list-item has-image reveal-up">
+            <div class="award-year">2025</div>
+            <div class="award-details">
+              <h3>Artista Segnalato</h3>
+              <p>Biennale d'Arte Contemporanea &ldquo;CIAO Umbria&rdquo; — IV Edizione, Citt&agrave; di Castello</p>
+            </div>
+            <div class="award-image">
+              <img src="images/mostre/targa-ciao-umbria-2025.jpeg" alt="Targa Biennale CIAO Umbria 2025 — Giacomo De Troia Artista Segnalato" loading="lazy">
+            </div>
+          </div>
+
+          <div class="award-list-item has-image reveal-up">
+            <div class="award-year">2025</div>
+            <div class="award-details">
+              <h3>Premio alla Carriera &ldquo;Lucera Citt&agrave; d'Arte&rdquo;</h3>
+              <p>Associazione Culturale &ldquo;Per una Lucera Bella&rdquo; — partner ufficiale Casa Sanremo 2025<br>Lucera, 18 Maggio 2025</p>
+            </div>
+            <div class="award-image">
+              <img src="images/mostre/targa-carriera-lucera-2025.jpeg" alt="Targa Premio alla Carriera Lucera Città d'Arte 2025" loading="lazy">
+            </div>
+          </div>
+
+          <div class="award-list-item has-image reveal-up">
+            <div class="award-year">2025</div>
+            <div class="award-details">
+              <h3>Premio della Presidenza</h3>
+              <p>Premio di Letteratura e Arti Visive &ldquo;Ci&ograve; Che Caino Non Sa&rdquo; — VI Edizione, Sezione P Violenza Donne e Minori<br>Opera: <em>Torneranno gli aquiloni</em> — Foggia, 21 giugno 2025</p>
+            </div>
+            <div class="award-image">
+              <img src="images/mostre/targa-caino-aquiloni-2025.jpeg" alt="Targa Premio Presidenza Ciò Che Caino Non Sa VI Edizione 2025 — Torneranno gli Aquiloni" loading="lazy">
+            </div>
+          </div>
+
+          <div class="award-list-item reveal-up">
+            <div class="award-year">2024</div>
+            <div class="award-details">
+              <h3>1° Classificato</h3>
+              <p>Premio Nazionale &ldquo;Ci&ograve; Che Caino Non Sa&rdquo; — V Edizione, Violenza Donne e Minori<br>Opera: <em>Vittime Invisibili</em> — Foggia</p>
+            </div>
+          </div>
+
+          <div class="award-list-item has-image reveal-up">
+            <div class="award-year">2019</div>
+            <div class="award-details">
+              <h3>Premio Speciale &ldquo;Pennello d'Oro&rdquo;</h3>
+              <p>Concorso dell'Iconavetere &mdash; CULTURALMENTE<br>Foggia, Marzo 2019</p>
+            </div>
+            <div class="award-image">
+              <img src="images/mostre/targa-pennello-oro-2019.jpeg" alt="Targa Pennello d'Oro CULTURALMENTE Concorso dell'Iconavetere Foggia 2019" loading="lazy">
+            </div>
+          </div>
+
+          <div class="award-list-item reveal-up">
+            <div class="award-year">2025</div>
+            <div class="award-details">
+              <h3>2° Classificato</h3>
+              <p>Concorso V. Piccirillo — Monticchio</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="artist-work-strip">
-        <div class="artist-work-item">
-          <img src="images/mostre/artista-bosco-live.jpeg" alt="Giacomo De Troia che dipinge dal vivo nel bosco con il pubblico" width="500" height="350" loading="lazy">
+    </section>
+
+    <!-- ====== PUBBLICAZIONI ====== -->
+    <section class="publications-section section-light" id="pubblicazioni">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <h2 class="reveal-up" data-delay="1">Pubblicazioni</h2>
         </div>
-        <div class="artist-work-item">
-          <img src="images/mostre/sala-espositiva-opere.jpeg" alt="Sala espositiva con le opere di Giacomo De Troia montate a parete e su cavalletti" width="500" height="350" loading="lazy">
+
+        <div class="publications-gallery reveal-up">
+          <figure class="publications-photo">
+            <img src="images/artista/pubblicazioni-libri.jpeg" alt="Volumi e cataloghi che hanno accolto le opere di Giacomo De Troia: enciclopedie d'arte, Il Tocco dell'Arte, Vallata, Lenzuola d'Arte" loading="lazy">
+            <figcaption>I volumi e i cataloghi che hanno accolto le opere di <strong>Giacomo De Troia</strong>.</figcaption>
+          </figure>
+          <figure class="publications-photo">
+            <img src="images/artista/locandina-rassegna-lucera-2025.jpeg" alt="Locandina della Prima Rassegna di Arti Visive — Lucera Capitale Cultura Puglia 2025, di cui Giacomo De Troia è Direttore Artistico" loading="lazy">
+            <figcaption>Prima Rassegna di Arti Visive &mdash; Lucera Capitale Cultura Puglia 2025 &mdash; <strong>Giacomo De Troia</strong>, Direttore Artistico.</figcaption>
+          </figure>
         </div>
-        <div class="artist-work-item">
-          <img src="images/mostre/locandina-frammenti-di-vita-2026.jpeg" alt="Locandina Frammenti di Vita — Esposizione di arte personale di Giacomo De Troia, Circolo Unione Lucera, 2-10 Maggio 2026" width="500" height="350" loading="lazy">
+
+        <ul class="publications-list">
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Artleader</span>
+            <span class="pub-detail">Ancona, 2000</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Artecultura dei Critici Martucci</span>
+            <span class="pub-detail">Milano-Brera, 2004</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Palabrea a Colori — Sara Ventura</span>
+            <span class="pub-detail">Bari, 2013</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Commissioni, Parole e Colori della Quarantena</span>
+            <span class="pub-detail">Bari, 2019</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Il Convivio</span>
+            <span class="pub-detail">Catania, 2019</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Il Giornale di Alghero</span>
+            <span class="pub-detail">Alghero, 2019</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Accademia delle Belle Arti</span>
+            <span class="pub-detail">San Severo, 2020</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">&ldquo;Pennello d&rsquo;Oro&rdquo; Iconovetere</span>
+            <span class="pub-detail">Foggia, 2020</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Catalogo dell&rsquo;Arte Moderna Mondadori</span>
+            <span class="pub-detail">Milano, 2021</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">Catalogo dell&rsquo;Arte Moderna Mondadori</span>
+            <span class="pub-detail">Milano, 2022</span>
+          </li>
+          <li class="publication-item reveal-up">
+            <span class="pub-title">5th Arte</span>
+            <span class="pub-detail">New York</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====== I LUOGHI DELL'ARTE — gallery photo strip ====== -->
+    <section class="gallery-walk-section section-light artist-work-section">
+      <div class="container artist-work-header" style="text-align: center; margin-bottom: var(--space-7);">
+        <h2 class="reveal-up" data-delay="1">I Luoghi dell'Arte</h2>
+      </div>
+      <div class="gallery-walk-wrapper">
+        <button class="gallery-walk-arrow gallery-walk-prev" aria-label="Foto precedente"><svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></button>
+        <div class="gallery-walk-sticky">
+          <div class="gallery-walk-track">
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-bosco-1.jpeg" alt="Giacomo De Troia dipinge en plein air nel bosco" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-piazza-cavalletto.jpeg" alt="Giacomo De Troia dipinge al cavalletto in piazza con i dipinti esposti alle spalle" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-spiaggia-2.jpeg" alt="Giacomo De Troia al cavalletto sulla spiaggia pugliese" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-piazza-strada.jpeg" alt="Giacomo De Troia dipinge dal vivo in piazza durante un evento d'arte di strada" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-castello-plein-air.jpeg" alt="Giacomo De Troia al cavalletto en plein air, immerso nella natura" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-premiazione-corpo-volontari.jpeg" alt="Giacomo De Troia premiato dal Corpo Volontari di Lucera durante una cerimonia" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/studio/studio-con-dipinti.jpg" alt="Lo studio di Giacomo De Troia con i dipinti sui cavalletti" loading="lazy">
+            </div>
+          </div>
         </div>
-        <div class="artist-work-item">
-          <img src="images/mostre/museo-eboli.jpg" alt="Museo Archeologico Nazionale di Eboli — Lenzuola D'Arte" width="500" height="350" loading="lazy">
-        </div>
-        <div class="artist-work-item">
-          <img src="images/mostre/premio-vittime-invisibili.jpeg" alt="Premio Nazionale Ciò Che Caino Non Sa — Opera Vittime Invisibili" width="500" height="350" loading="lazy">
-        </div>
-        <div class="artist-work-item">
-          <img src="images/studio/studio-con-dipinti.jpg" alt="Lo studio di Giacomo De Troia con i dipinti sui cavalletti" width="500" height="350" loading="lazy">
-        </div>
+        <button class="gallery-walk-arrow gallery-walk-next" aria-label="Foto successiva"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+        <div class="gallery-walk-dots" role="tablist" aria-label="Naviga tra le foto"></div>
       </div>
     </section>
 
@@ -436,7 +499,6 @@
     <section class="final-cta-section section-light">
       <div class="container-narrow">
         <div class="final-cta-line reveal-up"></div>
-        <p class="overline reveal-up">Le Opere</p>
         <h2 class="reveal-up" data-delay="1">Scopri le Opere Premiate</h2>
         <p class="reveal-up" data-delay="2">Esplora il catalogo completo delle opere di Giacomo De Troia, incluse quelle che hanno ricevuto riconoscimenti nazionali e internazionali.</p>
         <a href="opere.html" class="btn-primary magnetic-btn reveal-up" data-delay="3" style="margin-top: var(--space-7);">Sfoglia le Opere &rarr;</a>

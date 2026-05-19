@@ -322,6 +322,86 @@ body.preloader-active { overflow: hidden; }
 .header-scrolled .header-nav a.active { color: var(--color-accent); }
 .header-scrolled .header-nav a { text-shadow: none; }
 
+/* --- Nav dropdown (Mostre e Premi) --- */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-caret {
+  transition: transform var(--duration-fast) var(--ease-out);
+  filter: drop-shadow(0 0 4px rgba(250, 248, 245, 0.9));
+}
+.header-scrolled .nav-caret { filter: none; }
+.nav-dropdown:hover .nav-caret,
+.nav-dropdown.open .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 200px;
+  background: var(--color-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  padding: var(--space-2) 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease-out),
+              transform 180ms var(--ease-out),
+              visibility 180ms var(--ease-out);
+  z-index: 100;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu::before {
+  /* Invisible bridge so cursor can travel from trigger to menu without losing hover */
+  content: '';
+  position: absolute;
+  inset: -14px 0 100% 0;
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  text-shadow: none;
+  white-space: nowrap;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.nav-dropdown-menu a::after { display: none; }
+.nav-dropdown-menu a:hover {
+  background: var(--color-light-alt);
+  color: var(--color-accent);
+}
+
+/* Mobile sub-menu items (under Mostre e Premi) */
+.mobile-menu .mobile-submenu-item {
+  padding-left: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
 .site-header.header-scrolled {
   background: rgba(250, 248, 245, 0.92);
   backdrop-filter: blur(20px);
@@ -3593,4 +3673,48 @@ section h2 {
   .galleria-detail-title { font-size: var(--text-xl); }
   .galleria-detail-price { font-size: var(--text-xl); }
   .detail-spec { grid-template-columns: 110px 1fr; }
+}
+
+/* =========================================================
+   MOSTRE — Lista/Immagini tab switcher
+   ========================================================= */
+.mostre-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-7);
+  margin: 0 auto var(--space-8);
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  width: max-content;
+  max-width: 100%;
+}
+.mostre-tab {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  padding: var(--space-3) 2px;
+  margin-bottom: -1px;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  border-radius: 0;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--duration-fast), border-color var(--duration-fast);
+}
+.mostre-tab:hover {
+  color: var(--color-text-dark);
+}
+.mostre-tab.active {
+  color: var(--color-text-dark);
+  border-bottom-color: var(--color-accent);
+}
+.mostre-tabpanel { animation: fadeInUp 360ms var(--ease-out); }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

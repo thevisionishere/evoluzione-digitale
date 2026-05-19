@@ -33,7 +33,17 @@
         <a href="opere.html">Galleria</a>
         <a href="artista.html">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
-        <a href="mostre.html">Mostre e Premi</a>
+        <div class="nav-dropdown">
+          <a href="mostre.html" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Mostre e Premi
+            <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="mostre.html#mostre" role="menuitem">Mostre</a>
+            <a href="mostre.html#premi" role="menuitem">Premi</a>
+            <a href="mostre.html#pubblicazioni" role="menuitem">Pubblicazioni</a>
+          </div>
+        </div>
         <a href="contatti.html">Contatti</a>
       </nav>
       <button class="hamburger" aria-label="Menu" aria-expanded="false">
@@ -48,6 +58,9 @@
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html">Mostre e Premi</a>
+    <a href="mostre.html#mostre" class="mobile-submenu-item">— Mostre</a>
+    <a href="mostre.html#premi" class="mobile-submenu-item">— Premi</a>
+    <a href="mostre.html#pubblicazioni" class="mobile-submenu-item">— Pubblicazioni</a>
     <a href="contatti.html">Contatti</a>
     <div class="mobile-menu-contact">
       <a href="tel:+393384501982">338 450 1982</a>
