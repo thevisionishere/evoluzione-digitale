@@ -28,10 +28,9 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="header-logo">G. De Troia</a>
+      <a href="index.html" class="header-logo" aria-label="Giacomo De Troia — Home"><img src="images/hero/firma.png" alt="Giacomo De Troia"></a>
       <nav class="header-nav">
-        <a href="index.html">Home</a>
-        <a href="opere.html" class="active">Opere</a>
+        <a href="opere.html" class="active">Galleria</a>
         <a href="artista.html">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
         <a href="mostre.html">Mostre e Premi</a>
@@ -45,8 +44,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="opere.html" class="active">Opere</a>
+    <a href="opere.html" class="active">Galleria</a>
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html">Mostre e Premi</a>
@@ -61,7 +59,13 @@
 
     <!-- ====== HERO INTERNAL ====== -->
     <section class="hero-internal">
-      <div class="hero-bg" style="background-image: url('images/dipinti/protagonisti.jpg')"></div>
+      <div class="hero-bg-slideshow" data-interval="6000">
+        <div class="hero-bg active" style="background-image: url('images/dipinti/protagonisti.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('images/dipinti/a-big-ice-cream.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/dipinti/il-conflitto.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/dipinti/cuori-forti.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('images/dipinti/amore-alieno.jpg')"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="hero-content" style="text-align: center;">
         <p class="hero-overline reveal-up">Catalogo Completo</p>
@@ -70,205 +74,2025 @@
       </div>
     </section>
 
-    <!-- ====== ART BOOK ====== -->
-    <section class="art-book-section section-light">
-      <div class="art-book-intro container">
-        <p class="overline reveal-up">Book Artistico</p>
-        <h2 class="reveal-up" data-delay="1">Giacomo De Troia</h2>
-        <p class="reveal-up" data-delay="2" style="max-width: 580px; margin-inline: auto; color: var(--color-text-muted); margin-top: var(--space-4);">
-          Sfoglia il book artistico come un libro d'arte. Clicca su un dipinto per vederlo in dettaglio.
+    <!-- ====== GALLERIA — Catalog with filters ====== -->
+    <section class="galleria-section section-light">
+      <div class="container">
+        <p class="overline reveal-up" style="text-align: center;">Catalogo Completo</p>
+        <h2 class="reveal-up" data-delay="1" style="text-align: center;">Galleria delle Opere</h2>
+        <p class="galleria-intro reveal-up" data-delay="2" style="text-align: center; max-width: 600px; margin: var(--space-4) auto var(--space-8); color: var(--color-text-muted);">
+          Esplora il catalogo completo. Filtra per anno, dimensione o fascia di prezzo.
         </p>
-      </div>
 
-      <div class="art-book-wrapper reveal-up" data-delay="3">
-        <div class="art-book" id="art-book">
-          <!-- Static backgrounds -->
-          <div class="book-bg-left"></div>
-          <div class="book-bg-right"></div>
-          <div class="book-spine"></div>
+        <!-- Filters -->
+        <div class="galleria-filters reveal-up" data-delay="3">
 
-          <!-- Inside front cover (visible on left before any pages flipped) -->
-          <div class="book-inside-cover">
-            <p class="ic-text">Sfoglia il catalogo &rarr;</p>
-          </div>
-
-          <!-- LEAF 0: Cover (artwork front, biography on inside) -->
-          <div class="book-leaf" data-leaf="0">
-            <div class="leaf-front leaf-cover-image">
-              <img src="images/artista/book-cover.jpg" alt="Copertina del book artistico di Giacomo De Troia">
-            </div>
-            <div class="leaf-back leaf-bio">
-              <span class="bio-overline">Biografia</span>
-              <div class="bio-line"></div>
-              <h3 class="bio-name">Giacomo De Troia</h3>
-              <div class="bio-text-block">
-                <p>Giacomo De Troia nasce a Lucera nel 1961. Il talento innato, specie nel disegno, inizia molto giovane la sua attività creativa, con terracotta ornamentali, ceramiche, vetrate d'arte.</p>
-                <p>La necessità quasi biologica di esprimersi tramite il linguaggio artistico sfocia nella pittura. È il veicolo di messaggi diversi, di valori umani oltre l'estetica.</p>
-                <p>La grammatica pittorica che egli esprime è pensiero e riflessione, metafora di realtà esistenziale, dialogo continuo con la propria interiorità. Enigma del vivere e sul mistero dell'essere.</p>
-              </div>
+          <div class="filter-group">
+            <label class="filter-label" for="filter-year">Anno</label>
+            <div class="filter-select-wrap">
+              <select id="filter-year" class="filter-select" data-filter="year">
+                <option value="all">Tutti gli anni</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+              </select>
             </div>
           </div>
 
-          <!-- LEAF 1: Protagonisti -->
-          <div class="book-leaf" data-leaf="1" data-painting="0" data-title="Protagonisti" data-meta="2023 — 113×121 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/protagonisti.jpg" alt="Protagonisti, acrilico su tela, 2023">
+          <div class="filter-group">
+            <label class="filter-label" for="filter-size">Dimensione</label>
+            <div class="filter-select-wrap">
+              <select id="filter-size" class="filter-select" data-filter="size">
+                <option value="all">Tutte le dimensioni</option>
+                <option value="SMALL">Small (&lt;40 cm)</option>
+                <option value="MEDIUM">Medium (40&ndash;80 cm)</option>
+                <option value="LARGE">Large (&gt;80 cm)</option>
+              </select>
             </div>
-            <div class="leaf-back leaf-blank"></div>
           </div>
 
-          <!-- LEAF 2: A Little Rock -->
-          <div class="book-leaf" data-leaf="2" data-painting="1" data-title="A Little Rock" data-meta="2021 — 80×80 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/a-little-rock.jpg" alt="A Little Rock, acrilico su tela, 2021">
+          <div class="filter-group">
+            <label class="filter-label" for="filter-price">Prezzo</label>
+            <div class="filter-select-wrap">
+              <select id="filter-price" class="filter-select" data-filter="price">
+                <option value="all">Tutti i prezzi</option>
+                <option value="0-200">Fino a &euro;200</option>
+                <option value="200-400">&euro;200 &ndash; &euro;400</option>
+                <option value="400-600">&euro;400 &ndash; &euro;600</option>
+                <option value="600-9999">Oltre &euro;600</option>
+              </select>
             </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 3: Artisti di Strada -->
-          <div class="book-leaf" data-leaf="3" data-painting="2" data-title="Artisti di Strada" data-meta="2021 — 65×65 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/artisti-di-strada.jpg" alt="Artisti di Strada, acrilico su tela, 2021" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 4: Anime Sospese -->
-          <div class="book-leaf" data-leaf="4" data-painting="3" data-title="Anime Sospese" data-meta="2020 — 51×55 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/anime-sospese.jpg" alt="Anime Sospese, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 5: Burn -->
-          <div class="book-leaf" data-leaf="5" data-painting="4" data-title="Burn" data-meta="2020 — 58,5×67 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/burn.jpg" alt="Burn, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 6: Capitano del Mio Destino -->
-          <div class="book-leaf" data-leaf="6" data-painting="5" data-title="Capitano del Mio Destino" data-meta="2020 — 90×90 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/capitano-del-mio-destino.jpg" alt="Capitano del Mio Destino, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 7: Cinque Monete -->
-          <div class="book-leaf" data-leaf="7" data-painting="6" data-title="Cinque Monete" data-meta="2020 — 82×40 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/cinque-monete.jpg" alt="Cinque Monete, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 8: Circe -->
-          <div class="book-leaf" data-leaf="8" data-painting="7" data-title="Circe" data-meta="2020 — 74,5×74,5 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/circe.jpg" alt="Circe, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 9: Fiat Voluntas Tua -->
-          <div class="book-leaf" data-leaf="9" data-painting="8" data-title="Fiat Voluntas Tua" data-meta="2020 — 92×130 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/fiat-voluntas-tua.jpg" alt="Fiat Voluntas Tua, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 10: I Custodi della Vita -->
-          <div class="book-leaf" data-leaf="10" data-painting="9" data-title="I Custodi della Vita" data-meta="2020 — 99×99 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/i-custodi-della-vita.jpg" alt="I Custodi della Vita, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 11: Little Eva -->
-          <div class="book-leaf" data-leaf="11" data-painting="10" data-title="Little Eva" data-meta="2020 — 40×70 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/little-eva.jpg" alt="Little Eva, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 12: Musa Assassina -->
-          <div class="book-leaf" data-leaf="12" data-painting="11" data-title="Musa Assassina" data-meta="2020 — 80×100 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/musa-assassina.jpg" alt="Musa Assassina, acrilico su tela, 2020" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 13: Indifferenza -->
-          <div class="book-leaf" data-leaf="13" data-painting="12" data-title="Indifferenza" data-meta="2019 — 100×80 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/indifferenza.jpg" alt="Indifferenza, acrilico su tela, 2019" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 14: La Strumentista -->
-          <div class="book-leaf" data-leaf="14" data-painting="13" data-title="La Strumentista" data-meta="2019 — 54×74 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/la-strumentista.jpg" alt="La Strumentista, acrilico su tela, 2019" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 15: Angie -->
-          <div class="book-leaf" data-leaf="15" data-painting="14" data-title="Angie" data-meta="2018 — 110×130 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/angie.jpg" alt="Angie, acrilico su tela, 2018" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 16: Altri Mondi -->
-          <div class="book-leaf" data-leaf="16" data-painting="15" data-title="Altri Mondi" data-meta="2018 — 75×95 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/altri-mondi.jpg" alt="Altri Mondi, acrilico su tela, 2018" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
-          </div>
-
-          <!-- LEAF 17: Riaccendiamo la Cultura -->
-          <div class="book-leaf" data-leaf="17" data-painting="16" data-title="Riaccendiamo la Cultura" data-meta="2017 — 110×120 cm">
-            <div class="leaf-front leaf-painting">
-              <img src="images/dipinti/riaccendiamo-la-cultura.jpg" alt="Riaccendiamo la Cultura, acrilico su tela, 2017" loading="lazy">
-            </div>
-            <div class="leaf-back leaf-blank"></div>
           </div>
 
         </div>
 
-        <!-- Navigation -->
-        <button class="book-nav-btn book-prev-btn" aria-label="Pagina precedente" disabled>&#8249;</button>
-        <button class="book-nav-btn book-next-btn" aria-label="Pagina successiva">&#8250;</button>
-        <div class="book-page-counter">Copertina</div>
-        <p class="book-hint">Usa le frecce &larr; &rarr; o clicca per sfogliare</p>
+        <p class="galleria-count" aria-live="polite">177 opere</p>
+
+        <div class="galleria-grid">
+        <article class="galleria-item" data-year="2026" data-size="MEDIUM" data-price="410" data-title="IL CALAMAIO dittico" data-technique="Acrilico su tela" data-dimensions="46×62 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/170-il-calamaio-dittico.jpg" alt="IL CALAMAIO dittico, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL CALAMAIO dittico</h3>
+            <p class="galleria-meta">2026 — 46×62 cm</p>
+            <p class="galleria-price">€410</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="MEDIUM" data-price="430" data-title="LA GINGA BRASILIANA" data-technique="Acrilico su tela" data-dimensions="67×47 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/171-la-ginga-brasiliana.jpg" alt="LA GINGA BRASILIANA, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA GINGA BRASILIANA</h3>
+            <p class="galleria-meta">2026 — 67×47 cm</p>
+            <p class="galleria-price">€430</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="MEDIUM" data-price="460" data-title="FIESTA" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/172-fiesta.jpg" alt="FIESTA, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>FIESTA</h3>
+            <p class="galleria-meta">2026 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="MEDIUM" data-price="540" data-title="SOGNI SPEZZATI" data-technique="Acrilico su tela" data-dimensions="70×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/173-sogni-spezzati.jpg" alt="SOGNI SPEZZATI, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOGNI SPEZZATI</h3>
+            <p class="galleria-meta">2026 — 70×70 cm</p>
+            <p class="galleria-price">€540</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="LARGE" data-price="620" data-title="FRATELLO SOLE E SORELLA LUNA" data-technique="Acrilico su tela" data-dimensions="70×100 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/174-fratello-sole-e-sorella-luna.jpg" alt="FRATELLO SOLE E SORELLA LUNA, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>FRATELLO SOLE E SORELLA LUNA</h3>
+            <p class="galleria-meta">2026 — 70×100 cm</p>
+            <p class="galleria-price">€620</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="LARGE" data-price="710" data-title="L'OMBRA DEL GRANDE GIARDINO" data-technique="Acrilico su tela" data-dimensions="100×100 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/175-l-ombra-del-grande-giardino.jpg" alt="L'OMBRA DEL GRANDE GIARDINO, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'OMBRA DEL GRANDE GIARDINO</h3>
+            <p class="galleria-meta">2026 — 100×100 cm</p>
+            <p class="galleria-price">€710</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="LARGE" data-price="750" data-title="ASSENZA DI EMPATIA" data-technique="Acrilico su tela" data-dimensions="83×145 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/176-assenza-di-empatia.jpg" alt="ASSENZA DI EMPATIA, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ASSENZA DI EMPATIA</h3>
+            <p class="galleria-meta">2026 — 83×145 cm</p>
+            <p class="galleria-price">€750</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2026" data-size="LARGE" data-price="760" data-title="SENTIMIENTO REGALE dittico" data-technique="Acrilico su tela" data-dimensions="85×150 cm" data-frame="Telaio dittico" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/177-sentimiento-regale-dittico.jpg" alt="SENTIMIENTO REGALE dittico, acrilico su tela, 2026" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SENTIMIENTO REGALE dittico</h3>
+            <p class="galleria-meta">2026 — 85×150 cm — Telaio dittico</p>
+            <p class="galleria-price">€760</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="330" data-title="LA FAVORITA" data-technique="Acrilico su tela" data-dimensions="45×45 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/160-la-favorita.jpg" alt="LA FAVORITA, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA FAVORITA</h3>
+            <p class="galleria-meta">2025 — 45×45 cm</p>
+            <p class="galleria-price">€330</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="370" data-title="LEGALITÀ" data-technique="Acrilico su tavola" data-dimensions="40×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/161-legalita.jpg" alt="LEGALITÀ, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LEGALITÀ</h3>
+            <p class="galleria-meta">2025 — 40×60 cm</p>
+            <p class="galleria-price">€370</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="370" data-title="LUIS" data-technique="Acrilico su tela" data-dimensions="40×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/162-luis.jpg" alt="LUIS, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LUIS</h3>
+            <p class="galleria-meta">2025 — 40×60 cm</p>
+            <p class="galleria-price">€370</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="460" data-title="FIORI VERSO SELMA" data-technique="Acrilico su tela" data-dimensions="50×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/163-fiori-verso-selma.jpg" alt="FIORI VERSO SELMA, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>FIORI VERSO SELMA</h3>
+            <p class="galleria-meta">2025 — 50×70 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="460" data-title="CARI NATIVI" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/164-cari-nativi.jpg" alt="CARI NATIVI, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CARI NATIVI</h3>
+            <p class="galleria-meta">2025 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="460" data-title="COME ERAVAMO" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/165-come-eravamo.jpg" alt="COME ERAVAMO, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COME ERAVAMO</h3>
+            <p class="galleria-meta">2025 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="480" data-title="TENEREZZA" data-technique="Acrilico su tela" data-dimensions="51×76 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/166-tenerezza.jpg" alt="TENEREZZA, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>TENEREZZA</h3>
+            <p class="galleria-meta">2025 — 51×76 cm</p>
+            <p class="galleria-price">€480</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="500" data-title="ART CONTAGIOSA" data-technique="Acrilico su tela" data-dimensions="94×44 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/167-art-contagiosa.jpg" alt="ART CONTAGIOSA, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ART CONTAGIOSA</h3>
+            <p class="galleria-meta">2025 — 94×44 cm</p>
+            <p class="galleria-price">€500</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="540" data-title="DAVIDE IL PASTORELLO" data-technique="Acrilico su tela" data-dimensions="70×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/168-davide-il-pastorello.jpg" alt="DAVIDE IL PASTORELLO, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>DAVIDE IL PASTORELLO</h3>
+            <p class="galleria-meta">2025 — 70×70 cm</p>
+            <p class="galleria-price">€540</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2025" data-size="MEDIUM" data-price="600" data-title="JAZZ PERIFERICO" data-technique="Acrilico su tela" data-dimensions="80×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/169-jazz-periferico.jpg" alt="JAZZ PERIFERICO, acrilico su tela, 2025" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>JAZZ PERIFERICO</h3>
+            <p class="galleria-meta">2025 — 80×80 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="70" data-title="SAFIRA" data-technique="Acrilico su tavola" data-dimensions="25×28 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/137-safira.jpg" alt="SAFIRA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SAFIRA</h3>
+            <p class="galleria-meta">2024 — 25×28 cm</p>
+            <p class="galleria-price">€70</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="150" data-title="EROS" data-technique="Acrilico su tavola" data-dimensions="38×25 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/138-eros.jpg" alt="EROS, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>EROS</h3>
+            <p class="galleria-meta">2024 — 38×25 cm</p>
+            <p class="galleria-price">€150</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="180" data-title="L'ALIBI" data-technique="Acrilico su tela" data-dimensions="30×37 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/139-l-alibi.jpg" alt="L'ALIBI, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'ALIBI</h3>
+            <p class="galleria-meta">2024 — 30×37 cm</p>
+            <p class="galleria-price">€180</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="190" data-title="COSTRUTTORE DI NUOVI MONDI" data-technique="Acrilico su tavola" data-dimensions="45×25 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/140-costruttore-di-nuovi-mondi.jpg" alt="COSTRUTTORE DI NUOVI MONDI, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COSTRUTTORE DI NUOVI MONDI</h3>
+            <p class="galleria-meta">2024 — 45×25 cm</p>
+            <p class="galleria-price">€190</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="190" data-title="LEADERSHIP" data-technique="Acrilico su tela" data-dimensions="30×38 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/141-leadership.jpg" alt="LEADERSHIP, acrilico su tela, 2024" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>LEADERSHIP</h3>
+            <p class="galleria-meta">2024 — 30×38 cm</p>
+            <p class="galleria-price">€190</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="190" data-title="OMAGGIO FLOREALE" data-technique="Acrilico su tela" data-dimensions="30×38 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/142-omaggio-floreale.jpg" alt="OMAGGIO FLOREALE, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>OMAGGIO FLOREALE</h3>
+            <p class="galleria-meta">2024 — 30×38 cm</p>
+            <p class="galleria-price">€190</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="SMALL" data-price="240" data-title="LA MIMOSA" data-technique="Acrilico su tela" data-dimensions="35×41 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/143-la-mimosa.jpg" alt="LA MIMOSA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA MIMOSA</h3>
+            <p class="galleria-meta">2024 — 35×41 cm</p>
+            <p class="galleria-price">€240</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="300" data-title="LIBERTY" data-technique="Acrilico su tela" data-dimensions="38×48 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/144-liberty.jpg" alt="LIBERTY, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LIBERTY</h3>
+            <p class="galleria-meta">2024 — 38×48 cm</p>
+            <p class="galleria-price">€300</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="330" data-title="MARINAI" data-technique="Acrilico su tela" data-dimensions="45×45 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/145-marinai.jpg" alt="MARINAI, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>MARINAI</h3>
+            <p class="galleria-meta">2024 — 45×45 cm</p>
+            <p class="galleria-price">€330</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="370" data-title="GARGANO FORTE" data-technique="Acrilico su tela" data-dimensions="40×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/146-gargano-forte.jpg" alt="GARGANO FORTE, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>GARGANO FORTE</h3>
+            <p class="galleria-meta">2024 — 40×60 cm</p>
+            <p class="galleria-price">€370</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="380" data-title="L'AMARO MESTIERE DEL VIVERE" data-technique="Acrilico su tela" data-dimensions="50×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/147-l-amaro-mestiere-del-vivere.jpg" alt="L'AMARO MESTIERE DEL VIVERE, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'AMARO MESTIERE DEL VIVERE</h3>
+            <p class="galleria-meta">2024 — 50×50 cm</p>
+            <p class="galleria-price">€380</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="380" data-title="NOTE LIBERE" data-technique="Acrilico su tela" data-dimensions="50×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/148-note-libere.jpg" alt="NOTE LIBERE, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>NOTE LIBERE</h3>
+            <p class="galleria-meta">2024 — 50×50 cm</p>
+            <p class="galleria-price">€380</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="390" data-title="LA POLTRONA" data-technique="Acrilico su tela" data-dimensions="40×65 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/149-la-poltrona.jpg" alt="LA POLTRONA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA POLTRONA</h3>
+            <p class="galleria-meta">2024 — 40×65 cm</p>
+            <p class="galleria-price">€390</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="460" data-title="TRADIZIONE SICILIANA" data-technique="Acrilico su tela" data-dimensions="65×55 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/150-tradizione-siciliana.jpg" alt="TRADIZIONE SICILIANA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>TRADIZIONE SICILIANA</h3>
+            <p class="galleria-meta">2024 — 65×55 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="460" data-title="I TRE SS MARTIRI" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/151-i-tre-ss-martiri.jpg" alt="I TRE SS MARTIRI, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>I TRE SS MARTIRI</h3>
+            <p class="galleria-meta">2024 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="460" data-title="SOLITARIA" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/152-solitaria.jpg" alt="SOLITARIA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOLITARIA</h3>
+            <p class="galleria-meta">2024 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="570" data-title="IL PRINCIPE" data-technique="Acrilico su tavola" data-dimensions="74×76 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/153-il-principe.jpg" alt="IL PRINCIPE, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL PRINCIPE</h3>
+            <p class="galleria-meta">2024 — 74×76 cm</p>
+            <p class="galleria-price">€570</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="570" data-title="LA PARTITA CONTINUA" data-technique="Acrilico su tavola" data-dimensions="74×77 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/154-la-partita-continua.jpg" alt="LA PARTITA CONTINUA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA PARTITA CONTINUA</h3>
+            <p class="galleria-meta">2024 — 74×77 cm</p>
+            <p class="galleria-price">€570</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="600" data-title="A BIG ICE-CREAM" data-technique="Acrilico su tela" data-dimensions="80×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/155-a-big-ice-cream.jpg" alt="A BIG ICE-CREAM, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>A BIG ICE-CREAM</h3>
+            <p class="galleria-meta">2024 — 80×80 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="MEDIUM" data-price="600" data-title="MOTEL" data-technique="Acrilico su tela" data-dimensions="80×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/156-motel.jpg" alt="MOTEL, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>MOTEL</h3>
+            <p class="galleria-meta">2024 — 80×80 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="LARGE" data-price="620" data-title="COLONIA LATINA" data-technique="Acrilico su tela" data-dimensions="58×119 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/157-colonia-latina.jpg" alt="COLONIA LATINA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COLONIA LATINA</h3>
+            <p class="galleria-meta">2024 — 58×119 cm</p>
+            <p class="galleria-price">€620</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="LARGE" data-price="720" data-title="LETTERA DA UNA DEA" data-technique="Acrilico su tela" data-dimensions="67×160 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/158-lettera-da-una-dea.jpg" alt="LETTERA DA UNA DEA, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LETTERA DA UNA DEA</h3>
+            <p class="galleria-meta">2024 — 67×160 cm</p>
+            <p class="galleria-price">€720</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2024" data-size="LARGE" data-price="770" data-title="CRISTO DEPOSTO DALLA CROCE" data-technique="Acrilico su tela" data-dimensions="82×160 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/159-cristo-deposto-dalla-croce.jpg" alt="CRISTO DEPOSTO DALLA CROCE, acrilico su tela, 2024" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CRISTO DEPOSTO DALLA CROCE</h3>
+            <p class="galleria-meta">2024 — 82×160 cm</p>
+            <p class="galleria-price">€770</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2023" data-size="SMALL" data-price="160" data-title="COPERNICO" data-technique="Acrilico su tela" data-dimensions="29×34 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/135-copernico.jpg" alt="COPERNICO, acrilico su tela, 2023" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COPERNICO</h3>
+            <p class="galleria-meta">2023 — 29×34 cm</p>
+            <p class="galleria-price">€160</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2023" data-size="LARGE" data-price="780" data-title="PROTAGONISTI" data-technique="Acrilico su tela" data-dimensions="113×121 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/136-protagonisti.jpg" alt="PROTAGONISTI, acrilico su tela, 2023" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PROTAGONISTI</h3>
+            <p class="galleria-meta">2023 — 113×121 cm</p>
+            <p class="galleria-price">€780</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="360" data-title="SAMARCANDA" data-technique="Acrilico su tela" data-dimensions="45×51 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/127-samarcanda.jpg" alt="SAMARCANDA, acrilico su tela, 2022" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SAMARCANDA</h3>
+            <p class="galleria-meta">2022 — 45×51 cm</p>
+            <p class="galleria-price">€360</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="380" data-title="HOPE" data-technique="Acrilico su tela" data-dimensions="50×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/128-hope.jpg" alt="HOPE, acrilico su tela, 2022" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>HOPE</h3>
+            <p class="galleria-meta">2022 — 50×50 cm</p>
+            <p class="galleria-price">€380</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="380" data-title="SENZA TEMPO" data-technique="Acrilico su tela" data-dimensions="50×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/129-senza-tempo.jpg" alt="SENZA TEMPO, acrilico su tela, 2022" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SENZA TEMPO</h3>
+            <p class="galleria-meta">2022 — 50×50 cm</p>
+            <p class="galleria-price">€380</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="430" data-title="ECLISSI" data-technique="Acrilico su tela" data-dimensions="56×56 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/130-eclissi.jpg" alt="ECLISSI, acrilico su tela, 2022" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ECLISSI</h3>
+            <p class="galleria-meta">2022 — 56×56 cm</p>
+            <p class="galleria-price">€430</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="430" data-title="TORNERANNO GLI AQUILONI" data-technique="Acrilico su tela" data-dimensions="56×56 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/131-torneranno-gli-aquiloni.jpg" alt="TORNERANNO GLI AQUILONI, acrilico su tela, 2022" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>TORNERANNO GLI AQUILONI</h3>
+            <p class="galleria-meta">2022 — 56×56 cm</p>
+            <p class="galleria-price">€430</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="530" data-title="A LUNA" data-technique="Acrilico su tela" data-dimensions="58,5×80,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/132-a-luna.jpg" alt="A LUNA, acrilico su tela, 2022" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>A LUNA</h3>
+            <p class="galleria-meta">2022 — 58.5×80.5 cm</p>
+            <p class="galleria-price">€530</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="MEDIUM" data-price="540" data-title="SOLE NERO" data-technique="Acrilico su tela" data-dimensions="70×70 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/133-sole-nero.jpg" alt="SOLE NERO, acrilico su tela, 2022" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>SOLE NERO</h3>
+            <p class="galleria-meta">2022 — 70×70 cm</p>
+            <p class="galleria-price">€540</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2022" data-size="LARGE" data-price="890" data-title="MY SWEET LORD ALLELUJA" data-technique="Acrilico su tela" data-dimensions="145×150 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/134-my-sweet-lord-alleluja.jpg" alt="MY SWEET LORD ALLELUJA, acrilico su tela, 2022" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>MY SWEET LORD ALLELUJA</h3>
+            <p class="galleria-meta">2022 — 145×150 cm</p>
+            <p class="galleria-price">€890</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="SMALL" data-price="240" data-title="JUDO" data-technique="Acrilico su tavola" data-dimensions="34×42 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/108-judo.jpg" alt="JUDO, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>JUDO</h3>
+            <p class="galleria-meta">2021 — 34×42 cm — Con cornice</p>
+            <p class="galleria-price">€240</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="270" data-title="IL VECCHIO QUARTIERE" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/109-il-vecchio-quartiere.jpg" alt="IL VECCHIO QUARTIERE, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL VECCHIO QUARTIERE</h3>
+            <p class="galleria-meta">2021 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="270" data-title="LA SPOSA" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/110-la-sposa.jpg" alt="LA SPOSA, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA SPOSA</h3>
+            <p class="galleria-meta">2021 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="270" data-title="LA VICINANZA" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/111-la-vicinanza.jpg" alt="LA VICINANZA, acrilico su tela, 2021" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>LA VICINANZA</h3>
+            <p class="galleria-meta">2021 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="270" data-title="TIME & TIME" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/112-time-time.jpg" alt="TIME & TIME, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>TIME & TIME</h3>
+            <p class="galleria-meta">2021 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="320" data-title="GAIA" data-technique="Acrilico su tela" data-dimensions="40×50 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/113-gaia.jpg" alt="GAIA, acrilico su tela, 2021" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>GAIA</h3>
+            <p class="galleria-meta">2021 — 40×50 cm</p>
+            <p class="galleria-price">€320</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="320" data-title="IDENTITÀ NASCOSTE" data-technique="Acrilico su tela" data-dimensions="40×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/114-identita-nascoste.jpg" alt="IDENTITÀ NASCOSTE, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IDENTITÀ NASCOSTE</h3>
+            <p class="galleria-meta">2021 — 40×50 cm</p>
+            <p class="galleria-price">€320</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="330" data-title="L'APPUNTAMENTO" data-technique="Acrilico su tela" data-dimensions="40,5×50,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/115-l-appuntamento.jpg" alt="L'APPUNTAMENTO, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'APPUNTAMENTO</h3>
+            <p class="galleria-meta">2021 — 40.5×50.5 cm</p>
+            <p class="galleria-price">€330</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="420" data-title="PER NON DIMENTICARE" data-technique="Acrilico su tela" data-dimensions="55×55 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/116-per-non-dimenticare.jpg" alt="PER NON DIMENTICARE, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PER NON DIMENTICARE</h3>
+            <p class="galleria-meta">2021 — 55×55 cm</p>
+            <p class="galleria-price">€420</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="430" data-title="COSE NON COMUNI" data-technique="Acrilico su tela" data-dimensions="55×56 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/117-cose-non-comuni.jpg" alt="COSE NON COMUNI, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COSE NON COMUNI</h3>
+            <p class="galleria-meta">2021 — 55×56 cm</p>
+            <p class="galleria-price">€430</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="460" data-title="ASPETTANDO NOEMI" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/118-aspettando-noemi.jpg" alt="ASPETTANDO NOEMI, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ASPETTANDO NOEMI</h3>
+            <p class="galleria-meta">2021 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="460" data-title="YOUNG MUSIC" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/119-young-music.jpg" alt="YOUNG MUSIC, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>YOUNG MUSIC</h3>
+            <p class="galleria-meta">2021 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="500" data-title="ARTISTI DI STRADA" data-technique="Acrilico su tela" data-dimensions="65×65 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/120-artisti-di-strada.jpg" alt="ARTISTI DI STRADA, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ARTISTI DI STRADA</h3>
+            <p class="galleria-meta">2021 — 65×65 cm</p>
+            <p class="galleria-price">€500</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="500" data-title="COLLEGE'S GIRLS" data-technique="Acrilico su tela" data-dimensions="65,5×65,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/121-college-s-girls.jpg" alt="COLLEGE'S GIRLS, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COLLEGE'S GIRLS</h3>
+            <p class="galleria-meta">2021 — 65.5×65.5 cm</p>
+            <p class="galleria-price">€500</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="500" data-title="IL VIAGGIO DELL'INCERTEZZA" data-technique="Acrilico su tela" data-dimensions="65,5×65,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/122-il-viaggio-dell-incertezza.jpg" alt="IL VIAGGIO DELL'INCERTEZZA, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL VIAGGIO DELL'INCERTEZZA</h3>
+            <p class="galleria-meta">2021 — 65.5×65.5 cm</p>
+            <p class="galleria-price">€500</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="590" data-title="CERCHI" data-technique="Acrilico su tela" data-dimensions="55×110 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/123-cerchi.jpg" alt="CERCHI, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CERCHI</h3>
+            <p class="galleria-meta">2021 — 55×110 cm</p>
+            <p class="galleria-price">€590</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="MEDIUM" data-price="600" data-title="A LITTLE ROCK" data-technique="Acrilico su tela" data-dimensions="80×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/124-a-little-rock.jpg" alt="A LITTLE ROCK, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>A LITTLE ROCK</h3>
+            <p class="galleria-meta">2021 — 80×80 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="LARGE" data-price="680" data-title="TOSCA" data-technique="Acrilico su tela" data-dimensions="80×110 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/125-tosca.jpg" alt="TOSCA, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>TOSCA</h3>
+            <p class="galleria-meta">2021 — 80×110 cm</p>
+            <p class="galleria-price">€680</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2021" data-size="LARGE" data-price="710" data-title="AMORE ALIENO" data-technique="Acrilico su tela" data-dimensions="100×100 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/126-amore-alieno.jpg" alt="AMORE ALIENO, acrilico su tela, 2021" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>AMORE ALIENO</h3>
+            <p class="galleria-meta">2021 — 100×100 cm</p>
+            <p class="galleria-price">€710</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="SMALL" data-price="120" data-title="AMORE MECCANICO" data-technique="Acrilico su tavola" data-dimensions="25×34 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/039-amore-meccanico.jpg" alt="AMORE MECCANICO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>AMORE MECCANICO</h3>
+            <p class="galleria-meta">2020 — 25×34 cm — Con cornice</p>
+            <p class="galleria-price">€120</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="SMALL" data-price="210" data-title="SOTTO LA PIOGGIA" data-technique="Acrilico su tela" data-dimensions="35×35 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/040-sotto-la-pioggia.jpg" alt="SOTTO LA PIOGGIA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOTTO LA PIOGGIA</h3>
+            <p class="galleria-meta">2020 — 35×35 cm</p>
+            <p class="galleria-price">€210</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="SMALL" data-price="240" data-title="SOLO ANDATA" data-technique="Acrilico su tela" data-dimensions="37,5×37,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/041-solo-andata.jpg" alt="SOLO ANDATA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOLO ANDATA</h3>
+            <p class="galleria-meta">2020 — 37.5×37.5 cm</p>
+            <p class="galleria-price">€240</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="SMALL" data-price="270" data-title="VA TUTTO BENE" data-technique="Acrilico su tela" data-dimensions="39×40,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/042-va-tutto-bene.jpg" alt="VA TUTTO BENE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>VA TUTTO BENE</h3>
+            <p class="galleria-meta">2020 — 39×40.5 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="270" data-title="IN VALIGIA" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/043-in-valigia.jpg" alt="IN VALIGIA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IN VALIGIA</h3>
+            <p class="galleria-meta">2020 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="270" data-title="SINDROME DELLA STRADA" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/044-sindrome-della-strada.jpg" alt="SINDROME DELLA STRADA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SINDROME DELLA STRADA</h3>
+            <p class="galleria-meta">2020 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="280" data-title="L'ALBERO DEI SOGNI" data-technique="Acrilico su tela" data-dimensions="40×41 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/045-l-albero-dei-sogni.jpg" alt="L'ALBERO DEI SOGNI, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'ALBERO DEI SOGNI</h3>
+            <p class="galleria-meta">2020 — 40×41 cm</p>
+            <p class="galleria-price">€280</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="310" data-title="LUCIGNOLO" data-technique="Acrilico su tavola" data-dimensions="38,5×48,5 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/046-lucignolo.jpg" alt="LUCIGNOLO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LUCIGNOLO</h3>
+            <p class="galleria-meta">2020 — 38.5×48.5 cm — Con cornice</p>
+            <p class="galleria-price">€310</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="310" data-title="AMAZZONE" data-technique="Acrilico su tela" data-dimensions="38×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/047-amazzone.jpg" alt="AMAZZONE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>AMAZZONE</h3>
+            <p class="galleria-meta">2020 — 38×50 cm</p>
+            <p class="galleria-price">€310</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="330" data-title="SEBASTIAN" data-technique="Acrilico su tela" data-dimensions="40,5×50,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/048-sebastian.jpg" alt="SEBASTIAN, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SEBASTIAN</h3>
+            <p class="galleria-meta">2020 — 40.5×50.5 cm</p>
+            <p class="galleria-price">€330</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="340" data-title="L'AMORE SECONDO GIOBBE" data-technique="Acrilico su tela" data-dimensions="44×48 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/049-l-amore-secondo-giobbe.jpg" alt="L'AMORE SECONDO GIOBBE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'AMORE SECONDO GIOBBE</h3>
+            <p class="galleria-meta">2020 — 44×48 cm</p>
+            <p class="galleria-price">€340</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="340" data-title="VOCAZIONE" data-technique="Acrilico su tela" data-dimensions="44×48 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/050-vocazione.jpg" alt="VOCAZIONE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>VOCAZIONE</h3>
+            <p class="galleria-meta">2020 — 44×48 cm</p>
+            <p class="galleria-price">€340</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="360" data-title="TOUR SOUND LIVE" data-technique="Acrilico su tela" data-dimensions="48×48 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/051-tour-sound-live.jpg" alt="TOUR SOUND LIVE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>TOUR SOUND LIVE</h3>
+            <p class="galleria-meta">2020 — 48×48 cm</p>
+            <p class="galleria-price">€360</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="370" data-title="ALLÌ" data-technique="Acrilico su tela" data-dimensions="40×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/052-alli.jpg" alt="ALLÌ, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ALLÌ</h3>
+            <p class="galleria-meta">2020 — 40×60 cm</p>
+            <p class="galleria-price">€370</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="370" data-title="TEMPI MODERNI" data-technique="Acrilico su tela" data-dimensions="72,5×34 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/053-tempi-moderni.jpg" alt="TEMPI MODERNI, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>TEMPI MODERNI</h3>
+            <p class="galleria-meta">2020 — 72.5×34 cm</p>
+            <p class="galleria-price">€370</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="380" data-title="JENNY" data-technique="Acrilico su tavola" data-dimensions="61×41 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/054-jenny.jpg" alt="JENNY, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>JENNY</h3>
+            <p class="galleria-meta">2020 — 61×41 cm</p>
+            <p class="galleria-price">€380</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="400" data-title="INVITO" data-technique="Acrilico su tela" data-dimensions="40×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/055-invito.jpg" alt="INVITO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>INVITO</h3>
+            <p class="galleria-meta">2020 — 40×70 cm</p>
+            <p class="galleria-price">€400</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="400" data-title="LITTLE EVA" data-technique="Acrilico su tela" data-dimensions="40×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/056-little-eva.jpg" alt="LITTLE EVA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LITTLE EVA</h3>
+            <p class="galleria-meta">2020 — 40×70 cm</p>
+            <p class="galleria-price">€400</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="400" data-title="ANIME SOSPESE" data-technique="Acrilico su tela" data-dimensions="51×55 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/057-anime-sospese.jpg" alt="ANIME SOSPESE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ANIME SOSPESE</h3>
+            <p class="galleria-meta">2020 — 51×55 cm</p>
+            <p class="galleria-price">€400</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="430" data-title="THE KING" data-technique="Acrilico su tela" data-dimensions="50,5×62 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/058-the-king.jpg" alt="THE KING, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>THE KING</h3>
+            <p class="galleria-meta">2020 — 50.5×62 cm</p>
+            <p class="galleria-price">€430</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="440" data-title="CINQUE MONETE" data-technique="Acrilico su tela" data-dimensions="82×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/059-cinque-monete.jpg" alt="CINQUE MONETE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CINQUE MONETE</h3>
+            <p class="galleria-meta">2020 — 82×40 cm</p>
+            <p class="galleria-price">€440</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="440" data-title="LE DUE MARGHERITE" data-technique="Acrilico su tela" data-dimensions="82×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/060-le-due-margherite.jpg" alt="LE DUE MARGHERITE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LE DUE MARGHERITE</h3>
+            <p class="galleria-meta">2020 — 82×40 cm</p>
+            <p class="galleria-price">€440</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="440" data-title="RED RIVER" data-technique="Acrilico su tela" data-dimensions="54,5×60,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/061-red-river.jpg" alt="RED RIVER, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>RED RIVER</h3>
+            <p class="galleria-meta">2020 — 54.5×60.5 cm</p>
+            <p class="galleria-price">€440</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="450" data-title="SERENATA NON CONDIVISA" data-technique="Acrilico su tela" data-dimensions="58,5×58,5 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/062-serenata-non-condivisa.jpg" alt="SERENATA NON CONDIVISA, acrilico su tela, 2020" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>SERENATA NON CONDIVISA</h3>
+            <p class="galleria-meta">2020 — 58.5×58.5 cm</p>
+            <p class="galleria-price">€450</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="PESCATORE" data-technique="Acrilico su tela" data-dimensions="66×53 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/063-pescatore.jpg" alt="PESCATORE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PESCATORE</h3>
+            <p class="galleria-meta">2020 — 66×53 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="CHILDREN" data-technique="Acrilico su tavola" data-dimensions="50×70 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/064-children.jpg" alt="CHILDREN, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CHILDREN</h3>
+            <p class="galleria-meta">2020 — 50×70 cm — Con cornice</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="PERDONO CAINO" data-technique="Acrilico su tavola" data-dimensions="50×70 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/065-perdono-caino.jpg" alt="PERDONO CAINO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PERDONO CAINO</h3>
+            <p class="galleria-meta">2020 — 50×70 cm — Con cornice</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="LE GRAZIE DI UNA GEISHA" data-technique="Acrilico su tela" data-dimensions="54×65 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/066-le-grazie-di-una-geisha.jpg" alt="LE GRAZIE DI UNA GEISHA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LE GRAZIE DI UNA GEISHA</h3>
+            <p class="galleria-meta">2020 — 54×65 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="A CASA DI ALICE" data-technique="Acrilico su tela" data-dimensions="84×42 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/067-a-casa-di-alice.jpg" alt="A CASA DI ALICE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>A CASA DI ALICE</h3>
+            <p class="galleria-meta">2020 — 84×42 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="ANDREA E NICOL" data-technique="Acrilico su tela" data-dimensions="53,5×66 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/068-andrea-e-nicol.jpg" alt="ANDREA E NICOL, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ANDREA E NICOL</h3>
+            <p class="galleria-meta">2020 — 53.5×66 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="IL PRETE PARTIGIANO" data-technique="Acrilico su tela" data-dimensions="54×66 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/069-il-prete-partigiano.jpg" alt="IL PRETE PARTIGIANO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL PRETE PARTIGIANO</h3>
+            <p class="galleria-meta">2020 — 54×66 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="TAMER OF LIONS" data-technique="Acrilico su tela" data-dimensions="54×66 cm" data-frame="" data-sold="true">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/070-tamer-of-lions.jpg" alt="TAMER OF LIONS, acrilico su tela, 2020" loading="lazy">
+            <span class="galleria-sold">Venduto</span>
+          </div>
+          <div class="galleria-info">
+            <h3>TAMER OF LIONS</h3>
+            <p class="galleria-meta">2020 — 54×66 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="BICI MUSIC STOP" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/071-bici-music-stop.jpg" alt="BICI MUSIC STOP, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>BICI MUSIC STOP</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="CONCERTO IN MI MINORE" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/072-concerto-in-mi-minore.jpg" alt="CONCERTO IN MI MINORE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CONCERTO IN MI MINORE</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="I BARONI DEL POTERE" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/073-i-baroni-del-potere.jpg" alt="I BARONI DEL POTERE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>I BARONI DEL POTERE</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="IPNOSI" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/074-ipnosi.jpg" alt="IPNOSI, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IPNOSI</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="NO WAR" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/075-no-war.jpg" alt="NO WAR, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>NO WAR</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="NORD-OVEST" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/076-nord-ovest.jpg" alt="NORD-OVEST, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>NORD-OVEST</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="SOS TITANIC" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/077-sos-titanic.jpg" alt="SOS TITANIC, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOS TITANIC</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="STAGIONE DELL'AMORE" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/078-stagione-dell-amore.jpg" alt="STAGIONE DELL'AMORE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>STAGIONE DELL'AMORE</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="460" data-title="VORTICE" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/079-vortice.jpg" alt="VORTICE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>VORTICE</h3>
+            <p class="galleria-meta">2020 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="470" data-title="ÈLENA" data-technique="Acrilico su tela" data-dimensions="56,5×65,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/080-elena.jpg" alt="ÈLENA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ÈLENA</h3>
+            <p class="galleria-meta">2020 — 56.5×65.5 cm</p>
+            <p class="galleria-price">€470</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="470" data-title="CON UN FIORE" data-technique="Acrilico su tela" data-dimensions="56×67 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/081-con-un-fiore.jpg" alt="CON UN FIORE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CON UN FIORE</h3>
+            <p class="galleria-meta">2020 — 56×67 cm</p>
+            <p class="galleria-price">€470</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="470" data-title="DYLAN E LE SUE CRAVATTE" data-technique="Acrilico su tela" data-dimensions="56×67 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/082-dylan-e-le-sue-cravatte.jpg" alt="DYLAN E LE SUE CRAVATTE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>DYLAN E LE SUE CRAVATTE</h3>
+            <p class="galleria-meta">2020 — 56×67 cm</p>
+            <p class="galleria-price">€470</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="470" data-title="COMPIETA" data-technique="Acrilico su tela" data-dimensions="56,5×66,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/083-compieta.jpg" alt="COMPIETA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COMPIETA</h3>
+            <p class="galleria-meta">2020 — 56.5×66.5 cm</p>
+            <p class="galleria-price">€470</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="480" data-title="GOSPEL" data-technique="Acrilico su tela" data-dimensions="74,5×51 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/084-gospel.jpg" alt="GOSPEL, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>GOSPEL</h3>
+            <p class="galleria-meta">2020 — 74.5×51 cm</p>
+            <p class="galleria-price">€480</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="480" data-title="MARILYN" data-technique="Acrilico su tela" data-dimensions="82,5×46,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/085-marilyn.jpg" alt="MARILYN, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>MARILYN</h3>
+            <p class="galleria-meta">2020 — 82.5×46.5 cm</p>
+            <p class="galleria-price">€480</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="480" data-title="VERSO CASA" data-technique="Acrilico su tela" data-dimensions="58,5×66 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/086-verso-casa.jpg" alt="VERSO CASA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>VERSO CASA</h3>
+            <p class="galleria-meta">2020 — 58.5×66 cm</p>
+            <p class="galleria-price">€480</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="480" data-title="BURN" data-technique="Acrilico su tela" data-dimensions="58,5×67 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/087-burn.jpg" alt="BURN, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>BURN</h3>
+            <p class="galleria-meta">2020 — 58.5×67 cm</p>
+            <p class="galleria-price">€480</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="520" data-title="PER DIMENTICARE" data-technique="Acrilico su tela" data-dimensions="58×79 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/088-per-dimenticare.jpg" alt="PER DIMENTICARE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PER DIMENTICARE</h3>
+            <p class="galleria-meta">2020 — 58×79 cm</p>
+            <p class="galleria-price">€520</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="530" data-title="SIRENE" data-technique="Acrilico su tela" data-dimensions="79,5×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/089-sirene.jpg" alt="SIRENE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SIRENE</h3>
+            <p class="galleria-meta">2020 — 79.5×60 cm</p>
+            <p class="galleria-price">€530</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="530" data-title="COCO" data-technique="Acrilico su tela" data-dimensions="58,5×82 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/090-coco.jpg" alt="COCO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COCO</h3>
+            <p class="galleria-meta">2020 — 58.5×82 cm</p>
+            <p class="galleria-price">€530</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="540" data-title="LEONIDA" data-technique="Acrilico su tela" data-dimensions="65,5×76 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/091-leonida.jpg" alt="LEONIDA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LEONIDA</h3>
+            <p class="galleria-meta">2020 — 65.5×76 cm</p>
+            <p class="galleria-price">€540</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="560" data-title="FIGLIO D'ARTE" data-technique="Acrilico su tela" data-dimensions="60×90 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/092-figlio-d-arte.jpg" alt="FIGLIO D'ARTE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>FIGLIO D'ARTE</h3>
+            <p class="galleria-meta">2020 — 60×90 cm</p>
+            <p class="galleria-price">€560</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="570" data-title="CIRCE" data-technique="Acrilico su tela" data-dimensions="74,5×74,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/093-circe.jpg" alt="CIRCE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CIRCE</h3>
+            <p class="galleria-meta">2020 — 74.5×74.5 cm</p>
+            <p class="galleria-price">€570</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="590" data-title="IL VAGONE ROSSO" data-technique="Acrilico su tela" data-dimensions="76,5×80,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/094-il-vagone-rosso.jpg" alt="IL VAGONE ROSSO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL VAGONE ROSSO</h3>
+            <p class="galleria-meta">2020 — 76.5×80.5 cm</p>
+            <p class="galleria-price">€590</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="600" data-title="PICCOLI SORSI" data-technique="Acrilico su tela" data-dimensions="90×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/095-piccoli-sorsi.jpg" alt="PICCOLI SORSI, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PICCOLI SORSI</h3>
+            <p class="galleria-meta">2020 — 90×70 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="MEDIUM" data-price="600" data-title="SPIRIT IN THE SKY" data-technique="Acrilico su tela" data-dimensions="90×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/096-spirit-in-the-sky.jpg" alt="SPIRIT IN THE SKY, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SPIRIT IN THE SKY</h3>
+            <p class="galleria-meta">2020 — 90×70 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="620" data-title="VITE DA SALVARE" data-technique="Acrilico su tela" data-dimensions="75×92 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/097-vite-da-salvare.jpg" alt="VITE DA SALVARE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>VITE DA SALVARE</h3>
+            <p class="galleria-meta">2020 — 75×92 cm</p>
+            <p class="galleria-price">€620</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="630" data-title="CHIARA" data-technique="Acrilico su tela" data-dimensions="75×95 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/098-chiara.jpg" alt="CHIARA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CHIARA</h3>
+            <p class="galleria-meta">2020 — 75×95 cm</p>
+            <p class="galleria-price">€630</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="640" data-title="CUORI FORTI" data-technique="Acrilico su tela" data-dimensions="74×104 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/099-cuori-forti.jpg" alt="CUORI FORTI, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CUORI FORTI</h3>
+            <p class="galleria-meta">2020 — 74×104 cm</p>
+            <p class="galleria-price">€640</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="650" data-title="GET ON UP" data-technique="Acrilico su tela" data-dimensions="100×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/100-get-on-up.jpg" alt="GET ON UP, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>GET ON UP</h3>
+            <p class="galleria-meta">2020 — 100×80 cm</p>
+            <p class="galleria-price">€650</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="650" data-title="MUSA ASSASSINA" data-technique="Acrilico su tela" data-dimensions="80×100 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/101-musa-assassina.jpg" alt="MUSA ASSASSINA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>MUSA ASSASSINA</h3>
+            <p class="galleria-meta">2020 — 80×100 cm</p>
+            <p class="galleria-price">€650</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="660" data-title="CAPITANO DEL MIO DESTINO" data-technique="Acrilico su tela" data-dimensions="90×90 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/102-capitano-del-mio-destino.jpg" alt="CAPITANO DEL MIO DESTINO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>CAPITANO DEL MIO DESTINO</h3>
+            <p class="galleria-meta">2020 — 90×90 cm</p>
+            <p class="galleria-price">€660</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="660" data-title="IL BOUQUET SFIORITO" data-technique="Acrilico su tela" data-dimensions="90,5×90,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/103-il-bouquet-sfiorito.jpg" alt="IL BOUQUET SFIORITO, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL BOUQUET SFIORITO</h3>
+            <p class="galleria-meta">2020 — 90.5×90.5 cm</p>
+            <p class="galleria-price">€660</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="700" data-title="I CUSTODI DELLA VITA" data-technique="Acrilico su tela" data-dimensions="99×99 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/104-i-custodi-della-vita.jpg" alt="I CUSTODI DELLA VITA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>I CUSTODI DELLA VITA</h3>
+            <p class="galleria-meta">2020 — 99×99 cm</p>
+            <p class="galleria-price">€700</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="710" data-title="LIBRI SENZA PAROLE" data-technique="Acrilico su tela" data-dimensions="100×100 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/105-libri-senza-parole.jpg" alt="LIBRI SENZA PAROLE, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LIBRI SENZA PAROLE</h3>
+            <p class="galleria-meta">2020 — 100×100 cm</p>
+            <p class="galleria-price">€710</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="710" data-title="PARIGINO PER DUE GIORNI" data-technique="Acrilico su tela" data-dimensions="100×100 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/106-parigino-per-due-giorni.jpg" alt="PARIGINO PER DUE GIORNI, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>PARIGINO PER DUE GIORNI</h3>
+            <p class="galleria-meta">2020 — 100×100 cm</p>
+            <p class="galleria-price">€710</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2020" data-size="LARGE" data-price="750" data-title="FIAT VOLUNTAS TUA" data-technique="Acrilico su tela" data-dimensions="92×130 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/107-fiat-voluntas-tua.jpg" alt="FIAT VOLUNTAS TUA, acrilico su tela, 2020" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>FIAT VOLUNTAS TUA</h3>
+            <p class="galleria-meta">2020 — 92×130 cm</p>
+            <p class="galleria-price">€750</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="MEDIUM" data-price="270" data-title="SCACCO MATTO" data-technique="Acrilico su tela" data-dimensions="40×40 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/032-scacco-matto.jpg" alt="SCACCO MATTO, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SCACCO MATTO</h3>
+            <p class="galleria-meta">2019 — 40×40 cm</p>
+            <p class="galleria-price">€270</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="MEDIUM" data-price="300" data-title="L'ORGANETTO" data-technique="Acrilico su tela" data-dimensions="41×44 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/033-l-organetto.jpg" alt="L'ORGANETTO, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'ORGANETTO</h3>
+            <p class="galleria-meta">2019 — 41×44 cm — Con cornice</p>
+            <p class="galleria-price">€300</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="MEDIUM" data-price="410" data-title="LA BESTIA PIEGATA" data-technique="Acrilico su tela" data-dimensions="47×61 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/034-la-bestia-piegata.jpg" alt="LA BESTIA PIEGATA, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA BESTIA PIEGATA</h3>
+            <p class="galleria-meta">2019 — 47×61 cm — Con cornice</p>
+            <p class="galleria-price">€410</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="MEDIUM" data-price="490" data-title="LA STRUMENTISTA" data-technique="Acrilico su tela" data-dimensions="54×74 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/035-la-strumentista.jpg" alt="LA STRUMENTISTA, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA STRUMENTISTA</h3>
+            <p class="galleria-meta">2019 — 54×74 cm</p>
+            <p class="galleria-price">€490</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="MEDIUM" data-price="490" data-title="HUMANITY ON SALE" data-technique="Acrilico su tela" data-dimensions="45×90 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/036-humanity-on-sale.jpg" alt="HUMANITY ON SALE, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>HUMANITY ON SALE</h3>
+            <p class="galleria-meta">2019 — 45×90 cm</p>
+            <p class="galleria-price">€490</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="LARGE" data-price="630" data-title="STELLINA" data-technique="Acrilico su tela" data-dimensions="100×72 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/037-stellina.jpg" alt="STELLINA, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>STELLINA</h3>
+            <p class="galleria-meta">2019 — 100×72 cm</p>
+            <p class="galleria-price">€630</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2019" data-size="LARGE" data-price="650" data-title="INDIFFERENZA" data-technique="Acrilico su tela" data-dimensions="100×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/038-indifferenza.jpg" alt="INDIFFERENZA, acrilico su tela, 2019" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>INDIFFERENZA</h3>
+            <p class="galleria-meta">2019 — 100×80 cm</p>
+            <p class="galleria-price">€650</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="MEDIUM" data-price="460" data-title="A RINO" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/024-a-rino.jpg" alt="A RINO, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>A RINO</h3>
+            <p class="galleria-meta">2018 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="MEDIUM" data-price="460" data-title="HALONA" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/025-halona.jpg" alt="HALONA, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>HALONA</h3>
+            <p class="galleria-meta">2018 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="MEDIUM" data-price="500" data-title="IL CONFLITTO" data-technique="Acrilico su tela" data-dimensions="90×46 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/026-il-conflitto.jpg" alt="IL CONFLITTO, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL CONFLITTO</h3>
+            <p class="galleria-meta">2018 — 90×46 cm</p>
+            <p class="galleria-price">€500</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="MEDIUM" data-price="600" data-title="BOCCADIROSA" data-technique="Acrilico su tela" data-dimensions="80×80 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/027-boccadirosa.jpg" alt="BOCCADIROSA, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>BOCCADIROSA</h3>
+            <p class="galleria-meta">2018 — 80×80 cm</p>
+            <p class="galleria-price">€600</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="LARGE" data-price="620" data-title="SOLLETICO SOTTILE" data-technique="Acrilico su tela" data-dimensions="100×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/028-solletico-sottile.jpg" alt="SOLLETICO SOTTILE, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOLLETICO SOTTILE</h3>
+            <p class="galleria-meta">2018 — 100×70 cm</p>
+            <p class="galleria-price">€620</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="LARGE" data-price="630" data-title="ALTRI MONDI" data-technique="Acrilico su tela" data-dimensions="75×95 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/029-altri-mondi.jpg" alt="ALTRI MONDI, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ALTRI MONDI</h3>
+            <p class="galleria-meta">2018 — 75×95 cm</p>
+            <p class="galleria-price">€630</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="LARGE" data-price="630" data-title="IMMERSI" data-technique="Acrilico su tela" data-dimensions="75×95 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/030-immersi.jpg" alt="IMMERSI, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IMMERSI</h3>
+            <p class="galleria-meta">2018 — 75×95 cm</p>
+            <p class="galleria-price">€630</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2018" data-size="LARGE" data-price="790" data-title="ANGIE" data-technique="Acrilico su tela" data-dimensions="110×130 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/031-angie.jpg" alt="ANGIE, acrilico su tela, 2018" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ANGIE</h3>
+            <p class="galleria-meta">2018 — 110×130 cm</p>
+            <p class="galleria-price">€790</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2017" data-size="LARGE" data-price="770" data-title="RIACCENDIAMO LA CULTURA" data-technique="Acrilico su tela" data-dimensions="110×120 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/023-riaccendiamo-la-cultura.jpg" alt="RIACCENDIAMO LA CULTURA, acrilico su tela, 2017" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>RIACCENDIAMO LA CULTURA</h3>
+            <p class="galleria-meta">2017 — 110×120 cm</p>
+            <p class="galleria-price">€770</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="320" data-title="ROSSO ARMONICA" data-technique="Acrilico su tela" data-dimensions="40×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/015-rosso-armonica.jpg" alt="ROSSO ARMONICA, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>ROSSO ARMONICA</h3>
+            <p class="galleria-meta">2016 — 40×50 cm</p>
+            <p class="galleria-price">€320</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="370" data-title="LE DUE LUNE" data-technique="Acrilico su tela" data-dimensions="40×60 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/016-le-due-lune.jpg" alt="LE DUE LUNE, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LE DUE LUNE</h3>
+            <p class="galleria-meta">2016 — 40×60 cm — Con cornice</p>
+            <p class="galleria-price">€370</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="440" data-title="STELLA DI DAVID" data-technique="Acrilico su tela" data-dimensions="50×65 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/017-stella-di-david.jpg" alt="STELLA DI DAVID, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>STELLA DI DAVID</h3>
+            <p class="galleria-meta">2016 — 50×65 cm</p>
+            <p class="galleria-price">€440</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="460" data-title="L'IMPAVIDO" data-technique="Acrilico su tela" data-dimensions="50×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/018-l-impavido.jpg" alt="L'IMPAVIDO, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'IMPAVIDO</h3>
+            <p class="galleria-meta">2016 — 50×70 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="460" data-title="LA MUSICA È…" data-technique="Acrilico su tela" data-dimensions="60×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/019-la-musica-e.jpg" alt="LA MUSICA È…, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA MUSICA È…</h3>
+            <p class="galleria-meta">2016 — 60×60 cm</p>
+            <p class="galleria-price">€460</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="470" data-title="IL BANANO" data-technique="Acrilico su tela" data-dimensions="52×72 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/020-il-banano.jpg" alt="IL BANANO, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL BANANO</h3>
+            <p class="galleria-meta">2016 — 52×72 cm — Con cornice</p>
+            <p class="galleria-price">€470</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="550" data-title="IL COLORE DEI SOLDI" data-technique="Acrilico su tela" data-dimensions="67,5×77,5 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/021-il-colore-dei-soldi.jpg" alt="IL COLORE DEI SOLDI, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL COLORE DEI SOLDI</h3>
+            <p class="galleria-meta">2016 — 67.5×77.5 cm</p>
+            <p class="galleria-price">€550</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2016" data-size="MEDIUM" data-price="560" data-title="SERVILISMO" data-technique="Acrilico su tela" data-dimensions="65×85 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/022-servilismo.jpg" alt="SERVILISMO, acrilico su tela, 2016" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SERVILISMO</h3>
+            <p class="galleria-meta">2016 — 65×85 cm</p>
+            <p class="galleria-price">€560</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="SMALL" data-price="200" data-title="LA CARTOMANTE" data-technique="Acrilico su tela" data-dimensions="36,5×32 cm" data-frame="Con cornice" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/006-la-cartomante.jpg" alt="LA CARTOMANTE, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>LA CARTOMANTE</h3>
+            <p class="galleria-meta">2015 — 36.5×32 cm — Con cornice</p>
+            <p class="galleria-price">€200</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="340" data-title="IL CONFRONTO" data-technique="Acrilico su tela" data-dimensions="35×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/007-il-confronto.jpg" alt="IL CONFRONTO, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL CONFRONTO</h3>
+            <p class="galleria-meta">2015 — 35×60 cm</p>
+            <p class="galleria-price">€340</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="360" data-title="METAMORFOSI" data-technique="Acrilico su tela" data-dimensions="48×48 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/008-metamorfosi.jpg" alt="METAMORFOSI, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>METAMORFOSI</h3>
+            <p class="galleria-meta">2015 — 48×48 cm</p>
+            <p class="galleria-price">€360</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="380" data-title="SOTTO IL SEGNO" data-technique="Acrilico su tela" data-dimensions="50×50 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/009-sotto-il-segno.jpg" alt="SOTTO IL SEGNO, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>SOTTO IL SEGNO</h3>
+            <p class="galleria-meta">2015 — 50×50 cm</p>
+            <p class="galleria-price">€380</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="390" data-title="COME COLOMBE" data-technique="Acrilico su tela" data-dimensions="46×57 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/010-come-colombe.jpg" alt="COME COLOMBE, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>COME COLOMBE</h3>
+            <p class="galleria-meta">2015 — 46×57 cm</p>
+            <p class="galleria-price">€390</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="390" data-title="L'INCONTRO" data-technique="Acrilico su tela" data-dimensions="45×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/011-l-incontro.jpg" alt="L'INCONTRO, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'INCONTRO</h3>
+            <p class="galleria-meta">2015 — 45×60 cm</p>
+            <p class="galleria-price">€390</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="440" data-title="AMORE SACRO AMOR PROFANO" data-technique="Acrilico su tela" data-dimensions="50×65 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/012-amore-sacro-amor-profano.jpg" alt="AMORE SACRO AMOR PROFANO, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>AMORE SACRO AMOR PROFANO</h3>
+            <p class="galleria-meta">2015 — 50×65 cm</p>
+            <p class="galleria-price">€440</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="560" data-title="L'OBOLO" data-technique="Acrilico su tela" data-dimensions="65×85 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/013-l-obolo.jpg" alt="L'OBOLO, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'OBOLO</h3>
+            <p class="galleria-meta">2015 — 65×85 cm</p>
+            <p class="galleria-price">€560</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2015" data-size="MEDIUM" data-price="560" data-title="L'UOMO DI PEZZA" data-technique="Acrilico su tela" data-dimensions="65×85 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/014-l-uomo-di-pezza.jpg" alt="L'UOMO DI PEZZA, acrilico su tela, 2015" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>L'UOMO DI PEZZA</h3>
+            <p class="galleria-meta">2015 — 65×85 cm</p>
+            <p class="galleria-price">€560</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2014" data-size="MEDIUM" data-price="340" data-title="QUALCOSA DI PERSONALE" data-technique="Acrilico su tela" data-dimensions="30×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/003-qualcosa-di-personale.jpg" alt="QUALCOSA DI PERSONALE, acrilico su tela, 2014" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>QUALCOSA DI PERSONALE</h3>
+            <p class="galleria-meta">2014 — 30×70 cm</p>
+            <p class="galleria-price">€340</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2014" data-size="MEDIUM" data-price="390" data-title="NATALE DAY" data-technique="Acrilico su tela" data-dimensions="45×60 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/004-natale-day.jpg" alt="NATALE DAY, acrilico su tela, 2014" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>NATALE DAY</h3>
+            <p class="galleria-meta">2014 — 45×60 cm</p>
+            <p class="galleria-price">€390</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2014" data-size="MEDIUM" data-price="400" data-title="IL VIOLINISTA" data-technique="Acrilico su tela" data-dimensions="37×74 cm" data-frame="Telaio dittico" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/005-il-violinista.jpg" alt="IL VIOLINISTA, acrilico su tela, 2014" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL VIOLINISTA</h3>
+            <p class="galleria-meta">2014 — 37×74 cm — Telaio dittico</p>
+            <p class="galleria-price">€400</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2013" data-size="MEDIUM" data-price="550" data-title="QUALCOSA IN COMUNE" data-technique="Acrilico su tela" data-dimensions="72×72 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/002-qualcosa-in-comune.jpg" alt="QUALCOSA IN COMUNE, acrilico su tela, 2013" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>QUALCOSA IN COMUNE</h3>
+            <p class="galleria-meta">2013 — 72×72 cm</p>
+            <p class="galleria-price">€550</p>
+          </div>
+        </article>
+        <article class="galleria-item" data-year="2012" data-size="MEDIUM" data-price="540" data-title="IL DISCOGRAFICO" data-technique="Acrilico su tela" data-dimensions="70×70 cm" data-frame="" data-sold="false">
+          <div class="galleria-img-wrap">
+            <img src="images/galleria/001-il-discografico.jpg" alt="IL DISCOGRAFICO, acrilico su tela, 2012" loading="lazy">
+            
+          </div>
+          <div class="galleria-info">
+            <h3>IL DISCOGRAFICO</h3>
+            <p class="galleria-meta">2012 — 70×70 cm</p>
+            <p class="galleria-price">€540</p>
+          </div>
+        </article>
+        </div>
+
+        <p class="galleria-no-results" hidden>Nessuna opera corrisponde ai filtri selezionati.</p>
       </div>
     </section>
 
-    <!-- ====== FULLSCREEN PAINTING VIEWER ====== -->
-    <div class="painting-viewer" role="dialog" aria-modal="true" aria-label="Visualizzatore dipinto">
-      <button class="viewer-close" aria-label="Chiudi">&times;</button>
-      <button class="viewer-nav viewer-prev" aria-label="Dipinto precedente">&#8592;</button>
-      <button class="viewer-nav viewer-next" aria-label="Dipinto successivo">&#8594;</button>
-      <div class="painting-viewer-content">
-        <img src="data:," alt="" id="viewer-painting-img">
-        <div class="painting-viewer-info">
-          <h3></h3>
-          <p></p>
-        </div>
-      </div>
-      <div class="viewer-counter"></div>
-    </div>
 
     <!-- ====== TECHNIQUE SECTION (hidden per client request) ======
     <section class="section-light-alt" style="padding: var(--section-padding) 0;">
@@ -310,23 +2134,76 @@
       </div>
     </section>
 
-    <!-- ====== NEWSLETTER (Placeholder) ====== -->
-    <section class="newsletter-section">
-      <div class="container-narrow">
-        <div class="newsletter-inner reveal-up">
-          <p class="overline">Newsletter</p>
-          <h3>Resta in contatto con <strong>Giacomo De Troia</strong></h3>
-          <p class="newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere, mostre e iniziative.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
-            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
-            <button type="submit" class="btn-primary">Iscriviti</button>
-          </form>
-          <p class="newsletter-note"><em>Placeholder — il form verrà collegato al servizio email del cliente.</em></p>
-        </div>
-      </div>
-    </section>
+    <!-- ====== GALLERIA DETAIL MODAL ====== -->
+    <div class="galleria-detail" id="galleria-detail" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <button class="galleria-detail-close" aria-label="Chiudi dettaglio opera">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
 
-  </main>
+      <div class="galleria-detail-inner">
+        <!-- Left: image with zoom -->
+        <div class="galleria-detail-image" data-zoom>
+          <img class="galleria-detail-img" src="" alt="">
+          <div class="galleria-detail-zoom-lens" aria-hidden="true"></div>
+          <button class="galleria-detail-zoom-toggle" aria-label="Attiva zoom">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span>Zoom</span>
+          </button>
+        </div>
+
+        <!-- Right: info sidebar -->
+        <aside class="galleria-detail-info">
+          <p class="galleria-detail-artist">Giacomo De Troia</p>
+          <h2 class="galleria-detail-title" id="detail-title">
+            <em class="detail-title-text"></em>, <span class="detail-year"></span>
+          </h2>
+
+          <dl class="galleria-detail-specs">
+            <div class="detail-spec">
+              <dt>Tecnica</dt>
+              <dd class="detail-technique"></dd>
+            </div>
+            <div class="detail-spec">
+              <dt>Dimensioni</dt>
+              <dd class="detail-dimensions"></dd>
+            </div>
+            <div class="detail-spec detail-spec-frame" hidden>
+              <dt>Dotazione</dt>
+              <dd class="detail-frame"></dd>
+            </div>
+            <div class="detail-spec">
+              <dt>Originale unico</dt>
+              <dd>Opera firmata dall'artista</dd>
+            </div>
+          </dl>
+
+          <div class="galleria-detail-price-block">
+            <p class="galleria-detail-price-label">Prezzo</p>
+            <p class="galleria-detail-price"></p>
+          </div>
+
+          <a class="galleria-detail-cta btn-primary" href="contatti.html">Contatta l'artista</a>
+
+          <p class="galleria-detail-note">
+            Per acquistare quest'opera o richiedere maggiori informazioni, contatta direttamente Giacomo De Troia. Ogni opera viene spedita con certificato di autenticità firmato.
+          </p>
+
+          <div class="galleria-detail-meta">
+            <p><strong>Studio dell'artista</strong></p>
+            <p>Roma, Italia</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -341,7 +2218,7 @@
           <h4>Navigazione</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="opere.html">Opere</a></li>
+            <li><a href="opere.html">Galleria</a></li>
             <li><a href="artista.html">L'Artista</a></li>
             <li><a href="evoluzione.html">L'Evoluzione</a></li>
             <li><a href="mostre.html">Mostre e Premi</a></li>
@@ -373,17 +2250,18 @@
             </a>
           </div>
         </div>
-        <div class="footer-nav">
-          <h4>Informazioni Legali</h4>
-          <ul>
-            <li><a href="condizioni-vendita.html">Condizioni di Vendita</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+        <div class="footer-nav footer-newsletter">
+          <h4>Newsletter</h4>
+          <p class="footer-newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere e mostre.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
+            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
+            <button type="submit" aria-label="Iscriviti">&rarr;</button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; <span data-year></span> <strong>Giacomo De Troia</strong>. Tutti i diritti riservati.</p>
+        <p class="footer-legal-links"><a href="condizioni-vendita.html">Condizioni di Vendita</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="cookie-policy.html">Cookie Policy</a></p>
         <p>Sito realizzato da <a href="https://ev-digitale.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">Evoluzione Digitale</a></p>
       </div>
     </div>

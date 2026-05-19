@@ -46,10 +46,9 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="header-logo">G. De Troia</a>
+      <a href="index.html" class="header-logo" aria-label="Giacomo De Troia — Home"><img src="images/hero/firma.png" alt="Giacomo De Troia"></a>
       <nav class="header-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="opere.html">Opere</a>
+        <a href="opere.html">Galleria</a>
         <a href="artista.html">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
         <a href="mostre.html">Mostre e Premi</a>
@@ -63,8 +62,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu">
-    <a href="index.html" class="active">Home</a>
-    <a href="opere.html">Opere</a>
+    <a href="opere.html">Galleria</a>
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html">Mostre e Premi</a>
@@ -78,48 +76,35 @@
   <main>
     <!-- ====== HERO ====== -->
     <section class="hero">
-      <div class="hero-bg" style="background-image: url('images/hero/artista-con-firma.jpg')"></div>
+      <div class="hero-bg-slideshow" data-interval="6000">
+        <div class="hero-bg active" style="background-image: url('images/hero/artista-con-firma.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('images/artista/artista-piazza-cavalletto.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/artista/artista-bosco-1.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/artista/artista-castello-plein-air.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/artista/artista-piazza-strada.jpeg')"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-overline reveal-up">Arte Contemporanea</p>
-        <h1 class="hero-title reveal-up">Pittura sul <span class="accent-text">Teatro della Vita</span></h1>
-        <p class="hero-subtitle reveal-up">L'arte di Giacomo De Troia cattura le complessità, le emozioni e le storie che animano il nostro quotidiano</p>
+        <h1 class="hero-title reveal-up">Pittura sul<br><span class="accent-text">Teatro della Vita</span></h1>
+        <p class="hero-subtitle reveal-up">L'arte di Giacomo De Troia cattura le complessità,<br>le emozioni e le storie che animano il nostro quotidiano</p>
         <div class="hero-cta-group reveal-up">
-          <a href="opere.html" class="hero-cta magnetic-btn">Esplora le Opere <span>&rarr;</span></a>
+          <!-- <a href="opere.html" class="hero-cta magnetic-btn">Esplora le Opere <span>&rarr;</span></a> -->
           <a href="#about-preview" class="hero-cta-secondary">Scopri di più</a>
         </div>
       </div>
     </section>
 
-    <!-- ====== MARQUEE ====== -->
-    <section class="marquee-section">
-      <div class="marquee-track">
-        <div class="marquee-content">
-          <span>Arte Contemporanea</span><div class="marquee-dot"></div>
-          <span>Acrilico su Tela</span><div class="marquee-dot"></div>
-          <span>Il Teatro della Vita</span><div class="marquee-dot"></div>
-          <span>Lucera, Puglia</span><div class="marquee-dot"></div>
-          <span>Giacomo De Troia</span><div class="marquee-dot"></div>
-        </div>
-        <div class="marquee-content" aria-hidden="true">
-          <span>Arte Contemporanea</span><div class="marquee-dot"></div>
-          <span>Acrilico su Tela</span><div class="marquee-dot"></div>
-          <span>Il Teatro della Vita</span><div class="marquee-dot"></div>
-          <span>Lucera, Puglia</span><div class="marquee-dot"></div>
-          <span>Giacomo De Troia</span><div class="marquee-dot"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ====== FEATURED WORKS — Horizontal Scroll (Signature Moment 1) ====== -->
+    <!-- ====== FEATURED WORKS — Auto-scroll Gallery ====== -->
     <section class="gallery-walk-section section-light" id="about-preview">
-      <div class="container gallery-walk-header">
-        <p class="overline reveal-up">Opere Selezionate</p>
-        <h2 class="reveal-up" data-delay="1">Teatro della Vita</h2>
-      </div>
       <div class="gallery-walk-wrapper">
+        <button class="gallery-walk-arrow gallery-walk-prev" aria-label="Opera precedente"><svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></button>
         <div class="gallery-walk-sticky">
           <div class="gallery-walk-track">
+            <div class="gallery-walk-item">
+              <img src="images/dipinti/protagonisti.jpg" alt="Protagonisti, dipinto ad acrilico su tela di Giacomo De Troia, 113×121 cm" loading="lazy">
+            </div>
             <div class="gallery-walk-item">
               <img src="images/dipinti/a-big-ice-cream.jpeg" alt="A Big Ice-Cream, dipinto ad acrilico su tela di Giacomo De Troia, 80×80 cm" loading="lazy">
             </div>
@@ -132,8 +117,25 @@
             <div class="gallery-walk-item">
               <img src="images/dipinti/amaro-mestiere-vivere.jpeg" alt="L'Amaro Mestiere del Vivere, dipinto ad acrilico su tela di Giacomo De Troia, 50×50 cm" loading="lazy">
             </div>
+            <div class="gallery-walk-item">
+              <img src="images/dipinti/cuori-forti.jpg" alt="Cuori Forti, dipinto ad acrilico su tela di Giacomo De Troia, 74×104 cm" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/dipinti/torneranno-gli-aquiloni.jpg" alt="Torneranno gli Aquiloni, dipinto ad acrilico su tela di Giacomo De Troia, 56×56 cm" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/dipinti/fiat-voluntas-tua.jpg" alt="Fiat Voluntas Tua, dipinto ad acrilico su tela di Giacomo De Troia, 92×130 cm" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/dipinti/amore-alieno.jpg" alt="Amore Alieno, dipinto ad acrilico su tela di Giacomo De Troia, 100×100 cm" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/dipinti/andrea-e-nicol.jpg" alt="Andrea e Nicol, dipinto ad acrilico su tela di Giacomo De Troia, 53,5×66 cm" loading="lazy">
+            </div>
           </div>
         </div>
+        <button class="gallery-walk-arrow gallery-walk-next" aria-label="Opera successiva"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+        <div class="gallery-walk-dots" role="tablist" aria-label="Naviga tra le opere"></div>
       </div>
       <div class="container" style="text-align: center; padding-top: var(--space-7);">
         <a href="opere.html" class="btn-secondary magnetic-btn reveal-up">Vedi tutte le opere &rarr;</a>
@@ -177,19 +179,7 @@
       </div>
     </section>
 
-    <!-- ====== CTA BANNER ====== -->
-    <section class="cta-banner">
-      <div class="cta-banner-bg" style="background-image: url('images/dipinti/protagonisti.jpg')"></div>
-      <div class="cta-banner-overlay"></div>
-      <div class="cta-banner-content reveal-up">
-        <p class="overline">Il Catalogo</p>
-        <h2>Esplora il Catalogo Completo</h2>
-        <p>Le opere che raccontano il teatro della vita</p>
-        <a href="opere.html" class="btn-primary magnetic-btn">Sfoglia le Opere &rarr;</a>
-      </div>
-    </section>
-
-    <!-- ====== AWARDS COUNTER (Signature Moment 2) ====== -->
+<!-- ====== AWARDS COUNTER (Signature Moment 2) ====== -->
     <section class="awards-section section-dark">
       <div class="container">
         <p class="overline reveal-up" style="text-align: center; margin-bottom: var(--space-8);">Riconoscimenti</p>
@@ -242,80 +232,44 @@
     </section>
 
     <!-- ====== ARTIST AT WORK ====== -->
-    <section class="artist-work-section section-light">
-      <div class="container artist-work-header">
+    <section class="gallery-walk-section section-light artist-work-section">
+      <div class="container artist-work-header" style="text-align: center; margin-bottom: var(--space-7);">
         <p class="overline reveal-up">Dietro le Quinte</p>
         <h2 class="reveal-up" data-delay="1">L'Artista al Lavoro</h2>
       </div>
-      <div class="artist-work-strip">
-        <div class="artist-work-item">
-          <img src="images/artista/artista-bosco-1.jpeg" alt="Giacomo De Troia dipinge en plein air nel bosco" width="500" height="350" loading="lazy">
+      <div class="gallery-walk-wrapper">
+        <button class="gallery-walk-arrow gallery-walk-prev" aria-label="Foto precedente"><svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></button>
+        <div class="gallery-walk-sticky">
+          <div class="gallery-walk-track">
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-bosco-1.jpeg" alt="Giacomo De Troia dipinge en plein air nel bosco" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-piazza-cavalletto.jpeg" alt="Giacomo De Troia dipinge al cavalletto in piazza con i dipinti esposti alle spalle" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-spiaggia-2.jpeg" alt="Giacomo De Troia al cavalletto sulla spiaggia pugliese" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-piazza-strada.jpeg" alt="Giacomo De Troia dipinge dal vivo in piazza durante un evento d'arte di strada" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-castello-plein-air.jpeg" alt="Giacomo De Troia al cavalletto en plein air, immerso nella natura" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/artista/artista-premiazione-corpo-volontari.jpeg" alt="Giacomo De Troia premiato dal Corpo Volontari di Lucera durante una cerimonia" loading="lazy">
+            </div>
+            <div class="gallery-walk-item">
+              <img src="images/studio/studio-con-dipinti.jpg" alt="Lo studio di Giacomo De Troia con i dipinti sui cavalletti" loading="lazy">
+            </div>
+          </div>
         </div>
-        <div class="artist-work-item">
-          <img src="images/artista/artista-piazza-cavalletto.jpeg" alt="Giacomo De Troia dipinge al cavalletto in piazza con i dipinti esposti alle spalle" width="500" height="350" loading="lazy">
-        </div>
-        <div class="artist-work-item">
-          <img src="images/artista/artista-spiaggia-2.jpeg" alt="Giacomo De Troia al cavalletto sulla spiaggia pugliese" width="500" height="350" loading="lazy">
-        </div>
-        <div class="artist-work-item">
-          <img src="images/studio/studio-con-dipinti.jpg" alt="Lo studio di Giacomo De Troia con i dipinti sui cavalletti" width="500" height="350" loading="lazy">
-        </div>
+        <button class="gallery-walk-arrow gallery-walk-next" aria-label="Foto successiva"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+        <div class="gallery-walk-dots" role="tablist" aria-label="Naviga tra le foto"></div>
       </div>
     </section>
 
-    <!-- ====== ARTIST IN ACTION ====== -->
-    <section class="artist-in-action-section">
-      <div class="container" style="text-align: center; margin-bottom: var(--space-7);">
-        <p class="overline reveal-up">Momenti</p>
-        <h2 class="reveal-up" data-delay="1">Guarda l'Artista</h2>
-      </div>
-      <div class="artist-action-grid container">
-        <figure class="artist-action-item reveal-up">
-          <img src="images/artista/artista-piazza-strada.jpeg" alt="Giacomo De Troia dipinge dal vivo in piazza durante un evento d'arte di strada" loading="lazy">
-          <figcaption>L'artista dipinge dal vivo in piazza</figcaption>
-        </figure>
-        <figure class="artist-action-item reveal-up" data-delay="1">
-          <img src="images/artista/artista-castello-plein-air.jpeg" alt="Giacomo De Troia al cavalletto en plein air, immerso nella natura" loading="lazy">
-          <figcaption>Al cavalletto, en plein air</figcaption>
-        </figure>
-        <figure class="artist-action-item reveal-up" data-delay="2">
-          <img src="images/artista/artista-premiazione-corpo-volontari.jpeg" alt="Giacomo De Troia premiato dal Corpo Volontari di Lucera durante una cerimonia" loading="lazy">
-          <figcaption>Premiazione &mdash; Corpo Volontari di Lucera</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ====== FINAL CTA + CONTACT ====== -->
-    <section class="final-cta-section section-light">
-      <div class="container-narrow">
-        <div class="final-cta-line reveal-up"></div>
-        <p class="overline reveal-up">Contatti</p>
-        <h2 class="reveal-up" data-delay="1">Per acquisti, commissioni<br>o informazioni</h2>
-        <div class="contact-links reveal-up" data-delay="2">
-          <a href="tel:+393384501982">338 450 1982</a>
-          <a href="mailto:giacomodetroia@libero.it">giacomodetroia@libero.it</a>
-        </div>
-        <a href="contatti.html?oggetto=acquisto" class="btn-primary magnetic-btn reveal-up" data-delay="3" style="margin-top: var(--space-7);">Acquista ora &rarr;</a>
-        <p class="final-cta-signature reveal-up" data-delay="4">G. De Troia</p>
-      </div>
-    </section>
-    <!-- ====== NEWSLETTER (Placeholder) ====== -->
-    <section class="newsletter-section">
-      <div class="container-narrow">
-        <div class="newsletter-inner reveal-up">
-          <p class="overline">Newsletter</p>
-          <h3>Resta in contatto con <strong>Giacomo De Troia</strong></h3>
-          <p class="newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere, mostre e iniziative.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
-            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
-            <button type="submit" class="btn-primary">Iscriviti</button>
-          </form>
-          <p class="newsletter-note"><em>Placeholder — il form verrà collegato al servizio email del cliente.</em></p>
-        </div>
-      </div>
-    </section>
-
-  </main>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -330,7 +284,7 @@
           <h4>Navigazione</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="opere.html">Opere</a></li>
+            <li><a href="opere.html">Galleria</a></li>
             <li><a href="artista.html">L'Artista</a></li>
             <li><a href="evoluzione.html">L'Evoluzione</a></li>
             <li><a href="mostre.html">Mostre e Premi</a></li>
@@ -362,17 +316,18 @@
             </a>
           </div>
         </div>
-        <div class="footer-nav">
-          <h4>Informazioni Legali</h4>
-          <ul>
-            <li><a href="condizioni-vendita.html">Condizioni di Vendita</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+        <div class="footer-nav footer-newsletter">
+          <h4>Newsletter</h4>
+          <p class="footer-newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere e mostre.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
+            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
+            <button type="submit" aria-label="Iscriviti">&rarr;</button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; <span data-year></span> <strong>Giacomo De Troia</strong>. Tutti i diritti riservati.</p>
+        <p class="footer-legal-links"><a href="condizioni-vendita.html">Condizioni di Vendita</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="cookie-policy.html">Cookie Policy</a></p>
         <p>Sito realizzato da <a href="https://ev-digitale.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">Evoluzione Digitale</a></p>
       </div>
     </div>

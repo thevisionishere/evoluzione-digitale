@@ -28,10 +28,9 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="header-logo">G. De Troia</a>
+      <a href="index.html" class="header-logo" aria-label="Giacomo De Troia — Home"><img src="images/hero/firma.png" alt="Giacomo De Troia"></a>
       <nav class="header-nav">
-        <a href="index.html">Home</a>
-        <a href="opere.html">Opere</a>
+        <a href="opere.html">Galleria</a>
         <a href="artista.html" class="active">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
         <a href="mostre.html">Mostre e Premi</a>
@@ -45,8 +44,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="opere.html">Opere</a>
+    <a href="opere.html">Galleria</a>
     <a href="artista.html" class="active">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html">Mostre e Premi</a>
@@ -131,9 +129,8 @@
           </div>
           <div class="bio-image reveal-up" data-delay="1">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-              <img src="images/dipinti/protagonisti.jpg" alt="Protagonisti — dipinto di Giacomo De Troia" width="400" height="430" loading="lazy" style="width: 100%; height: auto; object-fit: cover;">
-              <img src="images/dipinti/circe.jpg" alt="Circe — dipinto di Giacomo De Troia" width="400" height="430" loading="lazy" style="width: 100%; height: auto; object-fit: cover;">
-              <img src="images/dipinti/artisti-di-strada.jpg" alt="Artisti di Strada — dipinto di Giacomo De Troia" width="400" height="430" loading="lazy" style="width: 100%; height: auto; object-fit: cover; grid-column: 1 / -1;">
+              <img src="images/dipinti/protagonisti.jpg" alt="Protagonisti — dipinto di Giacomo De Troia" width="400" height="430" loading="lazy" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              <img src="images/dipinti/circe.jpg" alt="Circe — dipinto di Giacomo De Troia" width="400" height="430" loading="lazy" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
             </div>
           </div>
         </div>
@@ -177,12 +174,33 @@
         <div style="text-align: center; margin-bottom: var(--space-9);">
           <p class="overline reveal-up">Approfondimenti</p>
           <h2 class="reveal-up" data-delay="1">Letture Critiche</h2>
-          <p class="reveal-up" data-delay="2" style="max-width: 600px; margin-inline: auto; color: var(--color-text-muted); margin-top: var(--space-3);">
+          <p class="reveal-up readings-intro" data-delay="2">
             I testi integrali che critici e studiosi hanno dedicato all'opera di <strong>Giacomo De Troia</strong>.
           </p>
         </div>
 
-        <div class="readings-list">
+        <div class="readings-slideshow reveal-up" data-delay="3">
+          <div class="readings-controls">
+            <button class="readings-arrow readings-prev" aria-label="Critica precedente" type="button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="readings-dots" role="tablist" aria-label="Selettore critica">
+              <button class="readings-dot active" type="button" data-slide="0" role="tab" aria-label="Critica 1 di 4" aria-selected="true"></button>
+              <button class="readings-dot" type="button" data-slide="1" role="tab" aria-label="Critica 2 di 4" aria-selected="false"></button>
+              <button class="readings-dot" type="button" data-slide="2" role="tab" aria-label="Critica 3 di 4" aria-selected="false"></button>
+              <button class="readings-dot" type="button" data-slide="3" role="tab" aria-label="Critica 4 di 4" aria-selected="false"></button>
+            </div>
+            <button class="readings-arrow readings-next" aria-label="Critica successiva" type="button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="readings-viewport">
+            <div class="readings-track">
 
           <!-- 1. Teodosio Martucci -->
           <article class="reading-card reveal-up">
@@ -257,7 +275,9 @@
             </footer>
           </article>
 
-        </div>
+            </div><!-- /.readings-track -->
+          </div><!-- /.readings-viewport -->
+        </div><!-- /.readings-slideshow -->
       </div>
     </section>
 
@@ -339,24 +359,7 @@
         <a href="opere.html" class="btn-primary magnetic-btn reveal-up" data-delay="3">Sfoglia le Opere &rarr;</a>
       </div>
     </section>
-
-    <!-- ====== NEWSLETTER (Placeholder) ====== -->
-    <section class="newsletter-section">
-      <div class="container-narrow">
-        <div class="newsletter-inner reveal-up">
-          <p class="overline">Newsletter</p>
-          <h3>Resta in contatto con <strong>Giacomo De Troia</strong></h3>
-          <p class="newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere, mostre e iniziative.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
-            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
-            <button type="submit" class="btn-primary">Iscriviti</button>
-          </form>
-          <p class="newsletter-note"><em>Placeholder — il form verrà collegato al servizio email del cliente.</em></p>
-        </div>
-      </div>
-    </section>
-
-  </main>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -371,7 +374,7 @@
           <h4>Navigazione</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="opere.html">Opere</a></li>
+            <li><a href="opere.html">Galleria</a></li>
             <li><a href="artista.html">L'Artista</a></li>
             <li><a href="evoluzione.html">L'Evoluzione</a></li>
             <li><a href="mostre.html">Mostre e Premi</a></li>
@@ -403,17 +406,18 @@
             </a>
           </div>
         </div>
-        <div class="footer-nav">
-          <h4>Informazioni Legali</h4>
-          <ul>
-            <li><a href="condizioni-vendita.html">Condizioni di Vendita</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+        <div class="footer-nav footer-newsletter">
+          <h4>Newsletter</h4>
+          <p class="footer-newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere e mostre.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
+            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
+            <button type="submit" aria-label="Iscriviti">&rarr;</button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; <span data-year></span> <strong>Giacomo De Troia</strong>. Tutti i diritti riservati.</p>
+        <p class="footer-legal-links"><a href="condizioni-vendita.html">Condizioni di Vendita</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="cookie-policy.html">Cookie Policy</a></p>
         <p>Sito realizzato da <a href="https://ev-digitale.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">Evoluzione Digitale</a></p>
       </div>
     </div>

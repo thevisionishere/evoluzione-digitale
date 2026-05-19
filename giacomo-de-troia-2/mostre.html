@@ -28,10 +28,9 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="header-logo">G. De Troia</a>
+      <a href="index.html" class="header-logo" aria-label="Giacomo De Troia — Home"><img src="images/hero/firma.png" alt="Giacomo De Troia"></a>
       <nav class="header-nav">
-        <a href="index.html">Home</a>
-        <a href="opere.html">Opere</a>
+        <a href="opere.html">Galleria</a>
         <a href="artista.html">L'Artista</a>
         <a href="evoluzione.html">L'Evoluzione</a>
         <a href="mostre.html" class="active">Mostre e Premi</a>
@@ -45,8 +44,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="opere.html">Opere</a>
+    <a href="opere.html">Galleria</a>
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
     <a href="mostre.html" class="active">Mostre e Premi</a>
@@ -61,7 +59,13 @@
 
     <!-- ====== HERO INTERNO ====== -->
     <section class="hero-internal">
-      <div class="hero-bg" style="background-image: url('images/mostre/premio-vittime-invisibili.jpeg')"></div>
+      <div class="hero-bg-slideshow" data-interval="6000">
+        <div class="hero-bg active" style="background-image: url('images/mostre/sala-espositiva-opere.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/mostre/mostra-bovino-2024.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/mostre/museo-eboli.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('images/mostre/artista-bosco-live.jpeg')"></div>
+        <div class="hero-bg" style="background-image: url('images/mostre/premio-vittime-invisibili.jpeg')"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="hero-content" style="text-align: center;">
         <p class="hero-overline reveal-up">Giacomo De Troia</p>
@@ -439,24 +443,7 @@
         <p class="final-cta-signature reveal-up" data-delay="4">G. De Troia</p>
       </div>
     </section>
-
-    <!-- ====== NEWSLETTER (Placeholder) ====== -->
-    <section class="newsletter-section">
-      <div class="container-narrow">
-        <div class="newsletter-inner reveal-up">
-          <p class="overline">Newsletter</p>
-          <h3>Resta in contatto con <strong>Giacomo De Troia</strong></h3>
-          <p class="newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere, mostre e iniziative.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
-            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
-            <button type="submit" class="btn-primary">Iscriviti</button>
-          </form>
-          <p class="newsletter-note"><em>Placeholder — il form verrà collegato al servizio email del cliente.</em></p>
-        </div>
-      </div>
-    </section>
-
-  </main>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -471,7 +458,7 @@
           <h4>Navigazione</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="opere.html">Opere</a></li>
+            <li><a href="opere.html">Galleria</a></li>
             <li><a href="artista.html">L'Artista</a></li>
             <li><a href="evoluzione.html">L'Evoluzione</a></li>
             <li><a href="mostre.html">Mostre e Premi</a></li>
@@ -503,17 +490,18 @@
             </a>
           </div>
         </div>
-        <div class="footer-nav">
-          <h4>Informazioni Legali</h4>
-          <ul>
-            <li><a href="condizioni-vendita.html">Condizioni di Vendita</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+        <div class="footer-nav footer-newsletter">
+          <h4>Newsletter</h4>
+          <p class="footer-newsletter-desc">Iscriviti per ricevere aggiornamenti su nuove opere e mostre.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Grazie! La newsletter sarà attivata presto.'); this.reset();">
+            <input type="email" name="email" placeholder="La tua email" aria-label="Email" required>
+            <button type="submit" aria-label="Iscriviti">&rarr;</button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; <span data-year></span> <strong>Giacomo De Troia</strong>. Tutti i diritti riservati.</p>
+        <p class="footer-legal-links"><a href="condizioni-vendita.html">Condizioni di Vendita</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="cookie-policy.html">Cookie Policy</a></p>
         <p>Sito realizzato da <a href="https://ev-digitale.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">Evoluzione Digitale</a></p>
       </div>
     </div>
