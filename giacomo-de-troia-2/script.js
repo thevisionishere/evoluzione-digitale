@@ -1377,14 +1377,34 @@ document.addEventListener('DOMContentLoaded', () => {
       if (slides.length < 2) return;
       const interval = parseInt(container.dataset.interval) || 6000;
       let i = 0;
-      // Preload all images
-      slides.forEach(s => {
-        const m = (s.style.backgroundImage || '').match(/url\(["']?([^"')]+)["']?\)/);
-        if (m) { const img = new Image(); img.src = m[1]; }
-      });
+
+      // Lazily set background-image for deferred slides (data-bg attribute).
+      // The first/active slide already has its inline style; others stay empty
+      // until we reach them, so the browser doesn't fetch all 5 images on
+      // initial page load.
+      function hydrate(idx) {
+        const slide = slides[idx];
+        if (!slide || slide.dataset.bgLoaded) return;
+        const url = slide.dataset.bg;
+        if (url) {
+          slide.style.backgroundImage = `url('${url}')`;
+          slide.dataset.bgLoaded = '1';
+        }
+      }
+
+      // After page load (idle), prefetch slide 2 so the first transition is smooth.
+      const startPrefetch = () => hydrate(1);
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(startPrefetch, { timeout: 2000 });
+      } else {
+        setTimeout(startPrefetch, 1500);
+      }
+
       setInterval(() => {
         slides[i].classList.remove('active');
         i = (i + 1) % slides.length;
+        hydrate(i);                  // load current slide if not yet
+        hydrate((i + 1) % slides.length); // prefetch next
         slides[i].classList.add('active');
       }, interval);
     });
