@@ -57,10 +57,17 @@
     <a href="opere.html">Galleria</a>
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
-    <a href="mostre.html" class="active">Mostre e Premi</a>
-    <a href="mostre.html#mostre" class="mobile-submenu-item">— Mostre</a>
-    <a href="mostre.html#premi" class="mobile-submenu-item">— Premi</a>
-    <a href="mostre.html#pubblicazioni" class="mobile-submenu-item">— Pubblicazioni</a>
+    <div class="mobile-menu-group">
+      <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-submenu-mostre">
+        <span>Mostre e Premi</span>
+        <svg class="mobile-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-submenu" id="mobile-submenu-mostre" hidden>
+        <a href="mostre.html#mostre">Mostre</a>
+        <a href="mostre.html#premi">Premi</a>
+        <a href="mostre.html#pubblicazioni">Pubblicazioni</a>
+      </div>
+    </div>
     <a href="contatti.html">Contatti</a>
     <div class="mobile-menu-contact">
       <a href="tel:+393384501982">338 450 1982</a>

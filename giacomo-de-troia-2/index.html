@@ -75,10 +75,17 @@
     <a href="opere.html">Galleria</a>
     <a href="artista.html">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
-    <a href="mostre.html">Mostre e Premi</a>
-    <a href="mostre.html#mostre" class="mobile-submenu-item">— Mostre</a>
-    <a href="mostre.html#premi" class="mobile-submenu-item">— Premi</a>
-    <a href="mostre.html#pubblicazioni" class="mobile-submenu-item">— Pubblicazioni</a>
+    <div class="mobile-menu-group">
+      <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-submenu-mostre">
+        <span>Mostre e Premi</span>
+        <svg class="mobile-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-submenu" id="mobile-submenu-mostre" hidden>
+        <a href="mostre.html#mostre">Mostre</a>
+        <a href="mostre.html#premi">Premi</a>
+        <a href="mostre.html#pubblicazioni">Pubblicazioni</a>
+      </div>
+    </div>
     <a href="contatti.html">Contatti</a>
     <div class="mobile-menu-contact">
       <a href="tel:+393384501982">338 450 1982</a>
@@ -90,11 +97,11 @@
     <!-- ====== HERO ====== -->
     <section class="hero">
       <div class="hero-bg-slideshow" data-interval="6000">
-        <div class="hero-bg active" style="background-image: url('images/hero/artista-con-firma.jpg')"></div>
-        <div class="hero-bg" data-bg="images/artista/artista-piazza-cavalletto.jpeg"></div>
-        <div class="hero-bg" data-bg="images/artista/artista-bosco-1.jpeg"></div>
-        <div class="hero-bg" data-bg="images/artista/artista-castello-plein-air.jpeg"></div>
-        <div class="hero-bg" data-bg="images/artista/artista-piazza-strada.jpeg"></div>
+        <div class="hero-bg active" style="background-image: url('images/hero/artista-senza-firma.jpg'); background-position: 30% 25%;"></div>
+        <div class="hero-bg" data-bg="images/artista/artista-piazza-cavalletto.jpeg" data-pos="center 32%"></div>
+        <div class="hero-bg" data-bg="images/artista/artista-bosco-1.jpeg" data-pos="center 32%"></div>
+        <div class="hero-bg" data-bg="images/artista/artista-castello-plein-air.jpeg" data-pos="center 28%"></div>
+        <div class="hero-bg" data-bg="images/artista/artista-piazza-strada.jpeg" data-pos="center 20%"></div>
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -111,38 +118,35 @@
 
     <!-- ====== FEATURED WORKS — Auto-scroll Gallery ====== -->
     <section class="gallery-walk-section section-light" id="about-preview">
-      <div class="gallery-walk-wrapper">
+      <div class="gallery-walk-wrapper" data-interval="2500" data-link-to-galleria="true">
         <button class="gallery-walk-arrow gallery-walk-prev" aria-label="Opera precedente"><svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></button>
         <div class="gallery-walk-sticky">
           <div class="gallery-walk-track">
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="protagonisti">
               <img src="images/dipinti/protagonisti.jpg" alt="Protagonisti, dipinto ad acrilico su tela di Giacomo De Troia, 113×121 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="a-big-ice-cream">
               <img src="images/dipinti/a-big-ice-cream.jpeg" alt="A Big Ice-Cream, dipinto ad acrilico su tela di Giacomo De Troia, 80×80 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="senza-tempo">
               <img src="images/dipinti/senza-tempo.jpeg" alt="Senza Tempo, dipinto ad acrilico su tela di Giacomo De Troia, 50×50 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="il-conflitto">
               <img src="images/dipinti/il-conflitto.jpeg" alt="Il Conflitto, dipinto ad acrilico su tela di Giacomo De Troia, 90×46 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="l-amaro-mestiere-del-vivere">
               <img src="images/dipinti/amaro-mestiere-vivere.jpeg" alt="L'Amaro Mestiere del Vivere, dipinto ad acrilico su tela di Giacomo De Troia, 50×50 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="cuori-forti">
               <img src="images/dipinti/cuori-forti.jpg" alt="Cuori Forti, dipinto ad acrilico su tela di Giacomo De Troia, 74×104 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
-              <img src="images/dipinti/torneranno-gli-aquiloni.jpg" alt="Torneranno gli Aquiloni, dipinto ad acrilico su tela di Giacomo De Troia, 56×56 cm" loading="lazy">
-            </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="fiat-voluntas-tua">
               <img src="images/dipinti/fiat-voluntas-tua.jpg" alt="Fiat Voluntas Tua, dipinto ad acrilico su tela di Giacomo De Troia, 92×130 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="amore-alieno">
               <img src="images/dipinti/amore-alieno.jpg" alt="Amore Alieno, dipinto ad acrilico su tela di Giacomo De Troia, 100×100 cm" loading="lazy">
             </div>
-            <div class="gallery-walk-item">
+            <div class="gallery-walk-item" data-galleria-slug="andrea-e-nicol">
               <img src="images/dipinti/andrea-e-nicol.jpg" alt="Andrea e Nicol, dipinto ad acrilico su tela di Giacomo De Troia, 53,5×66 cm" loading="lazy">
             </div>
           </div>

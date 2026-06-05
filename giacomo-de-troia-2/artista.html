@@ -57,10 +57,17 @@
     <a href="opere.html">Galleria</a>
     <a href="artista.html" class="active">L'Artista</a>
     <a href="evoluzione.html">L'Evoluzione</a>
-    <a href="mostre.html">Mostre e Premi</a>
-    <a href="mostre.html#mostre" class="mobile-submenu-item">— Mostre</a>
-    <a href="mostre.html#premi" class="mobile-submenu-item">— Premi</a>
-    <a href="mostre.html#pubblicazioni" class="mobile-submenu-item">— Pubblicazioni</a>
+    <div class="mobile-menu-group">
+      <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-submenu-mostre">
+        <span>Mostre e Premi</span>
+        <svg class="mobile-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-submenu" id="mobile-submenu-mostre" hidden>
+        <a href="mostre.html#mostre">Mostre</a>
+        <a href="mostre.html#premi">Premi</a>
+        <a href="mostre.html#pubblicazioni">Pubblicazioni</a>
+      </div>
+    </div>
     <a href="contatti.html">Contatti</a>
     <div class="mobile-menu-contact">
       <a href="tel:+393384501982">338 450 1982</a>
@@ -72,7 +79,7 @@
 
     <!-- ====== INTERNAL HERO ====== -->
     <section class="hero-internal">
-      <div class="hero-bg" data-bg="images/artista/artista-spiaggia-2.jpeg"></div>
+      <div class="hero-bg active" style="background-image: url('images/artista/artista-spiaggia-2.jpeg'); background-position: center 20%;"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content" style="text-align: center;">
         <p class="hero-overline reveal-up">Giacomo De Troia</p>
@@ -86,7 +93,7 @@
       <div class="container">
         <div class="bio-grid">
           <div class="bio-image reveal-up">
-            <img src="images/hero/artista-con-firma.jpg" alt="Giacomo De Troia con una delle sue opere" width="600" height="800" loading="lazy">
+            <img src="images/hero/artista-senza-firma.jpg" alt="Giacomo De Troia con una delle sue opere" width="417" height="636" loading="lazy">
           </div>
           <div class="bio-text">
             <p class="overline reveal-up">Biografia</p>
@@ -159,18 +166,20 @@
         </div>
         <div class="critic-quote-wrapper">
           <div class="critic-quote-mark">&ldquo;</div>
-          <div class="critic-quote">
-            <p class="critic-text">L'archetipo del cameriere giocoso con la profusione di elementi e colori — tutti questi giochi di forme e colori apportano dinamismo all'immagine, e nello stesso tempo rappresentano la routine dei tanti giorni comuni vissuti, i cosiddetti <em>Luoghi Comuni</em></p>
-            <div class="critic-attribution">
-              <strong>Prof.ssa Marcela Aiello</strong>
-              Critico d'Arte — Francoforte sul Meno, Germania
+          <div class="critics-track">
+            <div class="critic-quote">
+              <p class="critic-text">L'archetipo del cameriere giocoso con la profusione di elementi e colori — tutti questi giochi di forme e colori apportano dinamismo all'immagine, e nello stesso tempo rappresentano la routine dei tanti giorni comuni vissuti, i cosiddetti <em>Luoghi Comuni</em></p>
+              <div class="critic-attribution">
+                <strong>Prof.ssa Marcela Aiello</strong>
+                Critico d'Arte — Francoforte sul Meno, Germania
+              </div>
             </div>
-          </div>
-          <div class="critic-quote">
-            <p class="critic-text">Echi evidenti dal passato, di surrealismo, futurismo e dell'importante allegria di Fortunato Depero. La sua è una proposta di loisir, sostenuta da tinte luminose, con suggestioni musicali con archetipi alla Braque e di Orfeo</p>
-            <div class="critic-attribution">
-              <strong>Dott. Teodoro Marasciulo</strong>
-              Critico d'Arte — su &ldquo;Teatro della Vita&rdquo;
+            <div class="critic-quote">
+              <p class="critic-text">Echi evidenti dal passato, di surrealismo, futurismo e dell'importante allegria di Fortunato Depero. La sua è una proposta di loisir, sostenuta da tinte luminose, con suggestioni musicali con archetipi alla Braque e di Orfeo</p>
+              <div class="critic-attribution">
+                <strong>Dott. Teodoro Marasciulo</strong>
+                Critico d'Arte — su &ldquo;Teatro della Vita&rdquo;
+              </div>
             </div>
           </div>
           <div class="critic-dots">

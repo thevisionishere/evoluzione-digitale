@@ -193,6 +193,19 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', closeMenu);
     });
 
+    // Collapsible "Mostre e Premi" sub-menu
+    menu.querySelectorAll('.mobile-menu-toggle').forEach(toggle => {
+      const id = toggle.getAttribute('aria-controls');
+      const panel = id ? document.getElementById(id) : null;
+      if (!panel) return;
+      toggle.addEventListener('click', e => {
+        e.stopPropagation();
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+        panel.hidden = open;
+      });
+    });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('active')) closeMenu();
     });
@@ -546,6 +559,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const leaves = Array.from(book.querySelectorAll('.book-leaf'));
     const totalLeaves = leaves.length;
+
+    // Mobile-only: a caption box BELOW the book that mirrors the
+    // currently-visible left-page content (caption or bio). On desktop both
+    // pages are visible inside the book; on mobile we only see the right
+    // page (painting) due to space — this surfaces the missing info.
+    let mobileCaption = null;
+    function ensureMobileCaption() {
+      if (mobileCaption) return mobileCaption;
+      mobileCaption = document.createElement('div');
+      mobileCaption.className = 'book-mobile-caption-display';
+      mobileCaption.hidden = true;
+      book.parentNode.insertBefore(mobileCaption, book.nextSibling);
+      return mobileCaption;
+    }
+    function updateMobileCaption() {
+      ensureMobileCaption();
+      // The caption for the painting on the right (front of leaves[currentPage])
+      // lives in the back of the just-flipped leaf (leaves[currentPage-1]).
+      if (currentPage === 0) {
+        mobileCaption.hidden = true;
+        return;
+      }
+      const prevBack = leaves[currentPage - 1]?.querySelector('.leaf-back');
+      if (prevBack && (prevBack.classList.contains('leaf-caption') || prevBack.classList.contains('leaf-bio'))) {
+        const kind = prevBack.classList.contains('leaf-bio') ? 'leaf-bio' : 'leaf-caption';
+        mobileCaption.className = 'book-mobile-caption-display ' + kind;
+        mobileCaption.innerHTML = prevBack.innerHTML;
+        mobileCaption.hidden = false;
+      } else {
+        mobileCaption.hidden = true;
+      }
+    }
     const prevBtn = document.querySelector('.book-prev-btn');
     const nextBtn = document.querySelector('.book-next-btn');
     const counter = document.querySelector('.book-page-counter');
@@ -587,6 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial z-indexes
     updateZIndexes();
+    updateMobileCaption();
 
     function updateZIndexes() {
       leaves.forEach((leaf, i) => {
@@ -604,12 +650,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const leaf = leaves[currentPage];
       leaf.style.zIndex = totalLeaves + 10;
+      leaf.style.willChange = 'transform';
       leaf.classList.add('flipped');
       currentPage++;
       updateUI();
+      updateMobileCaption();
 
       setTimeout(() => {
         updateZIndexes();
+        leaf.style.willChange = '';
         isAnimating = false;
       }, animDuration);
     }
@@ -621,11 +670,14 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPage--;
       const leaf = leaves[currentPage];
       leaf.style.zIndex = totalLeaves + 10;
+      leaf.style.willChange = 'transform';
       leaf.classList.remove('flipped');
       updateUI();
+      updateMobileCaption();
 
       setTimeout(() => {
         updateZIndexes();
+        leaf.style.willChange = '';
         isAnimating = false;
       }, animDuration);
     }
@@ -787,13 +839,38 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Hide dots that map to scroll positions beyond the carousel's scroll
+    // limit (otherwise clicking the last few dots does nothing because all
+    // those items are already visible at the right edge).
+    function refreshDotVisibility() {
+      if (!dotsContainer) return;
+      const lastReachable = computeLastReachable();
+      const dots = dotsContainer.querySelectorAll('.gallery-walk-dot');
+      dots.forEach((d, i) => { d.hidden = i > lastReachable; });
+    }
+
+    function computeLastReachable() {
+      const maxScroll = sticky.scrollWidth - sticky.clientWidth;
+      const gutter = items[0].offsetLeft;
+      let last = 0;
+      items.forEach((item, i) => {
+        const target = item.offsetLeft - gutter;
+        if (target <= maxScroll + 1) last = i;
+      });
+      return last;
+    }
+
+    // Items are left-aligned: the "current" item is the one whose left edge
+    // sits closest to scrollLeft + initial gutter. The LAST navigable dot
+    // scrolls all the way to the end (so the final items are fully visible).
     function scrollToItem(index) {
       const item = items[index];
       if (!item) return;
-      const itemLeft = item.offsetLeft;
-      const itemWidth = item.offsetWidth;
-      const containerWidth = sticky.clientWidth;
-      const target = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+      const maxScroll = sticky.scrollWidth - sticky.clientWidth;
+      const lastReachable = computeLastReachable();
+      const target = (index >= lastReachable)
+        ? maxScroll
+        : item.offsetLeft - items[0].offsetLeft;
       sticky.scrollTo({ left: target, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     }
 
@@ -803,18 +880,18 @@ document.addEventListener('DOMContentLoaded', () => {
       updateDots();
     }
 
-    function nextItem() {
-      if (userScrolling) return;
-      goToItem(currentIndex + 1);
-    }
-    function prevItem() {
-      goToItem(currentIndex - 1);
-    }
+    function nextItem() { goToItem(currentIndex + 1); }
+    function prevItem() { goToItem(currentIndex - 1); }
 
     function startAutoScroll() {
       if (prefersReducedMotion) return;
       stopAutoScroll();
-      interval = setInterval(nextItem, 5000);
+      const ms = parseInt(wrapper.dataset.interval) || 2500;
+      // Autoplay yields to a recent user scroll so we don't jump mid-swipe
+      interval = setInterval(() => {
+        if (userScrolling) return;
+        goToItem(currentIndex + 1);
+      }, ms);
     }
     function stopAutoScroll() {
       if (interval) clearInterval(interval);
@@ -824,28 +901,85 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoScroll();
     }
 
-    // Arrow controls
+    // Arrow controls — go immediately (don't block on userScrolling, so
+    // rapid clicks always advance one item per click)
     if (prevBtn) prevBtn.addEventListener('click', () => { prevItem(); resetAutoScroll(); });
     if (nextBtn) nextBtn.addEventListener('click', () => { nextItem(); resetAutoScroll(); });
 
-    // Update current index based on scroll position (manual scroll, swipe)
+    function nearestIndexFromScroll() {
+      const maxScroll = sticky.scrollWidth - sticky.clientWidth;
+      const lastReachable = computeLastReachable();
+      // At the very end, snap to the last navigable dot
+      if (sticky.scrollLeft >= maxScroll - 2) return lastReachable;
+      const ref = sticky.scrollLeft + items[0].offsetLeft;
+      let closest = 0, minDist = Infinity;
+      items.forEach((item, i) => {
+        const dist = Math.abs(item.offsetLeft - ref);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      return Math.min(closest, lastReachable);
+    }
+
+    // Update current index based on scroll position (manual scroll, swipe).
+    // Debounced so we update once the scroll settles.
+    let scrollDebounce;
     sticky.addEventListener('scroll', () => {
       userScrolling = true;
       clearTimeout(userScrollTimer);
-      userScrollTimer = setTimeout(() => { userScrolling = false; }, 1200);
-      // Find which item is currently centered
-      const center = sticky.scrollLeft + sticky.clientWidth / 2;
-      let closest = 0, minDist = Infinity;
-      items.forEach((item, i) => {
-        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-        const dist = Math.abs(itemCenter - center);
-        if (dist < minDist) { minDist = dist; closest = i; }
-      });
-      if (closest !== currentIndex) {
-        currentIndex = closest;
-        updateDots();
-      }
+      userScrollTimer = setTimeout(() => { userScrolling = false; }, 800);
+      clearTimeout(scrollDebounce);
+      scrollDebounce = setTimeout(() => {
+        const closest = nearestIndexFromScroll();
+        if (closest !== currentIndex) {
+          currentIndex = closest;
+          updateDots();
+        }
+      }, 80);
     }, { passive: true });
+
+    // Re-align scroll + refresh dot visibility on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const item = items[currentIndex];
+        if (item) {
+          sticky.scrollTo({ left: item.offsetLeft - items[0].offsetLeft, behavior: 'instant' });
+        }
+        refreshDotVisibility();
+      }, 120);
+    }, { passive: true });
+
+    // Initial sync: ensure scrollLeft = 0 so item 0 sits at the start gutter
+    let initialSyncDone = false;
+    function initialSync() {
+      if (initialSyncDone) return;
+      sticky.scrollTo({ left: 0, behavior: 'instant' });
+      refreshDotVisibility();
+      updateDots();
+      initialSyncDone = true;
+    }
+    requestAnimationFrame(() => requestAnimationFrame(initialSync));
+
+    // Click on an item navigates to the corresponding painting in the
+    // galleria (only when the wrapper opts in via data-link-to-galleria)
+    if (wrapper.dataset.linkToGalleria === 'true') {
+      let pressX = null;
+      items.forEach(it => {
+        const link = it.dataset.galleriaSlug;
+        if (!link) return;
+        it.addEventListener('pointerdown', e => { pressX = e.clientX; });
+        it.addEventListener('click', e => {
+          // Suppress click if user dragged
+          if (pressX !== null && Math.abs(e.clientX - pressX) > 6) {
+            pressX = null;
+            return;
+          }
+          pressX = null;
+          window.location.href = `opere.html?painting=${encodeURIComponent(link)}`;
+        });
+      });
+    }
 
     // Pause on hover (desktop)
     sticky.addEventListener('mouseenter', stopAutoScroll);
@@ -865,39 +999,93 @@ document.addEventListener('DOMContentLoaded', () => {
      11. CRITICS SLIDER
      ========================================================== */
   function initCriticsSlider() {
-    const quotes = document.querySelectorAll('.critic-quote');
-    const dots = document.querySelectorAll('.critic-dot');
+    const wrapper = document.querySelector('.critic-quote-wrapper');
+    if (!wrapper) return;
+    const track  = wrapper.querySelector('.critics-track');
+    const quotes = wrapper.querySelectorAll('.critic-quote');
+    const dots   = wrapper.querySelectorAll('.critic-dot');
     if (quotes.length < 2) return;
 
     let currentQuote = 0;
     let interval;
+    const mobileMQ = window.matchMedia('(max-width: 767px)');
 
-    function showQuote(index) {
+    function fadeShow(index) {
       quotes.forEach((q, i) => {
-        q.style.opacity = i === index ? '1' : '0';
+        q.style.opacity    = i === index ? '1' : '0';
         q.style.visibility = i === index ? 'visible' : 'hidden';
-        q.style.position = i === index ? 'relative' : 'absolute';
+        q.style.position   = i === index ? 'relative' : 'absolute';
       });
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === index);
+    }
+    function clearFadeInline() {
+      quotes.forEach(q => {
+        q.style.opacity = '';
+        q.style.visibility = '';
+        q.style.position = '';
       });
-      currentQuote = index;
+    }
+    function updateDots() {
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentQuote));
+    }
+    function scrollToQuote(index) {
+      if (!track) return;
+      const q = quotes[index];
+      if (!q) return;
+      track.scrollTo({ left: q.offsetLeft, behavior: 'smooth' });
+    }
+    function show(index) {
+      currentQuote = (index + quotes.length) % quotes.length;
+      if (mobileMQ.matches) scrollToQuote(currentQuote);
+      else fadeShow(currentQuote);
+      updateDots();
+    }
+    function nextQuote() { show(currentQuote + 1); }
+
+    function applyMode() {
+      if (mobileMQ.matches) {
+        clearFadeInline();
+        scrollToQuote(currentQuote);
+      } else {
+        fadeShow(currentQuote);
+      }
+      updateDots();
     }
 
-    function nextQuote() {
-      showQuote((currentQuote + 1) % quotes.length);
-    }
-
-    showQuote(0);
+    applyMode();
     interval = setInterval(nextQuote, 6000);
 
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         clearInterval(interval);
-        showQuote(i);
+        show(i);
         interval = setInterval(nextQuote, 6000);
       });
     });
+
+    // Update active dot when user swipes (mobile)
+    if (track) {
+      let scrollDebounce;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(() => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let closest = 0, minD = Infinity;
+          quotes.forEach((q, i) => {
+            const c = q.offsetLeft + q.offsetWidth / 2;
+            if (Math.abs(c - center) < minD) { minD = Math.abs(c - center); closest = i; }
+          });
+          if (closest !== currentQuote) {
+            currentQuote = closest;
+            updateDots();
+          }
+        }, 80);
+      }, { passive: true });
+    }
+
+    // Re-apply on breakpoint change (mobile ↔ desktop)
+    mobileMQ.addEventListener
+      ? mobileMQ.addEventListener('change', applyMode)
+      : mobileMQ.addListener(applyMode);
   }
 
   /* ==========================================================
@@ -1216,6 +1404,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!a.hasAttribute('tabindex')) a.setAttribute('tabindex', '0');
       a.style.cursor = 'pointer';
     });
+
+    // Auto-open when arriving with ?painting=<slug>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('painting');
+    if (slug) {
+      const target = Array.from(section.querySelectorAll('.galleria-item')).find(it => {
+        const src = it.querySelector('img')?.getAttribute('src') || '';
+        // Galleria images are named like "images/galleria/NNN-slug.jpg"
+        return new RegExp(`/\\d+-${slug}\\.`).test(src);
+      });
+      if (target) {
+        // Wait for layout + initial scroll/animations
+        setTimeout(() => {
+          target.scrollIntoView({ block: 'center', behavior: 'instant' });
+          open(target);
+        }, 250);
+      }
+    }
   }
 
   /* ==========================================================
@@ -1277,8 +1483,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!tabsRoot) return;
     const tabs   = Array.from(tabsRoot.querySelectorAll('.mostre-tab'));
     const panels = Array.from(document.querySelectorAll('.mostre-tabpanel'));
+    const STORAGE_KEY = 'gdt-mostre-tab';
+    const VALID = tabs.map(t => t.dataset.tab);
 
     function activate(name) {
+      if (!VALID.includes(name)) name = VALID[0];
       tabs.forEach(t => {
         const isActive = t.dataset.tab === name;
         t.classList.toggle('active', isActive);
@@ -1287,15 +1496,18 @@ document.addEventListener('DOMContentLoaded', () => {
       panels.forEach(p => {
         p.hidden = p.dataset.tabpanel !== name;
       });
+      try { localStorage.setItem(STORAGE_KEY, name); } catch (e) {}
     }
 
     tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
 
-    // Initial scroll-to-hash for sub-anchors (if user came in via #mostre etc.)
-    // We just ensure the default "lista" tab is active on landing.
-    if (window.location.hash === '#mostre' || !window.location.hash) {
-      activate('lista');
-    }
+    // Restore last-selected tab from localStorage, falling back to "lista".
+    let initial = 'lista';
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && VALID.includes(saved)) initial = saved;
+    } catch (e) {}
+    activate(initial);
   }
 
   /* ==========================================================
@@ -1388,6 +1600,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = slide.dataset.bg;
         if (url) {
           slide.style.backgroundImage = `url('${url}')`;
+          if (slide.dataset.pos) slide.style.backgroundPosition = slide.dataset.pos;
           slide.dataset.bgLoaded = '1';
         }
       }
