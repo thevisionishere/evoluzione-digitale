@@ -1380,18 +1380,34 @@ document.addEventListener('DOMContentLoaded', () => {
       setZoom(!zoomActive);
     });
 
-    imgWrap.addEventListener('mousemove', e => {
+    function panToPoint(clientX, clientY) {
       if (!zoomActive) return;
       const r = imgWrap.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
-      imgWrap.style.backgroundPosition = `${x}% ${y}%`;
-    });
+      const x = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+      const y = Math.max(0, Math.min(100, ((clientY - r.top) / r.height) * 100));
+      imgWrap.style.backgroundPosition = x + '% ' + y + '%';
+    }
 
+    imgWrap.addEventListener('mousemove', e => panToPoint(e.clientX, e.clientY));
     imgWrap.addEventListener('mouseleave', () => {
       if (!zoomActive) return;
       imgWrap.style.backgroundPosition = '50% 50%';
     });
+
+    // Touch panning: drag finger to move the zoom area. preventDefault
+    // suppresses page scroll while the user is dragging on the image.
+    imgWrap.addEventListener('touchstart', e => {
+      if (!zoomActive) return;
+      const t = e.touches[0];
+      if (t) panToPoint(t.clientX, t.clientY);
+    }, { passive: true });
+    imgWrap.addEventListener('touchmove', e => {
+      if (!zoomActive) return;
+      const t = e.touches[0];
+      if (!t) return;
+      e.preventDefault();
+      panToPoint(t.clientX, t.clientY);
+    }, { passive: false });
 
     // Click image to also toggle zoom (intuitive)
     img.addEventListener('click', e => {
