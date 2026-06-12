@@ -1616,7 +1616,9 @@ body.viewer-open .cursor-follower.hover {
    OPERE PAGE — Art Book
    ============================================================ */
 .art-book-section {
-  padding: var(--section-padding) 0;
+  /* Reduced bottom padding: the book sits directly above the galleria
+     on opere.html, so we avoid stacking two full section paddings. */
+  padding: var(--section-padding) 0 var(--space-7);
   background: var(--color-light);
 }
 .art-book-intro {
@@ -1627,7 +1629,6 @@ body.viewer-open .cursor-follower.hover {
   position: relative;
   width: min(92vw, 1100px);
   margin: 0 auto;
-  padding-bottom: var(--space-8);
 }
 .art-book {
   position: relative;
@@ -3340,7 +3341,8 @@ section h2 {
    GALLERIA CATALOG (opere.html)
    ============================================================ */
 .galleria-section {
-  padding: var(--section-padding) 0;
+  /* Reduced top padding since the art book sits directly above it */
+  padding: var(--space-7) 0 var(--section-padding);
   background: var(--color-light);
 }
 
