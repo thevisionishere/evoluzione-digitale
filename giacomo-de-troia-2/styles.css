@@ -1029,6 +1029,14 @@ body.viewer-open .cursor-follower.hover {
 .gallery-walk-wrapper {
   position: relative;
   height: auto;
+  /* Lay out: images (full width), then a centered control row
+     [prev arrow] [dots] [next arrow] below them. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: var(--space-5);
+  row-gap: var(--space-6);
 }
 .gallery-walk-sticky {
   position: relative;
@@ -1038,6 +1046,8 @@ body.viewer-open .cursor-follower.hover {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding: var(--space-4) 0;
+  flex: 1 0 100%;   /* full width — forces the controls onto the next row */
+  order: 1;
 }
 .gallery-walk-item:last-child { scroll-snap-align: end; }
 .gallery-walk-sticky::-webkit-scrollbar { display: none; }
@@ -1069,14 +1079,12 @@ body.viewer-open .cursor-follower.hover {
   box-shadow: var(--shadow-xl);
 }
 
-/* Side arrows */
+/* Navigation arrows — sit beside the dots in the control row */
 .gallery-walk-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
   z-index: 5;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1084,33 +1092,36 @@ body.viewer-open .cursor-follower.hover {
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-full);
   color: var(--color-text-dark);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   cursor: pointer;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-fast);
   line-height: 1;
+  flex: 0 0 auto;
 }
 .gallery-walk-arrow:hover {
   background: var(--color-accent);
   color: var(--color-light);
   border-color: var(--color-accent);
 }
-.gallery-walk-prev { left: var(--space-5); }
-.gallery-walk-next { right: var(--space-5); }
+.gallery-walk-prev { order: 2; }
+.gallery-walk-dots { order: 3; }
+.gallery-walk-next { order: 4; }
 @media (max-width: 600px) {
   .gallery-walk-arrow { width: 40px; height: 40px; font-size: 1.3rem; }
-  .gallery-walk-prev { left: var(--space-3); }
-  .gallery-walk-next { right: var(--space-3); }
   .gallery-walk-item img { height: 380px; }
+  .gallery-walk-wrapper { column-gap: var(--space-3); }
 }
 
 /* Dots navigation */
 .gallery-walk-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: var(--space-3);
-  margin-top: var(--space-6);
 }
+/* Caption (if present) spans the full width below the controls */
+.gallery-walk-caption { order: 5; flex: 1 0 100%; }
 .gallery-walk-dot {
   width: 10px;
   height: 10px;
