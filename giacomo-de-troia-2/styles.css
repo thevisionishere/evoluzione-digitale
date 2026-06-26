@@ -3996,3 +3996,289 @@ section h2 {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* =========================================================
+   ESPOSIZIONI — gallery of exhibitions (Immagini tab)
+   ========================================================= */
+.esposizioni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+.esposizione-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+.esposizione-card:hover,
+.esposizione-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+.esposizione-card-poster {
+  /* Fixed-ratio frame so the whole poster shows (contain), never cropped */
+  aspect-ratio: 3 / 4;
+  background: var(--color-light-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.esposizione-card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.esposizione-card-info {
+  padding: var(--space-4) var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--color-border-light);
+}
+.esposizione-card-info h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-dark);
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-1);
+}
+.esposizione-type {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  margin: 0;
+}
+.esposizione-place {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.esposizione-place em {
+  font-style: italic;
+}
+.esposizione-dates {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  margin: var(--space-1) 0 0;
+}
+
+/* Detail modal */
+.esposizione-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 280ms var(--ease-out), visibility 280ms var(--ease-out);
+}
+.esposizione-detail.active { opacity: 1; visibility: visible; }
+.esposizione-detail-close {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-light);
+  color: var(--color-text-dark);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform var(--duration-fast), background var(--duration-fast);
+}
+.esposizione-detail-close:hover {
+  transform: scale(1.08);
+  background: var(--color-accent);
+  color: var(--color-light);
+}
+.esposizione-detail-inner {
+  background: var(--color-light);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1100px;
+  max-height: calc(100vh - var(--space-10));
+  overflow: hidden;
+  transform: scale(0.96) translateY(20px);
+  transition: transform 320ms var(--ease-out);
+}
+.esposizione-detail.active .esposizione-detail-inner {
+  transform: scale(1) translateY(0);
+}
+@media (min-width: 900px) {
+  .esposizione-detail-inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(340px, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+.esposizione-detail-poster {
+  background: var(--color-light-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  min-height: 280px;
+  overflow: hidden;
+}
+.esposizione-detail-poster img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  box-shadow: var(--shadow-md);
+}
+.esposizione-detail-info {
+  padding: var(--space-8) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  overflow-y: auto;
+}
+.ed-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-dark);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+.ed-type {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-dark);
+  margin: 0;
+}
+.ed-meta {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.ed-place {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.ed-dates {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-accent);
+  margin: 0;
+}
+.ed-photos-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+}
+.ed-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.ed-photo-thumb {
+  /* Uniform-height thumbnails; whole photo visible (contain), never cropped */
+  height: 90px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  background: var(--color-light-alt);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color var(--duration-fast), transform var(--duration-fast);
+}
+.ed-photo-thumb:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+.ed-photo-thumb img {
+  height: 100%;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fullscreen lightbox for exhibition photos */
+.esposizione-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(20, 18, 16, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  opacity: 0;
+  transition: opacity 220ms var(--ease-out);
+}
+.esposizione-lightbox[hidden] { display: none; }
+.esposizione-lightbox.active { opacity: 1; }
+.esposizione-lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: var(--shadow-lg);
+}
+.esposizione-lightbox-close {
+  position: absolute;
+  top: max(var(--space-4), env(safe-area-inset-top));
+  right: var(--space-4);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-dark);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 899px) {
+  .esposizione-detail { padding: 0; }
+  .esposizione-detail-inner {
+    border-radius: 0;
+    max-height: 100vh;
+    height: 100vh;
+    grid-template-rows: minmax(0, 48vh) 1fr;
+  }
+  .esposizione-detail-poster { min-height: 0; padding: var(--space-5); }
+  .esposizione-detail-info { padding: var(--space-6) var(--space-5); }
+}

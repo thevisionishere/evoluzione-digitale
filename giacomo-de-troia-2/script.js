@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReadingsSlideshow();
   initNavDropdown();
   initMostreTabs();
+  initEsposizioniDetail();
 
   // Custom cursor disabled — use native browser cursor
   // if (!isMobile) initCustomCursor();
@@ -1585,6 +1586,104 @@ document.addEventListener('DOMContentLoaded', () => {
       if (saved && VALID.includes(saved)) initial = saved;
     } catch (e) {}
     activate(initial);
+  }
+
+  /* ==========================================================
+     ESPOSIZIONI DETAIL (mostre.html — Immagini tab)
+     ========================================================== */
+  function initEsposizioniDetail() {
+    const grid = document.querySelector('.esposizioni-grid');
+    const modal = document.getElementById('esposizione-detail');
+    if (!grid || !modal) return;
+
+    const posterImg = modal.querySelector('.ed-poster-img');
+    const titleEl   = modal.querySelector('.ed-title');
+    const typeEl    = modal.querySelector('.ed-type');
+    const placeEl   = modal.querySelector('.ed-place');
+    const datesEl   = modal.querySelector('.ed-dates');
+    const photosBlk = modal.querySelector('.ed-photos-block');
+    const photosWrap= modal.querySelector('.ed-photos');
+    const closeBtn  = modal.querySelector('.esposizione-detail-close');
+
+    const lightbox    = document.getElementById('esposizione-lightbox');
+    const lightboxImg = lightbox ? lightbox.querySelector('.esposizione-lightbox-img') : null;
+    const lightboxClose = lightbox ? lightbox.querySelector('.esposizione-lightbox-close') : null;
+
+    let previousFocus = null;
+
+    function openModal(card) {
+      previousFocus = document.activeElement;
+      const d = card.dataset;
+      posterImg.src = d.poster || '';
+      posterImg.alt = d.title || '';
+      titleEl.textContent = d.title || '';
+      typeEl.textContent  = d.type || '';
+      placeEl.textContent = d.place || '';
+      datesEl.textContent = d.dates || '';
+
+      // Build photo thumbnails (pipe-separated list; may be empty)
+      photosWrap.innerHTML = '';
+      const photos = (d.photos || '').split('|').map(s => s.trim()).filter(Boolean);
+      if (photos.length) {
+        photos.forEach((src, i) => {
+          const t = document.createElement('button');
+          t.className = 'ed-photo-thumb';
+          t.type = 'button';
+          t.setAttribute('aria-label', 'Apri foto ' + (i + 1));
+          t.innerHTML = '<img src="' + src + '" alt="Foto esposizione ' + (i + 1) + '" loading="lazy">';
+          t.addEventListener('click', () => openLightbox(src));
+          photosWrap.appendChild(t);
+        });
+        photosBlk.hidden = false;
+      } else {
+        photosBlk.hidden = true;
+      }
+
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => closeBtn.focus(), 50);
+    }
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      if (!lightbox || lightbox.hidden) document.body.style.overflow = '';
+      if (previousFocus && previousFocus.focus) previousFocus.focus();
+    }
+
+    function openLightbox(src) {
+      if (!lightbox) return;
+      lightboxImg.src = src;
+      lightbox.hidden = false;
+      requestAnimationFrame(() => lightbox.classList.add('active'));
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('active');
+      setTimeout(() => { lightbox.hidden = true; }, 220);
+    }
+
+    grid.addEventListener('click', e => {
+      const card = e.target.closest('.esposizione-card');
+      if (card) openModal(card);
+    });
+    grid.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.esposizione-card');
+      if (card) { e.preventDefault(); openModal(card); }
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Escape') return;
+      if (lightbox && lightbox.classList.contains('active')) { closeLightbox(); return; }
+      if (modal.classList.contains('active')) closeModal();
+    });
   }
 
   /* ==========================================================

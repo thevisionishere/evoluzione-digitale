@@ -81,10 +81,10 @@
     <section class="hero-internal">
       <div class="hero-bg-slideshow" data-interval="6000">
         <div class="hero-bg active" style="background-image: url('images/mostre/sala-espositiva-opere.jpeg')"></div>
-        <div class="hero-bg" data-bg="images/mostre/mostra-bovino-2024.jpeg"></div>
-        <div class="hero-bg" data-bg="images/mostre/museo-eboli.jpg"></div>
-        <div class="hero-bg" data-bg="images/mostre/artista-bosco-live.jpeg"></div>
-        <div class="hero-bg" data-bg="images/mostre/premio-vittime-invisibili.jpeg"></div>
+        <div class="hero-bg" data-bg="images/galleria/093-circe.jpg"></div>
+        <div class="hero-bg" data-bg="images/galleria/084-gospel.jpg"></div>
+        <div class="hero-bg" data-bg="images/galleria/172-fiesta.jpg"></div>
+        <div class="hero-bg" data-bg="images/galleria/169-jazz-periferico.jpg"></div>
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-content" style="text-align: center;">
@@ -286,34 +286,82 @@
           </div>
         </div>
 
-        <!-- Immagini tab: featured cards + locandine -->
+        <!-- Immagini tab: gallery of exhibitions (poster + info, click for detail) -->
         <div class="mostre-tabpanel" data-tabpanel="immagini" hidden>
-          <div class="exhibitions-grid">
-<div class="exhibition-card reveal-up">
-            <img src="images/mostre/museo-eboli.jpg" alt="Mostra Lenzuola D'Arte al Museo Archeologico Nazionale di Eboli — opera L'Angelo di Luce di Giacomo De Troia" width="600" height="400" loading="lazy">
-            <div class="exhibition-info">
-              <h3>Museo Archeologico Nazionale di Eboli</h3>
-              <p class="exhibition-meta">&ldquo;Lenzuola D&rsquo;Arte&rdquo;</p>
-              <p>Opera esposta: <em>L&rsquo;Angelo di Luce</em></p>
-            </div>
-          </div>
+          <div class="esposizioni-grid">
 
-          <div class="exhibition-card reveal-up">
-            <img src="images/mostre/mostra-bovino-2024.jpeg" alt="Mostra Pittura sul Teatro della Vita al Chiostro S. Antonio di Bovino, agosto-settembre 2024" width="600" height="400" loading="lazy">
-            <div class="exhibition-info">
-              <h3>Chiostro S. Antonio, Villa Comunale — Bovino</h3>
-              <p class="exhibition-meta">&ldquo;Pittura sul Teatro della Vita&rdquo; — 24 Agosto – 01 Settembre 2024</p>
-              <p>Una selezione di opere che esplorano la drammaticità e la bellezza dell&rsquo;esperienza umana, esposte nel suggestivo chiostro storico di Bovino.</p>
-            </div>
-          </div>
-            <div class="exhibition-card reveal-up">
-              <img src="images/mostre/locandina-frammenti-di-vita-2026.jpeg" alt="Locandina &ldquo;Frammenti di Vita&rdquo; — Esposizione personale di Giacomo De Troia, Circolo Unione Lucera, 2-10 Maggio 2026" width="600" height="800" loading="lazy">
-              <div class="exhibition-info">
-                <h3>&ldquo;Frammenti di Vita&rdquo;</h3>
-                <p class="exhibition-meta">Circolo Unione &mdash; Lucera, 2&ndash;10 Maggio 2026</p>
-                <p>Esposizione personale presso il Circolo Unione di Lucera.</p>
+            <article class="esposizione-card reveal-up" tabindex="0"
+              data-title="Ciò che Caino non sa"
+              data-type="Premio &ldquo;Città di Foggia&rdquo; — VII Edizione"
+              data-place="Palazzo Dogana — Foggia"
+              data-dates="20 Giugno 2026"
+              data-poster="images/mostre/esp/caino-foggia-manifesto.jpg"
+              data-photos="images/mostre/esp/caino-foggia-1.jpg|images/mostre/esp/caino-foggia-2.jpg">
+              <div class="esposizione-card-poster">
+                <img src="images/mostre/esp/caino-foggia-manifesto.jpg" alt="Attestato Premio Città di Foggia — Ciò che Caino non sa 2026" loading="lazy">
               </div>
-            </div>
+              <div class="esposizione-card-info">
+                <h3>Ciò che Caino non sa</h3>
+                <p class="esposizione-type">Premio &ldquo;Città di Foggia&rdquo;</p>
+                <p class="esposizione-place">Palazzo Dogana <em>Foggia</em></p>
+                <p class="esposizione-dates">20 Giugno 2026</p>
+              </div>
+            </article>
+
+            <article class="esposizione-card reveal-up" tabindex="0"
+              data-title="Frammenti di Vita"
+              data-type="Esposizione personale"
+              data-place="Circolo Unione — Lucera"
+              data-dates="Dal 2 al 10 Maggio 2026"
+              data-poster="images/mostre/esp/frammenti-di-vita-manifesto.jpg"
+              data-photos="">
+              <div class="esposizione-card-poster">
+                <img src="images/mostre/esp/frammenti-di-vita-manifesto.jpg" alt="Locandina Frammenti di Vita — Circolo Unione Lucera, 2-10 Maggio 2026" loading="lazy">
+              </div>
+              <div class="esposizione-card-info">
+                <h3>Frammenti di Vita</h3>
+                <p class="esposizione-type">Esposizione personale</p>
+                <p class="esposizione-place">Circolo Unione <em>Lucera</em></p>
+                <p class="esposizione-dates">Dal 2 al 10 Maggio 2026</p>
+              </div>
+            </article>
+
+            <article class="esposizione-card reveal-up" tabindex="0"
+              data-title="Città in Arte"
+              data-type="Mostra collettiva"
+              data-place="Galleria Comunale &ldquo;Luigi Schingo&rdquo; — San Severo"
+              data-dates="Dal 22 al 30 Aprile 2026"
+              data-poster="images/mostre/esp/citta-in-arte-manifesto.jpg"
+              data-photos="images/mostre/esp/citta-in-arte-1.jpg|images/mostre/esp/citta-in-arte-2.jpg">
+              <div class="esposizione-card-poster">
+                <img src="images/mostre/esp/citta-in-arte-manifesto.jpg" alt="Locandina Città in Arte — Galleria Luigi Schingo, San Severo, 22-30 Aprile 2026" loading="lazy">
+              </div>
+              <div class="esposizione-card-info">
+                <h3>Città in Arte</h3>
+                <p class="esposizione-type">Mostra collettiva</p>
+                <p class="esposizione-place">Galleria &ldquo;L. Schingo&rdquo; <em>San Severo</em></p>
+                <p class="esposizione-dates">Dal 22 al 30 Aprile 2026</p>
+              </div>
+            </article>
+
+            <article class="esposizione-card reveal-up" tabindex="0"
+              data-title="Prima Rassegna di Arti Visive"
+              data-type="Direttore Artistico — Lucera Capitale Cultura Puglia 2025"
+              data-place="Chiostro Ex Convento San Pasquale — Lucera"
+              data-dates="12–19 Agosto 2025"
+              data-poster="images/mostre/esp/rassegna-arti-visive-manifesto.jpg"
+              data-photos="">
+              <div class="esposizione-card-poster">
+                <img src="images/mostre/esp/rassegna-arti-visive-manifesto.jpg" alt="Manifesto Prima Rassegna di Arti Visive — Lucera Capitale Cultura Puglia 2025" loading="lazy">
+              </div>
+              <div class="esposizione-card-info">
+                <h3>Prima Rassegna di Arti Visive</h3>
+                <p class="esposizione-type">Direttore Artistico</p>
+                <p class="esposizione-place">Ex Convento San Pasquale <em>Lucera</em></p>
+                <p class="esposizione-dates">12–19 Agosto 2025</p>
+              </div>
+            </article>
+
           </div>
         </div>
       </div>
@@ -324,7 +372,18 @@
       <div class="container">
         <h2 class="reveal-up" data-delay="1" style="text-align: center; margin-bottom: var(--space-9);">Premi e Riconoscimenti</h2>
         <div class="awards-list">
-<div class="award-list-item has-image reveal-up">
+          <div class="award-list-item has-image reveal-up">
+            <div class="award-year">2026</div>
+            <div class="award-details">
+              <h3>Premio &ldquo;Citt&agrave; di Foggia&rdquo;</h3>
+              <p>Premio Internazionale di Letteratura e Arti Visive &ldquo;Ci&ograve; Che Caino Non Sa&rdquo; — VII Edizione, Sezione P Violenza Donne e Minori<br>Opera: <em>Innocenza rubata</em> — Foggia, 20 giugno 2026</p>
+            </div>
+            <div class="award-image">
+              <img src="images/mostre/targa-caino-foggia-2026.jpg" alt="Targa Premio Città di Foggia — Ciò Che Caino Non Sa VII Edizione 2026, opera Innocenza rubata di Giacomo De Troia" loading="lazy">
+            </div>
+          </div>
+
+          <div class="award-list-item has-image reveal-up">
             <div class="award-year">2026</div>
             <div class="award-details">
               <h3>Riconoscimento del Comune di Lucera</h3>
@@ -512,6 +571,38 @@
         <p class="final-cta-signature reveal-up" data-delay="4">G. De Troia</p>
       </div>
     </section>
+
+    <!-- ====== ESPOSIZIONE DETAIL MODAL ====== -->
+    <div class="esposizione-detail" id="esposizione-detail" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ed-title">
+      <button class="esposizione-detail-close" aria-label="Chiudi dettaglio esposizione">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="esposizione-detail-inner">
+        <div class="esposizione-detail-poster">
+          <img class="ed-poster-img" src="" alt="">
+        </div>
+        <aside class="esposizione-detail-info">
+          <h2 class="ed-title" id="ed-title"></h2>
+          <p class="ed-type"></p>
+          <div class="ed-meta">
+            <p class="ed-place"></p>
+            <p class="ed-dates"></p>
+          </div>
+          <div class="ed-photos-block" hidden>
+            <p class="ed-photos-label">Foto dell'esposizione</p>
+            <div class="ed-photos"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Fullscreen lightbox for exhibition photos -->
+    <div class="esposizione-lightbox" id="esposizione-lightbox" hidden>
+      <button class="esposizione-lightbox-close" aria-label="Chiudi">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <img class="esposizione-lightbox-img" src="" alt="">
+    </div>
 </main>
 
   <!-- FOOTER -->
