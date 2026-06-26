@@ -2110,10 +2110,23 @@ body.viewer-open .cursor-follower.hover {
    The caption that would be on the left page is surfaced below the book
    via .book-mobile-caption-display, updated by JS on each flip. */
 @media (max-width: 767px) {
-  .art-book-wrapper { width: min(92vw, 450px); }
+  /* Lay the wrapper out as a column so the nav arrows sit BELOW the book
+     (in normal flow) instead of floating over the paintings. Flow position
+     also means they no longer jump when the caption box resizes. */
+  .art-book-wrapper {
+    width: min(92vw, 450px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--space-6);
+    row-gap: var(--space-4);
+  }
   .art-book {
     aspect-ratio: 3 / 4;
     perspective: 1200px;
+    flex: 0 0 100%;
+    order: 1;
   }
   .book-bg-left,
   .book-spine,
@@ -2131,8 +2144,16 @@ body.viewer-open .cursor-follower.hover {
   .leaf-cover-image { border-radius: 4px; }
   .leaf-back { border-radius: 4px; }
   .painting-caption { display: block; }
-  .book-prev-btn { left: var(--space-2); }
-  .book-next-btn { right: var(--space-2); }
+  /* Caption sits directly under the image (like a museum label) */
+  .book-mobile-caption-display { order: 2; flex: 0 0 100%; }
+  /* Arrows + counter: static control row BELOW the caption */
+  .book-nav-btn {
+    position: static;
+    transform: none;
+  }
+  .book-prev-btn { left: auto; right: auto; order: 3; }
+  .book-page-counter { order: 4; margin-top: 0; flex: 0 0 auto; }
+  .book-next-btn { left: auto; right: auto; order: 5; }
   .leaf-painting { padding: var(--space-4); }
 }
 @media (min-width: 768px) and (max-width: 1250px) {
@@ -2145,14 +2166,34 @@ body.viewer-open .cursor-follower.hover {
 @media (max-width: 767px) {
   .book-mobile-caption-display:not([hidden]) {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: var(--space-5);
-    padding: var(--space-5) var(--space-4);
-    background: linear-gradient(135deg, #f8f4ef 0%, #f2ede6 100%);
-    border-radius: var(--radius-md);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+    text-align: left;
+    /* Flush under the image so image + label read as one framed card */
+    margin-top: 0;
+    padding: var(--space-4) var(--space-2) var(--space-2);
+    background: none;
+    box-shadow: none;
+  }
+  .book-label-info { flex: 1 1 auto; min-width: 0; }
+  .book-label-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-dark);
+    line-height: var(--leading-snug);
+    margin: 0 0 4px;
+  }
+  .book-label-meta {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1250px) {
@@ -3699,6 +3740,58 @@ section h2 {
   background: var(--color-accent);
 }
 .galleria-detail-zoom-lens { display: none; }
+
+/* Fullscreen zoom layer (touch devices) */
+.galleria-zoom-fs {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(20, 18, 16, 0.97);
+  opacity: 0;
+  transition: opacity 240ms var(--ease-out);
+}
+.galleria-zoom-fs.active { opacity: 1; }
+.galleria-zoom-fs-canvas {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  /* zoomed in beyond the viewport so the user can pan to see detail */
+  background-size: 200%;
+  background-position: 50% 50%;
+  touch-action: none;
+  cursor: grab;
+}
+.galleria-zoom-fs-close {
+  position: absolute;
+  top: max(var(--space-4), env(safe-area-inset-top));
+  right: var(--space-4);
+  width: 48px;
+  height: 48px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-dark);
+  cursor: pointer;
+}
+.galleria-zoom-fs-hint {
+  position: absolute;
+  left: 50%;
+  bottom: max(var(--space-5), env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  pointer-events: none;
+}
 
 /* Info side */
 .galleria-detail-info {

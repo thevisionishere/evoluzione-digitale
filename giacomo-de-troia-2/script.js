@@ -575,21 +575,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function updateMobileCaption() {
       ensureMobileCaption();
-      // The caption for the painting on the right (front of leaves[currentPage])
-      // lives in the back of the just-flipped leaf (leaves[currentPage-1]).
-      if (currentPage === 0) {
+      // Build a museum-style label from the painting currently shown on the
+      // right page (leaves[currentPage]). Hidden on the cover and on the
+      // final empty page.
+      const leaf = leaves[currentPage];
+      if (currentPage === 0 || !leaf || leaf.dataset.painting === undefined) {
         mobileCaption.hidden = true;
         return;
       }
-      const prevBack = leaves[currentPage - 1]?.querySelector('.leaf-back');
-      if (prevBack && (prevBack.classList.contains('leaf-caption') || prevBack.classList.contains('leaf-bio'))) {
-        const kind = prevBack.classList.contains('leaf-bio') ? 'leaf-bio' : 'leaf-caption';
-        mobileCaption.className = 'book-mobile-caption-display ' + kind;
-        mobileCaption.innerHTML = prevBack.innerHTML;
-        mobileCaption.hidden = false;
-      } else {
-        mobileCaption.hidden = true;
-      }
+      const title = leaf.dataset.title || '';
+      const meta  = leaf.dataset.meta || '';
+      // data-meta looks like "2020 — 51×55 cm"; keep just the dimensions.
+      const dims  = (meta.indexOf('—') >= 0 ? meta.split('—').pop() : meta).trim();
+      const specs = dims ? (dims + ' &middot; acrilico su tela') : 'acrilico su tela';
+      mobileCaption.innerHTML =
+        '<div class="book-label-info">' +
+          '<h3 class="book-label-title">' + title + '</h3>' +
+          '<p class="book-label-meta">' + specs + '</p>' +
+        '</div>';
+      mobileCaption.hidden = false;
     }
     const prevBtn = document.querySelector('.book-prev-btn');
     const nextBtn = document.querySelector('.book-next-btn');
@@ -1370,14 +1374,70 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === modal) close();
     });
     document.addEventListener('keydown', e => {
-      if (!modal.classList.contains('active')) return;
-      if (e.key === 'Escape') close();
+      if (e.key !== 'Escape') return;
+      if (fsZoom && fsZoom.classList.contains('active')) { closeFsZoom(); return; }
+      if (modal.classList.contains('active')) close();
     });
 
-    // Zoom interaction: toggle zoom mode, then mouse-pan
+    // On touch devices the in-wrapper zoom is cramped, so open a true
+    // fullscreen, pannable view of the painting instead.
+    const isTouch = window.matchMedia('(hover: none)').matches ||
+                    window.matchMedia('(max-width: 767px)').matches;
+
+    let fsZoom = null;
+    function ensureFsZoom() {
+      if (fsZoom) return fsZoom;
+      fsZoom = document.createElement('div');
+      fsZoom.className = 'galleria-zoom-fs';
+      fsZoom.hidden = true;
+      fsZoom.innerHTML =
+        '<button class="galleria-zoom-fs-close" aria-label="Chiudi zoom">' +
+          '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+        '</button>' +
+        '<div class="galleria-zoom-fs-canvas"></div>' +
+        '<p class="galleria-zoom-fs-hint">Trascina per esplorare il dettaglio</p>';
+      document.body.appendChild(fsZoom);
+
+      const canvas = fsZoom.querySelector('.galleria-zoom-fs-canvas');
+      function panTo(clientX, clientY) {
+        const r = canvas.getBoundingClientRect();
+        const x = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+        const y = Math.max(0, Math.min(100, ((clientY - r.top) / r.height) * 100));
+        canvas.style.backgroundPosition = x + '% ' + y + '%';
+      }
+      canvas.addEventListener('touchmove', e => {
+        const t = e.touches[0]; if (!t) return;
+        e.preventDefault();
+        panTo(t.clientX, t.clientY);
+      }, { passive: false });
+      canvas.addEventListener('mousemove', e => panTo(e.clientX, e.clientY));
+
+      fsZoom.querySelector('.galleria-zoom-fs-close').addEventListener('click', closeFsZoom);
+      fsZoom.addEventListener('click', e => { if (e.target === fsZoom) closeFsZoom(); });
+      return fsZoom;
+    }
+    function openFsZoom() {
+      ensureFsZoom();
+      const canvas = fsZoom.querySelector('.galleria-zoom-fs-canvas');
+      canvas.style.backgroundImage = `url("${imgWrap.dataset.src}")`;
+      canvas.style.backgroundPosition = '50% 50%';
+      fsZoom.hidden = false;
+      // next frame so the transition runs
+      requestAnimationFrame(() => fsZoom.classList.add('active'));
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFsZoom() {
+      if (!fsZoom) return;
+      fsZoom.classList.remove('active');
+      setTimeout(() => { fsZoom.hidden = true; }, 250);
+      if (modal.classList.contains('active')) document.body.style.overflow = 'hidden';
+    }
+
+    // Zoom interaction: fullscreen on touch, in-wrapper pan on desktop
     zoomToggle.addEventListener('click', e => {
       e.stopPropagation();
-      setZoom(!zoomActive);
+      if (isTouch) openFsZoom();
+      else setZoom(!zoomActive);
     });
 
     function panToPoint(clientX, clientY) {
@@ -1409,10 +1469,11 @@ document.addEventListener('DOMContentLoaded', () => {
       panToPoint(t.clientX, t.clientY);
     }, { passive: false });
 
-    // Click image to also toggle zoom (intuitive)
+    // Click/tap image: fullscreen on touch, in-wrapper zoom on desktop
     img.addEventListener('click', e => {
       if (e.target === zoomToggle || zoomToggle.contains(e.target)) return;
-      setZoom(!zoomActive);
+      if (isTouch) openFsZoom();
+      else setZoom(!zoomActive);
     });
 
     // Make cards focusable for keyboard
