@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavDropdown();
   initMostreTabs();
   initEsposizioniDetail();
+  initAwardPhotos();
 
   // Custom cursor disabled — use native browser cursor
   // if (!isMobile) initCustomCursor();
@@ -1662,6 +1663,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!lightbox) return;
       lightbox.classList.remove('active');
       setTimeout(() => { lightbox.hidden = true; }, 220);
+      // Restore scroll unless the esposizione detail modal is still open
+      if (!modal.classList.contains('active')) document.body.style.overflow = '';
     }
 
     grid.addEventListener('click', e => {
@@ -1683,6 +1686,28 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key !== 'Escape') return;
       if (lightbox && lightbox.classList.contains('active')) { closeLightbox(); return; }
       if (modal.classList.contains('active')) closeModal();
+    });
+  }
+
+  /* ==========================================================
+     AWARD PHOTOS (mostre.html — Premi) → open in the lightbox
+     ========================================================== */
+  function initAwardPhotos() {
+    const thumbs = document.querySelectorAll('.award-photo-thumb');
+    const lightbox = document.getElementById('esposizione-lightbox');
+    if (!thumbs.length || !lightbox) return;
+    const lightboxImg = lightbox.querySelector('.esposizione-lightbox-img');
+
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        const img = t.querySelector('img');
+        if (!img) return;
+        lightboxImg.src = img.getAttribute('src');
+        lightboxImg.alt = img.getAttribute('alt') || '';
+        lightbox.hidden = false;
+        requestAnimationFrame(() => lightbox.classList.add('active'));
+        document.body.style.overflow = 'hidden';
+      });
     });
   }
 
